@@ -16,6 +16,8 @@ struct ResultsView: View {
 
                 statsGrid
 
+                xpSection
+
                 buttonsSection
 
                 Spacer()
@@ -115,6 +117,35 @@ struct ResultsView: View {
                 color: .orange
             )
             .accessibilityIdentifier("streakStat")
+        }
+    }
+
+    private var xpSection: some View {
+        VStack(spacing: 8) {
+            HStack(spacing: 6) {
+                Image(systemName: "sparkles")
+                    .foregroundStyle(.purple)
+                Text("+\(viewModel.xpEarned) XP")
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .foregroundStyle(.purple)
+            }
+            .accessibilityIdentifier("xpEarned")
+
+            if viewModel.didLevelUp {
+                HStack(spacing: 6) {
+                    Image(systemName: "arrow.up.circle.fill")
+                        .foregroundStyle(.yellow)
+                    Text("Level Up! \(LevelSystem.levelNames[viewModel.newLevel - 1])")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundStyle(.yellow)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(
+                    Capsule().fill(.yellow.opacity(0.2))
+                )
+                .accessibilityIdentifier("levelUpBadge")
+            }
         }
     }
 

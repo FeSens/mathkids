@@ -416,6 +416,37 @@
       ],
       "files": ["Sources/Features/Home/HomeView.swift", "Sources/Features/Results/ResultsView.swift"]
     }
+    },
+    {
+      "id": "ui-018",
+      "description": "Animated background gradient that shifts colors based on difficulty and game state",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "Home screen has a subtle animated gradient background",
+        "Gradient shifts based on selected difficulty color",
+        "Game screen background pulses gently during play",
+        "Background doesn't distract from gameplay"
+      ],
+      "files": ["Sources/Features/Home/HomeView.swift", "Sources/Features/Game/GameView.swift"]
+    },
+    {
+      "id": "ui-019",
+      "description": "XP earned display on results screen showing XP gained and any level-up notification",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["core-006", "ui-004"],
+      "passes": true,
+      "test_steps": [
+        "Results screen shows XP earned from the game session",
+        "XP breakdown: base XP + streak bonuses",
+        "If player leveled up, shows level-up celebration with new level name",
+        "XP progress bar shows before/after comparison"
+      ],
+      "files": ["Sources/Features/Results/ResultsView.swift", "Sources/Features/Results/ResultsViewModel.swift"]
+    }
   ],
   "_schema": {
     "feature": {

@@ -8,17 +8,32 @@ final class ResultsViewModel {
     let isNewBestScore: Bool
     private(set) var animatedScore: Int = 0
     private(set) var newAchievements: [Achievement] = []
+    let xpEarned: Int
+    let previousLevel: Int
+    let newLevel: Int
+    var didLevelUp: Bool { newLevel > previousLevel }
 
     init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil) {
         self.session = session
         self.isNewBestScore = session.score > previousBestScore
 
+        // Calculate XP earned
+        var totalXP = 0
+        for i in 0..<session.totalCorrect {
+            totalXP += LevelSystem.xpForCorrectAnswer(streak: min(i, 10))
+        }
+        self.xpEarned = totalXP
+
         if let stats {
+            self.previousLevel = LevelSystem.level(for: stats.totalXP - totalXP)
+            self.newLevel = stats.currentLevel
             newAchievements = Achievement.all.filter { $0.isUnlocked(stats: stats) }
-            // Only show first newly unlocked (simplification)
             if newAchievements.count > 3 {
                 newAchievements = Array(newAchievements.prefix(3))
             }
+        } else {
+            self.previousLevel = 1
+            self.newLevel = 1
         }
     }
 

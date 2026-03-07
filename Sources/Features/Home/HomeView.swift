@@ -3,11 +3,19 @@ import SwiftUI
 struct HomeView: View {
     @State var viewModel: HomeViewModel
     @State private var showSettings = false
+    @State private var animateGradient = false
     var onStartGame: (DifficultyLevel, Set<Operation>) -> Void
     var onStartPractice: ((DifficultyLevel, Set<Operation>) -> Void)?
     var onStartDailyChallenge: (() -> Void)?
 
     var body: some View {
+        ZStack {
+            AnimatedGradientBackground(
+                colors: difficultyGradientColors,
+                animate: $animateGradient
+            )
+            .ignoresSafeArea()
+
         ScrollView {
         VStack(spacing: 16) {
             HStack {
@@ -43,9 +51,19 @@ struct HomeView: View {
         }
         .onAppear {
             viewModel.loadStats()
+            animateGradient = true
         }
         .sheet(isPresented: $showSettings) {
             SettingsView()
+        }
+        }
+    }
+
+    private var difficultyGradientColors: [Color] {
+        switch viewModel.selectedDifficulty {
+        case .easy: [.green.opacity(0.1), .blue.opacity(0.05), .green.opacity(0.08)]
+        case .medium: [.orange.opacity(0.1), .yellow.opacity(0.05), .orange.opacity(0.08)]
+        case .hard: [.red.opacity(0.1), .purple.opacity(0.05), .red.opacity(0.08)]
         }
     }
 
