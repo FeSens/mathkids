@@ -20,5 +20,5 @@
     "QA-011: Operation selector chips",
     "QA-012: Character reactions to answers"
   ],
-  "notes": "49/49 features passing. Added ui-037 (problem counter), ui-038 (shake to clear), ui-039 (games milestone)."
+  "notes": "51/51 features passing. All improvement features verified through unit tests and UI tests."
 }
