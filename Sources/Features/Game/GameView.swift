@@ -60,10 +60,19 @@ struct GameView: View {
                 Spacer()
 
                 if viewModel.currentStreak > 0 {
-                    Label("\(viewModel.currentStreak)", systemImage: "flame.fill")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .foregroundStyle(.orange)
-                        .accessibilityIdentifier("streakLabel")
+                    HStack(spacing: 2) {
+                        Label("\(viewModel.currentStreak)", systemImage: "flame.fill")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundStyle(.orange)
+                            .accessibilityIdentifier("streakLabel")
+
+                        ForEach(0..<streakFlameCount, id: \.self) { i in
+                            Text("🔥")
+                                .font(.system(size: CGFloat(12 + min(viewModel.currentStreak, 10))))
+                                .scaleEffect(1.0 + Double(i) * 0.1)
+                                .animation(.spring(duration: 0.3).delay(Double(i) * 0.05), value: viewModel.currentStreak)
+                        }
+                    }
                 }
 
                 Spacer()
@@ -116,6 +125,14 @@ struct GameView: View {
                 .accessibilityIdentifier("timerBar")
             }
         }
+    }
+
+    private var streakFlameCount: Int {
+        let streak = viewModel.currentStreak
+        if streak >= 10 { return 4 }
+        if streak >= 5 { return 3 }
+        if streak >= 3 { return 2 }
+        return 1
     }
 
     private var timerColors: [Color] {
@@ -200,6 +217,7 @@ struct GameView: View {
                     )
             }
             .accessibilityIdentifier("submitButton")
+            .buttonStyle(BounceButtonStyle())
         }
     }
 }
@@ -220,6 +238,14 @@ struct NumberButton: View {
                         .fill(color.opacity(0.15))
                 )
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BounceButtonStyle())
+    }
+}
+
+struct BounceButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.92 : 1.0)
+            .animation(.spring(duration: 0.2, bounce: 0.4), value: configuration.isPressed)
     }
 }

@@ -447,6 +447,37 @@
       ],
       "files": ["Sources/Features/Results/ResultsView.swift", "Sources/Features/Results/ResultsViewModel.swift"]
     }
+    },
+    {
+      "id": "ui-020",
+      "description": "Animated number pad button press feedback with scale-down effect on tap",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "Number pad buttons scale down slightly on press",
+        "Scale animation uses spring timing for bouncy feel",
+        "GO button also has press animation",
+        "Animation is subtle and doesn't slow input"
+      ],
+      "files": ["Sources/Features/Game/GameView.swift"]
+    },
+    {
+      "id": "ui-021",
+      "description": "Streak fire trail animation showing increasing flame icons during answer streaks",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "During a streak, fire emoji trail appears near streak counter",
+        "More flames appear at higher streaks (3, 5, 10+)",
+        "Flames animate with subtle bounce/scale",
+        "Resets when streak breaks"
+      ],
+      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+    }
   ],
   "_schema": {
     "feature": {
