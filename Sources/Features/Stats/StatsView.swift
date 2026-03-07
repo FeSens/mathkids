@@ -1,0 +1,184 @@
+import SwiftUI
+
+struct StatsView: View {
+    @State var viewModel: StatsViewModel
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 20) {
+                    streakSection
+
+                    lifetimeSection
+
+                    difficultyBreakdown
+
+                    weeklyActivity
+                }
+                .padding()
+            }
+            .navigationTitle("Progress")
+            .onAppear {
+                viewModel.loadStats()
+            }
+        }
+    }
+
+    private var streakSection: some View {
+        VStack(spacing: 8) {
+            Image(systemName: "flame.fill")
+                .font(.system(size: 48))
+                .foregroundStyle(.orange)
+                .accessibilityIdentifier("streakIcon")
+
+            Text("\(viewModel.dailyStreak)")
+                .font(.system(size: 48, weight: .bold, design: .rounded))
+                .accessibilityIdentifier("dailyStreakValue")
+
+            Text("Day Streak")
+                .font(.title3)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 24)
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color.orange.opacity(0.1))
+        )
+    }
+
+    private var lifetimeSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Lifetime Stats")
+                .font(.headline)
+
+            LazyVGrid(columns: [
+                GridItem(.flexible()),
+                GridItem(.flexible())
+            ], spacing: 12) {
+                LifetimeStat(label: "Problems Solved", value: "\(viewModel.totalSolved)", icon: "checkmark.circle.fill", color: .green)
+                    .accessibilityIdentifier("lifetimeSolved")
+
+                LifetimeStat(label: "Accuracy", value: "\(Int(viewModel.accuracy))%", icon: "target", color: .blue)
+                    .accessibilityIdentifier("lifetimeAccuracy")
+
+                LifetimeStat(label: "Best Streak", value: "\(viewModel.bestStreak)", icon: "flame.fill", color: .orange)
+                    .accessibilityIdentifier("lifetimeBestStreak")
+
+                LifetimeStat(label: "Best Score", value: "\(viewModel.bestScore)", icon: "star.fill", color: .yellow)
+                    .accessibilityIdentifier("lifetimeBestScore")
+            }
+        }
+    }
+
+    private var difficultyBreakdown: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Games by Difficulty")
+                .font(.headline)
+
+            HStack(spacing: 12) {
+                DifficultyStatCard(label: "Easy", count: viewModel.easyGames, emoji: "🌱", color: .green)
+                    .accessibilityIdentifier("easyGames")
+                DifficultyStatCard(label: "Medium", count: viewModel.mediumGames, emoji: "⚡", color: .orange)
+                    .accessibilityIdentifier("mediumGames")
+                DifficultyStatCard(label: "Hard", count: viewModel.hardGames, emoji: "🔥", color: .red)
+                    .accessibilityIdentifier("hardGames")
+            }
+        }
+    }
+
+    private var weeklyActivity: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("This Week")
+                .font(.headline)
+
+            HStack(spacing: 8) {
+                ForEach(weekDays, id: \.self) { day in
+                    VStack(spacing: 4) {
+                        Circle()
+                            .fill(day == currentDayOfWeek && viewModel.gamesPlayed > 0 ? Color.green : Color.gray.opacity(0.2))
+                            .frame(width: 32, height: 32)
+
+                        Text(day)
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+            }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(Color(.systemGray6))
+            )
+        }
+        .accessibilityIdentifier("weeklyActivity")
+    }
+
+    private var weekDays: [String] {
+        ["M", "T", "W", "T", "F", "S", "S"]
+    }
+
+    private var currentDayOfWeek: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E"
+        let day = formatter.string(from: .now)
+        return String(day.prefix(1))
+    }
+}
+
+struct LifetimeStat: View {
+    let label: String
+    let value: String
+    let icon: String
+    let color: Color
+
+    var body: some View {
+        VStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.title2)
+                .foregroundStyle(color)
+
+            Text(value)
+                .font(.system(size: 24, weight: .bold, design: .rounded))
+
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(color.opacity(0.1))
+        )
+    }
+}
+
+struct DifficultyStatCard: View {
+    let label: String
+    let count: Int
+    let emoji: String
+    let color: Color
+
+    var body: some View {
+        VStack(spacing: 6) {
+            Text(emoji)
+                .font(.title2)
+
+            Text("\(count)")
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 12)
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(color.opacity(0.1))
+        )
+    }
+}

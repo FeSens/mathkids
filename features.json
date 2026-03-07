@@ -1,18 +1,215 @@
 {
-  "project": "{{PROJECT_NAME}}",
-  "description": "{{PROJECT_DESCRIPTION}}",
+  "project": "MathKids",
+  "description": "A gamified mental math app for kids with timed challenges, difficulty levels, streaks, and fun animations",
   "features": [
+    {
+      "id": "core-001",
+      "description": "MathProblem model with Operation enum (add, subtract, multiply, divide) and answer validation",
+      "phase": "mvp",
+      "category": "domain",
+      "depends_on": [],
+      "passes": true,
+      "test_steps": [
+        "Create a MathProblem with two operands and an operation",
+        "Verify correctAnswer computes correctly for each operation",
+        "Verify isCorrect(answer:) returns true/false appropriately"
+      ],
+      "files": ["Sources/Domain/MathProblem.swift"]
+    },
+    {
+      "id": "core-002",
+      "description": "DifficultyLevel enum (easy/medium/hard) with number ranges and operation sets per level",
+      "phase": "mvp",
+      "category": "domain",
+      "depends_on": [],
+      "passes": true,
+      "test_steps": [
+        "Easy: operands 1-10, only add/subtract",
+        "Medium: operands 1-20, add/subtract/multiply",
+        "Hard: operands 1-50, all four operations",
+        "Each level has a time limit (easy=60s, medium=45s, hard=30s)"
+      ],
+      "files": ["Sources/Domain/DifficultyLevel.swift"]
+    },
+    {
+      "id": "core-003",
+      "description": "GameSession model tracking problems answered, score, time remaining, and session state",
+      "phase": "mvp",
+      "category": "domain",
+      "depends_on": ["core-001", "core-002"],
+      "passes": true,
+      "test_steps": [
+        "GameSession starts with a difficulty and tracks score",
+        "Records correct and incorrect answers",
+        "Tracks current streak within a session",
+        "Calculates accuracy percentage"
+      ],
+      "files": ["Sources/Domain/GameSession.swift"]
+    },
+    {
+      "id": "core-004",
+      "description": "PlayerStats model for persistent progress tracking with daily streaks",
+      "phase": "mvp",
+      "category": "domain",
+      "depends_on": [],
+      "passes": true,
+      "test_steps": [
+        "Tracks totalProblemssolved, totalCorrect, bestStreak",
+        "Tracks dailyStreak and lastPlayedDate",
+        "Daily streak increments when playing on consecutive days",
+        "Daily streak resets when a day is missed"
+      ],
+      "files": ["Sources/Domain/PlayerStats.swift"]
+    },
+    {
+      "id": "svc-001",
+      "description": "ProblemGenerator service that creates random MathProblems based on difficulty level",
+      "phase": "mvp",
+      "category": "service",
+      "depends_on": ["core-001", "core-002"],
+      "passes": true,
+      "test_steps": [
+        "Generates problems within the operand range for the given difficulty",
+        "Only uses operations allowed for the given difficulty",
+        "Division problems always have clean integer answers",
+        "Subtraction on easy never produces negative results"
+      ],
+      "files": ["Sources/Services/ProblemGenerator.swift"]
+    },
+    {
+      "id": "svc-002",
+      "description": "GameEngine manages game flow: timer countdown, problem progression, scoring",
+      "phase": "mvp",
+      "category": "service",
+      "depends_on": ["core-001", "core-002", "core-003", "svc-001"],
+      "passes": true,
+      "test_steps": [
+        "Starts a game session with selected difficulty",
+        "Provides current problem and accepts answers",
+        "Awards points for correct answers (bonus for speed)",
+        "Ends game when timer expires",
+        "Tracks session streak"
+      ],
+      "files": ["Sources/Services/GameEngine.swift"]
+    },
+    {
+      "id": "svc-003",
+      "description": "StatsService persists and retrieves PlayerStats using SwiftData",
+      "phase": "mvp",
+      "category": "service",
+      "depends_on": ["core-004"],
+      "passes": true,
+      "test_steps": [
+        "Saves game results to persistent storage",
+        "Retrieves current player stats",
+        "Updates daily streak correctly based on date",
+        "Updates best streak when current streak exceeds it"
+      ],
+      "files": ["Sources/Services/StatsService.swift"]
+    },
+    {
+      "id": "ui-001",
+      "description": "Home screen with animated title, play button, difficulty selector, and quick stats summary",
+      "phase": "mvp",
+      "category": "ui",
+      "depends_on": ["core-002", "core-004", "svc-003"],
+      "passes": true,
+      "test_steps": [
+        "Displays app title with playful styling",
+        "Shows a prominent Play button",
+        "Displays difficulty picker (easy/medium/hard)",
+        "Shows current daily streak and total problems solved"
+      ],
+      "files": ["Sources/Features/Home/HomeView.swift", "Sources/Features/Home/HomeViewModel.swift"]
+    },
+    {
+      "id": "ui-002",
+      "description": "Game screen showing current problem, answer input via number buttons, timer bar, and score",
+      "phase": "mvp",
+      "category": "ui",
+      "depends_on": ["svc-002"],
+      "passes": true,
+      "test_steps": [
+        "Displays the math problem in large, kid-friendly text",
+        "Shows a number pad for input (0-9, delete, submit)",
+        "Animated timer bar counts down",
+        "Shows current score and streak counter",
+        "Answer field clears after submission"
+      ],
+      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+    },
+    {
+      "id": "ui-003",
+      "description": "Celebration animations: confetti burst and star particles on correct answers, shake on wrong",
+      "phase": "mvp",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "Correct answer triggers confetti/star animation",
+        "Wrong answer triggers a gentle shake animation",
+        "Streak milestones (5, 10, 15) trigger extra-large celebration",
+        "Animations don't block the next problem"
+      ],
+      "files": ["Sources/Features/Game/CelebrationView.swift", "Sources/Features/Game/ShakeEffect.swift"]
+    },
+    {
+      "id": "ui-004",
+      "description": "Results screen after game ends showing score, accuracy, streak, and play-again button",
+      "phase": "mvp",
+      "category": "ui",
+      "depends_on": ["ui-002", "svc-003"],
+      "passes": true,
+      "test_steps": [
+        "Shows final score with animated count-up",
+        "Displays accuracy percentage",
+        "Shows problems answered and best streak for the session",
+        "Has Play Again and Home buttons",
+        "Shows new record badge if best score beaten"
+      ],
+      "files": ["Sources/Features/Results/ResultsView.swift", "Sources/Features/Results/ResultsViewModel.swift"]
+    },
+    {
+      "id": "ui-005",
+      "description": "Stats/progress screen with streak calendar, lifetime stats, and per-difficulty breakdown",
+      "phase": "mvp",
+      "category": "ui",
+      "depends_on": ["svc-003"],
+      "passes": true,
+      "test_steps": [
+        "Shows current daily streak with flame icon",
+        "Displays lifetime stats (total solved, accuracy, best streak)",
+        "Shows a weekly activity indicator",
+        "Per-difficulty stats breakdown"
+      ],
+      "files": ["Sources/Features/Stats/StatsView.swift", "Sources/Features/Stats/StatsViewModel.swift"]
+    },
+    {
+      "id": "ui-006",
+      "description": "App navigation with tab bar (Play, Stats) and game flow navigation",
+      "phase": "mvp",
+      "category": "ui",
+      "depends_on": ["ui-001", "ui-002", "ui-004", "ui-005"],
+      "passes": true,
+      "test_steps": [
+        "Tab bar with Play and Stats tabs",
+        "Play tab navigates: Home -> Game -> Results -> Home",
+        "Stats tab shows the stats screen",
+        "Navigation state resets properly between games"
+      ],
+      "files": ["Sources/App/MathKidsApp.swift", "Sources/App/ContentView.swift", "Sources/App/AppRouter.swift"]
+    }
   ],
   "_schema": {
     "feature": {
-      "id": "string — unique identifier (e.g., core-001, ui-001)",
-      "description": "string — what this feature does",
-      "phase": "string — mvp, polish, stretch",
-      "category": "string — domain, service, ui, infra",
-      "depends_on": "string[] — feature IDs that must pass before this can start",
-      "passes": "boolean — true when implemented and verified",
-      "test_steps": "string[] — steps to verify the feature works",
-      "files": "string[] — (optional) key files this feature creates/modifies, for conflict detection"
+      "id": "string",
+      "description": "string",
+      "phase": "string",
+      "category": "string",
+      "depends_on": "string[]",
+      "passes": "boolean",
+      "test_steps": "string[]",
+      "files": "string[]"
     }
   }
 }
