@@ -28,4 +28,26 @@ struct MathProblem: Equatable, Sendable {
     func isCorrect(answer: Int) -> Bool {
         answer == correctAnswer
     }
+
+    enum ProblemDifficulty {
+        case easy, moderate, hard
+    }
+
+    var problemDifficulty: ProblemDifficulty {
+        let maxOperand = max(abs(operand1), abs(operand2))
+        switch operation {
+        case .add, .subtract:
+            if maxOperand <= 10 { return .easy }
+            if maxOperand <= 25 { return .moderate }
+            return .hard
+        case .multiply:
+            if maxOperand <= 5 { return .easy }
+            if maxOperand <= 10 { return .moderate }
+            return .hard
+        case .divide:
+            if abs(correctAnswer) <= 5 { return .easy }
+            if abs(correctAnswer) <= 10 { return .moderate }
+            return .hard
+        }
+    }
 }

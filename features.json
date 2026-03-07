@@ -478,6 +478,37 @@
       ],
       "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
     }
+    },
+    {
+      "id": "ui-022",
+      "description": "Problem difficulty indicator showing color-coded badge (green/yellow/red) based on how hard the current problem is",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-002", "core-001"],
+      "passes": true,
+      "test_steps": [
+        "Each problem shows a small difficulty indicator dot",
+        "Green for simple (small numbers, +/-), yellow for moderate, red for hard",
+        "Indicator appears next to the problem text",
+        "Color based on operation type and operand magnitude"
+      ],
+      "files": ["Sources/Features/Game/GameView.swift", "Sources/Domain/MathProblem.swift"]
+    },
+    {
+      "id": "ui-023",
+      "description": "Motivational messages that appear between problems during streaks to encourage kids",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "After correct answer during streak, brief motivational text appears",
+        "Messages vary: 'Awesome!', 'On fire!', 'Unstoppable!', 'Math genius!'",
+        "Text fades in and out quickly",
+        "Only shows during streaks of 2+"
+      ],
+      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+    }
   ],
   "_schema": {
     "feature": {

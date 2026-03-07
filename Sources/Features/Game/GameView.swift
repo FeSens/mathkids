@@ -21,6 +21,14 @@ struct GameView: View {
                     }
                 }
 
+                if let message = viewModel.motivationalMessage {
+                    Text(message)
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .foregroundStyle(.green)
+                        .transition(.scale.combined(with: .opacity))
+                        .accessibilityIdentifier("motivationalMessage")
+                }
+
                 answerDisplay
 
                 Spacer()
@@ -146,12 +154,28 @@ struct GameView: View {
     }
 
     private var problemDisplay: some View {
-        Text(viewModel.problemText)
-            .font(.system(size: 64, weight: .bold, design: .rounded))
-            .foregroundStyle(.primary)
-            .modifier(ShakeEffect(shakes: viewModel.showShake ? 4 : 0))
-            .animation(.default, value: viewModel.showShake)
-            .accessibilityIdentifier("problemLabel")
+        HStack(spacing: 8) {
+            Text(viewModel.problemText)
+                .font(.system(size: 64, weight: .bold, design: .rounded))
+                .foregroundStyle(.primary)
+                .modifier(ShakeEffect(shakes: viewModel.showShake ? 4 : 0))
+                .animation(.default, value: viewModel.showShake)
+                .accessibilityIdentifier("problemLabel")
+
+            Circle()
+                .fill(problemDifficultyColor)
+                .frame(width: 10, height: 10)
+                .offset(y: -20)
+                .accessibilityIdentifier("difficultyDot")
+        }
+    }
+
+    private var problemDifficultyColor: Color {
+        switch viewModel.engine.currentProblem.problemDifficulty {
+        case .easy: .green
+        case .moderate: .yellow
+        case .hard: .red
+        }
     }
 
     private var answerDisplay: some View {

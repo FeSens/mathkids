@@ -19,6 +19,7 @@ final class GameViewModel {
     var celebrationIntensity: CelebrationIntensity = .normal
     var scorePopups: [ScorePopup] = []
     var characterMood: CharacterMood = .neutral
+    var motivationalMessage: String? = nil
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10
@@ -99,6 +100,10 @@ final class GameViewModel {
                 characterMood = engine.currentStreak >= 3 ? .excited : .happy
             }
 
+            if engine.currentStreak >= 2 {
+                motivationalMessage = Self.motivationalMessages.randomElement()
+            }
+
             if pointsEarned > 0 {
                 addScorePopup(points: pointsEarned)
             }
@@ -124,6 +129,7 @@ final class GameViewModel {
             showCelebration = false
             showShake = false
             characterMood = .neutral
+            motivationalMessage = nil
         }
     }
 
@@ -167,6 +173,12 @@ final class GameViewModel {
         SoundService.playGameOver()
         engine.stopGame()
     }
+
+    private static let motivationalMessages = [
+        "Awesome!", "On fire!", "Unstoppable!", "Math genius!",
+        "Brilliant!", "Keep going!", "You rock!", "Amazing!",
+        "Super star!", "Nailed it!"
+    ]
 
     private func addScorePopup(points: Int) {
         let popup = ScorePopup(text: "+\(points)", color: .green)
