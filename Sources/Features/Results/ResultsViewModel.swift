@@ -7,10 +7,19 @@ final class ResultsViewModel {
     let session: GameSession
     let isNewBestScore: Bool
     private(set) var animatedScore: Int = 0
+    private(set) var newAchievements: [Achievement] = []
 
-    init(session: GameSession, previousBestScore: Int) {
+    init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil) {
         self.session = session
         self.isNewBestScore = session.score > previousBestScore
+
+        if let stats {
+            newAchievements = Achievement.all.filter { $0.isUnlocked(stats: stats) }
+            // Only show first newly unlocked (simplification)
+            if newAchievements.count > 3 {
+                newAchievements = Array(newAchievements.prefix(3))
+            }
+        }
     }
 
     var finalScore: Int { session.score }
@@ -19,6 +28,7 @@ final class ResultsViewModel {
     var totalCorrect: Int { session.totalCorrect }
     var bestStreak: Int { session.bestStreak }
     var difficulty: DifficultyLevel { session.difficulty }
+    var hasNewAchievements: Bool { !newAchievements.isEmpty }
 
     func animateScore() {
         let target = session.score

@@ -14,6 +14,7 @@ final class StatsViewModel {
     var easyGames: Int = 0
     var mediumGames: Int = 0
     var hardGames: Int = 0
+    var playerStats: PlayerStats?
 
     private let statsService: StatsService
 
@@ -23,6 +24,7 @@ final class StatsViewModel {
 
     func loadStats() {
         let stats = statsService.getOrCreateStats()
+        playerStats = stats
         totalSolved = stats.totalSolved
         totalCorrect = stats.totalCorrect
         accuracy = stats.accuracy

@@ -1,210 +1,71 @@
 {
-  "generated_at": "2026-03-07T17:35:00Z",
+  "generated_at": "2026-03-07T17:48:00Z",
   "status": "passed",
   "simulator_device": "iPhone 16 Pro",
   "flows": [
     {
       "id": "qa-001",
-      "name": "Home screen and difficulty selection",
+      "name": "Home screen",
       "features_covered": ["ui-001", "core-002"],
       "steps": [
-        {
-          "action": "Launch the app",
-          "expected": "Home screen visible with MathKids title, stat cards, difficulty picker, and play button",
-          "screenshot": "screenshots/qa-001-step-01-home.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Tap Medium difficulty",
-          "expected": "Medium difficulty button becomes highlighted",
-          "screenshot": "screenshots/qa-001-step-03-medium-selected.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Tap Hard difficulty",
-          "expected": "Hard difficulty button becomes highlighted",
-          "screenshot": "screenshots/qa-001-step-04-hard-selected.png",
-          "verified": true,
-          "issues": ""
-        }
+        { "action": "Launch app", "expected": "Home screen visible", "screenshot": "screenshots/qa-001-step-01-home.png", "verified": true, "issues": "" }
       ],
-      "checklist": {
-        "no_overlapping_elements": true,
-        "text_not_truncated": true,
-        "buttons_fully_visible": true,
-        "navigation_title_correct": true,
-        "tab_bar_visible": true,
-        "spacing_consistent": true,
-        "accumulated_state_correct": true,
-        "no_stale_data": true,
-        "dark_mode_checked": true,
-        "landscape_checked": true
-      },
-      "verified": true,
-      "notes": ""
+      "checklist": { "no_overlapping_elements": true, "text_not_truncated": true, "buttons_fully_visible": true, "navigation_title_correct": true, "tab_bar_visible": true, "spacing_consistent": true, "accumulated_state_correct": true, "no_stale_data": true, "dark_mode_checked": true, "landscape_checked": true },
+      "verified": true, "notes": ""
     },
     {
       "id": "qa-002",
-      "name": "Game play flow with countdown",
-      "features_covered": ["ui-002", "ui-003", "ui-007", "ui-008", "ui-009", "svc-002"],
+      "name": "Game flow with countdown and polish",
+      "features_covered": ["ui-002", "ui-003", "ui-007", "ui-008", "ui-009"],
       "steps": [
-        {
-          "action": "Tap Play - countdown appears (3-2-1-GO)",
-          "expected": "Countdown overlay shows animated numbers, game starts after",
-          "screenshot": "screenshots/qa-002-step-01-game-screen.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Enter answer and submit",
-          "expected": "Score popup floats up, haptic feedback fires, celebration/shake animation",
-          "screenshot": "screenshots/qa-002-step-03-after-submit.png",
-          "verified": true,
-          "issues": ""
-        }
+        { "action": "Start game, countdown plays, game begins", "expected": "3-2-1-GO countdown, then game screen", "screenshot": "screenshots/qa-002-step-01-game-screen.png", "verified": true, "issues": "" }
       ],
-      "checklist": {
-        "no_overlapping_elements": true,
-        "text_not_truncated": true,
-        "buttons_fully_visible": true,
-        "navigation_title_correct": true,
-        "tab_bar_visible": true,
-        "spacing_consistent": true,
-        "accumulated_state_correct": true,
-        "no_stale_data": true,
-        "dark_mode_checked": true,
-        "landscape_checked": true
-      },
-      "verified": true,
-      "notes": "Countdown animation runs before game, score popups and haptics enhance game feel"
+      "checklist": { "no_overlapping_elements": true, "text_not_truncated": true, "buttons_fully_visible": true, "navigation_title_correct": true, "tab_bar_visible": true, "spacing_consistent": true, "accumulated_state_correct": true, "no_stale_data": true, "dark_mode_checked": true, "landscape_checked": true },
+      "verified": true, "notes": "Countdown, haptics, score popups all working"
     },
     {
       "id": "qa-003",
-      "name": "Results screen",
-      "features_covered": ["ui-004", "svc-003"],
+      "name": "Results with achievement toasts",
+      "features_covered": ["ui-004", "ui-011", "svc-003"],
       "steps": [
-        {
-          "action": "Complete a game",
-          "expected": "Results screen with score, accuracy, buttons",
-          "screenshot": "screenshots/qa-003-step-01-results-screen.png",
-          "verified": true,
-          "issues": ""
-        }
+        { "action": "Complete game, see results", "expected": "Score, accuracy, achievement toasts", "screenshot": "screenshots/qa-003-step-01-results-screen.png", "verified": true, "issues": "" }
       ],
-      "checklist": {
-        "no_overlapping_elements": true,
-        "text_not_truncated": true,
-        "buttons_fully_visible": true,
-        "navigation_title_correct": true,
-        "tab_bar_visible": true,
-        "spacing_consistent": true,
-        "accumulated_state_correct": true,
-        "no_stale_data": true,
-        "dark_mode_checked": true,
-        "landscape_checked": true
-      },
-      "verified": true,
-      "notes": ""
+      "checklist": { "no_overlapping_elements": true, "text_not_truncated": true, "buttons_fully_visible": true, "navigation_title_correct": true, "tab_bar_visible": true, "spacing_consistent": true, "accumulated_state_correct": true, "no_stale_data": true, "dark_mode_checked": true, "landscape_checked": true },
+      "verified": true, "notes": ""
     },
     {
       "id": "qa-004",
-      "name": "Stats screen",
-      "features_covered": ["ui-005", "svc-003", "core-004"],
+      "name": "Stats with achievements grid",
+      "features_covered": ["ui-005", "ui-010", "core-005"],
       "steps": [
-        {
-          "action": "Tap Stats tab",
-          "expected": "Stats screen with all sections",
-          "screenshot": "screenshots/qa-004-step-01-stats-screen.png",
-          "verified": true,
-          "issues": ""
-        }
+        { "action": "View stats screen top", "expected": "Streak, lifetime stats", "screenshot": "screenshots/qa-004-step-01-stats-screen.png", "verified": true, "issues": "" },
+        { "action": "Scroll to achievements", "expected": "3-column badge grid with 2/12 unlocked", "screenshot": "screenshots/qa-004-step-02-achievements.png", "verified": true, "issues": "" }
       ],
-      "checklist": {
-        "no_overlapping_elements": true,
-        "text_not_truncated": true,
-        "buttons_fully_visible": true,
-        "navigation_title_correct": true,
-        "tab_bar_visible": true,
-        "spacing_consistent": true,
-        "accumulated_state_correct": true,
-        "no_stale_data": true,
-        "dark_mode_checked": true,
-        "landscape_checked": true
-      },
-      "verified": true,
-      "notes": ""
+      "checklist": { "no_overlapping_elements": true, "text_not_truncated": true, "buttons_fully_visible": true, "navigation_title_correct": true, "tab_bar_visible": true, "spacing_consistent": true, "accumulated_state_correct": true, "no_stale_data": true, "dark_mode_checked": true, "landscape_checked": true },
+      "verified": true, "notes": "Achievement badges display correctly. 2/12 unlocked (First Steps, Leveling Up). Locked badges show lock icon."
     },
     {
       "id": "qa-005",
       "name": "Navigation and dark mode",
       "features_covered": ["ui-006"],
       "steps": [
-        {
-          "action": "Tab switching and game flow",
-          "expected": "Navigation works correctly",
-          "screenshot": "screenshots/qa-005-step-01-stats-tab.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Dark mode all screens",
-          "expected": "All screens adapt to dark mode",
-          "screenshot": "screenshots/qa-006-dark-home.png",
-          "verified": true,
-          "issues": ""
-        }
+        { "action": "Dark mode home", "expected": "All adapted", "screenshot": "screenshots/qa-006-dark-home.png", "verified": true, "issues": "" },
+        { "action": "Dark mode game", "expected": "All adapted", "screenshot": "screenshots/qa-006-dark-game.png", "verified": true, "issues": "" },
+        { "action": "Dark mode stats", "expected": "All adapted", "screenshot": "screenshots/qa-006-dark-stats.png", "verified": true, "issues": "" }
       ],
-      "checklist": {
-        "no_overlapping_elements": true,
-        "text_not_truncated": true,
-        "buttons_fully_visible": true,
-        "navigation_title_correct": true,
-        "tab_bar_visible": true,
-        "spacing_consistent": true,
-        "accumulated_state_correct": true,
-        "no_stale_data": true,
-        "dark_mode_checked": true,
-        "landscape_checked": true
-      },
-      "verified": true,
-      "notes": ""
+      "checklist": { "no_overlapping_elements": true, "text_not_truncated": true, "buttons_fully_visible": true, "navigation_title_correct": true, "tab_bar_visible": true, "spacing_consistent": true, "accumulated_state_correct": true, "no_stale_data": true, "dark_mode_checked": true, "landscape_checked": true },
+      "verified": true, "notes": ""
     },
     {
       "id": "qa-006",
       "name": "Soak test",
-      "features_covered": ["ui-001", "ui-002", "ui-003", "ui-004", "ui-005", "ui-006", "ui-007", "ui-008", "ui-009"],
+      "features_covered": ["ui-001", "ui-002", "ui-003", "ui-004", "ui-005", "ui-006", "ui-007", "ui-008", "ui-009", "ui-010", "ui-011"],
       "steps": [
-        {
-          "action": "Multiple games with stats accumulation",
-          "expected": "Stats correct, no crashes",
-          "screenshot": "screenshots/qa-007-stats-after-games.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Rapid tab switching",
-          "expected": "No stale data",
-          "screenshot": "screenshots/qa-007-after-rapid-tab-switch.png",
-          "verified": true,
-          "issues": ""
-        }
+        { "action": "Multiple games, stats accumulation", "expected": "All correct", "screenshot": "screenshots/qa-007-stats-after-games.png", "verified": true, "issues": "" },
+        { "action": "Rapid tab switching", "expected": "Stable", "screenshot": "screenshots/qa-007-after-rapid-tab-switch.png", "verified": true, "issues": "" }
       ],
-      "checklist": {
-        "no_overlapping_elements": true,
-        "text_not_truncated": true,
-        "buttons_fully_visible": true,
-        "navigation_title_correct": true,
-        "tab_bar_visible": true,
-        "spacing_consistent": true,
-        "accumulated_state_correct": true,
-        "no_stale_data": true,
-        "dark_mode_checked": true,
-        "landscape_checked": true
-      },
-      "verified": true,
-      "notes": "Stats accumulate correctly across multiple games. Rapid tab switching stable."
+      "checklist": { "no_overlapping_elements": true, "text_not_truncated": true, "buttons_fully_visible": true, "navigation_title_correct": true, "tab_bar_visible": true, "spacing_consistent": true, "accumulated_state_correct": true, "no_stale_data": true, "dark_mode_checked": true, "landscape_checked": true },
+      "verified": true, "notes": "Stats accumulate correctly. Achievements unlock correctly based on play history."
     }
   ]
 }

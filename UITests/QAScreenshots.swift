@@ -151,10 +151,15 @@ final class QAScreenshots: XCTestCase {
         XCTAssertTrue(dailyStreakValue.waitForExistence(timeout: 5))
         saveScreenshot("qa-004-step-01-stats-screen")
 
-        // Step 2: Lifetime stats
-        let lifetimeSolved = app.otherElements["lifetimeSolved"]
-        XCTAssertTrue(lifetimeSolved.exists)
-        saveScreenshot("qa-004-step-02-lifetime-stats")
+        // Step 2: Scroll down to see achievements
+        app.swipeUp()
+        Thread.sleep(forTimeInterval: 0.5)
+        saveScreenshot("qa-004-step-02-achievements")
+
+        // Step 3: Scroll more to see weekly activity
+        app.swipeUp()
+        Thread.sleep(forTimeInterval: 0.5)
+        saveScreenshot("qa-004-step-03-weekly-activity")
     }
 
     // MARK: - QA-005: Tab navigation

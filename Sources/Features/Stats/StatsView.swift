@@ -13,6 +13,10 @@ struct StatsView: View {
 
                     difficultyBreakdown
 
+                    if let stats = viewModel.playerStats {
+                        AchievementsView(stats: stats)
+                    }
+
                     weeklyActivity
                 }
                 .padding()

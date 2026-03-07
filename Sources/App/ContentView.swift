@@ -53,8 +53,9 @@ struct PlayTab: View {
 
                 case .results(let score, let correct, let total, let accuracy, let bestStreak, let difficulty, let isNewBest):
                     let session = makeSession(score: score, correct: correct, total: total, accuracy: accuracy, bestStreak: bestStreak, difficulty: difficulty)
+                    let currentStats = StatsService(modelContainer: modelContext.container).getOrCreateStats()
                     ResultsView(
-                        viewModel: ResultsViewModel(session: session, previousBestScore: isNewBest ? 0 : score + 1),
+                        viewModel: ResultsViewModel(session: session, previousBestScore: isNewBest ? 0 : score + 1, stats: currentStats),
                         onPlayAgain: {
                             router.popToRoot()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

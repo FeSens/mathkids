@@ -6,20 +6,29 @@ struct ResultsView: View {
     var onGoHome: () -> Void
 
     var body: some View {
-        VStack(spacing: 24) {
-            Spacer()
+        ZStack(alignment: .top) {
+            VStack(spacing: 24) {
+                Spacer()
 
-            headerSection
+                headerSection
 
-            scoreSection
+                scoreSection
 
-            statsGrid
+                statsGrid
 
-            buttonsSection
+                buttonsSection
 
-            Spacer()
+                Spacer()
+            }
+            .padding()
+
+            VStack(spacing: 8) {
+                ForEach(viewModel.newAchievements) { achievement in
+                    AchievementToast(achievement: achievement)
+                }
+            }
+            .padding(.top, 20)
         }
-        .padding()
         .onAppear {
             viewModel.animateScore()
         }

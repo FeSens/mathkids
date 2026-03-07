@@ -243,6 +243,51 @@
         "Animation doesn't block gameplay"
       ],
       "files": ["Sources/Features/Game/ScorePopupView.swift", "Sources/Features/Game/GameView.swift"]
+    },
+    {
+      "id": "core-005",
+      "description": "Achievement/badge model with unlockable milestones for gamification",
+      "phase": "polish",
+      "category": "domain",
+      "depends_on": ["core-004"],
+      "passes": true,
+      "test_steps": [
+        "Achievement has id, title, description, emoji, and requirement",
+        "Check if an achievement is unlocked based on PlayerStats",
+        "Predefined achievements: First Game, Streak Master (10), Speed Demon (hard mode), Century (100 solved), Perfect Round (100% accuracy with 10+ answers)"
+      ],
+      "files": ["Sources/Domain/Achievement.swift"]
+    },
+    {
+      "id": "ui-010",
+      "description": "Achievements screen showing earned and locked badges in a grid",
+      "phase": "polish",
+      "category": "ui",
+      "depends_on": ["core-005", "svc-003"],
+      "passes": true,
+      "test_steps": [
+        "Shows grid of achievement badges",
+        "Unlocked achievements show colored emoji and title",
+        "Locked achievements appear grayed out with lock icon",
+        "Achievement count shown in header (e.g. 2/8 unlocked)",
+        "Accessible from Stats tab"
+      ],
+      "files": ["Sources/Features/Stats/AchievementsView.swift"]
+    },
+    {
+      "id": "ui-011",
+      "description": "Achievement unlock toast notification that slides in when a new badge is earned",
+      "phase": "polish",
+      "category": "ui",
+      "depends_on": ["core-005", "ui-004"],
+      "passes": true,
+      "test_steps": [
+        "When a new achievement is unlocked after a game, toast appears on results screen",
+        "Toast shows achievement emoji, title, and description",
+        "Toast slides in from top with animation",
+        "Toast auto-dismisses after 3 seconds"
+      ],
+      "files": ["Sources/Features/Results/AchievementToast.swift", "Sources/Features/Results/ResultsView.swift"]
     }
   ],
   "_schema": {
