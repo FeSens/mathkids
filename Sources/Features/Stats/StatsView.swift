@@ -39,6 +39,33 @@ struct StatsView: View {
                         .accessibilityIdentifier("gamesMilestone")
                     }
 
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Favorite Operation")
+                            .font(.headline)
+
+                        if let op = viewModel.favoriteOperation {
+                            HStack(spacing: 8) {
+                                Text(op)
+                                    .font(.system(size: 32, weight: .bold, design: .rounded))
+                                    .foregroundStyle(.purple)
+                                Text("used \(viewModel.favoriteOperationCount) times")
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        } else {
+                            Text("Play more to find out!")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(Color.purple.opacity(0.1))
+                    )
+                    .accessibilityIdentifier("favoriteOperation")
+
                     accuracyTrend
 
                     weeklyActivity

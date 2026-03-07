@@ -17,12 +17,31 @@ final class PlayerStats {
     var lastDailyChallengeDate: Date?
     var totalXP: Int = 0
     var recentAccuracies: [Double] = []
+    var addCount: Int = 0
+    var subtractCount: Int = 0
+    var multiplyCount: Int = 0
+    var divideCount: Int = 0
 
     init() {}
 
     var currentLevel: Int { LevelSystem.level(for: totalXP) }
     var levelName: String { LevelSystem.levelName(for: totalXP) }
     var levelProgress: Double { LevelSystem.progressToNextLevel(for: totalXP) }
+
+    var favoriteOperation: (symbol: String, count: Int)? {
+        let ops: [(String, Int)] = [("+", addCount), ("-", subtractCount), ("x", multiplyCount), ("/", divideCount)]
+        guard let best = ops.max(by: { $0.1 < $1.1 }), best.1 > 0 else { return nil }
+        return (best.0, best.1)
+    }
+
+    func incrementOperationCount(_ operation: Operation) {
+        switch operation {
+        case .add: addCount += 1
+        case .subtract: subtractCount += 1
+        case .multiply: multiplyCount += 1
+        case .divide: divideCount += 1
+        }
+    }
 
     var accuracy: Double {
         guard totalSolved > 0 else { return 0 }

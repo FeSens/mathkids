@@ -17,6 +17,9 @@ final class StatsViewModel {
     var playerStats: PlayerStats?
     var recentAccuracies: [Double] = []
 
+    var favoriteOperation: String?
+    var favoriteOperationCount: Int = 0
+
     var gamesMilestone: String? {
         switch gamesPlayed {
         case 100...: "Century Gamer"
@@ -47,5 +50,9 @@ final class StatsViewModel {
         mediumGames = stats.mediumGamesPlayed
         hardGames = stats.hardGamesPlayed
         recentAccuracies = stats.recentAccuracies
+        if let fav = stats.favoriteOperation {
+            favoriteOperation = fav.symbol
+            favoriteOperationCount = fav.count
+        }
     }
 }

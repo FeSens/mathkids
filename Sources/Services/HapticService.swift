@@ -25,4 +25,17 @@ struct HapticService {
         guard SettingsManager.shared.hapticsEnabled else { return }
         heavyImpact.impactOccurred()
     }
+
+    private static let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+
+    static func streakPattern(streak: Int) {
+        guard SettingsManager.shared.hapticsEnabled else { return }
+        if streak >= 10 {
+            heavyImpact.impactOccurred(intensity: 1.0)
+        } else if streak >= 5 {
+            mediumImpact.impactOccurred(intensity: 0.8)
+        } else if streak >= 3 {
+            lightImpact.impactOccurred(intensity: 0.6)
+        }
+    }
 }

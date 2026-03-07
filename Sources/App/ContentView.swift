@@ -3,8 +3,15 @@ import SwiftData
 
 struct ContentView: View {
     @State private var selectedTab = 0
+    @State private var showOnboarding = !UserDefaults.standard.bool(forKey: "hasSeenOnboarding") && !ProcessInfo.processInfo.arguments.contains("--uitesting")
 
     var body: some View {
+        if showOnboarding {
+            OnboardingView {
+                UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+                showOnboarding = false
+            }
+        } else {
         TabView(selection: $selectedTab) {
             PlayTab()
                 .tabItem {
@@ -19,6 +26,7 @@ struct ContentView: View {
                 .tag(1)
         }
         .tint(.purple)
+        }
     }
 }
 

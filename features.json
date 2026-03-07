@@ -1072,6 +1072,105 @@
         "Sources/Features/Results/ResultsView.swift",
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "ui-044",
+      "description": "Extract GameView header into GameHeaderView component to reduce file size",
+      "phase": "improvement",
+      "category": "refactor",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "GameHeaderView is a separate file",
+        "Contains score, streak, timer, combo multiplier, problem counter",
+        "GameView.swift is under 300 lines",
+        "All existing UI tests still pass"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-045",
+      "description": "Animated score counter in game header that bounces when score changes",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Score label animates with spring effect when score increases",
+        "Score briefly scales up then settles back",
+        "Animation triggered on score change",
+        "Smooth and kid-friendly"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-046",
+      "description": "Onboarding welcome screen for first-time users explaining the app",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001"
+      ],
+      "passes": true,
+      "test_steps": [
+        "First launch shows welcome screen with app name and brief instructions",
+        "Has a 'Let's Go!' button to dismiss",
+        "Stores flag in UserDefaults so it only shows once",
+        "Subsequent launches skip onboarding"
+      ],
+      "files": [
+        "Sources/Features/Home/OnboardingView.swift",
+        "Sources/App/ContentView.swift"
+      ]
+    },
+    {
+      "id": "ui-047",
+      "description": "Haptic feedback pattern for streak milestones with escalating intensity",
+      "phase": "improvement",
+      "category": "logic",
+      "depends_on": [
+        "svc-003"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Streak of 3 triggers light haptic pattern",
+        "Streak of 5 triggers medium haptic pattern",
+        "Streak of 10+ triggers heavy haptic pattern",
+        "HapticService has streakPattern method"
+      ],
+      "files": [
+        "Sources/Services/HapticService.swift"
+      ]
+    },
+    {
+      "id": "ui-048",
+      "description": "Stats screen shows favorite operation based on most-played games",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-006"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Stats screen shows 'Favorite Operation' section",
+        "Displays the most frequently used operation symbol",
+        "Shows count of times that operation was played",
+        "Falls back to 'Play more to find out!' when no data"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Features/Stats/StatsViewModel.swift",
+        "Sources/Domain/PlayerStats.swift"
+      ]
     }
   ],
   "_schema": {
