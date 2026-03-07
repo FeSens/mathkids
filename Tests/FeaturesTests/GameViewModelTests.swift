@@ -265,4 +265,43 @@ struct GameViewModelTests {
         vm.submitAnswer()
         #expect(vm.comboMultiplier == 1)
     }
+
+    @Test("Wrong answer shows correct answer hint")
+    @MainActor
+    func wrongAnswerShowsHint() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+
+        let correctAnswer = vm.engine.currentProblem.correctAnswer
+
+        // Submit wrong answer
+        vm.appendDigit(9)
+        vm.appendDigit(9)
+        vm.appendDigit(9)
+        vm.submitAnswer()
+
+        #expect(vm.correctAnswerHint == correctAnswer)
+    }
+
+    @Test("Correct answer does not show hint")
+    @MainActor
+    func correctAnswerNoHint() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+
+        let correct = vm.engine.currentProblem.correctAnswer
+        let digits = String(abs(correct))
+        if correct < 0 { vm.toggleNegative() }
+        for char in digits { vm.appendDigit(Int(String(char))!) }
+        vm.submitAnswer()
+
+        #expect(vm.correctAnswerHint == nil)
+    }
+
+    @Test("Hint is nil before any submission")
+    @MainActor
+    func hintNilInitially() {
+        let vm = GameViewModel(difficulty: .easy)
+        #expect(vm.correctAnswerHint == nil)
+    }
 }

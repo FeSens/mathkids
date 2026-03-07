@@ -757,6 +757,67 @@
         "Sources/Features/Game/CelebrationView.swift",
         "Sources/Features/Game/GameView.swift"
       ]
+    },
+    {
+      "id": "ui-028",
+      "description": "Show correct answer hint after wrong answer so kids can learn from mistakes",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Submit a wrong answer",
+        "Correct answer briefly displayed below the problem",
+        "Hint disappears after 1.5 seconds",
+        "Does not show on correct answers"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-029",
+      "description": "Adaptive difficulty that adjusts problem range based on recent performance",
+      "phase": "improvement",
+      "category": "logic",
+      "depends_on": [
+        "core-005",
+        "core-006"
+      ],
+      "passes": true,
+      "test_steps": [
+        "After 5 consecutive correct answers, problem operand range increases slightly",
+        "After 3 consecutive wrong answers, problem operand range decreases",
+        "Adaptive range stays within the difficulty level bounds",
+        "Range resets when a new game starts"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift",
+        "Sources/Services/ProblemGenerator.swift"
+      ]
+    },
+    {
+      "id": "ui-030",
+      "description": "Personal best score celebration with special animation when beating high score",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-005"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Results screen shows 'New Personal Best!' badge when score exceeds previous best",
+        "Badge has special animation (scale + glow effect)",
+        "Does not show when score is below personal best",
+        "Works for first game ever (always a personal best)"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

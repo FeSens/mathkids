@@ -22,6 +22,7 @@ final class GameViewModel {
     var motivationalMessage: String? = nil
     var answerHistory: [Bool] = []
     var problemTransitionId: UUID = UUID()
+    var correctAnswerHint: Int? = nil
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10
@@ -47,6 +48,14 @@ final class GameViewModel {
     }
 
     var isDailyChallenge: Bool { mode == .dailyChallenge }
+
+    var comboMultiplier: Int {
+        let streak = engine.currentStreak
+        if streak >= 10 { return 4 }
+        if streak >= 5 { return 3 }
+        if streak >= 3 { return 2 }
+        return 1
+    }
 
     var dailyChallengeProgress: String {
         "\(dailyChallengeProblemsAnswered)/\(dailyChallengeProblemsTotal)"
@@ -84,6 +93,7 @@ final class GameViewModel {
     func submitAnswer() {
         guard let answer = Int(answerText) else { return }
 
+        let correctAnswer = engine.currentProblem.correctAnswer
         let previousScore = engine.score
         engine.submitAnswer(answer)
         let pointsEarned = engine.score - previousScore
@@ -93,6 +103,8 @@ final class GameViewModel {
         if answerHistory.count > 5 {
             answerHistory.removeFirst()
         }
+
+        correctAnswerHint = nil
 
         if engine.lastAnswerCorrect == true {
             showCelebration = true
@@ -118,6 +130,7 @@ final class GameViewModel {
         } else {
             showShake = true
             characterMood = .sad
+            correctAnswerHint = correctAnswer
             HapticService.wrongAnswer()
             SoundService.playWrong()
         }
@@ -134,11 +147,12 @@ final class GameViewModel {
         }
 
         Task {
-            try? await Task.sleep(for: .milliseconds(600))
+            try? await Task.sleep(for: .milliseconds(1500))
             showCelebration = false
             showShake = false
             characterMood = .neutral
             motivationalMessage = nil
+            correctAnswerHint = nil
         }
     }
 

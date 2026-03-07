@@ -21,6 +21,15 @@ struct GameView: View {
                     }
                 }
 
+                if let hint = viewModel.correctAnswerHint {
+                    Text("Answer: \(hint)")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .foregroundStyle(.orange)
+                        .transition(.scale.combined(with: .opacity))
+                        .animation(.spring(duration: 0.3), value: viewModel.correctAnswerHint)
+                        .accessibilityIdentifier("correctAnswerHint")
+                }
+
                 if !viewModel.answerHistory.isEmpty {
                     HStack(spacing: 6) {
                         ForEach(Array(viewModel.answerHistory.enumerated()), id: \.offset) { _, correct in

@@ -4,6 +4,7 @@ struct ResultsView: View {
     @State var viewModel: ResultsViewModel
     var onPlayAgain: () -> Void
     var onGoHome: () -> Void
+    @State private var bestScalePulse: Bool = false
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -54,6 +55,10 @@ struct ResultsView: View {
                     .background(
                         Capsule().fill(.yellow.opacity(0.2))
                     )
+                    .shadow(color: .yellow.opacity(bestScalePulse ? 0.6 : 0.2), radius: bestScalePulse ? 12 : 4)
+                    .scaleEffect(bestScalePulse ? 1.1 : 0.95)
+                    .animation(.easeInOut(duration: 0.8).repeatForever(autoreverses: true), value: bestScalePulse)
+                    .onAppear { bestScalePulse = true }
                     .accessibilityIdentifier("newBestBadge")
             }
         }

@@ -12,6 +12,9 @@ final class GameEngine {
     private let generator = ProblemGenerator()
     private let allowedOperations: Set<Operation>?
     private var timer: Timer?
+    private(set) var adaptiveRange: ClosedRange<Int>?
+    private var consecutiveCorrect: Int = 0
+    private var consecutiveWrong: Int = 0
 
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
@@ -49,6 +52,8 @@ final class GameEngine {
         lastAnswerCorrect = correct
 
         if correct {
+            consecutiveCorrect += 1
+            consecutiveWrong = 0
             let streak = session.currentStreak
             if streak > 0 && streak % 5 == 0 {
                 streakMilestone = streak
@@ -56,12 +61,40 @@ final class GameEngine {
                 streakMilestone = nil
             }
         } else {
+            consecutiveWrong += 1
+            consecutiveCorrect = 0
             streakMilestone = nil
         }
 
+        updateAdaptiveRange()
+
         if !session.isFinished {
-            currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations)
+            currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
         }
+    }
+
+    private func updateAdaptiveRange() {
+        let baseRange = session.difficulty.operandRange
+        let baseLower = baseRange.lowerBound
+        let baseUpper = baseRange.upperBound
+
+        if consecutiveCorrect >= 5 {
+            // Increase range by 25%, capped at 2x base upper
+            let currentUpper = adaptiveRange?.upperBound ?? baseUpper
+            let newUpper = min(currentUpper + baseUpper / 4, baseUpper * 2)
+            adaptiveRange = baseLower...newUpper
+        } else if consecutiveWrong >= 3 {
+            // Decrease range by 25%, floored at half base upper (minimum 2)
+            let currentUpper = adaptiveRange?.upperBound ?? baseUpper
+            let newUpper = max(currentUpper - baseUpper / 4, max(baseUpper / 2, 2))
+            adaptiveRange = baseLower...newUpper
+        }
+    }
+
+    func resetAdaptiveRange() {
+        adaptiveRange = nil
+        consecutiveCorrect = 0
+        consecutiveWrong = 0
     }
 
     func stopGame() {
