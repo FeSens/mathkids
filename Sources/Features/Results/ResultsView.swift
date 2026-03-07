@@ -55,6 +55,13 @@ struct ResultsView: View {
                     .opacity(showXP ? 1 : 0)
                     .offset(y: showXP ? 0 : 20)
 
+                Text(viewModel.funFact)
+                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                    .foregroundStyle(.secondary)
+                    .italic()
+                    .opacity(showButtons ? 1 : 0)
+                    .accessibilityIdentifier("funFact")
+
                 buttonsSection
                     .opacity(showButtons ? 1 : 0)
                     .offset(y: showButtons ? 0 : 20)

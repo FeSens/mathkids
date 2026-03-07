@@ -1033,6 +1033,45 @@
       "files": [
         "Sources/Features/Game/GameView.swift"
       ]
+    },
+    {
+      "id": "ui-042",
+      "description": "Difficulty-colored problem text that tints based on current difficulty",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Problem text has subtle color tint matching difficulty",
+        "Easy problems have green tint",
+        "Medium problems have orange tint",
+        "Hard problems have red tint"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-043",
+      "description": "Session summary with fun facts like average time per problem",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-005"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Results screen shows a fun fact about the session",
+        "Facts include average time per problem or problems per minute",
+        "Fun fact displayed in a distinctive style",
+        "Has accessibility identifier"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

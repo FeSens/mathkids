@@ -53,6 +53,22 @@ final class ResultsViewModel {
         session.score - basePoints
     }
 
+    var funFact: String {
+        let timePlayed = session.difficulty.timeLimitSeconds - session.timeRemaining
+        if session.totalAnswered > 0 && timePlayed > 0 {
+            let avgTime = Double(timePlayed) / Double(session.totalAnswered)
+            let perMinute = session.totalAnswered > 0 ? Double(session.totalAnswered) / (Double(timePlayed) / 60.0) : 0
+            if avgTime < 3.0 {
+                return "Lightning fast! \(String(format: "%.1f", avgTime))s per problem"
+            } else if perMinute >= 10 {
+                return "Speed machine! \(Int(perMinute)) problems per minute"
+            } else {
+                return "You solved \(session.totalAnswered) problems in \(timePlayed)s"
+            }
+        }
+        return "Keep practicing to unlock fun stats!"
+    }
+
     func animateScore() {
         let target = session.score
         guard target > 0 else {

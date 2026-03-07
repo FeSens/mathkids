@@ -20,5 +20,5 @@
     "QA-011: Operation selector chips",
     "QA-012: Character reactions to answers"
   ],
-  "notes": "51/51 features passing. All improvement features verified through unit tests and UI tests."
+  "notes": "53/53 features passing. All tests green."
 }

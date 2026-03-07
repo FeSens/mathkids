@@ -209,7 +209,7 @@ struct GameView: View {
         HStack(spacing: 8) {
             Text(viewModel.problemText)
                 .font(.system(size: 64, weight: .bold, design: .rounded))
-                .foregroundStyle(.primary)
+                .foregroundStyle(difficultyTextColor)
                 .modifier(ShakeEffect(shakes: viewModel.showShake ? 4 : 0))
                 .animation(.default, value: viewModel.showShake)
                 .id(viewModel.problemTransitionId)
@@ -242,6 +242,14 @@ struct GameView: View {
         case .subtract: "-"
         case .multiply: "x"
         case .divide: "/"
+        }
+    }
+
+    private var difficultyTextColor: Color {
+        switch viewModel.engine.difficulty {
+        case .easy: Color(red: 0.15, green: 0.4, blue: 0.15)
+        case .medium: Color(red: 0.5, green: 0.3, blue: 0.05)
+        case .hard: Color(red: 0.5, green: 0.1, blue: 0.1)
         }
     }
 
