@@ -14,7 +14,7 @@ struct StatsView: View {
                     difficultyBreakdown
 
                     if let stats = viewModel.playerStats {
-                        AchievementsView(stats: stats)
+                        AchievementProgressView(achievements: Achievement.all, stats: stats)
                     }
 
                     if let milestone = viewModel.gamesMilestone {

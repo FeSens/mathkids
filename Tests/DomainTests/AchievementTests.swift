@@ -83,4 +83,31 @@ struct AchievementTests {
     func achievementCount() {
         #expect(Achievement.all.count == 12)
     }
+
+    @Test("All achievements have progress functions")
+    func allHaveProgress() {
+        for achievement in Achievement.all {
+            #expect(achievement.progress != nil, "Achievement \(achievement.id) missing progress")
+        }
+    }
+
+    @Test("Progress returns correct values for ten_games")
+    func tenGamesProgress() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 7
+        let achievement = Achievement.all.first { $0.id == "ten_games" }!
+        let prog = achievement.progress!(stats)
+        #expect(prog.current == 7)
+        #expect(prog.target == 10)
+    }
+
+    @Test("Progress caps at target when exceeded")
+    func progressCapsAtTarget() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 15
+        let achievement = Achievement.all.first { $0.id == "ten_games" }!
+        let prog = achievement.progress!(stats)
+        #expect(prog.current == 10)
+        #expect(prog.target == 10)
+    }
 }

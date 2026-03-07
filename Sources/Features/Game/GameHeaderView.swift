@@ -83,16 +83,17 @@ struct GameHeaderView: View {
                             .accessibilityIdentifier("dailyProgressLabel")
                     }
                 } else {
-                    Label("\(viewModel.timeRemaining)s", systemImage: "timer")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .foregroundStyle(viewModel.timeRemaining <= 10 ? .red : .primary)
-                        .scaleEffect(viewModel.timeRemaining <= 10 && timerPulse ? 1.15 : 1.0)
-                        .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: timerPulse)
-                        .onChange(of: viewModel.timeRemaining) { _, newValue in
-                            timerPulse = newValue <= 10
-                        }
-                        .accessibilityIdentifier("timerLabel")
-                        .accessibilityLabel("\(viewModel.timeRemaining) seconds remaining")
+                    TimerRingView(
+                        progress: viewModel.timeProgress,
+                        timeRemaining: viewModel.timeRemaining,
+                        isPulsing: timerPulse
+                    )
+                    .frame(width: 48, height: 48)
+                    .onChange(of: viewModel.timeRemaining) { _, newValue in
+                        timerPulse = newValue <= 10
+                    }
+                    .accessibilityIdentifier("timerLabel")
+                    .accessibilityLabel("\(viewModel.timeRemaining) seconds remaining")
 
                     Button {
                         viewModel.togglePause()
@@ -103,25 +104,6 @@ struct GameHeaderView: View {
                     }
                     .accessibilityIdentifier("pauseButton")
                 }
-            }
-
-            if !viewModel.isPracticeMode && !viewModel.isDailyChallenge {
-                GeometryReader { geo in
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(
-                            LinearGradient(
-                                colors: timerColors,
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .frame(width: geo.size.width * viewModel.timeProgress)
-                        .animation(.linear(duration: 1), value: viewModel.timeProgress)
-                }
-                .frame(height: 8)
-                .background(Color.gray.opacity(0.2))
-                .clipShape(RoundedRectangle(cornerRadius: 4))
-                .accessibilityIdentifier("timerBar")
             }
         }
     }

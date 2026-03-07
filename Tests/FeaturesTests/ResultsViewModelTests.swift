@@ -104,4 +104,20 @@ struct ResultsViewModelTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(!vm.funFact.isEmpty)
     }
+
+    // MARK: - Confetti Threshold (ui-060)
+
+    @Test("Accuracy 80%+ qualifies for confetti")
+    func confettiHighAccuracy() {
+        let session = makeSession(correct: 8, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.accuracy >= 80)
+    }
+
+    @Test("Accuracy below 80% does not qualify for confetti")
+    func noConfettiLowAccuracy() {
+        let session = makeSession(correct: 7, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.accuracy < 80)
+    }
 }

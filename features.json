@@ -1375,6 +1375,85 @@
         "Sources/Features/Game/GameView.swift",
         "Sources/Features/Game/GameHeaderView.swift"
       ]
+    },
+    {
+      "id": "ui-059",
+      "description": "Animated countdown timer with circular progress ring replacing linear bar",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Timer displays as a circular ring that depletes",
+        "Ring color changes from green to yellow to red as time runs low",
+        "Time remaining text shows in center of ring",
+        "Ring pulses when under 10 seconds"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-060",
+      "description": "Confetti burst animation on results screen for high scores",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-003"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Confetti particles burst on results screen when accuracy >= 80%",
+        "No confetti for accuracy below 80%",
+        "Confetti uses multiple colors and sizes",
+        "Animation runs for 2-3 seconds then fades"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ConfettiView.swift"
+      ]
+    },
+    {
+      "id": "ui-061",
+      "description": "Difficulty selector cards with visual preview of number ranges and operations",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Difficulty buttons show as cards with icon, range, and operations listed",
+        "Selected card has highlighted border and scale effect",
+        "Cards show time limit for each difficulty",
+        "Smooth animation when switching between difficulties"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-062",
+      "description": "Achievement progress indicators on stats screen showing percent complete",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-004",
+        "ui-020"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Each locked achievement shows progress bar toward unlock condition",
+        "Progress bar shows percentage (e.g. 7/10 games played)",
+        "Unlocked achievements show checkmark and earned date",
+        "Achievement list is scrollable"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Features/Stats/AchievementProgressView.swift"
+      ]
     }
   ],
   "_schema": {

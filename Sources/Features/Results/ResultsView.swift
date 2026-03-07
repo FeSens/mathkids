@@ -9,9 +9,14 @@ struct ResultsView: View {
     @State private var showStats: Bool = false
     @State private var showXP: Bool = false
     @State private var showButtons: Bool = false
+    @State private var showConfetti: Bool = false
 
     var body: some View {
         ZStack(alignment: .top) {
+            if showConfetti {
+                ConfettiView()
+            }
+
             VStack(spacing: 24) {
                 Spacer()
 
@@ -118,6 +123,9 @@ struct ResultsView: View {
             withAnimation(.easeOut(duration: 0.4).delay(0.3)) { showStats = true }
             withAnimation(.easeOut(duration: 0.4).delay(0.6)) { showXP = true }
             withAnimation(.easeOut(duration: 0.4).delay(0.9)) { showButtons = true }
+            if viewModel.accuracy >= 80 {
+                showConfetti = true
+            }
         }
     }
 
