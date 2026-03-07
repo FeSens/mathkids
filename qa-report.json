@@ -2,7 +2,7 @@
   "status": "passed",
   "date": "2026-03-07",
   "test_results": {
-    "unit_tests": "101 passed, 0 failed",
+    "unit_tests": "105 passed, 0 failed",
     "ui_tests": "12 passed, 0 failed",
     "qa_screenshots": "12 passed, 0 failed"
   },
@@ -20,5 +20,5 @@
     "QA-011: Operation selector chips",
     "QA-012: Character reactions to answers"
   ],
-  "notes": "46/46 features passing. Added ui-034 (speed bonus), ui-035 (sequential reveals), ui-036 (difficulty descriptions)."
+  "notes": "49/49 features passing. Added ui-037 (problem counter), ui-038 (shake to clear), ui-039 (games milestone)."
 }
