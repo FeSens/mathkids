@@ -21,6 +21,18 @@ struct GameView: View {
                     }
                 }
 
+                if !viewModel.answerHistory.isEmpty {
+                    HStack(spacing: 6) {
+                        ForEach(Array(viewModel.answerHistory.enumerated()), id: \.offset) { _, correct in
+                            Image(systemName: correct ? "checkmark.circle.fill" : "xmark.circle.fill")
+                                .font(.system(size: 16))
+                                .foregroundStyle(correct ? .green : .red)
+                        }
+                    }
+                    .animation(.spring(duration: 0.3), value: viewModel.answerHistory.count)
+                    .accessibilityIdentifier("answerHistory")
+                }
+
                 if let message = viewModel.motivationalMessage {
                     Text(message)
                         .font(.system(size: 18, weight: .bold, design: .rounded))
@@ -160,6 +172,12 @@ struct GameView: View {
                 .foregroundStyle(.primary)
                 .modifier(ShakeEffect(shakes: viewModel.showShake ? 4 : 0))
                 .animation(.default, value: viewModel.showShake)
+                .id(viewModel.problemTransitionId)
+                .transition(.asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                ))
+                .animation(.spring(duration: 0.3), value: viewModel.problemTransitionId)
                 .accessibilityIdentifier("problemLabel")
 
             Circle()

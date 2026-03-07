@@ -20,6 +20,8 @@ final class GameViewModel {
     var scorePopups: [ScorePopup] = []
     var characterMood: CharacterMood = .neutral
     var motivationalMessage: String? = nil
+    var answerHistory: [Bool] = []
+    var problemTransitionId: UUID = UUID()
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10
@@ -86,6 +88,12 @@ final class GameViewModel {
         engine.submitAnswer(answer)
         let pointsEarned = engine.score - previousScore
 
+        // Track answer history (last 5)
+        answerHistory.append(engine.lastAnswerCorrect == true)
+        if answerHistory.count > 5 {
+            answerHistory.removeFirst()
+        }
+
         if engine.lastAnswerCorrect == true {
             showCelebration = true
             HapticService.correctAnswer()
@@ -115,6 +123,7 @@ final class GameViewModel {
         }
 
         answerText = ""
+        problemTransitionId = UUID()
 
         if mode == .dailyChallenge {
             dailyChallengeProblemsAnswered += 1

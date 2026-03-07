@@ -509,6 +509,38 @@
       ],
       "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
     }
+    },
+    {
+      "id": "ui-024",
+      "description": "Answer history ribbon showing last 5 answers as green checkmarks or red X marks",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "Below the answer field, shows last 5 answer results",
+        "Correct answers show green checkmark circles",
+        "Wrong answers show red X circles",
+        "New results animate in from right",
+        "Fills up as problems are answered"
+      ],
+      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+    },
+    {
+      "id": "ui-025",
+      "description": "Smooth problem transition animation when moving to next problem after answering",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "After submitting answer, current problem slides out",
+        "New problem slides in with spring animation",
+        "Transition is quick and doesn't delay input",
+        "Works for both correct and wrong answers"
+      ],
+      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+    }
   ],
   "_schema": {
     "feature": {
