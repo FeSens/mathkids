@@ -2,7 +2,7 @@
   "status": "passed",
   "date": "2026-03-07",
   "test_results": {
-    "unit_tests": "93 passed, 0 failed",
+    "unit_tests": "101 passed, 0 failed",
     "ui_tests": "12 passed, 0 failed",
     "qa_screenshots": "12 passed, 0 failed"
   },
@@ -20,5 +20,5 @@
     "QA-011: Operation selector chips",
     "QA-012: Character reactions to answers"
   ],
-  "notes": "37/37 features passing. Added ui-026 (combo multiplier) and ui-027 (confetti themes). Fixed QA-003 flaky assertion on ResultStat accessibility elements."
+  "notes": "40/40 features passing. Added ui-028 (wrong answer hints), ui-029 (adaptive difficulty), ui-030 (personal best animation)."
 }
