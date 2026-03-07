@@ -20,5 +20,5 @@
     "QA-011: Operation selector chips",
     "QA-012: Character reactions to answers"
   ],
-  "notes": "43/43 features passing. Added ui-031 (timer pulse), ui-032 (operation badge), ui-033 (accuracy trend chart)."
+  "notes": "46/46 features passing. Added ui-034 (speed bonus), ui-035 (sequential reveals), ui-036 (difficulty descriptions)."
 }
