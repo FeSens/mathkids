@@ -1,8 +1,10 @@
 import Foundation
 
 struct ProblemGenerator: Sendable {
-    func generate(for difficulty: DifficultyLevel) -> MathProblem {
-        let operation = difficulty.allowedOperations.randomElement()!
+    func generate(for difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) -> MathProblem {
+        let available = allowedOperations.map { $0.intersection(Set(difficulty.allowedOperations)) } ?? Set(difficulty.allowedOperations)
+        let ops = available.isEmpty ? Set(difficulty.allowedOperations) : available
+        let operation = ops.randomElement()!
         let range = difficulty.operandRange
 
         switch operation {

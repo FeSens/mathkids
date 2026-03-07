@@ -335,6 +335,54 @@
         "Sound and haptic services respect the settings"
       ],
       "files": ["Sources/Features/Home/SettingsView.swift", "Sources/Services/SettingsManager.swift"]
+    },
+    {
+      "id": "ui-014",
+      "description": "Operation selector on home screen letting kids choose which math operations to practice (e.g. only addition, or addition + multiplication)",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-001", "core-001"],
+      "passes": true,
+      "test_steps": [
+        "Home screen shows operation filter chips below difficulty picker",
+        "Operations available: +, -, x, / with toggleable selection",
+        "At least one operation must be selected at all times",
+        "Selected operations are passed to ProblemGenerator",
+        "Selection persists between app launches via UserDefaults"
+      ],
+      "files": ["Sources/Features/Home/HomeView.swift", "Sources/Features/Home/HomeViewModel.swift", "Sources/Services/ProblemGenerator.swift"]
+    },
+    {
+      "id": "ui-015",
+      "description": "Animated character reactions (emoji face) that responds to correct/wrong answers with expressions",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "Character face displayed above the problem during gameplay",
+        "Shows happy/excited expression on correct answer",
+        "Shows sad/encouraging expression on wrong answer",
+        "Shows increasingly excited expressions during streaks",
+        "Smooth spring animations between expression changes"
+      ],
+      "files": ["Sources/Features/Game/CharacterView.swift", "Sources/Features/Game/GameView.swift"]
+    },
+    {
+      "id": "ui-016",
+      "description": "Daily challenge with a fixed set of 10 problems and a leaderboard-style best time tracker",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": ["ui-001", "svc-002", "svc-003"],
+      "passes": true,
+      "test_steps": [
+        "Home screen shows Daily Challenge card with today's status",
+        "Daily challenge has exactly 10 problems at medium difficulty",
+        "Timer counts UP (elapsed time) instead of down",
+        "Shows completion time at end and compares to personal best",
+        "Challenge resets daily, tracks best time in PlayerStats"
+      ],
+      "files": ["Sources/Features/Game/GameViewModel.swift", "Sources/Features/Home/HomeView.swift", "Sources/Domain/PlayerStats.swift"]
     }
   ],
   "_schema": {

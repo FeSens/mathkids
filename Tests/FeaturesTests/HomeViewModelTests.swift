@@ -1,0 +1,65 @@
+import Testing
+import Foundation
+@testable import MathKids
+
+@Suite("HomeViewModel Tests")
+struct HomeViewModelTests {
+    @Test("Selected operations defaults to all")
+    @MainActor
+    func defaultOperations() {
+        // Clear saved operations for clean test
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        #expect(vm.selectedOperations.count == Operation.allCases.count)
+    }
+
+    @Test("Toggle operation removes it when more than one selected")
+    @MainActor
+    func toggleRemovesOperation() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.toggleOperation(.divide)
+        #expect(!vm.selectedOperations.contains(.divide))
+        #expect(vm.selectedOperations.count == 3)
+    }
+
+    @Test("Cannot deselect last operation")
+    @MainActor
+    func cannotDeselectLast() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        // Remove all but one
+        vm.toggleOperation(.subtract)
+        vm.toggleOperation(.multiply)
+        vm.toggleOperation(.divide)
+        #expect(vm.selectedOperations.count == 1)
+        #expect(vm.selectedOperations.contains(.add))
+        // Try to remove last — should stay
+        vm.toggleOperation(.add)
+        #expect(vm.selectedOperations.count == 1)
+        #expect(vm.selectedOperations.contains(.add))
+    }
+
+    @Test("Toggle operation adds it back")
+    @MainActor
+    func toggleAddsBack() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.toggleOperation(.multiply)
+        #expect(!vm.selectedOperations.contains(.multiply))
+        vm.toggleOperation(.multiply)
+        #expect(vm.selectedOperations.contains(.multiply))
+    }
+}
+
+import SwiftData
+
+@MainActor
+private func createTestContainer() throws -> ModelContainer {
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    return try ModelContainer(for: PlayerStats.self, configurations: config)
+}

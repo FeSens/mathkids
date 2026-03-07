@@ -13,6 +13,8 @@ final class PlayerStats {
     var easyGamesPlayed: Int = 0
     var mediumGamesPlayed: Int = 0
     var hardGamesPlayed: Int = 0
+    var dailyChallengeBestTime: Int = 0
+    var lastDailyChallengeDate: Date?
 
     init() {}
 

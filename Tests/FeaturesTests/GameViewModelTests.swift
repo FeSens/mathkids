@@ -113,4 +113,74 @@ struct GameViewModelTests {
         vm.endPractice()
         #expect(vm.isGameOver == true)
     }
+
+    @Test("Character mood starts as neutral")
+    @MainActor
+    func characterMoodStartsNeutral() {
+        let vm = GameViewModel(difficulty: .easy)
+        #expect(vm.characterMood == .neutral)
+    }
+
+    @Test("Character mood changes to happy on correct answer")
+    @MainActor
+    func characterMoodHappyOnCorrect() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+
+        let correctAnswer = vm.engine.currentProblem.correctAnswer
+        let digits = String(abs(correctAnswer))
+        if correctAnswer < 0 { vm.toggleNegative() }
+        for char in digits { vm.appendDigit(Int(String(char))!) }
+        vm.submitAnswer()
+
+        #expect(vm.characterMood == .happy || vm.characterMood == .excited)
+    }
+
+    @Test("Character mood changes to sad on wrong answer")
+    @MainActor
+    func characterMoodSadOnWrong() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+
+        // Submit a definitely wrong answer (999)
+        vm.appendDigit(9)
+        vm.appendDigit(9)
+        vm.appendDigit(9)
+        vm.submitAnswer()
+
+        #expect(vm.characterMood == .sad)
+    }
+
+    @Test("Daily challenge mode has no countdown")
+    @MainActor
+    func dailyChallengeNoCountdown() {
+        let vm = GameViewModel(difficulty: .medium, mode: .dailyChallenge)
+        #expect(vm.showCountdown == false)
+        #expect(vm.isDailyChallenge == true)
+    }
+
+    @Test("Daily challenge ends after 10 problems")
+    @MainActor
+    func dailyChallengeEndsAfter10() {
+        let vm = GameViewModel(difficulty: .easy, mode: .dailyChallenge)
+        vm.startGame()
+
+        for _ in 0..<10 {
+            // Submit answer (wrong is fine, just need to submit)
+            vm.appendDigit(9)
+            vm.appendDigit(9)
+            vm.appendDigit(9)
+            vm.submitAnswer()
+        }
+
+        #expect(vm.isGameOver == true)
+        #expect(vm.dailyChallengeProblemsAnswered == 10)
+    }
+
+    @Test("Daily challenge tracks elapsed time")
+    @MainActor
+    func dailyChallengeElapsedTime() {
+        let vm = GameViewModel(difficulty: .easy, mode: .dailyChallenge)
+        #expect(vm.elapsedSeconds == 0)
+    }
 }

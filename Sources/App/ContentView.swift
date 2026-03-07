@@ -32,18 +32,21 @@ struct PlayTab: View {
                 viewModel: HomeViewModel(
                     statsService: StatsService(modelContainer: modelContext.container)
                 ),
-                onStartGame: { difficulty in
-                    router.navigateToGame(difficulty: difficulty)
+                onStartGame: { difficulty, operations in
+                    router.navigateToGame(difficulty: difficulty, operations: operations)
                 },
-                onStartPractice: { difficulty in
-                    router.navigateToPractice(difficulty: difficulty)
+                onStartPractice: { difficulty, operations in
+                    router.navigateToPractice(difficulty: difficulty, operations: operations)
+                },
+                onStartDailyChallenge: {
+                    router.navigateToDailyChallenge()
                 }
             )
             .navigationDestination(for: AppRoute.self) { route in
                 switch route {
-                case .game(let difficulty):
+                case .game(let difficulty, let operations):
                     GameView(
-                        viewModel: GameViewModel(difficulty: difficulty),
+                        viewModel: GameViewModel(difficulty: difficulty, allowedOperations: operations),
                         onGameEnd: { session in
                             let statsService = StatsService(modelContainer: modelContext.container)
                             let previousBest = statsService.getOrCreateStats().bestScore
@@ -54,12 +57,26 @@ struct PlayTab: View {
                     )
                     .navigationBarBackButtonHidden()
 
-                case .practice(let difficulty):
+                case .practice(let difficulty, let operations):
                     GameView(
-                        viewModel: GameViewModel(difficulty: difficulty, mode: .practice),
+                        viewModel: GameViewModel(difficulty: difficulty, mode: .practice, allowedOperations: operations),
                         onGameEnd: { session in
                             let statsService = StatsService(modelContainer: modelContext.container)
                             let previousBest = statsService.getOrCreateStats().bestScore
+                            statsService.recordGame(session: session)
+                            let isNewBest = session.score > previousBest
+                            router.navigateToResults(session: session, isNewBest: isNewBest)
+                        }
+                    )
+                    .navigationBarBackButtonHidden()
+
+                case .dailyChallenge:
+                    GameView(
+                        viewModel: GameViewModel(difficulty: .medium, mode: .dailyChallenge),
+                        onGameEnd: { session in
+                            let statsService = StatsService(modelContainer: modelContext.container)
+                            let stats = statsService.getOrCreateStats()
+                            let previousBest = stats.bestScore
                             statsService.recordGame(session: session)
                             let isNewBest = session.score > previousBest
                             router.navigateToResults(session: session, isNewBest: isNewBest)
@@ -75,7 +92,7 @@ struct PlayTab: View {
                         onPlayAgain: {
                             router.popToRoot()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                router.navigateToGame(difficulty: difficulty)
+                                router.navigateToGame(difficulty: difficulty, operations: Set(Operation.allCases))
                             }
                         },
                         onGoHome: {

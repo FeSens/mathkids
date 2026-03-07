@@ -67,4 +67,24 @@ struct ProblemGeneratorTests {
             }
         }
     }
+
+    @Test("Operations filter restricts generated operations")
+    func operationsFilter() {
+        let addOnly: Set<Operation> = [.add]
+        for _ in 0..<100 {
+            let problem = generator.generate(for: .hard, allowedOperations: addOnly)
+            #expect(problem.operation == .add)
+        }
+    }
+
+    @Test("Operations filter intersects with difficulty allowed operations")
+    func operationsFilterIntersectsDifficulty() {
+        // Easy only allows add/subtract, so requesting multiply should fallback
+        let multiplyOnly: Set<Operation> = [.multiply]
+        for _ in 0..<100 {
+            let problem = generator.generate(for: .easy, allowedOperations: multiplyOnly)
+            // Since multiply isn't in easy's allowed ops, intersection is empty, falls back to difficulty defaults
+            #expect(problem.operation == .add || problem.operation == .subtract)
+        }
+    }
 }

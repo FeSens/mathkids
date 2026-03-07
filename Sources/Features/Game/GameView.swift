@@ -11,6 +11,8 @@ struct GameView: View {
 
                 Spacer()
 
+                CharacterView(mood: viewModel.characterMood)
+
                 ZStack {
                     problemDisplay
 
@@ -75,6 +77,18 @@ struct GameView: View {
                             .foregroundStyle(.green)
                     }
                     .accessibilityIdentifier("doneButton")
+                } else if viewModel.isDailyChallenge {
+                    HStack(spacing: 12) {
+                        Label("\(viewModel.elapsedSeconds)s", systemImage: "stopwatch")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundStyle(.blue)
+                            .accessibilityIdentifier("elapsedTimerLabel")
+
+                        Text(viewModel.dailyChallengeProgress)
+                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                            .foregroundStyle(.purple)
+                            .accessibilityIdentifier("dailyProgressLabel")
+                    }
                 } else {
                     Label("\(viewModel.timeRemaining)s", systemImage: "timer")
                         .font(.system(size: 20, weight: .bold, design: .rounded))
@@ -83,7 +97,7 @@ struct GameView: View {
                 }
             }
 
-            if !viewModel.isPracticeMode {
+            if !viewModel.isPracticeMode && !viewModel.isDailyChallenge {
                 GeometryReader { geo in
                     RoundedRectangle(cornerRadius: 4)
                         .fill(

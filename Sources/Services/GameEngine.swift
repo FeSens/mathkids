@@ -10,11 +10,13 @@ final class GameEngine {
     private(set) var streakMilestone: Int?
 
     private let generator = ProblemGenerator()
+    private let allowedOperations: Set<Operation>?
     private var timer: Timer?
 
-    init(difficulty: DifficultyLevel) {
+    init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
-        self.currentProblem = generator.generate(for: difficulty)
+        self.allowedOperations = allowedOperations
+        self.currentProblem = generator.generate(for: difficulty, allowedOperations: allowedOperations)
     }
 
     var isGameOver: Bool { session.isFinished }
@@ -58,7 +60,7 @@ final class GameEngine {
         }
 
         if !session.isFinished {
-            currentProblem = generator.generate(for: session.difficulty)
+            currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations)
         }
     }
 

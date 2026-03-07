@@ -3,8 +3,9 @@ import SwiftUI
 struct HomeView: View {
     @State var viewModel: HomeViewModel
     @State private var showSettings = false
-    var onStartGame: (DifficultyLevel) -> Void
-    var onStartPractice: ((DifficultyLevel) -> Void)?
+    var onStartGame: (DifficultyLevel, Set<Operation>) -> Void
+    var onStartPractice: ((DifficultyLevel, Set<Operation>) -> Void)?
+    var onStartDailyChallenge: (() -> Void)?
 
     var body: some View {
         VStack(spacing: 24) {
@@ -25,7 +26,11 @@ struct HomeView: View {
 
             statsCards
 
+            dailyChallengeCard
+
             difficultyPicker
+
+            operationPicker
 
             playButton
 
@@ -110,9 +115,74 @@ struct HomeView: View {
         }
     }
 
+    private var dailyChallengeCard: some View {
+        Button {
+            onStartDailyChallenge?()
+        } label: {
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack(spacing: 6) {
+                        Image(systemName: "calendar.badge.clock")
+                            .foregroundStyle(.blue)
+                        Text("Daily Challenge")
+                            .font(.system(size: 16, weight: .bold, design: .rounded))
+                    }
+                    if viewModel.dailyChallengeCompleted {
+                        Text("Completed! Best: \(viewModel.dailyChallengeBestTime)s")
+                            .font(.caption)
+                            .foregroundStyle(.green)
+                    } else {
+                        Text("10 problems - beat your best time!")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                Spacer()
+                if viewModel.dailyChallengeCompleted {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.title2)
+                        .foregroundStyle(.green)
+                } else {
+                    Image(systemName: "chevron.right.circle.fill")
+                        .font(.title2)
+                        .foregroundStyle(.blue)
+                }
+            }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(viewModel.dailyChallengeCompleted ? Color.green.opacity(0.1) : Color.blue.opacity(0.1))
+            )
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("dailyChallengeCard")
+        .padding(.horizontal)
+    }
+
+    private var operationPicker: some View {
+        VStack(spacing: 8) {
+            Text("Operations")
+                .font(.headline)
+
+            HStack(spacing: 10) {
+                ForEach(Operation.allCases, id: \.self) { op in
+                    OperationChip(
+                        operation: op,
+                        isSelected: viewModel.selectedOperations.contains(op)
+                    ) {
+                        withAnimation(.spring(duration: 0.3)) {
+                            viewModel.toggleOperation(op)
+                        }
+                    }
+                    .accessibilityIdentifier("operation_\(op.rawValue)")
+                }
+            }
+        }
+    }
+
     private var playButton: some View {
         Button {
-            onStartGame(viewModel.selectedDifficulty)
+            onStartGame(viewModel.selectedDifficulty, viewModel.selectedOperations)
         } label: {
             Text("PLAY!")
                 .font(.system(size: 28, weight: .bold, design: .rounded))
@@ -137,7 +207,7 @@ struct HomeView: View {
 
     private var practiceButton: some View {
         Button {
-            onStartPractice?(viewModel.selectedDifficulty)
+            onStartPractice?(viewModel.selectedDifficulty, viewModel.selectedOperations)
         } label: {
             Text("PRACTICE")
                 .font(.system(size: 22, weight: .bold, design: .rounded))
@@ -222,5 +292,29 @@ struct DifficultyButton: View {
         case .medium: .orange
         case .hard: .red
         }
+    }
+}
+
+struct OperationChip: View {
+    let operation: Operation
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(operation.rawValue)
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .frame(width: 52, height: 44)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(isSelected ? Color.purple.opacity(0.2) : Color.clear)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(isSelected ? Color.purple : .gray.opacity(0.3), lineWidth: 2)
+                        )
+                )
+                .foregroundStyle(isSelected ? .purple : .gray)
+        }
+        .buttonStyle(.plain)
     }
 }

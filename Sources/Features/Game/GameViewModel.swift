@@ -4,6 +4,7 @@ import Observation
 enum GameMode: Sendable {
     case timed
     case practice
+    case dailyChallenge
 }
 
 @Observable
@@ -17,6 +18,11 @@ final class GameViewModel {
     var showCountdown: Bool
     var celebrationIntensity: CelebrationIntensity = .normal
     var scorePopups: [ScorePopup] = []
+    var characterMood: CharacterMood = .neutral
+    var elapsedSeconds: Int = 0
+    private var elapsedTimer: Timer?
+    private(set) var dailyChallengeProblemsTotal: Int = 10
+    private(set) var dailyChallengeProblemsAnswered: Int = 0
 
     enum CelebrationIntensity {
         case normal
@@ -24,10 +30,23 @@ final class GameViewModel {
         case huge
     }
 
-    init(difficulty: DifficultyLevel, mode: GameMode = .timed) {
-        self.engine = GameEngine(difficulty: difficulty)
+    enum CharacterMood {
+        case neutral
+        case happy
+        case excited
+        case sad
+    }
+
+    init(difficulty: DifficultyLevel, mode: GameMode = .timed, allowedOperations: Set<Operation>? = nil) {
+        self.engine = GameEngine(difficulty: difficulty, allowedOperations: allowedOperations)
         self.mode = mode
-        self.showCountdown = mode == .timed
+        self.showCountdown = (mode == .timed)
+    }
+
+    var isDailyChallenge: Bool { mode == .dailyChallenge }
+
+    var dailyChallengeProgress: String {
+        "\(dailyChallengeProblemsAnswered)/\(dailyChallengeProblemsTotal)"
     }
 
     var problemText: String { engine.currentProblem.displayText }
@@ -42,6 +61,13 @@ final class GameViewModel {
     func startGame() {
         if mode == .timed {
             engine.startGame()
+        } else if mode == .dailyChallenge {
+            // Count up timer for daily challenge
+            elapsedTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+                Task { @MainActor in
+                    self?.elapsedSeconds += 1
+                }
+            }
         }
         // Practice mode: no timer started
     }
@@ -66,9 +92,11 @@ final class GameViewModel {
 
             if let milestone = engine.streakMilestone {
                 celebrationIntensity = milestone >= 15 ? .huge : .big
+                characterMood = .excited
                 HapticService.streakMilestone()
             } else {
                 celebrationIntensity = .normal
+                characterMood = engine.currentStreak >= 3 ? .excited : .happy
             }
 
             if pointsEarned > 0 {
@@ -76,16 +104,26 @@ final class GameViewModel {
             }
         } else {
             showShake = true
+            characterMood = .sad
             HapticService.wrongAnswer()
             SoundService.playWrong()
         }
 
         answerText = ""
 
+        if mode == .dailyChallenge {
+            dailyChallengeProblemsAnswered += 1
+            if dailyChallengeProblemsAnswered >= dailyChallengeProblemsTotal {
+                endDailyChallenge()
+                return
+            }
+        }
+
         Task {
             try? await Task.sleep(for: .milliseconds(600))
             showCelebration = false
             showShake = false
+            characterMood = .neutral
         }
     }
 
@@ -116,7 +154,16 @@ final class GameViewModel {
         engine.stopGame()
     }
 
+    func endDailyChallenge() {
+        elapsedTimer?.invalidate()
+        elapsedTimer = nil
+        SoundService.playGameOver()
+        engine.stopGame()
+    }
+
     func stopGame() {
+        elapsedTimer?.invalidate()
+        elapsedTimer = nil
         SoundService.playGameOver()
         engine.stopGame()
     }
