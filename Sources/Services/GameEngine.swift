@@ -97,6 +97,20 @@ final class GameEngine {
         consecutiveWrong = 0
     }
 
+    func pauseTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+
+    func resumeTimer() {
+        guard !session.isFinished else { return }
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            Task { @MainActor in
+                self?.tick()
+            }
+        }
+    }
+
     func skipToNextProblem() {
         currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
     }

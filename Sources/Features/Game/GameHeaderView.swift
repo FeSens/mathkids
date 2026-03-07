@@ -90,6 +90,15 @@ struct GameHeaderView: View {
                             timerPulse = newValue <= 10
                         }
                         .accessibilityIdentifier("timerLabel")
+
+                    Button {
+                        viewModel.togglePause()
+                    } label: {
+                        Image(systemName: viewModel.isPaused ? "play.fill" : "pause.fill")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundStyle(.secondary)
+                    }
+                    .accessibilityIdentifier("pauseButton")
                 }
             }
 

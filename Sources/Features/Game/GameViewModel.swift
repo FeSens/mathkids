@@ -25,6 +25,7 @@ final class GameViewModel {
     var correctAnswerHint: Int? = nil
     var showSpeedBonus: Bool = false
     var problemNumber: Int = 1
+    var isPaused: Bool = false
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10
@@ -174,6 +175,16 @@ final class GameViewModel {
         if !answerText.isEmpty {
             HapticService.buttonTap()
             answerText.removeLast()
+        }
+    }
+
+    func togglePause() {
+        guard mode == .timed else { return }
+        isPaused.toggle()
+        if isPaused {
+            engine.pauseTimer()
+        } else {
+            engine.resumeTimer()
         }
     }
 

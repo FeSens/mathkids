@@ -1232,6 +1232,86 @@
         "Sources/Services/SoundService.swift",
         "Sources/Features/Game/GameViewModel.swift"
       ]
+    },
+    {
+      "id": "ui-052",
+      "description": "Extract HomeView sub-components into separate files to reduce file size under 300 lines",
+      "phase": "improvement",
+      "category": "refactor",
+      "depends_on": [
+        "ui-001"
+      ],
+      "passes": true,
+      "test_steps": [
+        "HomeView.swift is under 300 lines",
+        "StatCard, DifficultyButton, OperationChip extracted to HomeComponents.swift",
+        "All existing UI tests still pass",
+        "Build succeeds with no errors"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-053",
+      "description": "Animated difficulty transition on home screen when switching between easy/medium/hard",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Switching difficulty animates the stat cards and operation chips",
+        "Background gradient transitions smoothly",
+        "Description text updates with animation",
+        "Animation is smooth and kid-friendly"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift"
+      ]
+    },
+    {
+      "id": "ui-054",
+      "description": "Game pause functionality allowing players to pause timed games",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Pause button visible in timed mode header",
+        "Tapping pause stops the timer",
+        "Resume button replaces pause button",
+        "Problem is hidden while paused to prevent cheating"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift",
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-055",
+      "description": "Reset stats confirmation dialog to prevent accidental data loss",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-009"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Settings screen has a 'Reset Stats' button",
+        "Tapping it shows a confirmation dialog",
+        "Confirming resets all player stats",
+        "Canceling keeps stats intact"
+      ],
+      "files": [
+        "Sources/Features/Home/SettingsView.swift",
+        "Sources/Services/StatsService.swift"
+      ]
     }
   ],
   "_schema": {

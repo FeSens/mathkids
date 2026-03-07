@@ -38,6 +38,7 @@
 		8CB311D41F99BBDF6C753439 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA263C1009CCDB50B3EA5BE /* SoundService.swift */; };
 		8EAF3C36CE9CE56D65EB06A5 /* GameSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C03229BF2CCCFC4C1BA8294 /* GameSessionTests.swift */; };
 		908EE0D63E164C25E6C81060 /* MathProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60A09BB43C507382AB7C0D /* MathProblem.swift */; };
+		939BA0173A536BA563681CB6 /* HomeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9981DC75BC7CE2E43C6149 /* HomeComponents.swift */; };
 		94DB8668BA0973A3D362BECA /* GameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE78DDE45C710EC8332782BC /* GameHeaderView.swift */; };
 		9DD2656282F7E208DEE47D9B /* MathKidsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7209CD1DB820BDAAEBB9CFE5 /* MathKidsApp.swift */; };
 		A926CB080A0E3ABF16930CD4 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0771C6BE480745C037A7D57 /* SettingsManager.swift */; };
@@ -96,6 +97,7 @@
 		3F99D22DB5C7E150990E3EAD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3FA9143B2211A44256A840D5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4268B9A4B095A3338E8F1059 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		4A9981DC75BC7CE2E43C6149 /* HomeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponents.swift; sourceTree = "<group>"; };
 		4B0908AEDE395D6C0FB5526F /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelTests.swift; sourceTree = "<group>"; };
 		4C021E83262D3617792D287F /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
 		4E347616EBC6E0C14778115F /* SoundServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundServiceTests.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				A0BB279A3D7DAF208804D4F9 /* AnimatedGradientBackground.swift */,
+				4A9981DC75BC7CE2E43C6149 /* HomeComponents.swift */,
 				3F99D22DB5C7E150990E3EAD /* HomeView.swift */,
 				047BADB99680064F99C105B1 /* HomeViewModel.swift */,
 				90216EA8563B11F2EC05D478 /* OnboardingView.swift */,
@@ -445,6 +448,7 @@
 				CF87700C658B4CC7D1AD3E24 /* GameView.swift in Sources */,
 				F1E7B7634C275CA56F78358D /* GameViewModel.swift in Sources */,
 				4D522B903AC628A4FA761EC0 /* HapticService.swift in Sources */,
+				939BA0173A536BA563681CB6 /* HomeComponents.swift in Sources */,
 				38933B53403070AA7462252A /* HomeView.swift in Sources */,
 				487C5AB4A01BDD59CBB3895E /* HomeViewModel.swift in Sources */,
 				8925028C8AAC7CEFB165C56E /* LevelSystem.swift in Sources */,

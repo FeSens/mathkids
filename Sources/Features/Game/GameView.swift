@@ -14,11 +14,18 @@ struct GameView: View {
 
                 CharacterView(mood: viewModel.characterMood)
 
-                ZStack {
-                    problemDisplay
+                if viewModel.isPaused {
+                    Text("PAUSED")
+                        .font(.system(size: 36, weight: .bold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                        .accessibilityIdentifier("pausedLabel")
+                } else {
+                    ZStack {
+                        problemDisplay
 
-                    ForEach(viewModel.scorePopups) { popup in
-                        ScorePopupView(popup: popup)
+                        ForEach(viewModel.scorePopups) { popup in
+                            ScorePopupView(popup: popup)
+                        }
                     }
                 }
 

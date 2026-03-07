@@ -2,7 +2,7 @@
   "status": "passed",
   "date": "2026-03-07",
   "test_results": {
-    "unit_tests": "107 passed, 0 failed",
+    "unit_tests": "110 passed, 0 failed",
     "ui_tests": "12 passed, 0 failed",
     "qa_screenshots": "12 passed, 0 failed"
   },
@@ -20,5 +20,5 @@
     "QA-011: Operation selector chips",
     "QA-012: Character reactions to answers"
   ],
-  "notes": "61/61 features passing. All tests green."
+  "notes": "65/65 features passing. All tests green."
 }

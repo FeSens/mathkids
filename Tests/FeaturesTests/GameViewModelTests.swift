@@ -359,4 +359,30 @@ struct GameViewModelTests {
         vm.skipProblem()
         #expect(vm.problemNumber == firstNumber)
     }
+
+    @Test("Pause starts as false")
+    @MainActor
+    func pauseStartsFalse() {
+        let vm = GameViewModel(difficulty: .easy)
+        #expect(vm.isPaused == false)
+    }
+
+    @Test("Toggle pause in timed mode")
+    @MainActor
+    func togglePauseInTimed() {
+        let vm = GameViewModel(difficulty: .easy, mode: .timed)
+        vm.countdownFinished()
+        vm.togglePause()
+        #expect(vm.isPaused == true)
+        vm.togglePause()
+        #expect(vm.isPaused == false)
+    }
+
+    @Test("Toggle pause does nothing in practice mode")
+    @MainActor
+    func togglePauseNotInPractice() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        vm.togglePause()
+        #expect(vm.isPaused == false)
+    }
 }

@@ -30,4 +30,16 @@ final class StatsService {
         stats.updateStreak()
         try? modelContainer.mainContext.save()
     }
+
+    func resetStats() {
+        let context = modelContainer.mainContext
+        let descriptor = FetchDescriptor<PlayerStats>()
+        if let existing = try? context.fetch(descriptor) {
+            for stat in existing {
+                context.delete(stat)
+            }
+        }
+        context.insert(PlayerStats())
+        try? context.save()
+    }
 }
