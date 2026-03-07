@@ -21,6 +21,7 @@ struct GameHeaderView: View {
                         }
                     }
                     .accessibilityIdentifier("scoreLabel")
+                    .accessibilityLabel("Score: \(viewModel.score) points")
 
                 Text("#\(viewModel.problemNumber)")
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
@@ -47,6 +48,7 @@ struct GameHeaderView: View {
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                             .foregroundStyle(.orange)
                             .accessibilityIdentifier("streakLabel")
+                            .accessibilityLabel("Streak: \(viewModel.currentStreak) correct in a row")
 
                         ForEach(0..<streakFlameCount, id: \.self) { i in
                             Text("🔥")
@@ -90,6 +92,7 @@ struct GameHeaderView: View {
                             timerPulse = newValue <= 10
                         }
                         .accessibilityIdentifier("timerLabel")
+                        .accessibilityLabel("\(viewModel.timeRemaining) seconds remaining")
 
                     Button {
                         viewModel.togglePause()

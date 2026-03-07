@@ -15,6 +15,7 @@ final class GameEngine {
     private(set) var adaptiveRange: ClosedRange<Int>?
     private var consecutiveCorrect: Int = 0
     private var consecutiveWrong: Int = 0
+    private(set) var problemHistory: [AnsweredProblem] = []
 
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
@@ -45,6 +46,12 @@ final class GameEngine {
     }
 
     func submitAnswer(_ answer: Int) {
+        let answered = AnsweredProblem(problem: currentProblem, userAnswer: answer)
+        problemHistory.append(answered)
+        if problemHistory.count > 5 {
+            problemHistory.removeFirst()
+        }
+
         let correct = currentProblem.isCorrect(answer: answer)
         let speedBonus = session.timeRemaining > session.difficulty.timeLimitSeconds / 2 ? 5 : 0
         session.recordAnswer(correct: correct, bonusPoints: correct ? speedBonus : 0)

@@ -12,8 +12,10 @@ final class ResultsViewModel {
     let previousLevel: Int
     let newLevel: Int
     var didLevelUp: Bool { newLevel > previousLevel }
+    let problemHistory: [AnsweredProblem]
 
-    init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil) {
+    init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil, problemHistory: [AnsweredProblem] = []) {
+        self.problemHistory = problemHistory
         self.session = session
         self.isNewBestScore = session.score > previousBestScore
 
@@ -51,6 +53,18 @@ final class ResultsViewModel {
 
     var bonusPoints: Int {
         session.score - basePoints
+    }
+
+    var encouragementMessage: String {
+        if accuracy >= 90 {
+            return ["You're a math superstar!", "Incredible performance!", "Math genius level!"].randomElement()!
+        } else if accuracy >= 70 {
+            return ["Great work, keep it up!", "You're getting stronger!", "Almost perfect!"].randomElement()!
+        } else if accuracy >= 50 {
+            return ["Good effort!", "Practice makes perfect!", "You're improving!"].randomElement()!
+        } else {
+            return ["Don't give up!", "Every try makes you better!", "You'll get there!"].randomElement()!
+        }
     }
 
     var funFact: String {

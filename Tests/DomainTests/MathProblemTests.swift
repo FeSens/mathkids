@@ -44,4 +44,12 @@ struct MathProblemTests {
         let problem = MathProblem(operand1: 12, operand2: 3, operation: .multiply)
         #expect(problem.displayText == "12 x 3")
     }
+
+    @Test("Operation accessibilityName returns readable names")
+    func operationAccessibilityNames() {
+        #expect(Operation.add.accessibilityName == "plus")
+        #expect(Operation.subtract.accessibilityName == "minus")
+        #expect(Operation.multiply.accessibilityName == "times")
+        #expect(Operation.divide.accessibilityName == "divided by")
+    }
 }

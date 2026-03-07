@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GameView: View {
     @State var viewModel: GameViewModel
-    var onGameEnd: (GameSession) -> Void
+    var onGameEnd: (GameSession, [AnsweredProblem]) -> Void
     @State private var timerPulse: Bool = false
 
     var body: some View {
@@ -89,7 +89,7 @@ struct GameView: View {
         }
         .onChange(of: viewModel.isGameOver) { _, isOver in
             if isOver {
-                onGameEnd(viewModel.session)
+                onGameEnd(viewModel.session, viewModel.lastProblemHistory)
             }
         }
     }
@@ -108,6 +108,7 @@ struct GameView: View {
                 ))
                 .animation(.spring(duration: 0.3), value: viewModel.problemTransitionId)
                 .accessibilityIdentifier("problemLabel")
+                .accessibilityLabel("\(viewModel.engine.currentProblem.operand1) \(viewModel.engine.currentProblem.operation.accessibilityName) \(viewModel.engine.currentProblem.operand2)")
 
             Circle()
                 .fill(problemDifficultyColor)
@@ -190,16 +191,19 @@ struct GameView: View {
                     viewModel.toggleNegative()
                 }
                 .accessibilityIdentifier("num_negative")
+                .accessibilityLabel("Toggle negative")
 
                 NumberButton(label: "0") {
                     viewModel.appendDigit(0)
                 }
                 .accessibilityIdentifier("num_0")
+                .accessibilityLabel("Zero")
 
                 NumberButton(label: "⌫", color: .gray) {
                     viewModel.deleteDigit()
                 }
                 .accessibilityIdentifier("num_delete")
+                .accessibilityLabel("Delete")
             }
 
             Button {

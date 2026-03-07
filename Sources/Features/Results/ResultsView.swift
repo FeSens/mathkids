@@ -55,6 +55,41 @@ struct ResultsView: View {
                     .opacity(showXP ? 1 : 0)
                     .offset(y: showXP ? 0 : 20)
 
+                if !viewModel.problemHistory.isEmpty {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Recent Problems")
+                            .font(.system(size: 14, weight: .bold, design: .rounded))
+                            .foregroundStyle(.secondary)
+
+                        ForEach(viewModel.problemHistory) { entry in
+                            HStack {
+                                Text(entry.problem.displayText)
+                                    .font(.system(size: 14, design: .rounded))
+                                Spacer()
+                                Text("= \(entry.userAnswer)")
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                                    .foregroundStyle(entry.isCorrect ? .green : .red)
+                                Image(systemName: entry.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
+                                    .font(.system(size: 12))
+                                    .foregroundStyle(entry.isCorrect ? .green : .red)
+                            }
+                        }
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(.systemGray6))
+                    )
+                    .opacity(showXP ? 1 : 0)
+                    .accessibilityIdentifier("problemHistory")
+                }
+
+                Text(viewModel.encouragementMessage)
+                    .font(.system(size: 16, weight: .semibold, design: .rounded))
+                    .foregroundStyle(.blue)
+                    .opacity(showXP ? 1 : 0)
+                    .accessibilityIdentifier("encouragementMessage")
+
                 Text(viewModel.funFact)
                     .font(.system(size: 14, weight: .medium, design: .rounded))
                     .foregroundStyle(.secondary)

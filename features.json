@@ -1312,6 +1312,69 @@
         "Sources/Features/Home/SettingsView.swift",
         "Sources/Services/StatsService.swift"
       ]
+    },
+    {
+      "id": "ui-056",
+      "description": "End-of-game encouragement messages that vary based on performance tier",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-005"
+      ],
+      "passes": true,
+      "test_steps": [
+        "ResultsViewModel has encouragementMessage computed property",
+        "High accuracy (90%+) gets enthusiastic message",
+        "Medium accuracy (50-89%) gets supportive message",
+        "Low accuracy (<50%) gets motivating message",
+        "Message displayed on results screen"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-057",
+      "description": "Problem history review showing last 5 problems with answers on results screen",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-005"
+      ],
+      "passes": true,
+      "test_steps": [
+        "GameEngine stores last 5 answered problems with user answers",
+        "Results screen shows problem history section",
+        "Each entry shows problem, user answer, and correct/wrong indicator",
+        "Scrollable if more than fits on screen"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift",
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-058",
+      "description": "Accessibility improvements with Dynamic Type support and VoiceOver labels",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001",
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Problem display uses accessibilityLabel with full equation read aloud",
+        "Score and streak have descriptive accessibilityLabels",
+        "Number pad buttons have accessibilityLabels",
+        "Timer has accessibilityLabel with remaining time"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
     }
   ],
   "_schema": {

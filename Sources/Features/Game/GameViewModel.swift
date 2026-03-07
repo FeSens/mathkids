@@ -26,6 +26,7 @@ final class GameViewModel {
     var showSpeedBonus: Bool = false
     var problemNumber: Int = 1
     var isPaused: Bool = false
+    var lastProblemHistory: [AnsweredProblem] { engine.problemHistory }
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10

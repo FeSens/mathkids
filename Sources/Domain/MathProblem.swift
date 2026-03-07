@@ -5,6 +5,15 @@ enum Operation: String, CaseIterable, Codable, Sendable {
     case subtract = "-"
     case multiply = "x"
     case divide = "/"
+
+    var accessibilityName: String {
+        switch self {
+        case .add: "plus"
+        case .subtract: "minus"
+        case .multiply: "times"
+        case .divide: "divided by"
+        }
+    }
 }
 
 struct MathProblem: Equatable, Sendable {
@@ -33,6 +42,10 @@ struct MathProblem: Equatable, Sendable {
         case easy, moderate, hard
     }
 
+    var displayTextWithAnswer: String {
+        "\(displayText) = \(correctAnswer)"
+    }
+
     var problemDifficulty: ProblemDifficulty {
         let maxOperand = max(abs(operand1), abs(operand2))
         switch operation {
@@ -50,4 +63,11 @@ struct MathProblem: Equatable, Sendable {
             return .hard
         }
     }
+}
+
+struct AnsweredProblem: Identifiable, Sendable {
+    let id = UUID()
+    let problem: MathProblem
+    let userAnswer: Int
+    var isCorrect: Bool { problem.isCorrect(answer: userAnswer) }
 }
