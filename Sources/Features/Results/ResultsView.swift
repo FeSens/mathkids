@@ -22,6 +22,31 @@ struct ResultsView: View {
                 scoreSection
                     .opacity(showHeader ? 1 : 0)
 
+                if viewModel.bonusPoints > 0 {
+                    HStack(spacing: 16) {
+                        VStack(spacing: 2) {
+                            Text("\(viewModel.basePoints)")
+                                .font(.system(size: 16, weight: .bold, design: .rounded))
+                            Text("Base")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                        Text("+")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundStyle(.secondary)
+                        VStack(spacing: 2) {
+                            Text("\(viewModel.bonusPoints)")
+                                .font(.system(size: 16, weight: .bold, design: .rounded))
+                                .foregroundStyle(.cyan)
+                            Text("Bonus")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .opacity(showStats ? 1 : 0)
+                    .accessibilityIdentifier("scoreBreakdown")
+                }
+
                 statsGrid
                     .opacity(showStats ? 1 : 0)
                     .offset(y: showStats ? 0 : 20)

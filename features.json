@@ -994,6 +994,45 @@
         "Sources/Features/Stats/StatsView.swift",
         "Sources/Features/Stats/StatsViewModel.swift"
       ]
+    },
+    {
+      "id": "ui-040",
+      "description": "Score multiplier display in results screen showing bonus points breakdown",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-005"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Results screen shows base points and bonus breakdown",
+        "Speed bonus points shown separately",
+        "Streak bonus points shown separately",
+        "Total clearly displayed"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-041",
+      "description": "Animated number pad buttons with ripple effect on tap",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Number buttons have visual feedback beyond bounce",
+        "Button background briefly highlights on tap",
+        "Effect is subtle and kid-friendly",
+        "Works on all number pad buttons"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
     }
   ],
   "_schema": {

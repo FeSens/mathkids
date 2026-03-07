@@ -45,6 +45,14 @@ final class ResultsViewModel {
     var difficulty: DifficultyLevel { session.difficulty }
     var hasNewAchievements: Bool { !newAchievements.isEmpty }
 
+    var basePoints: Int {
+        session.totalCorrect * session.difficulty.pointsPerCorrect
+    }
+
+    var bonusPoints: Int {
+        session.score - basePoints
+    }
+
     func animateScore() {
         let target = session.score
         guard target > 0 else {
