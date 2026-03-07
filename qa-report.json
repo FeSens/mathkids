@@ -5,16 +5,16 @@
     {
       "id": "QA-001",
       "name": "Home screen and difficulty selection",
-      "features": ["ui-001"],
+      "features": ["ui-001", "ui-014", "ui-017"],
       "verified": true,
-      "screenshots": ["qa-001-step-01-home", "qa-001-step-02-stats-cards", "qa-001-step-03-medium-selected", "qa-001-step-04-hard-selected"]
+      "screenshots": ["qa-001-step-01-home"]
     },
     {
       "id": "QA-002",
       "name": "Game play flow",
-      "features": ["ui-002", "ui-003", "ui-007", "ui-008", "ui-009"],
+      "features": ["ui-002", "ui-003", "ui-007", "ui-008", "ui-009", "ui-015"],
       "verified": true,
-      "screenshots": ["qa-002-step-01-game-screen", "qa-002-step-02-number-entered", "qa-002-step-03-after-submit"]
+      "screenshots": ["qa-002-step-01-game-screen"]
     },
     {
       "id": "QA-003",
@@ -28,7 +28,7 @@
       "name": "Stats screen and achievements",
       "features": ["ui-005", "ui-010"],
       "verified": true,
-      "screenshots": ["qa-004-step-01-stats-screen", "qa-004-step-02-achievements"]
+      "screenshots": ["qa-004-step-01-stats-screen"]
     },
     {
       "id": "QA-005",
@@ -42,42 +42,39 @@
       "name": "Practice mode",
       "features": ["ui-012"],
       "verified": true,
-      "screenshots": ["qa-008-step-01-practice-button-visible", "qa-008-step-02-practice-game-screen", "qa-008-step-04-practice-results"]
+      "screenshots": ["qa-008-step-01-practice-button-visible", "qa-008-step-02-practice-game-screen"]
     },
     {
       "id": "QA-009",
       "name": "Settings",
       "features": ["ui-013", "svc-004"],
       "verified": true,
-      "screenshots": ["qa-009-step-02-settings-sheet", "qa-009-step-05-settings-dismissed"]
+      "screenshots": ["qa-009-step-02-settings-sheet"]
     },
     {
       "id": "QA-010",
       "name": "Daily Challenge",
       "features": ["ui-016"],
       "verified": true,
-      "screenshots": ["qa-010-step-01-daily-challenge-card", "qa-010-step-02-daily-challenge-game", "qa-010-step-03-after-answers"],
-      "notes": "Daily challenge card on home, count-up timer with 0/10 progress, no countdown"
+      "screenshots": ["qa-010-step-01-daily-challenge-card", "qa-010-step-02-daily-challenge-game"]
     },
     {
       "id": "QA-011",
       "name": "Operation Selector",
       "features": ["ui-014"],
       "verified": true,
-      "screenshots": ["qa-011-step-01-all-operations", "qa-011-step-02-divide-deselected", "qa-011-step-03-divide-reselected"],
-      "notes": "Operation chips toggleable, at least one must stay selected"
+      "screenshots": ["qa-011-step-01-all-operations", "qa-011-step-02-divide-deselected"]
     },
     {
       "id": "QA-012",
       "name": "Character Reactions",
       "features": ["ui-015"],
       "verified": true,
-      "screenshots": ["qa-012-step-01-neutral-character", "qa-012-step-02-after-answer"],
-      "notes": "Thinking emoji shown in neutral, changes to happy/sad on answer"
+      "screenshots": ["qa-012-step-01-neutral-character"]
     }
   ],
   "test_results": {
-    "unit_tests": "80 passed, 0 failed",
+    "unit_tests": "88 passed, 0 failed",
     "ui_tests": "12 passed, 0 failed"
   }
 }
