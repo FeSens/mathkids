@@ -3,21 +3,19 @@
 ## Session 2 — 2026-03-07
 
 ### Status
-- Features: 29/29 passing (12 MVP + 9 polish + 8 improvement)
+- Features: 33/33 passing (12 MVP + 9 polish + 12 improvement)
 - Unit tests: 88 (all green)
 - UI tests: 12 (all green)
 - QA: PASSED
 
-### Features
+### All Features
+**MVP:** MathProblem, DifficultyLevel, GameSession, PlayerStats, ProblemGenerator, GameEngine, StatsService, HomeView, GameView, Celebrations/Shake, ResultsView, StatsView, Navigation
 
-**MVP (12):** MathProblem, DifficultyLevel, GameSession, PlayerStats, ProblemGenerator, GameEngine, StatsService, HomeView, GameView, CelebrationView/ShakeEffect, ResultsView, StatsView, Navigation
+**Polish:** HapticService, CountdownView, ScorePopup, Achievements, AchievementsView, AchievementToast, SoundService, Practice mode, Settings
 
-**Polish (9):** HapticService, CountdownView, ScorePopupView, Achievement model, AchievementsView, AchievementToast, SoundService, Practice mode, Settings
-
-**Improvement (8):** Operation selector, Character reactions, Daily challenge, XP/Level system, Level badge + XP bar, Animated background gradient, XP on results, (one counted as part of core-006/ui-017)
+**Improvement:** Operation selector, Character reactions, Daily challenge, XP/Level system, Level badge, Animated background, XP results display, Button bounce, Streak fire trail, Problem difficulty dots, Motivational messages
 
 ### Architecture
-- XcodeGen (project.yml), @Observable, SwiftData, Swift Testing, NavigationStack
-- Simulator: iPhone 16 Pro (id=269258A7-07B4-4198-AA3C-9FDDAA128E90)
-- GPG signing may fail — use `git -c commit.gpgsign=false commit`
-- Home screen uses ScrollView + ZStack with animated gradient background
+- XcodeGen, @Observable, SwiftData, Swift Testing, NavigationStack
+- Simulator: iPhone 16 Pro (269258A7)
+- GPG signing: use `git -c commit.gpgsign=false commit`
