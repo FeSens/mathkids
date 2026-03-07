@@ -216,6 +216,17 @@ struct GameView: View {
             }
             .accessibilityIdentifier("submitButton")
             .buttonStyle(BounceButtonStyle())
+
+            if viewModel.isPracticeMode {
+                Button {
+                    viewModel.skipProblem()
+                } label: {
+                    Text("Skip")
+                        .font(.system(size: 18, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                }
+                .accessibilityIdentifier("skipButton")
+            }
         }
     }
 }

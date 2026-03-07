@@ -1171,6 +1171,67 @@
         "Sources/Features/Stats/StatsViewModel.swift",
         "Sources/Domain/PlayerStats.swift"
       ]
+    },
+    {
+      "id": "ui-049",
+      "description": "Skip problem button in practice mode to skip difficult problems",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Skip button visible only in practice mode",
+        "Tapping skip advances to next problem",
+        "Answer text is cleared on skip",
+        "Problem number increments on skip"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-050",
+      "description": "Stats screen shows time played total across all sessions",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-006"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Stats screen shows total time played in minutes",
+        "Time is accumulated from all game sessions",
+        "PlayerStats has totalTimePlayed property",
+        "Display formatted nicely (e.g. '15 min')"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift",
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-051",
+      "description": "Celebration sound effect that varies with celebration intensity",
+      "phase": "improvement",
+      "category": "logic",
+      "depends_on": [
+        "svc-004"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Normal celebration plays standard correct sound",
+        "Big celebration plays achievement-like sound",
+        "Huge celebration plays a distinct celebratory sound",
+        "SoundService has playCelebration method with intensity"
+      ],
+      "files": [
+        "Sources/Services/SoundService.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
     }
   ],
   "_schema": {

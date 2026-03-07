@@ -97,6 +97,10 @@ final class GameEngine {
         consecutiveWrong = 0
     }
 
+    func skipToNextProblem() {
+        currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
+    }
+
     func stopGame() {
         timer?.invalidate()
         timer = nil

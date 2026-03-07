@@ -339,4 +339,24 @@ struct GameViewModelTests {
         vm.clearAnswer()
         #expect(vm.answerText == "")
     }
+
+    @Test("Skip problem advances to next in practice mode")
+    @MainActor
+    func skipProblemInPractice() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        let firstProblem = vm.problemText
+        vm.appendDigit(5)
+        vm.skipProblem()
+        #expect(vm.answerText == "")
+        #expect(vm.problemNumber == 2)
+    }
+
+    @Test("Skip problem does nothing in timed mode")
+    @MainActor
+    func skipProblemNotInTimed() {
+        let vm = GameViewModel(difficulty: .easy, mode: .timed)
+        let firstNumber = vm.problemNumber
+        vm.skipProblem()
+        #expect(vm.problemNumber == firstNumber)
+    }
 }

@@ -21,6 +21,7 @@ final class PlayerStats {
     var subtractCount: Int = 0
     var multiplyCount: Int = 0
     var divideCount: Int = 0
+    var totalTimePlayedSeconds: Int = 0
 
     init() {}
 
@@ -90,6 +91,9 @@ final class PlayerStats {
         case .medium: mediumGamesPlayed += 1
         case .hard: hardGamesPlayed += 1
         }
+
+        let timePlayed = session.difficulty.timeLimitSeconds - session.timeRemaining
+        totalTimePlayedSeconds += max(timePlayed, 0)
 
         recentAccuracies.append(session.accuracy)
         if recentAccuracies.count > 10 {

@@ -19,6 +19,7 @@ final class StatsViewModel {
 
     var favoriteOperation: String?
     var favoriteOperationCount: Int = 0
+    var totalTimePlayedMinutes: Int = 0
 
     var gamesMilestone: String? {
         switch gamesPlayed {
@@ -50,6 +51,7 @@ final class StatsViewModel {
         mediumGames = stats.mediumGamesPlayed
         hardGames = stats.hardGamesPlayed
         recentAccuracies = stats.recentAccuracies
+        totalTimePlayedMinutes = stats.totalTimePlayedSeconds / 60
         if let fav = stats.favoriteOperation {
             favoriteOperation = fav.symbol
             favoriteOperationCount = fav.count

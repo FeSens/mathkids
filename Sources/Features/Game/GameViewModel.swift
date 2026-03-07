@@ -114,7 +114,6 @@ final class GameViewModel {
             showCelebration = true
             if hadSpeedBonus { showSpeedBonus = true }
             HapticService.correctAnswer()
-            SoundService.playCorrect()
 
             if let milestone = engine.streakMilestone {
                 celebrationIntensity = milestone >= 15 ? .huge : .big
@@ -124,6 +123,8 @@ final class GameViewModel {
                 celebrationIntensity = .normal
                 characterMood = engine.currentStreak >= 3 ? .excited : .happy
             }
+
+            SoundService.playCelebration(intensity: celebrationIntensity)
 
             if engine.currentStreak >= 2 {
                 motivationalMessage = Self.motivationalMessages.randomElement()
@@ -174,6 +175,15 @@ final class GameViewModel {
             HapticService.buttonTap()
             answerText.removeLast()
         }
+    }
+
+    func skipProblem() {
+        guard mode == .practice else { return }
+        HapticService.buttonTap()
+        answerText = ""
+        problemTransitionId = UUID()
+        problemNumber += 1
+        engine.skipToNextProblem()
     }
 
     func clearAnswer() {

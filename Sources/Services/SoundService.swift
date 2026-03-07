@@ -26,4 +26,17 @@ struct SoundService {
         guard SettingsManager.shared.soundEnabled else { return }
         AudioServicesPlaySystemSound(1026) // ascending positive
     }
+
+    static func playCelebration(intensity: GameViewModel.CelebrationIntensity) {
+        guard SettingsManager.shared.soundEnabled else { return }
+        switch intensity {
+        case .normal:
+            AudioServicesPlaySystemSound(1025) // standard correct
+        case .big:
+            AudioServicesPlaySystemSound(1026) // ascending positive
+        case .huge:
+            AudioServicesPlaySystemSound(1026) // ascending positive
+            AudioServicesPlaySystemSound(1025) // layered effect
+        }
+    }
 }
