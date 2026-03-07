@@ -383,7 +383,6 @@
         "Challenge resets daily, tracks best time in PlayerStats"
       ],
       "files": ["Sources/Features/Game/GameViewModel.swift", "Sources/Features/Home/HomeView.swift", "Sources/Domain/PlayerStats.swift"]
-    }
     },
     {
       "id": "core-006",
@@ -415,7 +414,6 @@
         "XP gained shown on results screen"
       ],
       "files": ["Sources/Features/Home/HomeView.swift", "Sources/Features/Results/ResultsView.swift"]
-    }
     },
     {
       "id": "ui-018",
@@ -446,7 +444,6 @@
         "XP progress bar shows before/after comparison"
       ],
       "files": ["Sources/Features/Results/ResultsView.swift", "Sources/Features/Results/ResultsViewModel.swift"]
-    }
     },
     {
       "id": "ui-020",
@@ -477,7 +474,6 @@
         "Resets when streak breaks"
       ],
       "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
-    }
     },
     {
       "id": "ui-022",
@@ -508,7 +504,6 @@
         "Only shows during streaks of 2+"
       ],
       "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
-    }
     },
     {
       "id": "ui-024",
