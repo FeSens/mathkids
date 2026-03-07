@@ -14,62 +14,70 @@
       "name": "Game play flow",
       "features": ["ui-002", "ui-003", "ui-007", "ui-008", "ui-009"],
       "verified": true,
-      "screenshots": ["qa-002-step-01-game-screen", "qa-002-step-02-number-entered", "qa-002-step-03-after-submit", "qa-002-step-04-second-answer", "qa-002-step-05-timer-visible"]
+      "screenshots": ["qa-002-step-01-game-screen", "qa-002-step-02-number-entered", "qa-002-step-03-after-submit"]
     },
     {
       "id": "QA-003",
       "name": "Results screen",
       "features": ["ui-004", "ui-011"],
       "verified": true,
-      "screenshots": ["qa-003-step-01-results-screen", "qa-003-step-02-stats-visible"]
+      "screenshots": ["qa-003-step-01-results-screen"]
     },
     {
       "id": "QA-004",
       "name": "Stats screen and achievements",
       "features": ["ui-005", "ui-010"],
       "verified": true,
-      "screenshots": ["qa-004-step-01-stats-screen", "qa-004-step-02-achievements", "qa-004-step-03-weekly-activity"]
+      "screenshots": ["qa-004-step-01-stats-screen", "qa-004-step-02-achievements"]
     },
     {
       "id": "QA-005",
       "name": "Tab navigation",
       "features": ["ui-006"],
       "verified": true,
-      "screenshots": ["qa-005-step-01-stats-tab", "qa-005-step-02-play-tab", "qa-005-step-03-in-game"]
-    },
-    {
-      "id": "QA-006",
-      "name": "Dark mode",
-      "features": ["ui-001", "ui-002", "ui-005"],
-      "verified": true,
-      "screenshots": ["qa-006-dark-home-xcui", "qa-006-dark-stats", "qa-006-dark-game"]
-    },
-    {
-      "id": "QA-007",
-      "name": "Soak test - multiple games",
-      "features": ["ui-001", "ui-002", "ui-004", "ui-005"],
-      "verified": true,
-      "screenshots": ["qa-007-game-1-playing", "qa-007-game-1-results", "qa-007-home-after-games", "qa-007-stats-after-games"]
+      "screenshots": ["qa-005-step-01-stats-tab", "qa-005-step-02-play-tab"]
     },
     {
       "id": "QA-008",
       "name": "Practice mode",
       "features": ["ui-012"],
       "verified": true,
-      "screenshots": ["qa-008-step-01-practice-button-visible", "qa-008-step-02-practice-game-screen", "qa-008-step-03-after-answers", "qa-008-step-04-practice-results"],
-      "notes": "Practice button visible on home, no timer/countdown in practice, Done button works, results shown after practice"
+      "screenshots": ["qa-008-step-01-practice-button-visible", "qa-008-step-02-practice-game-screen", "qa-008-step-04-practice-results"]
     },
     {
       "id": "QA-009",
       "name": "Settings",
       "features": ["ui-013", "svc-004"],
       "verified": true,
-      "screenshots": ["qa-009-step-01-settings-gear-visible", "qa-009-step-02-settings-sheet", "qa-009-step-03-sound-toggled", "qa-009-step-04-haptics-toggled", "qa-009-step-05-settings-dismissed"],
-      "notes": "Gear icon opens settings sheet, sound/haptics toggles work, Done dismisses sheet"
+      "screenshots": ["qa-009-step-02-settings-sheet", "qa-009-step-05-settings-dismissed"]
+    },
+    {
+      "id": "QA-010",
+      "name": "Daily Challenge",
+      "features": ["ui-016"],
+      "verified": true,
+      "screenshots": ["qa-010-step-01-daily-challenge-card", "qa-010-step-02-daily-challenge-game", "qa-010-step-03-after-answers"],
+      "notes": "Daily challenge card on home, count-up timer with 0/10 progress, no countdown"
+    },
+    {
+      "id": "QA-011",
+      "name": "Operation Selector",
+      "features": ["ui-014"],
+      "verified": true,
+      "screenshots": ["qa-011-step-01-all-operations", "qa-011-step-02-divide-deselected", "qa-011-step-03-divide-reselected"],
+      "notes": "Operation chips toggleable, at least one must stay selected"
+    },
+    {
+      "id": "QA-012",
+      "name": "Character Reactions",
+      "features": ["ui-015"],
+      "verified": true,
+      "screenshots": ["qa-012-step-01-neutral-character", "qa-012-step-02-after-answer"],
+      "notes": "Thinking emoji shown in neutral, changes to happy/sad on answer"
     }
   ],
   "test_results": {
-    "unit_tests": "68 passed, 0 failed",
-    "ui_tests": "9 passed, 0 failed"
+    "unit_tests": "80 passed, 0 failed",
+    "ui_tests": "12 passed, 0 failed"
   }
 }

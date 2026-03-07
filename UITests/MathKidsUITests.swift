@@ -126,6 +126,55 @@ final class MathKidsUITests: XCTestCase {
         XCTAssertTrue(finalScore.waitForExistence(timeout: 5))
     }
 
+    func testOperationSelector() {
+        // Verify operation chips exist
+        let addOp = app.buttons["operation_+"]
+        let subOp = app.buttons["operation_-"]
+        let mulOp = app.buttons["operation_x"]
+        let divOp = app.buttons["operation_/"]
+
+        XCTAssertTrue(addOp.waitForExistence(timeout: 3))
+        XCTAssertTrue(subOp.exists)
+        XCTAssertTrue(mulOp.exists)
+        XCTAssertTrue(divOp.exists)
+
+        // Toggle an operation off
+        divOp.tap()
+        // Toggle it back
+        divOp.tap()
+    }
+
+    func testDailyChallengeCard() {
+        let card = app.buttons["dailyChallengeCard"]
+        XCTAssertTrue(card.waitForExistence(timeout: 3))
+        card.tap()
+
+        // Should enter daily challenge game (no countdown)
+        let problemLabel = app.staticTexts["problemLabel"]
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 5))
+
+        // Elapsed timer should show
+        let elapsed = app.staticTexts["elapsedTimerLabel"]
+        XCTAssertTrue(elapsed.waitForExistence(timeout: 3))
+
+        // Progress label should show
+        let progress = app.staticTexts["dailyProgressLabel"]
+        XCTAssertTrue(progress.exists)
+    }
+
+    func testCharacterFace() {
+        // Start a game
+        app.buttons["playButton"].tap()
+
+        let countdown = app.otherElements["countdownOverlay"]
+        if countdown.waitForExistence(timeout: 2) {
+            _ = countdown.waitForNonExistence(timeout: 6)
+        }
+
+        let character = app.staticTexts["characterFace"]
+        XCTAssertTrue(character.waitForExistence(timeout: 5))
+    }
+
     func testSettingsSheet() {
         let settingsButton = app.buttons["settingsButton"]
         XCTAssertTrue(settingsButton.waitForExistence(timeout: 3))

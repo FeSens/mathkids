@@ -316,6 +316,63 @@ final class QAScreenshots: XCTestCase {
         }
     }
 
+    // MARK: - QA-010: Daily Challenge
+
+    func test_QA010_DailyChallenge() {
+        let card = app.buttons["dailyChallengeCard"]
+        XCTAssertTrue(card.waitForExistence(timeout: 5))
+        saveScreenshot("qa-010-step-01-daily-challenge-card")
+
+        card.tap()
+
+        let problemLabel = app.staticTexts["problemLabel"]
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 5))
+        saveScreenshot("qa-010-step-02-daily-challenge-game")
+
+        // Answer a few problems
+        for _ in 0..<3 {
+            app.buttons["num_5"].tap()
+            app.buttons["submitButton"].tap()
+            Thread.sleep(forTimeInterval: 0.5)
+        }
+        saveScreenshot("qa-010-step-03-after-answers")
+    }
+
+    // MARK: - QA-011: Operation Selector
+
+    func test_QA011_OperationSelector() {
+        saveScreenshot("qa-011-step-01-all-operations")
+
+        // Toggle divide off
+        let divOp = app.buttons["operation_/"]
+        XCTAssertTrue(divOp.waitForExistence(timeout: 5))
+        divOp.tap()
+        Thread.sleep(forTimeInterval: 0.5)
+        saveScreenshot("qa-011-step-02-divide-deselected")
+
+        // Toggle back
+        divOp.tap()
+        Thread.sleep(forTimeInterval: 0.5)
+        saveScreenshot("qa-011-step-03-divide-reselected")
+    }
+
+    // MARK: - QA-012: Character Reactions
+
+    func test_QA012_CharacterReactions() {
+        app.buttons["playButton"].tap()
+        waitForCountdown()
+
+        let character = app.staticTexts["characterFace"]
+        XCTAssertTrue(character.waitForExistence(timeout: 5))
+        saveScreenshot("qa-012-step-01-neutral-character")
+
+        // Submit an answer
+        app.buttons["num_1"].tap()
+        app.buttons["submitButton"].tap()
+        Thread.sleep(forTimeInterval: 0.3)
+        saveScreenshot("qa-012-step-02-after-answer")
+    }
+
     // MARK: - QA-006: Dark mode screenshots
 
     func test_QA006_DarkMode() {
