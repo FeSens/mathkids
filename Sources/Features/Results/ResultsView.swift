@@ -5,6 +5,10 @@ struct ResultsView: View {
     var onPlayAgain: () -> Void
     var onGoHome: () -> Void
     @State private var bestScalePulse: Bool = false
+    @State private var showHeader: Bool = false
+    @State private var showStats: Bool = false
+    @State private var showXP: Bool = false
+    @State private var showButtons: Bool = false
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -12,14 +16,23 @@ struct ResultsView: View {
                 Spacer()
 
                 headerSection
+                    .opacity(showHeader ? 1 : 0)
+                    .offset(y: showHeader ? 0 : 20)
 
                 scoreSection
+                    .opacity(showHeader ? 1 : 0)
 
                 statsGrid
+                    .opacity(showStats ? 1 : 0)
+                    .offset(y: showStats ? 0 : 20)
 
                 xpSection
+                    .opacity(showXP ? 1 : 0)
+                    .offset(y: showXP ? 0 : 20)
 
                 buttonsSection
+                    .opacity(showButtons ? 1 : 0)
+                    .offset(y: showButtons ? 0 : 20)
 
                 Spacer()
             }
@@ -34,6 +47,10 @@ struct ResultsView: View {
         }
         .onAppear {
             viewModel.animateScore()
+            withAnimation(.easeOut(duration: 0.4)) { showHeader = true }
+            withAnimation(.easeOut(duration: 0.4).delay(0.3)) { showStats = true }
+            withAnimation(.easeOut(duration: 0.4).delay(0.6)) { showXP = true }
+            withAnimation(.easeOut(duration: 0.4).delay(0.9)) { showButtons = true }
         }
     }
 

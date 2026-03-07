@@ -876,6 +876,65 @@
         "Sources/Features/Stats/StatsView.swift",
         "Sources/Domain/PlayerStats.swift"
       ]
+    },
+    {
+      "id": "ui-034",
+      "description": "Speed bonus indicator showing extra points earned for fast answers",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "When answering in first half of timer, speed bonus text appears",
+        "Speed bonus shows '+5 Speed Bonus' text",
+        "No speed bonus indicator when answering in second half",
+        "Indicator fades out after appearing"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-035",
+      "description": "Game over summary animation with sequential stat reveals",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-005"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Score animates counting up from 0",
+        "Stats appear with slight delays between them",
+        "XP section fades in after stats",
+        "Buttons appear last"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-036",
+      "description": "Difficulty level description on home screen showing what each level includes",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Each difficulty button shows a brief description",
+        "Easy shows number range and operations",
+        "Medium shows its range and operations",
+        "Hard shows its range and operations"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift"
+      ]
     }
   ],
   "_schema": {

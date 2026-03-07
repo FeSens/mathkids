@@ -22,6 +22,14 @@ struct GameView: View {
                     }
                 }
 
+                if viewModel.showSpeedBonus {
+                    Text("+5 Speed Bonus!")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundStyle(.cyan)
+                        .transition(.scale.combined(with: .opacity))
+                        .accessibilityIdentifier("speedBonusLabel")
+                }
+
                 if let hint = viewModel.correctAnswerHint {
                     Text("Answer: \(hint)")
                         .font(.system(size: 20, weight: .bold, design: .rounded))

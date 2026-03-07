@@ -340,6 +340,10 @@ struct DifficultyButton: View {
                     .font(.title2)
                 Text(level.displayName)
                     .font(.subheadline.bold())
+                Text(level.briefDescription)
+                    .font(.system(size: 10))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)

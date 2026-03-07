@@ -23,6 +23,7 @@ final class GameViewModel {
     var answerHistory: [Bool] = []
     var problemTransitionId: UUID = UUID()
     var correctAnswerHint: Int? = nil
+    var showSpeedBonus: Bool = false
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10
@@ -94,6 +95,7 @@ final class GameViewModel {
         guard let answer = Int(answerText) else { return }
 
         let correctAnswer = engine.currentProblem.correctAnswer
+        let hadSpeedBonus = engine.timeRemaining > engine.difficulty.timeLimitSeconds / 2
         let previousScore = engine.score
         engine.submitAnswer(answer)
         let pointsEarned = engine.score - previousScore
@@ -105,9 +107,11 @@ final class GameViewModel {
         }
 
         correctAnswerHint = nil
+        showSpeedBonus = false
 
         if engine.lastAnswerCorrect == true {
             showCelebration = true
+            if hadSpeedBonus { showSpeedBonus = true }
             HapticService.correctAnswer()
             SoundService.playCorrect()
 
@@ -153,6 +157,7 @@ final class GameViewModel {
             characterMood = .neutral
             motivationalMessage = nil
             correctAnswerHint = nil
+            showSpeedBonus = false
         }
     }
 
