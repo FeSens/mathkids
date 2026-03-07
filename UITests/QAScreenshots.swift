@@ -60,9 +60,12 @@ final class QAScreenshots: XCTestCase {
         XCTAssertTrue(playButton.waitForExistence(timeout: 5))
         playButton.tap()
 
+        // Wait for countdown to finish
+        waitForCountdown()
+
         // Step 1: Game screen visible
         let problemLabel = app.staticTexts["problemLabel"]
-        XCTAssertTrue(problemLabel.waitForExistence(timeout: 5))
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
         Thread.sleep(forTimeInterval: 1)
         saveScreenshot("qa-002-step-01-game-screen")
 
@@ -95,8 +98,10 @@ final class QAScreenshots: XCTestCase {
         XCTAssertTrue(playButton.waitForExistence(timeout: 5))
         playButton.tap()
 
+        waitForCountdown()
+
         let problemLabel = app.staticTexts["problemLabel"]
-        XCTAssertTrue(problemLabel.waitForExistence(timeout: 5))
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
 
         // Answer a few questions quickly
         for _ in 0..<5 {
@@ -169,8 +174,10 @@ final class QAScreenshots: XCTestCase {
         XCTAssertTrue(playButton.waitForExistence(timeout: 3))
         playButton.tap()
 
+        waitForCountdown()
+
         let problemLabel = app.staticTexts["problemLabel"]
-        XCTAssertTrue(problemLabel.waitForExistence(timeout: 5))
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
         saveScreenshot("qa-005-step-03-in-game")
     }
 
@@ -190,8 +197,10 @@ final class QAScreenshots: XCTestCase {
 
             playButton.tap()
 
+            waitForCountdown()
+
             let problemLabel = app.staticTexts["problemLabel"]
-            XCTAssertTrue(problemLabel.waitForExistence(timeout: 5))
+            XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
 
             // Answer several questions
             for _ in 0..<3 {
@@ -252,13 +261,22 @@ final class QAScreenshots: XCTestCase {
         app.tabBars.buttons["Play"].tap()
         Thread.sleep(forTimeInterval: 0.5)
         app.buttons["playButton"].tap()
+        waitForCountdown()
         let problemLabel = app.staticTexts["problemLabel"]
-        XCTAssertTrue(problemLabel.waitForExistence(timeout: 5))
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
         Thread.sleep(forTimeInterval: 1)
         saveScreenshot("qa-006-dark-game")
     }
 
     // MARK: - Helpers
+
+    private func waitForCountdown() {
+        let countdown = app.otherElements["countdownOverlay"]
+        if countdown.waitForExistence(timeout: 2) {
+            _ = countdown.waitForNonExistence(timeout: 6)
+        }
+        Thread.sleep(forTimeInterval: 0.5)
+    }
 
     private func saveScreenshot(_ name: String) {
         let screenshot = XCUIScreen.main.screenshot()

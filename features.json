@@ -198,6 +198,51 @@
         "Navigation state resets properly between games"
       ],
       "files": ["Sources/App/MathKidsApp.swift", "Sources/App/ContentView.swift", "Sources/App/AppRouter.swift"]
+    },
+    {
+      "id": "ui-007",
+      "description": "Haptic feedback on correct/wrong answers and button taps for tactile game feel",
+      "phase": "polish",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "Correct answer triggers success haptic (notification success)",
+        "Wrong answer triggers error haptic (notification error)",
+        "Streak milestones trigger heavy impact haptic",
+        "Number pad buttons trigger light impact haptic"
+      ],
+      "files": ["Sources/Services/HapticService.swift", "Sources/Features/Game/GameViewModel.swift"]
+    },
+    {
+      "id": "ui-008",
+      "description": "Animated countdown (3-2-1-GO!) before game starts to build anticipation",
+      "phase": "polish",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "After tapping Play, a 3-2-1-GO countdown overlay appears",
+        "Each number scales up and fades with spring animation",
+        "Game timer starts only after countdown finishes",
+        "Countdown uses large bold rounded font"
+      ],
+      "files": ["Sources/Features/Game/CountdownView.swift", "Sources/Features/Game/GameView.swift"]
+    },
+    {
+      "id": "ui-009",
+      "description": "Animated score popup (+10, +20, +30) that floats up when points are earned",
+      "phase": "polish",
+      "category": "ui",
+      "depends_on": ["ui-002"],
+      "passes": true,
+      "test_steps": [
+        "Correct answer shows floating +N points text",
+        "Points text animates upward and fades out",
+        "Bonus points show separately (e.g. +5 speed bonus)",
+        "Animation doesn't block gameplay"
+      ],
+      "files": ["Sources/Features/Game/ScorePopupView.swift", "Sources/Features/Game/GameView.swift"]
     }
   ],
   "_schema": {

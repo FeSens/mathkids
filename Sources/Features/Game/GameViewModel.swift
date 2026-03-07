@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 import Observation
 
 @Observable
@@ -8,7 +8,9 @@ final class GameViewModel {
     var answerText: String = ""
     var showCelebration: Bool = false
     var showShake: Bool = false
+    var showCountdown: Bool = true
     var celebrationIntensity: CelebrationIntensity = .normal
+    var scorePopups: [ScorePopup] = []
 
     enum CelebrationIntensity {
         case normal
@@ -32,19 +34,35 @@ final class GameViewModel {
         engine.startGame()
     }
 
+    func countdownFinished() {
+        showCountdown = false
+        startGame()
+    }
+
     func submitAnswer() {
         guard let answer = Int(answerText) else { return }
+
+        let previousScore = engine.score
         engine.submitAnswer(answer)
+        let pointsEarned = engine.score - previousScore
 
         if engine.lastAnswerCorrect == true {
             showCelebration = true
+            HapticService.correctAnswer()
+
             if let milestone = engine.streakMilestone {
                 celebrationIntensity = milestone >= 15 ? .huge : .big
+                HapticService.streakMilestone()
             } else {
                 celebrationIntensity = .normal
             }
+
+            if pointsEarned > 0 {
+                addScorePopup(points: pointsEarned)
+            }
         } else {
             showShake = true
+            HapticService.wrongAnswer()
         }
 
         answerText = ""
@@ -58,16 +76,19 @@ final class GameViewModel {
 
     func appendDigit(_ digit: Int) {
         guard answerText.count < 6 else { return }
+        HapticService.buttonTap()
         answerText += "\(digit)"
     }
 
     func deleteDigit() {
         if !answerText.isEmpty {
+            HapticService.buttonTap()
             answerText.removeLast()
         }
     }
 
     func toggleNegative() {
+        HapticService.buttonTap()
         if answerText.hasPrefix("-") {
             answerText.removeFirst()
         } else {
@@ -77,5 +98,24 @@ final class GameViewModel {
 
     func stopGame() {
         engine.stopGame()
+    }
+
+    private func addScorePopup(points: Int) {
+        let popup = ScorePopup(text: "+\(points)", color: .green)
+        scorePopups.append(popup)
+        let popupId = popup.id
+
+        Task {
+            try? await Task.sleep(for: .milliseconds(50))
+            if let idx = scorePopups.firstIndex(where: { $0.id == popupId }) {
+                withAnimation(.easeOut(duration: 0.8)) {
+                    scorePopups[idx].offset = -80
+                    scorePopups[idx].opacity = 0
+                }
+            }
+
+            try? await Task.sleep(for: .milliseconds(900))
+            scorePopups.removeAll { $0.id == popupId }
+        }
     }
 }

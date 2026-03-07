@@ -40,11 +40,12 @@ final class MathKidsUITests: XCTestCase {
         XCTAssertTrue(playButton.waitForExistence(timeout: 3))
         playButton.tap()
 
+        // Wait for countdown to finish (~3.5s) then problem appears
         let problemLabel = app.staticTexts["problemLabel"]
-        XCTAssertTrue(problemLabel.waitForExistence(timeout: 3))
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
 
         let timerLabel = app.staticTexts["timerLabel"]
-        XCTAssertTrue(timerLabel.exists)
+        XCTAssertTrue(timerLabel.waitForExistence(timeout: 3))
 
         let submitButton = app.buttons["submitButton"]
         XCTAssertTrue(submitButton.exists)
@@ -53,8 +54,14 @@ final class MathKidsUITests: XCTestCase {
     func testNumberPadInput() {
         app.buttons["playButton"].tap()
 
+        // Wait for countdown overlay to disappear
+        let countdown = app.otherElements["countdownOverlay"]
+        if countdown.waitForExistence(timeout: 2) {
+            _ = countdown.waitForNonExistence(timeout: 6)
+        }
+
         let problemLabel = app.staticTexts["problemLabel"]
-        XCTAssertTrue(problemLabel.waitForExistence(timeout: 3))
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
 
         app.buttons["num_5"].tap()
         app.buttons["num_3"].tap()
@@ -70,8 +77,14 @@ final class MathKidsUITests: XCTestCase {
     func testSubmitAnswer() {
         app.buttons["playButton"].tap()
 
+        // Wait for countdown
+        let countdown = app.otherElements["countdownOverlay"]
+        if countdown.waitForExistence(timeout: 2) {
+            _ = countdown.waitForNonExistence(timeout: 6)
+        }
+
         let problemLabel = app.staticTexts["problemLabel"]
-        XCTAssertTrue(problemLabel.waitForExistence(timeout: 3))
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
 
         app.buttons["num_1"].tap()
         app.buttons["submitButton"].tap()

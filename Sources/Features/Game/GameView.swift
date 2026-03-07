@@ -11,7 +11,13 @@ struct GameView: View {
 
                 Spacer()
 
-                problemDisplay
+                ZStack {
+                    problemDisplay
+
+                    ForEach(viewModel.scorePopups) { popup in
+                        ScorePopupView(popup: popup)
+                    }
+                }
 
                 answerDisplay
 
@@ -21,14 +27,18 @@ struct GameView: View {
 
             }
             .padding()
+            .opacity(viewModel.showCountdown ? 0.3 : 1.0)
 
             if viewModel.showCelebration {
                 CelebrationView(intensity: viewModel.celebrationIntensity)
                     .allowsHitTesting(false)
             }
-        }
-        .onAppear {
-            viewModel.startGame()
+
+            if viewModel.showCountdown {
+                CountdownView {
+                    viewModel.countdownFinished()
+                }
+            }
         }
         .onChange(of: viewModel.isGameOver) { _, isOver in
             if isOver {
