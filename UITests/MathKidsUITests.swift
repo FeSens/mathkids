@@ -1,5 +1,6 @@
 import XCTest
 
+@MainActor
 final class MathKidsUITests: XCTestCase {
     var app: XCUIApplication!
 

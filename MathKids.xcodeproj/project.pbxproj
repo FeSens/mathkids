@@ -17,6 +17,7 @@
 		4513317F1EC163421536BF08 /* StatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ABF0C1B98F1BCF8475FCE /* StatsService.swift */; };
 		487C5AB4A01BDD59CBB3895E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047BADB99680064F99C105B1 /* HomeViewModel.swift */; };
 		4C4CAF338FE9C6627C6CB96D /* ProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A131ACE8EAE37C45B0DFDC6 /* ProblemGenerator.swift */; };
+		72E9C59492BF93AB0B609424 /* QAScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427188A416BE64E4706FCF7 /* QAScreenshots.swift */; };
 		7F7B7F6ED2E8948B49330C01 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C021E83262D3617792D287F /* ResultsViewModel.swift */; };
 		84AB6E25E03008F4846AA136 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268B9A4B095A3338E8F1059 /* StatsView.swift */; };
 		85261327FDF0B22B4AF5A111 /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBDA6BF0C03D8CD5465376F /* CelebrationView.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		01F6948A6B20B56826FBD34A /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		0427188A416BE64E4706FCF7 /* QAScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAScreenshots.swift; sourceTree = "<group>"; };
 		047BADB99680064F99C105B1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1EBDA6BF0C03D8CD5465376F /* CelebrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationView.swift; sourceTree = "<group>"; };
 		204ABF0C1B98F1BCF8475FCE /* StatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsService.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				8C13519308D002D93BFCF811 /* MathKidsUITests.swift */,
+				0427188A416BE64E4706FCF7 /* QAScreenshots.swift */,
 			);
 			path = UITests;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C22E4D156E6B6B6D2E3AF523 /* MathKidsUITests.swift in Sources */,
+				72E9C59492BF93AB0B609424 /* QAScreenshots.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
