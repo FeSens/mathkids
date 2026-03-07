@@ -183,4 +183,86 @@ struct GameViewModelTests {
         let vm = GameViewModel(difficulty: .easy, mode: .dailyChallenge)
         #expect(vm.elapsedSeconds == 0)
     }
+
+    @Test("Combo multiplier starts at 1")
+    @MainActor
+    func comboMultiplierStartsAt1() {
+        let vm = GameViewModel(difficulty: .easy)
+        #expect(vm.comboMultiplier == 1)
+    }
+
+    @Test("Combo multiplier is 2x after 3 correct answers")
+    @MainActor
+    func comboMultiplier2xAt3() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+
+        for _ in 0..<3 {
+            let correct = vm.engine.currentProblem.correctAnswer
+            let digits = String(abs(correct))
+            if correct < 0 { vm.toggleNegative() }
+            for char in digits { vm.appendDigit(Int(String(char))!) }
+            vm.submitAnswer()
+        }
+
+        #expect(vm.comboMultiplier == 2)
+    }
+
+    @Test("Combo multiplier is 3x after 5 correct answers")
+    @MainActor
+    func comboMultiplier3xAt5() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+
+        for _ in 0..<5 {
+            let correct = vm.engine.currentProblem.correctAnswer
+            let digits = String(abs(correct))
+            if correct < 0 { vm.toggleNegative() }
+            for char in digits { vm.appendDigit(Int(String(char))!) }
+            vm.submitAnswer()
+        }
+
+        #expect(vm.comboMultiplier == 3)
+    }
+
+    @Test("Combo multiplier is 4x after 10 correct answers")
+    @MainActor
+    func comboMultiplier4xAt10() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+
+        for _ in 0..<10 {
+            let correct = vm.engine.currentProblem.correctAnswer
+            let digits = String(abs(correct))
+            if correct < 0 { vm.toggleNegative() }
+            for char in digits { vm.appendDigit(Int(String(char))!) }
+            vm.submitAnswer()
+        }
+
+        #expect(vm.comboMultiplier == 4)
+    }
+
+    @Test("Combo multiplier resets on wrong answer")
+    @MainActor
+    func comboMultiplierResetsOnWrong() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+
+        // Get 3 correct for 2x
+        for _ in 0..<3 {
+            let correct = vm.engine.currentProblem.correctAnswer
+            let digits = String(abs(correct))
+            if correct < 0 { vm.toggleNegative() }
+            for char in digits { vm.appendDigit(Int(String(char))!) }
+            vm.submitAnswer()
+        }
+        #expect(vm.comboMultiplier == 2)
+
+        // Wrong answer resets
+        vm.appendDigit(9)
+        vm.appendDigit(9)
+        vm.appendDigit(9)
+        vm.submitAnswer()
+        #expect(vm.comboMultiplier == 1)
+    }
 }

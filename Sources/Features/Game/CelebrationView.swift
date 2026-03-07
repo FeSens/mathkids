@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CelebrationView: View {
     let intensity: GameViewModel.CelebrationIntensity
+    var difficulty: DifficultyLevel = .easy
     @State private var particles: [Particle] = []
 
     private var particleCount: Int {
@@ -30,8 +31,19 @@ struct CelebrationView: View {
         .allowsHitTesting(false)
     }
 
+    private var themedShapes: [String] {
+        switch difficulty {
+        case .easy:
+            return ["⭐", "🌟", "✨", "🎉", "😄", "👍", "🌈"]
+        case .medium:
+            return ["🔥", "💫", "⚡", "🎊", "💪", "🏅", "✨"]
+        case .hard:
+            return ["🏆", "👑", "💎", "🎯", "🌟", "🔥", "⭐"]
+        }
+    }
+
     private func createParticles(in size: CGSize) {
-        let shapes = ["⭐", "🌟", "✨", "💫", "🎉", "🎊", "🏆"]
+        let shapes = themedShapes
         particles = (0..<particleCount).map { _ in
             Particle(
                 shape: Text(shapes.randomElement()!),

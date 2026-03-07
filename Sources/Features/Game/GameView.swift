@@ -52,7 +52,7 @@ struct GameView: View {
             .opacity(viewModel.showCountdown ? 0.3 : 1.0)
 
             if viewModel.showCelebration {
-                CelebrationView(intensity: viewModel.celebrationIntensity)
+                CelebrationView(intensity: viewModel.celebrationIntensity, difficulty: viewModel.engine.difficulty)
                     .allowsHitTesting(false)
             }
 
@@ -78,6 +78,18 @@ struct GameView: View {
                     .accessibilityIdentifier("scoreLabel")
 
                 Spacer()
+
+                if viewModel.comboMultiplier > 1 {
+                    Text("\(viewModel.comboMultiplier)x")
+                        .font(.system(size: 18, weight: .black, design: .rounded))
+                        .foregroundStyle(.purple)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 2)
+                        .background(Capsule().fill(.purple.opacity(0.15)))
+                        .scaleEffect(1.0 + Double(viewModel.comboMultiplier) * 0.05)
+                        .animation(.spring(duration: 0.3), value: viewModel.comboMultiplier)
+                        .accessibilityIdentifier("comboMultiplier")
+                }
 
                 if viewModel.currentStreak > 0 {
                     HStack(spacing: 2) {

@@ -14,7 +14,9 @@
         "Verify correctAnswer computes correctly for each operation",
         "Verify isCorrect(answer:) returns true/false appropriately"
       ],
-      "files": ["Sources/Domain/MathProblem.swift"]
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
     },
     {
       "id": "core-002",
@@ -29,14 +31,19 @@
         "Hard: operands 1-50, all four operations",
         "Each level has a time limit (easy=60s, medium=45s, hard=30s)"
       ],
-      "files": ["Sources/Domain/DifficultyLevel.swift"]
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
     },
     {
       "id": "core-003",
       "description": "GameSession model tracking problems answered, score, time remaining, and session state",
       "phase": "mvp",
       "category": "domain",
-      "depends_on": ["core-001", "core-002"],
+      "depends_on": [
+        "core-001",
+        "core-002"
+      ],
       "passes": true,
       "test_steps": [
         "GameSession starts with a difficulty and tracks score",
@@ -44,7 +51,9 @@
         "Tracks current streak within a session",
         "Calculates accuracy percentage"
       ],
-      "files": ["Sources/Domain/GameSession.swift"]
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
     },
     {
       "id": "core-004",
@@ -59,14 +68,19 @@
         "Daily streak increments when playing on consecutive days",
         "Daily streak resets when a day is missed"
       ],
-      "files": ["Sources/Domain/PlayerStats.swift"]
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
     },
     {
       "id": "svc-001",
       "description": "ProblemGenerator service that creates random MathProblems based on difficulty level",
       "phase": "mvp",
       "category": "service",
-      "depends_on": ["core-001", "core-002"],
+      "depends_on": [
+        "core-001",
+        "core-002"
+      ],
       "passes": true,
       "test_steps": [
         "Generates problems within the operand range for the given difficulty",
@@ -74,14 +88,21 @@
         "Division problems always have clean integer answers",
         "Subtraction on easy never produces negative results"
       ],
-      "files": ["Sources/Services/ProblemGenerator.swift"]
+      "files": [
+        "Sources/Services/ProblemGenerator.swift"
+      ]
     },
     {
       "id": "svc-002",
       "description": "GameEngine manages game flow: timer countdown, problem progression, scoring",
       "phase": "mvp",
       "category": "service",
-      "depends_on": ["core-001", "core-002", "core-003", "svc-001"],
+      "depends_on": [
+        "core-001",
+        "core-002",
+        "core-003",
+        "svc-001"
+      ],
       "passes": true,
       "test_steps": [
         "Starts a game session with selected difficulty",
@@ -90,14 +111,18 @@
         "Ends game when timer expires",
         "Tracks session streak"
       ],
-      "files": ["Sources/Services/GameEngine.swift"]
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
     },
     {
       "id": "svc-003",
       "description": "StatsService persists and retrieves PlayerStats using SwiftData",
       "phase": "mvp",
       "category": "service",
-      "depends_on": ["core-004"],
+      "depends_on": [
+        "core-004"
+      ],
       "passes": true,
       "test_steps": [
         "Saves game results to persistent storage",
@@ -105,14 +130,20 @@
         "Updates daily streak correctly based on date",
         "Updates best streak when current streak exceeds it"
       ],
-      "files": ["Sources/Services/StatsService.swift"]
+      "files": [
+        "Sources/Services/StatsService.swift"
+      ]
     },
     {
       "id": "ui-001",
       "description": "Home screen with animated title, play button, difficulty selector, and quick stats summary",
       "phase": "mvp",
       "category": "ui",
-      "depends_on": ["core-002", "core-004", "svc-003"],
+      "depends_on": [
+        "core-002",
+        "core-004",
+        "svc-003"
+      ],
       "passes": true,
       "test_steps": [
         "Displays app title with playful styling",
@@ -120,14 +151,19 @@
         "Displays difficulty picker (easy/medium/hard)",
         "Shows current daily streak and total problems solved"
       ],
-      "files": ["Sources/Features/Home/HomeView.swift", "Sources/Features/Home/HomeViewModel.swift"]
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
     },
     {
       "id": "ui-002",
       "description": "Game screen showing current problem, answer input via number buttons, timer bar, and score",
       "phase": "mvp",
       "category": "ui",
-      "depends_on": ["svc-002"],
+      "depends_on": [
+        "svc-002"
+      ],
       "passes": true,
       "test_steps": [
         "Displays the math problem in large, kid-friendly text",
@@ -136,14 +172,19 @@
         "Shows current score and streak counter",
         "Answer field clears after submission"
       ],
-      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
     },
     {
       "id": "ui-003",
       "description": "Celebration animations: confetti burst and star particles on correct answers, shake on wrong",
       "phase": "mvp",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "Correct answer triggers confetti/star animation",
@@ -151,14 +192,20 @@
         "Streak milestones (5, 10, 15) trigger extra-large celebration",
         "Animations don't block the next problem"
       ],
-      "files": ["Sources/Features/Game/CelebrationView.swift", "Sources/Features/Game/ShakeEffect.swift"]
+      "files": [
+        "Sources/Features/Game/CelebrationView.swift",
+        "Sources/Features/Game/ShakeEffect.swift"
+      ]
     },
     {
       "id": "ui-004",
       "description": "Results screen after game ends showing score, accuracy, streak, and play-again button",
       "phase": "mvp",
       "category": "ui",
-      "depends_on": ["ui-002", "svc-003"],
+      "depends_on": [
+        "ui-002",
+        "svc-003"
+      ],
       "passes": true,
       "test_steps": [
         "Shows final score with animated count-up",
@@ -167,14 +214,19 @@
         "Has Play Again and Home buttons",
         "Shows new record badge if best score beaten"
       ],
-      "files": ["Sources/Features/Results/ResultsView.swift", "Sources/Features/Results/ResultsViewModel.swift"]
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     },
     {
       "id": "ui-005",
       "description": "Stats/progress screen with streak calendar, lifetime stats, and per-difficulty breakdown",
       "phase": "mvp",
       "category": "ui",
-      "depends_on": ["svc-003"],
+      "depends_on": [
+        "svc-003"
+      ],
       "passes": true,
       "test_steps": [
         "Shows current daily streak with flame icon",
@@ -182,14 +234,22 @@
         "Shows a weekly activity indicator",
         "Per-difficulty stats breakdown"
       ],
-      "files": ["Sources/Features/Stats/StatsView.swift", "Sources/Features/Stats/StatsViewModel.swift"]
+      "files": [
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
     },
     {
       "id": "ui-006",
       "description": "App navigation with tab bar (Play, Stats) and game flow navigation",
       "phase": "mvp",
       "category": "ui",
-      "depends_on": ["ui-001", "ui-002", "ui-004", "ui-005"],
+      "depends_on": [
+        "ui-001",
+        "ui-002",
+        "ui-004",
+        "ui-005"
+      ],
       "passes": true,
       "test_steps": [
         "Tab bar with Play and Stats tabs",
@@ -197,14 +257,20 @@
         "Stats tab shows the stats screen",
         "Navigation state resets properly between games"
       ],
-      "files": ["Sources/App/MathKidsApp.swift", "Sources/App/ContentView.swift", "Sources/App/AppRouter.swift"]
+      "files": [
+        "Sources/App/MathKidsApp.swift",
+        "Sources/App/ContentView.swift",
+        "Sources/App/AppRouter.swift"
+      ]
     },
     {
       "id": "ui-007",
       "description": "Haptic feedback on correct/wrong answers and button taps for tactile game feel",
       "phase": "polish",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "Correct answer triggers success haptic (notification success)",
@@ -212,14 +278,19 @@
         "Streak milestones trigger heavy impact haptic",
         "Number pad buttons trigger light impact haptic"
       ],
-      "files": ["Sources/Services/HapticService.swift", "Sources/Features/Game/GameViewModel.swift"]
+      "files": [
+        "Sources/Services/HapticService.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
     },
     {
       "id": "ui-008",
       "description": "Animated countdown (3-2-1-GO!) before game starts to build anticipation",
       "phase": "polish",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "After tapping Play, a 3-2-1-GO countdown overlay appears",
@@ -227,14 +298,19 @@
         "Game timer starts only after countdown finishes",
         "Countdown uses large bold rounded font"
       ],
-      "files": ["Sources/Features/Game/CountdownView.swift", "Sources/Features/Game/GameView.swift"]
+      "files": [
+        "Sources/Features/Game/CountdownView.swift",
+        "Sources/Features/Game/GameView.swift"
+      ]
     },
     {
       "id": "ui-009",
       "description": "Animated score popup (+10, +20, +30) that floats up when points are earned",
       "phase": "polish",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "Correct answer shows floating +N points text",
@@ -242,28 +318,38 @@
         "Bonus points show separately (e.g. +5 speed bonus)",
         "Animation doesn't block gameplay"
       ],
-      "files": ["Sources/Features/Game/ScorePopupView.swift", "Sources/Features/Game/GameView.swift"]
+      "files": [
+        "Sources/Features/Game/ScorePopupView.swift",
+        "Sources/Features/Game/GameView.swift"
+      ]
     },
     {
       "id": "core-005",
       "description": "Achievement/badge model with unlockable milestones for gamification",
       "phase": "polish",
       "category": "domain",
-      "depends_on": ["core-004"],
+      "depends_on": [
+        "core-004"
+      ],
       "passes": true,
       "test_steps": [
         "Achievement has id, title, description, emoji, and requirement",
         "Check if an achievement is unlocked based on PlayerStats",
         "Predefined achievements: First Game, Streak Master (10), Speed Demon (hard mode), Century (100 solved), Perfect Round (100% accuracy with 10+ answers)"
       ],
-      "files": ["Sources/Domain/Achievement.swift"]
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ]
     },
     {
       "id": "ui-010",
       "description": "Achievements screen showing earned and locked badges in a grid",
       "phase": "polish",
       "category": "ui",
-      "depends_on": ["core-005", "svc-003"],
+      "depends_on": [
+        "core-005",
+        "svc-003"
+      ],
       "passes": true,
       "test_steps": [
         "Shows grid of achievement badges",
@@ -272,14 +358,19 @@
         "Achievement count shown in header (e.g. 2/8 unlocked)",
         "Accessible from Stats tab"
       ],
-      "files": ["Sources/Features/Stats/AchievementsView.swift"]
+      "files": [
+        "Sources/Features/Stats/AchievementsView.swift"
+      ]
     },
     {
       "id": "ui-011",
       "description": "Achievement unlock toast notification that slides in when a new badge is earned",
       "phase": "polish",
       "category": "ui",
-      "depends_on": ["core-005", "ui-004"],
+      "depends_on": [
+        "core-005",
+        "ui-004"
+      ],
       "passes": true,
       "test_steps": [
         "When a new achievement is unlocked after a game, toast appears on results screen",
@@ -287,7 +378,10 @@
         "Toast slides in from top with animation",
         "Toast auto-dismisses after 3 seconds"
       ],
-      "files": ["Sources/Features/Results/AchievementToast.swift", "Sources/Features/Results/ResultsView.swift"]
+      "files": [
+        "Sources/Features/Results/AchievementToast.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
     },
     {
       "id": "svc-004",
@@ -302,14 +396,19 @@
         "Sounds can be enabled/disabled via a muted flag",
         "Integrated into GameViewModel for correct/wrong/countdown events"
       ],
-      "files": ["Sources/Services/SoundService.swift"]
+      "files": [
+        "Sources/Services/SoundService.swift"
+      ]
     },
     {
       "id": "ui-012",
       "description": "Practice mode (untimed) where kids can solve problems at their own pace without timer pressure",
       "phase": "polish",
       "category": "ui",
-      "depends_on": ["ui-001", "svc-001"],
+      "depends_on": [
+        "ui-001",
+        "svc-001"
+      ],
       "passes": true,
       "test_steps": [
         "Home screen shows Practice button alongside Play",
@@ -318,14 +417,21 @@
         "Done button ends practice and shows results",
         "Practice games still count toward stats and achievements"
       ],
-      "files": ["Sources/Features/Game/GameViewModel.swift", "Sources/Features/Game/GameView.swift", "Sources/Features/Home/HomeView.swift"]
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift",
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Home/HomeView.swift"
+      ]
     },
     {
       "id": "ui-013",
       "description": "Settings toggle for sound effects and haptics on home screen",
       "phase": "polish",
       "category": "ui",
-      "depends_on": ["svc-004", "ui-001"],
+      "depends_on": [
+        "svc-004",
+        "ui-001"
+      ],
       "passes": true,
       "test_steps": [
         "Gear icon on home screen opens settings sheet",
@@ -334,14 +440,20 @@
         "Settings persist via UserDefaults",
         "Sound and haptic services respect the settings"
       ],
-      "files": ["Sources/Features/Home/SettingsView.swift", "Sources/Services/SettingsManager.swift"]
+      "files": [
+        "Sources/Features/Home/SettingsView.swift",
+        "Sources/Services/SettingsManager.swift"
+      ]
     },
     {
       "id": "ui-014",
       "description": "Operation selector on home screen letting kids choose which math operations to practice (e.g. only addition, or addition + multiplication)",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-001", "core-001"],
+      "depends_on": [
+        "ui-001",
+        "core-001"
+      ],
       "passes": true,
       "test_steps": [
         "Home screen shows operation filter chips below difficulty picker",
@@ -350,14 +462,20 @@
         "Selected operations are passed to ProblemGenerator",
         "Selection persists between app launches via UserDefaults"
       ],
-      "files": ["Sources/Features/Home/HomeView.swift", "Sources/Features/Home/HomeViewModel.swift", "Sources/Services/ProblemGenerator.swift"]
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeViewModel.swift",
+        "Sources/Services/ProblemGenerator.swift"
+      ]
     },
     {
       "id": "ui-015",
       "description": "Animated character reactions (emoji face) that responds to correct/wrong answers with expressions",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "Character face displayed above the problem during gameplay",
@@ -366,14 +484,21 @@
         "Shows increasingly excited expressions during streaks",
         "Smooth spring animations between expression changes"
       ],
-      "files": ["Sources/Features/Game/CharacterView.swift", "Sources/Features/Game/GameView.swift"]
+      "files": [
+        "Sources/Features/Game/CharacterView.swift",
+        "Sources/Features/Game/GameView.swift"
+      ]
     },
     {
       "id": "ui-016",
       "description": "Daily challenge with a fixed set of 10 problems and a leaderboard-style best time tracker",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-001", "svc-002", "svc-003"],
+      "depends_on": [
+        "ui-001",
+        "svc-002",
+        "svc-003"
+      ],
       "passes": true,
       "test_steps": [
         "Home screen shows Daily Challenge card with today's status",
@@ -382,14 +507,20 @@
         "Shows completion time at end and compares to personal best",
         "Challenge resets daily, tracks best time in PlayerStats"
       ],
-      "files": ["Sources/Features/Game/GameViewModel.swift", "Sources/Features/Home/HomeView.swift", "Sources/Domain/PlayerStats.swift"]
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift",
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Domain/PlayerStats.swift"
+      ]
     },
     {
       "id": "core-006",
       "description": "XP/Level system that rewards continuous play with experience points and level progression",
       "phase": "improvement",
       "category": "domain",
-      "depends_on": ["core-004"],
+      "depends_on": [
+        "core-004"
+      ],
       "passes": true,
       "test_steps": [
         "PlayerStats tracks totalXP and currentLevel",
@@ -398,14 +529,20 @@
         "Level names from Beginner to Math Wizard",
         "XP progress toward next level is calculable"
       ],
-      "files": ["Sources/Domain/PlayerStats.swift", "Sources/Domain/LevelSystem.swift"]
+      "files": [
+        "Sources/Domain/PlayerStats.swift",
+        "Sources/Domain/LevelSystem.swift"
+      ]
     },
     {
       "id": "ui-017",
       "description": "Level badge and XP progress bar on home screen showing current level and progress to next",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["core-006", "ui-001"],
+      "depends_on": [
+        "core-006",
+        "ui-001"
+      ],
       "passes": true,
       "test_steps": [
         "Home screen shows current level badge with level name",
@@ -413,14 +550,19 @@
         "Level up animation triggers when reaching new level threshold",
         "XP gained shown on results screen"
       ],
-      "files": ["Sources/Features/Home/HomeView.swift", "Sources/Features/Results/ResultsView.swift"]
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
     },
     {
       "id": "ui-018",
       "description": "Animated background gradient that shifts colors based on difficulty and game state",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "Home screen has a subtle animated gradient background",
@@ -428,14 +570,20 @@
         "Game screen background pulses gently during play",
         "Background doesn't distract from gameplay"
       ],
-      "files": ["Sources/Features/Home/HomeView.swift", "Sources/Features/Game/GameView.swift"]
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Game/GameView.swift"
+      ]
     },
     {
       "id": "ui-019",
       "description": "XP earned display on results screen showing XP gained and any level-up notification",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["core-006", "ui-004"],
+      "depends_on": [
+        "core-006",
+        "ui-004"
+      ],
       "passes": true,
       "test_steps": [
         "Results screen shows XP earned from the game session",
@@ -443,14 +591,19 @@
         "If player leveled up, shows level-up celebration with new level name",
         "XP progress bar shows before/after comparison"
       ],
-      "files": ["Sources/Features/Results/ResultsView.swift", "Sources/Features/Results/ResultsViewModel.swift"]
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     },
     {
       "id": "ui-020",
       "description": "Animated number pad button press feedback with scale-down effect on tap",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "Number pad buttons scale down slightly on press",
@@ -458,14 +611,18 @@
         "GO button also has press animation",
         "Animation is subtle and doesn't slow input"
       ],
-      "files": ["Sources/Features/Game/GameView.swift"]
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
     },
     {
       "id": "ui-021",
       "description": "Streak fire trail animation showing increasing flame icons during answer streaks",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "During a streak, fire emoji trail appears near streak counter",
@@ -473,14 +630,20 @@
         "Flames animate with subtle bounce/scale",
         "Resets when streak breaks"
       ],
-      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
     },
     {
       "id": "ui-022",
       "description": "Problem difficulty indicator showing color-coded badge (green/yellow/red) based on how hard the current problem is",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-002", "core-001"],
+      "depends_on": [
+        "ui-002",
+        "core-001"
+      ],
       "passes": true,
       "test_steps": [
         "Each problem shows a small difficulty indicator dot",
@@ -488,14 +651,19 @@
         "Indicator appears next to the problem text",
         "Color based on operation type and operand magnitude"
       ],
-      "files": ["Sources/Features/Game/GameView.swift", "Sources/Domain/MathProblem.swift"]
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Domain/MathProblem.swift"
+      ]
     },
     {
       "id": "ui-023",
       "description": "Motivational messages that appear between problems during streaks to encourage kids",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "After correct answer during streak, brief motivational text appears",
@@ -503,14 +671,19 @@
         "Text fades in and out quickly",
         "Only shows during streaks of 2+"
       ],
-      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
     },
     {
       "id": "ui-024",
       "description": "Answer history ribbon showing last 5 answers as green checkmarks or red X marks",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "Below the answer field, shows last 5 answer results",
@@ -519,14 +692,19 @@
         "New results animate in from right",
         "Fills up as problems are answered"
       ],
-      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
     },
     {
       "id": "ui-025",
       "description": "Smooth problem transition animation when moving to next problem after answering",
       "phase": "improvement",
       "category": "ui",
-      "depends_on": ["ui-002"],
+      "depends_on": [
+        "ui-002"
+      ],
       "passes": true,
       "test_steps": [
         "After submitting answer, current problem slides out",
@@ -534,7 +712,51 @@
         "Transition is quick and doesn't delay input",
         "Works for both correct and wrong answers"
       ],
-      "files": ["Sources/Features/Game/GameView.swift", "Sources/Features/Game/GameViewModel.swift"]
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-026",
+      "description": "Combo multiplier display showing 2x, 3x, 4x point multiplier during long streaks",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "After 3 correct answers in a row, 2x multiplier appears",
+        "After 5 correct answers, 3x multiplier",
+        "After 10 correct answers, 4x multiplier",
+        "Multiplier badge displayed prominently during gameplay",
+        "Resets on wrong answer"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-027",
+      "description": "Confetti color themes that match the selected difficulty level colors",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-003"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Easy mode confetti uses green/blue colors",
+        "Medium mode confetti uses orange/yellow colors",
+        "Hard mode confetti uses red/purple colors",
+        "Colors passed from GameViewModel to CelebrationView"
+      ],
+      "files": [
+        "Sources/Features/Game/CelebrationView.swift",
+        "Sources/Features/Game/GameView.swift"
+      ]
     }
   ],
   "_schema": {
