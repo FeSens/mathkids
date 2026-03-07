@@ -17,6 +17,16 @@ final class StatsViewModel {
     var playerStats: PlayerStats?
     var recentAccuracies: [Double] = []
 
+    var gamesMilestone: String? {
+        switch gamesPlayed {
+        case 100...: "Century Gamer"
+        case 50..<100: "Dedicated Player"
+        case 25..<50: "Rising Star"
+        case 10..<25: "Getting Started"
+        default: nil
+        }
+    }
+
     private let statsService: StatsService
 
     init(statsService: StatsService) {

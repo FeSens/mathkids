@@ -304,4 +304,39 @@ struct GameViewModelTests {
         let vm = GameViewModel(difficulty: .easy)
         #expect(vm.correctAnswerHint == nil)
     }
+
+    @Test("Problem number starts at 1")
+    @MainActor
+    func problemNumberStartsAt1() {
+        let vm = GameViewModel(difficulty: .easy)
+        #expect(vm.problemNumber == 1)
+    }
+
+    @Test("Problem number increments on submit")
+    @MainActor
+    func problemNumberIncrements() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+        vm.appendDigit(1)
+        vm.submitAnswer()
+        #expect(vm.problemNumber == 2)
+    }
+
+    @Test("Clear answer empties answer text")
+    @MainActor
+    func clearAnswerWorks() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.appendDigit(5)
+        vm.appendDigit(3)
+        vm.clearAnswer()
+        #expect(vm.answerText == "")
+    }
+
+    @Test("Clear answer does nothing when empty")
+    @MainActor
+    func clearAnswerWhenEmpty() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.clearAnswer()
+        #expect(vm.answerText == "")
+    }
 }

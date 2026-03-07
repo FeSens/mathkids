@@ -935,6 +935,65 @@
       "files": [
         "Sources/Features/Home/HomeView.swift"
       ]
+    },
+    {
+      "id": "ui-037",
+      "description": "Problem counter showing current problem number during timed games",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Problem counter visible during gameplay",
+        "Counter increments after each submission",
+        "Shows format like '#5'",
+        "Has accessibility identifier"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-038",
+      "description": "Shake to clear answer - device shake gesture clears the answer field",
+      "phase": "improvement",
+      "category": "logic",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Shaking device clears the answer text",
+        "Only clears when answer is not empty",
+        "Works during active gameplay",
+        "ViewModel has clearAnswer method"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-039",
+      "description": "Total games played milestone celebration on stats screen",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-006"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Stats screen shows milestone badge for 10, 25, 50, 100 games",
+        "Badge shows appropriate milestone text",
+        "No badge shown below 10 games",
+        "Badge has gold styling"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

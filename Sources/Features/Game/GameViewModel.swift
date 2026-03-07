@@ -24,6 +24,7 @@ final class GameViewModel {
     var problemTransitionId: UUID = UUID()
     var correctAnswerHint: Int? = nil
     var showSpeedBonus: Bool = false
+    var problemNumber: Int = 1
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10
@@ -141,6 +142,7 @@ final class GameViewModel {
 
         answerText = ""
         problemTransitionId = UUID()
+        problemNumber += 1
 
         if mode == .dailyChallenge {
             dailyChallengeProblemsAnswered += 1
@@ -171,6 +173,13 @@ final class GameViewModel {
         if !answerText.isEmpty {
             HapticService.buttonTap()
             answerText.removeLast()
+        }
+    }
+
+    func clearAnswer() {
+        if !answerText.isEmpty {
+            HapticService.buttonTap()
+            answerText = ""
         }
     }
 

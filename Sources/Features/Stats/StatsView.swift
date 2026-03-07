@@ -17,6 +17,28 @@ struct StatsView: View {
                         AchievementsView(stats: stats)
                     }
 
+                    if let milestone = viewModel.gamesMilestone {
+                        HStack(spacing: 8) {
+                            Image(systemName: "trophy.fill")
+                                .foregroundStyle(.yellow)
+                            Text(milestone)
+                                .font(.system(size: 16, weight: .bold, design: .rounded))
+                            Text("(\(viewModel.gamesPlayed) games)")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 10)
+                        .background(
+                            Capsule()
+                                .fill(Color.yellow.opacity(0.15))
+                                .overlay(
+                                    Capsule().stroke(Color.yellow.opacity(0.3), lineWidth: 1)
+                                )
+                        )
+                        .accessibilityIdentifier("gamesMilestone")
+                    }
+
                     accuracyTrend
 
                     weeklyActivity

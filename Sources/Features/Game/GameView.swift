@@ -95,6 +95,11 @@ struct GameView: View {
                     .foregroundStyle(.yellow)
                     .accessibilityIdentifier("scoreLabel")
 
+                Text("#\(viewModel.problemNumber)")
+                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .foregroundStyle(.secondary)
+                    .accessibilityIdentifier("problemCounter")
+
                 Spacer()
 
                 if viewModel.comboMultiplier > 1 {
