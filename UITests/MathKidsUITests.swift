@@ -100,4 +100,51 @@ final class MathKidsUITests: XCTestCase {
         let streakIcon = app.images["streakIcon"]
         XCTAssertTrue(streakIcon.waitForExistence(timeout: 3))
     }
+
+    func testPracticeMode() {
+        let practiceButton = app.buttons["practiceButton"]
+        XCTAssertTrue(practiceButton.waitForExistence(timeout: 3))
+        practiceButton.tap()
+
+        // No countdown in practice - problem should appear immediately
+        let problemLabel = app.staticTexts["problemLabel"]
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 5))
+
+        // Done button should exist instead of timer
+        let doneButton = app.buttons["doneButton"]
+        XCTAssertTrue(doneButton.waitForExistence(timeout: 3))
+
+        // Submit an answer
+        app.buttons["num_1"].tap()
+        app.buttons["submitButton"].tap()
+
+        // End practice
+        doneButton.tap()
+
+        // Should see results
+        let finalScore = app.staticTexts["finalScore"]
+        XCTAssertTrue(finalScore.waitForExistence(timeout: 5))
+    }
+
+    func testSettingsSheet() {
+        let settingsButton = app.buttons["settingsButton"]
+        XCTAssertTrue(settingsButton.waitForExistence(timeout: 3))
+        settingsButton.tap()
+
+        // Settings sheet should appear
+        let soundToggle = app.switches["soundToggle"]
+        XCTAssertTrue(soundToggle.waitForExistence(timeout: 3))
+
+        let hapticsToggle = app.switches["hapticsToggle"]
+        XCTAssertTrue(hapticsToggle.exists)
+
+        // Dismiss
+        let doneButton = app.buttons["settingsDone"]
+        XCTAssertTrue(doneButton.exists)
+        doneButton.tap()
+
+        // Should be back on home
+        let title = app.staticTexts["appTitle"]
+        XCTAssertTrue(title.waitForExistence(timeout: 3))
+    }
 }

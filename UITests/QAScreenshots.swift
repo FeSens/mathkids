@@ -247,6 +247,81 @@ final class QAScreenshots: XCTestCase {
         saveScreenshot("qa-007-after-rapid-tab-switch")
     }
 
+    // MARK: - QA-008: Practice mode
+
+    func test_QA008_PracticeMode() {
+        let practiceButton = app.buttons["practiceButton"]
+        XCTAssertTrue(practiceButton.waitForExistence(timeout: 5))
+        saveScreenshot("qa-008-step-01-practice-button-visible")
+
+        practiceButton.tap()
+
+        // No countdown in practice mode
+        let problemLabel = app.staticTexts["problemLabel"]
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 5))
+        saveScreenshot("qa-008-step-02-practice-game-screen")
+
+        // Verify no timer, but Done button exists
+        let doneButton = app.buttons["doneButton"]
+        XCTAssertTrue(doneButton.exists)
+
+        // Answer a few questions
+        for _ in 0..<3 {
+            app.buttons["num_3"].tap()
+            app.buttons["submitButton"].tap()
+            Thread.sleep(forTimeInterval: 0.5)
+        }
+        saveScreenshot("qa-008-step-03-after-answers")
+
+        // Tap Done
+        doneButton.tap()
+        Thread.sleep(forTimeInterval: 1)
+
+        // Should show results
+        let finalScore = app.staticTexts["finalScore"]
+        if finalScore.waitForExistence(timeout: 5) {
+            saveScreenshot("qa-008-step-04-practice-results")
+        }
+    }
+
+    // MARK: - QA-009: Settings
+
+    func test_QA009_Settings() {
+        let settingsButton = app.buttons["settingsButton"]
+        XCTAssertTrue(settingsButton.waitForExistence(timeout: 5))
+        saveScreenshot("qa-009-step-01-settings-gear-visible")
+
+        settingsButton.tap()
+        Thread.sleep(forTimeInterval: 1)
+        saveScreenshot("qa-009-step-02-settings-sheet")
+
+        // Toggle sound
+        let soundToggle = app.switches["soundToggle"]
+        if soundToggle.waitForExistence(timeout: 3) {
+            soundToggle.tap()
+            Thread.sleep(forTimeInterval: 0.5)
+            saveScreenshot("qa-009-step-03-sound-toggled")
+            soundToggle.tap() // toggle back
+        }
+
+        // Toggle haptics
+        let hapticsToggle = app.switches["hapticsToggle"]
+        if hapticsToggle.exists {
+            hapticsToggle.tap()
+            Thread.sleep(forTimeInterval: 0.5)
+            saveScreenshot("qa-009-step-04-haptics-toggled")
+            hapticsToggle.tap() // toggle back
+        }
+
+        // Dismiss
+        let doneButton = app.buttons["settingsDone"]
+        if doneButton.exists {
+            doneButton.tap()
+            Thread.sleep(forTimeInterval: 0.5)
+            saveScreenshot("qa-009-step-05-settings-dismissed")
+        }
+    }
+
     // MARK: - QA-006: Dark mode screenshots
 
     func test_QA006_DarkMode() {
