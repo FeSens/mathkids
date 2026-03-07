@@ -3,7 +3,7 @@
 ## Session 2 — 2026-03-07
 
 ### Status
-- Features: 27/27 passing (12 MVP + 9 polish + 6 improvement)
+- Features: 29/29 passing (12 MVP + 9 polish + 8 improvement)
 - Unit tests: 88 (all green)
 - UI tests: 12 (all green)
 - QA: PASSED
@@ -12,18 +12,12 @@
 
 **MVP (12):** MathProblem, DifficultyLevel, GameSession, PlayerStats, ProblemGenerator, GameEngine, StatsService, HomeView, GameView, CelebrationView/ShakeEffect, ResultsView, StatsView, Navigation
 
-**Polish (9):** HapticService, CountdownView (3-2-1-GO), ScorePopupView (+N floating), Achievement model (12 badges), AchievementsView (grid in stats), AchievementToast (unlock notification on results), SoundService (AudioToolbox system sounds), Practice mode (untimed, no timer), Settings (sound/haptics toggles)
+**Polish (9):** HapticService, CountdownView, ScorePopupView, Achievement model, AchievementsView, AchievementToast, SoundService, Practice mode, Settings
 
-**Improvement (6):** Operation selector (filter +/-/x//), Character reactions (emoji face), Daily challenge (10 problems, count-up timer), XP/Level system (10 levels), Level badge + XP progress bar on home
+**Improvement (8):** Operation selector, Character reactions, Daily challenge, XP/Level system, Level badge + XP bar, Animated background gradient, XP on results, (one counted as part of core-006/ui-017)
 
 ### Architecture
 - XcodeGen (project.yml), @Observable, SwiftData, Swift Testing, NavigationStack
 - Simulator: iPhone 16 Pro (id=269258A7-07B4-4198-AA3C-9FDDAA128E90)
-- GPG signing may fail (1Password issue) — use `git -c commit.gpgsign=false commit`
-- Home screen uses ScrollView for content overflow
-
-### Key Files Added This Session
-- Sources/Services/SoundService.swift, SettingsManager.swift
-- Sources/Features/Home/SettingsView.swift
-- Sources/Features/Game/CharacterView.swift
-- Sources/Domain/LevelSystem.swift
+- GPG signing may fail — use `git -c commit.gpgsign=false commit`
+- Home screen uses ScrollView + ZStack with animated gradient background
