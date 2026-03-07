@@ -14,6 +14,7 @@
 		0971EE8A7650F627609282F6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89B390E65161140B443E6C1 /* Achievement.swift */; };
 		14E964C994E4048F5F40533F /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0908AEDE395D6C0FB5526F /* GameViewModelTests.swift */; };
 		1BDADD881AD66BBF532FF1C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB5E51B2B9456B0E07EFFA /* ContentView.swift */; };
+		27C371AB3D1E9B65F103A801 /* AccuracyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC8FD943445AF031F38A38F /* AccuracyChartView.swift */; };
 		384CC3905A5E0E0D8430FAF2 /* AnimatedGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB279A3D7DAF208804D4F9 /* AnimatedGradientBackground.swift */; };
 		38933B53403070AA7462252A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F99D22DB5C7E150990E3EAD /* HomeView.swift */; };
 		38E291DC560EA1387AADC1C4 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F6948A6B20B56826FBD34A /* AppRouter.swift */; };
@@ -116,6 +117,7 @@
 		B89B390E65161140B443E6C1 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		C5C0FD17C374BB2F9A8EA5B0 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
 		CE2D3D1613DECEE2512E2DB7 /* MathKids.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MathKids.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFC8FD943445AF031F38A38F /* AccuracyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccuracyChartView.swift; sourceTree = "<group>"; };
 		D39EC07D095F577A76D0FA15 /* PlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
 		DC8712E4C9A4AD83327A7B15 /* LevelSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSystemTests.swift; sourceTree = "<group>"; };
 		DDB33CC34BDF77A892728B95 /* DifficultyLevelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelTests.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		7AFFBB774B527D17A430CB50 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
+				CFC8FD943445AF031F38A38F /* AccuracyChartView.swift */,
 				213185E73136A381D0619E0A /* AchievementsView.swift */,
 				4268B9A4B095A3338E8F1059 /* StatsView.swift */,
 				A0407C5DA68BE6251BE36AC8 /* StatsViewModel.swift */,
@@ -419,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27C371AB3D1E9B65F103A801 /* AccuracyChartView.swift in Sources */,
 				0971EE8A7650F627609282F6 /* Achievement.swift in Sources */,
 				E13329274194396C53F81522 /* AchievementToast.swift in Sources */,
 				5616AEAF2AA1B3AAE13AA84F /* AchievementsView.swift in Sources */,

@@ -17,6 +17,8 @@ struct StatsView: View {
                         AchievementsView(stats: stats)
                     }
 
+                    accuracyTrend
+
                     weeklyActivity
                 }
                 .padding()
@@ -89,6 +91,31 @@ struct StatsView: View {
                     .accessibilityIdentifier("hardGames")
             }
         }
+    }
+
+    private var accuracyTrend: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Accuracy Trend")
+                .font(.headline)
+
+            if viewModel.recentAccuracies.isEmpty {
+                Text("Play some games to see your trend!")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 32)
+                    .accessibilityIdentifier("accuracyTrendEmpty")
+            } else {
+                AccuracyChartView(accuracies: viewModel.recentAccuracies)
+                    .frame(height: 120)
+                    .accessibilityIdentifier("accuracyTrendChart")
+            }
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(.systemGray6))
+        )
     }
 
     private var weeklyActivity: some View {

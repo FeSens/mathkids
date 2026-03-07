@@ -818,6 +818,64 @@
         "Sources/Features/Results/ResultsView.swift",
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "ui-031",
+      "description": "Timer warning pulse effect when time is running low (last 10 seconds)",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Timer label pulses red when under 10 seconds remaining",
+        "Pulse animation scales between 1.0 and 1.15",
+        "No pulse when time is above 10 seconds",
+        "Only applies in timed mode"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-032",
+      "description": "Problem type badge showing the operation type with a colored icon",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Operation badge shows +, -, x, or / symbol",
+        "Badge color matches operation type",
+        "Badge updates when problem changes",
+        "Badge has accessibility identifier"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-033",
+      "description": "Stats screen shows accuracy trend graph using last 10 games",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-006"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Stats screen shows a simple line chart of recent accuracy",
+        "Chart plots last 10 game accuracies",
+        "Chart has labeled axes",
+        "Shows placeholder message when no games played"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Domain/PlayerStats.swift"
+      ]
     }
   ],
   "_schema": {

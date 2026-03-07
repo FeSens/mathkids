@@ -15,6 +15,7 @@ final class StatsViewModel {
     var mediumGames: Int = 0
     var hardGames: Int = 0
     var playerStats: PlayerStats?
+    var recentAccuracies: [Double] = []
 
     private let statsService: StatsService
 
@@ -35,5 +36,6 @@ final class StatsViewModel {
         easyGames = stats.easyGamesPlayed
         mediumGames = stats.mediumGamesPlayed
         hardGames = stats.hardGamesPlayed
+        recentAccuracies = stats.recentAccuracies
     }
 }

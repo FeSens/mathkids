@@ -3,6 +3,7 @@ import SwiftUI
 struct GameView: View {
     @State var viewModel: GameViewModel
     var onGameEnd: (GameSession) -> Void
+    @State private var timerPulse: Bool = false
 
     var body: some View {
         ZStack {
@@ -142,7 +143,12 @@ struct GameView: View {
                 } else {
                     Label("\(viewModel.timeRemaining)s", systemImage: "timer")
                         .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .foregroundStyle(viewModel.timeProgress < 0.25 ? .red : .primary)
+                        .foregroundStyle(viewModel.timeRemaining <= 10 ? .red : .primary)
+                        .scaleEffect(viewModel.timeRemaining <= 10 && timerPulse ? 1.15 : 1.0)
+                        .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: timerPulse)
+                        .onChange(of: viewModel.timeRemaining) { _, newValue in
+                            timerPulse = newValue <= 10
+                        }
                         .accessibilityIdentifier("timerLabel")
                 }
             }
@@ -206,6 +212,32 @@ struct GameView: View {
                 .frame(width: 10, height: 10)
                 .offset(y: -20)
                 .accessibilityIdentifier("difficultyDot")
+
+            Text(operationBadgeSymbol)
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .foregroundStyle(.white)
+                .frame(width: 28, height: 28)
+                .background(Circle().fill(operationBadgeColor))
+                .offset(y: -20)
+                .accessibilityIdentifier("operationBadge")
+        }
+    }
+
+    private var operationBadgeSymbol: String {
+        switch viewModel.engine.currentProblem.operation {
+        case .add: "+"
+        case .subtract: "-"
+        case .multiply: "x"
+        case .divide: "/"
+        }
+    }
+
+    private var operationBadgeColor: Color {
+        switch viewModel.engine.currentProblem.operation {
+        case .add: .green
+        case .subtract: .blue
+        case .multiply: .orange
+        case .divide: .purple
         }
     }
 

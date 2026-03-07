@@ -16,6 +16,7 @@ final class PlayerStats {
     var dailyChallengeBestTime: Int = 0
     var lastDailyChallengeDate: Date?
     var totalXP: Int = 0
+    var recentAccuracies: [Double] = []
 
     init() {}
 
@@ -69,6 +70,11 @@ final class PlayerStats {
         case .easy: easyGamesPlayed += 1
         case .medium: mediumGamesPlayed += 1
         case .hard: hardGamesPlayed += 1
+        }
+
+        recentAccuracies.append(session.accuracy)
+        if recentAccuracies.count > 10 {
+            recentAccuracies.removeFirst()
         }
     }
 }
