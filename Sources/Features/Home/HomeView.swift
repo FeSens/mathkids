@@ -8,7 +8,8 @@ struct HomeView: View {
     var onStartDailyChallenge: (() -> Void)?
 
     var body: some View {
-        VStack(spacing: 24) {
+        ScrollView {
+        VStack(spacing: 16) {
             HStack {
                 Spacer()
                 Button {
@@ -24,6 +25,8 @@ struct HomeView: View {
 
             titleSection
 
+            levelBadge
+
             statsCards
 
             dailyChallengeCard
@@ -35,10 +38,9 @@ struct HomeView: View {
             playButton
 
             practiceButton
-
-            Spacer()
         }
         .padding()
+        }
         .onAppear {
             viewModel.loadStats()
         }
@@ -62,6 +64,55 @@ struct HomeView: View {
 
             Text("Train your brain!")
                 .font(.title3)
+                .foregroundStyle(.secondary)
+        }
+    }
+
+    private var levelBadge: some View {
+        VStack(spacing: 6) {
+            HStack(spacing: 8) {
+                Text("Lv.\(viewModel.currentLevel)")
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 4)
+                    .background(
+                        Capsule().fill(
+                            LinearGradient(
+                                colors: [.blue, .purple],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                    )
+
+                Text(viewModel.levelName)
+                    .font(.system(size: 16, weight: .semibold, design: .rounded))
+                    .foregroundStyle(.primary)
+            }
+            .accessibilityIdentifier("levelBadge")
+
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(Color.gray.opacity(0.2))
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(
+                            LinearGradient(
+                                colors: [.blue, .purple],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: geo.size.width * viewModel.levelProgress)
+                }
+            }
+            .frame(height: 6)
+            .padding(.horizontal, 40)
+            .accessibilityIdentifier("xpProgressBar")
+
+            Text("\(viewModel.totalXP) XP")
+                .font(.caption)
                 .foregroundStyle(.secondary)
         }
     }

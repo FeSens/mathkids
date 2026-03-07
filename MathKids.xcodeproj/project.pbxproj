@@ -30,6 +30,7 @@
 		84AB6E25E03008F4846AA136 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268B9A4B095A3338E8F1059 /* StatsView.swift */; };
 		85261327FDF0B22B4AF5A111 /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBDA6BF0C03D8CD5465376F /* CelebrationView.swift */; };
 		8868DDA9F86BA47EF50C8F36 /* SoundServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E347616EBC6E0C14778115F /* SoundServiceTests.swift */; };
+		8925028C8AAC7CEFB165C56E /* LevelSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA62A70944B48A8A5693 /* LevelSystem.swift */; };
 		8CB311D41F99BBDF6C753439 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA263C1009CCDB50B3EA5BE /* SoundService.swift */; };
 		8EAF3C36CE9CE56D65EB06A5 /* GameSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C03229BF2CCCFC4C1BA8294 /* GameSessionTests.swift */; };
 		908EE0D63E164C25E6C81060 /* MathProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60A09BB43C507382AB7C0D /* MathProblem.swift */; };
@@ -41,6 +42,7 @@
 		BF29F9BF41C1FCAE3E101B14 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0407C5DA68BE6251BE36AC8 /* StatsViewModel.swift */; };
 		C22E4D156E6B6B6D2E3AF523 /* MathKidsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C13519308D002D93BFCF811 /* MathKidsUITests.swift */; };
 		C35832DAE06D2A763E9278E4 /* ScorePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D8D1E0DF891755FF456716 /* ScorePopupView.swift */; };
+		CAF9CBD71994FFC48E5E9BB6 /* LevelSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8712E4C9A4AD83327A7B15 /* LevelSystemTests.swift */; };
 		CD1A74D6EAA366F8D25D018C /* DifficultyLevelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB33CC34BDF77A892728B95 /* DifficultyLevelTests.swift */; };
 		CF87700C658B4CC7D1AD3E24 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78F2B01B9065E487941195 /* GameView.swift */; };
 		DC296F4E52810A59E0B39658 /* MathProblemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1D47D67C3C800029BDCF4 /* MathProblemTests.swift */; };
@@ -84,6 +86,7 @@
 		2FBB5E51B2B9456B0E07EFFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A131ACE8EAE37C45B0DFDC6 /* ProblemGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemGenerator.swift; sourceTree = "<group>"; };
 		3C03229BF2CCCFC4C1BA8294 /* GameSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionTests.swift; sourceTree = "<group>"; };
+		3EC1FA62A70944B48A8A5693 /* LevelSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSystem.swift; sourceTree = "<group>"; };
 		3F99D22DB5C7E150990E3EAD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3FA9143B2211A44256A840D5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4268B9A4B095A3338E8F1059 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		C5C0FD17C374BB2F9A8EA5B0 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
 		CE2D3D1613DECEE2512E2DB7 /* MathKids.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MathKids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39EC07D095F577A76D0FA15 /* PlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
+		DC8712E4C9A4AD83327A7B15 /* LevelSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSystemTests.swift; sourceTree = "<group>"; };
 		DDB33CC34BDF77A892728B95 /* DifficultyLevelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelTests.swift; sourceTree = "<group>"; };
 		DFA263C1009CCDB50B3EA5BE /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
 		E149DD7A246AF22EEEA61CD5 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				B89B390E65161140B443E6C1 /* Achievement.swift */,
 				57BDC4FC3F00E9203C4CFAC3 /* DifficultyLevel.swift */,
 				A2BE9B3CED4BD9BFBC7D8482 /* GameSession.swift */,
+				3EC1FA62A70944B48A8A5693 /* LevelSystem.swift */,
 				6B60A09BB43C507382AB7C0D /* MathProblem.swift */,
 				D39EC07D095F577A76D0FA15 /* PlayerStats.swift */,
 			);
@@ -219,6 +224,7 @@
 				B828ACFB982D8503E8169392 /* AchievementTests.swift */,
 				DDB33CC34BDF77A892728B95 /* DifficultyLevelTests.swift */,
 				3C03229BF2CCCFC4C1BA8294 /* GameSessionTests.swift */,
+				DC8712E4C9A4AD83327A7B15 /* LevelSystemTests.swift */,
 				7DA1D47D67C3C800029BDCF4 /* MathProblemTests.swift */,
 				27A82702F56EA7C4EF929777 /* PlayerStatsTests.swift */,
 			);
@@ -393,6 +399,7 @@
 				14E964C994E4048F5F40533F /* GameViewModelTests.swift in Sources */,
 				4BBB1ADCC4D23153D19B99EF /* HapticServiceTests.swift in Sources */,
 				05A666361876334B704A3459 /* HomeViewModelTests.swift in Sources */,
+				CAF9CBD71994FFC48E5E9BB6 /* LevelSystemTests.swift in Sources */,
 				DC296F4E52810A59E0B39658 /* MathProblemTests.swift in Sources */,
 				AF6D0D6E02AC859E6E7F27D1 /* PlayerStatsTests.swift in Sources */,
 				3BF70E47926CC19260C13CF2 /* ProblemGeneratorTests.swift in Sources */,
@@ -421,6 +428,7 @@
 				4D522B903AC628A4FA761EC0 /* HapticService.swift in Sources */,
 				38933B53403070AA7462252A /* HomeView.swift in Sources */,
 				487C5AB4A01BDD59CBB3895E /* HomeViewModel.swift in Sources */,
+				8925028C8AAC7CEFB165C56E /* LevelSystem.swift in Sources */,
 				9DD2656282F7E208DEE47D9B /* MathKidsApp.swift in Sources */,
 				908EE0D63E164C25E6C81060 /* MathProblem.swift in Sources */,
 				F1833A535A99781208F25C92 /* PlayerStats.swift in Sources */,

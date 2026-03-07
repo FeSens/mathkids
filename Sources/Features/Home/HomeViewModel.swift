@@ -12,6 +12,10 @@ final class HomeViewModel {
     var bestScore: Int = 0
     var dailyChallengeCompleted: Bool = false
     var dailyChallengeBestTime: Int = 0
+    var currentLevel: Int = 1
+    var levelName: String = "Beginner"
+    var levelProgress: Double = 0
+    var totalXP: Int = 0
 
     private let statsService: StatsService
 
@@ -41,6 +45,10 @@ final class HomeViewModel {
         dailyStreak = stats.dailyStreak
         bestScore = stats.bestScore
         dailyChallengeBestTime = stats.dailyChallengeBestTime
+        currentLevel = stats.currentLevel
+        levelName = stats.levelName
+        levelProgress = stats.levelProgress
+        totalXP = stats.totalXP
 
         let calendar = Calendar.current
         if let lastChallenge = stats.lastDailyChallengeDate {

@@ -15,8 +15,13 @@ final class PlayerStats {
     var hardGamesPlayed: Int = 0
     var dailyChallengeBestTime: Int = 0
     var lastDailyChallengeDate: Date?
+    var totalXP: Int = 0
 
     init() {}
+
+    var currentLevel: Int { LevelSystem.level(for: totalXP) }
+    var levelName: String { LevelSystem.levelName(for: totalXP) }
+    var levelProgress: Double { LevelSystem.progressToNextLevel(for: totalXP) }
 
     var accuracy: Double {
         guard totalSolved > 0 else { return 0 }

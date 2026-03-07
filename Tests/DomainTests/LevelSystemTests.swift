@@ -1,0 +1,54 @@
+import Testing
+@testable import MathKids
+
+@Suite("LevelSystem Tests")
+struct LevelSystemTests {
+    @Test("Level 1 at 0 XP")
+    func level1At0XP() {
+        #expect(LevelSystem.level(for: 0) == 1)
+    }
+
+    @Test("Level 2 at 100 XP")
+    func level2At100XP() {
+        #expect(LevelSystem.level(for: 100) == 2)
+    }
+
+    @Test("Level 3 at 300 XP")
+    func level3At300XP() {
+        #expect(LevelSystem.level(for: 300) == 3)
+    }
+
+    @Test("Max level at high XP")
+    func maxLevelAtHighXP() {
+        #expect(LevelSystem.level(for: 99999) == LevelSystem.thresholds.count)
+    }
+
+    @Test("Progress to next level at 0 XP is 0")
+    func progressAt0() {
+        let progress = LevelSystem.progressToNextLevel(for: 0)
+        #expect(progress >= 0 && progress <= 1)
+    }
+
+    @Test("Progress midway through level")
+    func progressMidway() {
+        // Level 1: 0-99 XP, so 50 XP = 50% progress
+        let progress = LevelSystem.progressToNextLevel(for: 50)
+        #expect(progress > 0.4 && progress < 0.6)
+    }
+
+    @Test("Level name exists for each level")
+    func levelNamesExist() {
+        for xp in [0, 100, 300, 600, 1000, 1500, 2100, 2800, 3600, 4500] {
+            let name = LevelSystem.levelName(for: xp)
+            #expect(!name.isEmpty)
+        }
+    }
+
+    @Test("XP for correct answer with streak bonus")
+    func xpForAnswer() {
+        let base = LevelSystem.xpForCorrectAnswer(streak: 0)
+        #expect(base == 10)
+        let withStreak = LevelSystem.xpForCorrectAnswer(streak: 5)
+        #expect(withStreak > base)
+    }
+}
