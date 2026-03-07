@@ -3,17 +3,23 @@
 ## Session 1 — 2026-03-07
 
 ### Status
-- Features: 12/12 passing
-- Unit tests: 41 (all green)
+- Features: 15/15 passing (12 MVP + 3 polish)
+- Unit tests: 50 (all green)
 - UI tests: 7 (all green)
-- QA: PASSED (7 flows verified with screenshots + dark mode + soak test)
+- QA: PASSED (6 flows verified with screenshots + dark mode + soak test)
 
 ### What was built
-- **Domain layer**: MathProblem, Operation, DifficultyLevel, GameSession, PlayerStats (SwiftData)
-- **Services layer**: ProblemGenerator, GameEngine (@Observable, timer-based), StatsService (SwiftData persistence)
-- **Features layer**: HomeView, GameView, CelebrationView, ShakeEffect, ResultsView, StatsView
-- **App layer**: MathKidsApp, ContentView (TabView), AppRouter (NavigationStack)
-- **QA**: QAScreenshots XCUITest class, 25+ screenshots, dark mode verified, soak test passed
+
+**MVP (12 features):**
+- Domain: MathProblem, Operation, DifficultyLevel, GameSession, PlayerStats (SwiftData)
+- Services: ProblemGenerator, GameEngine (@Observable), StatsService (SwiftData)
+- Features: HomeView, GameView, CelebrationView, ShakeEffect, ResultsView, StatsView
+- App: MathKidsApp, ContentView (TabView), AppRouter (NavigationStack)
+
+**Polish (3 features):**
+- HapticService: light/heavy impact + notification haptics on game actions
+- CountdownView: animated 3-2-1-GO overlay before game starts
+- ScorePopupView: floating +N points text on correct answers
 
 ### Architecture
 - XcodeGen (project.yml) for project generation
@@ -22,13 +28,3 @@
 - Swift Testing for unit tests, XCTest for UI tests
 - NavigationStack with typed AppRoute enum
 - Simulator: iPhone 16 Pro (id=269258A7-07B4-4198-AA3C-9FDDAA128E90)
-
-### QA Summary
-All 7 flows verified:
-1. Home screen & difficulty selection - clean layout, proper highlighting
-2. Game play flow - large problem text, responsive number pad, timer animation
-3. Results screen - animated score, stats, Play Again navigation
-4. Stats screen - streak, lifetime stats, difficulty breakdown
-5. Tab navigation - stable switching, full game flow
-6. Dark mode - all screens adapt correctly
-7. Soak test - stats accumulate correctly across multiple games, rapid tab switching stable

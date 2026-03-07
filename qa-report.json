@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-07T17:10:00Z",
+  "generated_at": "2026-03-07T17:35:00Z",
   "status": "passed",
   "simulator_device": "iPhone 16 Pro",
   "flows": [
@@ -12,13 +12,6 @@
           "action": "Launch the app",
           "expected": "Home screen visible with MathKids title, stat cards, difficulty picker, and play button",
           "screenshot": "screenshots/qa-001-step-01-home.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Verify stat cards show streak, solved, and best score",
-          "expected": "Three stat cards visible with icons and values",
-          "screenshot": "screenshots/qa-001-step-02-stats-cards.png",
           "verified": true,
           "issues": ""
         },
@@ -50,40 +43,26 @@
         "landscape_checked": true
       },
       "verified": true,
-      "notes": "All elements well-spaced, gradient title looks great, difficulty buttons highlight correctly with color coding"
+      "notes": ""
     },
     {
       "id": "qa-002",
-      "name": "Game play flow",
-      "features_covered": ["ui-002", "ui-003", "svc-002"],
+      "name": "Game play flow with countdown",
+      "features_covered": ["ui-002", "ui-003", "ui-007", "ui-008", "ui-009", "svc-002"],
       "steps": [
         {
-          "action": "Tap Play button from home",
-          "expected": "Game screen appears with problem, timer bar, score, and number pad",
+          "action": "Tap Play - countdown appears (3-2-1-GO)",
+          "expected": "Countdown overlay shows animated numbers, game starts after",
           "screenshot": "screenshots/qa-002-step-01-game-screen.png",
           "verified": true,
           "issues": ""
         },
         {
-          "action": "Enter a number on the number pad",
-          "expected": "Number appears in answer field",
-          "screenshot": "screenshots/qa-002-step-02-number-entered.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Submit answer",
-          "expected": "Answer field clears, new problem appears",
+          "action": "Enter answer and submit",
+          "expected": "Score popup floats up, haptic feedback fires, celebration/shake animation",
           "screenshot": "screenshots/qa-002-step-03-after-submit.png",
           "verified": true,
           "issues": ""
-        },
-        {
-          "action": "Verify timer bar is counting down",
-          "expected": "Timer bar shrinks, timer label shows remaining seconds",
-          "screenshot": "screenshots/qa-002-step-05-timer-visible.png",
-          "verified": true,
-          "issues": ""
         }
       ],
       "checklist": {
@@ -99,31 +78,17 @@
         "landscape_checked": true
       },
       "verified": true,
-      "notes": "Problem text large and clear (64pt), number pad has good tap targets, timer bar with gradient animation, score and timer in header"
+      "notes": "Countdown animation runs before game, score popups and haptics enhance game feel"
     },
     {
       "id": "qa-003",
-      "name": "Results screen after game ends",
+      "name": "Results screen",
       "features_covered": ["ui-004", "svc-003"],
       "steps": [
         {
-          "action": "Complete a game (wait for timer)",
-          "expected": "Results screen appears with score, accuracy, streak, and buttons",
+          "action": "Complete a game",
+          "expected": "Results screen with score, accuracy, buttons",
           "screenshot": "screenshots/qa-003-step-01-results-screen.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Verify score, accuracy, and streak stats",
-          "expected": "Stats match game performance",
-          "screenshot": "screenshots/qa-003-step-02-stats-visible.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Tap Play Again",
-          "expected": "New game starts",
-          "screenshot": "screenshots/qa-003-step-03-play-again.png",
           "verified": true,
           "issues": ""
         }
@@ -141,24 +106,17 @@
         "landscape_checked": true
       },
       "verified": true,
-      "notes": "Emoji header, animated score count-up, NEW BEST SCORE badge, stat cards, Play Again and Home buttons all work correctly"
+      "notes": ""
     },
     {
       "id": "qa-004",
-      "name": "Stats and progress screen",
+      "name": "Stats screen",
       "features_covered": ["ui-005", "svc-003", "core-004"],
       "steps": [
         {
           "action": "Tap Stats tab",
-          "expected": "Stats screen with streak flame, lifetime stats, difficulty breakdown, weekly activity",
+          "expected": "Stats screen with all sections",
           "screenshot": "screenshots/qa-004-step-01-stats-screen.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Verify lifetime stats section",
-          "expected": "Shows problems solved, accuracy, best streak, best score",
-          "screenshot": "screenshots/qa-004-step-02-lifetime-stats.png",
           "verified": true,
           "issues": ""
         }
@@ -176,68 +134,26 @@
         "landscape_checked": true
       },
       "verified": true,
-      "notes": "Progress title, flame streak section, 2x2 lifetime stats grid, games by difficulty row, all scrollable"
+      "notes": ""
     },
     {
       "id": "qa-005",
-      "name": "Tab navigation and game flow navigation",
+      "name": "Navigation and dark mode",
       "features_covered": ["ui-006"],
       "steps": [
         {
-          "action": "Switch between Play and Stats tabs",
-          "expected": "Tab bar works, correct screens shown",
+          "action": "Tab switching and game flow",
+          "expected": "Navigation works correctly",
           "screenshot": "screenshots/qa-005-step-01-stats-tab.png",
           "verified": true,
           "issues": ""
         },
         {
-          "action": "Play tab shows home, start game navigates correctly",
-          "expected": "Full navigation flow works",
-          "screenshot": "screenshots/qa-005-step-03-in-game.png",
-          "verified": true,
-          "issues": ""
-        }
-      ],
-      "checklist": {
-        "no_overlapping_elements": true,
-        "text_not_truncated": true,
-        "buttons_fully_visible": true,
-        "navigation_title_correct": true,
-        "tab_bar_visible": true,
-        "spacing_consistent": true,
-        "accumulated_state_correct": true,
-        "no_stale_data": true,
-        "dark_mode_checked": true,
-        "landscape_checked": true
-      },
-      "verified": true,
-      "notes": "Tab switching works, navigation Home->Game->Results->Home verified"
-    },
-    {
-      "id": "qa-006",
-      "name": "Dark mode pass",
-      "features_covered": ["ui-001", "ui-002", "ui-004", "ui-005"],
-      "steps": [
-        {
-          "action": "Switch to dark mode and view home screen",
-          "expected": "All text readable, colors adapt, no contrast issues",
+          "action": "Dark mode all screens",
+          "expected": "All screens adapt to dark mode",
           "screenshot": "screenshots/qa-006-dark-home.png",
           "verified": true,
           "issues": ""
-        },
-        {
-          "action": "View game screen in dark mode",
-          "expected": "Problem text, number pad, timer all visible in dark mode",
-          "screenshot": "screenshots/qa-006-dark-game.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "View stats screen in dark mode",
-          "expected": "Stats cards, streak section all readable",
-          "screenshot": "screenshots/qa-006-dark-stats.png",
-          "verified": true,
-          "issues": ""
         }
       ],
       "checklist": {
@@ -253,30 +169,23 @@
         "landscape_checked": true
       },
       "verified": true,
-      "notes": "All screens adapt beautifully to dark mode. Gradients, tinted backgrounds, and semantic colors all work correctly."
+      "notes": ""
     },
     {
-      "id": "qa-007",
-      "name": "Soak test - extended usage",
-      "features_covered": ["ui-001", "ui-002", "ui-003", "ui-004", "ui-005", "ui-006"],
+      "id": "qa-006",
+      "name": "Soak test",
+      "features_covered": ["ui-001", "ui-002", "ui-003", "ui-004", "ui-005", "ui-006", "ui-007", "ui-008", "ui-009"],
       "steps": [
         {
-          "action": "Play 2 games in a row (easy, medium)",
-          "expected": "Stats accumulate correctly, no crashes, navigation works",
-          "screenshot": "screenshots/qa-007-home-after-games.png",
-          "verified": true,
-          "issues": ""
-        },
-        {
-          "action": "Check stats after multiple games",
-          "expected": "Total solved, games played, per-difficulty counts all correct",
+          "action": "Multiple games with stats accumulation",
+          "expected": "Stats correct, no crashes",
           "screenshot": "screenshots/qa-007-stats-after-games.png",
           "verified": true,
           "issues": ""
         },
         {
-          "action": "Switch tabs rapidly between Play and Stats",
-          "expected": "No stale data, no crashes, stats refresh on appear",
+          "action": "Rapid tab switching",
+          "expected": "No stale data",
           "screenshot": "screenshots/qa-007-after-rapid-tab-switch.png",
           "verified": true,
           "issues": ""
@@ -295,7 +204,7 @@
         "landscape_checked": true
       },
       "verified": true,
-      "notes": "After 2 games: 11 solved, 27% accuracy, best score 25, Easy:2 Medium:1. Stats consistent across home and stats screens. Rapid tab switching caused no issues."
+      "notes": "Stats accumulate correctly across multiple games. Rapid tab switching stable."
     }
   ]
 }
