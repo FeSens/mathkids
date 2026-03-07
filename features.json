@@ -288,6 +288,53 @@
         "Toast auto-dismisses after 3 seconds"
       ],
       "files": ["Sources/Features/Results/AchievementToast.swift", "Sources/Features/Results/ResultsView.swift"]
+    },
+    {
+      "id": "svc-004",
+      "description": "SoundService using AudioToolbox for game sound effects (correct ding, wrong buzz, countdown tick, game over)",
+      "phase": "polish",
+      "category": "service",
+      "depends_on": [],
+      "passes": true,
+      "test_steps": [
+        "SoundService has methods for correct, wrong, countdown, and gameOver sounds",
+        "Uses system sounds via AudioToolbox (no asset files needed)",
+        "Sounds can be enabled/disabled via a muted flag",
+        "Integrated into GameViewModel for correct/wrong/countdown events"
+      ],
+      "files": ["Sources/Services/SoundService.swift"]
+    },
+    {
+      "id": "ui-012",
+      "description": "Practice mode (untimed) where kids can solve problems at their own pace without timer pressure",
+      "phase": "polish",
+      "category": "ui",
+      "depends_on": ["ui-001", "svc-001"],
+      "passes": true,
+      "test_steps": [
+        "Home screen shows Practice button alongside Play",
+        "Practice mode has no timer, no time pressure",
+        "Shows running count of correct/total and current streak",
+        "Done button ends practice and shows results",
+        "Practice games still count toward stats and achievements"
+      ],
+      "files": ["Sources/Features/Game/GameViewModel.swift", "Sources/Features/Game/GameView.swift", "Sources/Features/Home/HomeView.swift"]
+    },
+    {
+      "id": "ui-013",
+      "description": "Settings toggle for sound effects and haptics on home screen",
+      "phase": "polish",
+      "category": "ui",
+      "depends_on": ["svc-004", "ui-001"],
+      "passes": true,
+      "test_steps": [
+        "Gear icon on home screen opens settings sheet",
+        "Toggle for sound effects (on/off)",
+        "Toggle for haptic feedback (on/off)",
+        "Settings persist via UserDefaults",
+        "Sound and haptic services respect the settings"
+      ],
+      "files": ["Sources/Features/Home/SettingsView.swift", "Sources/Services/SettingsManager.swift"]
     }
   ],
   "_schema": {

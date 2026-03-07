@@ -34,6 +34,9 @@ struct PlayTab: View {
                 ),
                 onStartGame: { difficulty in
                     router.navigateToGame(difficulty: difficulty)
+                },
+                onStartPractice: { difficulty in
+                    router.navigateToPractice(difficulty: difficulty)
                 }
             )
             .navigationDestination(for: AppRoute.self) { route in
@@ -41,6 +44,19 @@ struct PlayTab: View {
                 case .game(let difficulty):
                     GameView(
                         viewModel: GameViewModel(difficulty: difficulty),
+                        onGameEnd: { session in
+                            let statsService = StatsService(modelContainer: modelContext.container)
+                            let previousBest = statsService.getOrCreateStats().bestScore
+                            statsService.recordGame(session: session)
+                            let isNewBest = session.score > previousBest
+                            router.navigateToResults(session: session, isNewBest: isNewBest)
+                        }
+                    )
+                    .navigationBarBackButtonHidden()
+
+                case .practice(let difficulty):
+                    GameView(
+                        viewModel: GameViewModel(difficulty: difficulty, mode: .practice),
                         onGameEnd: { session in
                             let statsService = StatsService(modelContainer: modelContext.container)
                             let previousBest = statsService.getOrCreateStats().bestScore

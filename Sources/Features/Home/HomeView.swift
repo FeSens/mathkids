@@ -2,11 +2,24 @@ import SwiftUI
 
 struct HomeView: View {
     @State var viewModel: HomeViewModel
+    @State private var showSettings = false
     var onStartGame: (DifficultyLevel) -> Void
+    var onStartPractice: ((DifficultyLevel) -> Void)?
 
     var body: some View {
         VStack(spacing: 24) {
-            Spacer()
+            HStack {
+                Spacer()
+                Button {
+                    showSettings = true
+                } label: {
+                    Image(systemName: "gearshape.fill")
+                        .font(.title3)
+                        .foregroundStyle(.secondary)
+                }
+                .accessibilityIdentifier("settingsButton")
+            }
+            .padding(.horizontal)
 
             titleSection
 
@@ -16,11 +29,16 @@ struct HomeView: View {
 
             playButton
 
+            practiceButton
+
             Spacer()
         }
         .padding()
         .onAppear {
             viewModel.loadStats()
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
         }
     }
 
@@ -114,6 +132,31 @@ struct HomeView: View {
                 .shadow(color: .purple.opacity(0.4), radius: 10, y: 5)
         }
         .accessibilityIdentifier("playButton")
+        .padding(.horizontal)
+    }
+
+    private var practiceButton: some View {
+        Button {
+            onStartPractice?(viewModel.selectedDifficulty)
+        } label: {
+            Text("PRACTICE")
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .foregroundStyle(.purple)
+                .frame(maxWidth: .infinity)
+                .frame(height: 52)
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(
+                            LinearGradient(
+                                colors: [.blue, .purple],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            ),
+                            lineWidth: 2
+                        )
+                )
+        }
+        .accessibilityIdentifier("practiceButton")
         .padding(.horizontal)
     }
 }

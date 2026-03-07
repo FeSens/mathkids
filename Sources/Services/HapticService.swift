@@ -7,18 +7,22 @@ struct HapticService {
     private static let notification = UINotificationFeedbackGenerator()
 
     static func buttonTap() {
+        guard SettingsManager.shared.hapticsEnabled else { return }
         lightImpact.impactOccurred()
     }
 
     static func correctAnswer() {
+        guard SettingsManager.shared.hapticsEnabled else { return }
         notification.notificationOccurred(.success)
     }
 
     static func wrongAnswer() {
+        guard SettingsManager.shared.hapticsEnabled else { return }
         notification.notificationOccurred(.error)
     }
 
     static func streakMilestone() {
+        guard SettingsManager.shared.hapticsEnabled else { return }
         heavyImpact.impactOccurred()
     }
 }

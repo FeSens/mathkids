@@ -66,28 +66,41 @@ struct GameView: View {
 
                 Spacer()
 
-                Label("\(viewModel.timeRemaining)s", systemImage: "timer")
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                    .foregroundStyle(viewModel.timeProgress < 0.25 ? .red : .primary)
-                    .accessibilityIdentifier("timerLabel")
+                if viewModel.isPracticeMode {
+                    Button {
+                        viewModel.endPractice()
+                    } label: {
+                        Label("Done", systemImage: "checkmark.circle.fill")
+                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                            .foregroundStyle(.green)
+                    }
+                    .accessibilityIdentifier("doneButton")
+                } else {
+                    Label("\(viewModel.timeRemaining)s", systemImage: "timer")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .foregroundStyle(viewModel.timeProgress < 0.25 ? .red : .primary)
+                        .accessibilityIdentifier("timerLabel")
+                }
             }
 
-            GeometryReader { geo in
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(
-                        LinearGradient(
-                            colors: timerColors,
-                            startPoint: .leading,
-                            endPoint: .trailing
+            if !viewModel.isPracticeMode {
+                GeometryReader { geo in
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(
+                            LinearGradient(
+                                colors: timerColors,
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
                         )
-                    )
-                    .frame(width: geo.size.width * viewModel.timeProgress)
-                    .animation(.linear(duration: 1), value: viewModel.timeProgress)
+                        .frame(width: geo.size.width * viewModel.timeProgress)
+                        .animation(.linear(duration: 1), value: viewModel.timeProgress)
+                }
+                .frame(height: 8)
+                .background(Color.gray.opacity(0.2))
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+                .accessibilityIdentifier("timerBar")
             }
-            .frame(height: 8)
-            .background(Color.gray.opacity(0.2))
-            .clipShape(RoundedRectangle(cornerRadius: 4))
-            .accessibilityIdentifier("timerBar")
         }
     }
 

@@ -1,14 +1,20 @@
 import SwiftUI
 import Observation
 
+enum GameMode: Sendable {
+    case timed
+    case practice
+}
+
 @Observable
 @MainActor
 final class GameViewModel {
     private(set) var engine: GameEngine
+    let mode: GameMode
     var answerText: String = ""
     var showCelebration: Bool = false
     var showShake: Bool = false
-    var showCountdown: Bool = true
+    var showCountdown: Bool
     var celebrationIntensity: CelebrationIntensity = .normal
     var scorePopups: [ScorePopup] = []
 
@@ -18,8 +24,10 @@ final class GameViewModel {
         case huge
     }
 
-    init(difficulty: DifficultyLevel) {
+    init(difficulty: DifficultyLevel, mode: GameMode = .timed) {
         self.engine = GameEngine(difficulty: difficulty)
+        self.mode = mode
+        self.showCountdown = mode == .timed
     }
 
     var problemText: String { engine.currentProblem.displayText }
@@ -29,14 +37,19 @@ final class GameViewModel {
     var currentStreak: Int { engine.currentStreak }
     var isGameOver: Bool { engine.isGameOver }
     var session: GameSession { engine.session }
+    var isPracticeMode: Bool { mode == .practice }
 
     func startGame() {
-        engine.startGame()
+        if mode == .timed {
+            engine.startGame()
+        }
+        // Practice mode: no timer started
     }
 
     func countdownFinished() {
         showCountdown = false
         startGame()
+        SoundService.playCountdownTick()
     }
 
     func submitAnswer() {
@@ -49,6 +62,7 @@ final class GameViewModel {
         if engine.lastAnswerCorrect == true {
             showCelebration = true
             HapticService.correctAnswer()
+            SoundService.playCorrect()
 
             if let milestone = engine.streakMilestone {
                 celebrationIntensity = milestone >= 15 ? .huge : .big
@@ -63,6 +77,7 @@ final class GameViewModel {
         } else {
             showShake = true
             HapticService.wrongAnswer()
+            SoundService.playWrong()
         }
 
         answerText = ""
@@ -96,7 +111,13 @@ final class GameViewModel {
         }
     }
 
+    func endPractice() {
+        SoundService.playGameOver()
+        engine.stopGame()
+    }
+
     func stopGame() {
+        SoundService.playGameOver()
         engine.stopGame()
     }
 

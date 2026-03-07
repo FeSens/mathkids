@@ -89,4 +89,28 @@ struct GameViewModelTests {
         }
         #expect(vm.answerText.count == 6)
     }
+
+    @Test("Practice mode has no countdown")
+    @MainActor
+    func practiceModeNoCountdown() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        #expect(vm.showCountdown == false)
+        #expect(vm.isPracticeMode == true)
+    }
+
+    @Test("Practice mode does not start timer")
+    @MainActor
+    func practiceModeNoTimer() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        vm.startGame()
+        #expect(vm.isGameOver == false)
+    }
+
+    @Test("Practice mode end practice stops game")
+    @MainActor
+    func practiceEndStopsGame() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        vm.endPractice()
+        #expect(vm.isGameOver == true)
+    }
 }

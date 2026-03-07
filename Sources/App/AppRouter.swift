@@ -3,6 +3,7 @@ import Observation
 
 enum AppRoute: Hashable {
     case game(DifficultyLevel)
+    case practice(DifficultyLevel)
     case results(score: Int, correct: Int, total: Int, accuracy: Double, bestStreak: Int, difficulty: DifficultyLevel, isNewBest: Bool)
 }
 
@@ -13,6 +14,10 @@ final class AppRouter {
 
     func navigateToGame(difficulty: DifficultyLevel) {
         path.append(.game(difficulty))
+    }
+
+    func navigateToPractice(difficulty: DifficultyLevel) {
+        path.append(.practice(difficulty))
     }
 
     func navigateToResults(session: GameSession, isNewBest: Bool) {
