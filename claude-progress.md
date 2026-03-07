@@ -3,7 +3,7 @@
 ## Session 3 — 2026-03-07
 
 ### Status
-- Features: 53/53 passing (12 MVP + 9 polish + 32 improvement)
+- Features: 58/58 passing (12 MVP + 9 polish + 37 improvement)
 - Unit tests: 105 (all green)
 - UI tests: 12 (all green)
 - QA screenshots: 12 (all green)
@@ -14,7 +14,7 @@
 
 **Polish (9):** HapticService, CountdownView, ScorePopup, Achievements, AchievementsView, AchievementToast, SoundService, Practice mode, Settings
 
-**Improvement (32):** Operation selector, Character reactions, Daily challenge, XP/Level system, Level badge, Animated background, XP results display, Button bounce, Streak fire trail, Problem difficulty dots, Motivational messages, Answer history ribbon, Problem transitions, Combo multiplier display, Confetti color themes, Wrong answer hints, Adaptive difficulty, Personal best animation, Timer pulse warning, Operation type badge, Accuracy trend chart, Speed bonus indicator, Sequential result reveals, Difficulty descriptions, Problem counter, Shake to clear, Games milestone badge, Score breakdown, Enhanced button ripple, Difficulty-colored text, Session fun facts
+**Improvement (37):** Operation selector, Character reactions, Daily challenge, XP/Level system, Level badge, Animated background, XP results display, Button bounce, Streak fire trail, Problem difficulty dots, Motivational messages, Answer history ribbon, Problem transitions, Combo multiplier, Confetti themes, Wrong answer hints, Adaptive difficulty, Personal best animation, Timer pulse, Operation badge, Accuracy trend chart, Speed bonus, Sequential reveals, Difficulty descriptions, Problem counter, Shake to clear, Games milestone, Score breakdown, Button ripple, Difficulty-colored text, Session fun facts, GameHeaderView extract, Animated score counter, Onboarding, Haptic streak patterns, Favorite operation
 
 ### Architecture
 - XcodeGen, @Observable, SwiftData, Swift Testing, NavigationStack

@@ -20,5 +20,5 @@
     "QA-011: Operation selector chips",
     "QA-012: Character reactions to answers"
   ],
-  "notes": "53/53 features passing. All tests green."
+  "notes": "58/58 features passing. All tests green."
 }
