@@ -108,6 +108,7 @@ struct PlayTab: View {
                         }
                     )
                     .navigationBarBackButtonHidden()
+                    .transition(.opacity)
                 }
             }
         }

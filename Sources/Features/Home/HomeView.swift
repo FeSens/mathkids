@@ -130,10 +130,16 @@ struct HomeView: View {
             .padding(.horizontal, 40)
             .accessibilityIdentifier("xpProgressBar")
 
-            Text("\(viewModel.totalXP) XP")
-                .font(.caption)
-                .foregroundStyle(.secondary)
+            HStack {
+                Text("\(viewModel.totalXP) XP")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Text("\(Int(viewModel.levelProgress * 100))%")
+                    .font(.system(size: 12, weight: .bold, design: .rounded))
+                    .foregroundStyle(.purple)
+            }
         }
+        .accessibilityIdentifier("levelProgressSection")
     }
 
     private var statsCards: some View {

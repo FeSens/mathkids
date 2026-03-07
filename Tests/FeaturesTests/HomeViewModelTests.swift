@@ -54,6 +54,18 @@ struct HomeViewModelTests {
         vm.toggleOperation(.multiply)
         #expect(vm.selectedOperations.contains(.multiply))
     }
+
+    @Test("Level progress loads from stats")
+    @MainActor
+    func levelProgressLoads() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.loadStats()
+        #expect(vm.currentLevel >= 1)
+        #expect(!vm.levelName.isEmpty)
+        #expect(vm.levelProgress >= 0 && vm.levelProgress <= 1)
+    }
 }
 
 import SwiftData

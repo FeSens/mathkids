@@ -263,13 +263,16 @@ struct NumberButton: View {
 }
 
 struct BounceButtonStyle: ButtonStyle {
+    var rippleColor: Color = .blue
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 0.92 : 1.0)
             .brightness(configuration.isPressed ? 0.1 : 0)
             .overlay(
                 RoundedRectangle(cornerRadius: 14)
-                    .fill(Color.white.opacity(configuration.isPressed ? 0.2 : 0))
+                    .fill(rippleColor.opacity(configuration.isPressed ? 0.15 : 0))
+                    .scaleEffect(configuration.isPressed ? 1.0 : 0.8)
             )
             .animation(.spring(duration: 0.2, bounce: 0.4), value: configuration.isPressed)
     }

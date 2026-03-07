@@ -1454,6 +1454,65 @@
         "Sources/Features/Stats/StatsView.swift",
         "Sources/Features/Stats/AchievementProgressView.swift"
       ]
+    },
+    {
+      "id": "ui-063",
+      "description": "Animated number pad with ripple effect on button press",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Number pad buttons show ripple/wave animation on tap",
+        "Animation is subtle and does not interfere with rapid input",
+        "Color ripple matches button theme color"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-064",
+      "description": "Smooth page transition animations between game screens",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001",
+        "ui-002",
+        "ui-003"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Home to game transition uses slide animation",
+        "Game to results uses fade transition",
+        "Results back to home slides back"
+      ],
+      "files": [
+        "Sources/App/ContentView.swift"
+      ]
+    },
+    {
+      "id": "ui-065",
+      "description": "Level progress bar on home screen showing XP toward next level",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001",
+        "ui-035"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Home screen shows current level name and number",
+        "Progress bar fills based on XP toward next level",
+        "Percentage text shows progress",
+        "Level name updates when leveling up"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
     }
   ],
   "_schema": {
