@@ -201,6 +201,10 @@ struct Achievement: Identifiable {
         all.filter { $0.category == .score }
     }
 
+    static var masteryAchievements: [Achievement] {
+        all.filter { $0.category == .mastery }
+    }
+
     static func firstLockedAchievement(for stats: PlayerStats) -> Achievement? {
         all.first { !$0.isUnlocked(stats: stats) }
     }

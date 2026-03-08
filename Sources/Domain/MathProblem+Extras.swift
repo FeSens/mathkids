@@ -187,6 +187,11 @@ extension MathProblem {
         operand1 >= 0 && operand1 <= 9 && operand2 >= 0 && operand2 <= 9
     }
 
+    var isDoubleDigitResult: Bool {
+        let answer = abs(correctAnswer)
+        return answer >= 10 && answer <= 99
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0

@@ -9075,6 +9075,86 @@
         "Verify 5+15 returns false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-494",
+      "title": "GameSession elapsedTimeText formatted elapsed time",
+      "description": "GameSession should expose elapsedTimeText returning formatted time played like \"0:30\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify format is M:SS",
+        "Verify 0 time returns 0:00"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-495",
+      "title": "Achievement masteryAchievements returns mastery category",
+      "description": "Achievement should expose masteryAchievements returning achievements in mastery category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify all returned are mastery category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-496",
+      "title": "DifficultyLevel difficultyLabel returns formatted label",
+      "description": "DifficultyLevel should expose difficultyLabel returning emoji + displayName format",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy includes emoji and name",
+        "Verify hard includes emoji and name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-497",
+      "title": "Operation operationCount static total count",
+      "description": "Operation should expose operationCount static property returning total number of operations",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify returns 4",
+        "Verify equals allCases.count"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-498",
+      "title": "MathProblem isDoubleDigitResult answer has two digits",
+      "description": "MathProblem should expose isDoubleDigitResult returning true when answer is 10-99",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5+7=12 returns true",
+        "Verify 2+3=5 returns false",
+        "Verify 50+60=110 returns false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

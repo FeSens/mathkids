@@ -190,6 +190,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         operandRangeSize * operationCount
     }
 
+    var difficultyLabel: String {
+        "\(emoji) \(displayName)"
+    }
+
     var pointsPerMinute: Int {
         pointsPerCorrect * (60 / recommendedSecondsPerProblem)
     }

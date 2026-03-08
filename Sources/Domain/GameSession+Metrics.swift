@@ -243,6 +243,12 @@ extension GameSession {
         return Double(totalWrong) / minutes
     }
 
+    var elapsedTimeText: String {
+        let minutes = totalTimePlayed / 60
+        let seconds = totalTimePlayed % 60
+        return "\(minutes):\(String(format: "%02d", seconds))"
+    }
+
     var averageTimePerAnswer: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalTimePlayed) / Double(totalAnswered)
