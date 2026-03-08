@@ -132,4 +132,33 @@ extension AnsweredProblem {
         if time < 10.0 { return "5-10s" }
         return "10s+"
     }
+
+    var answeredProblemIsTableFactProblem: Bool {
+        problem.operand1 >= 1 && problem.operand1 <= 12 &&
+        problem.operand2 >= 1 && problem.operand2 <= 12
+    }
+
+    var answeredProblemGradeEmoji: String {
+        guard isCorrect else { return "❌" }
+        if let time = timeTaken, time < 3.0 { return "🏆" }
+        if let time = timeTaken, time < 6.0 { return "⭐" }
+        return "👍"
+    }
+
+    var answeredProblemPracticeCount: Int {
+        guard isCorrect else { return 5 }
+        if let time = timeTaken, time < 3.0 { return 0 }
+        if let time = timeTaken, time < 6.0 { return 2 }
+        return 3
+    }
+
+    var answeredProblemIsHardProblem: Bool {
+        answeredProblemProblemComplexity > 20
+    }
+
+    var answeredProblemFlashcardStatus: String {
+        guard isCorrect else { return "new" }
+        if let time = timeTaken, time < 3.0 { return "learned" }
+        return "learning"
+    }
 }

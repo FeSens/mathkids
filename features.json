@@ -20956,6 +20956,96 @@
         "Check bucket is 5-10s"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1239",
+      "name": "answeredProblemIsTableFactProblem",
+      "description": "Whether both operands are in times table range (1-12)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create 3x4 problem",
+        "Check isTableFactProblem is true",
+        "Create 15x3 problem",
+        "Check isTableFactProblem is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1240",
+      "name": "answeredProblemGradeEmoji",
+      "description": "Emoji for the grade: \ud83c\udfc6 A, \u2b50 B, \ud83d\udc4d C, \u274c F",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check emoji is \ud83c\udfc6",
+        "Create wrong answer",
+        "Check emoji is \u274c"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1241",
+      "name": "answeredProblemPracticeCount",
+      "description": "Suggested practice repetitions (0 if mastered, more if wrong)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check count is 0",
+        "Create wrong answer",
+        "Check count is 5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1242",
+      "name": "answeredProblemIsHardProblem",
+      "description": "Whether the problem has high complexity (large operands + hard operation)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create 9x8 problem",
+        "Check isHardProblem is true",
+        "Create 2+3 problem",
+        "Check isHardProblem is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1243",
+      "name": "answeredProblemFlashcardStatus",
+      "description": "Flashcard status: learned, learning, new",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check status is learned",
+        "Create wrong answer",
+        "Check status is new"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
