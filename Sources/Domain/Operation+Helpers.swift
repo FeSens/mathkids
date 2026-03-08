@@ -35,4 +35,39 @@ extension Operation {
         case .divide: return 3
         }
     }
+
+    var operationSymbolName: String {
+        switch self {
+        case .add: return "plus"
+        case .subtract: return "minus"
+        case .multiply: return "multiply"
+        case .divide: return "divide"
+        }
+    }
+
+    var operationShortName: String {
+        switch self {
+        case .add: return "ADD"
+        case .subtract: return "SUB"
+        case .multiply: return "MUL"
+        case .divide: return "DIV"
+        }
+    }
+
+    var isFirstInOrder: Bool {
+        self == .add
+    }
+
+    var operationComplexity: String {
+        isPrimaryOperation ? "basic" : "advanced"
+    }
+
+    var symbolForDisplay: String {
+        switch self {
+        case .add: return "+"
+        case .subtract: return "−"
+        case .multiply: return "×"
+        case .divide: return "÷"
+        }
+    }
 }

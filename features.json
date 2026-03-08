@@ -16216,6 +16216,86 @@
         "Divide -> 3"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-939",
+      "name": "operationSymbolName",
+      "description": "Operation computed property returning SF Symbol name for the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> plus symbol",
+        "Subtract -> minus symbol"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-940",
+      "name": "operationShortName",
+      "description": "Operation computed property returning 3-letter abbreviation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> ADD",
+        "Multiply -> MUL"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-941",
+      "name": "isFirstInOrder",
+      "description": "Operation computed property returning true for addition (first taught)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> true",
+        "Subtract -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-942",
+      "name": "operationComplexity",
+      "description": "Operation computed property returning complexity string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> basic",
+        "Divide -> advanced"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-943",
+      "name": "symbolForDisplay",
+      "description": "Operation computed property returning display-friendly symbol string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> +",
+        "Multiply -> \u00d7"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
