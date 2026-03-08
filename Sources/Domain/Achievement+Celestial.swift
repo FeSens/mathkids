@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 20000000
         }
     }
+
+    var achievementCardLillianiteUltraStyle: String {
+        isRareAchievement ? "steel grey orthorhombic" : "dull steel matte"
+    }
+
+    var achievementRequiresDominionPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardInjunctionWritSealMaxPlusText: String {
+        switch category {
+        case .mastery: return "Injunction Writ Seal Max Plus of the Legendary"
+        case .streak: return "Injunction Writ Seal Max Plus of the Eternal"
+        case .score: return "Injunction Writ Seal Max Plus of the Absolute"
+        case .games: return "Injunction Writ Seal Max Plus of the Pilgrim"
+        }
+    }
+
+    var achievementCardHeyrovskyiteUltraStyle: String {
+        isRareAchievement ? "tin grey monoclinic" : "pale tin matte"
+    }
+
+    var achievementBifrostTripleThreshold: Int {
+        switch category {
+        case .mastery: return 205000000
+        case .streak: return 82000000
+        case .score: return 200000000
+        case .games: return 20500000
+        }
+    }
 }

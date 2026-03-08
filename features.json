@@ -41887,6 +41887,86 @@
         "Games threshold <= 39000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2521",
+      "title": "achievementCardLillianiteUltraStyle",
+      "description": "Lillianite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns steel grey orthorhombic",
+        "Common achievement returns dull steel matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2522",
+      "title": "achievementRequiresDominionPlus",
+      "description": "Check if achievement requires dominion plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery or games returns true",
+        "Streak returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2523",
+      "title": "achievementCardInjunctionWritSealMaxPlusText",
+      "description": "Injunction writ seal max plus text by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery returns Injunction Writ Seal Max Plus of the Legendary",
+        "Games returns Injunction Writ Seal Max Plus of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2524",
+      "title": "achievementCardHeyrovskyiteUltraStyle",
+      "description": "Heyrovskyite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns tin grey monoclinic",
+        "Common achievement returns pale tin matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2525",
+      "title": "achievementBifrostTripleThreshold",
+      "description": "Bifrost triple threshold by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery threshold >= 205000000",
+        "Games threshold <= 41000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
