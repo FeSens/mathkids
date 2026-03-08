@@ -16615,6 +16615,87 @@
         "Divide -> fact string"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-964",
+      "name": "canProduceZero",
+      "description": "Operation returning true if the operation can produce zero result",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Subtract -> true",
+        "Multiply -> true",
+        "Add -> false with positive operands"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-965",
+      "name": "operationVerb",
+      "description": "Operation returning action verb for the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> add",
+        "Multiply -> multiply"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-966",
+      "name": "needsOrderedOperands",
+      "description": "Operation returning true if operand order matters",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Subtract -> true",
+        "Add -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-967",
+      "name": "operationFamily",
+      "description": "Operation returning family name (additive or multiplicative)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> additive",
+        "Multiply -> multiplicative"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-968",
+      "name": "operationAbbreviation",
+      "description": "Operation returning 1-char abbreviation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> A",
+        "Divide -> D"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

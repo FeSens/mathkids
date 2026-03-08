@@ -183,4 +183,32 @@ extension Operation {
         case .divide: return "Division is the inverse of multiplication"
         }
     }
+
+    var canProduceZero: Bool {
+        self == .subtract || self == .multiply
+    }
+
+    var operationVerb: String {
+        switch self {
+        case .add: return "add"
+        case .subtract: return "subtract"
+        case .multiply: return "multiply"
+        case .divide: return "divide"
+        }
+    }
+
+    var needsOrderedOperands: Bool {
+        requiresOrdering
+    }
+
+    var operationFamily: String {
+        switch self {
+        case .add, .subtract: return "additive"
+        case .multiply, .divide: return "multiplicative"
+        }
+    }
+
+    var operationAbbreviation: String {
+        String(displayName.prefix(1))
+    }
 }
