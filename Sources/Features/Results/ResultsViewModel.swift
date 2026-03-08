@@ -399,6 +399,77 @@ final class ResultsViewModel {
         return dist
     }
 
+    /// Session performance grade
+    var sessionGrade: String {
+        if accuracy >= 95 { return "A+" }
+        if accuracy >= 90 { return "A" }
+        if accuracy >= 80 { return "B" }
+        if accuracy >= 70 { return "C" }
+        if accuracy >= 60 { return "D" }
+        return "F"
+    }
+
+    /// Net score: correct minus wrong with penalty, floored at 0
+    var netScore: Int {
+        let penalty = session.difficulty.pointsPerCorrect / 2
+        let score = totalCorrect * session.difficulty.pointsPerCorrect - (totalAnswered - totalCorrect) * penalty
+        return max(0, score)
+    }
+
+    /// Accuracy at different positions in the problem sequence
+    struct PositionalAccuracy {
+        var early: Double
+        var middle: Double
+        var late: Double
+    }
+
+    var accuracyByPosition: PositionalAccuracy? {
+        guard problemHistory.count >= 6 else { return nil }
+        let third = problemHistory.count / 3
+        let early = Array(problemHistory.prefix(third))
+        let middle = Array(problemHistory.dropFirst(third).prefix(third))
+        let late = Array(problemHistory.suffix(third))
+
+        func acc(_ arr: [AnsweredProblem]) -> Double {
+            guard !arr.isEmpty else { return 0 }
+            return Double(arr.filter(\.isCorrect).count) / Double(arr.count) * 100
+        }
+        return PositionalAccuracy(early: acc(early), middle: acc(middle), late: acc(late))
+    }
+
+    /// Average operand size per operation
+    var averageOperandSize: [Operation: Double] {
+        var totals: [Operation: Double] = [:]
+        var counts: [Operation: Int] = [:]
+        for entry in problemHistory {
+            let op = entry.problem.operation
+            totals[op, default: 0] += Double(entry.problem.operand1 + entry.problem.operand2)
+            counts[op, default: 0] += 2
+        }
+        var result: [Operation: Double] = [:]
+        for (op, total) in totals {
+            if let count = counts[op], count > 0 {
+                result[op] = total / Double(count)
+            }
+        }
+        return result
+    }
+
+    /// Efficiency score: combines accuracy and speed (0-100)
+    var efficiencyScore: Int {
+        guard totalAnswered > 0 else { return 0 }
+        let accScore = accuracy // 0-100
+        let times = problemHistory.compactMap(\.timeTaken)
+        let speedScore: Double
+        if times.isEmpty {
+            speedScore = 50
+        } else {
+            let avgTime = times.reduce(0, +) / Double(times.count)
+            speedScore = max(0, min(100, 100 - (avgTime - 1.0) * 10))
+        }
+        return Int((accScore * 0.7 + speedScore * 0.3).rounded())
+    }
+
     /// Most improved operation (biggest accuracy gain from early to late in session)
     var mostImprovedOperation: Operation? {
         guard problemHistory.count >= 4 else { return nil }

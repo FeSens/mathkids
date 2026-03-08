@@ -43189,6 +43189,92 @@
       ],
       "passes": true
     }
+    },
+    {
+      "id": "improve-040",
+      "title": "Session performance grade in results",
+      "description": "Compute a letter grade (A+ through F) for the overall session based on accuracy, speed, and streak performance.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Grade computed from accuracy percentage",
+        "95%+ accuracy earns A+",
+        "Below 60% accuracy earns F"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-041",
+      "title": "Net score calculation in results",
+      "description": "Calculate a net score that considers accuracy penalty: correct answers add points, wrong answers subtract points.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Net score computed as correct minus wrong times penalty",
+        "All correct gives positive net score",
+        "Net score never goes below 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-042",
+      "title": "Accuracy by problem position in results",
+      "description": "Analyze accuracy at different positions in the problem sequence (first 5, middle, last 5) to detect fatigue or warmup patterns.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Accuracy computed for early, middle, and late problems",
+        "Insufficient data returns nil",
+        "Correctly handles varying problem counts"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-043",
+      "title": "Average operand size per operation in results",
+      "description": "Track the average operand size for each operation attempted during the game.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Average operand computed per operation",
+        "No data returns empty dictionary",
+        "Both operands considered in average"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-044",
+      "title": "Efficiency score in results",
+      "description": "Calculate an efficiency score based on accuracy and speed: high accuracy with fast times = high efficiency.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Efficiency score between 0 and 100",
+        "Perfect accuracy with fast time gives high score",
+        "No answers gives 0 efficiency"
+      ],
+      "passes": true
+    }
   ],
   "_schema": {
     "feature": {
