@@ -55,4 +55,34 @@ extension Achievement {
     var achievementRewardCoinsLabel: String {
         "\(achievementCoinValue) coins"
     }
+
+    var achievementTargetCount: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 20
+        case .score: return 10
+        case .games: return 1
+        }
+    }
+
+    var achievementCategorySymbol: String {
+        switch category {
+        case .mastery: return "graduationcap.fill"
+        case .streak: return "bolt.fill"
+        case .score: return "chart.bar.fill"
+        case .games: return "gamecontroller.fill"
+        }
+    }
+
+    var achievementIsDailyTask: Bool {
+        false
+    }
+
+    var achievementLockedMessage: String {
+        "This achievement is locked. Keep playing to unlock it!"
+    }
+
+    var achievementMaxRewardMultiplier: Int {
+        isRareAchievement ? 5 : 1
+    }
 }

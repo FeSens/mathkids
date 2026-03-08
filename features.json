@@ -27243,6 +27243,79 @@
         "Create any achievement",
         "Verify label contains coins"
       ]
+    },
+    {
+      "id": "logic-1639",
+      "title": "achievementTargetCount",
+      "description": "Return target count for achievement completion",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify targetCount >= 50",
+        "Create games achievement",
+        "Verify targetCount == 1"
+      ]
+    },
+    {
+      "id": "logic-1640",
+      "title": "achievementCategorySymbol",
+      "description": "Return category-specific SF Symbol",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify icon contains graduationcap",
+        "Create streak achievement",
+        "Verify icon contains bolt"
+      ]
+    },
+    {
+      "id": "logic-1641",
+      "title": "achievementIsDailyTask",
+      "description": "Return whether achievement resets daily",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify isDaily is false"
+      ]
+    },
+    {
+      "id": "logic-1642",
+      "title": "achievementLockedMessage",
+      "description": "Return message shown when locked",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify message contains locked",
+        "Create games achievement",
+        "Verify message contains locked"
+      ]
+    },
+    {
+      "id": "logic-1643",
+      "title": "achievementMaxRewardMultiplier",
+      "description": "Return maximum reward multiplier",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify multiplier >= 3",
+        "Create common achievement",
+        "Verify multiplier == 1"
+      ]
     }
   ],
   "_schema": {
