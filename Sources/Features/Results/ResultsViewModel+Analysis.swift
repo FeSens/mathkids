@@ -102,6 +102,10 @@ extension ResultsViewModel {
         return "Amazing \(bestStreak) streak!"
     }
 
+    var hasTimeBonus: Bool {
+        session.timeBonus > 0
+    }
+
     var streakSummaryText: String {
         "Best streak: \(bestStreak)"
     }

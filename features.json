@@ -9964,6 +9964,87 @@
         "Verify negative answer returns positive"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-549",
+      "title": "HomeViewModel selectedDifficultyEmoji returns emoji",
+      "description": "HomeViewModel should expose selectedDifficultyEmoji returning the emoji for selected difficulty",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns plant emoji",
+        "Verify hard returns fire emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-550",
+      "title": "StatsViewModel gamesPlayedLabel formatted games count",
+      "description": "StatsViewModel should expose gamesPlayedLabel returning formatted games played text",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes count",
+        "Verify singular for 1 game"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-551",
+      "title": "ResultsViewModel hasTimeBonus checks if time bonus exists",
+      "description": "ResultsViewModel+Analysis should expose hasTimeBonus returning true when timeBonus > 0",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify true when time remaining",
+        "Verify false when no time remaining"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-552",
+      "title": "DifficultyLevel hasNextDifficulty checks if can progress",
+      "description": "DifficultyLevel should expose hasNextDifficulty returning true when nextDifficulty is not nil",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns true",
+        "Verify medium returns true",
+        "Verify hard returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-553",
+      "title": "MathProblem operandTotal returns sum of abs operands",
+      "description": "MathProblem should expose operandTotal returning abs(operand1) + abs(operand2)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3+5 returns 8",
+        "Verify 3-5 returns 8"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

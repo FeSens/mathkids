@@ -255,6 +255,10 @@ extension MathProblem {
             return "How many groups of \(operand2) fit in \(operand1)?"
         }
     }
+
+    var operandTotal: Int {
+        abs(operand1) + abs(operand2)
+    }
 }
 
 enum AnswerMagnitude: Sendable {

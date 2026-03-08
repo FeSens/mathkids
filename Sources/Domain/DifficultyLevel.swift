@@ -236,6 +236,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         String(repeating: "⭐", count: difficultyIndex + 1)
     }
 
+    var hasNextDifficulty: Bool {
+        nextDifficulty != nil
+    }
+
     var briefDescription: String {
         let ops = allowedOperations.map(\.rawValue).joined(separator: " ")
         return "1-\(operandRange.upperBound) \(ops) \(timeLimitSeconds)s"

@@ -133,6 +133,10 @@ final class HomeViewModel {
         dailyChallengeCompleted ? "Completed for today!" : "Ready to play!"
     }
 
+    var selectedDifficultyEmoji: String {
+        selectedDifficulty.emoji
+    }
+
     var quickStatsSummary: String {
         guard totalSolved > 0 else {
             return "Ready to start your math journey!"
