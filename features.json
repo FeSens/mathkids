@@ -30109,6 +30109,86 @@
         "Verify cardEmojiLabel contains emoji"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1824",
+      "title": "Achievement Card Pulse Effect",
+      "description": "Returns whether card pulses on unlock",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardPulseEffect by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1825",
+      "title": "Achievement Required Rounds",
+      "description": "Returns rounds needed to earn",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify requiredRounds by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1826",
+      "title": "Achievement Card Crown Color",
+      "description": "Returns crown color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardCrownColor by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1827",
+      "title": "Achievement Is Performance Based",
+      "description": "Returns whether achievement is performance-based",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isPerformanceBased for score/mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1828",
+      "title": "Achievement Card Rank Label",
+      "description": "Returns rank label for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardRankLabel by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
