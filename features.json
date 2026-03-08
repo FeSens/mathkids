@@ -24973,6 +24973,83 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1484",
+      "title": "Achievement Version Number",
+      "description": "Add achievementVersionNumber returning version when achievement was added",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementVersionNumber is 1"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1485",
+      "title": "Achievement Category Rank",
+      "description": "Add achievementCategoryRank returning rank position within its category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementCategoryRank is based on sort priority"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1486",
+      "title": "Achievement Challenge Rating",
+      "description": "Add achievementChallengeRating returning difficulty rating 1-10",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementChallengeRating is 10",
+        "Verify games is 2"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1487",
+      "title": "Achievement Flavor Icon",
+      "description": "Add achievementFlavorIcon returning decorative icon for category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementFlavorIcon is bolt.fill"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1488",
+      "title": "Achievement Prestige Level",
+      "description": "Add achievementPrestigeLevel returning prestige tier number",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementPrestigeLevel is 3",
+        "Verify common is 1"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
     }
   ],
   "_schema": {
