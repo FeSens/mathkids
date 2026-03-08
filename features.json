@@ -39327,6 +39327,106 @@
         "Verify threshold <= 10000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2391",
+      "title": "achievementCardCylindriteProStyle",
+      "description": "Mineral style string for cylindrite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cylindrite pro style is tin grey cylindrical",
+        "Create common achievement",
+        "Verify cylindrite pro style is dull tin"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2392",
+      "title": "achievementRequiresJusticePlus",
+      "description": "Whether achievement requires justice plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires justice plus is true",
+        "Create streak achievement",
+        "Verify requires justice plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2393",
+      "title": "achievementCardInjunctionWritSealUltraPlusText",
+      "description": "Injunction writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Injunction Writ Seal Ultra Plus of the Astral",
+        "Create games achievement",
+        "Verify text is Injunction Writ Seal Ultra Plus of the Acolyte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2394",
+      "title": "achievementCardStephaniteProStyle",
+      "description": "Mineral style string for stephanite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify stephanite pro style is iron black prismatic",
+        "Create common achievement",
+        "Verify stephanite pro style is flat black"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2395",
+      "title": "achievementYggdrasilPlusThreshold",
+      "description": "Yggdrasil plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 75000000",
+        "Create games achievement",
+        "Verify threshold <= 10000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

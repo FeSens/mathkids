@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 7000000
         }
     }
+
+    var achievementCardCylindriteProStyle: String {
+        isRareAchievement ? "tin grey cylindrical" : "dull tin"
+    }
+
+    var achievementRequiresJusticePlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardInjunctionWritSealUltraPlusText: String {
+        switch category {
+        case .mastery: return "Injunction Writ Seal Ultra Plus of the Astral"
+        case .streak: return "Injunction Writ Seal Ultra Plus of the Citadel"
+        case .score: return "Injunction Writ Seal Ultra Plus of the Zenith"
+        case .games: return "Injunction Writ Seal Ultra Plus of the Acolyte"
+        }
+    }
+
+    var achievementCardStephaniteProStyle: String {
+        isRareAchievement ? "iron black prismatic" : "flat black"
+    }
+
+    var achievementYggdrasilPlusThreshold: Int {
+        switch category {
+        case .mastery: return 75000000
+        case .streak: return 30000000
+        case .score: return 70000000
+        case .games: return 7500000
+        }
+    }
 }
