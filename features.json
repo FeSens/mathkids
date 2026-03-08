@@ -32747,6 +32747,76 @@
         "Create games achievement",
         "Verify threshold is low"
       ]
+    },
+    {
+      "id": "logic-2006",
+      "name": "achievementCardZirconStyle",
+      "description": "Zircon gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify zircon is brilliant",
+        "Create common achievement",
+        "Verify zircon is muted"
+      ]
+    },
+    {
+      "id": "logic-2007",
+      "name": "achievementRequiresDiscipline",
+      "description": "Whether achievement requires discipline (mastery only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresDiscipline is true",
+        "Create games achievement",
+        "Verify requiresDiscipline is false"
+      ]
+    },
+    {
+      "id": "logic-2008",
+      "name": "achievementCardDoctrineText",
+      "description": "Doctrine text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify doctrine text",
+        "Create games achievement",
+        "Verify doctrine text"
+      ]
+    },
+    {
+      "id": "logic-2009",
+      "name": "achievementCardKunziteStyle",
+      "description": "Kunzite gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify kunzite is vivid",
+        "Create common achievement",
+        "Verify kunzite is pale"
+      ]
+    },
+    {
+      "id": "logic-2010",
+      "name": "achievementVeteranThreshold",
+      "description": "Veteran status threshold based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold is high",
+        "Create games achievement",
+        "Verify threshold is low"
+      ]
     }
   ],
   "_schema": {

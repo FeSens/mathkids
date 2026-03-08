@@ -218,4 +218,34 @@ extension Achievement {
         case .games: return 10
         }
     }
+
+    var achievementCardZirconStyle: String {
+        isRareAchievement ? "brilliant" : "muted"
+    }
+
+    var achievementRequiresDiscipline: Bool {
+        category == .mastery
+    }
+
+    var achievementCardDoctrineText: String {
+        switch category {
+        case .mastery: return "Doctrine of Excellence"
+        case .streak: return "Doctrine of Endurance"
+        case .score: return "Doctrine of Precision"
+        case .games: return "Doctrine of Discovery"
+        }
+    }
+
+    var achievementCardKunziteStyle: String {
+        isRareAchievement ? "vivid" : "pale"
+    }
+
+    var achievementVeteranThreshold: Int {
+        switch category {
+        case .mastery: return 200
+        case .streak: return 60
+        case .score: return 100
+        case .games: return 25
+        }
+    }
 }
