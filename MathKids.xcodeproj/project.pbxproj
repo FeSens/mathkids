@@ -503,6 +503,7 @@
 		D84D62705B5873A04064F1FD /* Batch92Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D93678891B4CFAA9DE1721 /* Batch92Tests.swift */; };
 		D85D9F0AF5AB4645689AF345 /* ResultsViewModelBatch37Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8E368F7B47A0DCC790AD /* ResultsViewModelBatch37Tests.swift */; };
 		D88F9457B73DBDF81CC4F401 /* Batch72Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764CEE1F0552DA87009406 /* Batch72Tests.swift */; };
+		D8EFC90B5FBAC2CA6F31A370 /* ImproveRound13Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DF41DBF64DF52A5F2186B5 /* ImproveRound13Tests.swift */; };
 		D92D6C27C520659404F9CB79 /* Batch431Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5700E13FAF6231AE7D0DC4B /* Batch431Tests.swift */; };
 		DA9E9375E7F2F3964E96C68F /* Batch412Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5304F525AE12D4FFE95EA618 /* Batch412Tests.swift */; };
 		DB427BFFBF97A5DE3AF58511 /* Batch272Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB5BD5ECA19E6D2D5F8039 /* Batch272Tests.swift */; };
@@ -961,6 +962,7 @@
 		9744E8EFD43B7ACA21D15B3D /* Batch306Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch306Tests.swift; sourceTree = "<group>"; };
 		978CB71A58EACF54D432F7B7 /* Batch384Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch384Tests.swift; sourceTree = "<group>"; };
 		989E4929BCB9493296C6D5AB /* Batch327Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch327Tests.swift; sourceTree = "<group>"; };
+		98DF41DBF64DF52A5F2186B5 /* ImproveRound13Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImproveRound13Tests.swift; sourceTree = "<group>"; };
 		992F3C0A0AF9082BA568B304 /* Batch173Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch173Tests.swift; sourceTree = "<group>"; };
 		99B71F5DFF7238F7F318093A /* Batch186Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch186Tests.swift; sourceTree = "<group>"; };
 		99BA306E6D1DFC7FD53B9250 /* Batch339Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch339Tests.swift; sourceTree = "<group>"; };
@@ -1333,6 +1335,7 @@
 				DA38F045058F517167261671 /* ImproveRound10Tests.swift */,
 				FC2CF1A5F0D3F2A6CE6647FE /* ImproveRound11Tests.swift */,
 				3EDF7283F73887A39E40E7D4 /* ImproveRound12Tests.swift */,
+				98DF41DBF64DF52A5F2186B5 /* ImproveRound13Tests.swift */,
 				816F8E368F7B47A0DCC790AD /* ResultsViewModelBatch37Tests.swift */,
 				B94166C5E252ADDC595B34CB /* ResultsViewModelExtendedTests.swift */,
 				83BED5F68362F01B31E28C2E /* ResultsViewModelTests.swift */,
@@ -2432,6 +2435,7 @@
 				555DA59C11B0C21F48DF79FF /* ImproveRound10Tests.swift in Sources */,
 				FCC296AF3CA657B96F26AA67 /* ImproveRound11Tests.swift in Sources */,
 				0A0C31008510E2AAEB7A2264 /* ImproveRound12Tests.swift in Sources */,
+				D8EFC90B5FBAC2CA6F31A370 /* ImproveRound13Tests.swift in Sources */,
 				143CEE8191567206DD240097 /* ImproveRound2Tests.swift in Sources */,
 				D5C1E6352A6C2E3C18A7A703 /* ImproveRound3Tests.swift in Sources */,
 				E885E5B8EB36C4D48FEEF3E0 /* ImproveRound4Tests.swift in Sources */,

@@ -220,6 +220,62 @@ extension ResultsViewModel {
         "\(timeUsagePercent)% of time used"
     }
 
+    /// Accuracy breakdown by problem difficulty category
+    var accuracyByDifficultyCategory: [String: Double] {
+        guard !problemHistory.isEmpty else { return [:] }
+        var correct: [String: Int] = [:]
+        var total: [String: Int] = [:]
+        for entry in problemHistory {
+            let rating = EloSystem.problemDifficultyRating(
+                operand1: entry.problem.operand1,
+                operand2: entry.problem.operand2,
+                operation: entry.problem.operation
+            )
+            let category: String
+            if rating < 900 { category = "Easy" }
+            else if rating < 1100 { category = "Moderate" }
+            else { category = "Hard" }
+            total[category, default: 0] += 1
+            if entry.isCorrect { correct[category, default: 0] += 1 }
+        }
+        var result: [String: Double] = [:]
+        for (cat, t) in total {
+            result[cat] = Double(correct[cat] ?? 0) / Double(t) * 100
+        }
+        return result
+    }
+
+    /// Score per minute of gameplay
+    var scorePerMinute: Double {
+        let timePlayed = session.totalTimePlayed
+        guard timePlayed > 0 else { return 0 }
+        return Double(session.score) / (Double(timePlayed) / 60.0)
+    }
+
+    /// Formatted score per minute text
+    var scorePerMinuteText: String {
+        String(format: "%.0f pts/min", scorePerMinute)
+    }
+
+    /// Emoji for an operation
+    func operationEmoji(_ op: Operation) -> String {
+        op.emoji
+    }
+
+    /// Display name for an operation
+    func operationDisplayName(_ op: Operation) -> String {
+        op.displayName
+    }
+
+    /// Personal best badges earned this game
+    var personalBestBadges: [String] {
+        var badges: [String] = []
+        if isNewBestScore { badges.append("New Best Score!") }
+        if isPerfectScore { badges.append("Perfect Score!") }
+        if bestStreak >= 10 { badges.append("10+ Streak!") }
+        return badges
+    }
+
     /// Most improved operation (biggest accuracy gain from early to late in session)
     var mostImprovedOperation: Operation? {
         guard problemHistory.count >= 4 else { return nil }

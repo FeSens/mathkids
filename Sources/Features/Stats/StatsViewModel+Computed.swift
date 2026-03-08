@@ -36,4 +36,14 @@ extension StatsViewModel {
     var skillBalance: SkillBalance {
         eloGap >= 200 ? .unbalanced : .balanced
     }
+
+    /// Difficulty accuracy summary text
+    var difficultyAccuracySummary: String {
+        let parts: [String] = [
+            "Easy: \(bestAccuracyEasy > 0 ? "\(Int(bestAccuracyEasy))%" : "N/A")",
+            "Medium: \(bestAccuracyMedium > 0 ? "\(Int(bestAccuracyMedium))%" : "N/A")",
+            "Hard: \(bestAccuracyHard > 0 ? "\(Int(bestAccuracyHard))%" : "N/A")",
+        ]
+        return parts.joined(separator: " | ")
+    }
 }

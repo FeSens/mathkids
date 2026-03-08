@@ -43557,6 +43557,91 @@
         "skillBalance returns balanced/unbalanced enum"
       ],
       "passes": true
+    },
+    {
+      "id": "improve-060",
+      "title": "Difficulty-specific accuracy in results",
+      "description": "Show accuracy breakdown by problem difficulty (Easy/Moderate/Hard based on Elo rating) in results. Leverages existing problemDifficultyDistribution.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Insights.swift"
+      ],
+      "test_steps": [
+        "accuracyByDifficulty returns accuracy per difficulty category",
+        "Empty history returns empty dictionary",
+        "Only Easy problems returns only Easy key"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-061",
+      "title": "Game session score per minute metric",
+      "description": "Calculate points scored per minute of gameplay. Useful for comparing efficiency across games.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Insights.swift"
+      ],
+      "test_steps": [
+        "scorePerMinute returns points per minute",
+        "Zero time returns 0",
+        "scorePerMinuteText returns formatted string"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-062",
+      "title": "Operation emoji mapping for display",
+      "description": "Add emoji-based display for operations in results (+ = plus emoji, etc). Makes result cards more visually appealing.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Insights.swift"
+      ],
+      "test_steps": [
+        "operationEmoji returns correct emoji for each operation",
+        "All four operations have emojis",
+        "operationDisplayName returns readable name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-063",
+      "title": "Stats average accuracy per difficulty",
+      "description": "Show average accuracy achieved at each difficulty level in StatsViewModel.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel+Computed.swift"
+      ],
+      "test_steps": [
+        "averageAccuracyDescription returns formatted text for each difficulty",
+        "Zero accuracy shows N/A",
+        "difficultyAccuracySummary returns combined text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-064",
+      "title": "Results personal best indicators",
+      "description": "Add properties showing whether specific metrics are personal bests (best streak this game, best accuracy, etc).",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Insights.swift"
+      ],
+      "test_steps": [
+        "personalBestBadges returns array of strings for new records",
+        "No records returns empty array",
+        "New best score is included in badges"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
