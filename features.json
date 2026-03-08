@@ -11645,6 +11645,86 @@
         "Poor returns false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-654",
+      "name": "GameSession+Display.sessionGrade",
+      "description": "Returns letter grade with emoji",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Perfect score returns A+ star",
+        "Low returns F"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-655",
+      "name": "GameSession+Display.questionsPerMinute",
+      "description": "Returns answered questions per minute rate",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Answer questions over time",
+        "Verify rate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-656",
+      "name": "GameSession+Display.correctStreakEmoji",
+      "description": "Returns emoji array based on streak length",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "High streak returns fire",
+        "No streak returns empty"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-657",
+      "name": "GameSession+Display.timeUsedPercentText",
+      "description": "Returns time used as percentage string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Use half the time",
+        "Verify 50%"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-658",
+      "name": "GameSession+Display.hasAnsweredAny",
+      "description": "Returns true when totalAnswered > 0",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Fresh is false",
+        "After answering is true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

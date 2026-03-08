@@ -34,4 +34,29 @@ extension GameSession {
     var isGoodPerformance: Bool {
         accuracy >= 70 && score >= 50
     }
+
+    var sessionGrade: String {
+        let badge = accuracyBadge
+        if badge == "A+" { return "⭐ A+" }
+        return badge
+    }
+
+    var questionsPerMinute: Int {
+        guard totalTimePlayed > 0 else { return 0 }
+        return totalAnswered * 60 / totalTimePlayed
+    }
+
+    var correctStreakEmoji: String {
+        bestStreak >= 3 ? "🔥" : ""
+    }
+
+    var timeUsedPercentText: String {
+        guard difficulty.timeLimitSeconds > 0 else { return "0%" }
+        let pct = totalTimePlayed * 100 / difficulty.timeLimitSeconds
+        return "\(pct)%"
+    }
+
+    var hasAnsweredAny: Bool {
+        totalAnswered > 0
+    }
 }
