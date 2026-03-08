@@ -35417,6 +35417,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2176",
+      "title": "Achievement Card Phenakite Style",
+      "description": "Computed property returning phenakite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns prismatic style",
+        "Common returns glassy style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2177",
+      "title": "Achievement Requires Steel",
+      "description": "Computed property checking if achievement requires steel",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Score requires steel",
+        "Streak does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2178",
+      "title": "Achievement Card Resolution Writ Text",
+      "description": "Computed property returning resolution writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2179",
+      "title": "Achievement Card Celestine Style",
+      "description": "Computed property returning celestine style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns sky blue style",
+        "Common returns pale style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2180",
+      "title": "Achievement Exemplar Threshold",
+      "description": "Computed property returning exemplar threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

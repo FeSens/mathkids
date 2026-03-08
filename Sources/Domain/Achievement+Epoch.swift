@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 75000000
         }
     }
+
+    var achievementCardPhenakiteStyle: String {
+        isRareAchievement ? "prismatic" : "glassy"
+    }
+
+    var achievementRequiresSteel: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardResolutionWritText: String {
+        switch category {
+        case .mastery: return "Resolution Writ of the Learned"
+        case .streak: return "Resolution Writ of the Devoted"
+        case .score: return "Resolution Writ of the Skilled"
+        case .games: return "Resolution Writ of the Eager"
+        }
+    }
+
+    var achievementCardCelestineStyle: String {
+        isRareAchievement ? "sky blue" : "pale"
+    }
+
+    var achievementExemplarThreshold: Int {
+        switch category {
+        case .mastery: return 1000000000
+        case .streak: return 750000000
+        case .score: return 900000000
+        case .games: return 100000000
+        }
+    }
 }
