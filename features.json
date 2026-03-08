@@ -30189,6 +30189,86 @@
         "Verify cardRankLabel by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1829",
+      "title": "Achievement Card Trophy Style",
+      "description": "Returns trophy style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardTrophyStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1830",
+      "title": "Achievement Experience Multiplier",
+      "description": "Returns XP multiplier",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify experienceMultiplier by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1831",
+      "title": "Achievement Card Frame Style",
+      "description": "Returns frame style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardFrameStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1832",
+      "title": "Achievement Is Precision Based",
+      "description": "Returns whether needs precision",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isPrecisionBased for score vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1833",
+      "title": "Achievement Card Tier Badge",
+      "description": "Returns tier badge text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardTierBadge by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

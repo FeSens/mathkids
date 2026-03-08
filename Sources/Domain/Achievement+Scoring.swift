@@ -35,4 +35,34 @@ extension Achievement {
         case .games: return "C Rank"
         }
     }
+
+    var achievementCardTrophyStyle: String {
+        isRareAchievement ? "large" : "small"
+    }
+
+    var achievementExperienceMultiplier: Double {
+        switch category {
+        case .mastery: return 3.0
+        case .streak: return 2.0
+        case .score: return 1.5
+        case .games: return 1.0
+        }
+    }
+
+    var achievementCardFrameStyle: String {
+        isRareAchievement ? "ornate" : "simple"
+    }
+
+    var achievementIsPrecisionBased: Bool {
+        category == .score
+    }
+
+    var achievementCardTierBadge: String {
+        switch category {
+        case .mastery: return "Elite"
+        case .streak: return "Dedicated"
+        case .score: return "Skilled"
+        case .games: return "Starter"
+        }
+    }
 }
