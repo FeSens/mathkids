@@ -12767,6 +12767,86 @@
         "Verify sessionQualityStars returns '\u2b50\u2b50\u2b50\u2b50\u2b50'"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-724",
+      "name": "isConsistentPerformer",
+      "description": "Boolean true when accuracy stays above 60% with 5+ answers",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 8/10 correct",
+        "Verify isConsistentPerformer is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-725",
+      "name": "quickFinishBonus",
+      "description": "Extra bonus for finishing with lots of time remaining",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with time remaining",
+        "Verify timeBonus returns positive value when time left"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-726",
+      "name": "sessionTitleText",
+      "description": "Session title text like 'Easy Challenge' or 'Hard Challenge'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create easy session",
+        "Verify sessionTitleText returns 'Easy Challenge'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-727",
+      "name": "answersPerSecond",
+      "description": "Answers per second as a Double for pace tracking",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 10 answers in 20 seconds",
+        "Verify answersPerSecond returns 0.5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-728",
+      "name": "perfectGameText",
+      "description": "Special celebration text for perfect games, empty string otherwise",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with all correct answers",
+        "Verify perfectGameText returns celebration text"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

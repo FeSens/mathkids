@@ -118,4 +118,26 @@ extension GameSession {
         let rating = performanceRating
         return String(repeating: "⭐", count: rating)
     }
+
+    var isConsistentPerformer: Bool {
+        totalAnswered >= 5 && accuracy >= 60
+    }
+
+    var quickFinishBonus: Int {
+        timeRemaining / 2
+    }
+
+    var sessionTitleText: String {
+        "\(difficulty.displayName) Challenge"
+    }
+
+    var answersPerSecond: Double {
+        guard totalTimePlayed > 0 else { return 0.0 }
+        return Double(totalAnswered) / Double(totalTimePlayed)
+    }
+
+    var perfectGameText: String {
+        guard totalAnswered > 0, totalCorrect == totalAnswered else { return "" }
+        return "Perfect Game!"
+    }
 }
