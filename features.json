@@ -13967,6 +13967,86 @@
         "Verify difficultyLabel is non-empty"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-799",
+      "name": "Achievement.progressDescription",
+      "description": "Description of progress toward earning this achievement",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get progressDescription for an achievement",
+        "Verify non-empty"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-800",
+      "name": "Achievement.isHidden",
+      "description": "Boolean true for achievements that should be hidden until earned",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Check hidden status for rare achievements",
+        "Verify rare achievements are hidden"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-801",
+      "name": "Achievement.pointValue",
+      "description": "Point value of the achievement: common=10, rare=25, epic=50",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get pointValue for a common achievement",
+        "Verify returns 10"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-802",
+      "name": "Achievement.badgeColor",
+      "description": "Color name for the achievement badge based on category",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get badgeColor for streak achievement",
+        "Verify returns appropriate color"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-803",
+      "name": "Achievement.shareText",
+      "description": "Text for sharing achievement on social media",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get shareText for an achievement",
+        "Verify contains achievement name"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
