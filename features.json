@@ -14367,6 +14367,86 @@
         "Verify reviewText shows all info"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-824",
+      "name": "Operation.actionWord",
+      "description": "Action word for the operation: 'adding', 'subtracting', 'multiplying', 'dividing'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get actionWord for add",
+        "Verify returns 'adding'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-825",
+      "name": "Operation.isPrimaryOperation",
+      "description": "Boolean true for add and subtract (primary operations)",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Check add",
+        "Verify isPrimaryOperation is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-826",
+      "name": "Achievement.Category.color",
+      "description": "Color name for the achievement category",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get color for streak category",
+        "Verify returns 'orange'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-827",
+      "name": "Achievement.Category.iconName",
+      "description": "SF Symbol name for the achievement category",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get iconName for score category",
+        "Verify returns non-empty string"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-828",
+      "name": "Achievement.Category.categoryDescription",
+      "description": "Description of what this achievement category rewards",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get description for mastery category",
+        "Verify non-empty description"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

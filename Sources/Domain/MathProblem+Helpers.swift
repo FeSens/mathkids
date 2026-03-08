@@ -100,6 +100,19 @@ extension Operation {
         }
     }
 
+    var actionWord: String {
+        switch self {
+        case .add: return "adding"
+        case .subtract: return "subtracting"
+        case .multiply: return "multiplying"
+        case .divide: return "dividing"
+        }
+    }
+
+    var isPrimaryOperation: Bool {
+        self == .add || self == .subtract
+    }
+
     func isInverse(of other: Operation) -> Bool {
         switch (self, other) {
         case (.add, .subtract), (.subtract, .add): return true

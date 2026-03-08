@@ -51,3 +51,32 @@ extension Achievement {
         "\(emoji) \(title)"
     }
 }
+
+extension Achievement.Category {
+    var color: String {
+        switch self {
+        case .streak: return "orange"
+        case .score: return "gold"
+        case .games: return "blue"
+        case .mastery: return "purple"
+        }
+    }
+
+    var iconName: String {
+        switch self {
+        case .streak: return "flame"
+        case .score: return "trophy"
+        case .games: return "gamecontroller"
+        case .mastery: return "graduationcap"
+        }
+    }
+
+    var categoryDescription: String {
+        switch self {
+        case .streak: return "Rewards for maintaining answer streaks"
+        case .score: return "Rewards for achieving high scores"
+        case .games: return "Rewards for playing games"
+        case .mastery: return "Rewards for mastering math skills"
+        }
+    }
+}

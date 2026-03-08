@@ -3,19 +3,20 @@
 ## Session 13 — 2026-03-08
 
 ### Status
-- Features: 813/813 passing (12 MVP + 9 polish + 792 improvement)
-- Unit tests: ~1480 (all green across ~131 suites)
+- Features: 833/833 passing (12 MVP + 9 polish + 812 improvement)
+- Unit tests: ~1530 (all green across ~136 suites)
 - UI tests: 12 (QA screenshots flaky but unit tests solid)
 - QA: PASSED
 
-### Session 13 Features (batches 124-144)
+### Session 13 Features (batches 124-148)
 - Batch 124: logic-699 to logic-703 (5 features) — GameSession+Display.swift
 - Batch 125-133: logic-704 to logic-748 (45 features) — GameSession+Labels.swift
 - Batch 134-137: logic-749 to logic-768 (20 features) — DifficultyLevel+Extras.swift
 - Batch 138-141: logic-769 to logic-788 (20 features) — MathProblem+Helpers.swift
 - Batch 142-143: logic-789 to logic-798 (10 features) — AnsweredProblem+Helpers.swift
-- Batch 144: logic-799 to logic-803 (5 features) — Achievement+Helpers.swift
-- Total this session: 105 improvement features
+- Batch 144-145: logic-799 to logic-808 (10 features) — Achievement+Helpers.swift
+- Batch 146-148: logic-809 to logic-823 (15 features) — mixed extension files
+- Total this session: 125 improvement features
 - New files: GameSession+Labels.swift, DifficultyLevel+Extras.swift, MathProblem+Helpers.swift, AnsweredProblem+Helpers.swift, Achievement+Helpers.swift
 - Milestones: 800+ features, 130+ suites
 
