@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 150000
         }
     }
+
+    var achievementCardMatilditeStyle: String {
+        isRareAchievement ? "iron grey trigonal" : "dull iron"
+    }
+
+    var achievementRequiresInitiativePlus: Bool {
+        category == .mastery || category == .score
+    }
+
+    var achievementCardCharterWritSealUltraText: String {
+        switch category {
+        case .mastery: return "Charter Writ Seal Ultra of the Eternal"
+        case .streak: return "Charter Writ Seal Ultra of the Aegis"
+        case .score: return "Charter Writ Seal Ultra of the Titan"
+        case .games: return "Charter Writ Seal Ultra of the Disciple"
+        }
+    }
+
+    var achievementCardEmplectiteStyle: String {
+        isRareAchievement ? "tin white prismatic" : "grey tin"
+    }
+
+    var achievementPantheonPlusThreshold: Int {
+        switch category {
+        case .mastery: return 2000000
+        case .streak: return 800000
+        case .score: return 1800000
+        case .games: return 200000
+        }
+    }
 }

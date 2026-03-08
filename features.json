@@ -37807,6 +37807,96 @@
         "Verify threshold <= 150000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2311",
+      "title": "Achievement card matildite style",
+      "description": "Computed property achievementCardMatilditeStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify matildite style is iron grey trigonal",
+        "Create common achievement",
+        "Verify matildite style is dull iron"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2312",
+      "title": "Achievement requires initiative plus",
+      "description": "Computed property achievementRequiresInitiativePlus returns true for mastery or score categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresInitiativePlus is true",
+        "Create games achievement",
+        "Verify requiresInitiativePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2313",
+      "title": "Achievement card charter writ seal ultra text",
+      "description": "Computed property achievementCardCharterWritSealUltraText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Charter Writ Seal Ultra of the Eternal",
+        "Create games achievement",
+        "Verify text is Charter Writ Seal Ultra of the Disciple"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2314",
+      "title": "Achievement card emplectite style",
+      "description": "Computed property achievementCardEmplectiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify emplectite style is tin white prismatic",
+        "Create common achievement",
+        "Verify emplectite style is grey tin"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2315",
+      "title": "Achievement pantheon plus threshold",
+      "description": "Computed property achievementPantheonPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 1800000",
+        "Create games achievement",
+        "Verify threshold <= 250000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
