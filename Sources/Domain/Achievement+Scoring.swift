@@ -185,4 +185,34 @@ extension Achievement {
     var achievementCardProgressText: String {
         "\(category.displayName) in progress"
     }
+
+    var achievementCardBorderGradient: String {
+        switch category {
+        case .mastery: return "gold-purple"
+        case .streak: return "red-orange"
+        case .score: return "blue-cyan"
+        case .games: return "green-teal"
+        }
+    }
+
+    var achievementWeeklyGoalCount: Int {
+        switch category {
+        case .mastery: return 7
+        case .streak: return 7
+        case .score: return 3
+        case .games: return 5
+        }
+    }
+
+    var achievementCardBadgeFont: String {
+        isRareAchievement ? "bold" : "medium"
+    }
+
+    var achievementIsHabitForming: Bool {
+        category == .streak
+    }
+
+    var achievementCardXpLabel: String {
+        "\(achievementXpValue) XP"
+    }
 }

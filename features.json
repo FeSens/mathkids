@@ -30589,6 +30589,86 @@
         "Verify cardProgressText contains category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1854",
+      "title": "Achievement Card Border Gradient",
+      "description": "Returns border gradient colors",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardBorderGradient by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1855",
+      "title": "Achievement Weekly Goal Count",
+      "description": "Returns weekly goal count",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify weeklyGoalCount by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1856",
+      "title": "Achievement Card Badge Font",
+      "description": "Returns badge font for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardBadgeFont by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1857",
+      "title": "Achievement Is Habit Forming",
+      "description": "Returns whether achievement builds habits",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isHabitForming for streak vs score"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1858",
+      "title": "Achievement Card XP Label",
+      "description": "Returns XP label for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardXpLabel contains XP value"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
