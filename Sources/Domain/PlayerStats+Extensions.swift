@@ -164,6 +164,11 @@ extension PlayerStats {
         }
     }
 
+    func recordPerfectGameIfQualified(accuracy: Double) {
+        guard accuracy >= 100 else { return }
+        perfectGameCount += 1
+    }
+
     var favoriteDifficulty: DifficultyLevel? {
         let games = [(DifficultyLevel.easy, easyGamesPlayed), (.medium, mediumGamesPlayed), (.hard, hardGamesPlayed)]
         guard let best = games.max(by: { $0.1 < $1.1 }), best.1 > 0 else { return nil }

@@ -5329,6 +5329,98 @@
       "files": [
         "Sources/Domain/LevelSystem.swift"
       ]
+    },
+    {
+      "id": "logic-274",
+      "title": "GameSession comeback detection",
+      "description": "GameSession detects when the player improves accuracy in the second half vs first half",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003",
+        "logic-256"
+      ],
+      "test_steps": [
+        "isComeback true when second half accuracy > first half by 20+",
+        "isComeback false when accuracies are similar",
+        "isComeback false with too few answers"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-275",
+      "title": "PlayerStats perfect game count",
+      "description": "PlayerStats tracks how many games had 100% accuracy",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Starts at 0",
+        "Increments when recording a perfect game",
+        "Does not increment for non-perfect games"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-276",
+      "title": "Operation difficulty ranking",
+      "description": "Operation provides a difficulty rank for sorting and display",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Add is rank 1 (easiest)",
+        "Subtract is rank 2",
+        "Multiply is rank 3",
+        "Divide is rank 4 (hardest)"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-277",
+      "title": "StatsViewModel time played text",
+      "description": "StatsViewModel provides human-readable total time played text",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Shows '0m' for no time",
+        "Shows minutes for short times",
+        "Shows hours and minutes for long times"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
+    },
+    {
+      "id": "logic-278",
+      "title": "ResultsViewModel accuracy comparison to average",
+      "description": "ResultsViewModel compares current accuracy to player's average accuracy",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Shows above average when accuracy exceeds average",
+        "Shows below average when accuracy is lower",
+        "Returns nil when no stats available"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

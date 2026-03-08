@@ -53,6 +53,7 @@ final class PlayerStats {
     var problemsSolvedEasy: Int = 0
     var problemsSolvedMedium: Int = 0
     var problemsSolvedHard: Int = 0
+    var perfectGameCount: Int = 0
 
     init() {}
 

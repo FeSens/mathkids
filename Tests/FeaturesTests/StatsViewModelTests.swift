@@ -150,4 +150,33 @@ struct StatsViewModelTests {
         vm.loadStats()
         #expect(vm.sessionCountText == "5 games")
     }
+
+    // MARK: - Time Played Text (logic-277)
+
+    @Test("Time played shows 0m for no time")
+    func timePlayedZero() {
+        let vm = makeVM()
+        vm.loadStats()
+        #expect(vm.formattedTimePlayed == "0m")
+    }
+
+    @Test("Time played shows minutes")
+    func timePlayedMinutes() {
+        let vm = makeVM()
+        vm.loadStats()
+        let stats = vm.playerStats!
+        stats.totalTimePlayedSeconds = 300 // 5 minutes
+        vm.loadStats()
+        #expect(vm.formattedTimePlayed == "5m")
+    }
+
+    @Test("Time played shows hours and minutes")
+    func timePlayedHoursMinutes() {
+        let vm = makeVM()
+        vm.loadStats()
+        let stats = vm.playerStats!
+        stats.totalTimePlayedSeconds = 3900 // 65 minutes
+        vm.loadStats()
+        #expect(vm.formattedTimePlayed == "1h 5m")
+    }
 }

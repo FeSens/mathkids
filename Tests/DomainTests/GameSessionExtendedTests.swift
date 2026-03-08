@@ -121,4 +121,39 @@ struct GameSessionExtendedTests {
         session.recordAnswer(correct: false)
         #expect(session.penaltyPoints == 3 * session.difficulty.penaltyPerWrong)
     }
+
+    // MARK: - Comeback Detection (logic-274)
+
+    @Test("isComeback true when second half much better")
+    func comebackTrue() {
+        var session = GameSession(difficulty: .easy)
+        // First half: 1/4 correct = 25%
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        // Second half: 4/4 correct = 100%
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        #expect(session.isComeback == true)
+    }
+
+    @Test("isComeback false when accuracies similar")
+    func comebackFalse() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        #expect(session.isComeback == false)
+    }
+
+    @Test("isComeback false with too few answers")
+    func comebackFewAnswers() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true)
+        #expect(session.isComeback == false)
+    }
 }

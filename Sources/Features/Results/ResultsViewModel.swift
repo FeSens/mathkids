@@ -15,6 +15,7 @@ final class ResultsViewModel {
     let newLevel: Int
     var didLevelUp: Bool { newLevel > previousLevel }
     let problemHistory: [AnsweredProblem]
+    private let playerAverageAccuracy: Double?
 
     init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil, problemHistory: [AnsweredProblem] = [], previousBestForDifficulty: Int = 0) {
         self.problemHistory = problemHistory
@@ -31,6 +32,7 @@ final class ResultsViewModel {
         self.xpEarned = totalXP
 
         if let stats {
+            self.playerAverageAccuracy = stats.totalSolved > 0 ? stats.accuracy : nil
             self.previousLevel = LevelSystem.level(for: stats.totalXP - totalXP)
             self.newLevel = stats.currentLevel
             newAchievements = Achievement.all.filter { $0.isUnlocked(stats: stats) }
@@ -38,6 +40,7 @@ final class ResultsViewModel {
                 newAchievements = Array(newAchievements.prefix(3))
             }
         } else {
+            self.playerAverageAccuracy = nil
             self.previousLevel = 1
             self.newLevel = 1
         }
@@ -196,6 +199,18 @@ final class ResultsViewModel {
             return "Best: \(previousBestScore) pts"
         } else {
             return "First game!"
+        }
+    }
+
+    var accuracyComparisonText: String? {
+        guard let avg = playerAverageAccuracy else { return nil }
+        let diff = accuracy - avg
+        if diff > 5 {
+            return "\(Int(diff))% above your average!"
+        } else if diff < -5 {
+            return "\(Int(abs(diff)))% below your average"
+        } else {
+            return "Right at your average"
         }
     }
 

@@ -24,6 +24,15 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var difficultyRank: Int {
+        switch self {
+        case .add: 1
+        case .subtract: 2
+        case .multiply: 3
+        case .divide: 4
+        }
+    }
+
     var inverse: Operation {
         switch self {
         case .add: .subtract

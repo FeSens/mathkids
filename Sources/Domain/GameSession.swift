@@ -127,6 +127,11 @@ struct GameSession: Sendable {
         return Double(correct) / Double(secondHalf.count) * 100
     }
 
+    var isComeback: Bool {
+        guard totalAnswered >= 4 else { return false }
+        return secondHalfAccuracy - firstHalfAccuracy >= 20
+    }
+
     var penaltyPoints: Int {
         totalWrong * difficulty.penaltyPerWrong
     }

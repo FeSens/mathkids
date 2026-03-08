@@ -329,4 +329,33 @@ struct ResultsViewModelExtendedTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.timePerformanceText.contains("pace"))
     }
+
+    // MARK: - Accuracy Comparison (logic-278)
+
+    @Test("Above average when accuracy exceeds average")
+    func accuracyAboveAverage() {
+        let stats = PlayerStats()
+        stats.totalSolved = 100
+        stats.totalCorrect = 60 // 60% average
+        let session = makeSession(correct: 9, total: 10) // 90%
+        let vm = ResultsViewModel(session: session, previousBestScore: 0, stats: stats)
+        #expect(vm.accuracyComparisonText?.contains("above") == true)
+    }
+
+    @Test("Below average when accuracy is lower")
+    func accuracyBelowAverage() {
+        let stats = PlayerStats()
+        stats.totalSolved = 100
+        stats.totalCorrect = 90 // 90% average
+        let session = makeSession(correct: 5, total: 10) // 50%
+        let vm = ResultsViewModel(session: session, previousBestScore: 0, stats: stats)
+        #expect(vm.accuracyComparisonText?.contains("below") == true)
+    }
+
+    @Test("Returns nil when no stats available")
+    func accuracyComparisonNilNoStats() {
+        let session = makeSession(correct: 5, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.accuracyComparisonText == nil)
+    }
 }

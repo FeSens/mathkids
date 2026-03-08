@@ -294,4 +294,26 @@ struct PlayerStatsExtendedTests {
         stats.hardGamesPlayed = 15
         #expect(stats.favoriteDifficulty == .hard)
     }
+
+    // MARK: - Perfect Game Count (logic-275)
+
+    @Test("Perfect game count starts at 0")
+    func perfectGameCountStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.perfectGameCount == 0)
+    }
+
+    @Test("Perfect game count increments for perfect game")
+    func perfectGameCountIncrements() {
+        let stats = PlayerStats()
+        stats.recordPerfectGameIfQualified(accuracy: 100)
+        #expect(stats.perfectGameCount == 1)
+    }
+
+    @Test("Perfect game count does not increment for non-perfect")
+    func perfectGameCountNotForNonPerfect() {
+        let stats = PlayerStats()
+        stats.recordPerfectGameIfQualified(accuracy: 90)
+        #expect(stats.perfectGameCount == 0)
+    }
 }

@@ -235,4 +235,26 @@ struct MathProblemTests {
         let choices = problem.wrongAnswerChoices
         #expect(Set(choices).count == 3)
     }
+
+    // MARK: - Operation Difficulty Rank (logic-276)
+
+    @Test("Add is rank 1")
+    func addRank() {
+        #expect(Operation.add.difficultyRank == 1)
+    }
+
+    @Test("Subtract is rank 2")
+    func subtractRank() {
+        #expect(Operation.subtract.difficultyRank == 2)
+    }
+
+    @Test("Multiply is rank 3")
+    func multiplyRank() {
+        #expect(Operation.multiply.difficultyRank == 3)
+    }
+
+    @Test("Divide is rank 4")
+    func divideRank() {
+        #expect(Operation.divide.difficultyRank == 4)
+    }
 }
