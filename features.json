@@ -18821,6 +18821,81 @@
         "answer 5 has 1 digit, answer 12 has 2 digits"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1109",
+      "name": "problemHintText",
+      "description": "Hint text to help solve the problem",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all operations"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1110",
+      "name": "problemBothOperandsSingleDigit",
+      "description": "Whether both operands are single digit",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3,4 returns true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1111",
+      "name": "problemHasZeroOperand",
+      "description": "Whether either operand is zero",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "0,3 returns true, 2,3 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1112",
+      "name": "problemHasOneOperand",
+      "description": "Whether either operand is one",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "1,3 returns true, 2,3 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1113",
+      "name": "problemAccessibilityHint",
+      "description": "Accessibility hint for the problem",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains operation display name"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

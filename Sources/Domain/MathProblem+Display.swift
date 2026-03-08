@@ -53,4 +53,24 @@ extension MathProblem {
     var problemAnswerDigitCount: Int {
         String(abs(correctAnswer)).count
     }
+
+    var problemHintText: String {
+        operation.operationTip
+    }
+
+    var problemBothOperandsSingleDigit: Bool {
+        operand1 < 10 && operand2 < 10
+    }
+
+    var problemHasZeroOperand: Bool {
+        operand1 == 0 || operand2 == 0
+    }
+
+    var problemHasOneOperand: Bool {
+        operand1 == 1 || operand2 == 1
+    }
+
+    var problemAccessibilityHint: String {
+        "\(operation.displayName) problem: \(problemReadAloudText)"
+    }
 }
