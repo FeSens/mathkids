@@ -31669,6 +31669,76 @@
         "Create games achievement",
         "Verify target is low"
       ]
+    },
+    {
+      "id": "logic-1929",
+      "name": "achievementCardMarquetryStyle",
+      "description": "Marquetry inlay style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify marquetry is elaborate",
+        "Create common achievement",
+        "Verify marquetry is none"
+      ]
+    },
+    {
+      "id": "logic-1930",
+      "name": "achievementIsScoreDependent",
+      "description": "Whether achievement depends on score (score only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create score achievement",
+        "Verify isScoreDependent is true",
+        "Create streak achievement",
+        "Verify isScoreDependent is false"
+      ]
+    },
+    {
+      "id": "logic-1931",
+      "name": "achievementCardChronicleText",
+      "description": "Chronicle text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify chronicle text",
+        "Create games achievement",
+        "Verify chronicle text"
+      ]
+    },
+    {
+      "id": "logic-1932",
+      "name": "achievementCardLacquerStyle",
+      "description": "Lacquer finish style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify lacquer is glossy",
+        "Create common achievement",
+        "Verify lacquer is satin"
+      ]
+    },
+    {
+      "id": "logic-1933",
+      "name": "achievementRequiredCorrectAnswers",
+      "description": "Required correct answers count based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify count is high",
+        "Create games achievement",
+        "Verify count is low"
+      ]
     }
   ],
   "_schema": {
