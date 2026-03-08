@@ -190,6 +190,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         operandRangeSize * operationCount
     }
 
+    var isFirstDifficulty: Bool {
+        self == .easy
+    }
+
     var timeFormatted: String {
         let minutes = timeLimitSeconds / 60
         let seconds = timeLimitSeconds % 60

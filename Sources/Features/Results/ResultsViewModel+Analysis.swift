@@ -106,6 +106,10 @@ extension ResultsViewModel {
         "Best streak: \(bestStreak)"
     }
 
+    var isPerfectGame: Bool {
+        session.answeredAllCorrectly
+    }
+
     var hasStreak: Bool {
         bestStreak > 0
     }

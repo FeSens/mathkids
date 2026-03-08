@@ -82,6 +82,10 @@ final class HomeViewModel {
         "\(selectedDifficulty.displayName) - \(selectedDifficulty.operationCount) operations"
     }
 
+    var dailyChallengeButtonText: String {
+        dailyChallengeCompleted ? "Completed" : "Play Daily Challenge"
+    }
+
     var isBeginner: Bool {
         totalSolved == 0
     }

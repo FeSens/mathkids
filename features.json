@@ -9883,6 +9883,87 @@
         "Verify 5x5 returns false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-544",
+      "title": "HomeViewModel dailyChallengeButtonText formatted text",
+      "description": "HomeViewModel should expose dailyChallengeButtonText returning appropriate button text",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify returns Play when not completed",
+        "Verify returns Completed when done"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-545",
+      "title": "StatsViewModel xpToNextLevelText formatted XP needed",
+      "description": "StatsViewModel should expose xpToNextLevelText returning XP needed for next level",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes XP amount",
+        "Verify includes next level reference"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-546",
+      "title": "ResultsViewModel isPerfectGame checks perfect score",
+      "description": "ResultsViewModel+Analysis should expose isPerfectGame returning true when all answers correct",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify true when all correct",
+        "Verify false when any wrong"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-547",
+      "title": "DifficultyLevel isFirstDifficulty checks if easy",
+      "description": "DifficultyLevel should expose isFirstDifficulty returning true only for easy",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns true",
+        "Verify medium returns false",
+        "Verify hard returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-548",
+      "title": "MathProblem answerAbsoluteValue absolute answer",
+      "description": "MathProblem should expose answerAbsoluteValue returning abs(correctAnswer)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify positive answer returns same",
+        "Verify negative answer returns positive"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

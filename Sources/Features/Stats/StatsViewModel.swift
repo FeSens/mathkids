@@ -92,6 +92,12 @@ final class StatsViewModel {
         "\(Int(accuracy))% (\(accuracyGrade))"
     }
 
+    var xpToNextLevelText: String {
+        let needed = LevelSystem.xpNeededForNextLevel(currentXP: totalXP)
+        if needed <= 0 { return "Max level!" }
+        return "\(needed) XP to next level"
+    }
+
     var favoriteOperationDescription: String {
         guard let op = favoriteOperation else { return "No favorite yet" }
         return "Favorite: \(op)"
