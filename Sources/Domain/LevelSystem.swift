@@ -43,6 +43,11 @@ enum LevelSystem {
         return levelNames[lvl - 1]
     }
 
+    static func levelTitle(for xp: Int) -> String {
+        let lvl = level(for: xp)
+        return "Lv. \(lvl) \(levelNames[lvl - 1])"
+    }
+
     static func xpNeededForNextLevel(currentXP: Int) -> Int {
         let currentLevel = level(for: currentXP)
         guard currentLevel < thresholds.count else { return 0 }

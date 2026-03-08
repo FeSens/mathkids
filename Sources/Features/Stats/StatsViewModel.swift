@@ -21,6 +21,7 @@ final class StatsViewModel {
     var favoriteOperationCount: Int = 0
     var weakestOperationSymbol: String?
     var averageProblemsPerMinute: Double = 0
+    var operationAccuracies: [String: Double] = [:]
     var totalTimePlayedMinutes: Int = 0
     var totalXP: Int = 0
 
@@ -89,6 +90,10 @@ final class StatsViewModel {
         }
         if totalTimePlayedMinutes > 0 {
             averageProblemsPerMinute = Double(totalSolved) / Double(totalTimePlayedMinutes)
+        }
+        for op in Operation.allCases {
+            let acc = stats.accuracyForOperation(op)
+            if acc > 0 { operationAccuracies[op.rawValue] = acc }
         }
     }
 }

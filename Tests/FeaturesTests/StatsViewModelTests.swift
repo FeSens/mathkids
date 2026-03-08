@@ -102,4 +102,23 @@ struct StatsViewModelTests {
         let vm = makeVM()
         #expect(vm.averageProblemsPerMinute == 0)
     }
+
+    // MARK: - Operation Accuracies (logic-223)
+
+    @Test("Operation accuracies empty initially")
+    func operationAccuraciesEmpty() {
+        let vm = makeVM()
+        #expect(vm.operationAccuracies.isEmpty)
+    }
+
+    @Test("Operation accuracies loaded from stats")
+    func operationAccuraciesLoaded() {
+        let vm = makeVM()
+        vm.loadStats()
+        let stats = vm.playerStats!
+        stats.addCount = 8
+        stats.addTotal = 10
+        vm.loadStats()
+        #expect(vm.operationAccuracies["+"] == 80.0)
+    }
 }

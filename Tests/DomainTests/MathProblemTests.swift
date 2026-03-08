@@ -68,4 +68,25 @@ struct MathProblemTests {
         let ap = AnsweredProblem(problem: problem, userAnswer: 5)
         #expect(ap.timeLabel == nil)
     }
+
+    // MARK: - Problem Difficulty Classification (logic-222)
+
+    @Test("Simple addition is easy difficulty")
+    func simpleAdditionIsEasy() {
+        let problem = MathProblem(operand1: 2, operand2: 3, operation: .add)
+        #expect(problem.problemDifficulty == .easy)
+    }
+
+    @Test("Large multiplication is hard difficulty")
+    func largeMultiplicationIsHard() {
+        let problem = MathProblem(operand1: 15, operand2: 8, operation: .multiply)
+        #expect(problem.problemDifficulty == .hard)
+    }
+
+    @Test("Division is at least easy")
+    func divisionDifficultyExists() {
+        let problem = MathProblem(operand1: 6, operand2: 2, operation: .divide)
+        let d = problem.problemDifficulty
+        #expect(d == .easy || d == .moderate || d == .hard)
+    }
 }

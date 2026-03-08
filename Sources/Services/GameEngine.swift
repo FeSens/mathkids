@@ -21,6 +21,7 @@ final class GameEngine {
     private var problemStartTime: Date = Date()
     private(set) var fastestAnswerTime: Double?
     private(set) var correctCountByOperation: [Operation: Int] = [:]
+    private(set) var operationFrequency: [Operation: Int] = [:]
 
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
@@ -57,6 +58,7 @@ final class GameEngine {
         var answered = AnsweredProblem(problem: currentProblem, userAnswer: answer)
         answered.timeTaken = elapsed
         problemHistory.append(answered)
+        operationFrequency[currentProblem.operation, default: 0] += 1
 
         let correct = currentProblem.isCorrect(answer: answer)
         if correct {

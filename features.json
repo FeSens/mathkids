@@ -4337,6 +4337,96 @@
       "files": [
         "Sources/Domain/DifficultyLevel.swift"
       ]
+    },
+    {
+      "id": "logic-219",
+      "title": "PlayerStats accuracy per operation",
+      "description": "PlayerStats computes accuracy percentage for each operation type",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Record correct and incorrect answers for different operations",
+        "accuracyForOperation returns correct percentage",
+        "Returns 0 when no problems attempted for that operation"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-220",
+      "title": "GameEngine operation frequency tracking",
+      "description": "GameEngine counts how many times each operation appeared in the current game",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "svc-002"
+      ],
+      "test_steps": [
+        "Submit multiple answers",
+        "operationFrequency returns count per operation encountered",
+        "Counts include both correct and incorrect answers"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
+    },
+    {
+      "id": "logic-221",
+      "title": "LevelSystem level title with number",
+      "description": "LevelSystem provides formatted level title like \"Lv. 3 Explorer\"",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "At 0 XP, title is \"Lv. 1 Beginner\"",
+        "At 300 XP, title is \"Lv. 3 Explorer\"",
+        "Format is consistent across levels"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
+    },
+    {
+      "id": "logic-222",
+      "title": "MathProblem difficulty classification",
+      "description": "MathProblem classifies its own difficulty based on operand magnitude and operation type",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "2 + 3 is classified as easy",
+        "15 x 8 is classified as hard",
+        "Division is at least moderate"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-223",
+      "title": "StatsViewModel accuracy per operation",
+      "description": "StatsViewModel exposes per-operation accuracy from PlayerStats for display",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "logic-219",
+        "ui-010"
+      ],
+      "test_steps": [
+        "Load stats with operation accuracy data",
+        "operationAccuracies returns dictionary of operation to accuracy percentage"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

@@ -250,4 +250,20 @@ struct PlayerStatsTests {
         stats.recordMasteryIfQualified(accuracy: 85, difficulty: .easy)
         #expect(stats.masteryCountForDifficulty(.easy) == 0)
     }
+
+    // MARK: - Accuracy Per Operation (logic-219)
+
+    @Test("Accuracy per operation returns 0 with no data")
+    func accuracyPerOperationZero() {
+        let stats = PlayerStats()
+        #expect(stats.accuracyForOperation(.add) == 0)
+    }
+
+    @Test("Accuracy per operation calculates correctly")
+    func accuracyPerOperationCalc() {
+        let stats = PlayerStats()
+        stats.addCount = 8
+        stats.addTotal = 10
+        #expect(stats.accuracyForOperation(.add) == 80.0)
+    }
 }

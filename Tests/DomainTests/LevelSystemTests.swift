@@ -68,4 +68,16 @@ struct LevelSystemTests {
     func xpNeededAtMax() {
         #expect(LevelSystem.xpNeededForNextLevel(currentXP: 99999) == 0)
     }
+
+    // MARK: - Level Title (logic-221)
+
+    @Test("Level title at 0 XP")
+    func levelTitleAt0() {
+        #expect(LevelSystem.levelTitle(for: 0) == "Lv. 1 Beginner")
+    }
+
+    @Test("Level title at 300 XP")
+    func levelTitleAt300() {
+        #expect(LevelSystem.levelTitle(for: 300) == "Lv. 3 Explorer")
+    }
 }

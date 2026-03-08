@@ -208,4 +208,23 @@ struct GameEngineTests {
         let total = engine.correctCountByOperation.values.reduce(0, +)
         #expect(total == 0)
     }
+
+    // MARK: - Operation Frequency (logic-220)
+
+    @Test("Operation frequency starts empty")
+    @MainActor
+    func operationFrequencyStartsEmpty() {
+        let engine = GameEngine(difficulty: .easy)
+        #expect(engine.operationFrequency.isEmpty)
+    }
+
+    @Test("Operation frequency tracks all answers")
+    @MainActor
+    func operationFrequencyTracks() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        let op = engine.currentProblem.operation
+        engine.submitAnswer(99999) // wrong but still counted
+        #expect(engine.operationFrequency[op] == 1)
+    }
 }

@@ -127,6 +127,19 @@ final class PlayerStats {
         }
     }
 
+    func accuracyForOperation(_ operation: Operation) -> Double {
+        let correct: Int
+        let total: Int
+        switch operation {
+        case .add: correct = addCount; total = addTotal
+        case .subtract: correct = subtractCount; total = subtractTotal
+        case .multiply: correct = multiplyCount; total = multiplyTotal
+        case .divide: correct = divideCount; total = divideTotal
+        }
+        guard total > 0 else { return 0 }
+        return Double(correct) / Double(total) * 100
+    }
+
     func incrementOperationCount(_ operation: Operation) {
         switch operation {
         case .add: addCount += 1
