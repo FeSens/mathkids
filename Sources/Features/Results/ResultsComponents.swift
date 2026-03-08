@@ -158,3 +158,53 @@ struct StarRatingView: View {
         }
     }
 }
+
+struct OperationAccuracyBars: View {
+    let breakdown: [Operation: Double]
+
+    private var sortedOps: [(Operation, Double)] {
+        breakdown.sorted { $0.key.rawValue < $1.key.rawValue }
+    }
+
+    private func barColor(for accuracy: Double) -> Color {
+        if accuracy >= 80 { return .green }
+        if accuracy >= 50 { return .orange }
+        return .red
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Accuracy by Operation")
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .foregroundStyle(.secondary)
+
+            ForEach(sortedOps, id: \.0) { op, accuracy in
+                HStack(spacing: 8) {
+                    Text(op.rawValue)
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .frame(width: 24)
+                    GeometryReader { geo in
+                        ZStack(alignment: .leading) {
+                            RoundedRectangle(cornerRadius: 4)
+                                .fill(Color.gray.opacity(0.15))
+                            RoundedRectangle(cornerRadius: 4)
+                                .fill(barColor(for: accuracy))
+                                .frame(width: geo.size.width * accuracy / 100)
+                        }
+                    }
+                    .frame(height: 12)
+                    Text("\(Int(accuracy))%")
+                        .font(.system(size: 12, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                        .frame(width: 36, alignment: .trailing)
+                }
+            }
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color(.systemGray6))
+        )
+        .accessibilityIdentifier("operationAccuracyBars")
+    }
+}

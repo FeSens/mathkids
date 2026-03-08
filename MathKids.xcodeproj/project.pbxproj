@@ -44,6 +44,7 @@
 		0EF2BBBCEB442F4DB628293C /* Batch88Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C49B1F191603890DB9D80 /* Batch88Tests.swift */; };
 		0EF4F667ACE12D8FE4E3D6BE /* Batch461Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC7C0748001D3F1F70CE37 /* Batch461Tests.swift */; };
 		0F24B80BE856A7C54F0DBA24 /* Batch262Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A94168525F9F87CB5D66 /* Batch262Tests.swift */; };
+		0F7A61397F3C68ABB16F47D9 /* EloAdaptiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053CEC5FBF67DC6FA3ED697 /* EloAdaptiveTests.swift */; };
 		110D6913CB9D1207704C46FA /* Batch310Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC9B717EC28407FD3D5621 /* Batch310Tests.swift */; };
 		11B58FA99ADE1BE0019C8A0F /* Batch403Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB913007DA76C72A18578DA8 /* Batch403Tests.swift */; };
 		11B9621EF1706B2289466C79 /* Batch490Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326203602A70DCAAF27C1AC /* Batch490Tests.swift */; };
@@ -530,6 +531,7 @@
 		F1833A535A99781208F25C92 /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EC07D095F577A76D0FA15 /* PlayerStats.swift */; };
 		F1DBBDCD50F38990E26BD6CE /* Batch312Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC8DC6D5B8037E4FAAA2D5 /* Batch312Tests.swift */; };
 		F1E7B7634C275CA56F78358D /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E149DD7A246AF22EEEA61CD5 /* GameViewModel.swift */; };
+		F2287A52C0D3229FC880CDA9 /* WeakestOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB569060CC093F9E98CE74D /* WeakestOperationTests.swift */; };
 		F280F2254261E5BC942DD859 /* Batch68Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B91727BAE1B4E2009DBC194 /* Batch68Tests.swift */; };
 		F48DB118AF48DA9FD309266A /* Batch186Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B71F5DFF7238F7F318093A /* Batch186Tests.swift */; };
 		F4B13558419153026AB404D3 /* Batch228Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B784BF46962082C348DA2F2 /* Batch228Tests.swift */; };
@@ -881,6 +883,7 @@
 		80228D12AC2663D67A3F9AC3 /* Batch371Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch371Tests.swift; sourceTree = "<group>"; };
 		8024D4866D94C9312A354686 /* Batch427Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch427Tests.swift; sourceTree = "<group>"; };
 		8044C71435E6817695D809DF /* MathKidsTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MathKidsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8053CEC5FBF67DC6FA3ED697 /* EloAdaptiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloAdaptiveTests.swift; sourceTree = "<group>"; };
 		8157E8BCDB8F63071EB4EBBF /* Achievement+Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Achievement+Stats.swift"; sourceTree = "<group>"; };
 		816F8E368F7B47A0DCC790AD /* ResultsViewModelBatch37Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModelBatch37Tests.swift; sourceTree = "<group>"; };
 		8279F4B20D767C7762F39677 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
@@ -900,6 +903,7 @@
 		889BBEB5EE30D88DD6231AEC /* Batch53Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch53Tests.swift; sourceTree = "<group>"; };
 		88C86E67B7264480214E7781 /* Batch152Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch152Tests.swift; sourceTree = "<group>"; };
 		88FB98D9636CACF91988571E /* Batch65Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch65Tests.swift; sourceTree = "<group>"; };
+		8AB569060CC093F9E98CE74D /* WeakestOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakestOperationTests.swift; sourceTree = "<group>"; };
 		8AF39DDC898125A380C638F0 /* Batch253Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch253Tests.swift; sourceTree = "<group>"; };
 		8B107CA13F4C71B054E1ACE7 /* Batch79Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch79Tests.swift; sourceTree = "<group>"; };
 		8B816860E000D41EA74C0E89 /* Batch492Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch492Tests.swift; sourceTree = "<group>"; };
@@ -1291,6 +1295,7 @@
 				B94166C5E252ADDC595B34CB /* ResultsViewModelExtendedTests.swift */,
 				83BED5F68362F01B31E28C2E /* ResultsViewModelTests.swift */,
 				63C0BAB984FF6AC3A82CC93C /* StatsViewModelTests.swift */,
+				8AB569060CC093F9E98CE74D /* WeakestOperationTests.swift */,
 			);
 			path = FeaturesTests;
 			sourceTree = "<group>";
@@ -1793,6 +1798,7 @@
 		BD1AC58F76F51ED09D584901 /* ServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				8053CEC5FBF67DC6FA3ED697 /* EloAdaptiveTests.swift */,
 				4CE2D20CBD04BF187F15E15C /* GameEngineExtendedTests.swift */,
 				0F076A1284974B6366DC2D7B /* GameEngineTests.swift */,
 				296AF4623C4992D94BAE1BF9 /* HapticServiceTests.swift */,
@@ -2368,6 +2374,7 @@
 				B228DA2923113BC061BDFB44 /* Batch98Tests.swift in Sources */,
 				C1B89FEF95EAA0A9B86D6568 /* Batch99Tests.swift in Sources */,
 				CD1A74D6EAA366F8D25D018C /* DifficultyLevelTests.swift in Sources */,
+				0F7A61397F3C68ABB16F47D9 /* EloAdaptiveTests.swift in Sources */,
 				0740972BBC784DF26D872212 /* GameEngineExtendedTests.swift in Sources */,
 				6CF3FE7A3760DDDB316F7095 /* GameEngineTests.swift in Sources */,
 				045EC15AD9A4E5764E599375 /* GameSessionBatch46Tests.swift in Sources */,
@@ -2390,6 +2397,7 @@
 				008F2C3CC150E092B0A65669 /* SettingsManagerTests.swift in Sources */,
 				8868DDA9F86BA47EF50C8F36 /* SoundServiceTests.swift in Sources */,
 				45CD98BF35692868AA988D43 /* StatsViewModelTests.swift in Sources */,
+				F2287A52C0D3229FC880CDA9 /* WeakestOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

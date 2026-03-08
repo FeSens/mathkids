@@ -41,6 +41,10 @@ struct HomeView: View {
 
             mathTipCard
 
+            if let weakOp = viewModel.weakestEloOperation {
+                weakestOperationCard(operation: weakOp)
+            }
+
             difficultyPicker
 
             operationPicker
@@ -129,6 +133,40 @@ struct HomeView: View {
 
     private var mathTipCard: some View {
         MathTipCard(seed: viewModel.totalSolved)
+    }
+
+    private func weakestOperationCard(operation: Operation) -> some View {
+        HStack(spacing: 12) {
+            Image(systemName: "target")
+                .font(.title2)
+                .foregroundStyle(.red)
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Focus Area: \(operation.rawValue)")
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                Text("\(viewModel.weakestEloSkillLevel) · \(Int(viewModel.weakestEloRating)) Elo")
+                    .font(.system(size: 13, design: .rounded))
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+            Button {
+                viewModel.selectedOperations = [operation]
+                onStartPractice?(viewModel.selectedDifficulty, [operation])
+            } label: {
+                Text("Practice")
+                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(Capsule().fill(.red))
+            }
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color.red.opacity(0.08))
+                .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.red.opacity(0.2), lineWidth: 1))
+        )
+        .accessibilityIdentifier("weakestOperationCard")
     }
 
     private var difficultyPicker: some View {

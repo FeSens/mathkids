@@ -214,6 +214,37 @@ final class ResultsViewModel {
         return result
     }
 
+    /// Per-operation accuracy breakdown (only operations with attempts)
+    var operationAccuracyBreakdown: [Operation: Double] {
+        var correct: [Operation: Int] = [:]
+        var total: [Operation: Int] = [:]
+        for entry in problemHistory {
+            total[entry.problem.operation, default: 0] += 1
+            if entry.isCorrect { correct[entry.problem.operation, default: 0] += 1 }
+        }
+        var result: [Operation: Double] = [:]
+        for (op, t) in total {
+            result[op] = Double(correct[op] ?? 0) / Double(t) * 100
+        }
+        return result
+    }
+
+    /// The operation with worst accuracy this game, nil if all 100%
+    var weakestOperationThisGame: Operation? {
+        let breakdown = operationAccuracyBreakdown
+        guard !breakdown.isEmpty else { return nil }
+        // If all are 100%, no recommendation needed
+        guard breakdown.values.contains(where: { $0 < 100 }) else { return nil }
+        return breakdown.min(by: { $0.value < $1.value })?.key
+    }
+
+    /// Practice recommendation text based on weakest operation
+    var practiceRecommendationText: String? {
+        guard let weakest = weakestOperationThisGame else { return nil }
+        let accuracy = operationAccuracyBreakdown[weakest] ?? 0
+        return "Practice \(weakest.rawValue) (\(Int(accuracy))% accuracy)"
+    }
+
     var operationBreakdown: [(operation: Operation, count: Int)] {
         var counts: [Operation: Int] = [:]
         for entry in problemHistory {

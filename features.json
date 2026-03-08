@@ -42500,6 +42500,98 @@
         "Level progress bar reflects earned XP"
       ],
       "passes": true
+    },
+    {
+      "id": "improve-001",
+      "title": "Elo-driven problem difficulty per operation",
+      "description": "Use EloSystem.operandRange() in GameEngine to set per-operation difficulty based on player Elo rating instead of just streak-based adaptation. Higher Elo = harder problems for that specific operation.",
+      "category": "logic",
+      "layer": "services",
+      "depends_on": [],
+      "files": [
+        "Sources/Services/GameEngine.swift",
+        "Sources/Services/ProblemGenerator.swift"
+      ],
+      "test_steps": [
+        "GameEngine accepts optional PlayerStats for Elo-based ranges",
+        "ProblemGenerator uses per-operation Elo range when provided",
+        "High Elo rating produces harder problems than low Elo"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-002",
+      "title": "Weakest operation widget on home screen",
+      "description": "Show a card on HomeView indicating the player weakest operation (lowest Elo) with a suggestion to practice it. Tapping starts practice mode filtered to that operation.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "HomeViewModel exposes weakestEloOperation based on Elo ratings",
+        "Home screen shows weakest operation card when player has Elo data",
+        "Card displays operation symbol, Elo rating, and skill level"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-003",
+      "title": "Post-game operation accuracy breakdown on results",
+      "description": "Show per-operation accuracy breakdown on the results screen after a game. Display which operations the player got right vs wrong with percentages.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "ResultsViewModel computes per-operation accuracy from problem history",
+        "Results screen shows operation accuracy bars",
+        "Operations with 0 attempts are not shown"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-004",
+      "title": "Elo milestone celebrations",
+      "description": "When a player Elo rating crosses a skill level threshold (e.g., Learning -> Intermediate), show a celebration on the results screen with the new skill level.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Domain/EloSystem.swift"
+      ],
+      "test_steps": [
+        "EloSystem.skillLevel boundary detection works correctly",
+        "ResultsViewModel detects when Elo crossed a skill boundary during game",
+        "Milestone includes operation symbol and new skill level name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-005",
+      "title": "Smart practice recommendation after game",
+      "description": "On results screen, recommend the weakest operation for focused practice based on game performance. Show a Practice [operation] button that starts practice filtered to that operation.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [
+        "improve-003"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "ResultsViewModel identifies weakest operation from current game",
+        "Recommendation shows operation with lowest accuracy",
+        "No recommendation when all operations have 100% accuracy"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

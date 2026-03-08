@@ -11,6 +11,7 @@ final class GameEngine {
 
     private var generator: ProblemGenerator
     private let allowedOperations: Set<Operation>?
+    private(set) var eloRatings: [Operation: Double]?
     private var timer: Timer?
     private(set) var adaptiveRange: ClosedRange<Int>?
     private var consecutiveCorrect: Int = 0
@@ -40,12 +41,22 @@ final class GameEngine {
         return .stable
     }
 
-    init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
+    init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil, eloRatings: [Operation: Double]? = nil) {
         self.session = GameSession(difficulty: difficulty)
         self.allowedOperations = allowedOperations
+        self.eloRatings = eloRatings
         var gen = ProblemGenerator()
-        self.currentProblem = gen.generate(for: difficulty, allowedOperations: allowedOperations)
+        let eloRanges = eloRatings.map { Self.buildEloRanges(from: $0) }
+        self.currentProblem = gen.generate(for: difficulty, allowedOperations: allowedOperations, eloRanges: eloRanges)
         self.generator = gen
+    }
+
+    private static func buildEloRanges(from ratings: [Operation: Double]) -> [Operation: ClosedRange<Int>] {
+        var ranges: [Operation: ClosedRange<Int>] = [:]
+        for (op, rating) in ratings {
+            ranges[op] = EloSystem.operandRange(forRating: rating, operation: op)
+        }
+        return ranges
     }
 
     var averageResponseTime: Double? {
@@ -136,7 +147,8 @@ final class GameEngine {
         updateAdaptiveRange()
 
         if !session.isFinished {
-            currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
+            let eloRanges = eloRatings.map { Self.buildEloRanges(from: $0) }
+            currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange, eloRanges: eloRanges)
             problemStartTime = Date()
             problemCount += 1
         }
@@ -186,7 +198,8 @@ final class GameEngine {
     }
 
     func skipToNextProblem() {
-        currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
+        let eloRanges = eloRatings.map { Self.buildEloRanges(from: $0) }
+        currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange, eloRanges: eloRanges)
         problemStartTime = Date()
         problemCount += 1
     }

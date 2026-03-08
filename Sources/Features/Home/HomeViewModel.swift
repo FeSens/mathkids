@@ -17,6 +17,9 @@ final class HomeViewModel {
     var levelProgress: Double = 0
     var totalXP: Int = 0
     var recommendedDifficulty: DifficultyLevel = .easy
+    var weakestEloOperation: Operation? = nil
+    var weakestEloRating: Double = 1000
+    var weakestEloSkillLevel: String = ""
 
     private let statsService: StatsService
 
@@ -248,6 +251,15 @@ final class HomeViewModel {
         levelName = stats.levelName
         levelProgress = stats.levelProgress
         totalXP = stats.totalXP
+
+        // Load weakest Elo operation
+        if let weakest = stats.weakestEloOperation {
+            weakestEloOperation = weakest
+            weakestEloRating = stats.eloRating(for: weakest)
+            weakestEloSkillLevel = EloSystem.skillLevel(forRating: weakestEloRating)
+        } else {
+            weakestEloOperation = nil
+        }
 
         // Compute recommended difficulty
         if stats.accuracy >= 90 && stats.gamesPlayed >= 5 {

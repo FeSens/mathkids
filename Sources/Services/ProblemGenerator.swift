@@ -3,22 +3,24 @@ import Foundation
 struct ProblemGenerator {
     private var lastProblem: MathProblem?
 
-    mutating func generate(for difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil, adaptiveRange: ClosedRange<Int>? = nil) -> MathProblem {
+    mutating func generate(for difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil, adaptiveRange: ClosedRange<Int>? = nil, eloRanges: [Operation: ClosedRange<Int>]? = nil) -> MathProblem {
         var problem: MathProblem
         var attempts = 0
         repeat {
-            problem = generateProblem(for: difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
+            problem = generateProblem(for: difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange, eloRanges: eloRanges)
             attempts += 1
         } while problem == lastProblem && attempts < 5
         lastProblem = problem
         return problem
     }
 
-    private func generateProblem(for difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil, adaptiveRange: ClosedRange<Int>? = nil) -> MathProblem {
+    private func generateProblem(for difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil, adaptiveRange: ClosedRange<Int>? = nil, eloRanges: [Operation: ClosedRange<Int>]? = nil) -> MathProblem {
         let available = allowedOperations.map { $0.intersection(Set(difficulty.allowedOperations)) } ?? Set(difficulty.allowedOperations)
         let ops = available.isEmpty ? Set(difficulty.allowedOperations) : available
         let operation = ops.randomElement()!
-        let range = adaptiveRange ?? difficulty.operandRange
+
+        // Prefer Elo-based range for this operation, fall back to adaptive, then difficulty default
+        let range = eloRanges?[operation] ?? adaptiveRange ?? difficulty.operandRange
 
         switch operation {
         case .add:

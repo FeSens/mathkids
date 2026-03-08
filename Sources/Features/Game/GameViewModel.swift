@@ -52,8 +52,8 @@ final class GameViewModel {
         case sad
     }
 
-    init(difficulty: DifficultyLevel, mode: GameMode = .timed, allowedOperations: Set<Operation>? = nil) {
-        self.engine = GameEngine(difficulty: difficulty, allowedOperations: allowedOperations)
+    init(difficulty: DifficultyLevel, mode: GameMode = .timed, allowedOperations: Set<Operation>? = nil, eloRatings: [Operation: Double]? = nil) {
+        self.engine = GameEngine(difficulty: difficulty, allowedOperations: allowedOperations, eloRatings: eloRatings)
         self.mode = mode
         self.showCountdown = (mode == .timed)
     }

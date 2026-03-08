@@ -53,8 +53,9 @@ struct PlayTab: View {
             .navigationDestination(for: AppRoute.self) { route in
                 switch route {
                 case .game(let difficulty, let operations):
+                    let eloStats = StatsService(modelContainer: modelContext.container).getOrCreateStats()
                     GameView(
-                        viewModel: GameViewModel(difficulty: difficulty, allowedOperations: operations),
+                        viewModel: GameViewModel(difficulty: difficulty, allowedOperations: operations, eloRatings: eloStats.eloRatingsByOperation),
                         onGameEnd: { session, history in
                             let statsService = StatsService(modelContainer: modelContext.container)
                             let stats = statsService.getOrCreateStats()
@@ -72,8 +73,9 @@ struct PlayTab: View {
                     .navigationBarBackButtonHidden()
 
                 case .practice(let difficulty, let operations):
+                    let eloStats2 = StatsService(modelContainer: modelContext.container).getOrCreateStats()
                     GameView(
-                        viewModel: GameViewModel(difficulty: difficulty, mode: .practice, allowedOperations: operations),
+                        viewModel: GameViewModel(difficulty: difficulty, mode: .practice, allowedOperations: operations, eloRatings: eloStats2.eloRatingsByOperation),
                         onGameEnd: { session, history in
                             let statsService = StatsService(modelContainer: modelContext.container)
                             let stats = statsService.getOrCreateStats()
@@ -90,8 +92,9 @@ struct PlayTab: View {
                     .navigationBarBackButtonHidden()
 
                 case .dailyChallenge:
+                    let eloStats3 = StatsService(modelContainer: modelContext.container).getOrCreateStats()
                     GameView(
-                        viewModel: GameViewModel(difficulty: .medium, mode: .dailyChallenge),
+                        viewModel: GameViewModel(difficulty: .medium, mode: .dailyChallenge, eloRatings: eloStats3.eloRatingsByOperation),
                         onGameEnd: { session, history in
                             let statsService = StatsService(modelContainer: modelContext.container)
                             let stats = statsService.getOrCreateStats()

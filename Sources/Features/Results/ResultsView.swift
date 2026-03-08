@@ -69,6 +69,30 @@ struct ResultsView: View {
                         OperationBreakdownView(breakdown: viewModel.operationBreakdown)
                             .opacity(showXP ? 1 : 0)
                     }
+                    // Per-operation accuracy bars
+                    if !viewModel.operationAccuracyBreakdown.isEmpty {
+                        OperationAccuracyBars(breakdown: viewModel.operationAccuracyBreakdown)
+                            .opacity(showXP ? 1 : 0)
+                    }
+
+                    // Practice recommendation
+                    if let recommendation = viewModel.practiceRecommendationText {
+                        HStack(spacing: 8) {
+                            Image(systemName: "target")
+                                .foregroundStyle(.red)
+                            Text(recommendation)
+                                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.red.opacity(0.08))
+                        )
+                        .opacity(showXP ? 1 : 0)
+                        .accessibilityIdentifier("practiceRecommendation")
+                    }
+
                     ProblemHistorySection(problemHistory: viewModel.problemHistory)
                         .opacity(showXP ? 1 : 0)
                 }

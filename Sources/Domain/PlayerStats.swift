@@ -133,6 +133,19 @@ final class PlayerStats {
         }
     }
 
+    var eloRatingsByOperation: [Operation: Double] {
+        [.add: eloAdd, .subtract: eloSubtract, .multiply: eloMultiply, .divide: eloDivide]
+    }
+
+    /// Returns the operation with the lowest Elo rating, or nil if all are equal
+    var weakestEloOperation: Operation? {
+        let ratings: [(Operation, Double)] = [(.add, eloAdd), (.subtract, eloSubtract), (.multiply, eloMultiply), (.divide, eloDivide)]
+        let minRating = ratings.min(by: { $0.1 < $1.1 })!.1
+        let maxRating = ratings.max(by: { $0.1 < $1.1 })!.1
+        guard minRating < maxRating else { return nil }
+        return ratings.min(by: { $0.1 < $1.1 })!.0
+    }
+
     func eloHistory(for operation: Operation) -> [Double] {
         switch operation {
         case .add: eloHistoryAdd
