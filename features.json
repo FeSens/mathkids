@@ -35097,6 +35097,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2156",
+      "title": "Achievement Card Diaspore Style",
+      "description": "Computed property returning diaspore style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns color-shift style",
+        "Common returns grey style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2157",
+      "title": "Achievement Requires Pluck",
+      "description": "Computed property checking if achievement requires pluck",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Score requires pluck",
+        "Streak does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2158",
+      "title": "Achievement Card Mandate Writ Text",
+      "description": "Computed property returning mandate writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2159",
+      "title": "Achievement Card Rhodolite Style",
+      "description": "Computed property returning rhodolite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns raspberry style",
+        "Common returns rose style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2160",
+      "title": "Achievement Infinity Threshold",
+      "description": "Computed property returning infinity threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
