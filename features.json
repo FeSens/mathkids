@@ -33177,6 +33177,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2036",
+      "title": "Achievement Card Amazonite Style",
+      "description": "Computed property returning amazonite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns teal style",
+        "Common achievement returns faded style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2037",
+      "title": "Achievement Requires Valor",
+      "description": "Computed property checking if achievement requires valor",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Score category requires valor",
+        "Games category does not require valor"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2038",
+      "title": "Achievement Card Statute Text",
+      "description": "Computed property returning statute text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct statute text",
+        "Games returns correct statute text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2039",
+      "title": "Achievement Card Seraphinite Style",
+      "description": "Computed property returning seraphinite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns chatoyant style",
+        "Common achievement returns dull style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2040",
+      "title": "Achievement Enlightenment Threshold",
+      "description": "Computed property returning enlightenment threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

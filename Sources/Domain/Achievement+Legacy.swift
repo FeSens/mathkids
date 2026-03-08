@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 1000
         }
     }
+
+    var achievementCardAmazoniteStyle: String {
+        isRareAchievement ? "teal" : "faded"
+    }
+
+    var achievementRequiresValor: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardStatuteText: String {
+        switch category {
+        case .mastery: return "Statute of Enlightenment"
+        case .streak: return "Statute of Constancy"
+        case .score: return "Statute of Triumph"
+        case .games: return "Statute of Initiation"
+        }
+    }
+
+    var achievementCardSeraphiniteStyle: String {
+        isRareAchievement ? "chatoyant" : "dull"
+    }
+
+    var achievementEnlightenmentThreshold: Int {
+        switch category {
+        case .mastery: return 15000
+        case .streak: return 3000
+        case .score: return 7500
+        case .games: return 1500
+        }
+    }
 }
