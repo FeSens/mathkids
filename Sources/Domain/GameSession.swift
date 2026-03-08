@@ -188,6 +188,10 @@ struct GameSession: Sendable {
         return timeRemaining * multiplier
     }
 
+    var netScore: Int {
+        max(score - penaltyPoints, 0)
+    }
+
     var estimatedQuestionsRemaining: Int? {
         guard !isFinished else { return 0 }
         guard totalAnswered > 0, totalTimePlayed > 0 else { return nil }

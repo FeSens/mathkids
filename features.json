@@ -6120,6 +6120,74 @@
         "Higher XP per session means fewer sessions needed"
       ],
       "files": ["Sources/Domain/LevelSystem.swift"]
+    },
+    {
+      "id": "logic-324",
+      "title": "GameSession net score after penalties",
+      "description": "GameSession provides a net score that subtracts wrong answer penalties from the total",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Net score equals score when all correct",
+        "Net score reduced by penalties",
+        "Net score never goes below 0"
+      ],
+      "files": ["Sources/Domain/GameSession.swift"]
+    },
+    {
+      "id": "logic-325",
+      "title": "Operation example problem text",
+      "description": "Operation provides an example problem string for display purposes",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Add shows example like 3 + 2",
+        "Each operation has unique example",
+        "Examples are non-empty"
+      ],
+      "files": ["Sources/Domain/MathProblem.swift"]
+    },
+    {
+      "id": "logic-326",
+      "title": "PlayerStats improvement streak",
+      "description": "PlayerStats tracks how many consecutive games had improving accuracy",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns 0 with no recent games",
+        "Returns consecutive improving count"
+      ],
+      "files": ["Sources/Domain/PlayerStats+Extensions.swift"]
+    },
+    {
+      "id": "logic-327",
+      "title": "ResultsViewModel fun emoji based on performance",
+      "description": "ResultsViewModel returns a fun emoji that represents overall game performance",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["ui-009"],
+      "test_steps": [
+        "High accuracy gets celebration emoji",
+        "Low accuracy gets encouraging emoji",
+        "Perfect score gets special emoji"
+      ],
+      "files": ["Sources/Features/Results/ResultsViewModel.swift"]
+    },
+    {
+      "id": "logic-328",
+      "title": "DifficultyLevel challenge description",
+      "description": "DifficultyLevel provides a motivational challenge description for the player",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Each difficulty has a non-empty description",
+        "Descriptions are different for each level"
+      ],
+      "files": ["Sources/Domain/DifficultyLevel.swift"]
     }
   ],
   "_schema": {

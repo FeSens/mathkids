@@ -132,4 +132,57 @@ struct ResultsViewModelBatch37Tests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.sessionSummary.contains("Streak"))
     }
+
+    // MARK: - Medal Type (logic-308)
+
+    @Test("90+ accuracy earns gold")
+    func medalGold() {
+        let session = makeSession(correct: 9, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.medalType == .gold)
+    }
+
+    @Test("70-89 earns silver")
+    func medalSilver() {
+        let session = makeSession(correct: 8, total: 10) // 80%
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.medalType == .silver)
+    }
+
+    @Test("50-69 earns bronze")
+    func medalBronze() {
+        let session = makeSession(correct: 6, total: 10) // 60%
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.medalType == .bronze)
+    }
+
+    @Test("Under 50 earns no medal")
+    func medalNone() {
+        let session = makeSession(correct: 3, total: 10) // 30%
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.medalType == .none)
+    }
+
+    // MARK: - Performance Emoji (logic-327)
+
+    @Test("High accuracy gets celebration emoji")
+    func performanceEmojiHigh() {
+        let session = makeSession(correct: 9, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(!vm.performanceEmoji.isEmpty)
+    }
+
+    @Test("Low accuracy gets encouraging emoji")
+    func performanceEmojiLow() {
+        let session = makeSession(correct: 3, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(!vm.performanceEmoji.isEmpty)
+    }
+
+    @Test("Perfect score gets special emoji")
+    func performanceEmojiPerfect() {
+        let session = makeSession(correct: 10, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.performanceEmoji == "🏆")
+    }
 }

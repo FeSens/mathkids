@@ -169,4 +169,24 @@ struct MathProblemExtendedTests {
         let problem = MathProblem(operand1: 5, operand2: 5, operation: .subtract) // = 0
         #expect(problem.numberLinePosition == .zero)
     }
+
+    // MARK: - Operation Example Problem (logic-325)
+
+    @Test("Add shows example with +")
+    func addExample() {
+        #expect(Operation.add.exampleProblem.contains("+"))
+    }
+
+    @Test("Each operation has unique example")
+    func uniqueExamples() {
+        let examples = Operation.allCases.map(\.exampleProblem)
+        #expect(Set(examples).count == 4)
+    }
+
+    @Test("Examples are non-empty")
+    func examplesNonEmpty() {
+        for op in Operation.allCases {
+            #expect(!op.exampleProblem.isEmpty)
+        }
+    }
 }

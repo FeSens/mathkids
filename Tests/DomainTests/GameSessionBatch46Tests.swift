@@ -114,4 +114,28 @@ struct GameSessionBatch46Tests {
         session.recordAnswer(correct: true) // just to have pace data
         #expect(session.estimatedQuestionsRemaining == 0)
     }
+
+    // MARK: - Net Score After Penalties (logic-324)
+
+    @Test("Net score equals score when all correct")
+    func netScoreAllCorrect() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<5 { session.recordAnswer(correct: true) }
+        #expect(session.netScore == session.score)
+    }
+
+    @Test("Net score reduced by penalties")
+    func netScoreReduced() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: false)
+        #expect(session.netScore < session.score)
+    }
+
+    @Test("Net score never goes below 0")
+    func netScoreNeverNegative() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<10 { session.recordAnswer(correct: false) }
+        #expect(session.netScore >= 0)
+    }
 }

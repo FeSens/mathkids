@@ -195,4 +195,19 @@ struct DifficultyLevelTests {
     func summaryIncludesRange() {
         #expect(DifficultyLevel.easy.summaryText.contains("10"))
     }
+
+    // MARK: - Challenge Description (logic-328)
+
+    @Test("Each difficulty has a non-empty challenge description")
+    func challengeDescriptionNonEmpty() {
+        for d in DifficultyLevel.allCases {
+            #expect(!d.challengeDescription.isEmpty)
+        }
+    }
+
+    @Test("Challenge descriptions are different for each level")
+    func challengeDescriptionsUnique() {
+        let descs = DifficultyLevel.allCases.map(\.challengeDescription)
+        #expect(Set(descs).count == 3)
+    }
 }

@@ -174,4 +174,19 @@ struct PlayerStatsBatch38Tests {
         #expect(stats.bestStreakForOperation(.add) == 5)
         #expect(stats.bestStreakForOperation(.subtract) == 0)
     }
+
+    // MARK: - Improvement Streak (logic-326)
+
+    @Test("Returns 0 with no recent games")
+    func improvementStreakZero() {
+        let stats = PlayerStats()
+        #expect(stats.improvementStreak == 0)
+    }
+
+    @Test("Returns consecutive improving count")
+    func improvementStreakCount() {
+        let stats = PlayerStats()
+        stats.recentAccuracies = [50, 60, 70, 80, 90]
+        #expect(stats.improvementStreak >= 3)
+    }
 }

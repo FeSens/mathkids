@@ -42,6 +42,15 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var exampleProblem: String {
+        switch self {
+        case .add: "3 + 2 = 5"
+        case .subtract: "7 - 3 = 4"
+        case .multiply: "4 x 3 = 12"
+        case .divide: "8 / 2 = 4"
+        }
+    }
+
     var keyboardHint: String {
         switch self {
         case .add: "A"

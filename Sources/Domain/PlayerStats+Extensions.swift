@@ -210,6 +210,19 @@ extension PlayerStats {
         }
     }
 
+    var improvementStreak: Int {
+        guard recentAccuracies.count >= 2 else { return 0 }
+        var streak = 0
+        for i in stride(from: recentAccuracies.count - 1, through: 1, by: -1) {
+            if recentAccuracies[i] > recentAccuracies[i - 1] {
+                streak += 1
+            } else {
+                break
+            }
+        }
+        return streak
+    }
+
     func updateBestStreakForOperation(_ streak: Int, for operation: Operation) {
         switch operation {
         case .add: bestStreakAdd = max(bestStreakAdd, streak)

@@ -130,6 +130,14 @@ final class ResultsViewModel {
         session.score - previousBestScore
     }
 
+    var performanceEmoji: String {
+        if isPerfectScore { return "🏆" }
+        if accuracy >= 90 { return "🌟" }
+        if accuracy >= 70 { return "😊" }
+        if accuracy >= 50 { return "💪" }
+        return "🌱"
+    }
+
     enum Medal {
         case gold, silver, bronze, none
     }

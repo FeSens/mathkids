@@ -114,6 +114,14 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         allowedOperations.count
     }
 
+    var challengeDescription: String {
+        switch self {
+        case .easy: "Perfect for beginners! Master the basics."
+        case .medium: "Step up the challenge with bigger numbers!"
+        case .hard: "Think fast! All operations, tougher numbers."
+        }
+    }
+
     var summaryText: String {
         "\(operationCount) operations | 1-\(operandRange.upperBound) | \(timeLimitSeconds)s"
     }
