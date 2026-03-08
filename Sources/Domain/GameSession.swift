@@ -27,6 +27,10 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var correctAnswerCount: Int {
+        totalCorrect
+    }
+
     var isHighScore: Bool {
         score >= 100
     }

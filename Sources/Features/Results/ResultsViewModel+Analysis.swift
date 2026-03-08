@@ -106,6 +106,10 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var baseScoreText: String {
+        "\(session.score) pts"
+    }
+
     var timeBonusLabel: String {
         hasTimeBonus ? "Time bonus: +\(session.timeBonus) pts" : "No time bonus"
     }

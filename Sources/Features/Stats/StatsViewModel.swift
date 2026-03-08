@@ -154,6 +154,10 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var streakStatusEmoji: String {
+        dailyStreak > 0 ? "🔥" : "❄️"
+    }
+
     var correctPercentageText: String {
         "\(Int(accuracy))% correct"
     }

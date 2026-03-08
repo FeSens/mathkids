@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var dailyChallengeBestTimeText: String {
+        "\(dailyChallengeBestTime)s"
+    }
+
     var levelProgressPercent: Int {
         Int(levelProgress * 100)
     }

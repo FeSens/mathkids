@@ -10925,6 +10925,86 @@
         "3+2 is not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-609",
+      "name": "HomeViewModel.dailyChallengeBestTimeText",
+      "description": "Returns best time for daily challenge formatted",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Set dailyChallengeBestTime to 45",
+        "Verify returns 45s"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-610",
+      "name": "StatsViewModel.streakStatusEmoji",
+      "description": "Returns emoji based on daily streak status",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Streak > 0 returns fire",
+        "No streak returns snowflake"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-611",
+      "name": "ResultsViewModel.baseScoreText",
+      "description": "Returns base score without bonus as string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session",
+        "Verify returns score pts"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-612",
+      "name": "GameSession.correctAnswerCount",
+      "description": "Alias for totalCorrect",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Answer correctly",
+        "Verify count matches"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-613",
+      "name": "MathProblem+Extras.operationEmoji",
+      "description": "Returns emoji for the operations type",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Add problem returns plus emoji",
+        "Multiply returns multiply emoji"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

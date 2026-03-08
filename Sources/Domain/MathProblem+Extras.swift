@@ -256,6 +256,10 @@ extension MathProblem {
         }
     }
 
+    var operationEmoji: String {
+        operation.emoji
+    }
+
     var isChallengingProblem: Bool {
         !isSingleDigitOperands && (operation == .multiply || operation == .divide)
     }
