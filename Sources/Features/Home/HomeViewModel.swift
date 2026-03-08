@@ -55,6 +55,10 @@ final class HomeViewModel {
         return "\(hours)h \(minutes)m"
     }
 
+    var operationCountText: String {
+        "\(selectedOperations.count) of \(Operation.allCases.count) operations"
+    }
+
     var hasPlayedBefore: Bool {
         totalSolved > 0
     }

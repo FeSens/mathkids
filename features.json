@@ -8083,6 +8083,88 @@
         "Verify divide is not basic"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-434",
+      "title": "GameSession scorePerSecond rate of score accumulation",
+      "description": "GameSession should expose scorePerSecond computing score divided by time played",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 50 pts in 10 seconds = 5.0",
+        "Verify 0 when no time played"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-435",
+      "title": "MathProblem isAdditionTen for addition with operand 10",
+      "description": "MathProblem should detect addition problems involving the number 10 as an operand",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 10+5 is addition ten",
+        "Verify 3+10 is addition ten",
+        "Verify 3+5 is not addition ten"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-436",
+      "title": "LevelSystem isAtMaxLevel convenient check",
+      "description": "LevelSystem should expose isAtMaxLevel(xp:) as convenient bool check",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 4500+ returns true",
+        "Verify 100 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-437",
+      "title": "HomeViewModel operationCountText showing selected ops",
+      "description": "HomeViewModel should expose operationCountText like \"2 of 4 operations\"",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify shows count of selected operations",
+        "Verify shows total count"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-438",
+      "title": "DifficultyLevel bonusMultiplierText formatted display",
+      "description": "DifficultyLevel should expose bonusMultiplierText like \"1.5x bonus\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy shows 1.0x",
+        "Verify medium shows 1.5x",
+        "Verify hard shows 2.0x"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

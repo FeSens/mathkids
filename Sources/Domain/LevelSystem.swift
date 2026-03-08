@@ -127,6 +127,10 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func isAtMaxLevel(xp: Int) -> Bool {
+        isMaxLevel(for: xp)
+    }
+
     static func xpUntilMax(currentXP: Int) -> Int {
         xpRemainingToMax(currentXP: currentXP)
     }

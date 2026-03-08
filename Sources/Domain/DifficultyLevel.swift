@@ -126,6 +126,11 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operationCount) operations | 1-\(operandRange.upperBound) | \(timeLimitSeconds)s"
     }
 
+    var bonusMultiplierText: String {
+        let formatted = String(format: "%.1f", difficultyMultiplier)
+        return "\(formatted)x bonus"
+    }
+
     var totalGameTimeText: String {
         "\(timeLimitSeconds) seconds"
     }

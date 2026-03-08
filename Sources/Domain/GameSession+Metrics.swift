@@ -4,6 +4,11 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var scorePerSecond: Double {
+        guard totalTimePlayed > 0 else { return 0 }
+        return Double(score) / Double(totalTimePlayed)
+    }
+
     var isPerfectGame: Bool {
         isFinished && answeredAllCorrectly
     }
