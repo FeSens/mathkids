@@ -127,4 +127,30 @@ extension GameSession {
     var elapsedSeconds: Int {
         totalTimePlayed
     }
+
+    var formattedScore: String {
+        "\(score) pts"
+    }
+
+    var streakLevel: String {
+        if bestStreak >= 10 { return "amazing" }
+        if bestStreak >= 5 { return "great" }
+        if bestStreak >= 3 { return "good" }
+        return "none"
+    }
+
+    var isQuickAnswerer: Bool {
+        guard totalAnswered > 0, totalTimePlayed > 0 else { return false }
+        return totalTimePlayed / totalAnswered < 3
+    }
+
+    var totalQuestionsLeft: Int {
+        guard totalAnswered > 0, totalTimePlayed > 0 else { return 0 }
+        let rate = totalAnswered * timeRemaining / totalTimePlayed
+        return rate
+    }
+
+    var difficultyColor: String {
+        difficulty.color
+    }
 }

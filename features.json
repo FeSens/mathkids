@@ -11965,6 +11965,86 @@
         "Verify elapsed seconds"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-674",
+      "name": "GameSession+Display.formattedScore",
+      "description": "Returns score with pts suffix",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Score points",
+        "Verify formatted text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-675",
+      "name": "GameSession+Display.streakLevel",
+      "description": "Returns streak level: none, good, great, amazing",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "No streak returns none",
+        "10 streak returns amazing"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-676",
+      "name": "GameSession+Display.isQuickAnswerer",
+      "description": "Returns true when avg time per answer < 3s",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Quick answers return true",
+        "Slow returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-677",
+      "name": "GameSession+Display.totalQuestionsLeft",
+      "description": "Estimates questions remaining based on pace",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Play partially",
+        "Verify estimate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-678",
+      "name": "GameSession+Display.difficultyColor",
+      "description": "Returns color name for difficulty",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Easy returns green",
+        "Hard returns red"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
