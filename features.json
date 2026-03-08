@@ -43642,6 +43642,90 @@
         "New best score is included in badges"
       ],
       "passes": true
+    },
+    {
+      "id": "improve-065",
+      "title": "Results response time percentile",
+      "description": "Calculate what percentile the player's average response time falls in (compared to predefined benchmarks). Fast = top percentile.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Insights.swift"
+      ],
+      "test_steps": [
+        "responseTimePercentile returns value 0-100",
+        "Very fast times return high percentile",
+        "No time data returns 50 (median)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-066",
+      "title": "Stats Elo rating trend text",
+      "description": "Add text describing whether each operation's Elo is trending up or down based on history.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel+Computed.swift"
+      ],
+      "test_steps": [
+        "eloTrend returns improving/declining/stable for each operation",
+        "Rising history returns improving",
+        "Stable history returns stable"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-067",
+      "title": "Results mistake pattern description",
+      "description": "Generate a human-readable description of common mistake patterns (e.g., 'You struggled with multiplication')",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Insights.swift"
+      ],
+      "test_steps": [
+        "mistakePatternText returns description of weakest area",
+        "No mistakes returns nil",
+        "Multiple weak operations mentions the weakest"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-068",
+      "title": "Stats total problems solved by operation",
+      "description": "Show total lifetime problems solved per operation in StatsViewModel.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel+Computed.swift"
+      ],
+      "test_steps": [
+        "totalProblemsByOperationText returns formatted text",
+        "Zero problems returns empty or default text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-069",
+      "title": "Results game summary one-liner",
+      "description": "Generate a single-line game summary (e.g., 'Solid performance with 85% accuracy and 3-streak!')",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Insights.swift"
+      ],
+      "test_steps": [
+        "gameSummaryText returns non-empty string",
+        "High accuracy mentions great/excellent",
+        "Low accuracy mentions practice/improve"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

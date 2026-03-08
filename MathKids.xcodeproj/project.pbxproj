@@ -44,6 +44,7 @@
 		0E4716F2FD15C803D4857166 /* MathProblem+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = F086743FFA42C544C8865DA8 /* MathProblem+Display.swift */; };
 		0EF2BBBCEB442F4DB628293C /* Batch88Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C49B1F191603890DB9D80 /* Batch88Tests.swift */; };
 		0EF4F667ACE12D8FE4E3D6BE /* Batch461Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC7C0748001D3F1F70CE37 /* Batch461Tests.swift */; };
+		0F0E55C10AE8CC32840B8B2D /* ImproveRound14Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C12295C578025F041F20 /* ImproveRound14Tests.swift */; };
 		0F24B80BE856A7C54F0DBA24 /* Batch262Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A94168525F9F87CB5D66 /* Batch262Tests.swift */; };
 		0F7A61397F3C68ABB16F47D9 /* EloAdaptiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053CEC5FBF67DC6FA3ED697 /* EloAdaptiveTests.swift */; };
 		110D6913CB9D1207704C46FA /* Batch310Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC9B717EC28407FD3D5621 /* Batch310Tests.swift */; };
@@ -532,6 +533,7 @@
 		E790DCF4262479C9D213762B /* Batch166Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1500B89F4D8833BBC94CC2B8 /* Batch166Tests.swift */; };
 		E885E5B8EB36C4D48FEEF3E0 /* ImproveRound4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6862D2928C23D01D14FC831 /* ImproveRound4Tests.swift */; };
 		E9342794F517E64F3EFFA5E0 /* Achievement+Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6078C55DD9A90569C42BCFA5 /* Achievement+Presentation.swift */; };
+		E96F4729F68BD5C8AFAAF42A /* ResultsViewModel+Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E92BB1FAC09787132FE192 /* ResultsViewModel+Summary.swift */; };
 		E9F92B6B51ADA5BD69EF498A /* Batch86Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429C5D5E3138919BB9511D13 /* Batch86Tests.swift */; };
 		EB08353AFBE81AFF01B2C5A3 /* Batch340Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18FE780EBC014E5FE9F659 /* Batch340Tests.swift */; };
 		EBA9DAF35F12385F5DCA2E93 /* Batch391Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAE0DF4929001D38287B73 /* Batch391Tests.swift */; };
@@ -679,6 +681,7 @@
 		232205544E900499B7CD16A7 /* Batch379Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch379Tests.swift; sourceTree = "<group>"; };
 		234B7ECAEA0AA348BD93B073 /* Batch491Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch491Tests.swift; sourceTree = "<group>"; };
 		23CE4F6ED2CC2F2A89AD53D8 /* Batch117Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch117Tests.swift; sourceTree = "<group>"; };
+		23E92BB1FAC09787132FE192 /* ResultsViewModel+Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultsViewModel+Summary.swift"; sourceTree = "<group>"; };
 		243505E51DCBBEF5D08309DB /* Batch145Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch145Tests.swift; sourceTree = "<group>"; };
 		25896A042BCE8270FEDE9B12 /* Achievement+Milestones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Achievement+Milestones.swift"; sourceTree = "<group>"; };
 		25E03D07BB037730267D3FAA /* Batch467Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch467Tests.swift; sourceTree = "<group>"; };
@@ -780,6 +783,7 @@
 		4DE9DA23AD4A1DDF68B1B955 /* Batch307Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch307Tests.swift; sourceTree = "<group>"; };
 		4E347616EBC6E0C14778115F /* SoundServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundServiceTests.swift; sourceTree = "<group>"; };
 		4E691EA393F9D3335D229CFF /* Batch212Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch212Tests.swift; sourceTree = "<group>"; };
+		4F25C12295C578025F041F20 /* ImproveRound14Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImproveRound14Tests.swift; sourceTree = "<group>"; };
 		4F4DE48F411BB2A82FEEEDA1 /* Batch268Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch268Tests.swift; sourceTree = "<group>"; };
 		4F985E921BBAFB1276E37542 /* Batch463Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch463Tests.swift; sourceTree = "<group>"; };
 		50097A2FBC2C4F9B2987B830 /* AnsweredProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredProblem.swift; sourceTree = "<group>"; };
@@ -1336,6 +1340,7 @@
 				FC2CF1A5F0D3F2A6CE6647FE /* ImproveRound11Tests.swift */,
 				3EDF7283F73887A39E40E7D4 /* ImproveRound12Tests.swift */,
 				98DF41DBF64DF52A5F2186B5 /* ImproveRound13Tests.swift */,
+				4F25C12295C578025F041F20 /* ImproveRound14Tests.swift */,
 				816F8E368F7B47A0DCC790AD /* ResultsViewModelBatch37Tests.swift */,
 				B94166C5E252ADDC595B34CB /* ResultsViewModelExtendedTests.swift */,
 				83BED5F68362F01B31E28C2E /* ResultsViewModelTests.swift */,
@@ -1828,6 +1833,7 @@
 				4267CF256487D398B17BD12C /* ResultsViewModel+Analysis.swift */,
 				B4315C2FE6A506D0532EC600 /* ResultsViewModel+Analytics.swift */,
 				430283A9D5EA60D9E1E48290 /* ResultsViewModel+Insights.swift */,
+				23E92BB1FAC09787132FE192 /* ResultsViewModel+Summary.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -2436,6 +2442,7 @@
 				FCC296AF3CA657B96F26AA67 /* ImproveRound11Tests.swift in Sources */,
 				0A0C31008510E2AAEB7A2264 /* ImproveRound12Tests.swift in Sources */,
 				D8EFC90B5FBAC2CA6F31A370 /* ImproveRound13Tests.swift in Sources */,
+				0F0E55C10AE8CC32840B8B2D /* ImproveRound14Tests.swift in Sources */,
 				143CEE8191567206DD240097 /* ImproveRound2Tests.swift in Sources */,
 				D5C1E6352A6C2E3C18A7A703 /* ImproveRound3Tests.swift in Sources */,
 				E885E5B8EB36C4D48FEEF3E0 /* ImproveRound4Tests.swift in Sources */,
@@ -2548,6 +2555,7 @@
 				96BCC0A8440DB3B1A7946C28 /* ResultsViewModel+Analysis.swift in Sources */,
 				B6F5D847C26AA7CA461F59B6 /* ResultsViewModel+Analytics.swift in Sources */,
 				A35EE8B1DE1545A96528B070 /* ResultsViewModel+Insights.swift in Sources */,
+				E96F4729F68BD5C8AFAAF42A /* ResultsViewModel+Summary.swift in Sources */,
 				7F7B7F6ED2E8948B49330C01 /* ResultsViewModel.swift in Sources */,
 				C35832DAE06D2A763E9278E4 /* ScorePopupView.swift in Sources */,
 				A926CB080A0E3ABF16930CD4 /* SettingsManager.swift in Sources */,

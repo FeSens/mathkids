@@ -37,6 +37,35 @@ extension StatsViewModel {
         eloGap >= 200 ? .unbalanced : .balanced
     }
 
+    /// Elo trend for a given operation
+    enum EloTrend { case improving, declining, stable }
+
+    func eloTrend(for operation: Operation) -> EloTrend {
+        let history: [Double]
+        switch operation {
+        case .add: history = eloHistoryAdd
+        case .subtract: history = eloHistorySubtract
+        case .multiply: history = eloHistoryMultiply
+        case .divide: history = eloHistoryDivide
+        }
+        guard history.count >= 3 else { return .stable }
+        let recent = Array(history.suffix(3))
+        let older = Array(history.dropLast(3).suffix(3))
+        guard !older.isEmpty else { return .stable }
+        let recentAvg = recent.reduce(0, +) / Double(recent.count)
+        let olderAvg = older.reduce(0, +) / Double(older.count)
+        let diff = recentAvg - olderAvg
+        if diff > 30 { return .improving }
+        if diff < -30 { return .declining }
+        return .stable
+    }
+
+    /// Total problems by operation text
+    var totalProblemsByOperationText: String {
+        guard !operationAccuracies.isEmpty else { return "No operations tracked yet" }
+        return operationAccuracies.keys.sorted().map { "\($0)" }.joined(separator: ", ")
+    }
+
     /// Difficulty accuracy summary text
     var difficultyAccuracySummary: String {
         let parts: [String] = [

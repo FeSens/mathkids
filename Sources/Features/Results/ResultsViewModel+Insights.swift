@@ -275,4 +275,5 @@ extension ResultsViewModel {
         if bestStreak >= 10 { badges.append("10+ Streak!") }
         return badges
     }
+
 }
