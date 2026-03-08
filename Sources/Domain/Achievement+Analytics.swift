@@ -181,4 +181,24 @@ extension Achievement {
     var achievementShowInProfile: Bool {
         isRareAchievement
     }
+
+    var achievementTierName: String {
+        isRareAchievement ? "Legendary" : "Common"
+    }
+
+    var achievementAnimationDelay: Double {
+        isRareAchievement ? 0.5 : 0
+    }
+
+    var achievementRequiresConnection: Bool {
+        false
+    }
+
+    var achievementPointsPerMinute: Double {
+        Double(pointValue) / Double(achievementEstimatedTimeMinutes)
+    }
+
+    var achievementCardShadowColor: String {
+        isRareAchievement ? "gold" : "gray"
+    }
 }

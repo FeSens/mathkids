@@ -26085,6 +26085,79 @@
         "Create common achievement",
         "Verify showInProfile is false"
       ]
+    },
+    {
+      "id": "logic-1559",
+      "title": "achievementTierName",
+      "description": "Return tier name based on rarity",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify tierName is Legendary",
+        "Create common achievement",
+        "Verify tierName is Common"
+      ]
+    },
+    {
+      "id": "logic-1560",
+      "title": "achievementAnimationDelay",
+      "description": "Return animation delay in seconds",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify delay >= 0.5",
+        "Create common achievement",
+        "Verify delay == 0"
+      ]
+    },
+    {
+      "id": "logic-1561",
+      "title": "achievementRequiresConnection",
+      "description": "Return whether achievement requires online",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify requiresConnection is false"
+      ]
+    },
+    {
+      "id": "logic-1562",
+      "title": "achievementPointsPerMinute",
+      "description": "Return estimated points per minute",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify rate is low",
+        "Create games achievement",
+        "Verify rate is high"
+      ]
+    },
+    {
+      "id": "logic-1563",
+      "title": "achievementCardShadowColor",
+      "description": "Return shadow color name for card",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify shadow is gold",
+        "Create common achievement",
+        "Verify shadow is gray"
+      ]
     }
   ],
   "_schema": {
