@@ -12445,6 +12445,86 @@
         "Verify performanceRating returns 5 for perfect play"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-704",
+      "name": "correctStreakCount",
+      "description": "Current correct streak count as formatted string",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session, record 3 correct answers",
+        "Verify correctStreakCount returns '3'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-705",
+      "name": "isWarmingUp",
+      "description": "Boolean indicating player is in first few questions of session",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 2 answers",
+        "Verify isWarmingUp is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-706",
+      "name": "sessionStatusEmoji",
+      "description": "Emoji representing current session status based on performance",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with high accuracy",
+        "Verify sessionStatusEmoji returns fire emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-707",
+      "name": "totalWrongDisplay",
+      "description": "Formatted display of total wrong answers",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session, record 3 wrong answers",
+        "Verify wrongStreakCount returns 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-708",
+      "name": "pointsSummaryText",
+      "description": "Summary text showing points breakdown like '50 pts (40 base + 10 bonus)'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with correct answers and bonus points",
+        "Verify pointsSummaryText shows breakdown"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
