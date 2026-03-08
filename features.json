@@ -10525,6 +10525,86 @@
         "hard returns 90"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-584",
+      "name": "HomeViewModel.selectedDifficultyColor",
+      "description": "Returns color name for selected difficulty",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select easy",
+        "Verify returns green"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-585",
+      "name": "StatsViewModel.accuracyTrendEmoji",
+      "description": "Returns emoji for accuracy trend direction",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Improving trend returns up arrow",
+        "Declining returns down"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-586",
+      "name": "ResultsViewModel.totalPointsText",
+      "description": "Returns total points including bonus as string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session",
+        "Verify text includes pts"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-587",
+      "name": "GameSession.isFirstHalf",
+      "description": "Returns true when in first half of time",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Fresh session is first half",
+        "Past halfway is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-588",
+      "name": "Achievement.isRareAchievement",
+      "description": "Returns true if achievement requires significant stats to unlock",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Check mathGenius isRareAchievement",
+        "Check firstStep is not rare"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

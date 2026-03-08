@@ -140,6 +140,10 @@ struct Achievement: Identifiable {
         )
     ]
 
+    var isRareAchievement: Bool {
+        category == .mastery || id == "streak_20" || id == "century"
+    }
+
     func isUnlocked(stats: PlayerStats) -> Bool {
         requirement(stats)
     }

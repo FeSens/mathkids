@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var selectedDifficultyColor: String {
+        selectedDifficulty.color
+    }
+
     var operationCountLabel: String {
         "\(selectedOperations.count) operations selected"
     }

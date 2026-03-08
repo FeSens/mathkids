@@ -154,6 +154,14 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var accuracyTrendEmoji: String {
+        switch accuracyTrend {
+        case .improving: "⬆️"
+        case .declining: "⬇️"
+        case .stable: "➡️"
+        }
+    }
+
     var hardGamesText: String {
         "\(hardGames) hard games"
     }

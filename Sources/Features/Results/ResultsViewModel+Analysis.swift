@@ -106,6 +106,10 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var totalPointsText: String {
+        "\(session.finalScoreWithTimeBonus) pts"
+    }
+
     var streakEmoji: String {
         bestStreak >= 3 ? "🔥" : ""
     }
