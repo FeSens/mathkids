@@ -106,6 +106,14 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var correctCountLabel: String {
+        "\(session.totalCorrect) correct"
+    }
+
+    var wrongCountLabel: String {
+        "\(session.totalWrong) wrong"
+    }
+
     var gameDifficultyName: String {
         session.difficulty.displayName
     }

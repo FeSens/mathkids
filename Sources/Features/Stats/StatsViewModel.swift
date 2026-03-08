@@ -154,6 +154,10 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var hasPlayedGames: Bool {
+        gamesPlayed > 0
+    }
+
     var bestStreakDescription: String {
         if bestStreak >= 5 {
             return "🔥 \(bestStreak) streak"

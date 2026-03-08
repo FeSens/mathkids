@@ -27,6 +27,10 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var timeRemainingText: String {
+        "\(timeRemaining)s remaining"
+    }
+
     var scoreDisplay: String {
         "\(score) pts"
     }

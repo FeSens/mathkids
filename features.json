@@ -11085,6 +11085,86 @@
         "Verify streak label"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-619",
+      "name": "HomeViewModel.canPlayDailyChallenge",
+      "description": "Returns true when daily challenge not yet completed",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Not completed returns true",
+        "Completed returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-620",
+      "name": "StatsViewModel.hasPlayedGames",
+      "description": "Returns true when gamesPlayed > 0",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "No games returns false",
+        "After games returns true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-621",
+      "name": "ResultsViewModel.correctCountLabel",
+      "description": "Returns correct count with checkmark",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session with correct answers",
+        "Verify checkmark in label"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-622",
+      "name": "GameSession.timeRemainingText",
+      "description": "Returns time remaining as formatted string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Fresh session shows full time",
+        "After ticks shows remaining"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-623",
+      "name": "ResultsViewModel.wrongCountLabel",
+      "description": "Returns wrong count with X mark",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session with wrong answers",
+        "Verify X in label"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
