@@ -107,4 +107,26 @@ extension AnsweredProblem {
     var answeredProblemProgressPoints: Int {
         isCorrect ? 1 : 0
     }
+
+    var answeredProblemLeaderboardScore: String {
+        "\(answeredProblemTotalScore)"
+    }
+
+    var answeredProblemIsNewRecord: Bool {
+        isCorrect && !problem.operation.isPrimaryOperation && (timeTaken ?? Double.infinity) < 1.0
+    }
+
+    var answeredProblemTicketReward: Int {
+        isCorrect ? 1 : 0
+    }
+
+    var answeredProblemPowerUpCharge: Int {
+        guard isCorrect else { return 0 }
+        if let time = timeTaken, time < 2.0 { return 2 }
+        return 1
+    }
+
+    var answeredProblemQuestProgress: Int {
+        isCorrect ? problem.operation.difficultyWeight : 0
+    }
 }
