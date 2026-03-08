@@ -21316,6 +21316,94 @@
         "Check contains 0%"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1259",
+      "name": "answeredProblemReviewCategory",
+      "description": "Category for review: mastered, needs-work, critical",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check category is mastered",
+        "Create wrong answer",
+        "Check category is critical"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1260",
+      "name": "answeredProblemIsFluent",
+      "description": "Whether the student is fluent (correct under 2s)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct 1s answer",
+        "Check isFluent is true",
+        "Create correct 5s answer",
+        "Check isFluent is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1261",
+      "name": "answeredProblemDailyGoalPoints",
+      "description": "Points to count toward daily goal",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check points > 0",
+        "Create wrong answer",
+        "Check points is 1 (participation)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1262",
+      "name": "answeredProblemProblemDescription",
+      "description": "Full readable description of the problem and answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create 2+3=5 answer",
+        "Check description contains all parts"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1263",
+      "name": "answeredProblemMistakePattern",
+      "description": "Pattern of mistake: operand-confusion, random-guess, near-miss, none",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check pattern is none",
+        "Create answer equal to operand",
+        "Check pattern is operand-confusion"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

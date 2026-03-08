@@ -239,4 +239,31 @@ extension AnsweredProblem {
     var answeredProblemSessionContribution: String {
         isCorrect ? "100%" : "0%"
     }
+
+    var answeredProblemReviewCategory: String {
+        guard isCorrect else { return "critical" }
+        if let time = timeTaken, time < 3.0 { return "mastered" }
+        return "needs-work"
+    }
+
+    var answeredProblemIsFluent: Bool {
+        isCorrect && (timeTaken ?? Double.infinity) < 2.0
+    }
+
+    var answeredProblemDailyGoalPoints: Int {
+        isCorrect ? problem.operation.difficultyWeight * 5 : 1
+    }
+
+    var answeredProblemProblemDescription: String {
+        "\(problem.operand1) \(problem.operation.rawValue) \(problem.operand2) = \(userAnswer) (\(isCorrect ? "correct" : "incorrect, answer: \(problem.correctAnswer)"))"
+    }
+
+    var answeredProblemMistakePattern: String {
+        guard !isCorrect else { return "none" }
+        if userAnswer == problem.operand1 || userAnswer == problem.operand2 {
+            return "operand-confusion"
+        }
+        if abs(userAnswer - problem.correctAnswer) <= 1 { return "near-miss" }
+        return "random-guess"
+    }
 }
