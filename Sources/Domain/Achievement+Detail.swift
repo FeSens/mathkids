@@ -98,4 +98,34 @@ extension Achievement {
     var achievementBadgeAnimated: Bool {
         isRareAchievement
     }
+
+    var achievementUnlockCountTag: String {
+        "1x Unlocked"
+    }
+
+    var achievementCardRatio: Double {
+        switch category {
+        case .mastery: return 1.5
+        case .streak: return 1.4
+        case .score: return 1.3
+        case .games: return 1.2
+        }
+    }
+
+    var achievementIsMilestoneType: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementAlertPriority: String {
+        switch category {
+        case .mastery: return "high"
+        case .streak: return "medium"
+        case .score: return "medium"
+        case .games: return "low"
+        }
+    }
+
+    var achievementCardFooterText: String {
+        "\(category.displayName) — \(pointValue) pts"
+    }
 }

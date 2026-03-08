@@ -28109,6 +28109,86 @@
         "Create common achievement",
         "Verify animated is false"
       ]
+    },
+    {
+      "id": "logic-1699",
+      "title": "Achievement Unlock Count Tag",
+      "description": "Returns formatted label for unlock count",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify unlockCountLabel format"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1700",
+      "title": "Achievement Card Ratio",
+      "description": "Returns aspect ratio for achievement card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardAspectRatio by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1701",
+      "title": "Achievement Is Milestone Type",
+      "description": "Returns whether achievement is a milestone type",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isMilestone for mastery/streak vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1702",
+      "title": "Achievement Alert Priority",
+      "description": "Returns notification priority level",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify notificationPriority by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1703",
+      "title": "Achievement Card Footer Text",
+      "description": "Returns footer text for achievement card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardFooterText contains category info"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
