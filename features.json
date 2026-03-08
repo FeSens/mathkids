@@ -25356,6 +25356,77 @@
       "files": [
         "Sources/Domain/Achievement+Metadata.swift"
       ]
+    },
+    {
+      "id": "logic-1509",
+      "title": "achievementGroupLabel",
+      "description": "Return a group label for the achievement based on category",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create achievement with streak id",
+        "Verify groupLabel contains category-related text"
+      ]
+    },
+    {
+      "id": "logic-1510",
+      "title": "achievementIsEndgame",
+      "description": "Return whether achievement is an endgame achievement",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isEndgame is true",
+        "Create games achievement",
+        "Verify isEndgame is false"
+      ]
+    },
+    {
+      "id": "logic-1511",
+      "title": "achievementRequiredGamesCount",
+      "description": "Return the minimum number of games needed for this achievement type",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiredGamesCount is high",
+        "Create games achievement",
+        "Verify requiredGamesCount is low"
+      ]
+    },
+    {
+      "id": "logic-1512",
+      "title": "achievementSeasonalTag",
+      "description": "Return a seasonal tag for the achievement",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify seasonalTag returns a non-empty string"
+      ]
+    },
+    {
+      "id": "logic-1513",
+      "title": "achievementEncouragementText",
+      "description": "Return encouraging text based on category",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify encouragementText contains motivational text",
+        "Create mastery achievement",
+        "Verify encouragementText contains mastery-related text"
+      ]
     }
   ],
   "_schema": {

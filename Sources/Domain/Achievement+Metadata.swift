@@ -152,4 +152,39 @@ extension Achievement {
     var achievementNotificationCategory: String {
         "achievements"
     }
+
+    var achievementGroupLabel: String {
+        switch category {
+        case .streak: return "Streak Achievements"
+        case .score: return "Score Achievements"
+        case .games: return "Games Achievements"
+        case .mastery: return "Mastery Achievements"
+        }
+    }
+
+    var achievementIsEndgame: Bool {
+        category == .mastery
+    }
+
+    var achievementRequiredGamesCount: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 20
+        case .score: return 10
+        case .games: return 1
+        }
+    }
+
+    var achievementSeasonalTag: String {
+        "all-season"
+    }
+
+    var achievementEncouragementText: String {
+        switch category {
+        case .streak: return "Keep your streak alive!"
+        case .score: return "Push for a higher score!"
+        case .games: return "Play more to unlock!"
+        case .mastery: return "Master every operation!"
+        }
+    }
 }
