@@ -23041,6 +23041,81 @@
       "files": [
         "Sources/Domain/Achievement+Display.swift"
       ]
+    },
+    {
+      "id": "logic-1359",
+      "title": "Achievement Search Keywords",
+      "description": "Add achievementSearchKeywords returning searchable keywords array",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementSearchKeywords contains title and category"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1360",
+      "title": "Achievement Display Order",
+      "description": "Add achievementDisplayOrder returning sort key combining priority and title",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create two achievements",
+        "Verify achievementDisplayOrder provides correct ordering"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1361",
+      "title": "Achievement Is Featured",
+      "description": "Add achievementIsFeatured returning true for epic achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create epic achievement",
+        "Verify achievementIsFeatured is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1362",
+      "title": "Achievement Unlock Message",
+      "description": "Add achievementUnlockMessage returning detailed unlock celebration message",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementUnlockMessage contains title and points"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1363",
+      "title": "Achievement Card Footer",
+      "description": "Add achievementCardFooter returning footer text with points and rarity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementCardFooter contains point value"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
     }
   ],
   "_schema": {

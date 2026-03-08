@@ -245,4 +245,24 @@ extension Achievement {
         default: return "🥉"
         }
     }
+
+    var achievementSearchKeywords: [String] {
+        [title, category.displayName, description]
+    }
+
+    var achievementDisplayOrder: String {
+        "\(achievementSortPriority)-\(title)"
+    }
+
+    var achievementIsFeatured: Bool {
+        achievementIsEpic
+    }
+
+    var achievementUnlockMessage: String {
+        "You unlocked \(emoji) \(title)! +\(pointValue) points"
+    }
+
+    var achievementCardFooter: String {
+        "\(pointValue) pts - \(achievementRankLabel)"
+    }
 }
