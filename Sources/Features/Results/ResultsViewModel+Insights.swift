@@ -275,29 +275,4 @@ extension ResultsViewModel {
         if bestStreak >= 10 { badges.append("10+ Streak!") }
         return badges
     }
-
-    /// Most improved operation (biggest accuracy gain from early to late in session)
-    var mostImprovedOperation: Operation? {
-        guard problemHistory.count >= 4 else { return nil }
-        let mid = problemHistory.count / 2
-        let firstHalf = Array(problemHistory.prefix(mid))
-        let secondHalf = Array(problemHistory.suffix(problemHistory.count - mid))
-
-        var bestImprovement: Double = 0
-        var bestOp: Operation? = nil
-
-        for op in Operation.allCases {
-            let earlyProblems = firstHalf.filter { $0.problem.operation == op }
-            let lateProblems = secondHalf.filter { $0.problem.operation == op }
-            guard !earlyProblems.isEmpty && !lateProblems.isEmpty else { continue }
-            let earlyAcc = Double(earlyProblems.filter(\.isCorrect).count) / Double(earlyProblems.count) * 100
-            let lateAcc = Double(lateProblems.filter(\.isCorrect).count) / Double(lateProblems.count) * 100
-            let improvement = lateAcc - earlyAcc
-            if improvement > bestImprovement {
-                bestImprovement = improvement
-                bestOp = op
-            }
-        }
-        return bestOp
-    }
 }
