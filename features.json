@@ -31249,6 +31249,76 @@
         "Create games achievement",
         "Verify minAccuracyRate is 0"
       ]
+    },
+    {
+      "id": "logic-1899",
+      "name": "achievementCardShieldStyle",
+      "description": "Shield decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify shield is heraldic",
+        "Create common achievement",
+        "Verify shield is plain"
+      ]
+    },
+    {
+      "id": "logic-1900",
+      "name": "achievementIsQualityBased",
+      "description": "Whether achievement is quality-based (score or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create score achievement",
+        "Verify isQualityBased is true",
+        "Create games achievement",
+        "Verify isQualityBased is false"
+      ]
+    },
+    {
+      "id": "logic-1901",
+      "name": "achievementCardMottoBanner",
+      "description": "Motto banner text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify motto banner",
+        "Create games achievement",
+        "Verify motto banner"
+      ]
+    },
+    {
+      "id": "logic-1902",
+      "name": "achievementCardAuraStyle",
+      "description": "Aura visual style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify aura is radiant",
+        "Create common achievement",
+        "Verify aura is none"
+      ]
+    },
+    {
+      "id": "logic-1903",
+      "name": "achievementStreakDaysRequired",
+      "description": "Number of streak days required based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify streakDays is high",
+        "Create games achievement",
+        "Verify streakDays is 0"
+      ]
     }
   ],
   "_schema": {

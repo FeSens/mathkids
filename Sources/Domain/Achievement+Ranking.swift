@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 0
         }
     }
+
+    var achievementCardShieldStyle: String {
+        isRareAchievement ? "heraldic" : "plain"
+    }
+
+    var achievementIsQualityBased: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardMottoBanner: String {
+        switch category {
+        case .mastery: return "Per aspera ad astra"
+        case .streak: return "Day by day"
+        case .score: return "Aim higher"
+        case .games: return "Play on"
+        }
+    }
+
+    var achievementCardAuraStyle: String {
+        isRareAchievement ? "radiant" : "none"
+    }
+
+    var achievementStreakDaysRequired: Int {
+        switch category {
+        case .mastery: return 0
+        case .streak: return 7
+        case .score: return 0
+        case .games: return 0
+        }
+    }
 }
