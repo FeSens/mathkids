@@ -211,6 +211,11 @@ final class ResultsViewModel {
         return counts.sorted { $0.key.rawValue < $1.key.rawValue }.map { ($0.key, $0.value) }
     }
 
+    var xpEarnedText: String {
+        let xp = session.totalCorrect * LevelSystem.baseXPPerAnswer
+        return "+\(xp) XP"
+    }
+
     func animateScore() {
         let target = session.score
         guard target > 0 else {

@@ -55,6 +55,13 @@ final class HomeViewModel {
         return "\(hours)h \(minutes)m"
     }
 
+    var streakStatusText: String {
+        if dailyStreak > 0 {
+            return "\(dailyStreak) day streak"
+        }
+        return "No streak"
+    }
+
     var nextMilestoneText: String {
         let xpNeeded = LevelSystem.xpNeededForNextLevel(currentXP: totalXP)
         if totalSolved == 0 {

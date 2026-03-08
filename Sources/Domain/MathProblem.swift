@@ -263,6 +263,14 @@ extension MathProblem {
         return min(max(raw, 1), 10)
     }
 
+    var operandSum: Int {
+        operand1 + operand2
+    }
+
+    var operandProduct: Int {
+        operand1 * operand2
+    }
+
     var isEasyProblem: Bool {
         abs(operand1) <= 5 && abs(operand2) <= 5
     }

@@ -22,6 +22,7 @@
 		38933B53403070AA7462252A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F99D22DB5C7E150990E3EAD /* HomeView.swift */; };
 		38E291DC560EA1387AADC1C4 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F6948A6B20B56826FBD34A /* AppRouter.swift */; };
 		3BF70E47926CC19260C13CF2 /* ProblemGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964AE1906CA925557311B8A /* ProblemGeneratorTests.swift */; };
+		3FC4F189E38BB0F777F1608A /* Batch56Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D17D7E41240C48AF9F850B /* Batch56Tests.swift */; };
 		41B2881CAF01E6D55A44EDDF /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE9B3CED4BD9BFBC7D8482 /* GameSession.swift */; };
 		4513317F1EC163421536BF08 /* StatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ABF0C1B98F1BCF8475FCE /* StatsService.swift */; };
 		45CD98BF35692868AA988D43 /* StatsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C0BAB984FF6AC3A82CC93C /* StatsViewModelTests.swift */; };
@@ -148,6 +149,7 @@
 		889BBEB5EE30D88DD6231AEC /* Batch53Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch53Tests.swift; sourceTree = "<group>"; };
 		8C13519308D002D93BFCF811 /* MathKidsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathKidsUITests.swift; sourceTree = "<group>"; };
 		90216EA8563B11F2EC05D478 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		90D17D7E41240C48AF9F850B /* Batch56Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch56Tests.swift; sourceTree = "<group>"; };
 		91D8D1E0DF891755FF456716 /* ScorePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePopupView.swift; sourceTree = "<group>"; };
 		94EAA56FF5F6207F4E9EDB0A /* GameViewModelExtendedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelExtendedTests.swift; sourceTree = "<group>"; };
 		9F78F2B01B9065E487941195 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				889BBEB5EE30D88DD6231AEC /* Batch53Tests.swift */,
 				72E887CE0780460F866E60A1 /* Batch54Tests.swift */,
 				7B4B86C915C599E965201DB2 /* Batch55Tests.swift */,
+				90D17D7E41240C48AF9F850B /* Batch56Tests.swift */,
 				DDB33CC34BDF77A892728B95 /* DifficultyLevelTests.swift */,
 				FCDFC79E55F7433CD3884E7B /* GameSessionBatch46Tests.swift */,
 				38A273BF960D1313BEC03F8C /* GameSessionExtendedTests.swift */,
@@ -481,6 +484,7 @@
 				794A135A00BC5FC138AC6D67 /* Batch53Tests.swift in Sources */,
 				C2F716BD4550E9B91BB34212 /* Batch54Tests.swift in Sources */,
 				4BF2A015D7F1BD4A12A5A462 /* Batch55Tests.swift in Sources */,
+				3FC4F189E38BB0F777F1608A /* Batch56Tests.swift in Sources */,
 				CD1A74D6EAA366F8D25D018C /* DifficultyLevelTests.swift in Sources */,
 				0740972BBC784DF26D872212 /* GameEngineExtendedTests.swift in Sources */,
 				6CF3FE7A3760DDDB316F7095 /* GameEngineTests.swift in Sources */,

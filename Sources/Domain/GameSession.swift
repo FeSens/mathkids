@@ -257,6 +257,13 @@ struct GameSession: Sendable {
         answerHistory.enumerated().compactMap { $0.element ? nil : $0.offset }
     }
 
+    func accuracyForRange(start: Int, end: Int) -> Double {
+        guard end > start, start >= 0, end <= answerHistory.count else { return 0 }
+        let slice = Array(answerHistory[start..<end])
+        let correct = slice.filter { $0 }.count
+        return Double(correct) / Double(slice.count) * 100
+    }
+
     var scoreEfficiency: Double {
         guard totalTimePlayed > 0 else { return 0 }
         return Double(score) / Double(totalTimePlayed)

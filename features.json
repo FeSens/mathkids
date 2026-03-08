@@ -6822,6 +6822,89 @@
         "Verify streak5 with streak 0 returns 0.0"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-359",
+      "title": "GameSession accuracyForRange returns accuracy for a slice of answer history",
+      "description": "GameSession should expose accuracyForRange(start:end:) that computes accuracy for a specific range of answers",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session with mixed answers",
+        "Verify accuracyForRange for first half",
+        "Verify returns 0 for empty range"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-360",
+      "title": "MathProblem operandSum and operandDifference",
+      "description": "MathProblem should expose operandSum (sum of operands) and operandProduct (product of operands) for analysis",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify operandSum for 3+5 returns 8",
+        "Verify operandProduct for 4x3 returns 12",
+        "Verify both work for subtraction problems"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-361",
+      "title": "LevelSystem isLevelBoundary checks if XP exactly starts a new level",
+      "description": "LevelSystem should have isLevelBoundary(xp:) returning true when XP exactly matches a threshold",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 0 is a boundary (level 1)",
+        "Verify 100 is a boundary (level 2)",
+        "Verify 50 is not a boundary"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-362",
+      "title": "HomeViewModel streakStatusText shows current streak info",
+      "description": "HomeViewModel should expose streakStatusText showing the current streak status like \"3 day streak\" or \"No streak\"",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify shows streak count when streak exists",
+        "Verify shows no streak message when 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-363",
+      "title": "ResultsViewModel xpEarnedText showing XP gained this session",
+      "description": "ResultsViewModel should expose xpEarnedText showing how much XP was earned in the session",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify shows XP amount based on correct answers",
+        "Verify shows 0 XP when no correct answers"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

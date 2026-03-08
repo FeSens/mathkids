@@ -127,6 +127,10 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func isLevelBoundary(xp: Int) -> Bool {
+        thresholds.contains(xp)
+    }
+
     static var totalLevels: Int {
         thresholds.count
     }
