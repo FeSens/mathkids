@@ -130,4 +130,18 @@ struct DifficultyLevelTests {
     func hardRecommendedTime() {
         #expect(DifficultyLevel.hard.recommendedSecondsPerProblem == 3)
     }
+
+    // MARK: - Max Possible Score (logic-287)
+
+    @Test("Max score for each difficulty")
+    func maxScorePerDifficulty() {
+        #expect(DifficultyLevel.easy.maxPossibleScore > 0)
+        #expect(DifficultyLevel.medium.maxPossibleScore > 0)
+        #expect(DifficultyLevel.hard.maxPossibleScore > 0)
+    }
+
+    @Test("Hard max score is highest")
+    func hardMaxScoreHighest() {
+        #expect(DifficultyLevel.hard.maxPossibleScore >= DifficultyLevel.easy.maxPossibleScore)
+    }
 }

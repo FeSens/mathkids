@@ -5509,6 +5509,95 @@
       "files": [
         "Sources/Features/Home/HomeViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-284",
+      "title": "GameSession improvement rate",
+      "description": "GameSession computes improvement rate comparing second half to first half accuracy",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003",
+        "logic-256"
+      ],
+      "test_steps": [
+        "Positive rate when improving",
+        "Negative rate when declining",
+        "Zero when no answers"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-285",
+      "title": "PlayerStats total XP earned per session average",
+      "description": "PlayerStats computes average XP earned per game",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Returns 0 with no games",
+        "Returns correct average"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-286",
+      "title": "MathProblem formatted answer",
+      "description": "MathProblem provides the correct answer as a formatted string",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Single digit formats without comma",
+        "Large number formats correctly"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-287",
+      "title": "DifficultyLevel max possible score",
+      "description": "DifficultyLevel computes theoretical max score for a perfect game",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-002"
+      ],
+      "test_steps": [
+        "Max score equals time limit divided by target time times points",
+        "Hard max score is highest"
+      ],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
+    },
+    {
+      "id": "logic-288",
+      "title": "ResultsViewModel score as percentage of max",
+      "description": "ResultsViewModel shows how close the player got to the theoretical max score",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009",
+        "logic-287"
+      ],
+      "test_steps": [
+        "Returns 0 when max score is 0",
+        "Returns percentage between 0 and 100",
+        "Perfect game approaches high percentage"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

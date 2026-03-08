@@ -202,6 +202,12 @@ final class ResultsViewModel {
         }
     }
 
+    var scoreAsPercentOfMax: Double {
+        let maxScore = session.difficulty.maxPossibleScore
+        guard maxScore > 0 else { return 0 }
+        return min(Double(session.score) / Double(maxScore) * 100, 100)
+    }
+
     var accuracyComparisonText: String? {
         guard let avg = playerAverageAccuracy else { return nil }
         let diff = accuracy - avg

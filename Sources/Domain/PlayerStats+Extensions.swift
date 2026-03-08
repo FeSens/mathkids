@@ -164,6 +164,11 @@ extension PlayerStats {
         }
     }
 
+    var averageXPPerSession: Int {
+        guard gamesPlayed > 0 else { return 0 }
+        return totalXP / gamesPlayed
+    }
+
     var averageSessionSeconds: Int {
         guard gamesPlayed > 0 else { return 0 }
         return totalTimePlayedSeconds / gamesPlayed

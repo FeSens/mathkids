@@ -88,4 +88,20 @@ struct PlayerStatsBatch38Tests {
         stats.gamesPlayed = 5
         #expect(stats.averageSessionSeconds == 60)
     }
+
+    // MARK: - Average XP Per Session (logic-285)
+
+    @Test("Average XP per session 0 with no games")
+    func avgXPPerSessionZero() {
+        let stats = PlayerStats()
+        #expect(stats.averageXPPerSession == 0)
+    }
+
+    @Test("Average XP per session correct")
+    func avgXPPerSessionCorrect() {
+        let stats = PlayerStats()
+        stats.totalXP = 500
+        stats.gamesPlayed = 10
+        #expect(stats.averageXPPerSession == 50)
+    }
 }

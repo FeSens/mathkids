@@ -121,6 +121,14 @@ extension MathProblem {
 }
 
 extension MathProblem {
+    var formattedAnswer: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(value: correctAnswer)) ?? "\(correctAnswer)"
+    }
+}
+
+extension MathProblem {
     var estimatedSeconds: Double {
         let baseDifficulty: Double
         switch operation {

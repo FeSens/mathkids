@@ -174,4 +174,32 @@ struct GameSessionExtendedTests {
         session.recordAnswer(correct: true)
         #expect(session.finalScoreWithTimeBonus > session.score)
     }
+
+    // MARK: - Improvement Rate (logic-284)
+
+    @Test("Positive improvement rate when improving")
+    func improvementRatePositive() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        #expect(session.improvementRate > 0)
+    }
+
+    @Test("Negative improvement rate when declining")
+    func improvementRateNegative() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        #expect(session.improvementRate < 0)
+    }
+
+    @Test("Zero improvement rate with no answers")
+    func improvementRateZero() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.improvementRate == 0)
+    }
 }

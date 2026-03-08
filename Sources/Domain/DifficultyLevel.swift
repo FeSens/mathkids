@@ -77,6 +77,11 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operandRange.lowerBound) to \(operandRange.upperBound)"
     }
 
+    var maxPossibleScore: Int {
+        let maxProblems = timeLimitSeconds / recommendedSecondsPerProblem
+        return maxProblems * pointsPerCorrect
+    }
+
     var penaltyPerWrong: Int {
         switch self {
         case .easy: 2

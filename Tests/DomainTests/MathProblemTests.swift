@@ -272,4 +272,18 @@ struct MathProblemTests {
         let problem = MathProblem(operand1: 5, operand2: 3, operation: .subtract)
         #expect(problem.estimatedSeconds > 0)
     }
+
+    // MARK: - Formatted Answer (logic-286)
+
+    @Test("Single digit formats without comma")
+    func formattedAnswerSingleDigit() {
+        let problem = MathProblem(operand1: 2, operand2: 3, operation: .add)
+        #expect(problem.formattedAnswer == "5")
+    }
+
+    @Test("Large number formats correctly")
+    func formattedAnswerLarge() {
+        let problem = MathProblem(operand1: 50, operand2: 50, operation: .multiply)
+        #expect(problem.formattedAnswer == "2,500")
+    }
 }

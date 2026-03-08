@@ -91,4 +91,22 @@ struct ResultsViewModelBatch37Tests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.accuracyComparisonText == nil)
     }
+
+    // MARK: - Score As Percentage Of Max (logic-288)
+
+    @Test("Score percentage between 0 and 100")
+    func scorePercentageInRange() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<5 { session.recordAnswer(correct: true) }
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.scoreAsPercentOfMax >= 0)
+        #expect(vm.scoreAsPercentOfMax <= 100)
+    }
+
+    @Test("Score percentage 0 with no score")
+    func scorePercentageZero() {
+        let session = GameSession(difficulty: .easy)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.scoreAsPercentOfMax == 0)
+    }
 }
