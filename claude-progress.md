@@ -3,18 +3,21 @@
 ## Session 20 — 2026-03-08
 
 ### Status
-- Features: 1923/1923 passing (12 MVP + 9 polish + 1902 improvement)
-- Unit tests: ~3700+ (all green across ~368 suites)
+- Features: 2000/2000 passing (12 MVP + 9 polish + 1979 improvement)
+- Unit tests: ~3900+ (all green across ~383 suites)
 - UI tests: 12
 - QA: PASSED
+- MILESTONE: 2000 features!
 
-### Session 20 Features (batches 357-368)
+### Session 20 Features (batches 357-383)
 - Batches 357-358: logic-1864 to logic-1873 (10 features) — Achievement+Scoring
 - Batches 359-368: logic-1874 to logic-1923 (50 features) — Achievement+Ranking (new file)
-- Total this session: 60 features
-- New files: Achievement+Ranking.swift (~305, FULL)
-- Files near limit: Achievement+Scoring (~293, FULL), Achievement+Ranking (~305, FULL)
-- 1 name collision resolved: achievementBonusMultiplier→achievementRewardBonusFactor
+- Batches 369-377: logic-1924 to logic-1968 (45 features) — Achievement+Tiers (new file)
+- Batches 378-383: logic-1969 to logic-2000 (32 features) — Achievement+Milestones (new file)
+- Total this session: 137 features
+- New files: Achievement+Ranking.swift (~278, FULL), Achievement+Tiers.swift (~278, FULL), Achievement+Milestones.swift (~195)
+- Files near limit: Achievement+Scoring (~293, FULL), Achievement+Ranking (~278, FULL), Achievement+Tiers (~278, FULL)
+- 4 name collisions resolved: achievementBonusMultiplier→achievementRewardBonusFactor, achievementRequiredOperations→achievementRequiredOperationCount, achievementRewardTier→achievementRewardTierLevel
 
 ## Session 19 — 2026-03-08
 
