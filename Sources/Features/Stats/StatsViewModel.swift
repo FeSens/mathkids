@@ -154,6 +154,10 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var averageAccuracyRounded: Int {
+        Int(accuracy.rounded())
+    }
+
     var xpPercentText: String {
         let pct = LevelSystem.progressToNextLevel(for: totalXP)
         return "\(Int(pct * 100))%"

@@ -4,6 +4,15 @@ struct Achievement: Identifiable {
     enum Category: Sendable {
         case streak, score, games, mastery
 
+        var displayName: String {
+            switch self {
+            case .streak: "Streak"
+            case .score: "Score"
+            case .games: "Games"
+            case .mastery: "Mastery"
+            }
+        }
+
         var emoji: String {
             switch self {
             case .streak: "🔥"

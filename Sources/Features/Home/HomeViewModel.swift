@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var hasCompletedDailyChallenge: Bool {
+        dailyChallengeCompleted
+    }
+
     var difficultyPointsText: String {
         "\(selectedDifficulty.pointsPerCorrect) pts"
     }

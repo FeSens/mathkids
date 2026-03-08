@@ -10685,6 +10685,86 @@
         "games category returns controller"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-594",
+      "name": "HomeViewModel.hasCompletedDailyChallenge",
+      "description": "Alias for dailyChallengeCompleted for view readability",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Set dailyChallengeCompleted true",
+        "Verify hasCompletedDailyChallenge is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-595",
+      "name": "StatsViewModel.averageAccuracy",
+      "description": "Returns accuracy rounded to nearest integer",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set accuracy to 87.6",
+        "Verify returns 88"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-596",
+      "name": "ResultsViewModel.difficultyPointsPerCorrect",
+      "description": "Returns points per correct for the sessions difficulty",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Easy session",
+        "Verify returns 10"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-597",
+      "name": "GameSession.isLowScore",
+      "description": "Returns true when score is below 50",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Fresh session is low score",
+        "After scoring 100 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-598",
+      "name": "Achievement.Category.displayName",
+      "description": "Returns human readable name for each category",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "streak returns Streak",
+        "mastery returns Mastery"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

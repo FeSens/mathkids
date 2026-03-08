@@ -27,6 +27,10 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var isLowScore: Bool {
+        score < 50
+    }
+
     var scoringRate: Int {
         guard totalTimePlayed > 0 else { return 0 }
         return score * 60 / totalTimePlayed
