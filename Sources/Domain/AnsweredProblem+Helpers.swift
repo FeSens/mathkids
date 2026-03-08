@@ -98,4 +98,12 @@ extension AnsweredProblem {
     var isMultiplicationProblem: Bool {
         problem.operation == .multiply
     }
+
+    var isDivisionProblem: Bool {
+        problem.operation == .divide
+    }
+
+    var isCorrectAndFast: Bool {
+        isCorrect && wasQuickAnswer
+    }
 }

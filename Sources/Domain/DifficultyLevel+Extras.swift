@@ -170,4 +170,16 @@ extension DifficultyLevel {
         case .hard: return "Champions play on hard mode!"
         }
     }
+
+    var requiredOperationCount: String {
+        "\(operationCount) operation\(operationCount == 1 ? "" : "s") required"
+    }
+
+    var difficultyColorName: String {
+        switch self {
+        case .easy: return "green"
+        case .medium: return "orange"
+        case .hard: return "red"
+        }
+    }
 }

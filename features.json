@@ -14848,6 +14848,88 @@
         "Answered problem with add op -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-854",
+      "name": "isDivisionProblem",
+      "description": "AnsweredProblem computed property returning true if the problem operation is division",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answered problem with divide op -> true",
+        "Answered problem with add op -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-855",
+      "name": "isCorrectAndFast",
+      "description": "AnsweredProblem computed property returning true when answer is correct and taken under 3 seconds",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct answer in 2s -> true",
+        "Correct answer in 5s -> false",
+        "Wrong answer in 2s -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-856",
+      "name": "problemDescription",
+      "description": "MathProblem computed property returning human-readable description of the problem",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 3+4 -> description contains operands and operation",
+        "Problem 6x2 -> description contains multiplication"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-857",
+      "name": "requiredOperationCount",
+      "description": "DifficultyLevel computed property returning string describing required operation count",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> mentions operation count",
+        "Hard -> mentions more operations"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-858",
+      "name": "difficultyColorName",
+      "description": "DifficultyLevel computed property returning color name string for the difficulty",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> green",
+        "Medium -> orange",
+        "Hard -> red"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

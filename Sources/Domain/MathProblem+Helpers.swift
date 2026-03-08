@@ -177,4 +177,8 @@ extension MathProblem {
     var operandMax: Int {
         max(operand1, operand2)
     }
+
+    var problemDescription: String {
+        "\(operand1) \(operation.displayName.lowercased()) \(operand2) equals \(correctAnswer)"
+    }
 }
