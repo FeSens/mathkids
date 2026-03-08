@@ -52,4 +52,28 @@ extension AnsweredProblem {
     var answeredProblemAnswerWasLower: Bool {
         userAnswer < problem.correctAnswer
     }
+
+    var answeredProblemErrorType: String {
+        guard !isCorrect else { return "none" }
+        if abs(userAnswer - problem.correctAnswer) == 1 { return "off-by-one" }
+        return "random"
+    }
+
+    var answeredProblemStreakValue: Int {
+        isCorrect ? 1 : 0
+    }
+
+    var answeredProblemIsBasicFact: Bool {
+        problem.operand1 <= 10 && problem.operand2 <= 10
+    }
+
+    var answeredProblemFeedbackSound: String {
+        guard isCorrect else { return "wrong" }
+        if let time = timeTaken, time < 3.0 { return "perfect" }
+        return "correct"
+    }
+
+    var answeredProblemAnalyticsEvent: String {
+        isCorrect ? "problem_correct" : "problem_incorrect"
+    }
 }

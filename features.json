@@ -20688,6 +20688,96 @@
         "Check answerWasLower is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1224",
+      "name": "answeredProblemErrorType",
+      "description": "Type of error: none, off-by-one, sign-error, random",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check errorType is none",
+        "Create off-by-one answer",
+        "Check errorType is off-by-one"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1225",
+      "name": "answeredProblemStreakValue",
+      "description": "Value to add to streak counter (1 if correct, 0 if wrong)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check streakValue is 1",
+        "Create wrong answer",
+        "Check streakValue is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1226",
+      "name": "answeredProblemIsBasicFact",
+      "description": "Whether the problem is a basic math fact (both operands <= 10)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create problem with small operands",
+        "Check isBasicFact is true",
+        "Create problem with operand 12",
+        "Check isBasicFact is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1227",
+      "name": "answeredProblemFeedbackSound",
+      "description": "Sound name to play: correct, wrong, perfect",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check sound is perfect",
+        "Create wrong answer",
+        "Check sound is wrong"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1228",
+      "name": "answeredProblemAnalyticsEvent",
+      "description": "Analytics event name for tracking",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check event is problem_correct",
+        "Create wrong answer",
+        "Check event is problem_incorrect"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
