@@ -225,4 +225,29 @@ extension Achievement {
     var achievementCardPointsLabel: String {
         "\(pointValue) Points"
     }
+
+    var achievementCardSeparatorColor: String {
+        isRareAchievement ? "gold" : "lightGray"
+    }
+
+    var achievementWeightedScore: Int {
+        pointValue * achievementCategoryWeight
+    }
+
+    var achievementCardChevronStyle: String {
+        isRareAchievement ? "filled" : "outlined"
+    }
+
+    var achievementIsEffortIntensive: Bool {
+        category == .mastery
+    }
+
+    var achievementCardCompletionIcon: String {
+        switch category {
+        case .mastery: return "checkmark.seal.fill"
+        case .streak: return "flame.circle.fill"
+        case .score: return "star.circle.fill"
+        case .games: return "checkmark.circle"
+        }
+    }
 }

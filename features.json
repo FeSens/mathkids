@@ -29949,6 +29949,86 @@
         "Verify cardPointsLabel contains point value"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1814",
+      "title": "Achievement Card Separator Color",
+      "description": "Returns separator color for card sections",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardSeparatorColor by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1815",
+      "title": "Achievement Weighted Score",
+      "description": "Returns weighted score value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify weightedScore by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1816",
+      "title": "Achievement Card Chevron Style",
+      "description": "Returns chevron style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardChevronStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1817",
+      "title": "Achievement Is Effort Intensive",
+      "description": "Returns whether achievement needs high effort",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isEffortIntensive for mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1818",
+      "title": "Achievement Card Completion Icon",
+      "description": "Returns completion icon for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardCompletionIcon by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
