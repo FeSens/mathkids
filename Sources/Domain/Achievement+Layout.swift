@@ -172,4 +172,24 @@ extension Achievement {
     var achievementCardTag: String {
         achievementIsEpic ? "EPIC" : ""
     }
+
+    var achievementUnlockDelay: Double {
+        isRareAchievement ? 0.5 : 0.2
+    }
+
+    var achievementNotificationBadgeCount: Int {
+        1
+    }
+
+    var achievementEmojiScale: Double {
+        isRareAchievement ? 1.5 : 1.0
+    }
+
+    var achievementShowCrown: Bool {
+        achievementRankLabel == "Platinum"
+    }
+
+    var achievementBackgroundOpacity: Double {
+        progress != nil ? 1.0 : 0.3
+    }
 }

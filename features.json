@@ -24588,6 +24588,84 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1459",
+      "title": "Achievement Unlock Delay",
+      "description": "Add achievementUnlockDelay returning animation delay in seconds",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementUnlockDelay is 0.5",
+        "Verify common is 0.2"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1460",
+      "title": "Achievement Notification Badge Count",
+      "description": "Add achievementNotificationBadgeCount returning badge number for notifications",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementNotificationBadgeCount is 1"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1461",
+      "title": "Achievement Emoji Scale",
+      "description": "Add achievementEmojiScale returning emoji animation scale factor",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementEmojiScale is 1.5",
+        "Verify common is 1.0"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1462",
+      "title": "Achievement Show Crown",
+      "description": "Add achievementShowCrown returning true for platinum rank achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create platinum achievement",
+        "Verify achievementShowCrown is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1463",
+      "title": "Achievement Background Opacity",
+      "description": "Add achievementBackgroundOpacity returning card background opacity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create locked achievement",
+        "Verify achievementBackgroundOpacity is 0.3",
+        "Verify unlocked is 1.0"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
