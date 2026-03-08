@@ -172,6 +172,10 @@ struct Achievement: Identifiable {
         return min(Double(result.current) / Double(result.target), 1.0)
     }
 
+    static func categoryCount(for category: Category) -> Int {
+        all.filter { $0.category == category }.count
+    }
+
     static func unlockedAchievements(for stats: PlayerStats) -> [Achievement] {
         all.filter { $0.isUnlocked(stats: stats) }
     }

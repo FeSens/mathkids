@@ -4,6 +4,10 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    func isHighScore(previousBest: Int) -> Bool {
+        score > previousBest
+    }
+
     var wrongAnswerCount: Int {
         totalWrong
     }

@@ -72,6 +72,10 @@ extension ResultsViewModel {
         "\(Int(accuracy))% (\(gradeLabel))"
     }
 
+    var operationSummaryText: String {
+        "\(session.difficulty.displayName) mode"
+    }
+
     var finalScoreText: String {
         "\(session.finalScoreWithTimeBonus) pts"
     }

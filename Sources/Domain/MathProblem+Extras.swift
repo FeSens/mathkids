@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var isCommutativeProblem: Bool {
+        operation.isCommutative
+    }
+
     var answerRange: (min: Int, max: Int) {
         let answer = correctAnswer
         let spread = max(abs(answer) / 2, 5)

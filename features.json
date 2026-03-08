@@ -7831,6 +7831,90 @@
         "Verify contains pts text"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-419",
+      "title": "GameSession isHighScore checks if current score beats previous best",
+      "description": "GameSession should check if score exceeds a given previousBest parameter",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 50 score > 30 previous returns true",
+        "Verify 30 score == 30 previous returns false",
+        "Verify 20 score < 30 previous returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-420",
+      "title": "MathProblem isCommutativeProblem checks if swapping operands gives same answer",
+      "description": "MathProblem should check if the problem uses a commutative operation (add/multiply) making operand order irrelevant",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3+5 is commutative",
+        "Verify 4x7 is commutative",
+        "Verify 8-3 is not commutative"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-421",
+      "title": "LevelSystem didReachMilestone checks XP milestones at 500 intervals",
+      "description": "LevelSystem should detect when XP crosses a 500 XP milestone boundary",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 480 to 520 crosses 500 milestone",
+        "Verify 300 to 400 does not cross any milestone",
+        "Verify 980 to 1020 crosses 1000 milestone"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-422",
+      "title": "ResultsViewModel operationSummaryText for results screen",
+      "description": "ResultsViewModel should expose operationSummaryText showing which operations were played",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify shows operation names from the game",
+        "Verify shows difficulty name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-423",
+      "title": "Achievement categoryCount returns count of achievements per category",
+      "description": "Achievement should compute categoryCount(for:) returning how many achievements are in each category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify streak category count > 0",
+        "Verify games category count > 0",
+        "Verify total of all categories equals total achievements"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

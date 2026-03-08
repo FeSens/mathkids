@@ -127,6 +127,11 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func didReachMilestone(oldXP: Int, newXP: Int, interval: Int) -> Bool {
+        guard interval > 0 else { return false }
+        return oldXP / interval != newXP / interval
+    }
+
     static func remainingLevels(for xp: Int) -> Int {
         max(totalLevels - level(for: xp), 0)
     }
