@@ -18371,6 +18371,81 @@
         "easy returns 80, hard returns 90"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1079",
+      "name": "difficultyTimerWarningThreshold",
+      "description": "Seconds remaining to show timer warning",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns 30, hard returns 15"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1080",
+      "name": "difficultyStarString",
+      "description": "Star string representation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns \u2605, hard returns \u2605\u2605\u2605"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1081",
+      "name": "difficultyShortDescription",
+      "description": "One word difficulty description",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns Simple, hard returns Challenging"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1082",
+      "name": "difficultyHasTimePressure",
+      "description": "Whether difficulty has time pressure",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "hard has time pressure, easy does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1083",
+      "name": "difficultyNextLevelName",
+      "description": "Name of the next difficulty level",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns Medium, hard returns none"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -120,4 +120,32 @@ extension DifficultyLevel {
         case .hard: return 90
         }
     }
+
+    var difficultyTimerWarningThreshold: Int {
+        switch self {
+        case .easy: return 30
+        case .medium: return 20
+        case .hard: return 15
+        }
+    }
+
+    var difficultyStarString: String {
+        String(repeating: "★", count: progressionIndex)
+    }
+
+    var difficultyShortDescription: String {
+        switch self {
+        case .easy: return "Simple"
+        case .medium: return "Moderate"
+        case .hard: return "Challenging"
+        }
+    }
+
+    var difficultyHasTimePressure: Bool {
+        self == .hard
+    }
+
+    var difficultyNextLevelName: String? {
+        nextDifficulty?.displayName
+    }
 }
