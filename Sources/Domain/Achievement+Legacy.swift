@@ -210,4 +210,34 @@ extension Achievement {
         case .games: return 2500
         }
     }
+
+    var achievementCardCharoiteStyle: String {
+        isRareAchievement ? "swirling" : "muted"
+    }
+
+    var achievementRequiresDiligence: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardMandateText: String {
+        switch category {
+        case .mastery: return "Mandate of the Scholar"
+        case .streak: return "Mandate of the Guardian"
+        case .score: return "Mandate of the Victor"
+        case .games: return "Mandate of the Newcomer"
+        }
+    }
+
+    var achievementCardSugiliteStyle: String {
+        isRareAchievement ? "vibrant" : "dusty"
+    }
+
+    var achievementEminenceThreshold: Int {
+        switch category {
+        case .mastery: return 30000
+        case .streak: return 10000
+        case .score: return 15000
+        case .games: return 3000
+        }
+    }
 }

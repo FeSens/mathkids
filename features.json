@@ -33417,6 +33417,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2051",
+      "title": "Achievement Card Charoite Style",
+      "description": "Computed property returning charoite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns swirling style",
+        "Common achievement returns muted style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2052",
+      "title": "Achievement Requires Diligence",
+      "description": "Computed property checking if achievement requires diligence",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery category requires diligence",
+        "Games category does not require diligence"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2053",
+      "title": "Achievement Card Mandate Text",
+      "description": "Computed property returning mandate text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct mandate text",
+        "Games returns correct mandate text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2054",
+      "title": "Achievement Card Sugilite Style",
+      "description": "Computed property returning sugilite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns vibrant style",
+        "Common achievement returns dusty style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2055",
+      "title": "Achievement Eminence Threshold",
+      "description": "Computed property returning eminence threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
