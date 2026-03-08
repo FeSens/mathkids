@@ -124,6 +124,14 @@ extension Achievement {
     var achievementIsDaily: Bool {
         id.hasPrefix("daily_")
     }
+
+    var achievementTitleLength: Int {
+        title.count
+    }
+
+    var achievementHasProgress: Bool {
+        progress != nil
+    }
 }
 
 extension Achievement.Category {
@@ -151,6 +159,28 @@ extension Achievement.Category {
         case .score: return "Rewards for achieving high scores"
         case .games: return "Rewards for playing games"
         case .mastery: return "Rewards for mastering math skills"
+        }
+    }
+
+    var categorySortOrder: Int {
+        switch self {
+        case .streak: return 0
+        case .score: return 1
+        case .games: return 2
+        case .mastery: return 3
+        }
+    }
+
+    var categoryIsCompetitive: Bool {
+        self == .streak || self == .score
+    }
+
+    var categoryBadgeColor: String {
+        switch self {
+        case .streak: return "red"
+        case .score: return "yellow"
+        case .games: return "green"
+        case .mastery: return "indigo"
         }
     }
 }

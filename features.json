@@ -17167,6 +17167,82 @@
         "first_game is not daily"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-999",
+      "name": "achievementTitleLength",
+      "description": "Character count of achievement title",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "title length is positive"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1000",
+      "name": "achievementHasProgress",
+      "description": "Whether achievement has a progress tracker",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "first_game has progress",
+        "returns bool"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1001",
+      "name": "categorySortOrder",
+      "description": "Sort order for achievement category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak is 0, score is 1, games is 2, mastery is 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1002",
+      "name": "categoryIsCompetitive",
+      "description": "Whether category is competitive (score/streak)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak is competitive, games is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1003",
+      "name": "categoryBadgeColor",
+      "description": "Badge background color name for category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak returns warm color, mastery returns cool"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
