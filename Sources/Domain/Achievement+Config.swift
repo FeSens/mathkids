@@ -188,4 +188,37 @@ extension Achievement {
     var achievementUnlockSfx: String {
         isRareAchievement ? "sfx_unlock_rare" : "sfx_unlock_common"
     }
+
+    var achievementBadgeIconName: String {
+        switch category {
+        case .mastery: return "medal.fill"
+        case .streak: return "bolt.circle.fill"
+        case .score: return "star.circle.fill"
+        case .games: return "rosette"
+        }
+    }
+
+    var achievementSortable: Bool {
+        true
+    }
+
+    var achievementDescriptionTruncated: String {
+        if description.count > 30 {
+            return String(description.prefix(27)) + "..."
+        }
+        return description
+    }
+
+    var achievementStarFilled: Bool {
+        isRareAchievement
+    }
+
+    var achievementProgressUnit: String {
+        switch category {
+        case .streak: return "days"
+        case .score: return "points"
+        case .games: return "games"
+        case .mastery: return "operations"
+        }
+    }
 }

@@ -27675,6 +27675,77 @@
         "Create common achievement",
         "Verify sound contains common"
       ]
+    },
+    {
+      "id": "logic-1669",
+      "title": "achievementBadgeIconName",
+      "description": "Return badge icon SF Symbol name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify icon contains medal",
+        "Create games achievement",
+        "Verify icon contains rosette"
+      ]
+    },
+    {
+      "id": "logic-1670",
+      "title": "achievementSortable",
+      "description": "Return whether achievement is sortable in lists",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify sortable is true"
+      ]
+    },
+    {
+      "id": "logic-1671",
+      "title": "achievementDescriptionTruncated",
+      "description": "Return truncated description for previews",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create achievement with long description",
+        "Verify truncated is shorter"
+      ]
+    },
+    {
+      "id": "logic-1672",
+      "title": "achievementStarFilled",
+      "description": "Return whether star is filled",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify starFilled is true",
+        "Create common achievement",
+        "Verify starFilled is false"
+      ]
+    },
+    {
+      "id": "logic-1673",
+      "title": "achievementProgressUnit",
+      "description": "Return the unit for progress tracking",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify unit is days",
+        "Create games achievement",
+        "Verify unit is games"
+      ]
     }
   ],
   "_schema": {
