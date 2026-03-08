@@ -106,6 +106,10 @@ extension ResultsViewModel {
         "Best streak: \(bestStreak)"
     }
 
+    var difficultyDisplayText: String {
+        "\(session.difficulty.emoji) \(session.difficulty.displayName)"
+    }
+
     var wrongAnswerLabel: String {
         "\(session.totalWrong) wrong"
     }

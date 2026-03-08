@@ -243,6 +243,10 @@ extension GameSession {
         return Double(totalWrong) / minutes
     }
 
+    var hasTimeRemaining: Bool {
+        timeRemaining > 0
+    }
+
     var isFinishedWithPerfectAccuracy: Bool {
         isFinished && answeredAllCorrectly
     }

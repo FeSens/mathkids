@@ -187,6 +187,10 @@ extension MathProblem {
         operand1 >= 0 && operand1 <= 9 && operand2 >= 0 && operand2 <= 9
     }
 
+    var isOddResult: Bool {
+        correctAnswer % 2 != 0
+    }
+
     var isEvenResult: Bool {
         correctAnswer % 2 == 0
     }

@@ -92,6 +92,11 @@ final class StatsViewModel {
         "\(Int(accuracy))% (\(accuracyGrade))"
     }
 
+    var operationCountText: String {
+        let count = operationAccuracies.count
+        return "\(count) operation\(count == 1 ? "" : "s") tracked"
+    }
+
     var bestScoreDescription: String {
         "Best: \(bestScore) pts"
     }

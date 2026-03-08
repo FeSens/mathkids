@@ -9640,6 +9640,86 @@
         "Verify false when not finished"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-529",
+      "title": "HomeViewModel recommendedDifficultyText formatted recommendation",
+      "description": "HomeViewModel should expose recommendedDifficultyText returning recommended difficulty with emoji",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes difficulty name",
+        "Verify includes emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-530",
+      "title": "StatsViewModel operationCountText formatted operation count",
+      "description": "StatsViewModel should expose operationCountText returning count of operations with accuracy data",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes count",
+        "Verify includes operations word"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-531",
+      "title": "ResultsViewModel difficultyDisplayText formatted difficulty",
+      "description": "ResultsViewModel+Analysis should expose difficultyDisplayText showing difficulty with emoji",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify includes difficulty emoji",
+        "Verify includes difficulty name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-532",
+      "title": "MathProblem isOddResult checks if answer is odd",
+      "description": "MathProblem should expose isOddResult returning true when correctAnswer is odd",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 2+3=5 returns true",
+        "Verify 2+2=4 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-533",
+      "title": "GameSession hasTimeRemaining checks if time left",
+      "description": "GameSession should expose hasTimeRemaining returning true when timeRemaining > 0",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify true at start",
+        "Verify false when time expired"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
