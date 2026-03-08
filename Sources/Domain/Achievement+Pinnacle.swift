@@ -240,4 +240,34 @@ extension Achievement {
         case .games: return 500000
         }
     }
+
+    var achievementCardBerryiteStyle: String {
+        isRareAchievement ? "steel blue metallic" : "dull blue grey"
+    }
+
+    var achievementRequiresStaminaPlus: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardStatuteWritSealUltraText: String {
+        switch category {
+        case .mastery: return "Statute Writ Seal Ultra of the Almighty"
+        case .streak: return "Statute Writ Seal Ultra of the Overseer"
+        case .score: return "Statute Writ Seal Ultra of the Sovereign"
+        case .games: return "Statute Writ Seal Ultra of the Recruit"
+        }
+    }
+
+    var achievementCardLindstromiteStyle: String {
+        isRareAchievement ? "lead grey monoclinic" : "ashen grey"
+    }
+
+    var achievementApotheosisPlusThreshold: Int {
+        switch category {
+        case .mastery: return 7500000
+        case .streak: return 3000000
+        case .score: return 7000000
+        case .games: return 750000
+        }
+    }
 }

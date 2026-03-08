@@ -38077,6 +38077,96 @@
         "Verify threshold <= 500000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2326",
+      "title": "Achievement card berryite style",
+      "description": "Computed property achievementCardBerryiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify berryite style is steel blue metallic",
+        "Create common achievement",
+        "Verify berryite style is dull blue grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2327",
+      "title": "Achievement requires stamina plus",
+      "description": "Computed property achievementRequiresStaminaPlus returns true for score or mastery categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresStaminaPlus is true",
+        "Create streak achievement",
+        "Verify requiresStaminaPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2328",
+      "title": "Achievement card statute writ seal ultra text",
+      "description": "Computed property achievementCardStatuteWritSealUltraText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Statute Writ Seal Ultra of the Almighty",
+        "Create games achievement",
+        "Verify text is Statute Writ Seal Ultra of the Recruit"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2329",
+      "title": "Achievement card lindstromite style",
+      "description": "Computed property achievementCardLindstromiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify lindstromite style is lead grey monoclinic",
+        "Create common achievement",
+        "Verify lindstromite style is ashen grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2330",
+      "title": "Achievement apotheosis plus threshold",
+      "description": "Computed property achievementApotheosisPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 7000000",
+        "Create games achievement",
+        "Verify threshold <= 1000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
