@@ -28829,6 +28829,86 @@
         "Verify rewardDescriptionText contains points"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1744",
+      "title": "Achievement Section Header Text",
+      "description": "Returns section header text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify sectionHeaderText contains category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1745",
+      "title": "Achievement Card Divider Color",
+      "description": "Returns divider color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardDividerColor by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1746",
+      "title": "Achievement Is Multi Step",
+      "description": "Returns whether achievement requires multiple steps",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isMultiStep for mastery/streak vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1747",
+      "title": "Achievement Card Content Spacing",
+      "description": "Returns content spacing for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardContentSpacing by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1748",
+      "title": "Achievement Goal Description",
+      "description": "Returns description of the goal",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify goalDescription by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

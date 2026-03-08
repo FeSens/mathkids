@@ -110,4 +110,29 @@ extension Achievement {
     var achievementRewardDescriptionText: String {
         "Earn \(pointValue) points"
     }
+
+    var achievementSectionHeaderText: String {
+        "\(category.displayName) Achievements"
+    }
+
+    var achievementCardDividerColor: String {
+        isRareAchievement ? "gold" : "gray"
+    }
+
+    var achievementIsMultiStep: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardContentSpacing: Double {
+        isRareAchievement ? 12 : 8
+    }
+
+    var achievementGoalDescription: String {
+        switch category {
+        case .mastery: return "Master all operations"
+        case .streak: return "Maintain a daily streak"
+        case .score: return "Achieve a high score"
+        case .games: return "Complete games"
+        }
+    }
 }
