@@ -18521,6 +18521,81 @@
         "contains operations text"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1089",
+      "name": "difficultyProgressBarSegments",
+      "description": "Number of progress bar segments",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns 3, hard returns 5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1090",
+      "name": "difficultyEncouragementMessage",
+      "description": "Encouragement for this difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all levels"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1091",
+      "name": "difficultyTotalTimeDisplay",
+      "description": "Formatted total time display",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "contains seconds or min"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1092",
+      "name": "difficultyIsMaxLevel",
+      "description": "Whether this is the maximum difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "hard is max, easy is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1093",
+      "name": "difficultySelectionLabel",
+      "description": "Label for difficulty selection UI",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "contains display name and emoji"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

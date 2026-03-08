@@ -168,4 +168,32 @@ extension DifficultyLevel {
     var difficultyOperationCountLabel: String {
         "\(operationCount) operations"
     }
+
+    var difficultyProgressBarSegments: Int {
+        switch self {
+        case .easy: return 3
+        case .medium: return 4
+        case .hard: return 5
+        }
+    }
+
+    var difficultyEncouragementMessage: String {
+        switch self {
+        case .easy: return "You're doing great!"
+        case .medium: return "Keep up the good work!"
+        case .hard: return "You're a math superstar!"
+        }
+    }
+
+    var difficultyTotalTimeDisplay: String {
+        "\(timeLimitSeconds)s"
+    }
+
+    var difficultyIsMaxLevel: Bool {
+        nextDifficulty == nil
+    }
+
+    var difficultySelectionLabel: String {
+        "\(difficultyEmoji) \(displayName)"
+    }
 }
