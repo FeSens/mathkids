@@ -60,4 +60,25 @@ extension DifficultyLevel {
         case .hard: return "9-12"
         }
     }
+
+    var penaltyDescription: String {
+        "-\(penaltyPerWrong) point penalty per wrong answer"
+    }
+
+    var isMultiplicationIncluded: Bool {
+        allowedOperations.contains(.multiply)
+    }
+
+    var isDivisionIncluded: Bool {
+        allowedOperations.contains(.divide)
+    }
+
+    var levelUpRequirement: String {
+        guard let next = nextDifficulty else { return "Max difficulty reached!" }
+        return "Score \(targetAccuracy)% accuracy to unlock \(next.displayName)"
+    }
+
+    var averageGameLength: Int {
+        estimatedProblemsPerGame
+    }
 }

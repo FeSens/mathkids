@@ -13327,6 +13327,86 @@
         "Verify returns appropriate age range"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-759",
+      "name": "DifficultyLevel.penaltyDescription",
+      "description": "Text describing the penalty system for this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get penaltyDescription for each difficulty",
+        "Verify contains penalty info"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-760",
+      "name": "DifficultyLevel.isMultiplicationIncluded",
+      "description": "Boolean whether multiplication is in this difficulty's operations",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Check easy difficulty",
+        "Verify multiplication not included"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-761",
+      "name": "DifficultyLevel.isDivisionIncluded",
+      "description": "Boolean whether division is in this difficulty's operations",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Check hard difficulty",
+        "Verify division included"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-762",
+      "name": "DifficultyLevel.levelUpRequirement",
+      "description": "Text describing what's needed to move to next difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get levelUpRequirement for easy",
+        "Verify describes accuracy needed"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-763",
+      "name": "DifficultyLevel.averageGameLength",
+      "description": "Average number of problems typically answered per game",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get averageGameLength for each difficulty",
+        "Verify reasonable estimates"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
