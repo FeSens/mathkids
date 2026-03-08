@@ -32019,6 +32019,76 @@
         "Create games achievement",
         "Verify target is low"
       ]
+    },
+    {
+      "id": "logic-1954",
+      "name": "achievementCardHermeticSeal",
+      "description": "Hermetic seal style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify seal is mystical",
+        "Create common achievement",
+        "Verify seal is standard"
+      ]
+    },
+    {
+      "id": "logic-1955",
+      "name": "achievementRequiresDedication",
+      "description": "Whether achievement requires dedication (mastery or streak)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresDedication is true",
+        "Create score achievement",
+        "Verify requiresDedication is false"
+      ]
+    },
+    {
+      "id": "logic-1956",
+      "name": "achievementCardRuneText",
+      "description": "Rune text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify rune text",
+        "Create games achievement",
+        "Verify rune text"
+      ]
+    },
+    {
+      "id": "logic-1957",
+      "name": "achievementCardChainStyle",
+      "description": "Chain decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify chain is gold",
+        "Create common achievement",
+        "Verify chain is iron"
+      ]
+    },
+    {
+      "id": "logic-1958",
+      "name": "achievementMinimumGamesWon",
+      "description": "Minimum games won required based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify minGamesWon is high",
+        "Create games achievement",
+        "Verify minGamesWon is low"
+      ]
     }
   ],
   "_schema": {

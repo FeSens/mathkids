@@ -185,4 +185,34 @@ extension Achievement {
         case .games: return 0
         }
     }
+
+    var achievementCardHermeticSeal: String {
+        isRareAchievement ? "mystical" : "standard"
+    }
+
+    var achievementRequiresDedication: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardRuneText: String {
+        switch category {
+        case .mastery: return "Rune of Wisdom"
+        case .streak: return "Rune of Fortitude"
+        case .score: return "Rune of Accuracy"
+        case .games: return "Rune of Beginning"
+        }
+    }
+
+    var achievementCardChainStyle: String {
+        isRareAchievement ? "gold" : "iron"
+    }
+
+    var achievementMinimumGamesWon: Int {
+        switch category {
+        case .mastery: return 50
+        case .streak: return 10
+        case .score: return 20
+        case .games: return 1
+        }
+    }
 }
