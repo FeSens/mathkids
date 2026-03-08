@@ -210,4 +210,34 @@ extension Achievement {
         case .games: return 20000
         }
     }
+
+    var achievementCardSemseyiteStyle: String {
+        isRareAchievement ? "steel black metallic" : "dark slate"
+    }
+
+    var achievementRequiresVigorPlus: Bool {
+        category == .streak || category == .games
+    }
+
+    var achievementCardInjunctionWritSealPlusText: String {
+        switch category {
+        case .mastery: return "Injunction Writ Seal Plus of the Overlord"
+        case .streak: return "Injunction Writ Seal Plus of the Captain"
+        case .score: return "Injunction Writ Seal Plus of the Destroyer"
+        case .games: return "Injunction Writ Seal Plus of the Pledge"
+        }
+    }
+
+    var achievementCardAndoriteStyle: String {
+        isRareAchievement ? "silver grey orthorhombic" : "flat grey"
+    }
+
+    var achievementRealmPlusThreshold: Int {
+        switch category {
+        case .mastery: return 300000
+        case .streak: return 120000
+        case .score: return 250000
+        case .games: return 30000
+        }
+    }
 }

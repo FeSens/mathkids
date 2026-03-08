@@ -37267,6 +37267,96 @@
         "Verify threshold <= 25000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2281",
+      "title": "Achievement card semseyite style",
+      "description": "Computed property achievementCardSemseyiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify semseyite style is steel black metallic",
+        "Create common achievement",
+        "Verify semseyite style is dark slate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2282",
+      "title": "Achievement requires vigor plus",
+      "description": "Computed property achievementRequiresVigorPlus returns true for streak or games categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresVigorPlus is true",
+        "Create mastery achievement",
+        "Verify requiresVigorPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2283",
+      "title": "Achievement card injunction writ seal plus text",
+      "description": "Computed property achievementCardInjunctionWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Injunction Writ Seal Plus of the Overlord",
+        "Create games achievement",
+        "Verify text is Injunction Writ Seal Plus of the Pledge"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2284",
+      "title": "Achievement card andorite style",
+      "description": "Computed property achievementCardAndoriteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify andorite style is silver grey orthorhombic",
+        "Create common achievement",
+        "Verify andorite style is flat grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2285",
+      "title": "Achievement realm plus threshold",
+      "description": "Computed property achievementRealmPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 250000",
+        "Create games achievement",
+        "Verify threshold <= 35000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
