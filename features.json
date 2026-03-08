@@ -25720,6 +25720,79 @@
         "Create any achievement",
         "Verify progressPercentage is 0 by default"
       ]
+    },
+    {
+      "id": "logic-1534",
+      "title": "achievementMotivationalQuote",
+      "description": "Return a motivational quote based on category",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify quote contains persistence-related text",
+        "Create mastery achievement",
+        "Verify quote contains excellence-related text"
+      ]
+    },
+    {
+      "id": "logic-1535",
+      "title": "achievementBadgeOpacity",
+      "description": "Return badge opacity based on unlock status",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify badgeOpacity is 0.5 (locked default)"
+      ]
+    },
+    {
+      "id": "logic-1536",
+      "title": "achievementDailyGoalContribution",
+      "description": "Return how much this achievement contributes to daily goals",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify contribution is high",
+        "Create games achievement",
+        "Verify contribution is low"
+      ]
+    },
+    {
+      "id": "logic-1537",
+      "title": "achievementStreakMultiplier",
+      "description": "Return streak multiplier for bonus calculations",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify multiplier >= 2.0",
+        "Create games achievement",
+        "Verify multiplier == 1.0"
+      ]
+    },
+    {
+      "id": "logic-1538",
+      "title": "achievementCategoryEmoji",
+      "description": "Return emoji representing the category",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify emoji is fire-related",
+        "Create mastery achievement",
+        "Verify emoji is trophy-related"
+      ]
     }
   ],
   "_schema": {

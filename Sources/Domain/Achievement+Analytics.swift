@@ -33,4 +33,44 @@ extension Achievement {
     var achievementProgressPercentage: Int {
         0
     }
+
+    var achievementMotivationalQuote: String {
+        switch category {
+        case .streak: return "Stay consistent and great things happen!"
+        case .score: return "Every point counts on the path to greatness!"
+        case .games: return "Every game is a step forward!"
+        case .mastery: return "Excellence comes through dedication!"
+        }
+    }
+
+    var achievementBadgeOpacity: Double {
+        0.5
+    }
+
+    var achievementDailyGoalContribution: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 5
+        case .score: return 3
+        case .games: return 1
+        }
+    }
+
+    var achievementStreakMultiplier: Double {
+        switch category {
+        case .streak: return 2.5
+        case .mastery: return 2.0
+        case .score: return 1.5
+        case .games: return 1.0
+        }
+    }
+
+    var achievementCategoryEmoji: String {
+        switch category {
+        case .streak: return "🔥"
+        case .score: return "⭐"
+        case .games: return "🎮"
+        case .mastery: return "👑"
+        }
+    }
 }
