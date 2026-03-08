@@ -13807,6 +13807,86 @@
         "Verify returns true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-789",
+      "name": "AnsweredProblem.wasCorrectText",
+      "description": "Text saying 'Correct' or 'Wrong' based on answer",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create correct answered problem",
+        "Verify wasCorrectText returns 'Correct'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-790",
+      "name": "AnsweredProblem.resultEmoji",
+      "description": "Emoji for result: checkmark for correct, X for wrong",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create correct answered problem",
+        "Verify resultEmoji returns '\u2705'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-791",
+      "name": "AnsweredProblem.timeTakenText",
+      "description": "Formatted time taken text like '3.2s'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create answered problem with 3.2s time",
+        "Verify timeTakenText returns '3.2s'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-792",
+      "name": "AnsweredProblem.wasQuickAnswer",
+      "description": "Boolean true when answer was given in under 3 seconds",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create answered problem with 2s time",
+        "Verify wasQuickAnswer is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-793",
+      "name": "AnsweredProblem.summaryText",
+      "description": "Summary text like '3 + 4 = 7 \u2705'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create correct answered problem",
+        "Verify summaryText contains checkmark"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
