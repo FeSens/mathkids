@@ -41327,6 +41327,106 @@
         "Verify threshold <= 30000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2491",
+      "title": "achievementCardEmplectiteUltraStyle",
+      "description": "Mineral style string for emplectite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify emplectite ultra style is tin grey prismatic",
+        "Create common achievement",
+        "Verify emplectite ultra style is pale grey matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2492",
+      "title": "achievementRequiresSublimePlus",
+      "description": "Whether achievement requires sublime plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires sublime plus is true",
+        "Create streak achievement",
+        "Verify requires sublime plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2493",
+      "title": "achievementCardStatuteWritSealMaxText",
+      "description": "Statute writ seal max text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Statute Writ Seal Max of the Astral",
+        "Create games achievement",
+        "Verify text is Statute Writ Seal Max of the Recruit"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2494",
+      "title": "achievementCardAikiniteUltraStyle",
+      "description": "Mineral style string for aikinite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify aikinite ultra style is lead grey orthorhombic",
+        "Create common achievement",
+        "Verify aikinite ultra style is flat lead matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2495",
+      "title": "achievementMuspelheimPlusPlusThreshold",
+      "description": "Muspelheim plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 175000000",
+        "Create games achievement",
+        "Verify threshold <= 30000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 17000000
         }
     }
+
+    var achievementCardEmplectiteUltraStyle: String {
+        isRareAchievement ? "tin grey prismatic" : "pale grey matte"
+    }
+
+    var achievementRequiresSublimePlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardStatuteWritSealMaxText: String {
+        switch category {
+        case .mastery: return "Statute Writ Seal Max of the Astral"
+        case .streak: return "Statute Writ Seal Max of the Rampart"
+        case .score: return "Statute Writ Seal Max of the Preeminent"
+        case .games: return "Statute Writ Seal Max of the Recruit"
+        }
+    }
+
+    var achievementCardAikiniteUltraStyle: String {
+        isRareAchievement ? "lead grey orthorhombic" : "flat lead matte"
+    }
+
+    var achievementMuspelheimPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 175000000
+        case .streak: return 70000000
+        case .score: return 170000000
+        case .games: return 17500000
+        }
+    }
 }
