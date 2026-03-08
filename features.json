@@ -38827,6 +38827,106 @@
         "Verify threshold <= 6000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2366",
+      "title": "achievementCardPanaderoiteStyle",
+      "description": "Mineral style string for panaderoite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify panaderoite style is white prismatic",
+        "Create common achievement",
+        "Verify panaderoite style is pale white"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2367",
+      "title": "achievementRequiresGloryPlus",
+      "description": "Whether achievement requires glory plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requires glory plus is true",
+        "Create mastery achievement",
+        "Verify requires glory plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2368",
+      "title": "achievementCardCharterWritSealUltraPlusText",
+      "description": "Charter writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Charter Writ Seal Ultra Plus of the Eternal",
+        "Create games achievement",
+        "Verify text is Charter Writ Seal Ultra Plus of the Aspirant"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2369",
+      "title": "achievementCardEmployiteStyle",
+      "description": "Mineral style string for employite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify employite style is tin grey tabular",
+        "Create common achievement",
+        "Verify employite style is flat tin"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2370",
+      "title": "achievementValhallaThreshold",
+      "description": "Valhalla threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 50000000",
+        "Create games achievement",
+        "Verify threshold <= 7000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

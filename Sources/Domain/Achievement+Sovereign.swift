@@ -210,4 +210,34 @@ extension Achievement {
         case .games: return 4500000
         }
     }
+
+    var achievementCardPanaderoiteStyle: String {
+        isRareAchievement ? "white prismatic" : "pale white"
+    }
+
+    var achievementRequiresGloryPlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardCharterWritSealUltraPlusText: String {
+        switch category {
+        case .mastery: return "Charter Writ Seal Ultra Plus of the Eternal"
+        case .streak: return "Charter Writ Seal Ultra Plus of the Vigilant"
+        case .score: return "Charter Writ Seal Ultra Plus of the Majestic"
+        case .games: return "Charter Writ Seal Ultra Plus of the Aspirant"
+        }
+    }
+
+    var achievementCardEmployiteStyle: String {
+        isRareAchievement ? "tin grey tabular" : "flat tin"
+    }
+
+    var achievementValhallaThreshold: Int {
+        switch category {
+        case .mastery: return 50000000
+        case .streak: return 20000000
+        case .score: return 45000000
+        case .games: return 5000000
+        }
+    }
 }
