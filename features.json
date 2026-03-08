@@ -40127,6 +40127,106 @@
         "Verify threshold <= 18000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2431",
+      "title": "achievementCardPekoiteProStyle",
+      "description": "Mineral style string for pekoite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pekoite pro style is silver grey needle",
+        "Create common achievement",
+        "Verify pekoite pro style is flat silver"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2432",
+      "title": "achievementRequiresBalancePlus",
+      "description": "Whether achievement requires balance plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires balance plus is true",
+        "Create streak achievement",
+        "Verify requires balance plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2433",
+      "title": "achievementCardMandateWritSealUltraPlusPlusText",
+      "description": "Mandate writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Mandate Writ Seal Ultra Plus Plus of the Absolute",
+        "Create games achievement",
+        "Verify text is Mandate Writ Seal Ultra Plus Plus of the Novice"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2434",
+      "title": "achievementCardNuffielditeProStyle",
+      "description": "Mineral style string for nuffieldite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify nuffieldite pro style is lead grey tabular",
+        "Create common achievement",
+        "Verify nuffieldite pro style is dull lead grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2435",
+      "title": "achievementSvartAlfaheimThreshold",
+      "description": "Svart Alfaheim threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 115000000",
+        "Create games achievement",
+        "Verify threshold <= 18000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 11000000
         }
     }
+
+    var achievementCardPekoiteProStyle: String {
+        isRareAchievement ? "silver grey needle" : "flat silver"
+    }
+
+    var achievementRequiresBalancePlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardMandateWritSealUltraPlusPlusText: String {
+        switch category {
+        case .mastery: return "Mandate Writ Seal Ultra Plus Plus of the Absolute"
+        case .streak: return "Mandate Writ Seal Ultra Plus Plus of the Fortress"
+        case .score: return "Mandate Writ Seal Ultra Plus Plus of the Glorious"
+        case .games: return "Mandate Writ Seal Ultra Plus Plus of the Novice"
+        }
+    }
+
+    var achievementCardNuffielditeProStyle: String {
+        isRareAchievement ? "lead grey tabular" : "dull lead grey"
+    }
+
+    var achievementSvartAlfaheimThreshold: Int {
+        switch category {
+        case .mastery: return 115000000
+        case .streak: return 46000000
+        case .score: return 110000000
+        case .games: return 11500000
+        }
+    }
 }
