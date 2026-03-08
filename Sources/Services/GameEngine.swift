@@ -9,7 +9,7 @@ final class GameEngine {
     private(set) var lastAnswerCorrect: Bool?
     private(set) var streakMilestone: Int?
 
-    private let generator = ProblemGenerator()
+    private var generator: ProblemGenerator
     private let allowedOperations: Set<Operation>?
     private var timer: Timer?
     private(set) var adaptiveRange: ClosedRange<Int>?
@@ -23,7 +23,9 @@ final class GameEngine {
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
         self.allowedOperations = allowedOperations
-        self.currentProblem = generator.generate(for: difficulty, allowedOperations: allowedOperations)
+        var gen = ProblemGenerator()
+        self.currentProblem = gen.generate(for: difficulty, allowedOperations: allowedOperations)
+        self.generator = gen
     }
 
     var isGameOver: Bool { session.isFinished }

@@ -3425,6 +3425,94 @@
       "files": [
         "Sources/Features/Game/TimerRingView.swift"
       ]
+    },
+    {
+      "id": "ui-169",
+      "title": "Problem generator avoids duplicate consecutive problems",
+      "description": "ProblemGenerator does not generate the same problem twice in a row",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Generate multiple problems in sequence",
+        "No two consecutive problems are identical",
+        "Different operands or operation each time"
+      ],
+      "files": [
+        "Sources/Services/ProblemGenerator.swift"
+      ]
+    },
+    {
+      "id": "ui-170",
+      "title": "Division problems always have integer answers",
+      "description": "Generated division problems always have clean integer answers",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Generate many division problems",
+        "All have integer correct answers",
+        "No divide-by-zero problems"
+      ],
+      "files": [
+        "Sources/Services/ProblemGenerator.swift"
+      ]
+    },
+    {
+      "id": "ui-171",
+      "title": "Results screen fun fact based on performance",
+      "description": "Fun fact on results screen varies based on speed and accuracy",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-008"
+      ],
+      "test_steps": [
+        "Complete a fast game - see speed-related fun fact",
+        "Complete with many problems - see volume fun fact",
+        "Fun fact is always non-empty"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-172",
+      "title": "Level system with XP thresholds",
+      "description": "LevelSystem provides level names and XP thresholds for progression",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Level 1 starts at 0 XP",
+        "Each level has increasing XP threshold",
+        "Level names match expected progression"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
+    },
+    {
+      "id": "ui-173",
+      "title": "Math tips rotate based on problems solved",
+      "description": "Home screen math tip changes based on total problems solved",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Home screen shows a math tip",
+        "Tip changes when totalSolved count changes",
+        "Tips are educational and relevant"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeComponents.swift"
+      ]
     }
   ],
   "_schema": {
