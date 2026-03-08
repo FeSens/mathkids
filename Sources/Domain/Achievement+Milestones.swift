@@ -248,4 +248,34 @@ extension Achievement {
         case .games: return 25
         }
     }
+
+    var achievementCardMorganiteStyle: String {
+        isRareAchievement ? "radiant" : "soft"
+    }
+
+    var achievementRequiresResilience: Bool {
+        category == .streak
+    }
+
+    var achievementCardCanonText: String {
+        switch category {
+        case .mastery: return "Canon of the Learned"
+        case .streak: return "Canon of the Devoted"
+        case .score: return "Canon of the Skilled"
+        case .games: return "Canon of the Eager"
+        }
+    }
+
+    var achievementCardIoliteStyle: String {
+        isRareAchievement ? "deep" : "light"
+    }
+
+    var achievementChampionThreshold: Int {
+        switch category {
+        case .mastery: return 500
+        case .streak: return 100
+        case .score: return 250
+        case .games: return 50
+        }
+    }
 }

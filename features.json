@@ -32817,6 +32817,76 @@
         "Create games achievement",
         "Verify threshold is low"
       ]
+    },
+    {
+      "id": "logic-2011",
+      "name": "achievementCardMorganiteStyle",
+      "description": "Morganite gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify morganite is radiant",
+        "Create common achievement",
+        "Verify morganite is soft"
+      ]
+    },
+    {
+      "id": "logic-2012",
+      "name": "achievementRequiresResilience",
+      "description": "Whether achievement requires resilience (streak only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresResilience is true",
+        "Create mastery achievement",
+        "Verify requiresResilience is false"
+      ]
+    },
+    {
+      "id": "logic-2013",
+      "name": "achievementCardCanonText",
+      "description": "Canon text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify canon text",
+        "Create games achievement",
+        "Verify canon text"
+      ]
+    },
+    {
+      "id": "logic-2014",
+      "name": "achievementCardIoliteStyle",
+      "description": "Iolite gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify iolite is deep",
+        "Create common achievement",
+        "Verify iolite is light"
+      ]
+    },
+    {
+      "id": "logic-2015",
+      "name": "achievementChampionThreshold",
+      "description": "Champion status threshold based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold is high",
+        "Create games achievement",
+        "Verify threshold is low"
+      ]
     }
   ],
   "_schema": {
