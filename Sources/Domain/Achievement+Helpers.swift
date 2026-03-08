@@ -50,6 +50,20 @@ extension Achievement {
     var displayTitle: String {
         "\(emoji) \(title)"
     }
+
+    var achievementTier: String {
+        if pointValue >= 25 { return "gold" }
+        if pointValue >= 15 { return "silver" }
+        return "bronze"
+    }
+
+    var achievementShortDescription: String {
+        description
+    }
+
+    var achievementPointLabel: String {
+        "\(pointValue) pts"
+    }
 }
 
 extension Achievement.Category {

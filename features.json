@@ -16855,6 +16855,83 @@
         "Divide -> tagline"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-979",
+      "name": "operationIconName",
+      "description": "SF Symbol icon name for operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Operation.add.operationIconName returns plus.circle"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-980",
+      "name": "isFirstTaught",
+      "description": "Whether operation is first in teaching order",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Operation.add.isFirstTaught is true",
+        "Operation.subtract.isFirstTaught is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-981",
+      "name": "achievementTier",
+      "description": "Achievement tier label based on point value",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "mastery achievement tier is gold",
+        "games achievement tier is bronze"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-982",
+      "name": "achievementShortDescription",
+      "description": "Short 1-line description of achievement",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "achievementShortDescription is not empty"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-983",
+      "name": "achievementPointLabel",
+      "description": "Formatted point value label for achievement",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "achievementPointLabel contains pts"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

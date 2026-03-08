@@ -276,4 +276,17 @@ extension Operation {
         case .divide: return "Share it equally!"
         }
     }
+
+    var operationIconName: String {
+        switch self {
+        case .add: return "plus.circle"
+        case .subtract: return "minus.circle"
+        case .multiply: return "multiply.circle"
+        case .divide: return "divide.circle"
+        }
+    }
+
+    var isFirstTaught: Bool {
+        isFirstInOrder
+    }
 }
