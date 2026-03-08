@@ -39127,6 +39127,106 @@
         "Verify threshold <= 8000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2381",
+      "title": "achievementCardRobinsoniteStyle",
+      "description": "Mineral style string for robinsonite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify robinsonite style is lead grey prismatic",
+        "Create common achievement",
+        "Verify robinsonite style is ashen lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2382",
+      "title": "achievementRequiresLoyaltyPlus",
+      "description": "Whether achievement requires loyalty plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires loyalty plus is true",
+        "Create score achievement",
+        "Verify requires loyalty plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2383",
+      "title": "achievementCardStatuteWritSealUltraPlusText",
+      "description": "Statute writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Statute Writ Seal Ultra Plus of the Primordial",
+        "Create games achievement",
+        "Verify text is Statute Writ Seal Ultra Plus of the Novice"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2384",
+      "title": "achievementCardTwinniteStyle",
+      "description": "Mineral style string for twinnite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify twinnite style is steel grey orthorhombic",
+        "Create common achievement",
+        "Verify twinnite style is dull steel"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2385",
+      "title": "achievementMidgardPlusThreshold",
+      "description": "Midgard plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 65000000",
+        "Create games achievement",
+        "Verify threshold <= 9000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

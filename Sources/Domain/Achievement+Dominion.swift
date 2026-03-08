@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 6000000
         }
     }
+
+    var achievementCardRobinsoniteStyle: String {
+        isRareAchievement ? "lead grey prismatic" : "ashen lead"
+    }
+
+    var achievementRequiresLoyaltyPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardStatuteWritSealUltraPlusText: String {
+        switch category {
+        case .mastery: return "Statute Writ Seal Ultra Plus of the Primordial"
+        case .streak: return "Statute Writ Seal Ultra Plus of the Rampart"
+        case .score: return "Statute Writ Seal Ultra Plus of the Preeminent"
+        case .games: return "Statute Writ Seal Ultra Plus of the Novice"
+        }
+    }
+
+    var achievementCardTwinniteStyle: String {
+        isRareAchievement ? "steel grey orthorhombic" : "dull steel"
+    }
+
+    var achievementMidgardPlusThreshold: Int {
+        switch category {
+        case .mastery: return 65000000
+        case .streak: return 26000000
+        case .score: return 60000000
+        case .games: return 6500000
+        }
+    }
 }
