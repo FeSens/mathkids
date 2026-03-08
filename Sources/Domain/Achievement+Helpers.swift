@@ -30,4 +30,24 @@ extension Achievement {
     var shareText: String {
         "I earned the \(title) achievement! \(emoji)"
     }
+
+    var requirementSummary: String {
+        description
+    }
+
+    var categoryLabel: String {
+        "\(category.emoji) \(category.displayName)"
+    }
+
+    var isEarlyGame: Bool {
+        category == .games && !isRareAchievement
+    }
+
+    var rewardText: String {
+        "+\(pointValue) pts"
+    }
+
+    var displayTitle: String {
+        "\(emoji) \(title)"
+    }
 }

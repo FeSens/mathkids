@@ -14047,6 +14047,86 @@
         "Verify contains achievement name"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-804",
+      "name": "Achievement.requirementSummary",
+      "description": "Short summary of what's needed to earn this achievement",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get requirementSummary",
+        "Verify it matches description"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-805",
+      "name": "Achievement.categoryLabel",
+      "description": "Formatted category label with emoji",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get categoryLabel",
+        "Verify contains emoji and name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-806",
+      "name": "Achievement.isEarlyGame",
+      "description": "Boolean true for achievements earnable in first few games",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Check first_game achievement",
+        "Verify isEarlyGame is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-807",
+      "name": "Achievement.rewardText",
+      "description": "Text describing the reward for earning this achievement",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get rewardText",
+        "Verify contains point value"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-808",
+      "name": "Achievement.displayTitle",
+      "description": "Display title with emoji prefix",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get displayTitle",
+        "Verify contains emoji and title"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
