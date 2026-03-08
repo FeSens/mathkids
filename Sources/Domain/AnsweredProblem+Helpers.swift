@@ -73,4 +73,9 @@ extension AnsweredProblem {
     var wasClose: Bool {
         !isCorrect && answerDifference <= 2
     }
+
+    var wasOverTime: Bool {
+        guard let time = timeTaken else { return false }
+        return time > 10.0
+    }
 }

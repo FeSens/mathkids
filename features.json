@@ -14607,6 +14607,86 @@
         "Verify wasClose is true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-839",
+      "name": "isNearPerfect",
+      "description": "GameSession computed property returning true when accuracy >= 90%",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 9/10 correct -> isNearPerfect true",
+        "Create session with 7/10 correct -> isNearPerfect false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-840",
+      "name": "questionNumberText",
+      "description": "GameSession computed property returning formatted question number like Question X of Y",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session and answer 3 -> questionNumberText contains 4",
+        "Fresh session -> questionNumberText contains 1"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-841",
+      "name": "wasOverTime",
+      "description": "AnsweredProblem computed property returning true when timeTaken exceeds 10 seconds",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create answered problem with timeTaken 12 -> wasOverTime true",
+        "Create answered problem with timeTaken 5 -> wasOverTime false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-842",
+      "name": "operandGap",
+      "description": "MathProblem computed property returning absolute difference between operands",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 8+3 -> operandGap is 5",
+        "Problem 4+4 -> operandGap is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-843",
+      "name": "isPassing",
+      "description": "GameSession computed property returning true when accuracy is above 60%",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 7/10 correct -> isPassing true",
+        "Create session with 3/10 correct -> isPassing false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

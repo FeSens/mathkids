@@ -263,4 +263,16 @@ extension GameSession {
         if acc >= 80 { return "comfortable" }
         return "moderate"
     }
+
+    var isNearPerfect: Bool {
+        totalAnswered >= 1 && accuracy >= 90
+    }
+
+    var questionNumberText: String {
+        "Question \(totalAnswered + 1) of \(difficulty.estimatedProblemsPerGame)"
+    }
+
+    var isPassing: Bool {
+        totalAnswered >= 1 && accuracy > 60
+    }
 }
