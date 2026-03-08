@@ -22034,6 +22034,96 @@
         "Check isDoublePayout is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1299",
+      "name": "answeredProblemDefenseBonus",
+      "description": "Bonus defense points for correct answers on hard problems",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct divide answer",
+        "Check bonus > 0",
+        "Create correct add answer",
+        "Check bonus is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1300",
+      "name": "answeredProblemExperiencePoints",
+      "description": "XP earned combining all bonuses",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast multiply answer",
+        "Check XP > 10",
+        "Create wrong answer",
+        "Check XP is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1301",
+      "name": "answeredProblemIsClutchAnswer",
+      "description": "Whether this was a clutch answer (correct on hard with time pressure)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct divide answer in 0.8s",
+        "Check isClutch is true",
+        "Create correct add answer in 5s",
+        "Check isClutch is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1302",
+      "name": "answeredProblemMedalType",
+      "description": "Medal type: diamond, gold, silver, bronze, none",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant hard answer",
+        "Check medal is diamond",
+        "Create wrong answer",
+        "Check medal is none"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1303",
+      "name": "answeredProblemPointsBreakdown",
+      "description": "String showing points breakdown like Base: 10, Speed: 5, Total: 15",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check breakdown contains Base and Total",
+        "Create wrong answer",
+        "Check breakdown shows 0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

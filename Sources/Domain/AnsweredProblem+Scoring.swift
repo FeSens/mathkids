@@ -177,4 +177,35 @@ extension AnsweredProblem {
     var answeredProblemIsDoublePayout: Bool {
         isCorrect && !problem.operation.isPrimaryOperation && (timeTaken ?? Double.infinity) < 2.0
     }
+
+    var answeredProblemDefenseBonus: Int {
+        guard isCorrect else { return 0 }
+        let weight = problem.operation.difficultyWeight
+        return weight > 2 ? weight * 2 : 0
+    }
+
+    var answeredProblemExperiencePoints: Int {
+        guard isCorrect else { return 0 }
+        return answeredProblemRankPoints + answeredProblemSpeedBonus + answeredProblemDifficultyBonus
+    }
+
+    var answeredProblemIsClutchAnswer: Bool {
+        isCorrect && !problem.operation.isPrimaryOperation && (timeTaken ?? Double.infinity) < 1.0
+    }
+
+    var answeredProblemMedalType: String {
+        guard isCorrect else { return "none" }
+        guard let time = timeTaken else { return "bronze" }
+        if time < 1.0 && !problem.operation.isPrimaryOperation { return "diamond" }
+        if time < 2.0 { return "gold" }
+        if time < 5.0 { return "silver" }
+        return "bronze"
+    }
+
+    var answeredProblemPointsBreakdown: String {
+        guard isCorrect else { return "Total: 0" }
+        let base = problem.operation.difficultyWeight * 10
+        let speed = answeredProblemSpeedBonus
+        return "Base: \(base), Speed: \(speed), Total: \(base + speed)"
+    }
 }
