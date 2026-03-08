@@ -19571,6 +19571,81 @@
         "correct answer contains Correct"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1159",
+      "name": "answeredProblemCorrectionText",
+      "description": "Correction text showing right answer",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "wrong answer shows correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1160",
+      "name": "answeredProblemIsQuick",
+      "description": "Whether answered in under 3 seconds",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "1.5s is quick, 5.0s is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1161",
+      "name": "answeredProblemShareText",
+      "description": "Text for sharing the result",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "correct contains Got it right"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1162",
+      "name": "answeredProblemAnswerDelta",
+      "description": "Difference between user answer and correct",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "correct answer has delta 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1163",
+      "name": "answeredProblemResultLabel",
+      "description": "Label showing Correct or Incorrect",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "correct returns Correct, wrong returns Incorrect"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
