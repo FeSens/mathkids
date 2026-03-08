@@ -31109,6 +31109,76 @@
         "Create games achievement",
         "Verify isAchievementLocked is false"
       ]
+    },
+    {
+      "id": "logic-1889",
+      "name": "achievementCardScrollStyle",
+      "description": "Scroll decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify scroll is ornate",
+        "Create common achievement",
+        "Verify scroll is plain"
+      ]
+    },
+    {
+      "id": "logic-1890",
+      "name": "achievementIsOutcomeBased",
+      "description": "Whether achievement is based on outcomes (score or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create score achievement",
+        "Verify isOutcomeBased is true",
+        "Create streak achievement",
+        "Verify isOutcomeBased is false"
+      ]
+    },
+    {
+      "id": "logic-1891",
+      "name": "achievementCardVaultLabel",
+      "description": "Vault label text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify vault label text",
+        "Create games achievement",
+        "Verify vault label text"
+      ]
+    },
+    {
+      "id": "logic-1892",
+      "name": "achievementCardFiligreeStyle",
+      "description": "Filigree decoration for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify filigree is intricate",
+        "Create common achievement",
+        "Verify filigree is minimal"
+      ]
+    },
+    {
+      "id": "logic-1893",
+      "name": "achievementRequiredPerfectGames",
+      "description": "Number of perfect games required based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiredPerfectGames is high",
+        "Create games achievement",
+        "Verify requiredPerfectGames is low"
+      ]
     }
   ],
   "_schema": {

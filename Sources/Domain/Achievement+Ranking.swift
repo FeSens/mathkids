@@ -90,4 +90,34 @@ extension Achievement {
     var achievementIsAchievementLocked: Bool {
         category == .mastery
     }
+
+    var achievementCardScrollStyle: String {
+        isRareAchievement ? "ornate" : "plain"
+    }
+
+    var achievementIsOutcomeBased: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardVaultLabel: String {
+        switch category {
+        case .mastery: return "Master Vault"
+        case .streak: return "Streak Vault"
+        case .score: return "Score Vault"
+        case .games: return "Starter Vault"
+        }
+    }
+
+    var achievementCardFiligreeStyle: String {
+        isRareAchievement ? "intricate" : "minimal"
+    }
+
+    var achievementRequiredPerfectGames: Int {
+        switch category {
+        case .mastery: return 20
+        case .streak: return 5
+        case .score: return 10
+        case .games: return 0
+        }
+    }
 }
