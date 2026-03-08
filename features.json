@@ -19496,6 +19496,81 @@
         "3x5 is multiply by five, 3x4 is not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1154",
+      "name": "answeredProblemFeedbackEmoji",
+      "description": "Emoji feedback for answered problem",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "correct returns \u2705, wrong returns \u274c"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1155",
+      "name": "answeredProblemScoreContribution",
+      "description": "Score contribution of the answer",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "correct contributes positive, wrong contributes 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1156",
+      "name": "answeredProblemDisplayText",
+      "description": "Display text showing problem and user answer",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains user answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1157",
+      "name": "answeredProblemTimeTakenLabel",
+      "description": "Formatted time taken label",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains s for seconds"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1158",
+      "name": "answeredProblemAccessibilityResult",
+      "description": "Accessibility result description",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "correct answer contains Correct"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
