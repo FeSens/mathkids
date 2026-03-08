@@ -26669,6 +26669,81 @@
         "Create any achievement",
         "Verify expirationDays is 0"
       ]
+    },
+    {
+      "id": "logic-1599",
+      "title": "achievementMinimumScore",
+      "description": "Return minimum score needed",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create score achievement",
+        "Verify minimumScore >= 50",
+        "Create games achievement",
+        "Verify minimumScore == 0"
+      ]
+    },
+    {
+      "id": "logic-1600",
+      "title": "achievementBadgeOverlay",
+      "description": "Return short badge text for display",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify badge text is RARE",
+        "Create common achievement",
+        "Verify badge text is empty"
+      ]
+    },
+    {
+      "id": "logic-1601",
+      "title": "achievementRankNumber",
+      "description": "Return numeric rank for ordering",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify rank >= 8",
+        "Create games achievement",
+        "Verify rank <= 3"
+      ]
+    },
+    {
+      "id": "logic-1602",
+      "title": "achievementBackdropName",
+      "description": "Return backdrop asset name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify backdrop contains mastery",
+        "Create games achievement",
+        "Verify backdrop contains games"
+      ]
+    },
+    {
+      "id": "logic-1603",
+      "title": "achievementTooltipPosition",
+      "description": "Return tooltip position",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify position is top",
+        "Create common achievement",
+        "Verify position is bottom"
+      ]
     }
   ],
   "_schema": {

@@ -125,4 +125,29 @@ extension Achievement {
     var achievementExpirationDays: Int {
         0
     }
+
+    var achievementMinimumScore: Int {
+        category == .score ? 50 : 0
+    }
+
+    var achievementBadgeOverlay: String {
+        isRareAchievement ? "RARE" : ""
+    }
+
+    var achievementRankNumber: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 7
+        case .score: return 5
+        case .games: return 2
+        }
+    }
+
+    var achievementBackdropName: String {
+        "backdrop_\(category.displayName.lowercased().replacingOccurrences(of: " ", with: "_"))"
+    }
+
+    var achievementTooltipPosition: String {
+        isRareAchievement ? "top" : "bottom"
+    }
 }
