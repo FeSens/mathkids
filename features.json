@@ -2041,6 +2041,102 @@
         "Sources/Features/Results/ResultsViewModel.swift",
         "Sources/Features/Results/ResultsView.swift"
       ]
+    },
+    {
+      "id": "ui-094",
+      "title": "Pause overlay with blurred background",
+      "description": "When game is paused, show a blurred overlay hiding the problem to prevent cheating",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-027"
+      ],
+      "test_steps": [
+        "Start a timed game",
+        "Tap pause button",
+        "Problem is hidden behind blur overlay",
+        "Resume button visible",
+        "Tap resume to continue"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-095",
+      "title": "Animated XP bar on results screen",
+      "description": "Show an animated progress bar filling up as XP is earned on the results screen",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Complete a game",
+        "Results screen shows XP progress bar that fills up",
+        "Bar shows current XP / next level XP"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-096",
+      "title": "Operation filter icons on home screen",
+      "description": "Show which operations are enabled with colored icons on the home screen difficulty cards",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Home screen shows operation icons (+ - x \u00f7)",
+        "Enabled operations have colored icons",
+        "Icons match the operations selected in settings"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-097",
+      "title": "Streak milestone celebration text",
+      "description": "Show milestone text at streak 5, 10, 15, 20 with increasing enthusiasm",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Get 5 streak - shows On Fire!",
+        "Get 10 streak - shows Unstoppable!",
+        "Get 15 streak - shows LEGENDARY!",
+        "Text appears briefly then fades"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift",
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-098",
+      "title": "Problem count goal indicator",
+      "description": "Show a mini progress ring around the problem counter showing progress toward a goal (e.g., 20 problems)",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Start a game",
+        "Problem counter shows progress ring filling up",
+        "Ring completes after answering many problems"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
     }
   ],
   "_schema": {

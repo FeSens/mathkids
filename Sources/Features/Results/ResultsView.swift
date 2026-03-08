@@ -228,6 +228,24 @@ struct ResultsView: View {
             }
             .accessibilityIdentifier("xpEarned")
 
+            VStack(spacing: 4) {
+                GeometryReader { geo in
+                    ZStack(alignment: .leading) {
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(Color(.systemGray5))
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(.purple)
+                            .frame(width: geo.size.width * viewModel.xpProgressFraction)
+                    }
+                }
+                .frame(height: 8)
+                Text(viewModel.xpProgressLabel)
+                    .font(.system(size: 11, weight: .medium, design: .rounded))
+                    .foregroundStyle(.secondary)
+            }
+            .frame(maxWidth: 200)
+            .accessibilityIdentifier("xpProgressBar")
+
             if viewModel.didLevelUp {
                 HStack(spacing: 6) {
                     Image(systemName: "arrow.up.circle.fill")
@@ -248,43 +266,21 @@ struct ResultsView: View {
 
     private var buttonsSection: some View {
         VStack(spacing: 12) {
-            Button {
-                onPlayAgain()
-            } label: {
+            Button { onPlayAgain() } label: {
                 Text("Play Again")
                     .font(.system(size: 22, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .background(
-                        RoundedRectangle(cornerRadius: 18)
-                            .fill(
-                                LinearGradient(
-                                    colors: [.blue, .purple],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                    )
+                    .frame(maxWidth: .infinity).frame(height: 56)
+                    .background(RoundedRectangle(cornerRadius: 18).fill(LinearGradient(colors: [.blue, .purple], startPoint: .leading, endPoint: .trailing)))
             }
             .accessibilityIdentifier("playAgainButton")
-
             HStack(spacing: 16) {
-                Button {
-                    onGoHome()
-                } label: {
-                    Text("Home")
-                        .font(.system(size: 18, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.primary)
-                }
-                .accessibilityIdentifier("homeButton")
-
+                Button { onGoHome() } label: {
+                    Text("Home").font(.system(size: 18, weight: .semibold, design: .rounded)).foregroundStyle(.primary)
+                }.accessibilityIdentifier("homeButton")
                 ShareLink(item: viewModel.shareText) {
-                    Label("Share", systemImage: "square.and.arrow.up")
-                        .font(.system(size: 18, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.blue)
-                }
-                .accessibilityIdentifier("shareButton")
+                    Label("Share", systemImage: "square.and.arrow.up").font(.system(size: 18, weight: .semibold, design: .rounded)).foregroundStyle(.blue)
+                }.accessibilityIdentifier("shareButton")
             }
         }
         .padding(.horizontal)

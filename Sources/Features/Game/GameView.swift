@@ -31,10 +31,7 @@ struct GameView: View {
                 CharacterView(mood: viewModel.characterMood)
 
                 if viewModel.isPaused {
-                    Text("PAUSED")
-                        .font(.system(size: 36, weight: .bold, design: .rounded))
-                        .foregroundStyle(.secondary)
-                        .accessibilityIdentifier("pausedLabel")
+                    PauseOverlay { viewModel.togglePause() }
                 } else {
                     ZStack {
                         problemDisplay
@@ -88,11 +85,15 @@ struct GameView: View {
                 }
 
                 if let emoji = reactionEmoji {
-                    Text(emoji)
-                        .font(.system(size: 36))
-                        .offset(y: emojiOffset)
-                        .opacity(emojiOpacity)
-                        .accessibilityIdentifier("reactionEmoji")
+                    Text(emoji).font(.system(size: 36)).offset(y: emojiOffset).opacity(emojiOpacity).accessibilityIdentifier("reactionEmoji")
+                }
+
+                if let milestone = viewModel.streakMilestoneMessage {
+                    Text(milestone)
+                        .font(.system(size: 28, weight: .black, design: .rounded))
+                        .foregroundStyle(.orange)
+                        .transition(.scale.combined(with: .opacity))
+                        .accessibilityIdentifier("streakMilestone")
                 }
 
                 if let message = viewModel.motivationalMessage {

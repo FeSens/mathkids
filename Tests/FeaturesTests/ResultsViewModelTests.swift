@@ -232,4 +232,21 @@ struct ResultsViewModelTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.difficultyRecommendation == .stayHere)
     }
+
+    // MARK: - XP Progress (ui-095)
+
+    @Test("XP progress returns a value between 0 and 1")
+    func xpProgress() {
+        let session = makeSession(correct: 5, total: 10)
+        let stats = PlayerStats()
+        let vm = ResultsViewModel(session: session, previousBestScore: 0, stats: stats)
+        #expect(vm.xpProgressFraction >= 0.0 && vm.xpProgressFraction <= 1.0)
+    }
+
+    @Test("XP progress text shows current/next format")
+    func xpProgressText() {
+        let session = makeSession(correct: 5, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.xpProgressLabel.contains("/"))
+    }
 }

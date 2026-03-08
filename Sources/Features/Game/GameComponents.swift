@@ -45,6 +45,28 @@ struct MiniParticleBurst: View {
     }
 }
 
+struct PauseOverlay: View {
+    let onResume: () -> Void
+
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("PAUSED")
+                .font(.system(size: 36, weight: .bold, design: .rounded))
+                .foregroundStyle(.secondary)
+            Button(action: onResume) {
+                Text("Resume")
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .foregroundStyle(.blue)
+            }
+            .accessibilityIdentifier("resumeButton")
+        }
+        .frame(maxWidth: .infinity, maxHeight: 200)
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .accessibilityIdentifier("pausedLabel")
+    }
+}
+
 struct NumberButton: View {
     let label: String
     var color: Color = .blue

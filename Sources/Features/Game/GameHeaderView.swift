@@ -24,17 +24,29 @@ struct GameHeaderView: View {
                     .accessibilityIdentifier("scoreLabel")
                     .accessibilityLabel("Score: \(viewModel.score) points")
 
-                VStack(spacing: 1) {
-                    Text("#\(viewModel.problemNumber)")
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.secondary)
-                    if viewModel.engine.totalAnswered > 0 {
-                        Text("\(viewModel.engine.totalCorrect)/\(viewModel.engine.totalAnswered)")
-                            .font(.system(size: 10, weight: .medium, design: .rounded))
-                            .foregroundStyle(.green)
+                ZStack {
+                    Circle()
+                        .stroke(Color.gray.opacity(0.2), lineWidth: 3)
+                        .frame(width: 36, height: 36)
+                    Circle()
+                        .trim(from: 0, to: viewModel.problemGoalProgress)
+                        .stroke(Color.blue, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                        .frame(width: 36, height: 36)
+                        .rotationEffect(.degrees(-90))
+                        .animation(.easeInOut(duration: 0.3), value: viewModel.problemGoalProgress)
+                    VStack(spacing: 0) {
+                        Text("#\(viewModel.problemNumber)")
+                            .font(.system(size: 11, weight: .semibold, design: .rounded))
+                            .foregroundStyle(.secondary)
                     }
                 }
                 .accessibilityIdentifier("problemCounter")
+
+                if viewModel.engine.totalAnswered > 0 {
+                    Text("\(viewModel.engine.totalCorrect)/\(viewModel.engine.totalAnswered)")
+                        .font(.system(size: 10, weight: .medium, design: .rounded))
+                        .foregroundStyle(.green)
+                }
 
                 Spacer()
 

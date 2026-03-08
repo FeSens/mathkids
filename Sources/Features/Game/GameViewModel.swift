@@ -212,6 +212,25 @@ final class GameViewModel {
         return timeRemaining > 0 && timeRemaining <= 5
     }
 
+    var problemGoalProgress: Double {
+        let goal = 20.0
+        return min(Double(problemNumber - 1) / goal, 1.0)
+    }
+
+    static func streakMilestoneText(for streak: Int) -> String? {
+        switch streak {
+        case 5: return "On Fire!"
+        case 10: return "Unstoppable!"
+        case 15: return "LEGENDARY!"
+        case 20: return "GOD MODE!"
+        default: return nil
+        }
+    }
+
+    var streakMilestoneMessage: String? {
+        Self.streakMilestoneText(for: engine.currentStreak)
+    }
+
     func clearAnswer() {
         if !answerText.isEmpty {
             HapticService.buttonTap()

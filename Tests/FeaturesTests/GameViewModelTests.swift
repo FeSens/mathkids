@@ -445,4 +445,49 @@ struct GameViewModelTests {
         vm.skipProblem()
         #expect(vm.showSkipIndicator == true)
     }
+
+    // MARK: - Streak Milestone Text (ui-097)
+
+    @Test("Streak milestone text at 5")
+    @MainActor
+    func streakMilestoneAt5() {
+        #expect(GameViewModel.streakMilestoneText(for: 5) == "On Fire!")
+    }
+
+    @Test("Streak milestone text at 10")
+    @MainActor
+    func streakMilestoneAt10() {
+        #expect(GameViewModel.streakMilestoneText(for: 10) == "Unstoppable!")
+    }
+
+    @Test("Streak milestone text at 15")
+    @MainActor
+    func streakMilestoneAt15() {
+        #expect(GameViewModel.streakMilestoneText(for: 15) == "LEGENDARY!")
+    }
+
+    @Test("No milestone text for non-milestone streak")
+    @MainActor
+    func noMilestoneTextAt4() {
+        #expect(GameViewModel.streakMilestoneText(for: 4) == nil)
+    }
+
+    // MARK: - Problem Count Goal (ui-098)
+
+    @Test("Problem goal progress starts at 0")
+    @MainActor
+    func problemGoalStartsAt0() {
+        let vm = GameViewModel(difficulty: .easy)
+        #expect(vm.problemGoalProgress == 0.0)
+    }
+
+    @Test("Problem goal progress increases with answers")
+    @MainActor
+    func problemGoalIncreases() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.countdownFinished()
+        vm.appendDigit(1)
+        vm.submitAnswer()
+        #expect(vm.problemGoalProgress > 0.0)
+    }
 }

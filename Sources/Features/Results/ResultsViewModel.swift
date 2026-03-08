@@ -125,6 +125,30 @@ final class ResultsViewModel {
         return .stayHere
     }
 
+    var xpProgressFraction: Double {
+        let totalXP: Int
+        if let _ = previousBestScore as Int? {
+            // Use newLevel to calculate approximate XP
+            totalXP = xpEarned
+        } else {
+            totalXP = xpEarned
+        }
+        let currentLevel = LevelSystem.level(for: totalXP)
+        guard currentLevel < LevelSystem.thresholds.count else { return 1.0 }
+        let currentThreshold = LevelSystem.thresholds[currentLevel - 1]
+        let nextThreshold = LevelSystem.thresholds[currentLevel]
+        let range = nextThreshold - currentThreshold
+        guard range > 0 else { return 1.0 }
+        return Double(totalXP - currentThreshold) / Double(range)
+    }
+
+    var xpProgressLabel: String {
+        let currentLevel = LevelSystem.level(for: xpEarned)
+        guard currentLevel < LevelSystem.thresholds.count else { return "MAX" }
+        let nextThreshold = LevelSystem.thresholds[currentLevel]
+        return "\(xpEarned)/\(nextThreshold) XP"
+    }
+
     var recommendationText: String? {
         switch difficultyRecommendation {
         case .tryHarder:
