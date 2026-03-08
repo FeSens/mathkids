@@ -84,6 +84,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         case .divide: "divided by"
         }
     }
+    static func pairDescription(_ a: Operation, _ b: Operation) -> String {
+        if a == b { return a.displayName }
+        return "\(a.displayName) & \(b.displayName)"
+    }
 }
 
 struct MathProblem: Equatable, Sendable {
@@ -280,18 +284,5 @@ extension MathProblem {
         case .divide:
             return "How many groups of \(operand2) fit in \(operand1)?"
         }
-    }
-}
-
-struct AnsweredProblem: Identifiable, Sendable {
-    let id = UUID()
-    let problem: MathProblem
-    let userAnswer: Int
-    var timeTaken: Double?
-    var isCorrect: Bool { problem.isCorrect(answer: userAnswer) }
-
-    var timeLabel: String? {
-        guard let time = timeTaken, time > 0 else { return nil }
-        return String(format: "%.1fs", time)
     }
 }

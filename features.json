@@ -6653,6 +6653,91 @@
         "Verify hard returns 2.0"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-349",
+      "title": "GameSession correctAnswerRate per minute",
+      "description": "GameSession should compute correctAnswersPerMinute showing how many correct answers the player gets per minute of play",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session with 6 correct out of 10 and 30 seconds played",
+        "Verify correctAnswersPerMinute returns 12.0",
+        "Verify returns 0 when no time played"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-350",
+      "title": "Operation pairDescription for two operations",
+      "description": "Operation should have a static pairDescription method that returns a friendly name for operation pairs like add+subtract -> Addition & Subtraction",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify pairDescription for add and subtract",
+        "Verify pairDescription for multiply and divide",
+        "Verify same operation returns single name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-351",
+      "title": "LevelSystem levelUpMessage for celebrations",
+      "description": "LevelSystem should provide a levelUpMessage(from:to:) that returns a celebratory string when a player levels up",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify message contains old and new level names",
+        "Verify message for level 1 to 2",
+        "Verify message for reaching max level"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-352",
+      "title": "GameSession longestCorrectRun from answer history",
+      "description": "GameSession should track longestCorrectRun which is the same as bestStreak but accessible as a named property for clarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session with pattern correct-correct-wrong-correct-correct-correct",
+        "Verify longestCorrectRun returns 3",
+        "Verify returns 0 with no answers"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-353",
+      "title": "DifficultyLevel xpPerCorrectAnswer based on multiplier",
+      "description": "DifficultyLevel should compute xpPerCorrectAnswer using base XP and difficulty multiplier",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns 10 (base 10 * 1.0)",
+        "Verify medium returns 15 (base 10 * 1.5)",
+        "Verify hard returns 20 (base 10 * 2.0)"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

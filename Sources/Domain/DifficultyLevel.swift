@@ -126,6 +126,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operationCount) operations | 1-\(operandRange.upperBound) | \(timeLimitSeconds)s"
     }
 
+    var xpPerCorrectAnswer: Int {
+        Int(Double(LevelSystem.baseXPPerAnswer) * difficultyMultiplier)
+    }
+
     var difficultyMultiplier: Double {
         switch self {
         case .easy: 1.0
