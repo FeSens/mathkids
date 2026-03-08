@@ -85,4 +85,24 @@ extension Achievement {
     var achievementMaxRewardMultiplier: Int {
         isRareAchievement ? 5 : 1
     }
+
+    var achievementTotalXp: Int {
+        achievementXpValue * achievementBonusMultiplier
+    }
+
+    var achievementDisplayRank: String {
+        "#\(achievementRankNumber)"
+    }
+
+    var achievementIsPopular: Bool {
+        category == .games || category == .score
+    }
+
+    var achievementCardBorderRadius: Int {
+        isRareAchievement ? 16 : 8
+    }
+
+    var achievementRewardGemsLabel: String {
+        "\(achievementGemValue) gems"
+    }
 }

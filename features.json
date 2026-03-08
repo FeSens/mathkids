@@ -27316,6 +27316,79 @@
         "Create common achievement",
         "Verify multiplier == 1"
       ]
+    },
+    {
+      "id": "logic-1644",
+      "title": "achievementTotalXp",
+      "description": "Return total XP including bonuses",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify totalXp is high",
+        "Create common achievement",
+        "Verify totalXp is low"
+      ]
+    },
+    {
+      "id": "logic-1645",
+      "title": "achievementDisplayRank",
+      "description": "Return display rank string",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify rank contains number",
+        "Create games achievement",
+        "Verify rank contains number"
+      ]
+    },
+    {
+      "id": "logic-1646",
+      "title": "achievementIsPopular",
+      "description": "Return whether achievement is popular",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create games achievement",
+        "Verify isPopular is true",
+        "Create mastery achievement",
+        "Verify isPopular is false"
+      ]
+    },
+    {
+      "id": "logic-1647",
+      "title": "achievementCardBorderRadius",
+      "description": "Return card border radius",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify radius is 16",
+        "Create common achievement",
+        "Verify radius is 8"
+      ]
+    },
+    {
+      "id": "logic-1648",
+      "title": "achievementRewardGemsLabel",
+      "description": "Return formatted gems reward label",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify label contains gems"
+      ]
     }
   ],
   "_schema": {
