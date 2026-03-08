@@ -106,6 +106,10 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var scoreBreakdownText: String {
+        "\(session.score) + \(session.timeBonus) bonus = \(session.finalScoreWithTimeBonus) pts"
+    }
+
     var streakSummaryText: String {
         "Best streak: \(bestStreak)"
     }

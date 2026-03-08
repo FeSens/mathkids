@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var selectedOperationsEmojis: String {
+        selectedOperations.sorted(by: { $0.rawValue < $1.rawValue }).map(\.emoji).joined()
+    }
+
     var quickStatsSummary: String {
         guard totalSolved > 0 else {
             return "Ready to start your math journey!"

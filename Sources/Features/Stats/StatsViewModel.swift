@@ -150,6 +150,10 @@ final class StatsViewModel {
         gamesPlayed == 1 ? "1 game" : "\(gamesPlayed) games"
     }
 
+    var averageAccuracyText: String {
+        "\(Int(accuracy))%"
+    }
+
     var accuracyGrade: String {
         if accuracy >= 95 { return "A+" }
         if accuracy >= 90 { return "A" }

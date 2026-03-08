@@ -10045,6 +10045,86 @@
         "Verify 3-5 returns 8"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-554",
+      "name": "HomeViewModel.selectedOperationsEmojis",
+      "description": "Returns emojis for all selected operations joined",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select add and multiply",
+        "Verify emojis string contains both operation emojis"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-555",
+      "name": "StatsViewModel.averageAccuracyText",
+      "description": "Formatted average accuracy as percentage string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set accuracy to 85.5",
+        "Verify returns 85%"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-556",
+      "name": "ResultsViewModel.scoreBreakdownText",
+      "description": "Shows base score plus time bonus breakdown",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session with score",
+        "Verify breakdown text format"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-557",
+      "name": "GameSession.isHalfwayDone",
+      "description": "Returns true when more than half the time has elapsed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session",
+        "Check isHalfwayDone based on time"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-558",
+      "name": "Operation.isPairOperation",
+      "description": "Returns true for add/multiply (commutative operations)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Check add isPairOperation is true",
+        "Check subtract isPairOperation is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

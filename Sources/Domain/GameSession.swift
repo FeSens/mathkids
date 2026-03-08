@@ -27,6 +27,10 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var isHalfwayDone: Bool {
+        totalTimePlayed > difficulty.timeLimitSeconds / 2
+    }
+
     var accuracy: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalCorrect) / Double(totalAnswered) * 100

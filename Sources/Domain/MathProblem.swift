@@ -60,6 +60,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var isPairOperation: Bool {
+        self == .add || self == .multiply
+    }
+
     var isCommutative: Bool {
         switch self {
         case .add, .multiply: true
