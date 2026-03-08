@@ -197,4 +197,20 @@ extension MathProblem {
     var isSymmetric: Bool {
         operand1 == operand2
     }
+
+    var isHardOperation: Bool {
+        !operation.isPrimaryOperation
+    }
+
+    var operandSumIsEven: Bool {
+        (operand1 + operand2) % 2 == 0
+    }
+
+    var problemLabel: String {
+        "\(operation.displayName): \(operand1) \(operation.rawValue) \(operand2)"
+    }
+
+    var isLargeOperandGap: Bool {
+        operandGap > 5
+    }
 }

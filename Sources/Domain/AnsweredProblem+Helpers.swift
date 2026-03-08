@@ -136,4 +136,8 @@ extension AnsweredProblem {
     var correctAnswerIsEven: Bool {
         problem.correctAnswer % 2 == 0
     }
+
+    var userAnswerIsEven: Bool {
+        userAnswer % 2 == 0
+    }
 }

@@ -15170,6 +15170,86 @@
         "Problem 3+4=7 -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-874",
+      "name": "userAnswerIsEven",
+      "description": "AnsweredProblem computed property returning true when user answer is even",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answer 8 -> true",
+        "Answer 7 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-875",
+      "name": "isHardOperation",
+      "description": "MathProblem computed property returning true for multiply/divide",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Multiply problem -> true",
+        "Add problem -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-876",
+      "name": "operandSumIsEven",
+      "description": "MathProblem computed property returning true when sum of operands is even",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 3+5 (sum=8) -> true",
+        "Problem 3+4 (sum=7) -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-877",
+      "name": "problemLabel",
+      "description": "MathProblem computed property returning short label like Add or Mul",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add problem -> contains operation info",
+        "Multiply problem -> contains operation info"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-878",
+      "name": "isLargeOperandGap",
+      "description": "MathProblem computed property returning true when operand gap exceeds 5",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 12+3 (gap=9) -> true",
+        "Problem 4+5 (gap=1) -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
