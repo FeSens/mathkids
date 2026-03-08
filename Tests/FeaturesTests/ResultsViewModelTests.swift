@@ -345,6 +345,23 @@ struct ResultsViewModelTests {
 
     // MARK: - Operation Accuracy Breakdown (logic-227)
 
+    // MARK: - Fastest Answer Text (logic-242)
+
+    @Test("Fastest answer text nil by default")
+    func fastestAnswerTextNil() {
+        let session = makeSession(correct: 1, total: 1)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.fastestAnswerTime == nil) // no engine data
+    }
+
+    @Test("Fastest answer text can be set")
+    func fastestAnswerTextSet() {
+        let session = makeSession(correct: 1, total: 1)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        vm.fastestAnswerTime = "1.5s"
+        #expect(vm.fastestAnswerTime == "1.5s")
+    }
+
     @Test("Operation accuracy from problem history")
     func operationAccuracyBreakdown() {
         let session = makeSession(correct: 3, total: 4)

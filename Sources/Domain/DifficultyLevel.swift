@@ -73,6 +73,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var operandDescription: String {
+        "\(operandRange.lowerBound) to \(operandRange.upperBound)"
+    }
+
     var briefDescription: String {
         let ops = allowedOperations.map(\.rawValue).joined(separator: " ")
         return "1-\(operandRange.upperBound) \(ops) \(timeLimitSeconds)s"

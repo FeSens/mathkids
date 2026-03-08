@@ -4696,6 +4696,94 @@
       "files": [
         "Sources/Services/GameEngine.swift"
       ]
+    },
+    {
+      "id": "logic-239",
+      "title": "PlayerStats highest daily streak ever",
+      "description": "PlayerStats tracks the highest daily streak ever achieved separately from current",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Starts at 0",
+        "Updates when daily streak exceeds previous best",
+        "Does not decrease when streak resets"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-240",
+      "title": "GameSession wrong answer count",
+      "description": "GameSession provides totalWrong computed property for number of incorrect answers",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "After 3 correct and 2 wrong, totalWrong is 2",
+        "totalWrong equals totalAnswered - totalCorrect"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-241",
+      "title": "DifficultyLevel operand count description",
+      "description": "DifficultyLevel provides a human-readable operand range description like \"1 to 10\"",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-002"
+      ],
+      "test_steps": [
+        "easy.operandDescription returns \"1 to 10\"",
+        "medium.operandDescription returns \"1 to 20\"",
+        "hard.operandDescription returns \"1 to 50\""
+      ],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
+    },
+    {
+      "id": "logic-242",
+      "title": "ResultsViewModel fastest answer text",
+      "description": "ResultsViewModel formats fastest answer time from engine as readable string",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "When fastest time exists, shows formatted seconds",
+        "When no fastest time, returns nil"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "logic-243",
+      "title": "GameEngine problem count tracking",
+      "description": "GameEngine tracks total number of problems presented including skipped ones",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "svc-002"
+      ],
+      "test_steps": [
+        "Starts at 1 (first problem)",
+        "Increments on submit",
+        "Increments on skip"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
     }
   ],
   "_schema": {

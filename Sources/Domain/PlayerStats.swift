@@ -42,6 +42,7 @@ final class PlayerStats {
     var xpMedium: Int = 0
     var xpHard: Int = 0
     var longestSessionSeconds: Int = 0
+    var bestDailyStreak: Int = 0
 
     init() {}
 
@@ -219,6 +220,9 @@ final class PlayerStats {
         }
 
         lastPlayedDate = date
+        if dailyStreak > bestDailyStreak {
+            bestDailyStreak = dailyStreak
+        }
     }
 
     func recordGame(session: GameSession) {

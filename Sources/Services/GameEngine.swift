@@ -22,6 +22,7 @@ final class GameEngine {
     private(set) var fastestAnswerTime: Double?
     private(set) var correctCountByOperation: [Operation: Int] = [:]
     private(set) var operationFrequency: [Operation: Int] = [:]
+    private(set) var problemCount: Int = 1
 
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
@@ -116,6 +117,7 @@ final class GameEngine {
         if !session.isFinished {
             currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
             problemStartTime = Date()
+            problemCount += 1
         }
     }
 
@@ -160,6 +162,7 @@ final class GameEngine {
     func skipToNextProblem() {
         currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
         problemStartTime = Date()
+        problemCount += 1
     }
 
     func stopGame() {

@@ -87,4 +87,13 @@ struct DifficultyLevelTests {
     func easyPreviousDifficulty() {
         #expect(DifficultyLevel.easy.previousDifficulty == nil)
     }
+
+    // MARK: - Operand Description (logic-241)
+
+    @Test("Operand description for each difficulty")
+    func operandDescriptions() {
+        #expect(DifficultyLevel.easy.operandDescription == "1 to 10")
+        #expect(DifficultyLevel.medium.operandDescription == "1 to 20")
+        #expect(DifficultyLevel.hard.operandDescription == "1 to 50")
+    }
 }

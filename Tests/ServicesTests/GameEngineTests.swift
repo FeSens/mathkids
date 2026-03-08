@@ -246,4 +246,30 @@ struct GameEngineTests {
         #expect(engine.averageResponseTime != nil)
         #expect(engine.averageResponseTime! >= 0)
     }
+
+    // MARK: - Problem Count (logic-243)
+
+    @Test("Problem count starts at 1")
+    @MainActor
+    func problemCountStartsAt1() {
+        let engine = GameEngine(difficulty: .easy)
+        #expect(engine.problemCount == 1)
+    }
+
+    @Test("Problem count increments on submit")
+    @MainActor
+    func problemCountIncrementsOnSubmit() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        engine.submitAnswer(99999)
+        #expect(engine.problemCount == 2)
+    }
+
+    @Test("Problem count increments on skip")
+    @MainActor
+    func problemCountIncrementsOnSkip() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.skipToNextProblem()
+        #expect(engine.problemCount == 2)
+    }
 }

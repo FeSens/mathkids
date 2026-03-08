@@ -83,6 +83,10 @@ struct GameSession: Sendable {
         }
     }
 
+    var totalWrong: Int {
+        totalAnswered - totalCorrect
+    }
+
     var baseScore: Int {
         totalCorrect * difficulty.pointsPerCorrect
     }

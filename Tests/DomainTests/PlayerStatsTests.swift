@@ -319,8 +319,25 @@ struct PlayerStatsTests {
         stats.updateLongestSession(30)
         #expect(stats.longestSessionSeconds == 30)
         stats.updateLongestSession(20)
-        #expect(stats.longestSessionSeconds == 30) // doesn't decrease
+        #expect(stats.longestSessionSeconds == 30)
         stats.updateLongestSession(45)
         #expect(stats.longestSessionSeconds == 45)
+    }
+
+    // MARK: - Best Daily Streak (logic-239)
+
+    @Test("Best daily streak starts at 0")
+    func bestDailyStreakStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.bestDailyStreak == 0)
+    }
+
+    @Test("Best daily streak updates with updateStreak")
+    func bestDailyStreakUpdates() {
+        let stats = PlayerStats()
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: .now)!
+        stats.updateStreak(on: yesterday)
+        stats.updateStreak(on: .now)
+        #expect(stats.bestDailyStreak == 2)
     }
 }

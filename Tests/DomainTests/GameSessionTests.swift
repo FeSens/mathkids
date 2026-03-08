@@ -214,4 +214,17 @@ struct GameSessionTests {
         #expect(session.baseScore == 30)
         #expect(session.score == 38)
     }
+
+    // MARK: - Total Wrong (logic-240)
+
+    @Test("Total wrong count")
+    func totalWrongCount() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        #expect(session.totalWrong == 2)
+    }
 }
