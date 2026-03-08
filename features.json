@@ -40627,6 +40627,106 @@
         "Verify threshold <= 22000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2456",
+      "title": "achievementCardEmployiteProStyle",
+      "description": "Mineral style string for employite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify employite pro style is tin grey tabular",
+        "Create common achievement",
+        "Verify employite pro style is flat tin grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2457",
+      "title": "achievementRequiresInfinityPlus",
+      "description": "Whether achievement requires infinity plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requires infinity plus is true",
+        "Create mastery achievement",
+        "Verify requires infinity plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2458",
+      "title": "achievementCardCompactWritSealUltraPlusPlusText",
+      "description": "Compact writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Compact Writ Seal Ultra Plus Plus of the Divine",
+        "Create games achievement",
+        "Verify text is Compact Writ Seal Ultra Plus Plus of the Seeker"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2459",
+      "title": "achievementCardKobelliteProStyle",
+      "description": "Mineral style string for kobellite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify kobellite pro style is blackish grey prismatic",
+        "Create common achievement",
+        "Verify kobellite pro style is dark grey lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2460",
+      "title": "achievementBifrostPlusPlusThreshold",
+      "description": "Bifrost plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 140000000",
+        "Create games achievement",
+        "Verify threshold <= 22000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 13500000
         }
     }
+
+    var achievementCardEmployiteProStyle: String {
+        isRareAchievement ? "tin grey tabular" : "flat tin grey"
+    }
+
+    var achievementRequiresInfinityPlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardCompactWritSealUltraPlusPlusText: String {
+        switch category {
+        case .mastery: return "Compact Writ Seal Ultra Plus Plus of the Divine"
+        case .streak: return "Compact Writ Seal Ultra Plus Plus of the Sentinel"
+        case .score: return "Compact Writ Seal Ultra Plus Plus of the Sovereign"
+        case .games: return "Compact Writ Seal Ultra Plus Plus of the Seeker"
+        }
+    }
+
+    var achievementCardKobelliteProStyle: String {
+        isRareAchievement ? "blackish grey prismatic" : "dark grey lead"
+    }
+
+    var achievementBifrostPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 140000000
+        case .streak: return 56000000
+        case .score: return 135000000
+        case .games: return 14000000
+        }
+    }
 }
