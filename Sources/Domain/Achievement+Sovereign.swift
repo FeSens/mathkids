@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 3000000
         }
     }
+
+    var achievementCardVeeniteStyle: String {
+        isRareAchievement ? "lead grey prismatic" : "ashen"
+    }
+
+    var achievementRequiresHonorPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardOrdinanceWritSealUltraText: String {
+        switch category {
+        case .mastery: return "Ordinance Writ Seal Ultra of the Celestial"
+        case .streak: return "Ordinance Writ Seal Ultra of the Guardian"
+        case .score: return "Ordinance Writ Seal Ultra of the Paramount"
+        case .games: return "Ordinance Writ Seal Ultra of the Initiate"
+        }
+    }
+
+    var achievementCardKobelliteStyle: String {
+        isRareAchievement ? "blackish grey prismatic" : "dark grey"
+    }
+
+    var achievementNirvanaPlusThreshold: Int {
+        switch category {
+        case .mastery: return 35000000
+        case .streak: return 14000000
+        case .score: return 30000000
+        case .games: return 3500000
+        }
+    }
 }

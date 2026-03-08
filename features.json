@@ -38527,6 +38527,106 @@
         "Verify threshold <= 5000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2351",
+      "title": "achievementCardVeeniteStyle",
+      "description": "Mineral style string for veenite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify veenite style is lead grey prismatic",
+        "Create common achievement",
+        "Verify veenite style is ashen"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2352",
+      "title": "achievementRequiresHonorPlus",
+      "description": "Whether achievement requires honor plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires honor plus is true",
+        "Create streak achievement",
+        "Verify requires honor plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2353",
+      "title": "achievementCardOrdinanceWritSealUltraText",
+      "description": "Ordinance writ seal ultra text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Ordinance Writ Seal Ultra of the Celestial",
+        "Create games achievement",
+        "Verify text is Ordinance Writ Seal Ultra of the Initiate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2354",
+      "title": "achievementCardKobelliteStyle",
+      "description": "Mineral style string for kobellite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify kobellite style is blackish grey prismatic",
+        "Create common achievement",
+        "Verify kobellite style is dark grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2355",
+      "title": "achievementNirvanaPlusThreshold",
+      "description": "Nirvana plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 35000000",
+        "Create games achievement",
+        "Verify threshold <= 5000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
