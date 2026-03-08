@@ -29309,6 +29309,86 @@
         "Verify summaryLine contains title and category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1774",
+      "title": "Achievement Card Accent Color",
+      "description": "Returns accent color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardAccentColor by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1775",
+      "title": "Achievement Completion Stars",
+      "description": "Returns star count for completion",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify completionStars by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1776",
+      "title": "Achievement Is Challengeable",
+      "description": "Returns whether achievement can be challenged",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isChallengeable for mastery/score vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1777",
+      "title": "Achievement Card Stamp Text",
+      "description": "Returns stamp text for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardStampText by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1778",
+      "title": "Achievement Progress Emoji",
+      "description": "Returns emoji representing progress",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify progressEmoji by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
