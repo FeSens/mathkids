@@ -158,4 +158,24 @@ extension MathProblem {
     var problemPointValue: Int {
         operation.difficultyWeight * 5
     }
+
+    var problemIsTensComplement: Bool {
+        operand1 + operand2 == 10
+    }
+
+    var problemIsDouble: Bool {
+        operation == .add && operand1 == operand2
+    }
+
+    var problemQuestionMark: String {
+        "\(operand1) \(operation.rawValue) \(operand2) = ?"
+    }
+
+    var problemOperandParity: Bool {
+        operand1 % 2 == operand2 % 2
+    }
+
+    var problemNumberBondLabel: String {
+        "\(operand1) and \(operand2)"
+    }
 }

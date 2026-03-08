@@ -19196,6 +19196,81 @@
         "harder operations worth more points"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1134",
+      "name": "problemIsTensComplement",
+      "description": "Whether operands sum to 10",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3+7 is tens complement, 2+3 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1135",
+      "name": "problemIsDouble",
+      "description": "Whether problem doubles a number (add equal operands)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "4+4 is double, 3+4 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1136",
+      "name": "problemQuestionMark",
+      "description": "Problem with answer replaced by question mark",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains ? symbol"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1137",
+      "name": "problemOperandParity",
+      "description": "Whether both operands have same parity",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "2,4 same parity, 2,3 different"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1138",
+      "name": "problemNumberBondLabel",
+      "description": "Number bond format label",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains operands"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
