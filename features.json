@@ -2504,6 +2504,98 @@
       "files": [
         "Sources/Features/Home/HomeView.swift"
       ]
+    },
+    {
+      "id": "ui-119",
+      "title": "Problem history shows time per problem",
+      "description": "Each answered problem in history shows how long it took to answer",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-057"
+      ],
+      "test_steps": [
+        "Complete a game with problem history",
+        "Problem history shows time for each problem",
+        "Time displayed in seconds"
+      ],
+      "files": [
+        "Sources/Domain/AnsweredProblem.swift",
+        "Sources/Features/Results/ResultsComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-120",
+      "title": "Animated confetti color variation",
+      "description": "Confetti particles use a wider variety of bright colors",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-060"
+      ],
+      "test_steps": [
+        "Get 80%+ accuracy",
+        "Confetti shows multiple colors",
+        "Colors include blue, red, green, yellow, purple, orange"
+      ],
+      "files": [
+        "Sources/Features/Results/ConfettiView.swift"
+      ]
+    },
+    {
+      "id": "ui-121",
+      "title": "Home screen greeting based on time of day",
+      "description": "Show Good Morning/Afternoon/Evening greeting on home screen",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Open app in morning - shows Good Morning",
+        "Greeting changes based on time of day",
+        "Greeting is warm and friendly"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-122",
+      "title": "Stats total time played in human-readable format",
+      "description": "Show total time played as hours and minutes instead of just minutes",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Stats screen shows time played",
+        "60+ minutes shows as 1h 0m format",
+        "Under 60 minutes shows Xm"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-123",
+      "title": "Achievement unlock animation",
+      "description": "Achievement toast slides in with a spring animation and gold glow",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-011"
+      ],
+      "test_steps": [
+        "Earn a new achievement",
+        "Toast slides in from top with spring animation",
+        "Toast has golden glow effect"
+      ],
+      "files": [
+        "Sources/Features/Results/AchievementToast.swift"
+      ]
     }
   ],
   "_schema": {

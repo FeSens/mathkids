@@ -21,6 +21,15 @@ final class StatsViewModel {
     var favoriteOperationCount: Int = 0
     var totalTimePlayedMinutes: Int = 0
 
+    var formattedTimePlayed: String {
+        if totalTimePlayedMinutes >= 60 {
+            let hours = totalTimePlayedMinutes / 60
+            let mins = totalTimePlayedMinutes % 60
+            return "\(hours)h \(mins)m"
+        }
+        return "\(totalTimePlayedMinutes)m"
+    }
+
     enum AccuracyTrend { case improving, declining, stable }
 
     var accuracyTrend: AccuracyTrend {

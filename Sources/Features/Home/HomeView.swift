@@ -83,9 +83,10 @@ struct HomeView: View {
                 )
                 .accessibilityIdentifier("appTitle")
 
-            Text("Train your brain!")
+            Text(viewModel.greeting)
                 .font(.title3)
                 .foregroundStyle(.secondary)
+                .accessibilityIdentifier("greeting")
         }
     }
 

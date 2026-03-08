@@ -52,4 +52,20 @@ struct MathProblemTests {
         #expect(Operation.multiply.accessibilityName == "times")
         #expect(Operation.divide.accessibilityName == "divided by")
     }
+
+    // MARK: - AnsweredProblem (ui-119)
+
+    @Test("AnsweredProblem timeLabel formats correctly")
+    func answeredProblemTimeLabel() {
+        let problem = MathProblem(operand1: 2, operand2: 3, operation: .add)
+        var ap = AnsweredProblem(problem: problem, userAnswer: 5, timeTaken: 2.5)
+        #expect(ap.timeLabel == "2.5s")
+    }
+
+    @Test("AnsweredProblem timeLabel nil without time")
+    func answeredProblemTimeLabelNil() {
+        let problem = MathProblem(operand1: 2, operand2: 3, operation: .add)
+        let ap = AnsweredProblem(problem: problem, userAnswer: 5)
+        #expect(ap.timeLabel == nil)
+    }
 }

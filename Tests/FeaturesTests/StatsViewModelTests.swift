@@ -57,4 +57,20 @@ struct StatsViewModelTests {
         vm.gamesPlayed = 10
         #expect(vm.gamesMilestone == "Getting Started")
     }
+
+    // MARK: - Formatted Time (ui-122)
+
+    @Test("Formatted time under 60 minutes")
+    func formattedTimeUnder60() {
+        let vm = makeVM()
+        vm.totalTimePlayedMinutes = 45
+        #expect(vm.formattedTimePlayed == "45m")
+    }
+
+    @Test("Formatted time over 60 minutes")
+    func formattedTimeOver60() {
+        let vm = makeVM()
+        vm.totalTimePlayedMinutes = 125
+        #expect(vm.formattedTimePlayed == "2h 5m")
+    }
 }

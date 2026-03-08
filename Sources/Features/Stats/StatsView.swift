@@ -138,7 +138,7 @@ struct StatsView: View {
                 LifetimeStat(label: "Best Score", value: "\(viewModel.bestScore)", icon: "star.fill", color: .yellow)
                     .accessibilityIdentifier("lifetimeBestScore")
 
-                LifetimeStat(label: "Time Played", value: "\(viewModel.totalTimePlayedMinutes) min", icon: "clock.fill", color: .purple)
+                LifetimeStat(label: "Time Played", value: viewModel.formattedTimePlayed, icon: "clock.fill", color: .purple)
                     .accessibilityIdentifier("lifetimeTimePlayed")
             }
         }

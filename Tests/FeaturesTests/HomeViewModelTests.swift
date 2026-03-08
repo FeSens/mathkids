@@ -66,6 +66,19 @@ struct HomeViewModelTests {
         #expect(!vm.levelName.isEmpty)
         #expect(vm.levelProgress >= 0 && vm.levelProgress <= 1)
     }
+
+    // MARK: - Greeting (ui-121)
+
+    @Test("Greeting returns a valid greeting string")
+    @MainActor
+    func greetingReturnsString() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        let greeting = vm.greeting
+        let validGreetings = ["Good Morning!", "Good Afternoon!", "Good Evening!"]
+        #expect(validGreetings.contains(greeting))
+    }
 }
 
 import SwiftData

@@ -39,6 +39,13 @@ final class HomeViewModel {
         UserDefaults.standard.set(selectedOperations.map(\.rawValue), forKey: "selectedOperations")
     }
 
+    var greeting: String {
+        let hour = Calendar.current.component(.hour, from: .now)
+        if hour < 12 { return "Good Morning!" }
+        if hour < 17 { return "Good Afternoon!" }
+        return "Good Evening!"
+    }
+
     func loadStats() {
         let stats = statsService.getOrCreateStats()
         totalSolved = stats.totalSolved

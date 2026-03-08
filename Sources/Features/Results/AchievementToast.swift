@@ -33,6 +33,7 @@ struct AchievementToast: View {
                         .stroke(Color.yellow.opacity(0.3), lineWidth: 1)
                 )
         )
+        .shadow(color: .yellow.opacity(isVisible ? 0.4 : 0), radius: 12)
         .padding(.horizontal)
         .offset(y: isVisible ? 0 : -120)
         .opacity(isVisible ? 1 : 0)

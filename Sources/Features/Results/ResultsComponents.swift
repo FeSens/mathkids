@@ -42,6 +42,11 @@ struct ProblemHistorySection: View {
                     Text(entry.problem.displayText)
                         .font(.system(size: 14, design: .rounded))
                     Spacer()
+                    if let time = entry.timeLabel {
+                        Text(time)
+                            .font(.system(size: 11, design: .rounded))
+                            .foregroundStyle(.secondary)
+                    }
                     Text("= \(entry.userAnswer)")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(entry.isCorrect ? .green : .red)
