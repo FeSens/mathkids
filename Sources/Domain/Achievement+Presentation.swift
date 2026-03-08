@@ -178,4 +178,28 @@ extension Achievement {
     var achievementTextColor: String {
         progress != nil ? "primary" : "gray"
     }
+
+    var achievementSubtitleFontSize: Int {
+        switch achievementDisplaySize {
+        case "large": return 16
+        case "medium": return 13
+        default: return 11
+        }
+    }
+
+    var achievementProgressTextVisible: Bool {
+        progress != nil
+    }
+
+    var achievementCardAspectRatio: String {
+        achievementDisplaySize == "large" ? "wide" : "square"
+    }
+
+    var achievementTapEffect: String {
+        isRareAchievement ? "bounce" : "highlight"
+    }
+
+    var achievementStackingOrder: Int {
+        achievementIsPremium ? 10 : 1
+    }
 }

@@ -23741,6 +23741,85 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1404",
+      "title": "Achievement Subtitle Font Size",
+      "description": "Add achievementSubtitleFontSize returning font size for subtitle text",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementSubtitleFontSize is 16",
+        "Verify small is 11"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1405",
+      "title": "Achievement Progress Text Visible",
+      "description": "Add achievementProgressTextVisible returning true when has trackable progress",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement with progress",
+        "Verify achievementProgressTextVisible is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1406",
+      "title": "Achievement Card Aspect Ratio",
+      "description": "Add achievementCardAspectRatio returning width-to-height ratio string",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementCardAspectRatio is wide",
+        "Verify small is square"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1407",
+      "title": "Achievement Tap Effect",
+      "description": "Add achievementTapEffect returning tap feedback type",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementTapEffect is bounce",
+        "Verify common is highlight"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1408",
+      "title": "Achievement Stacking Order",
+      "description": "Add achievementStackingOrder returning z-index for overlapping cards",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementStackingOrder is 10",
+        "Verify common is 1"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {
