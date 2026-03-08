@@ -138,4 +138,33 @@ struct GameSessionBatch46Tests {
         for _ in 0..<10 { session.recordAnswer(correct: false) }
         #expect(session.netScore >= 0)
     }
+
+    // MARK: - Session Accuracy Trend (logic-330)
+
+    @Test("Stable with few answers")
+    func sessionTrendStable() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true)
+        #expect(session.sessionAccuracyTrend == .stable)
+    }
+
+    @Test("Improving when second half is better")
+    func sessionTrendImproving() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        #expect(session.sessionAccuracyTrend == .improving)
+    }
+
+    @Test("Declining when first half was better")
+    func sessionTrendDeclining() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        #expect(session.sessionAccuracyTrend == .declining)
+    }
 }

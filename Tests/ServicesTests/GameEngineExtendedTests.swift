@@ -161,4 +161,13 @@ struct GameEngineExtendedTests {
         engine.submitAnswer(engine.currentProblem.correctAnswer)
         #expect(engine.secondHalfAccuracy == engine.session.secondHalfAccuracy)
     }
+
+    // MARK: - Time On Current Problem (logic-332)
+
+    @Test("Starts at approximately 0")
+    @MainActor
+    func timeOnProblemStartsLow() {
+        let engine = GameEngine(difficulty: .easy)
+        #expect(engine.timeOnCurrentProblem < 1.0)
+    }
 }

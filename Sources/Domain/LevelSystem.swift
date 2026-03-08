@@ -85,6 +85,18 @@ enum LevelSystem {
         min(streak, 10) * 2
     }
 
+    enum LevelTier: Sendable {
+        case beginner, intermediate, advanced, expert
+    }
+
+    static func levelTier(for xp: Int) -> LevelTier {
+        let lvl = level(for: xp)
+        if lvl <= 3 { return .beginner }
+        if lvl <= 6 { return .intermediate }
+        if lvl <= 9 { return .advanced }
+        return .expert
+    }
+
     static func estimatedSessionsToNextLevel(currentXP: Int, avgXPPerSession: Int) -> Int {
         let needed = xpNeededForNextLevel(currentXP: currentXP)
         guard needed > 0, avgXPPerSession > 0 else { return 0 }

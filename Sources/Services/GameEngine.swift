@@ -28,6 +28,7 @@ final class GameEngine {
     var consecutiveWrongCount: Int { consecutiveWrong }
     var firstHalfAccuracy: Double { session.firstHalfAccuracy }
     var secondHalfAccuracy: Double { session.secondHalfAccuracy }
+    var timeOnCurrentProblem: Double { Date().timeIntervalSince(problemStartTime) }
 
     enum DifficultyTrend { case stable, increasing, decreasing }
 

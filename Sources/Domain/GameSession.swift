@@ -188,6 +188,18 @@ struct GameSession: Sendable {
         return timeRemaining * multiplier
     }
 
+    enum SessionTrend: Sendable {
+        case improving, declining, stable
+    }
+
+    var sessionAccuracyTrend: SessionTrend {
+        guard totalAnswered >= 4 else { return .stable }
+        let diff = secondHalfAccuracy - firstHalfAccuracy
+        if diff > 10 { return .improving }
+        if diff < -10 { return .declining }
+        return .stable
+    }
+
     var netScore: Int {
         max(score - penaltyPoints, 0)
     }

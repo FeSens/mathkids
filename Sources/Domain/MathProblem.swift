@@ -215,6 +215,20 @@ enum AnswerMagnitude: Sendable {
 }
 
 extension MathProblem {
+    var requiresCarryOrBorrow: Bool {
+        switch operation {
+        case .add:
+            let onesSum = (operand1 % 10) + (operand2 % 10)
+            return onesSum >= 10
+        case .subtract:
+            let onesDigit1 = operand1 % 10
+            let onesDigit2 = operand2 % 10
+            return onesDigit1 < onesDigit2
+        case .multiply, .divide:
+            return false
+        }
+    }
+
     enum NumberLinePosition: Sendable {
         case negative, zero, small, medium, large
     }

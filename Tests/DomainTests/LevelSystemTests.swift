@@ -231,4 +231,24 @@ struct LevelSystemTests {
         let fast = LevelSystem.estimatedSessionsToNextLevel(currentXP: 50, avgXPPerSession: 50)
         #expect(fast < slow)
     }
+
+    // MARK: - Level Tier (logic-331)
+
+    @Test("Level 1-3 is beginner tier")
+    func beginnerTier() {
+        #expect(LevelSystem.levelTier(for: 0) == .beginner)
+        #expect(LevelSystem.levelTier(for: 200) == .beginner)
+    }
+
+    @Test("Level 4-6 is intermediate")
+    func intermediateTier() {
+        #expect(LevelSystem.levelTier(for: 600) == .intermediate)
+        #expect(LevelSystem.levelTier(for: 1000) == .intermediate)
+    }
+
+    @Test("Level 7-10 is advanced/expert")
+    func advancedTier() {
+        #expect(LevelSystem.levelTier(for: 2100) == .advanced)
+        #expect(LevelSystem.levelTier(for: 4500) == .expert)
+    }
 }

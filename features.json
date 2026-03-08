@@ -6188,6 +6188,74 @@
         "Descriptions are different for each level"
       ],
       "files": ["Sources/Domain/DifficultyLevel.swift"]
+    },
+    {
+      "id": "logic-329",
+      "title": "MathProblem carry/borrow indicator",
+      "description": "MathProblem indicates whether the problem requires carrying (addition) or borrowing (subtraction)",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "8+5 requires carry",
+        "3+2 does not require carry",
+        "Only applies to add/subtract"
+      ],
+      "files": ["Sources/Domain/MathProblem.swift"]
+    },
+    {
+      "id": "logic-330",
+      "title": "GameSession accuracy trend within session",
+      "description": "GameSession provides a trend indicator (improving/declining/stable) within the current session",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Stable with few answers",
+        "Improving when second half is better",
+        "Declining when first half was better"
+      ],
+      "files": ["Sources/Domain/GameSession.swift"]
+    },
+    {
+      "id": "logic-331",
+      "title": "LevelSystem level tier classification",
+      "description": "LevelSystem classifies levels into tiers (beginner/intermediate/advanced/expert)",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Level 1-3 is beginner tier",
+        "Level 4-6 is intermediate",
+        "Level 7-10 is advanced/expert"
+      ],
+      "files": ["Sources/Domain/LevelSystem.swift"]
+    },
+    {
+      "id": "logic-332",
+      "title": "GameEngine total time on current problem",
+      "description": "GameEngine provides how long the player has been on the current problem",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["svc-001"],
+      "test_steps": [
+        "Starts at approximately 0",
+        "Increases over time"
+      ],
+      "files": ["Sources/Services/GameEngine.swift"]
+    },
+    {
+      "id": "logic-333",
+      "title": "PlayerStats total XP by difficulty percentage",
+      "description": "PlayerStats provides XP earned per difficulty as a percentage of total XP",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns 0 for all when no XP earned",
+        "Returns correct percentages"
+      ],
+      "files": ["Sources/Domain/PlayerStats+Extensions.swift"]
     }
   ],
   "_schema": {

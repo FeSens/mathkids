@@ -189,4 +189,28 @@ struct PlayerStatsBatch38Tests {
         stats.recentAccuracies = [50, 60, 70, 80, 90]
         #expect(stats.improvementStreak >= 3)
     }
+
+    // MARK: - XP By Difficulty Percentage (logic-333)
+
+    @Test("Returns 0 for all when no XP earned")
+    func xpPercentageZero() {
+        let stats = PlayerStats()
+        let pct = stats.xpPercentageByDifficulty
+        #expect(pct.easy == 0)
+        #expect(pct.medium == 0)
+        #expect(pct.hard == 0)
+    }
+
+    @Test("Returns correct percentages")
+    func xpPercentageCorrect() {
+        let stats = PlayerStats()
+        stats.xpEasy = 50
+        stats.xpMedium = 30
+        stats.xpHard = 20
+        stats.totalXP = 100
+        let pct = stats.xpPercentageByDifficulty
+        #expect(pct.easy == 50)
+        #expect(pct.medium == 30)
+        #expect(pct.hard == 20)
+    }
 }

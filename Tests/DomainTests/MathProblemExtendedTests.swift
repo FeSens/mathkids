@@ -189,4 +189,24 @@ struct MathProblemExtendedTests {
             #expect(!op.exampleProblem.isEmpty)
         }
     }
+
+    // MARK: - Carry/Borrow Indicator (logic-329)
+
+    @Test("8+5 requires carry")
+    func additionRequiresCarry() {
+        let problem = MathProblem(operand1: 8, operand2: 5, operation: .add)
+        #expect(problem.requiresCarryOrBorrow == true)
+    }
+
+    @Test("3+2 does not require carry")
+    func additionNoCarry() {
+        let problem = MathProblem(operand1: 3, operand2: 2, operation: .add)
+        #expect(problem.requiresCarryOrBorrow == false)
+    }
+
+    @Test("Multiply returns false for carry/borrow")
+    func multiplyNoCarry() {
+        let problem = MathProblem(operand1: 3, operand2: 2, operation: .multiply)
+        #expect(problem.requiresCarryOrBorrow == false)
+    }
 }

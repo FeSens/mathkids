@@ -210,6 +210,15 @@ extension PlayerStats {
         }
     }
 
+    var xpPercentageByDifficulty: (easy: Int, medium: Int, hard: Int) {
+        guard totalXP > 0 else { return (0, 0, 0) }
+        return (
+            xpEasy * 100 / totalXP,
+            xpMedium * 100 / totalXP,
+            xpHard * 100 / totalXP
+        )
+    }
+
     var improvementStreak: Int {
         guard recentAccuracies.count >= 2 else { return 0 }
         var streak = 0
