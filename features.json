@@ -26012,6 +26012,79 @@
         "Create common achievement",
         "Verify duration <= 1.5"
       ]
+    },
+    {
+      "id": "logic-1554",
+      "title": "achievementIsStackable",
+      "description": "Return whether achievement rewards can stack",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isStackable is true",
+        "Create games achievement",
+        "Verify isStackable is false"
+      ]
+    },
+    {
+      "id": "logic-1555",
+      "title": "achievementAlertBody",
+      "description": "Return notification body text",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify body contains description"
+      ]
+    },
+    {
+      "id": "logic-1556",
+      "title": "achievementLeaderboardPoints",
+      "description": "Return points for leaderboard ranking",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify points >= 100",
+        "Create common achievement",
+        "Verify points < 50"
+      ]
+    },
+    {
+      "id": "logic-1557",
+      "title": "achievementProgressStep",
+      "description": "Return the step increment for progress",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify step is 1",
+        "Create games achievement",
+        "Verify step is 1"
+      ]
+    },
+    {
+      "id": "logic-1558",
+      "title": "achievementShowInProfile",
+      "description": "Return whether to show in user profile",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify showInProfile is true",
+        "Create common achievement",
+        "Verify showInProfile is false"
+      ]
     }
   ],
   "_schema": {

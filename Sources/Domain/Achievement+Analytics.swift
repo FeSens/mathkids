@@ -161,4 +161,24 @@ extension Achievement {
     var achievementCelebrationDuration: Double {
         isRareAchievement ? 5.0 : 1.0
     }
+
+    var achievementIsStackable: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementAlertBody: String {
+        "You earned \(title): \(description)"
+    }
+
+    var achievementLeaderboardPoints: Int {
+        pointValue * achievementBonusMultiplier
+    }
+
+    var achievementProgressStep: Int {
+        1
+    }
+
+    var achievementShowInProfile: Bool {
+        isRareAchievement
+    }
 }
