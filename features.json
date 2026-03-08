@@ -19721,6 +19721,81 @@
         "multiply is hard, add is not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1169",
+      "name": "answeredProblemCardColor",
+      "description": "Color name for result card",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "correct is green, wrong is red"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1170",
+      "name": "answeredProblemPointsEarned",
+      "description": "Points earned for this answer",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "correct earns points, wrong earns 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1171",
+      "name": "answeredProblemReviewPriority",
+      "description": "Review priority (1=high for wrong, 3=low for correct+fast)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "wrong answer has priority 1"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1172",
+      "name": "answeredProblemStreakEligible",
+      "description": "Whether answer continues a streak",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "only correct answers are streak eligible"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1173",
+      "name": "answeredProblemBadgeEmoji",
+      "description": "Badge emoji based on performance",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "correct+fast gets star, wrong gets X"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

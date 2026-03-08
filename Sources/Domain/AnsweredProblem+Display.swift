@@ -68,4 +68,28 @@ extension AnsweredProblem {
     var answeredProblemIsHardOperation: Bool {
         !problem.operation.isPrimaryOperation
     }
+
+    var answeredProblemCardColor: String {
+        isCorrect ? "green" : "red"
+    }
+
+    var answeredProblemPointsEarned: Int {
+        isCorrect ? problem.operation.difficultyWeight * 10 : 0
+    }
+
+    var answeredProblemReviewPriority: Int {
+        guard isCorrect else { return 1 }
+        if let time = timeTaken, time < 3.0 { return 3 }
+        return 2
+    }
+
+    var answeredProblemStreakEligible: Bool {
+        isCorrect
+    }
+
+    var answeredProblemBadgeEmoji: String {
+        guard isCorrect else { return "✗" }
+        if let time = timeTaken, time < 3.0 { return "⭐" }
+        return "✓"
+    }
 }
