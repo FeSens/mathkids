@@ -3330,6 +3330,101 @@
       "files": [
         "Sources/Features/Home/SettingsView.swift"
       ]
+    },
+    {
+      "id": "ui-164",
+      "title": "Problem display shows correct answer on wrong",
+      "description": "When user answers incorrectly, show the correct answer with animation",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Submit wrong answer",
+        "Correct answer hint appears with orange text",
+        "Hint fades after delay"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-165",
+      "title": "Stats accuracy chart visualization",
+      "description": "Stats screen shows recent accuracy as a line chart",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Play several games",
+        "Stats screen shows accuracy trend chart",
+        "Chart uses recent accuracy data points"
+      ],
+      "files": [
+        "Sources/Features/Stats/AccuracyChartView.swift",
+        "Sources/Features/Stats/StatsView.swift"
+      ]
+    },
+    {
+      "id": "ui-166",
+      "title": "Achievement progress view in stats",
+      "description": "Stats screen shows achievement progress with unlock status",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Open stats screen",
+        "Achievement progress section shows all achievements",
+        "Unlocked achievements show filled state",
+        "Locked achievements show progress bar"
+      ],
+      "files": [
+        "Sources/Features/Stats/AchievementsView.swift",
+        "Sources/Features/Stats/AchievementProgressView.swift"
+      ]
+    },
+    {
+      "id": "ui-167",
+      "title": "Problem difficulty indicator in game",
+      "description": "Show a colored dot indicating individual problem difficulty",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "During game, each problem shows a difficulty dot",
+        "Easy problems show green, moderate yellow, hard red",
+        "Difficulty label text shown below dot"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-168",
+      "title": "Timer ring color changes with urgency",
+      "description": "Timer ring changes color from green to yellow to red as time decreases",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-002"
+      ],
+      "test_steps": [
+        "Start timed game",
+        "Timer ring is green when time > 50%",
+        "Changes to yellow between 25-50%",
+        "Changes to red when < 25%"
+      ],
+      "files": [
+        "Sources/Features/Game/TimerRingView.swift"
+      ]
     }
   ],
   "_schema": {
