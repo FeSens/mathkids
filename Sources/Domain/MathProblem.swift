@@ -263,6 +263,10 @@ extension MathProblem {
         return min(max(raw, 1), 10)
     }
 
+    var isEasyProblem: Bool {
+        abs(operand1) <= 5 && abs(operand2) <= 5
+    }
+
     var answerMagnitude: AnswerMagnitude {
         let answer = abs(correctAnswer)
         if answer < 20 { return .small }

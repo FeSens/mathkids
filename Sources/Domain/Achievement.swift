@@ -165,6 +165,13 @@ struct Achievement: Identifiable {
         return totalPct / all.count
     }
 
+    func progressFraction(stats: PlayerStats) -> Double {
+        guard let progress else { return isUnlocked(stats: stats) ? 1.0 : 0.0 }
+        let result = progress(stats)
+        guard result.target > 0 else { return 0.0 }
+        return min(Double(result.current) / Double(result.target), 1.0)
+    }
+
     static func nextClosest(for stats: PlayerStats) -> Achievement? {
         let locked = all.filter { !$0.isUnlocked(stats: stats) }
         guard !locked.isEmpty else { return nil }

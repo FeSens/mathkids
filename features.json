@@ -6738,6 +6738,90 @@
         "Verify hard returns 20 (base 10 * 2.0)"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-354",
+      "title": "GameSession wrongAnswerPositions tracks indices of wrong answers",
+      "description": "GameSession should expose wrongAnswerPositions returning indices (0-based) of wrong answers from the answer history",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session with correct-wrong-correct-wrong pattern",
+        "Verify wrongAnswerPositions returns [1, 3]",
+        "Verify empty when all correct"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-355",
+      "title": "MathProblem isEasyProblem based on operand size",
+      "description": "MathProblem should expose isEasyProblem that returns true when both operands are 5 or less",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify 3+2 is easy",
+        "Verify 12+5 is not easy",
+        "Verify 5x5 is easy"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-356",
+      "title": "LevelSystem totalLevels count",
+      "description": "LevelSystem should expose totalLevels as the count of available levels",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify totalLevels equals 10",
+        "Verify it matches thresholds count"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-357",
+      "title": "GameSession scoreEfficiency ratio of score to time",
+      "description": "GameSession should compute scoreEfficiency as points earned per second of play",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session with score and time played",
+        "Verify scoreEfficiency returns score / timePlayed",
+        "Verify returns 0 when no time played"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-358",
+      "title": "Achievement progressFraction for normalized 0-1 progress",
+      "description": "Achievement should expose progressFraction(for:) returning a 0.0-1.0 fraction of completion",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify streak5 with streak 3 returns 0.6",
+        "Verify streak5 with streak 5 returns 1.0",
+        "Verify streak5 with streak 0 returns 0.0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

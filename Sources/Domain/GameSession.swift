@@ -253,6 +253,15 @@ struct GameSession: Sendable {
         bestStreak
     }
 
+    var wrongAnswerPositions: [Int] {
+        answerHistory.enumerated().compactMap { $0.element ? nil : $0.offset }
+    }
+
+    var scoreEfficiency: Double {
+        guard totalTimePlayed > 0 else { return 0 }
+        return Double(score) / Double(totalTimePlayed)
+    }
+
     var correctAnswersPerMinute: Double {
         let minutes = Double(totalTimePlayed) / 60.0
         guard minutes > 0 else { return 0 }

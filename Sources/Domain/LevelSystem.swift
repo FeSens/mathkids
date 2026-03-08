@@ -127,6 +127,10 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static var totalLevels: Int {
+        thresholds.count
+    }
+
     static func levelUpMessage(from oldLevel: Int, to newLevel: Int) -> String {
         let oldName = levelNames[max(oldLevel - 1, 0)]
         let newName = levelNames[min(newLevel - 1, levelNames.count - 1)]
