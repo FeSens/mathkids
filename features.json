@@ -14207,6 +14207,86 @@
         "Verify responseTime returns 'fast'"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-814",
+      "name": "DifficultyLevel.practiceRecommendation",
+      "description": "Text suggesting what to practice at this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get practiceRecommendation for easy",
+        "Verify contains practice advice"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-815",
+      "name": "DifficultyLevel.iconName",
+      "description": "SF Symbol name for this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get iconName for each difficulty",
+        "Verify non-empty system name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-816",
+      "name": "MathProblem.isNegativeResult",
+      "description": "Boolean true when the answer is negative",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create 3-7 problem",
+        "Verify isNegativeResult is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-817",
+      "name": "MathProblem.isZeroResult",
+      "description": "Boolean true when the answer is zero",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create 5-5 problem",
+        "Verify isZeroResult is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-818",
+      "name": "AnsweredProblem.accuracyImpact",
+      "description": "String describing how this answer affects accuracy: 'boost' or 'drop'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create correct answered problem",
+        "Verify accuracyImpact returns 'boost'"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

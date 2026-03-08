@@ -50,4 +50,8 @@ extension AnsweredProblem {
         if time < 6.0 { return "normal" }
         return "slow"
     }
+
+    var accuracyImpact: String {
+        isCorrect ? "boost" : "drop"
+    }
 }

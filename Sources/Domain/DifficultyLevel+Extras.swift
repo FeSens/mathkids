@@ -118,4 +118,20 @@ extension DifficultyLevel {
         case .hard: return 100
         }
     }
+
+    var practiceRecommendation: String {
+        switch self {
+        case .easy: return "Practice basic addition and subtraction"
+        case .medium: return "Work on multiplication tables"
+        case .hard: return "Master all four operations with larger numbers"
+        }
+    }
+
+    var iconName: String {
+        switch self {
+        case .easy: return "star"
+        case .medium: return "star.leadinghalf.filled"
+        case .hard: return "star.fill"
+        }
+    }
 }

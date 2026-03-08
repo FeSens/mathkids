@@ -120,4 +120,5 @@ extension MathProblem {
         guard operation == .add else { return false }
         return (operand1 % 10) + (operand2 % 10) > 9
     }
+
 }
