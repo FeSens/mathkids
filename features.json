@@ -33657,6 +33657,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2066",
+      "title": "Achievement Card Pietersite Style",
+      "description": "Computed property returning pietersite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns tempest style",
+        "Common achievement returns calm style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2067",
+      "title": "Achievement Requires Stamina",
+      "description": "Computed property checking if achievement requires stamina",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Streak category requires stamina",
+        "Score category does not require stamina"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2068",
+      "title": "Achievement Card Resolution Text",
+      "description": "Computed property returning resolution text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct resolution text",
+        "Games returns correct resolution text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2069",
+      "title": "Achievement Card Aventurine Style",
+      "description": "Computed property returning aventurine style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns sparkling style",
+        "Common achievement returns dull style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2070",
+      "title": "Achievement Apex Threshold",
+      "description": "Computed property returning apex threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
