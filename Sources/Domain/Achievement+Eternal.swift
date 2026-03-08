@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 18000000
         }
     }
+
+    var achievementCardBerryiteUltraStyle: String {
+        isRareAchievement ? "steel blue metallic" : "matte blue grey"
+    }
+
+    var achievementRequiresResplendentPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardInjunctionWritSealMaxText: String {
+        switch category {
+        case .mastery: return "Injunction Writ Seal Max of the Infinite"
+        case .streak: return "Injunction Writ Seal Max of the Citadel"
+        case .score: return "Injunction Writ Seal Max of the Pinnacle"
+        case .games: return "Injunction Writ Seal Max of the Acolyte"
+        }
+    }
+
+    var achievementCardLindstromiteUltraStyle: String {
+        isRareAchievement ? "lead grey monoclinic" : "ashen grey matte"
+    }
+
+    var achievementSvartAlfaheimPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 185000000
+        case .streak: return 74000000
+        case .score: return 180000000
+        case .games: return 18500000
+        }
+    }
 }

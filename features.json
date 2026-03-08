@@ -41527,6 +41527,106 @@
         "Verify threshold <= 32000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2501",
+      "title": "achievementCardBerryiteUltraStyle",
+      "description": "Mineral style string for berryite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify berryite ultra style is steel blue metallic",
+        "Create common achievement",
+        "Verify berryite ultra style is matte blue grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2502",
+      "title": "achievementRequiresResplendentPlus",
+      "description": "Whether achievement requires resplendent plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires resplendent plus is true",
+        "Create streak achievement",
+        "Verify requires resplendent plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2503",
+      "title": "achievementCardInjunctionWritSealMaxText",
+      "description": "Injunction writ seal max text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Injunction Writ Seal Max of the Infinite",
+        "Create games achievement",
+        "Verify text is Injunction Writ Seal Max of the Acolyte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2504",
+      "title": "achievementCardLindstromiteUltraStyle",
+      "description": "Mineral style string for lindstromite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify lindstromite ultra style is lead grey monoclinic",
+        "Create common achievement",
+        "Verify lindstromite ultra style is ashen grey matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2505",
+      "title": "achievementSvartAlfaheimPlusPlusThreshold",
+      "description": "Svart Alfaheim plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 185000000",
+        "Create games achievement",
+        "Verify threshold <= 32000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
