@@ -11565,6 +11565,86 @@
         "Verify summary text"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-649",
+      "name": "GameSession+Display.difficultyBadge",
+      "description": "Returns difficulty emoji and name badge",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Easy session",
+        "Verify badge text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-650",
+      "name": "GameSession+Display.streakBadge",
+      "description": "Returns streak emoji when on streak, empty otherwise",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Streak >= 3 shows fire",
+        "No streak is empty"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-651",
+      "name": "GameSession+Display.timeProgressText",
+      "description": "Returns elapsed/total time format",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Tick some time",
+        "Verify format X/Ys"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-652",
+      "name": "GameSession+Display.accuracyBadge",
+      "description": "Returns grade letter based on accuracy",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "100% returns A+",
+        "50% returns D"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-653",
+      "name": "GameSession+Display.isGoodPerformance",
+      "description": "Returns true when accuracy >= 70 and score >= 50",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Good performance returns true",
+        "Poor returns false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
