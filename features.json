@@ -43015,6 +43015,94 @@
       ],
       "passes": true
     }
+    },
+    {
+      "id": "improve-030",
+      "title": "Game highlights section on results screen",
+      "description": "Show a highlights section on the results screen with streak milestones, longest correct run, and accuracy improvement over game halves.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-026", "improve-028", "improve-029"],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsComponents.swift"
+      ],
+      "test_steps": [
+        "GameHighlightsView displays streak milestone when available",
+        "GameHighlightsView displays longest correct run",
+        "GameHighlightsView shows warmup indicator when accuracy improved"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-031",
+      "title": "Fastest answer badge on results screen",
+      "description": "Show the fastest correct answer time as a special badge on the results screen.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-025"],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift"
+      ],
+      "test_steps": [
+        "Fastest answer time displayed when available",
+        "No badge when no timing data",
+        "Time formatted to one decimal place"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-032",
+      "title": "Operation mastery grid in stats view",
+      "description": "Show a grid of operation cards with current Elo rating, skill level label, and color-coded mastery indicator in the stats view.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-023"],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift"
+      ],
+      "test_steps": [
+        "MasteryGridView shows all four operations",
+        "Each card shows operation symbol and skill level",
+        "Color coding matches skill tier"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-033",
+      "title": "XP breakdown visualization in stats",
+      "description": "Show XP earned from each difficulty as colored bars in the stats view, making it clear which difficulty contributed most XP.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-024"],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift"
+      ],
+      "test_steps": [
+        "XP bars render for each difficulty with data",
+        "Zero XP difficulties not shown",
+        "Total XP computed from all three"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-034",
+      "title": "Next achievement progress card on home screen",
+      "description": "Show the closest-to-unlocking achievement on the home screen as a motivational progress card.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "HomeViewModel identifies closest achievement to unlock",
+        "Progress percentage computed correctly",
+        "Returns nil when all achievements unlocked"
+      ],
+      "passes": true
+    }
   ],
   "_schema": {
     "feature": {

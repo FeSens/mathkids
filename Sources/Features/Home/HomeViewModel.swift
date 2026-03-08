@@ -21,6 +21,8 @@ final class HomeViewModel {
     var weakestEloRating: Double = 1000
     var weakestEloSkillLevel: String = ""
     var recentAccuracies: [Double] = []
+    var nextAchievementName: String? = nil
+    var nextAchievementProgress: Double = 0
 
     enum AccuracyTrend { case improving, declining, stable }
 
@@ -279,6 +281,7 @@ final class HomeViewModel {
 
         // Load recent accuracies for trend
         recentAccuracies = stats.recentAccuracies
+        loadNextAchievement(from: stats)
 
         // Compute recommended difficulty
         if stats.accuracy >= 90 && stats.gamesPlayed >= 5 {
@@ -295,6 +298,17 @@ final class HomeViewModel {
             dailyChallengeCompleted = calendar.isDateInToday(lastChallenge)
         } else {
             dailyChallengeCompleted = false
+        }
+    }
+
+    func loadNextAchievement(from stats: PlayerStats) {
+        let locked = Achievement.all.filter { !$0.isUnlocked(stats: stats) }
+        if let closest = locked.max(by: { $0.progressPercentage(stats: stats) < $1.progressPercentage(stats: stats) }) {
+            nextAchievementName = closest.title
+            nextAchievementProgress = Double(closest.progressPercentage(stats: stats)) / 100.0
+        } else {
+            nextAchievementName = nil
+            nextAchievementProgress = 0
         }
     }
 }

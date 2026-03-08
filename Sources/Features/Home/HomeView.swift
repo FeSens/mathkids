@@ -59,6 +59,33 @@ struct HomeView: View {
                 weakestOperationCard(operation: weakOp)
             }
 
+            if let achievementName = viewModel.nextAchievementName {
+                HStack(spacing: 10) {
+                    Image(systemName: "trophy")
+                        .foregroundStyle(.yellow)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Next: \(achievementName)")
+                            .font(.system(size: 13, weight: .semibold, design: .rounded))
+                        GeometryReader { geo in
+                            ZStack(alignment: .leading) {
+                                RoundedRectangle(cornerRadius: 3)
+                                    .fill(Color.gray.opacity(0.2))
+                                RoundedRectangle(cornerRadius: 3)
+                                    .fill(.yellow)
+                                    .frame(width: geo.size.width * viewModel.nextAchievementProgress)
+                            }
+                        }
+                        .frame(height: 6)
+                    }
+                    Text("\(Int(viewModel.nextAchievementProgress * 100))%")
+                        .font(.system(size: 12, weight: .bold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                }
+                .padding(12)
+                .background(RoundedRectangle(cornerRadius: 12).fill(Color.yellow.opacity(0.08)))
+                .accessibilityIdentifier("nextAchievementCard")
+            }
+
             difficultyPicker
 
             operationPicker

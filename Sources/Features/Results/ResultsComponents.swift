@@ -209,6 +209,51 @@ struct OperationAccuracyBars: View {
     }
 }
 
+struct GameHighlightsView: View {
+    let streakMilestone: String?
+    let longestRun: Int
+    let accuracyImprovement: Double?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Highlights")
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .foregroundStyle(.secondary)
+
+            if let streak = streakMilestone {
+                HStack(spacing: 6) {
+                    Image(systemName: "flame.fill")
+                        .foregroundStyle(.orange)
+                    Text(streak)
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                }
+            }
+
+            if longestRun > 1 {
+                HStack(spacing: 6) {
+                    Image(systemName: "checkmark.seal.fill")
+                        .foregroundStyle(.green)
+                    Text("\(longestRun) correct in a row")
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                }
+            }
+
+            if let improvement = accuracyImprovement, improvement > 10 {
+                HStack(spacing: 6) {
+                    Image(systemName: "arrow.up.right.circle.fill")
+                        .foregroundStyle(.blue)
+                    Text("Warmed up! +\(Int(improvement))% in 2nd half")
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                }
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemGray6)))
+        .accessibilityIdentifier("gameHighlights")
+    }
+}
+
 struct EloDeltaView: View {
     let deltas: [Operation: Double]
 

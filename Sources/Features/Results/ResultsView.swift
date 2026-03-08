@@ -75,6 +75,31 @@ struct ResultsView: View {
                             .opacity(showXP ? 1 : 0)
                     }
 
+                    // Game highlights
+                    if viewModel.streakMilestoneText != nil || viewModel.longestCorrectRun > 1 || (viewModel.accuracyImprovementOverHalves ?? 0) > 10 {
+                        GameHighlightsView(
+                            streakMilestone: viewModel.streakMilestoneText,
+                            longestRun: viewModel.longestCorrectRun,
+                            accuracyImprovement: viewModel.accuracyImprovementOverHalves
+                        )
+                        .opacity(showXP ? 1 : 0)
+                    }
+
+                    // Fastest answer badge
+                    if let fastest = viewModel.fastestTimePerOperation.values.min() {
+                        HStack(spacing: 6) {
+                            Image(systemName: "bolt.fill")
+                                .foregroundStyle(.yellow)
+                            Text("Fastest: \(String(format: "%.1fs", fastest))")
+                                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(Capsule().fill(Color.yellow.opacity(0.15)))
+                        .accessibilityIdentifier("fastestAnswerBadge")
+                        .opacity(showXP ? 1 : 0)
+                    }
+
                     // Elo rating changes
                     if !viewModel.eloDeltas.isEmpty {
                         EloDeltaView(deltas: viewModel.eloDeltas)

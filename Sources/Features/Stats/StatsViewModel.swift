@@ -344,6 +344,11 @@ final class StatsViewModel {
         xpHard = stats.xpHard
     }
 
+    /// Total XP computed from all difficulties
+    var totalXPFromDifficulties: Int {
+        xpEasy + xpMedium + xpHard
+    }
+
     /// Skill level labels per operation symbol based on Elo ratings
     var operationSkillLevels: [String: String] {
         [

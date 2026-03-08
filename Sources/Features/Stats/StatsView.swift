@@ -38,6 +38,16 @@ struct StatsView: View {
                         .opacity(showCards ? 1 : 0)
                     }
 
+                    masteryGrid
+                        .opacity(showCards ? 1 : 0)
+                        .offset(y: showCards ? 0 : 20)
+
+                    if viewModel.totalXPFromDifficulties > 0 {
+                        xpBreakdownSection
+                            .opacity(showCards ? 1 : 0)
+                            .offset(y: showCards ? 0 : 20)
+                    }
+
                     EloChartView(
                         addHistory: viewModel.eloHistoryAdd,
                         subtractHistory: viewModel.eloHistorySubtract,
@@ -210,6 +220,35 @@ struct StatsView: View {
         }
     }
 
+    private var masteryGrid: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Operation Mastery")
+                .font(.headline)
+
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                MasteryCard(symbol: "+", rating: viewModel.eloAdd, level: viewModel.operationSkillLevels["+"] ?? "")
+                MasteryCard(symbol: "-", rating: viewModel.eloSubtract, level: viewModel.operationSkillLevels["-"] ?? "")
+                MasteryCard(symbol: "\u{00d7}", rating: viewModel.eloMultiply, level: viewModel.operationSkillLevels["×"] ?? "")
+                MasteryCard(symbol: "\u{00f7}", rating: viewModel.eloDivide, level: viewModel.operationSkillLevels["÷"] ?? "")
+            }
+        }
+        .accessibilityIdentifier("masteryGrid")
+    }
+
+    private var xpBreakdownSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("XP by Difficulty")
+                .font(.headline)
+
+            XPBar(label: "Easy", xp: viewModel.xpEasy, total: viewModel.totalXPFromDifficulties, color: .green)
+            XPBar(label: "Medium", xp: viewModel.xpMedium, total: viewModel.totalXPFromDifficulties, color: .orange)
+            XPBar(label: "Hard", xp: viewModel.xpHard, total: viewModel.totalXPFromDifficulties, color: .red)
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 16).fill(Color(.systemGray6)))
+        .accessibilityIdentifier("xpBreakdown")
+    }
+
     private var operationStreaksSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Best Streaks by Operation")
@@ -313,6 +352,68 @@ struct LifetimeStat: View {
             RoundedRectangle(cornerRadius: 16)
                 .fill(color.opacity(0.1))
         )
+    }
+}
+
+struct MasteryCard: View {
+    let symbol: String
+    let rating: Double
+    let level: String
+
+    private var color: Color {
+        switch level {
+        case "Master": .purple
+        case "Expert": .blue
+        case "Advanced": .green
+        case "Intermediate": .orange
+        case "Learning": .yellow
+        default: .gray
+        }
+    }
+
+    var body: some View {
+        VStack(spacing: 4) {
+            Text(symbol)
+                .font(.system(size: 24, weight: .bold, design: .rounded))
+                .foregroundStyle(color)
+            Text("\(Int(rating))")
+                .font(.system(size: 18, weight: .bold, design: .rounded))
+            Text(level)
+                .font(.system(size: 11, weight: .semibold, design: .rounded))
+                .foregroundStyle(color)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 12)
+        .background(RoundedRectangle(cornerRadius: 12).fill(color.opacity(0.1)))
+    }
+}
+
+struct XPBar: View {
+    let label: String
+    let xp: Int
+    let total: Int
+    let color: Color
+
+    var body: some View {
+        HStack(spacing: 8) {
+            Text(label)
+                .font(.system(size: 12, weight: .semibold, design: .rounded))
+                .frame(width: 50, alignment: .leading)
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(Color.gray.opacity(0.15))
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(color)
+                        .frame(width: total > 0 ? geo.size.width * Double(xp) / Double(total) : 0)
+                }
+            }
+            .frame(height: 10)
+            Text("\(xp)")
+                .font(.system(size: 11, weight: .medium, design: .rounded))
+                .foregroundStyle(.secondary)
+                .frame(width: 40, alignment: .trailing)
+        }
     }
 }
 
