@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 15000
         }
     }
+
+    var achievementCardZinkeniteStyle: String {
+        isRareAchievement ? "steel grey fibrous" : "dull grey"
+    }
+
+    var achievementRequiresZealPlus: Bool {
+        category == .mastery || category == .score
+    }
+
+    var achievementCardDirectiveWritSealPlusText: String {
+        switch category {
+        case .mastery: return "Directive Writ Seal Plus of the Archon"
+        case .streak: return "Directive Writ Seal Plus of the Warden"
+        case .score: return "Directive Writ Seal Plus of the Vanquisher"
+        case .games: return "Directive Writ Seal Plus of the Scout"
+        }
+    }
+
+    var achievementCardPlagioniteStyle: String {
+        isRareAchievement ? "blackish lead" : "charcoal grey"
+    }
+
+    var achievementEmpirePlusThreshold: Int {
+        switch category {
+        case .mastery: return 200000
+        case .streak: return 80000
+        case .score: return 175000
+        case .games: return 20000
+        }
+    }
 }

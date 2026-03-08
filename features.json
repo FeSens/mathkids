@@ -37177,6 +37177,96 @@
         "Verify threshold <= 15000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2276",
+      "title": "Achievement card zinkenite style",
+      "description": "Computed property achievementCardZinkeniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify zinkenite style is steel grey fibrous",
+        "Create common achievement",
+        "Verify zinkenite style is dull grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2277",
+      "title": "Achievement requires zeal plus",
+      "description": "Computed property achievementRequiresZealPlus returns true for mastery or score categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresZealPlus is true",
+        "Create games achievement",
+        "Verify requiresZealPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2278",
+      "title": "Achievement card directive writ seal plus text",
+      "description": "Computed property achievementCardDirectiveWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Directive Writ Seal Plus of the Archon",
+        "Create games achievement",
+        "Verify text is Directive Writ Seal Plus of the Scout"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2279",
+      "title": "Achievement card plagionite style",
+      "description": "Computed property achievementCardPlagioniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify plagionite style is blackish lead",
+        "Create common achievement",
+        "Verify plagionite style is charcoal grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2280",
+      "title": "Achievement empire plus threshold",
+      "description": "Computed property achievementEmpirePlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 175000",
+        "Create games achievement",
+        "Verify threshold <= 25000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
