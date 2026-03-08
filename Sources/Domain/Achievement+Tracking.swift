@@ -115,4 +115,29 @@ extension Achievement {
     var achievementCardInfoLabel: String {
         "\(category.displayName) — \(pointValue) pts"
     }
+
+    var achievementCardTitleSize: Double {
+        isRareAchievement ? 20 : 16
+    }
+
+    var achievementRewardMultiplier: Double {
+        switch category {
+        case .mastery: return 2.5
+        case .streak: return 1.5
+        case .score: return 1.2
+        case .games: return 1.0
+        }
+    }
+
+    var achievementCardFooterStyle: String {
+        isRareAchievement ? "detailed" : "minimal"
+    }
+
+    var achievementIsDifficultyScaled: Bool {
+        category == .mastery
+    }
+
+    var achievementCardDescriptionLines: Int {
+        isRareAchievement ? 3 : 2
+    }
 }

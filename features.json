@@ -29629,6 +29629,86 @@
         "Verify cardInfoLabel contains category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1794",
+      "title": "Achievement Card Title Size",
+      "description": "Returns title size for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardTitleSize by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1795",
+      "title": "Achievement Reward Multiplier",
+      "description": "Returns reward multiplier",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify rewardMultiplier by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1796",
+      "title": "Achievement Card Footer Style",
+      "description": "Returns footer style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardFooterStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1797",
+      "title": "Achievement Is Difficulty Scaled",
+      "description": "Returns whether difficulty scales",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isDifficultyScaled for mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1798",
+      "title": "Achievement Card Description Lines",
+      "description": "Returns max description lines",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardDescriptionLines by rarity"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
