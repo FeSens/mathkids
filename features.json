@@ -7074,6 +7074,91 @@
         "Verify hard returns 10 (30s / 3s)"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-374",
+      "title": "GameSession answeredAllCorrectly checks if every answer was right",
+      "description": "GameSession should expose answeredAllCorrectly that returns true only if totalCorrect equals totalAnswered and totalAnswered > 0",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify true when all 5 answers correct",
+        "Verify false when 1 wrong",
+        "Verify false when no answers"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-375",
+      "title": "MathProblem isNearDoubleFact for near-doubles like 5+6",
+      "description": "MathProblem should detect near-double facts where operands differ by exactly 1 in addition",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5+6 is near double fact",
+        "Verify 5+5 is not near double (it is a double)",
+        "Verify 5+3 is not near double"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-376",
+      "title": "LevelSystem xpSummary formatted text for player profile",
+      "description": "LevelSystem should provide xpSummary(for:) returning a formatted summary like \"Level 3 Explorer | 450 XP\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify summary contains level number",
+        "Verify summary contains level name",
+        "Verify summary contains XP amount"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-377",
+      "title": "Operation sortedByDifficulty returns operations ordered by difficulty rank",
+      "description": "Operation should have a static sortedByDifficulty property returning operations from easiest to hardest",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify first element is add",
+        "Verify last element is divide",
+        "Verify count matches allCases"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-378",
+      "title": "GameSession isHotStreak when current streak is 5+",
+      "description": "GameSession should expose isHotStreak returning true when currentStreak >= 5",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify true with streak of 5",
+        "Verify false with streak of 4",
+        "Verify true with streak of 10"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

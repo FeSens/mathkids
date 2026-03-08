@@ -127,6 +127,12 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func xpSummary(for xp: Int) -> String {
+        let lvl = level(for: xp)
+        let name = levelName(for: xp)
+        return "Level \(lvl) \(name) | \(xp) XP"
+    }
+
     static func milestoneDescription(forLevel level: Int) -> String {
         guard level >= 1, level <= levelNames.count else { return "" }
         let name = levelNames[level - 1]

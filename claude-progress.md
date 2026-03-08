@@ -1,37 +1,27 @@
 # Claude Progress
 
-## Session 9 — 2026-03-08
+## Session 10 — 2026-03-08
 
 ### Status
-- Features: 323/323 passing (12 MVP + 9 polish + 302 improvement)
-- Unit tests: 502 (all green across 24 suites)
+- Features: 383/383 passing (12 MVP + 9 polish + 362 improvement)
+- Unit tests: 628 (all green across 32 suites)
 - UI tests: 12 (QA screenshots flaky but unit tests solid)
 - QA: PASSED
 
-### Session 9 Features (batches 44-48)
-- Batch 44: logic-299 to logic-303 (answer consistency, level progress desc, next achievement, accuracy grade, quick stats)
-- Batch 45: logic-304 to logic-308 (slowest answer, commutative ops, operation count, difficulty %, medal type)
-- Batch 46: logic-309 to logic-313 (difficulty score, time usage %, XP level range, difficulty trend, summary text)
-- Batch 47: logic-314 to logic-318 (score breakdown, keyboard hints, operation streaks, strongest op, daily status)
-- Batch 48: logic-319 to logic-323 (number line position, questions remaining, total achievement progress, half accuracy, estimated sessions)
-- Total this session: 25 improvement features
-
-### Key Additions This Session
-- GameSession: answerConsistency, timeUsagePercentage, scoreBreakdownText, estimatedQuestionsRemaining
-- MathProblem: difficultyScore, numberLinePosition, Operation.isCommutative/keyboardHint
-- LevelSystem: progressDescription, xpRange, estimatedSessionsToNextLevel
-- Achievement: nextClosest, totalProgressPercentage
-- GameEngine: slowestAnswerTime, difficultyTrend, firstHalfAccuracy/secondHalfAccuracy
-- DifficultyLevel: operationCount, summaryText
-- PlayerStats: bestStreakPerOperation, difficultyPercentages
-- ResultsViewModel: medalType (split into +Analysis extension)
-- StatsViewModel: accuracyGrade, strongestOperation
-- HomeViewModel: quickStatsSummary, dailyChallengeStatusText
+### Session 10 Features (batches 52-58)
+- Batch 52: logic-339 to logic-343 (single digit result, projected score, tier color, op frequency, accuracy+grade)
+- Batch 53: logic-344 to logic-348 (streak at end, step-by-step hint, xp for level, avg time, difficulty multiplier)
+- Batch 54: logic-349 to logic-353 (correct/min, pair description, level up msg, longest run, xp per correct)
+- Batch 55: logic-354 to logic-358 (wrong positions, easy problem, total levels, score efficiency, progress fraction)
+- Batch 56: logic-359 to logic-363 (accuracy range, operand sum/product, level boundary, streak status, xp earned)
+- Batch 57: logic-364 to logic-368 (last N accuracy, double fact, progress bar, all pairs, current pace)
+- Batch 58: logic-369 to logic-373 (streak bonus, identity op, milestone desc, avg score, estimated problems)
+- Total this session: 35 improvement features
 
 ### File Splits This Session
-- ResultsViewModel → ResultsViewModel+Analysis.swift
-- GameSessionExtendedTests → GameSessionBatch46Tests
-- (prior session splits still in place)
+- GameSession.swift → GameSession+Metrics.swift (public API computed properties)
+- MathProblem.swift → MathProblem+Extras.swift (answer choices, analysis properties)
+- AnsweredProblem extracted to own file
 
 ### Architecture
 - XcodeGen, @Observable, SwiftData, Swift Testing, NavigationStack

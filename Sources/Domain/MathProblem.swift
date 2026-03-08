@@ -85,6 +85,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    static var sortedByDifficulty: [Operation] {
+        allCases.sorted { $0.difficultyRank < $1.difficultyRank }
+    }
+
     static var allPairs: [(Operation, Operation)] {
         var pairs: [(Operation, Operation)] = []
         let ops = allCases

@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var isNearDoubleFact: Bool {
+        operation == .add && abs(operand1 - operand2) == 1
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0

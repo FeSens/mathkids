@@ -4,6 +4,14 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var answeredAllCorrectly: Bool {
+        totalAnswered > 0 && totalCorrect == totalAnswered
+    }
+
+    var isHotStreak: Bool {
+        currentStreak >= 5
+    }
+
     var perfectStreakBonus: Int {
         (bestStreak / 5) * 10
     }
