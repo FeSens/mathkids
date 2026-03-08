@@ -17846,6 +17846,81 @@
         "add returns \u2795, subtract returns \u2796"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1044",
+      "name": "operationGradeDescription",
+      "description": "Grade level description for operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns 1st grade, multiply returns 3rd grade"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1045",
+      "name": "operationNumberOfOperands",
+      "description": "Number of operands the operation takes",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "all return 2"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1046",
+      "name": "operationIsClosedOnNaturals",
+      "description": "Whether operation is closed on natural numbers",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add is closed, subtract is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1047",
+      "name": "operationTableSize",
+      "description": "Size of standard times/operation table",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "multiply returns 100 (10x10)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1048",
+      "name": "operationFlashcardLabel",
+      "description": "Label for flashcard display",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "contains operation symbol"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

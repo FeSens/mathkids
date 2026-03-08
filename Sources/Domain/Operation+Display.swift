@@ -174,4 +174,29 @@ extension Operation {
         case .divide: return "➗"
         }
     }
+
+    var operationGradeDescription: String {
+        switch self {
+        case .add: return "1st grade"
+        case .subtract: return "1st grade"
+        case .multiply: return "3rd grade"
+        case .divide: return "3rd grade"
+        }
+    }
+
+    var operationNumberOfOperands: Int {
+        2
+    }
+
+    var operationIsClosedOnNaturals: Bool {
+        self == .add || self == .multiply
+    }
+
+    var operationTableSize: Int {
+        100
+    }
+
+    var operationFlashcardLabel: String {
+        "? \(rawValue) ? = ?"
+    }
 }
