@@ -33737,6 +33737,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2071",
+      "title": "Achievement Card Serpentine Style",
+      "description": "Computed property returning serpentine style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns veined style",
+        "Common achievement returns smooth style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2072",
+      "title": "Achievement Requires Persistence",
+      "description": "Computed property checking if achievement requires persistence via streak",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Streak category requires persistence",
+        "Games category does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2073",
+      "title": "Achievement Card Decree Writ Text",
+      "description": "Computed property returning decree writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct decree writ text",
+        "Games returns correct decree writ text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2074",
+      "title": "Achievement Card Rhodochrosite Style",
+      "description": "Computed property returning rhodochrosite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns banded pink style",
+        "Common achievement returns pale style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2075",
+      "title": "Achievement Summit Threshold",
+      "description": "Computed property returning summit threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

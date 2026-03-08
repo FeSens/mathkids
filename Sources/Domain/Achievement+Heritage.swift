@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 10000
         }
     }
+
+    var achievementCardSerpentineStyle: String {
+        isRareAchievement ? "veined" : "smooth"
+    }
+
+    var achievementRequiresPersistence: Bool {
+        category == .streak
+    }
+
+    var achievementCardDecreeWritText: String {
+        switch category {
+        case .mastery: return "Decree Writ of the Academy"
+        case .streak: return "Decree Writ of the Order"
+        case .score: return "Decree Writ of the Arena"
+        case .games: return "Decree Writ of the Commons"
+        }
+    }
+
+    var achievementCardRhodochrositeStyle: String {
+        isRareAchievement ? "banded pink" : "pale"
+    }
+
+    var achievementSummitThreshold: Int {
+        switch category {
+        case .mastery: return 150000
+        case .streak: return 30000
+        case .score: return 100000
+        case .games: return 15000
+        }
+    }
 }
