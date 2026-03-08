@@ -192,4 +192,24 @@ extension Achievement {
     var achievementBackgroundOpacity: Double {
         progress != nil ? 1.0 : 0.3
     }
+
+    var achievementSummaryCardLines: [String] {
+        ["\(emoji) \(title)", description, "\(pointValue) pts"]
+    }
+
+    var achievementRefreshInterval: Int {
+        achievementIsDailyChallenge ? 60 : 300
+    }
+
+    var achievementDeepLinkPath: String {
+        "achievements/\(id)"
+    }
+
+    var achievementCacheKey: String {
+        "achievement_\(id)"
+    }
+
+    var achievementLogTag: String {
+        "[\(category.displayName.lowercased())] \(id)"
+    }
 }

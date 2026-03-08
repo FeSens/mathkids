@@ -24666,6 +24666,82 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1464",
+      "title": "Achievement Summary Card Lines",
+      "description": "Add achievementSummaryCardLines returning array of summary card content",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementSummaryCardLines contains emoji and title"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1465",
+      "title": "Achievement Refresh Interval",
+      "description": "Add achievementRefreshInterval returning seconds between progress updates",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create daily challenge",
+        "Verify achievementRefreshInterval is 60",
+        "Verify normal is 300"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1466",
+      "title": "Achievement Deep Link Path",
+      "description": "Add achievementDeepLinkPath returning deep link URL path component",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementDeepLinkPath contains achievement id"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1467",
+      "title": "Achievement Cache Key",
+      "description": "Add achievementCacheKey returning unique cache identifier",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementCacheKey contains achievement id"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1468",
+      "title": "Achievement Log Tag",
+      "description": "Add achievementLogTag returning tag for logging purposes",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementLogTag contains category and id"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
