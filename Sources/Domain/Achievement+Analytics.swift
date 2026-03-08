@@ -73,4 +73,39 @@ extension Achievement {
         case .mastery: return "👑"
         }
     }
+
+    var achievementChallengeTier: Int {
+        switch category {
+        case .mastery: return 5
+        case .streak: return 3
+        case .score: return 2
+        case .games: return 1
+        }
+    }
+
+    var achievementEstimatedTimeMinutes: Int {
+        switch category {
+        case .mastery: return 120
+        case .streak: return 30
+        case .score: return 15
+        case .games: return 2
+        }
+    }
+
+    var achievementBorderStyle: String {
+        isRareAchievement ? "gold" : "silver"
+    }
+
+    var achievementCategoryWeight: Int {
+        switch category {
+        case .mastery: return 4
+        case .streak: return 3
+        case .score: return 2
+        case .games: return 1
+        }
+    }
+
+    var achievementAccessibilityValue: String {
+        "\(pointValue) points, \(category.displayName) category"
+    }
 }

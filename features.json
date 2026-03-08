@@ -25793,6 +25793,79 @@
         "Create mastery achievement",
         "Verify emoji is trophy-related"
       ]
+    },
+    {
+      "id": "logic-1539",
+      "title": "achievementChallengeTier",
+      "description": "Return number of difficulty stars (1-5)",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify stars >= 4",
+        "Create games achievement",
+        "Verify stars == 1"
+      ]
+    },
+    {
+      "id": "logic-1540",
+      "title": "achievementEstimatedTimeMinutes",
+      "description": "Return estimated time in minutes to complete",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify time >= 60",
+        "Create games achievement",
+        "Verify time <= 5"
+      ]
+    },
+    {
+      "id": "logic-1541",
+      "title": "achievementBorderStyle",
+      "description": "Return border style based on rarity",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify borderStyle is gold",
+        "Create common achievement",
+        "Verify borderStyle is silver"
+      ]
+    },
+    {
+      "id": "logic-1542",
+      "title": "achievementCategoryWeight",
+      "description": "Return category weight for sorting",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify weight is 4",
+        "Create games achievement",
+        "Verify weight is 1"
+      ]
+    },
+    {
+      "id": "logic-1543",
+      "title": "achievementAccessibilityValue",
+      "description": "Return accessibility value string",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify value contains points"
+      ]
     }
   ],
   "_schema": {
