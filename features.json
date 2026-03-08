@@ -5147,6 +5147,98 @@
       "files": [
         "Sources/Features/Home/HomeViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-264",
+      "title": "Operation inverse relationship",
+      "description": "Operation enum provides its inverse operation",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Add inverse is subtract",
+        "Subtract inverse is add",
+        "Multiply inverse is divide",
+        "Divide inverse is multiply"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-265",
+      "title": "GameSession answer speed classification",
+      "description": "GameSession classifies answer speed as fast, normal, or slow based on time per answer",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Fast when under 3 seconds per answer",
+        "Normal between 3-6 seconds per answer",
+        "Slow over 6 seconds per answer",
+        "Returns nil when no time played"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-266",
+      "title": "PlayerStats consistency score",
+      "description": "PlayerStats computes a consistency score from accuracy variance across recent games",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Returns 0 with no games",
+        "Returns high consistency for similar accuracies",
+        "Returns low consistency for varied accuracies"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-267",
+      "title": "DifficultyLevel recommended time per problem",
+      "description": "DifficultyLevel provides a recommended seconds-per-problem target",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-002"
+      ],
+      "test_steps": [
+        "Easy recommends 6 seconds",
+        "Medium recommends 4 seconds",
+        "Hard recommends 3 seconds"
+      ],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
+    },
+    {
+      "id": "logic-268",
+      "title": "ResultsViewModel time performance text",
+      "description": "ResultsViewModel provides text describing how the player's speed compares to target",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Shows 'Lightning fast' when faster than target",
+        "Shows 'On pace' when near target",
+        "Shows N/A when no time played"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

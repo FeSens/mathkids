@@ -113,4 +113,21 @@ struct DifficultyLevelTests {
     func hardStreakMultiplier() {
         #expect(DifficultyLevel.hard.streakBonusMultiplier == 2.0)
     }
+
+    // MARK: - Recommended Time Per Problem (logic-267)
+
+    @Test("Easy recommends 6 seconds")
+    func easyRecommendedTime() {
+        #expect(DifficultyLevel.easy.recommendedSecondsPerProblem == 6)
+    }
+
+    @Test("Medium recommends 4 seconds")
+    func mediumRecommendedTime() {
+        #expect(DifficultyLevel.medium.recommendedSecondsPerProblem == 4)
+    }
+
+    @Test("Hard recommends 3 seconds")
+    func hardRecommendedTime() {
+        #expect(DifficultyLevel.hard.recommendedSecondsPerProblem == 3)
+    }
 }

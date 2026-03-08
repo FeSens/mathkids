@@ -163,4 +163,12 @@ extension PlayerStats {
             recentAccuracies.removeFirst()
         }
     }
+
+    var consistencyScore: Double {
+        guard recentAccuracies.count >= 2 else { return 0 }
+        let mean = recentAccuracies.reduce(0, +) / Double(recentAccuracies.count)
+        let variance = recentAccuracies.reduce(0) { $0 + ($1 - mean) * ($1 - mean) } / Double(recentAccuracies.count)
+        let stdDev = variance.squareRoot()
+        return max(0, 100 - stdDev * 2)
+    }
 }

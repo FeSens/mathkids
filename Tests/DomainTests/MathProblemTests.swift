@@ -188,4 +188,26 @@ struct MathProblemTests {
         let problem = MathProblem(operand1: 50, operand2: 50, operation: .add) // = 100
         #expect(problem.answerDigitCount == 3)
     }
+
+    // MARK: - Operation Inverse (logic-264)
+
+    @Test("Add inverse is subtract")
+    func addInverse() {
+        #expect(Operation.add.inverse == .subtract)
+    }
+
+    @Test("Subtract inverse is add")
+    func subtractInverse() {
+        #expect(Operation.subtract.inverse == .add)
+    }
+
+    @Test("Multiply inverse is divide")
+    func multiplyInverse() {
+        #expect(Operation.multiply.inverse == .divide)
+    }
+
+    @Test("Divide inverse is multiply")
+    func divideInverse() {
+        #expect(Operation.divide.inverse == .multiply)
+    }
 }

@@ -199,6 +199,20 @@ final class ResultsViewModel {
         }
     }
 
+    var timePerformanceText: String {
+        let timePlayed = session.totalTimePlayed
+        guard timePlayed > 0, session.totalAnswered > 0 else { return "N/A" }
+        let avgTime = Double(timePlayed) / Double(session.totalAnswered)
+        let target = Double(session.difficulty.recommendedSecondsPerProblem)
+        if avgTime < target * 0.7 {
+            return "Lightning fast!"
+        } else if avgTime <= target * 1.3 {
+            return "On pace"
+        } else {
+            return "Take your time"
+        }
+    }
+
     var improvementSummary: String {
         if isPerfectScore {
             return "Perfect score! You nailed every problem!"

@@ -71,4 +71,36 @@ struct GameSessionExtendedTests {
 
         #expect(session2.efficiencyScore > session1.efficiencyScore)
     }
+
+    // MARK: - Answer Speed Classification (logic-265)
+
+    @Test("Fast when under 3 seconds per answer")
+    func answerSpeedFast() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<5 { session.tick() } // 5 seconds
+        for _ in 0..<5 { session.recordAnswer(correct: true) } // 1s per answer
+        #expect(session.answerSpeedClass == .fast)
+    }
+
+    @Test("Normal between 3-6 seconds per answer")
+    func answerSpeedNormal() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<20 { session.tick() } // 20 seconds
+        for _ in 0..<5 { session.recordAnswer(correct: true) } // 4s per answer
+        #expect(session.answerSpeedClass == .normal)
+    }
+
+    @Test("Slow over 6 seconds per answer")
+    func answerSpeedSlow() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<35 { session.tick() } // 35 seconds
+        for _ in 0..<5 { session.recordAnswer(correct: true) } // 7s per answer
+        #expect(session.answerSpeedClass == .slow)
+    }
+
+    @Test("Returns nil when no time played")
+    func answerSpeedNil() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.answerSpeedClass == nil)
+    }
 }

@@ -77,6 +77,14 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operandRange.lowerBound) to \(operandRange.upperBound)"
     }
 
+    var recommendedSecondsPerProblem: Int {
+        switch self {
+        case .easy: 6
+        case .medium: 4
+        case .hard: 3
+        }
+    }
+
     var streakBonusMultiplier: Double {
         switch self {
         case .easy: 1.0

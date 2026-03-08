@@ -246,4 +246,26 @@ struct PlayerStatsExtendedTests {
         #expect(stats.totalProblemsForDifficulty(.hard) == 3)
         #expect(stats.totalProblemsForDifficulty(.medium) == 0)
     }
+
+    // MARK: - Consistency Score (logic-266)
+
+    @Test("Consistency returns 0 with no games")
+    func consistencyNoGames() {
+        let stats = PlayerStats()
+        #expect(stats.consistencyScore == 0)
+    }
+
+    @Test("High consistency for similar accuracies")
+    func consistencyHighForSimilar() {
+        let stats = PlayerStats()
+        stats.recentAccuracies = [80, 82, 81, 79, 80]
+        #expect(stats.consistencyScore >= 90)
+    }
+
+    @Test("Low consistency for varied accuracies")
+    func consistencyLowForVaried() {
+        let stats = PlayerStats()
+        stats.recentAccuracies = [30, 90, 40, 95, 50]
+        #expect(stats.consistencyScore < 70)
+    }
 }

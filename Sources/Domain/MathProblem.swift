@@ -24,6 +24,15 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var inverse: Operation {
+        switch self {
+        case .add: .subtract
+        case .subtract: .add
+        case .multiply: .divide
+        case .divide: .multiply
+        }
+    }
+
     var accessibilityName: String {
         switch self {
         case .add: "plus"

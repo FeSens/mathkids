@@ -127,6 +127,18 @@ struct GameSession: Sendable {
         return Double(correct) / Double(secondHalf.count) * 100
     }
 
+    enum AnswerSpeed: Sendable {
+        case fast, normal, slow
+    }
+
+    var answerSpeedClass: AnswerSpeed? {
+        guard totalAnswered > 0, totalTimePlayed > 0 else { return nil }
+        let avgTime = Double(totalTimePlayed) / Double(totalAnswered)
+        if avgTime < 3 { return .fast }
+        if avgTime <= 6 { return .normal }
+        return .slow
+    }
+
     var efficiencyScore: Double {
         guard totalAnswered > 0, totalTimePlayed > 0 else { return 0 }
         let accuracyFactor = accuracy / 100.0
