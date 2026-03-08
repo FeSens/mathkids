@@ -41727,6 +41727,86 @@
         "Verify threshold <= 35000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2511",
+      "title": "achievementCardPekoiteUltraStyle",
+      "description": "Pekoite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns steel grey prismatic",
+        "Common achievement returns pale steel matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2512",
+      "title": "achievementRequiresTranscendentPlus",
+      "description": "Check if achievement requires transcendent plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery or games returns true",
+        "Streak returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2513",
+      "title": "achievementCardStatuteWritSealMaxPlusText",
+      "description": "Statute writ seal max plus text by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery returns Statute Writ Seal Max Plus of the Legendary",
+        "Games returns Statute Writ Seal Max Plus of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2514",
+      "title": "achievementCardNuffielditeUltraStyle",
+      "description": "Nuffieldite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns lead grey orthorhombic",
+        "Common achievement returns dull lead matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2515",
+      "title": "achievementVanaheimPlusPlusThreshold",
+      "description": "Vanaheim plus plus threshold by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery threshold >= 195000000",
+        "Games threshold <= 37000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
