@@ -25,4 +25,33 @@ extension Achievement {
     var achievementIsPinnable: Bool {
         !achievementIsSecret
     }
+
+    var achievementNotificationSoundName: String {
+        isRareAchievement ? "achievement_epic" : "achievement_basic"
+    }
+
+    var achievementCategoryIndex: Int {
+        switch category {
+        case .games: return 0
+        case .streak: return 1
+        case .score: return 2
+        case .mastery: return 3
+        }
+    }
+
+    var achievementShareImageName: String {
+        "share_\(category.displayName.lowercased())"
+    }
+
+    var achievementHasCustomBackground: Bool {
+        achievementIsPremium
+    }
+
+    var achievementGridItemSize: String {
+        switch achievementGridColumns {
+        case 1: return "full"
+        case 2: return "half"
+        default: return "third"
+        }
+    }
 }

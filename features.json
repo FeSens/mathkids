@@ -24127,6 +24127,82 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1429",
+      "title": "Achievement Notification Sound Name",
+      "description": "Add achievementNotificationSoundName returning sound file name for notifications",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementNotificationSoundName is achievement_epic"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1430",
+      "title": "Achievement Category Index",
+      "description": "Add achievementCategoryIndex returning numeric index for category ordering",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create games achievement",
+        "Verify achievementCategoryIndex is 0"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1431",
+      "title": "Achievement Share Image Name",
+      "description": "Add achievementShareImageName returning image asset name for sharing",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementShareImageName contains streak"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1432",
+      "title": "Achievement Has Custom Background",
+      "description": "Add achievementHasCustomBackground returning true for premium achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementHasCustomBackground is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1433",
+      "title": "Achievement Grid Item Size",
+      "description": "Add achievementGridItemSize returning size class for grid layouts",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementGridItemSize is full",
+        "Verify small is third"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
