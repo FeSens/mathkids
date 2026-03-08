@@ -10605,6 +10605,86 @@
         "Check firstStep is not rare"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-589",
+      "name": "HomeViewModel.difficultyPointsText",
+      "description": "Returns points per correct answer for selected difficulty",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select easy",
+        "Verify returns 10 pts"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-590",
+      "name": "StatsViewModel.xpPercentText",
+      "description": "Returns XP progress percentage as formatted string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set totalXP",
+        "Verify formatted percentage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-591",
+      "name": "ResultsViewModel.correctRatioText",
+      "description": "Returns correct/total ratio as X/Y format",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session with answers",
+        "Verify X/Y format"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-592",
+      "name": "GameSession.scoringRate",
+      "description": "Returns scoring rate per minute",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Score points over time",
+        "Verify rate calculation"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-593",
+      "name": "Achievement.categoryEmoji",
+      "description": "Returns emoji for achievement category",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "streak category returns fire",
+        "games category returns controller"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

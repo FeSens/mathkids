@@ -106,6 +106,10 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var correctRatioText: String {
+        "\(session.totalCorrect)/\(session.totalAnswered)"
+    }
+
     var totalPointsText: String {
         "\(session.finalScoreWithTimeBonus) pts"
     }

@@ -1,7 +1,18 @@
 import Foundation
 
 struct Achievement: Identifiable {
-    enum Category: Sendable { case streak, score, games, mastery }
+    enum Category: Sendable {
+        case streak, score, games, mastery
+
+        var emoji: String {
+            switch self {
+            case .streak: "🔥"
+            case .score: "🏆"
+            case .games: "🎮"
+            case .mastery: "🎓"
+            }
+        }
+    }
 
     let id: String
     let title: String

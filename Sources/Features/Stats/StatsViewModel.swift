@@ -154,6 +154,11 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var xpPercentText: String {
+        let pct = LevelSystem.progressToNextLevel(for: totalXP)
+        return "\(Int(pct * 100))%"
+    }
+
     var accuracyTrendEmoji: String {
         switch accuracyTrend {
         case .improving: "⬆️"

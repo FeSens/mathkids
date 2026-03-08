@@ -1,5 +1,19 @@
 # Claude Progress
 
+## Session 12 — 2026-03-08
+
+### Status
+- Features: 598/598 passing (12 MVP + 9 polish + 577 improvement)
+- Unit tests: 1105 (all green across 88 suites)
+- UI tests: 12 (QA screenshots flaky but unit tests solid)
+- QA: PASSED
+
+### Session 12 Features (batches 94-101)
+- Batch 94-97: logic-549 to logic-568 (20 features)
+- Batch 98-101: logic-569 to logic-588 (20 features)
+- Total this session: 40 improvement features so far
+- Files near 300-line limit: GameSession+Metrics (286), MathProblem.swift (283), LevelSystem (281)
+
 ## Session 11 — 2026-03-08
 
 ### Status

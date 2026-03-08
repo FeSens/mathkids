@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var difficultyPointsText: String {
+        "\(selectedDifficulty.pointsPerCorrect) pts"
+    }
+
     var selectedDifficultyColor: String {
         selectedDifficulty.color
     }
