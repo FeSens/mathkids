@@ -36277,6 +36277,96 @@
         "Verify threshold <= 750"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2226",
+      "title": "Achievement card loellingite style",
+      "description": "Computed property achievementCardLoellingiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify loellingite style is silver white",
+        "Create common achievement",
+        "Verify loellingite style is pewter"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2227",
+      "title": "Achievement requires guts plus",
+      "description": "Computed property achievementRequiresGutsPlus returns true for streak or score categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresGutsPlus is true",
+        "Create games achievement",
+        "Verify requiresGutsPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2228",
+      "title": "Achievement card injunction writ seal text",
+      "description": "Computed property achievementCardInjunctionWritSealText returns category-based injunction writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Injunction Writ Seal of the Patriarch",
+        "Create games achievement",
+        "Verify text is Injunction Writ Seal of the Recruit"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2229",
+      "title": "Achievement card gersdorffite style",
+      "description": "Computed property achievementCardGersdorffiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify gersdorffite style is nickel sheen",
+        "Create common achievement",
+        "Verify gersdorffite style is dull grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2230",
+      "title": "Achievement pinnacle plus threshold",
+      "description": "Computed property achievementPinnaclePlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 7500",
+        "Create games achievement",
+        "Verify threshold <= 1000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 500
         }
     }
+
+    var achievementCardLoellingiteStyle: String {
+        isRareAchievement ? "silver white" : "pewter"
+    }
+
+    var achievementRequiresGutsPlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardInjunctionWritSealText: String {
+        switch category {
+        case .mastery: return "Injunction Writ Seal of the Patriarch"
+        case .streak: return "Injunction Writ Seal of the Defender"
+        case .score: return "Injunction Writ Seal of the Gladiator"
+        case .games: return "Injunction Writ Seal of the Recruit"
+        }
+    }
+
+    var achievementCardGersdorffiteStyle: String {
+        isRareAchievement ? "nickel sheen" : "dull grey"
+    }
+
+    var achievementPinnaclePlusThreshold: Int {
+        switch category {
+        case .mastery: return 7500
+        case .streak: return 3000
+        case .score: return 6000
+        case .games: return 750
+        }
+    }
 }
