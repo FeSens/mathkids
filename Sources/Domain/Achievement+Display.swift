@@ -95,4 +95,32 @@ extension Achievement {
     var achievementAnimationName: String {
         isRareAchievement ? "sparkle" : "bounce"
     }
+
+    var achievementProgressDisplayText: String {
+        if progress != nil {
+            return "In Progress"
+        }
+        return "Locked"
+    }
+
+    var achievementSortPriority: Int {
+        switch category {
+        case .mastery: return 4
+        case .streak: return 2
+        case .score: return 3
+        case .games: return 1
+        }
+    }
+
+    var achievementBadgeStyle: String {
+        isRareAchievement ? "epic" : "standard"
+    }
+
+    var achievementIsNewPlayerFriendly: Bool {
+        category == .games
+    }
+
+    var achievementCelebrationType: String {
+        pointValue >= 25 ? "fireworks" : "confetti"
+    }
 }

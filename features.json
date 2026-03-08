@@ -22654,6 +22654,86 @@
         "Check animation is bounce"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1334",
+      "title": "Achievement Progress Display Text",
+      "description": "Add achievementProgressDisplayText computed property that returns a formatted string showing progress status",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement with progress",
+        "Verify achievementProgressDisplayText returns formatted text",
+        "Verify locked achievement shows locked text"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1335",
+      "title": "Achievement Sort Priority",
+      "description": "Add achievementSortPriority computed property returning Int for sorting achievements by category importance",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementSortPriority is highest",
+        "Verify games category is lowest"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1336",
+      "title": "Achievement Badge Style",
+      "description": "Add achievementBadgeStyle computed property returning style string based on rarity and category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementBadgeStyle returns epic style",
+        "Verify common achievement returns standard style"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1337",
+      "title": "Achievement Is New Player Friendly",
+      "description": "Add achievementIsNewPlayerFriendly computed property returning true for games category achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create games achievement",
+        "Verify achievementIsNewPlayerFriendly is true",
+        "Verify mastery achievement returns false"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1338",
+      "title": "Achievement Celebration Type",
+      "description": "Add achievementCelebrationType computed property returning celebration style based on point value",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create high-value achievement",
+        "Verify achievementCelebrationType returns fireworks",
+        "Verify low-value returns confetti"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
     }
   ],
   "_schema": {
