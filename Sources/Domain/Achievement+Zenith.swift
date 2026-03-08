@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 100
         }
     }
+
+    var achievementCardRealgarStyle: String {
+        isRareAchievement ? "aurora red" : "dull red"
+    }
+
+    var achievementRequiresSteelPlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardAccordWritSealText: String {
+        switch category {
+        case .mastery: return "Accord Writ Seal of the Luminary"
+        case .streak: return "Accord Writ Seal of the Sentinel"
+        case .score: return "Accord Writ Seal of the Warrior"
+        case .games: return "Accord Writ Seal of the Newcomer"
+        }
+    }
+
+    var achievementCardOrpimentStyle: String {
+        isRareAchievement ? "golden" : "yellow"
+    }
+
+    var achievementEnlightenmentPlusThreshold: Int {
+        switch category {
+        case .mastery: return 1500
+        case .streak: return 600
+        case .score: return 1200
+        case .games: return 150
+        }
+    }
 }

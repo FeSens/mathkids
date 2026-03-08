@@ -35917,6 +35917,96 @@
         "Verify threshold <= 150"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2206",
+      "title": "Achievement card realgar style",
+      "description": "Computed property achievementCardRealgarStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify realgar style is aurora red",
+        "Create common achievement",
+        "Verify realgar style is dull red"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2207",
+      "title": "Achievement requires steel plus",
+      "description": "Computed property achievementRequiresSteelPlus returns true for score or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresSteelPlus is true",
+        "Create games achievement",
+        "Verify requiresSteelPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2208",
+      "title": "Achievement card accord writ seal text",
+      "description": "Computed property achievementCardAccordWritSealText returns category-based accord writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Accord Writ Seal of the Luminary",
+        "Create games achievement",
+        "Verify text is Accord Writ Seal of the Newcomer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2209",
+      "title": "Achievement card orpiment style",
+      "description": "Computed property achievementCardOrpimentStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify orpiment style is golden",
+        "Create common achievement",
+        "Verify orpiment style is yellow"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2210",
+      "title": "Achievement enlightenment plus threshold",
+      "description": "Computed property achievementEnlightenmentPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 1200",
+        "Create games achievement",
+        "Verify threshold <= 200"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
