@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 100
         }
     }
+
+    var achievementCardHowliteStyle: String {
+        isRareAchievement ? "veined" : "smooth"
+    }
+
+    var achievementRequiresTenacity: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardCharter: String {
+        switch category {
+        case .mastery: return "Charter of the Academy"
+        case .streak: return "Charter of the Order"
+        case .score: return "Charter of the Guild"
+        case .games: return "Charter of the Commons"
+        }
+    }
+
+    var achievementCardChalcedonyStyle: String {
+        isRareAchievement ? "banded" : "plain"
+    }
+
+    var achievementMythicThreshold: Int {
+        switch category {
+        case .mastery: return 2000
+        case .streak: return 500
+        case .score: return 1000
+        case .games: return 200
+        }
+    }
 }

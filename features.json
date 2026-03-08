@@ -32957,6 +32957,76 @@
         "Create games achievement",
         "Verify threshold is low"
       ]
+    },
+    {
+      "id": "logic-2021",
+      "name": "achievementCardHowliteStyle",
+      "description": "Howlite gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify howlite is veined",
+        "Create common achievement",
+        "Verify howlite is smooth"
+      ]
+    },
+    {
+      "id": "logic-2022",
+      "name": "achievementRequiresTenacity",
+      "description": "Whether achievement requires tenacity (streak or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresTenacity is true",
+        "Create games achievement",
+        "Verify requiresTenacity is false"
+      ]
+    },
+    {
+      "id": "logic-2023",
+      "name": "achievementCardCharter",
+      "description": "Charter text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify charter text",
+        "Create games achievement",
+        "Verify charter text"
+      ]
+    },
+    {
+      "id": "logic-2024",
+      "name": "achievementCardChalcedonyStyle",
+      "description": "Chalcedony gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify chalcedony is banded",
+        "Create common achievement",
+        "Verify chalcedony is plain"
+      ]
+    },
+    {
+      "id": "logic-2025",
+      "name": "achievementMythicThreshold",
+      "description": "Mythic status threshold based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold is very high",
+        "Create games achievement",
+        "Verify threshold is low"
+      ]
     }
   ],
   "_schema": {
