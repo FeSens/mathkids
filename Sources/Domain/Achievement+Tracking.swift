@@ -140,4 +140,29 @@ extension Achievement {
     var achievementCardDescriptionLines: Int {
         isRareAchievement ? 3 : 2
     }
+
+    var achievementCardButtonStyle: String {
+        isRareAchievement ? "filled" : "bordered"
+    }
+
+    var achievementTotalAttemptsNeeded: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 30
+        case .score: return 20
+        case .games: return 1
+        }
+    }
+
+    var achievementCardRibbonText: String {
+        isRareAchievement ? "EXCLUSIVE" : ""
+    }
+
+    var achievementIsPracticeBased: Bool {
+        category == .mastery
+    }
+
+    var achievementCardCategoryBadge: String {
+        "\(category.emoji) \(category.displayName)"
+    }
 }

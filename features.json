@@ -29709,6 +29709,86 @@
         "Verify cardDescriptionLines by rarity"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1799",
+      "title": "Achievement Card Button Style",
+      "description": "Returns button style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardButtonStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1800",
+      "title": "Achievement Total Attempts Needed",
+      "description": "Returns total attempts needed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify totalAttemptsNeeded by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1801",
+      "title": "Achievement Card Ribbon Text",
+      "description": "Returns ribbon text for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardRibbonText by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1802",
+      "title": "Achievement Is Practice Based",
+      "description": "Returns whether achievement requires practice",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isPracticeBased for mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1803",
+      "title": "Achievement Card Category Badge",
+      "description": "Returns badge text for category",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardCategoryBadge by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
