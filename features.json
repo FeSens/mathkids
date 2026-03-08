@@ -18221,6 +18221,81 @@
         "easy returns E, hard returns H"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1069",
+      "name": "difficultyShareText",
+      "description": "Text for sharing difficulty selection",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "contains display name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1070",
+      "name": "difficultyIsAdvanced",
+      "description": "Whether difficulty is advanced level",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "hard is advanced, easy is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1071",
+      "name": "difficultyRewardMultiplier",
+      "description": "Score reward multiplier",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy is 1, hard is 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1072",
+      "name": "difficultyIconName",
+      "description": "SF Symbol icon name",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all levels"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1073",
+      "name": "difficultyCompletionMessage",
+      "description": "Message shown on completing a game at this difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all levels"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

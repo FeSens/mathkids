@@ -56,4 +56,32 @@ extension DifficultyLevel {
     var difficultyBadgeText: String {
         String(displayName.prefix(1))
     }
+
+    var difficultyShareText: String {
+        "Playing on \(displayName) difficulty!"
+    }
+
+    var difficultyIsAdvanced: Bool {
+        self == .hard
+    }
+
+    var difficultyRewardMultiplier: Int {
+        progressionIndex
+    }
+
+    var difficultyIconName: String {
+        switch self {
+        case .easy: return "tortoise"
+        case .medium: return "hare"
+        case .hard: return "bolt"
+        }
+    }
+
+    var difficultyCompletionMessage: String {
+        switch self {
+        case .easy: return "Well done! Keep practicing!"
+        case .medium: return "Great work on medium!"
+        case .hard: return "Amazing! You conquered hard mode!"
+        }
+    }
 }
