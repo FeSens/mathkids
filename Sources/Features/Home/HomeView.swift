@@ -39,6 +39,8 @@ struct HomeView: View {
 
             dailyChallengeCard
 
+            mathTipCard
+
             difficultyPicker
 
             operationPicker
@@ -168,6 +170,37 @@ struct HomeView: View {
             )
             .accessibilityIdentifier("bestScoreCard")
         }
+    }
+
+    private static let mathTips = [
+        "To add 9, add 10 then subtract 1!",
+        "Doubles are easy: 6+6=12, 7+7=14, 8+8=16",
+        "To multiply by 5, multiply by 10 then divide by 2",
+        "Subtraction is the opposite of addition",
+        "To multiply by 9, multiply by 10 then subtract once",
+        "Break big numbers into friendly parts: 14+8 = 14+6+2",
+        "Even + Even = Even, Odd + Odd = Even",
+        "Any number times 0 is always 0",
+        "Practice makes permanent - keep at it!"
+    ]
+
+    private var mathTipCard: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "lightbulb.fill")
+                .font(.title3)
+                .foregroundStyle(.yellow)
+
+            Text(Self.mathTips[abs(viewModel.totalSolved) % Self.mathTips.count])
+                .font(.system(size: 14, weight: .medium, design: .rounded))
+                .foregroundStyle(.secondary)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(Color.yellow.opacity(0.08))
+        )
+        .accessibilityIdentifier("mathTipCard")
     }
 
     private var difficultyPicker: some View {

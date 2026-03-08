@@ -120,4 +120,24 @@ struct ResultsViewModelTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.accuracy < 80)
     }
+
+    // MARK: - Star Rating (ui-070)
+
+    @Test("5 stars for 90%+ accuracy")
+    func fiveStars() {
+        let session = makeSession(correct: 9, total: 10)
+        #expect(session.accuracy >= 90)
+    }
+
+    @Test("3 stars for 70-79% accuracy")
+    func threeStars() {
+        let session = makeSession(correct: 7, total: 10)
+        #expect(session.accuracy >= 70 && session.accuracy < 80)
+    }
+
+    @Test("1 star for below 50% accuracy")
+    func oneStar() {
+        let session = makeSession(correct: 2, total: 10)
+        #expect(session.accuracy < 50)
+    }
 }

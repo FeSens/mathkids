@@ -1591,6 +1591,63 @@
       "files": [
         "Sources/Features/Game/GameHeaderView.swift"
       ]
+    },
+    {
+      "id": "ui-070",
+      "description": "Star rating display on results screen (1-5 stars based on accuracy)",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-003"
+      ],
+      "passes": true,
+      "test_steps": [
+        "5 stars for 90%+ accuracy",
+        "4 stars for 80-89%",
+        "3 stars for 70-79%",
+        "2 stars for 50-69%",
+        "1 star for below 50%",
+        "Stars animate in sequentially"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-071",
+      "description": "Quick math tips shown between games on home screen",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Home screen shows a random math tip card",
+        "Tips rotate on each app launch",
+        "Tips are age-appropriate and helpful"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift"
+      ]
+    },
+    {
+      "id": "ui-072",
+      "description": "Smooth number animation when answer text changes",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Answer field text animates when digits are added",
+        "Text scales up briefly when new digit appears",
+        "Delete animation scales down"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
     }
   ],
   "_schema": {

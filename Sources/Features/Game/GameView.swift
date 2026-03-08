@@ -4,6 +4,7 @@ struct GameView: View {
     @State var viewModel: GameViewModel
     var onGameEnd: (GameSession, [AnsweredProblem]) -> Void
     @State private var timerPulse: Bool = false
+    @State private var answerScale: CGFloat = 1.0
 
     var body: some View {
         ZStack {
@@ -164,6 +165,15 @@ struct GameView: View {
         Text(viewModel.answerText.isEmpty ? "?" : viewModel.answerText)
             .font(.system(size: 48, weight: .bold, design: .rounded))
             .foregroundStyle(viewModel.answerText.isEmpty ? .gray : .primary)
+            .scaleEffect(answerScale)
+            .animation(.spring(duration: 0.15, bounce: 0.5), value: viewModel.answerText)
+            .onChange(of: viewModel.answerText) { _, _ in
+                answerScale = 1.08
+                Task { @MainActor in
+                    try? await Task.sleep(for: .milliseconds(100))
+                    answerScale = 1.0
+                }
+            }
             .frame(height: 60)
             .frame(maxWidth: .infinity)
             .background(
