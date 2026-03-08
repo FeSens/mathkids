@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 200000000
         }
     }
+
+    var achievementCardWulfeniteStyle: String {
+        isRareAchievement ? "tabular" : "waxy"
+    }
+
+    var achievementRequiresIronNerve: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardOrdinanceWritText: String {
+        switch category {
+        case .mastery: return "Ordinance Writ of Wisdom"
+        case .streak: return "Ordinance Writ of Loyalty"
+        case .score: return "Ordinance Writ of Merit"
+        case .games: return "Ordinance Writ of Welcome"
+        }
+    }
+
+    var achievementCardBustamiteStyle: String {
+        isRareAchievement ? "rose" : "pink"
+    }
+
+    var achievementNirvanaThreshold: Int {
+        switch category {
+        case .mastery: return Int.max
+        case .streak: return Int.max / 2
+        case .score: return Int.max / 3
+        case .games: return Int.max / 10
+        }
+    }
 }

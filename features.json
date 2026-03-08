@@ -35577,6 +35577,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2186",
+      "title": "Achievement Card Wulfenite Style",
+      "description": "Computed property returning wulfenite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns tabular style",
+        "Common returns waxy style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2187",
+      "title": "Achievement Requires Iron Nerve",
+      "description": "Computed property checking if achievement requires iron nerve",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Score requires iron nerve",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2188",
+      "title": "Achievement Card Ordinance Writ Text",
+      "description": "Computed property returning ordinance writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2189",
+      "title": "Achievement Card Bustamite Style",
+      "description": "Computed property returning bustamite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns rose style",
+        "Common returns pink style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2190",
+      "title": "Achievement Nirvana Threshold",
+      "description": "Computed property returning nirvana threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
