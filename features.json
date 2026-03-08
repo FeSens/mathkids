@@ -34777,6 +34777,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2136",
+      "title": "Achievement Card Tsavorite Style",
+      "description": "Computed property returning tsavorite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns emerald style",
+        "Common returns olive style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2137",
+      "title": "Achievement Requires Passion",
+      "description": "Computed property checking if achievement requires passion",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Score requires passion",
+        "Streak does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2138",
+      "title": "Achievement Card Edict Writ Text",
+      "description": "Computed property returning edict writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2139",
+      "title": "Achievement Card Chrysocolla Style",
+      "description": "Computed property returning chrysocolla style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns turquoise style",
+        "Common returns green style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2140",
+      "title": "Achievement Hegemony Threshold",
+      "description": "Computed property returning hegemony threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

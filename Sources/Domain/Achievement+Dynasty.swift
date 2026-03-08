@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 750000
         }
     }
+
+    var achievementCardTsavoriteStyle: String {
+        isRareAchievement ? "emerald" : "olive"
+    }
+
+    var achievementRequiresPassion: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardEdictWritText: String {
+        switch category {
+        case .mastery: return "Edict Writ of the Grand Master"
+        case .streak: return "Edict Writ of the Faithful"
+        case .score: return "Edict Writ of the Champion"
+        case .games: return "Edict Writ of the Initiate"
+        }
+    }
+
+    var achievementCardChrysoCollaStyle: String {
+        isRareAchievement ? "turquoise" : "green"
+    }
+
+    var achievementHegemonyThreshold: Int {
+        switch category {
+        case .mastery: return 10000000
+        case .streak: return 5000000
+        case .score: return 7500000
+        case .games: return 1000000
+        }
+    }
 }
