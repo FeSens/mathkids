@@ -42207,6 +42207,299 @@
         "Games threshold <= 47000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2541",
+      "title": "achievementCardRobinsoniteUltraStyle",
+      "description": "Robinsonite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns tin grey orthorhombic",
+        "Common achievement returns pale grey matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2542",
+      "title": "achievementRequiresEternalPlusPlus",
+      "description": "Check if achievement requires eternal plus plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery or games returns true",
+        "Score returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2543",
+      "title": "achievementCardEdictWritSealMaxPlusText",
+      "description": "Edict writ seal max plus text by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery returns Edict Writ Seal Max Plus of the Legendary",
+        "Games returns Edict Writ Seal Max Plus of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2544",
+      "title": "achievementCardTwinniteUltraStyle",
+      "description": "Twinnite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns steel grey hexagonal",
+        "Common achievement returns flat steel matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2545",
+      "title": "achievementFimbulwinterTripleThreshold",
+      "description": "Fimbulwinter triple threshold by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery threshold >= 225000000",
+        "Games threshold <= 49000000"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-001",
+      "title": "Fix answer field truncation showing ...",
+      "description": "Answer field shows ... when typing numbers like 19. Add minimumScaleFactor and lineLimit to prevent truncation.",
+      "category": "fix",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ],
+      "test_steps": [
+        "Type 19 in answer field and it shows 19 not ...",
+        "Type 999 and it shows 999"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-002",
+      "title": "Fix breathing animation glitch on play button",
+      "description": "The gradient animation on the play button and background glitches. Use smoother, independent animation states.",
+      "category": "fix",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/AnimatedGradientBackground.swift"
+      ],
+      "test_steps": [
+        "Play button gradient animates smoothly",
+        "Background gradient does not glitch"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-003",
+      "title": "Fix game header overlapping items",
+      "description": "Top bar has too many items overlapping. Reorganize into two rows with proper spacing.",
+      "category": "fix",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ],
+      "test_steps": [
+        "All header items visible without overlap",
+        "Score, streak, timer properly spaced"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-004",
+      "title": "Remove cluttered Easy/+ badges from problem display",
+      "description": "The difficulty dot and operation badge next to the problem look off. Remove them to clean up the game view.",
+      "category": "fix",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ],
+      "test_steps": [
+        "Problem displays clean without side badges",
+        "Only the math problem text shows"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-005",
+      "title": "Fix layout shifts during correct/wrong animations",
+      "description": "When celebration, hints, and messages appear, items shift around. Use fixed-size containers and overlays.",
+      "category": "fix",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ],
+      "test_steps": [
+        "Correct answer shows celebration without moving other elements",
+        "Wrong answer shows hint without layout shift"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-006",
+      "title": "Fix results page showing same achievements",
+      "description": "Track previously shown achievements so new games show different/newly unlocked ones.",
+      "category": "fix",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Domain/PlayerStats.swift"
+      ],
+      "test_steps": [
+        "Results page shows newly unlocked achievements",
+        "Previously shown achievements are not repeated"
+      ],
+      "passes": true
+    },
+    {
+      "id": "feat-elo-001",
+      "title": "Add per-operation Elo rating system to PlayerStats",
+      "description": "Add Elo ratings for +, -, x, / operations. Track rating changes with velocity for fast initial convergence.",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/PlayerStats.swift",
+        "Sources/Domain/EloSystem.swift"
+      ],
+      "test_steps": [
+        "Initial Elo for each operation is 1000",
+        "Elo increases on correct answer",
+        "Elo decreases on wrong answer",
+        "Velocity starts high and decreases over time"
+      ],
+      "passes": true
+    },
+    {
+      "id": "feat-elo-002",
+      "title": "Use Elo to adapt problem difficulty",
+      "description": "ProblemGenerator uses Elo rating to scale operand ranges. Higher Elo = harder problems.",
+      "category": "logic",
+      "layer": "services",
+      "depends_on": [
+        "feat-elo-001"
+      ],
+      "files": [
+        "Sources/Services/ProblemGenerator.swift",
+        "Sources/Services/GameEngine.swift"
+      ],
+      "test_steps": [
+        "Higher Elo generates larger operands",
+        "Lower Elo generates smaller operands",
+        "Elo updates after each answer in GameEngine"
+      ],
+      "passes": true
+    },
+    {
+      "id": "feat-elo-003",
+      "title": "Add Elo chart to stats view",
+      "description": "Show per-operation Elo ratings as a visual chart in the stats tab.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [
+        "feat-elo-001"
+      ],
+      "files": [
+        "Sources/Features/Stats/EloChartView.swift",
+        "Sources/Features/Stats/StatsView.swift"
+      ],
+      "test_steps": [
+        "Stats tab shows Elo chart with 4 operations",
+        "Chart updates after games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "feat-tips-001",
+      "title": "Add mental math tips database",
+      "description": "Create a comprehensive database of mental math solving strategies organized by operation and difficulty.",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MentalMathTips.swift"
+      ],
+      "test_steps": [
+        "Tips available for all 4 operations",
+        "Tips include step-by-step strategies",
+        "Tips vary by problem type"
+      ],
+      "passes": true
+    },
+    {
+      "id": "feat-tips-002",
+      "title": "Add hint button with step-by-step tips during gameplay",
+      "description": "Add a lightbulb button that shows contextual solving tips one step at a time for the current problem.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [
+        "feat-tips-001"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift",
+        "Sources/Features/Game/HintView.swift"
+      ],
+      "test_steps": [
+        "Hint button visible during gameplay",
+        "Tapping shows first step of hint",
+        "Tapping again shows next step",
+        "Tips are contextual to current problem"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-007",
+      "title": "Fix XP and level not persisting after games",
+      "description": "XP earned during games is not being saved to PlayerStats. Fix StatsService.recordGame to properly update totalXP.",
+      "category": "fix",
+      "layer": "services",
+      "depends_on": [],
+      "files": [
+        "Sources/Services/StatsService.swift",
+        "Sources/Domain/PlayerStats.swift"
+      ],
+      "test_steps": [
+        "XP increases after completing a game",
+        "Level updates on home screen after gaining XP",
+        "Level progress bar reflects earned XP"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

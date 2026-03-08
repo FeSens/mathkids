@@ -210,4 +210,34 @@ extension Achievement {
         case .games: return 22000000
         }
     }
+
+    var achievementCardRobinsoniteUltraStyle: String {
+        isRareAchievement ? "tin grey orthorhombic" : "pale grey matte"
+    }
+
+    var achievementRequiresEternalPlusPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardEdictWritSealMaxPlusText: String {
+        switch category {
+        case .mastery: return "Edict Writ Seal Max Plus of the Legendary"
+        case .streak: return "Edict Writ Seal Max Plus of the Eternal"
+        case .score: return "Edict Writ Seal Max Plus of the Absolute"
+        case .games: return "Edict Writ Seal Max Plus of the Pilgrim"
+        }
+    }
+
+    var achievementCardTwinniteUltraStyle: String {
+        isRareAchievement ? "steel grey hexagonal" : "flat steel matte"
+    }
+
+    var achievementFimbulwinterTripleThreshold: Int {
+        switch category {
+        case .mastery: return 225000000
+        case .streak: return 90000000
+        case .score: return 220000000
+        case .games: return 22500000
+        }
+    }
 }
