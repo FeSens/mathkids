@@ -8333,6 +8333,90 @@
         "Verify 5+3 returns false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-449",
+      "title": "GameSession wrongAnswerRate as decimal ratio",
+      "description": "GameSession should expose wrongAnswerRate returning wrong/total as a 0.0-1.0 decimal",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 0 answered returns 0.0",
+        "Verify 1 wrong out of 4 returns 0.25",
+        "Verify all wrong returns 1.0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-450",
+      "title": "Achievement totalCount returns total number of achievements",
+      "description": "Achievement should expose totalCount static property returning all.count",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify totalCount equals Achievement.all.count",
+        "Verify totalCount is greater than 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-451",
+      "title": "DifficultyLevel maxOperand returns upper bound",
+      "description": "DifficultyLevel should expose maxOperand returning operandRange.upperBound",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy maxOperand is 10",
+        "Verify medium maxOperand is 20",
+        "Verify hard maxOperand is 50"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-452",
+      "title": "LevelSystem levelsBetween calculates level gap",
+      "description": "LevelSystem should expose levelsBetween(xp1:xp2:) returning the difference in levels",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 0 and 100 XP is 1 level apart",
+        "Verify same XP returns 0",
+        "Verify 0 and 1000 XP returns correct gap"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-453",
+      "title": "MathProblem isPositiveResult checks positive answer",
+      "description": "MathProblem should expose isPositiveResult returning true when correctAnswer > 0",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5+3 returns true",
+        "Verify 3-3 returns false (zero)",
+        "Verify 3-5 returns false (negative)"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

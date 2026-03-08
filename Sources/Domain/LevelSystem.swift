@@ -239,6 +239,10 @@ enum LevelSystem {
         return thresholds[level - 1]
     }
 
+    static func levelsBetween(xp1: Int, xp2: Int) -> Int {
+        abs(level(for: xp2) - level(for: xp1))
+    }
+
     static var totalXPAcrossAllLevels: Int {
         thresholds.reduce(0, +)
     }

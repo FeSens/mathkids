@@ -199,6 +199,11 @@ extension GameSession {
         return Double(totalCorrect) / Double(totalAnswered)
     }
 
+    var wrongAnswerRate: Double {
+        guard totalAnswered > 0 else { return 0.0 }
+        return Double(totalWrong) / Double(totalAnswered)
+    }
+
     var averageTimePerAnswer: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalTimePlayed) / Double(totalAnswered)

@@ -180,6 +180,10 @@ struct Achievement: Identifiable {
         all.filter { $0.isUnlocked(stats: stats) }
     }
 
+    static var totalCount: Int {
+        all.count
+    }
+
     static func lockedAchievements(for stats: PlayerStats) -> [Achievement] {
         all.filter { !$0.isUnlocked(stats: stats) }
     }
