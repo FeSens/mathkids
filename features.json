@@ -17546,6 +17546,81 @@
         "add is commutative, subtract is not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1024",
+      "name": "operationInputLabel",
+      "description": "Label describing the inputs of the operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns addends, multiply returns factors"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1025",
+      "name": "operationMathDomain",
+      "description": "Math domain the operation belongs to",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "all return arithmetic"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1026",
+      "name": "operationIdentityElement",
+      "description": "Identity element for the operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns 0, multiply returns 1"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1027",
+      "name": "operationSignificance",
+      "description": "Brief significance of the operation in math",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all operations"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1028",
+      "name": "operationRelatedSymbols",
+      "description": "Related mathematical symbols",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add contains + symbol"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
