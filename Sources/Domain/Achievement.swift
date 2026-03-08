@@ -189,6 +189,10 @@ struct Achievement: Identifiable {
         return unlockedCount(for: stats) * 100 / totalCount
     }
 
+    static var achievementsByCategory: [Category: [Achievement]] {
+        Dictionary(grouping: all, by: \.category)
+    }
+
     static func remainingToUnlock(for stats: PlayerStats) -> Int {
         totalCount - unlockedCount(for: stats)
     }

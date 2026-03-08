@@ -239,6 +239,12 @@ enum LevelSystem {
         return thresholds[level - 1]
     }
 
+    static func xpPercentOfMax(for xp: Int) -> Int {
+        let maxXP = xpToMaxLevel
+        guard maxXP > 0 else { return 0 }
+        return min(xp * 100 / maxXP, 100)
+    }
+
     static func isCloseToLevelUp(for xp: Int) -> Bool {
         guard !isMaxLevel(for: xp) else { return false }
         let progress = progressToNextLevel(for: xp)

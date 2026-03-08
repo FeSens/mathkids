@@ -8585,6 +8585,89 @@
         "Verify 3+5 returns false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-464",
+      "title": "GameSession scoreSummaryText formatted score summary",
+      "description": "GameSession should expose scoreSummaryText returning a formatted score summary like \"Score: 50 | Accuracy: 75%\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify includes score value",
+        "Verify includes accuracy percentage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-465",
+      "title": "Achievement achievementsByCategory groups by category",
+      "description": "Achievement should expose achievementsByCategory returning a dictionary of category to achievements",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify returns dictionary with category keys",
+        "Verify all achievements are included"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-466",
+      "title": "DifficultyLevel totalPossibleProblems returns product of range and operations",
+      "description": "DifficultyLevel should expose totalPossibleProblems returning operandRangeSize * operationCount",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns 20 (10*2)",
+        "Verify medium returns 60 (20*3)",
+        "Verify hard returns 200 (50*4)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-467",
+      "title": "LevelSystem xpPercentOfMax returns percentage toward max",
+      "description": "LevelSystem should expose xpPercentOfMax(for:) returning 0-100 percentage of XP toward max level",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 0 XP returns 0",
+        "Verify max XP returns 100",
+        "Verify partial XP returns correct percentage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-468",
+      "title": "MathProblem operandRatio returns ratio of operands",
+      "description": "MathProblem should expose operandRatio returning operand1/operand2 as Double (0 if operand2 is 0)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 10/5 returns 2.0",
+        "Verify 5/10 returns 0.5",
+        "Verify x/0 returns 0.0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

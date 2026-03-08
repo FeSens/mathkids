@@ -214,6 +214,10 @@ extension GameSession {
         return accuracy >= 80
     }
 
+    var scoreSummaryText: String {
+        "Score: \(score) | Accuracy: \(Int(accuracy))%"
+    }
+
     var averageTimePerAnswer: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalTimePlayed) / Double(totalAnswered)

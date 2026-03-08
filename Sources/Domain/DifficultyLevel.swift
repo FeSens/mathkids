@@ -186,6 +186,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         operandRange.upperBound - operandRange.lowerBound + 1
     }
 
+    var totalPossibleProblems: Int {
+        operandRangeSize * operationCount
+    }
+
     var starRating: String {
         String(repeating: "⭐", count: difficultyIndex + 1)
     }

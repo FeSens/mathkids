@@ -162,6 +162,11 @@ extension MathProblem {
         operand1 == 0 || operand2 == 0
     }
 
+    var operandRatio: Double {
+        guard operand2 != 0 else { return 0.0 }
+        return Double(operand1) / Double(operand2)
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0
