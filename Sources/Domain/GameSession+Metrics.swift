@@ -209,6 +209,11 @@ extension GameSession {
         return accuracy < 50
     }
 
+    var isHighAccuracy: Bool {
+        guard totalAnswered > 0 else { return false }
+        return accuracy >= 80
+    }
+
     var averageTimePerAnswer: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalTimePlayed) / Double(totalAnswered)

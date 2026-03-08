@@ -239,6 +239,12 @@ enum LevelSystem {
         return thresholds[level - 1]
     }
 
+    static func isCloseToLevelUp(for xp: Int) -> Bool {
+        guard !isMaxLevel(for: xp) else { return false }
+        let progress = progressToNextLevel(for: xp)
+        return progress >= 0.8
+    }
+
     static func xpToReachLevel(currentXP: Int, targetLevel: Int) -> Int {
         guard targetLevel >= 1, targetLevel <= thresholds.count else { return 0 }
         let targetXP = thresholds[targetLevel - 1]

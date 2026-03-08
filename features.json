@@ -8501,6 +8501,90 @@
         "Verify same operation produces single-name key"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-459",
+      "title": "GameSession isHighAccuracy above 80 percent",
+      "description": "GameSession should expose isHighAccuracy returning true when accuracy >= 80%",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 4 correct of 5 returns true (80%)",
+        "Verify 2 correct of 5 returns false",
+        "Verify no answers returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-460",
+      "title": "Achievement remainingToUnlock count for stats",
+      "description": "Achievement should expose remainingToUnlock(for:) returning count of locked achievements",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify fresh stats returns total count",
+        "Verify with some unlocked returns reduced count"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-461",
+      "title": "DifficultyLevel operandRangeSize returns range width",
+      "description": "DifficultyLevel should expose operandRangeSize returning the number of possible operand values",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy has 10 values",
+        "Verify medium has 20 values",
+        "Verify hard has 50 values"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-462",
+      "title": "LevelSystem isCloseToLevelUp within 20% of next level",
+      "description": "LevelSystem should expose isCloseToLevelUp(for:) returning true when within 20% of next level threshold",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 90 XP returns true (close to 100 threshold)",
+        "Verify 50 XP returns false (not close)",
+        "Verify max level returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-463",
+      "title": "MathProblem isZeroOperand checks for zero in operands",
+      "description": "MathProblem should expose isZeroOperand returning true if either operand is 0",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 0+5 returns true",
+        "Verify 5+0 returns true",
+        "Verify 3+5 returns false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

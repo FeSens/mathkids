@@ -158,6 +158,10 @@ extension MathProblem {
         correctAnswer > 0
     }
 
+    var isZeroOperand: Bool {
+        operand1 == 0 || operand2 == 0
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0
