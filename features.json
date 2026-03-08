@@ -18971,6 +18971,81 @@
         "add problem returns addition category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1119",
+      "name": "problemShareText",
+      "description": "Text for sharing the problem",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains operands and answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1120",
+      "name": "problemIsIdentityOperation",
+      "description": "Whether one operand is the identity element",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "0+3 is identity, 2+3 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1121",
+      "name": "problemIsLargeAnswer",
+      "description": "Whether answer is >= 50",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "9*9=81 is large, 2+3=5 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1122",
+      "name": "problemOperandRatio",
+      "description": "Ratio of larger to smaller operand",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "2,6 ratio is 3.0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1123",
+      "name": "problemEstimatedTimeSeconds",
+      "description": "Estimated seconds to solve",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "add problem is faster than divide"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

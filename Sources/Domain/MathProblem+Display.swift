@@ -93,4 +93,27 @@ extension MathProblem {
     var problemCategoryLabel: String {
         operation.displayName
     }
+
+    var problemShareText: String {
+        "\(operand1) \(operation.rawValue) \(operand2) = \(correctAnswer)"
+    }
+
+    var problemIsIdentityOperation: Bool {
+        let identity = operation.operationIdentityElement
+        return operand1 == identity || operand2 == identity
+    }
+
+    var problemIsLargeAnswer: Bool {
+        abs(correctAnswer) >= 50
+    }
+
+    var problemOperandRatio: Double {
+        let bigger = Double(problemMaxOperand)
+        let smaller = Double(max(problemMinOperand, 1))
+        return bigger / smaller
+    }
+
+    var problemEstimatedTimeSeconds: Int {
+        operation.difficultyWeight * 2
+    }
 }
