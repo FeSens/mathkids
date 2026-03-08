@@ -25575,6 +25575,80 @@
         "Create common achievement",
         "Verify badgeCount == 1"
       ]
+    },
+    {
+      "id": "logic-1524",
+      "title": "achievementMilestoneNumber",
+      "description": "Return the milestone number for this achievement",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify milestoneNumber >= 5",
+        "Create games achievement",
+        "Verify milestoneNumber == 1"
+      ]
+    },
+    {
+      "id": "logic-1525",
+      "title": "achievementReplayValue",
+      "description": "Return how replayable this achievement is",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify replayValue is high",
+        "Create games achievement",
+        "Verify replayValue is low"
+      ]
+    },
+    {
+      "id": "logic-1526",
+      "title": "achievementFeedbackType",
+      "description": "Return the type of feedback for this achievement",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify feedbackType is celebratory",
+        "Create common achievement",
+        "Verify feedbackType is standard"
+      ]
+    },
+    {
+      "id": "logic-1527",
+      "title": "achievementSocialText",
+      "description": "Return shareable text for social sharing",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify shareText contains the title",
+        "Verify shareText contains MathKids"
+      ]
+    },
+    {
+      "id": "logic-1528",
+      "title": "achievementProgressFormat",
+      "description": "Return the format string for progress display",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify progressFormat contains percentage",
+        "Create games achievement",
+        "Verify progressFormat contains count"
+      ]
     }
   ],
   "_schema": {

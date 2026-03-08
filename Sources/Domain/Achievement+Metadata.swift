@@ -237,4 +237,26 @@ extension Achievement {
     var achievementDisplayBadgeCount: Int {
         isRareAchievement ? 3 : 1
     }
+
+    var achievementMilestoneNumber: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 5
+        case .score: return 3
+        case .games: return 1
+        }
+    }
+
+    var achievementReplayValue: Int {
+        switch category {
+        case .mastery: return 9
+        case .streak: return 8
+        case .score: return 5
+        case .games: return 2
+        }
+    }
+
+    var achievementFeedbackType: String {
+        isRareAchievement ? "celebratory" : "standard"
+    }
 }
