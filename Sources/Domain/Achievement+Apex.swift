@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 3500
         }
     }
+
+    var achievementCardWeissiteStyle: String {
+        isRareAchievement ? "blue black" : "dark grey"
+    }
+
+    var achievementRequiresPassionPlus: Bool {
+        category == .games || category == .mastery
+    }
+
+    var achievementCardCharterWritSealPlusText: String {
+        switch category {
+        case .mastery: return "Charter Writ Seal Plus of the Pontiff"
+        case .streak: return "Charter Writ Seal Plus of the Centurion"
+        case .score: return "Charter Writ Seal Plus of the Legend"
+        case .games: return "Charter Writ Seal Plus of the Pupil"
+        }
+    }
+
+    var achievementCardRenieriteStyle: String {
+        isRareAchievement ? "bronze yellow" : "mustard"
+    }
+
+    var achievementThronePlusThreshold: Int {
+        switch category {
+        case .mastery: return 50000
+        case .streak: return 20000
+        case .score: return 40000
+        case .games: return 5000
+        }
+    }
 }

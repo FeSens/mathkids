@@ -36817,6 +36817,96 @@
         "Verify threshold <= 5000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2256",
+      "title": "Achievement card weissite style",
+      "description": "Computed property achievementCardWeissiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify weissite style is blue black",
+        "Create common achievement",
+        "Verify weissite style is dark grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2257",
+      "title": "Achievement requires passion plus",
+      "description": "Computed property achievementRequiresPassionPlus returns true for games or mastery categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create games achievement",
+        "Verify requiresPassionPlus is true",
+        "Create streak achievement",
+        "Verify requiresPassionPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2258",
+      "title": "Achievement card charter writ seal plus text",
+      "description": "Computed property achievementCardCharterWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Charter Writ Seal Plus of the Pontiff",
+        "Create games achievement",
+        "Verify text is Charter Writ Seal Plus of the Pupil"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2259",
+      "title": "Achievement card renierite style",
+      "description": "Computed property achievementCardRenieriteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify renierite style is bronze yellow",
+        "Create common achievement",
+        "Verify renierite style is mustard"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2260",
+      "title": "Achievement throne plus threshold",
+      "description": "Computed property achievementThronePlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 40000",
+        "Create games achievement",
+        "Verify threshold <= 6000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
