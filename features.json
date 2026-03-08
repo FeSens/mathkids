@@ -34377,6 +34377,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2111",
+      "title": "Achievement Card Taaffeite Style",
+      "description": "Computed property returning taaffeite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns mauve style",
+        "Common returns grey style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2112",
+      "title": "Achievement Requires Zeal",
+      "description": "Computed property checking if achievement requires zeal",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Score requires zeal",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2113",
+      "title": "Achievement Card Writ Seal Text",
+      "description": "Computed property returning writ seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2114",
+      "title": "Achievement Card Jeremejevite Style",
+      "description": "Computed property returning jeremejevite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns crystal style",
+        "Common returns frosted style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2115",
+      "title": "Achievement Realm Threshold",
+      "description": "Computed property returning realm threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
