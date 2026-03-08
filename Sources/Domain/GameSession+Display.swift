@@ -173,4 +173,29 @@ extension GameSession {
     var hasPerfectStreak: Bool {
         totalAnswered > 0 && totalCorrect == totalAnswered
     }
+
+    var timeLimitText: String {
+        "\(difficulty.timeLimitSeconds)s total"
+    }
+
+    var isSlowPace: Bool {
+        guard totalAnswered > 0, totalTimePlayed > 0 else { return false }
+        let avgTime = totalTimePlayed / totalAnswered
+        return avgTime > difficulty.recommendedSecondsPerProblem
+    }
+
+    var streakStatusDescription: String {
+        if bestStreak >= 10 { return "Amazing \(bestStreak) streak!" }
+        if bestStreak >= 5 { return "Great \(bestStreak) streak!" }
+        if bestStreak >= 3 { return "\(bestStreak) streak" }
+        return "No streak"
+    }
+
+    var totalAnsweredDisplay: String {
+        "\(totalAnswered) answers"
+    }
+
+    var isEndOfGame: Bool {
+        isFinished || timeRemaining <= 0
+    }
 }

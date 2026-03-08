@@ -12125,6 +12125,86 @@
         "Any wrong returns false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-684",
+      "name": "GameSession+Display.timeLimitText",
+      "description": "Returns total time limit as formatted string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Easy session",
+        "Verify 60s total"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-685",
+      "name": "GameSession+Display.isSlowPace",
+      "description": "Returns true when avg answer time > recommended",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Slow answers return true",
+        "Fast returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-686",
+      "name": "GameSession+Display.streakStatusDescription",
+      "description": "Returns descriptive text for current streak",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "High streak returns amazing",
+        "No streak returns no streak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-687",
+      "name": "GameSession+Display.totalAnsweredDisplay",
+      "description": "Returns total answered as X answers format",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Answer 5",
+        "Verify 5 answers"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-688",
+      "name": "GameSession+Display.isEndOfGame",
+      "description": "Returns true when finished or no time left",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Mid-game returns false",
+        "Finished returns true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
