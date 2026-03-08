@@ -43380,6 +43380,96 @@
         "Zero games shows correct text"
       ],
       "passes": true
+    },
+    {
+      "id": "improve-050",
+      "title": "GameSession warm-up detection",
+      "description": "Detect how many problems it takes the player to warm up (first correct answer after game start). Surface as warmUpProblems count.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analytics.swift"
+      ],
+      "test_steps": [
+        "warmUpCount returns number of problems before first correct",
+        "All correct from start returns 0",
+        "All wrong returns total count",
+        "warmUpText returns descriptive string"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-051",
+      "title": "Error clustering analysis",
+      "description": "Detect if wrong answers cluster together (consecutive errors) vs being spread out. Useful for identifying fatigue patterns.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analytics.swift"
+      ],
+      "test_steps": [
+        "errorClusterCount returns number of consecutive error runs",
+        "No errors returns 0 clusters",
+        "Spread out errors returns higher cluster count",
+        "longestErrorRun returns max consecutive wrong answers"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-052",
+      "title": "Speed progression tracking",
+      "description": "Track whether the player got faster or slower over the course of a game. Compare average time of first half vs second half.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analytics.swift"
+      ],
+      "test_steps": [
+        "speedProgression returns faster/slower/stable enum",
+        "Getting faster returns .faster",
+        "No time data returns .stable",
+        "speedProgressionText returns descriptive string"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-053",
+      "title": "Per-operation problem count in results",
+      "description": "Show how many problems were attempted per operation in the results view model, for display in results breakdown.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analytics.swift"
+      ],
+      "test_steps": [
+        "problemCountPerOperation returns dictionary of operation to count",
+        "Empty history returns empty dictionary",
+        "Mixed operations counted correctly"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-054",
+      "title": "Session consistency score",
+      "description": "Measure how consistent the player's accuracy was across the game. Low variance = high consistency. Score 0-100.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analytics.swift"
+      ],
+      "test_steps": [
+        "consistencyScore returns 0-100 value",
+        "All correct gives 100 consistency",
+        "All wrong gives 100 consistency",
+        "Mixed results give lower consistency",
+        "Empty history gives 0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
