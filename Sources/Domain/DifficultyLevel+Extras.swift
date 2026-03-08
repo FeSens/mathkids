@@ -212,4 +212,8 @@ extension DifficultyLevel {
     var isBonusEligible: Bool {
         self != .easy
     }
+
+    var difficultyProgressText: String {
+        "Level \(progressionIndex + 1) of 3"
+    }
 }

@@ -213,4 +213,16 @@ extension MathProblem {
     var isLargeOperandGap: Bool {
         operandGap > 5
     }
+
+    var hasNegativeAnswer: Bool {
+        correctAnswer < 0
+    }
+
+    var operandProductIsLarge: Bool {
+        operand1 * operand2 >= 50
+    }
+
+    var isSubtractionFromSelf: Bool {
+        operation == .subtract && operand1 == operand2
+    }
 }

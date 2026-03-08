@@ -106,6 +106,7 @@
 		81F95AB2C35ED1FE02B40965 /* Batch108Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F89E744FFFE536E6985017 /* Batch108Tests.swift */; };
 		84AB6E25E03008F4846AA136 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268B9A4B095A3338E8F1059 /* StatsView.swift */; };
 		85261327FDF0B22B4AF5A111 /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBDA6BF0C03D8CD5465376F /* CelebrationView.swift */; };
+		86746BD6519D9EFEA82EC1F0 /* Batch160Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66396A0FF1FAC507C687A2 /* Batch160Tests.swift */; };
 		8868DDA9F86BA47EF50C8F36 /* SoundServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E347616EBC6E0C14778115F /* SoundServiceTests.swift */; };
 		8925028C8AAC7CEFB165C56E /* LevelSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA62A70944B48A8A5693 /* LevelSystem.swift */; };
 		8CB311D41F99BBDF6C753439 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA263C1009CCDB50B3EA5BE /* SoundService.swift */; };
@@ -275,6 +276,7 @@
 		482F78AFD7D122E54CCB334A /* Batch119Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch119Tests.swift; sourceTree = "<group>"; };
 		4A9981DC75BC7CE2E43C6149 /* HomeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponents.swift; sourceTree = "<group>"; };
 		4B0908AEDE395D6C0FB5526F /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelTests.swift; sourceTree = "<group>"; };
+		4B66396A0FF1FAC507C687A2 /* Batch160Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch160Tests.swift; sourceTree = "<group>"; };
 		4C021E83262D3617792D287F /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
 		4CBFA924C844AA7E11C4A12B /* Batch94Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch94Tests.swift; sourceTree = "<group>"; };
 		4CE2D20CBD04BF187F15E15C /* GameEngineExtendedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineExtendedTests.swift; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 				90B9F4132173543A0CD33525 /* Batch157Tests.swift */,
 				2CF1F2E7462D8B113BCB9094 /* Batch158Tests.swift */,
 				4627B101AAC366D9B8913209 /* Batch159Tests.swift */,
+				4B66396A0FF1FAC507C687A2 /* Batch160Tests.swift */,
 				DDB33CC34BDF77A892728B95 /* DifficultyLevelTests.swift */,
 				FCDFC79E55F7433CD3884E7B /* GameSessionBatch46Tests.swift */,
 				38A273BF960D1313BEC03F8C /* GameSessionExtendedTests.swift */,
@@ -874,6 +877,7 @@
 				789137123FF2E50C6DBFCF1D /* Batch157Tests.swift in Sources */,
 				58FE09CE4F115C277B3492D3 /* Batch158Tests.swift in Sources */,
 				A69E4C65E6768AB53104C56C /* Batch159Tests.swift in Sources */,
+				86746BD6519D9EFEA82EC1F0 /* Batch160Tests.swift in Sources */,
 				794A135A00BC5FC138AC6D67 /* Batch53Tests.swift in Sources */,
 				C2F716BD4550E9B91BB34212 /* Batch54Tests.swift in Sources */,
 				4BF2A015D7F1BD4A12A5A462 /* Batch55Tests.swift in Sources */,

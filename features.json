@@ -15250,6 +15250,88 @@
         "Problem 4+5 (gap=1) -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-879",
+      "name": "hasNegativeAnswer",
+      "description": "MathProblem computed property returning true when correctAnswer is negative",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 3-8 = -5 -> true",
+        "Problem 8-3 = 5 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-880",
+      "name": "operandProductIsLarge",
+      "description": "MathProblem computed property returning true when operand1 * operand2 >= 50",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 10*6 -> true",
+        "Problem 3*4 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-881",
+      "name": "isQuickWrongAnswer",
+      "description": "AnsweredProblem computed property returning true when wrong and answered quickly",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Wrong answer in 2s -> true",
+        "Wrong answer in 5s -> false",
+        "Correct answer in 2s -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-882",
+      "name": "difficultyProgressText",
+      "description": "DifficultyLevel computed property returning progress text like Level 1 of 3",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> contains level info",
+        "Hard -> contains level info"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-883",
+      "name": "isSubtractionFromSelf",
+      "description": "MathProblem computed property returning true when subtracting a number from itself",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 5-5 -> true",
+        "Problem 5-3 -> false",
+        "Problem 5+5 -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

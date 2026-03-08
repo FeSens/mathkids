@@ -140,4 +140,8 @@ extension AnsweredProblem {
     var userAnswerIsEven: Bool {
         userAnswer % 2 == 0
     }
+
+    var isQuickWrongAnswer: Bool {
+        !isCorrect && wasQuickAnswer
+    }
 }
