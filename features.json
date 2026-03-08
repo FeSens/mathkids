@@ -25939,6 +25939,79 @@
         "Create games achievement",
         "Verify count == 1"
       ]
+    },
+    {
+      "id": "logic-1549",
+      "title": "achievementParentCategory",
+      "description": "Return the parent category string",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify parentCategory is performance",
+        "Create games achievement",
+        "Verify parentCategory is participation"
+      ]
+    },
+    {
+      "id": "logic-1550",
+      "title": "achievementIsAutoTracked",
+      "description": "Return whether achievement is automatically tracked",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify isAutoTracked is true"
+      ]
+    },
+    {
+      "id": "logic-1551",
+      "title": "achievementMaxLevel",
+      "description": "Return max achievement level",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify maxLevel >= 5",
+        "Create games achievement",
+        "Verify maxLevel == 1"
+      ]
+    },
+    {
+      "id": "logic-1552",
+      "title": "achievementBonusMultiplier",
+      "description": "Return bonus multiplier for rewards",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify multiplier >= 2",
+        "Create common achievement",
+        "Verify multiplier == 1"
+      ]
+    },
+    {
+      "id": "logic-1553",
+      "title": "achievementCelebrationDuration",
+      "description": "Return celebration animation duration in seconds",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify duration >= 3.0",
+        "Create common achievement",
+        "Verify duration <= 1.5"
+      ]
     }
   ],
   "_schema": {

@@ -133,4 +133,32 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementParentCategory: String {
+        switch category {
+        case .mastery, .streak: return "performance"
+        case .score, .games: return "participation"
+        }
+    }
+
+    var achievementIsAutoTracked: Bool {
+        true
+    }
+
+    var achievementMaxLevel: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 5
+        case .score: return 3
+        case .games: return 1
+        }
+    }
+
+    var achievementBonusMultiplier: Int {
+        isRareAchievement ? 3 : 1
+    }
+
+    var achievementCelebrationDuration: Double {
+        isRareAchievement ? 5.0 : 1.0
+    }
 }
