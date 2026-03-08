@@ -181,4 +181,8 @@ extension MathProblem {
     var problemDescription: String {
         "\(operand1) \(operation.displayName.lowercased()) \(operand2) equals \(correctAnswer)"
     }
+
+    var isSimpleOperation: Bool {
+        operation.isPrimaryOperation
+    }
 }

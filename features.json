@@ -14930,6 +14930,86 @@
         "Hard -> red"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-859",
+      "name": "answerWasNegative",
+      "description": "AnsweredProblem computed property returning true if user answer was negative",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "User answer -3 -> true",
+        "User answer 7 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-860",
+      "name": "isSimpleOperation",
+      "description": "MathProblem computed property returning true for add/subtract operations",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add problem -> true",
+        "Multiply problem -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-861",
+      "name": "timeLimitDescription",
+      "description": "DifficultyLevel computed property returning human-readable time limit description",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> contains time limit info",
+        "Hard -> contains time limit info"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-862",
+      "name": "problemSummary",
+      "description": "AnsweredProblem computed property returning full summary with problem, answer, and correctness",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct answer -> summary contains check",
+        "Wrong answer -> summary contains correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-863",
+      "name": "difficultyTag",
+      "description": "DifficultyLevel computed property returning short tag string for UI badges",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> tag is short string",
+        "Each difficulty -> unique tag"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

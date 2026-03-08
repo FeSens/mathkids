@@ -106,4 +106,15 @@ extension AnsweredProblem {
     var isCorrectAndFast: Bool {
         isCorrect && wasQuickAnswer
     }
+
+    var answerWasNegative: Bool {
+        userAnswer < 0
+    }
+
+    var problemSummary: String {
+        if isCorrect {
+            return "\(problem.formattedProblem) → \(userAnswer) ✓"
+        }
+        return "\(problem.formattedProblem) → \(userAnswer) (answer: \(problem.correctAnswer))"
+    }
 }

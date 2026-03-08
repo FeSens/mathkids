@@ -182,4 +182,16 @@ extension DifficultyLevel {
         case .hard: return "red"
         }
     }
+
+    var timeLimitDescription: String {
+        "\(timeLimitSeconds) seconds to complete all problems"
+    }
+
+    var difficultyTag: String {
+        switch self {
+        case .easy: return "EASY"
+        case .medium: return "MEDIUM"
+        case .hard: return "HARD"
+        }
+    }
 }
