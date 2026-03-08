@@ -3,15 +3,16 @@
 ## Session 11 — 2026-03-08
 
 ### Status
-- Features: 483/483 passing (12 MVP + 9 polish + 462 improvement)
-- Unit tests: 919 (all green across 67 suites)
+- Features: 503/503 passing (12 MVP + 9 polish + 482 improvement)
+- Unit tests: 960 (all green across 71 suites)
 - UI tests: 12 (QA screenshots flaky but unit tests solid)
 - QA: PASSED
 
-### Session 11 Features (batches 73-80)
+### Session 11 Features (batches 73-84)
 - Batch 73-76: logic-444 to logic-463 (20 features)
 - Batch 77-80: logic-464 to logic-483 (20 features)
-- Total this session: 40 improvement features
+- Batch 81-84: logic-484 to logic-503 (20 features)
+- Total this session: 60 improvement features
 
 ## Session 10 — 2026-03-08
 

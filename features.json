@@ -9236,6 +9236,87 @@
         "Verify 3+4 returns false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-504",
+      "title": "HomeViewModel selectedOperationNames formatted names",
+      "description": "HomeViewModel should expose selectedOperationNames returning comma-separated display names of selected operations",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify contains selected operation names",
+        "Verify comma separated when multiple"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-505",
+      "title": "StatsViewModel totalCorrectText formatted correct count",
+      "description": "StatsViewModel should expose totalCorrectText returning \"X correct answers\" text",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes correct count",
+        "Verify contains correct word"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-506",
+      "title": "ResultsViewModel accuracyBarWidth normalized 0-1",
+      "description": "ResultsViewModel+Analysis should expose accuracyBarWidth as Double from 0.0 to 1.0 representing accuracy",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify returns value between 0 and 1",
+        "Verify 100% accuracy returns 1.0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-507",
+      "title": "MathProblem isDivisionByOne checks division by 1",
+      "description": "MathProblem should expose isDivisionByOne returning true for division where operand2 is 1",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5/1 returns true",
+        "Verify 5/2 returns false",
+        "Verify 5+1 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-508",
+      "title": "Operation displayNameWithEmoji formatted name",
+      "description": "Operation should expose displayNameWithEmoji returning \"emoji displayName\" format",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify add returns emoji with Addition",
+        "Verify multiply returns emoji with Multiplication"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

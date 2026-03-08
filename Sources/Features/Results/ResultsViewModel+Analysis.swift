@@ -106,6 +106,10 @@ extension ResultsViewModel {
         "Best streak: \(bestStreak)"
     }
 
+    var accuracyBarWidth: Double {
+        accuracy / 100.0
+    }
+
     var recommendationText: String? {
         switch difficultyRecommendation {
         case .tryHarder:

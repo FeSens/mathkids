@@ -82,6 +82,10 @@ final class HomeViewModel {
         "\(selectedDifficulty.displayName) - \(selectedDifficulty.operationCount) operations"
     }
 
+    var selectedOperationNames: String {
+        selectedOperations.map(\.displayName).sorted().joined(separator: ", ")
+    }
+
     var nextMilestoneText: String {
         let xpNeeded = LevelSystem.xpNeededForNextLevel(currentXP: totalXP)
         if totalSolved == 0 {

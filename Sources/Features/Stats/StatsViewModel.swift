@@ -92,6 +92,10 @@ final class StatsViewModel {
         "\(Int(accuracy))% (\(accuracyGrade))"
     }
 
+    var totalCorrectText: String {
+        "\(totalCorrect) correct answers"
+    }
+
     var gamesPerDifficultyText: String {
         "Easy: \(easyGames) | Medium: \(mediumGames) | Hard: \(hardGames)"
     }
