@@ -38627,6 +38627,106 @@
         "Verify threshold <= 5000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2356",
+      "title": "achievementCardTintinaiteStyle",
+      "description": "Mineral style string for tintinaite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify tintinaite style is steel grey acicular",
+        "Create common achievement",
+        "Verify tintinaite style is dull steel"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2357",
+      "title": "achievementRequiresGracePlus",
+      "description": "Whether achievement requires grace plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires grace plus is true",
+        "Create games achievement",
+        "Verify requires grace plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2358",
+      "title": "achievementCardEdictWritSealUltraPlusText",
+      "description": "Edict writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Edict Writ Seal Ultra Plus of the Mythic",
+        "Create games achievement",
+        "Verify text is Edict Writ Seal Ultra Plus of the Apprentice"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2359",
+      "title": "achievementCardBerthieriteStyle",
+      "description": "Mineral style string for berthierite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify berthierite style is dark steel fibrous",
+        "Create common achievement",
+        "Verify berthierite style is flat steel"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2360",
+      "title": "achievementParadisePlusThreshold",
+      "description": "Paradise plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 40000000",
+        "Create games achievement",
+        "Verify threshold <= 5000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

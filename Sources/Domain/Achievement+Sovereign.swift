@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 3500000
         }
     }
+
+    var achievementCardTintinaiteStyle: String {
+        isRareAchievement ? "steel grey acicular" : "dull steel"
+    }
+
+    var achievementRequiresGracePlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardEdictWritSealUltraPlusText: String {
+        switch category {
+        case .mastery: return "Edict Writ Seal Ultra Plus of the Mythic"
+        case .streak: return "Edict Writ Seal Ultra Plus of the Warden"
+        case .score: return "Edict Writ Seal Ultra Plus of the Exalted"
+        case .games: return "Edict Writ Seal Ultra Plus of the Apprentice"
+        }
+    }
+
+    var achievementCardBerthieriteStyle: String {
+        isRareAchievement ? "dark steel fibrous" : "flat steel"
+    }
+
+    var achievementParadisePlusThreshold: Int {
+        switch category {
+        case .mastery: return 40000000
+        case .streak: return 16000000
+        case .score: return 35000000
+        case .games: return 4000000
+        }
+    }
 }
