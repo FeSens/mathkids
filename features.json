@@ -28749,6 +28749,86 @@
         "Verify cardTitleAlignment by rarity"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1739",
+      "title": "Achievement Card Background Style",
+      "description": "Returns background style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardBackgroundStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1740",
+      "title": "Achievement Min Player Level",
+      "description": "Returns minimum player level for achievement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify minimumLevel by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1741",
+      "title": "Achievement Card Badge Position",
+      "description": "Returns badge position on card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardBadgePosition by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1742",
+      "title": "Achievement Is Monitorable",
+      "description": "Returns whether achievement progress is trackable",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isTrackable by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1743",
+      "title": "Achievement Reward Description Text",
+      "description": "Returns description of reward",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify rewardDescriptionText contains points"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

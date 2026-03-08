@@ -85,4 +85,29 @@ extension Achievement {
     var achievementCardTitleAlignment: String {
         isRareAchievement ? "center" : "leading"
     }
+
+    var achievementCardBackgroundStyle: String {
+        isRareAchievement ? "gradient" : "solid"
+    }
+
+    var achievementMinPlayerLevel: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 5
+        case .score: return 3
+        case .games: return 1
+        }
+    }
+
+    var achievementCardBadgePosition: String {
+        isRareAchievement ? "topRight" : "topLeft"
+    }
+
+    var achievementIsMonitorable: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementRewardDescriptionText: String {
+        "Earn \(pointValue) points"
+    }
 }
