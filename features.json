@@ -9801,6 +9801,88 @@
         "Verify partial progress gets progress message"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-539",
+      "title": "HomeViewModel isBeginner checks if new player",
+      "description": "HomeViewModel should expose isBeginner returning true when gamesPlayed is 0",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify true when totalSolved is 0",
+        "Verify false when totalSolved > 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-540",
+      "title": "StatsViewModel favoriteOperationDescription formatted text",
+      "description": "StatsViewModel should expose favoriteOperationDescription returning info about favorite operation",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes operation when available",
+        "Verify returns fallback when none"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-541",
+      "title": "ResultsViewModel hasStreak checks if any streak exists",
+      "description": "ResultsViewModel+Analysis should expose hasStreak returning true when bestStreak > 0",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify true when streak exists",
+        "Verify false when no streak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-542",
+      "title": "DifficultyLevel timeFormatted formatted time limit",
+      "description": "DifficultyLevel should expose timeFormatted returning time limit in readable format",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns 1:00",
+        "Verify medium returns 0:45",
+        "Verify hard returns 0:30"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-543",
+      "title": "MathProblem isAdditionOfSameDigit checks same digit addition",
+      "description": "MathProblem should expose isAdditionOfSameDigit returning true for addition where operand1 == operand2",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5+5 returns true",
+        "Verify 3+5 returns false",
+        "Verify 5x5 returns false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -187,6 +187,10 @@ extension MathProblem {
         operand1 >= 0 && operand1 <= 9 && operand2 >= 0 && operand2 <= 9
     }
 
+    var isAdditionOfSameDigit: Bool {
+        operation == .add && operand1 == operand2
+    }
+
     var isMultiplicationByZero: Bool {
         operation == .multiply && (operand1 == 0 || operand2 == 0)
     }

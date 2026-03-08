@@ -92,6 +92,11 @@ final class StatsViewModel {
         "\(Int(accuracy))% (\(accuracyGrade))"
     }
 
+    var favoriteOperationDescription: String {
+        guard let op = favoriteOperation else { return "No favorite yet" }
+        return "Favorite: \(op)"
+    }
+
     var weakestOperationDescription: String {
         guard let symbol = weakestOperationSymbol else { return "No weak spots yet" }
         return "Weakest: \(symbol)"

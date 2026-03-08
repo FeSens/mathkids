@@ -106,6 +106,10 @@ extension ResultsViewModel {
         "Best streak: \(bestStreak)"
     }
 
+    var hasStreak: Bool {
+        bestStreak > 0
+    }
+
     var sessionDurationLabel: String {
         "\(session.totalTimePlayed)s played"
     }

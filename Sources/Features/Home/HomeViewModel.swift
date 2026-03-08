@@ -82,6 +82,10 @@ final class HomeViewModel {
         "\(selectedDifficulty.displayName) - \(selectedDifficulty.operationCount) operations"
     }
 
+    var isBeginner: Bool {
+        totalSolved == 0
+    }
+
     var levelNameText: String {
         levelName
     }

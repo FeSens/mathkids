@@ -190,6 +190,12 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         operandRangeSize * operationCount
     }
 
+    var timeFormatted: String {
+        let minutes = timeLimitSeconds / 60
+        let seconds = timeLimitSeconds % 60
+        return "\(minutes):\(String(format: "%02d", seconds))"
+    }
+
     var difficultyLabel: String {
         "\(emoji) \(displayName)"
     }
