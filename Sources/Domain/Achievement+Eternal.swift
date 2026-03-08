@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 17500000
         }
     }
+
+    var achievementCardWitticheniteUltraStyle: String {
+        isRareAchievement ? "steel grey orthorhombic" : "dull steel matte"
+    }
+
+    var achievementRequiresMajesticPlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardDirectiveWritSealMaxText: String {
+        switch category {
+        case .mastery: return "Directive Writ Seal Max of the Ethereal"
+        case .streak: return "Directive Writ Seal Max of the Bulwark"
+        case .score: return "Directive Writ Seal Max of the Sublime"
+        case .games: return "Directive Writ Seal Max of the Apprentice"
+        }
+    }
+
+    var achievementCardCuprobismutiteUltraStyle: String {
+        isRareAchievement ? "silver grey tabular" : "flat silver matte"
+    }
+
+    var achievementJotunheimPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 180000000
+        case .streak: return 72000000
+        case .score: return 175000000
+        case .games: return 18000000
+        }
+    }
 }
