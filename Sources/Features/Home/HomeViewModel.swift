@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var hasDailyStreak: Bool {
+        dailyStreak > 0
+    }
+
     var maxOperandText: String {
         "Up to \(selectedDifficulty.maxOperand)"
     }

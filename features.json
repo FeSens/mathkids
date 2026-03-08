@@ -11405,6 +11405,86 @@
         "With bonus is true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-639",
+      "name": "HomeViewModel.hasDailyStreak",
+      "description": "Returns true when dailyStreak > 0",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Set dailyStreak to 3",
+        "Verify returns true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-640",
+      "name": "ResultsViewModel.gameSummaryText",
+      "description": "Returns one-line game summary with score and accuracy",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session",
+        "Verify summary contains score and accuracy"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-641",
+      "name": "ResultsViewModel.wasHighAccuracy",
+      "description": "Returns true when accuracy >= 80",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "100% accuracy returns true",
+        "0% returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-642",
+      "name": "GameSession.bonusPointsText",
+      "description": "Returns bonus points as formatted string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Score bonus",
+        "Verify text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-643",
+      "name": "GameSession.answeredRatio",
+      "description": "Returns correct/total as formatted ratio string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Answer mix",
+        "Verify ratio format"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

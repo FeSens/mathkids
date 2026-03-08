@@ -106,6 +106,14 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var gameSummaryText: String {
+        "\(finalScore) pts | \(Int(accuracy))%"
+    }
+
+    var wasHighAccuracy: Bool {
+        accuracy >= 80
+    }
+
     var accuracyStatusText: String {
         if accuracy >= 90 { return "Excellent" }
         if accuracy >= 70 { return "Good" }

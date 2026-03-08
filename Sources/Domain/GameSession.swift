@@ -27,6 +27,14 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var bonusPointsText: String {
+        "\(totalBonusPoints) bonus pts"
+    }
+
+    var answeredRatio: String {
+        "\(totalCorrect)/\(totalAnswered)"
+    }
+
     var currentStreakText: String {
         "\(currentStreak)"
     }
