@@ -39,6 +39,16 @@ final class HomeViewModel {
         UserDefaults.standard.set(selectedOperations.map(\.rawValue), forKey: "selectedOperations")
     }
 
+    var dailyChallengeResetTime: String? {
+        guard dailyChallengeCompleted else { return nil }
+        let calendar = Calendar.current
+        guard let tomorrow = calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: .now)) else { return nil }
+        let remaining = Int(tomorrow.timeIntervalSinceNow)
+        let hours = remaining / 3600
+        let minutes = (remaining % 3600) / 60
+        return "\(hours)h \(minutes)m"
+    }
+
     var greeting: String {
         let hour = Calendar.current.component(.hour, from: .now)
         if hour < 12 { return "Good Morning!" }

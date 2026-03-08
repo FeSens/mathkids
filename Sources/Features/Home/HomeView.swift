@@ -165,9 +165,15 @@ struct HomeView: View {
                             .font(.system(size: 16, weight: .bold, design: .rounded))
                     }
                     if viewModel.dailyChallengeCompleted {
-                        Text("Completed! Best: \(viewModel.dailyChallengeBestTime)s")
-                            .font(.caption)
-                            .foregroundStyle(.green)
+                        if let resetTime = viewModel.dailyChallengeResetTime {
+                            Text("Completed! Best: \(viewModel.dailyChallengeBestTime)s • Resets in \(resetTime)")
+                                .font(.caption)
+                                .foregroundStyle(.green)
+                        } else {
+                            Text("Completed! Best: \(viewModel.dailyChallengeBestTime)s")
+                                .font(.caption)
+                                .foregroundStyle(.green)
+                        }
                     } else {
                         Text("10 problems - beat your best time!")
                             .font(.caption)

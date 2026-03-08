@@ -10,11 +10,12 @@ struct ResultsView: View {
     @State private var showXP: Bool = false
     @State private var showButtons: Bool = false
     @State private var emojiFloat: Bool = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var showConfetti: Bool = false
 
     var body: some View {
         ZStack(alignment: .top) {
-            if showConfetti {
+            if showConfetti && !reduceMotion {
                 ConfettiView()
             }
 
@@ -129,9 +130,9 @@ struct ResultsView: View {
         VStack(spacing: 8) {
             Text(headerEmoji)
                 .font(.system(size: 64))
-                .offset(y: emojiFloat ? -8 : 8)
-                .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: emojiFloat)
-                .onAppear { emojiFloat = true }
+                .offset(y: reduceMotion ? 0 : (emojiFloat ? -8 : 8))
+                .animation(reduceMotion ? nil : .easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: emojiFloat)
+                .onAppear { if !reduceMotion { emojiFloat = true } }
 
             Text(headerText)
                 .font(.system(size: 28, weight: .bold, design: .rounded))

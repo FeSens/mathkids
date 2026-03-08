@@ -2964,6 +2964,100 @@
         "Sources/Features/Game/GameView.swift",
         "Sources/Features/Game/GameViewModel.swift"
       ]
+    },
+    {
+      "id": "ui-144",
+      "title": "Combo multiplier display in game header",
+      "description": "Show current combo multiplier (x2, x3, x4) in the game header when streak is active",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Start a game and answer 3 correct in a row",
+        "Header shows x2 multiplier badge",
+        "At 5 streak shows x3, at 10 streak shows x4",
+        "Multiplier disappears when streak breaks"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-145",
+      "title": "Problem history keeps full session history",
+      "description": "GameEngine problemHistory retains all problems for the session instead of only last 5",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Answer 10 problems in a game",
+        "All 10 appear in problemHistory on results screen",
+        "ProblemHistorySection shows all answered problems"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
+    },
+    {
+      "id": "ui-146",
+      "title": "Average response time tracking",
+      "description": "Track time taken per problem and calculate average response time in GameSession",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "GameEngine tracks problem start time",
+        "On submit, timeTaken is recorded on AnsweredProblem",
+        "ResultsViewModel averageTimePerProblem uses real data"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift",
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "ui-147",
+      "title": "Clear answer button on long press delete",
+      "description": "Long pressing the delete button clears the entire answer field",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Type multiple digits in answer field",
+        "Long press delete button",
+        "Entire answer field is cleared"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-148",
+      "title": "Difficulty label in game header",
+      "description": "Show the current difficulty level name in the game header",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Start a game on easy difficulty",
+        "Header shows 'Easy' label with green color",
+        "Medium shows orange, Hard shows red"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
     }
   ],
   "_schema": {

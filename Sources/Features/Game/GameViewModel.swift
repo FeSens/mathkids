@@ -24,6 +24,7 @@ final class GameViewModel {
     var problemTransitionId: UUID = UUID()
     var correctAnswerHint: Int? = nil
     var showSpeedBonus: Bool = false
+    var answerFieldFlash: Color? = nil
     var problemNumber: Int = 1
     var isPaused: Bool = false
     var skippedCount: Int = 0
@@ -115,6 +116,8 @@ final class GameViewModel {
         correctAnswerHint = nil
         showSpeedBonus = false
 
+        answerFieldFlash = (engine.lastAnswerCorrect == true) ? .green : .red
+
         if engine.lastAnswerCorrect == true {
             showCelebration = true
             if hadSpeedBonus { showSpeedBonus = true }
@@ -166,6 +169,7 @@ final class GameViewModel {
             motivationalMessage = nil
             correctAnswerHint = nil
             showSpeedBonus = false
+            answerFieldFlash = nil
         }
     }
 

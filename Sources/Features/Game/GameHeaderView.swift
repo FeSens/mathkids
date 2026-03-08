@@ -45,6 +45,14 @@ struct GameHeaderView: View {
                 }
                 .accessibilityIdentifier("problemCounter")
 
+                Text(viewModel.engine.difficulty.displayName)
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(Capsule().fill(difficultyColor))
+                    .accessibilityIdentifier("difficultyLabel")
+
                 if viewModel.engine.totalAnswered > 0 {
                     Text("\(viewModel.engine.totalCorrect)/\(viewModel.engine.totalAnswered)")
                         .font(.system(size: 10, weight: .medium, design: .rounded))
@@ -171,6 +179,12 @@ struct GameHeaderView: View {
                     .accessibilityIdentifier("pauseButton")
                 }
             }
+        }
+    }
+
+    private var difficultyColor: Color {
+        switch viewModel.engine.difficulty {
+        case .easy: .green; case .medium: .orange; case .hard: .red
         }
     }
 

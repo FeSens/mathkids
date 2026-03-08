@@ -237,8 +237,9 @@ struct GameView: View {
             .frame(maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color(.systemGray6))
+                    .fill(viewModel.answerFieldFlash?.opacity(0.15) ?? Color(.systemGray6))
                     .overlay(RoundedRectangle(cornerRadius: 16).stroke(difficultyTextColor.opacity(0.3), lineWidth: 1.5))
+                    .animation(.easeOut(duration: 0.3), value: viewModel.answerFieldFlash == nil)
             )
             .accessibilityIdentifier("answerField")
     }
@@ -268,6 +269,7 @@ struct GameView: View {
                 NumberButton(label: "0") { viewModel.appendDigit(0) }
                     .accessibilityIdentifier("num_0").accessibilityLabel("Zero")
                 NumberButton(label: "⌫", color: .gray) { viewModel.deleteDigit() }
+                    .onLongPressGesture { viewModel.clearAnswer() }
                     .accessibilityIdentifier("num_delete").accessibilityLabel("Delete")
             }
 

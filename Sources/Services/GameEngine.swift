@@ -18,6 +18,7 @@ final class GameEngine {
     private(set) var problemHistory: [AnsweredProblem] = []
     private(set) var hasStreakFreeze: Bool = false
     private(set) var streakFreezeUsed: Bool = false
+    private var problemStartTime: Date = Date()
 
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
@@ -48,11 +49,10 @@ final class GameEngine {
     }
 
     func submitAnswer(_ answer: Int) {
-        let answered = AnsweredProblem(problem: currentProblem, userAnswer: answer)
+        let elapsed = Date().timeIntervalSince(problemStartTime)
+        var answered = AnsweredProblem(problem: currentProblem, userAnswer: answer)
+        answered.timeTaken = elapsed
         problemHistory.append(answered)
-        if problemHistory.count > 5 {
-            problemHistory.removeFirst()
-        }
 
         let correct = currentProblem.isCorrect(answer: answer)
         let speedBonus = session.timeRemaining > session.difficulty.timeLimitSeconds / 2 ? 5 : 0
@@ -95,6 +95,7 @@ final class GameEngine {
 
         if !session.isFinished {
             currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
+            problemStartTime = Date()
         }
     }
 
@@ -138,6 +139,7 @@ final class GameEngine {
 
     func skipToNextProblem() {
         currentProblem = generator.generate(for: session.difficulty, allowedOperations: allowedOperations, adaptiveRange: adaptiveRange)
+        problemStartTime = Date()
     }
 
     func stopGame() {

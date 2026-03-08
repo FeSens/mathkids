@@ -129,4 +129,35 @@ struct GameEngineTests {
         engine.submitAnswer(999999)
         #expect(engine.currentStreak == 0)
     }
+
+    // MARK: - Full Problem History (ui-145)
+
+    @Test("Problem history retains all answers not just last 5")
+    @MainActor
+    func problemHistoryRetainsAll() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        for _ in 0..<8 {
+            let answer = engine.currentProblem.correctAnswer
+            engine.submitAnswer(answer)
+        }
+        #expect(engine.problemHistory.count == 8)
+    }
+
+    // MARK: - Response Time Tracking (ui-146)
+
+    @Test("Problem history records timeTaken")
+    @MainActor
+    func problemHistoryRecordsTime() async throws {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        // Wait a bit so timeTaken > 0
+        try await Task.sleep(for: .milliseconds(100))
+        let answer = engine.currentProblem.correctAnswer
+        engine.submitAnswer(answer)
+        let entry = engine.problemHistory.first
+        #expect(entry != nil)
+        #expect(entry?.timeTaken != nil)
+        #expect(entry!.timeTaken! > 0)
+    }
 }

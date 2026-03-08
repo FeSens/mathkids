@@ -490,4 +490,5 @@ struct GameViewModelTests {
         vm.submitAnswer()
         #expect(vm.problemGoalProgress > 0.0)
     }
+
 }
