@@ -128,4 +128,29 @@ extension Achievement {
     var achievementLayoutMode: String {
         achievementDisplaySize == "large" ? "horizontal" : "vertical"
     }
+
+    var achievementHapticIntensity: String {
+        isRareAchievement ? "heavy" : "light"
+    }
+
+    var achievementNotificationPriority: String {
+        achievementIsPremium ? "high" : "normal"
+    }
+
+    var achievementShowParticles: Bool {
+        achievementIsEpic
+    }
+
+    var achievementToastDuration: Int {
+        isRareAchievement ? 5 : 3
+    }
+
+    var achievementBackgroundPattern: String {
+        switch category {
+        case .streak: return "flames"
+        case .score: return "stars"
+        case .games: return "dots"
+        case .mastery: return "crowns"
+        }
+    }
 }

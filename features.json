@@ -23587,6 +23587,83 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1394",
+      "title": "Achievement Haptic Intensity",
+      "description": "Add achievementHapticIntensity returning haptic feedback strength",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementHapticIntensity is heavy",
+        "Verify common is light"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1395",
+      "title": "Achievement Notification Priority",
+      "description": "Add achievementNotificationPriority returning notification priority level",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementNotificationPriority is high"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1396",
+      "title": "Achievement Show Particles",
+      "description": "Add achievementShowParticles returning true for epic achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create epic achievement",
+        "Verify achievementShowParticles is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1397",
+      "title": "Achievement Toast Duration",
+      "description": "Add achievementToastDuration returning seconds for toast notification display",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementToastDuration is 5",
+        "Verify common is 3"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1398",
+      "title": "Achievement Background Pattern",
+      "description": "Add achievementBackgroundPattern returning pattern name for card background",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementBackgroundPattern is flames"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {
