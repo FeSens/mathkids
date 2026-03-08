@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 14000000
         }
     }
+
+    var achievementCardRobinsoniteProStyle: String {
+        isRareAchievement ? "lead grey prismatic" : "ashen lead grey"
+    }
+
+    var achievementRequiresAbsolutePlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardOrdinanceWritSealUltraPlusPlusText: String {
+        switch category {
+        case .mastery: return "Ordinance Writ Seal Ultra Plus Plus of the Immortal"
+        case .streak: return "Ordinance Writ Seal Ultra Plus Plus of the Guardian"
+        case .score: return "Ordinance Writ Seal Ultra Plus Plus of the Paramount"
+        case .games: return "Ordinance Writ Seal Ultra Plus Plus of the Disciple"
+        }
+    }
+
+    var achievementCardTwinniteProStyle: String {
+        isRareAchievement ? "steel grey orthorhombic" : "dull steel lead"
+    }
+
+    var achievementYggdrasilPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 145000000
+        case .streak: return 58000000
+        case .score: return 140000000
+        case .games: return 14500000
+        }
+    }
 }

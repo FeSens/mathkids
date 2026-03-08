@@ -40727,6 +40727,106 @@
         "Verify threshold <= 22000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2461",
+      "title": "achievementCardRobinsoniteProStyle",
+      "description": "Mineral style string for robinsonite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify robinsonite pro style is lead grey prismatic",
+        "Create common achievement",
+        "Verify robinsonite pro style is ashen lead grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2462",
+      "title": "achievementRequiresAbsolutePlus",
+      "description": "Whether achievement requires absolute plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires absolute plus is true",
+        "Create streak achievement",
+        "Verify requires absolute plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2463",
+      "title": "achievementCardOrdinanceWritSealUltraPlusPlusText",
+      "description": "Ordinance writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Ordinance Writ Seal Ultra Plus Plus of the Immortal",
+        "Create games achievement",
+        "Verify text is Ordinance Writ Seal Ultra Plus Plus of the Disciple"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2464",
+      "title": "achievementCardTwinniteProStyle",
+      "description": "Mineral style string for twinnite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify twinnite pro style is steel grey orthorhombic",
+        "Create common achievement",
+        "Verify twinnite pro style is dull steel lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2465",
+      "title": "achievementYggdrasilPlusPlusThreshold",
+      "description": "Yggdrasil plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 145000000",
+        "Create games achievement",
+        "Verify threshold <= 24000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
