@@ -29229,6 +29229,86 @@
         "Verify cardFooterIcon by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1769",
+      "title": "Achievement Card Glow Color",
+      "description": "Returns glow color for achievement card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardGlowColor by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1770",
+      "title": "Achievement Mastery Percentage",
+      "description": "Returns mastery percentage required",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify masteryPercentage by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1771",
+      "title": "Achievement Card Ribbon Color",
+      "description": "Returns ribbon color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardRibbonColor by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1772",
+      "title": "Achievement Is Exclusive Reward",
+      "description": "Returns whether reward is exclusive",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isExclusiveReward for mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1773",
+      "title": "Achievement One Liner Summary",
+      "description": "Returns one-line summary",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify summaryLine contains title and category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

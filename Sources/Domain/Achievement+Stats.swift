@@ -255,4 +255,29 @@ extension Achievement {
         case .games: return "gamecontroller"
         }
     }
+
+    var achievementCardGlowColor: String {
+        isRareAchievement ? "gold" : "clear"
+    }
+
+    var achievementMasteryPercentage: Int {
+        category == .mastery ? 100 : 0
+    }
+
+    var achievementCardRibbonColor: String {
+        switch category {
+        case .mastery: return "purple"
+        case .streak: return "red"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementIsExclusiveReward: Bool {
+        category == .mastery
+    }
+
+    var achievementOneLinerSummary: String {
+        "\(title) — \(category.displayName)"
+    }
 }
