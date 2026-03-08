@@ -2230,6 +2230,99 @@
         "Sources/Domain/PlayerStats.swift",
         "Sources/Features/Home/HomeView.swift"
       ]
+    },
+    {
+      "id": "ui-104",
+      "title": "Animated difficulty transition",
+      "description": "When switching difficulty on home screen, animate the card transition with a smooth scale/fade effect",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Tap different difficulty cards on home screen",
+        "Card transition has smooth animation",
+        "Selected card scales up slightly"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-105",
+      "title": "Game over sound variation based on performance",
+      "description": "Play different sound effects when game ends based on final accuracy",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "High accuracy game plays triumphant sound",
+        "Medium accuracy plays encouraging sound",
+        "Low accuracy plays standard end sound"
+      ],
+      "files": [
+        "Sources/Services/SoundService.swift"
+      ]
+    },
+    {
+      "id": "ui-106",
+      "title": "Settings toggle animations",
+      "description": "Add smooth animations when toggling sound and haptic settings",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-012"
+      ],
+      "test_steps": [
+        "Open settings",
+        "Toggle sound on/off has smooth animation",
+        "Toggle haptics on/off has smooth animation"
+      ],
+      "files": [
+        "Sources/Features/Settings/SettingsView.swift"
+      ]
+    },
+    {
+      "id": "ui-107",
+      "title": "Problem text color by operation",
+      "description": "Color the operation symbol in the problem text to match the operation badge color",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Addition problems show green operation symbol",
+        "Subtraction shows blue",
+        "Multiplication shows orange",
+        "Division shows purple"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-108",
+      "title": "Accuracy trend indicator",
+      "description": "Show a small trend arrow on the stats screen based on recent accuracy history",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Stats screen shows accuracy with trend arrow",
+        "Improving accuracy shows green up arrow",
+        "Declining accuracy shows red down arrow",
+        "Stable accuracy shows no arrow"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift",
+        "Sources/Features/Stats/StatsView.swift"
+      ]
     }
   ],
   "_schema": {

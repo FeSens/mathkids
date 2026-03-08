@@ -22,6 +22,7 @@
 		3BF70E47926CC19260C13CF2 /* ProblemGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964AE1906CA925557311B8A /* ProblemGeneratorTests.swift */; };
 		41B2881CAF01E6D55A44EDDF /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE9B3CED4BD9BFBC7D8482 /* GameSession.swift */; };
 		4513317F1EC163421536BF08 /* StatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ABF0C1B98F1BCF8475FCE /* StatsService.swift */; };
+		45CD98BF35692868AA988D43 /* StatsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C0BAB984FF6AC3A82CC93C /* StatsViewModelTests.swift */; };
 		487C5AB4A01BDD59CBB3895E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047BADB99680064F99C105B1 /* HomeViewModel.swift */; };
 		4BBB1ADCC4D23153D19B99EF /* HapticServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296AF4623C4992D94BAE1BF9 /* HapticServiceTests.swift */; };
 		4C4CAF338FE9C6627C6CB96D /* ProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A131ACE8EAE37C45B0DFDC6 /* ProblemGenerator.swift */; };
@@ -110,6 +111,7 @@
 		540944710ECFBCE10FDF9E10 /* TimerRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRingView.swift; sourceTree = "<group>"; };
 		57BDC4FC3F00E9203C4CFAC3 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
 		60BCA319C75953627B61D26E /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		63C0BAB984FF6AC3A82CC93C /* StatsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelTests.swift; sourceTree = "<group>"; };
 		6B60A09BB43C507382AB7C0D /* MathProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathProblem.swift; sourceTree = "<group>"; };
 		7209CD1DB820BDAAEBB9CFE5 /* MathKidsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathKidsApp.swift; sourceTree = "<group>"; };
 		75E9DDA865E96A244B02B953 /* MathKidsUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MathKidsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +243,7 @@
 				4B0908AEDE395D6C0FB5526F /* GameViewModelTests.swift */,
 				E2E3D23339BFF349C9A13EB0 /* HomeViewModelTests.swift */,
 				83BED5F68362F01B31E28C2E /* ResultsViewModelTests.swift */,
+				63C0BAB984FF6AC3A82CC93C /* StatsViewModelTests.swift */,
 			);
 			path = FeaturesTests;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				709F5F4D49EEE3659BBFB116 /* ResultsViewModelTests.swift in Sources */,
 				008F2C3CC150E092B0A65669 /* SettingsManagerTests.swift in Sources */,
 				8868DDA9F86BA47EF50C8F36 /* SoundServiceTests.swift in Sources */,
+				45CD98BF35692868AA988D43 /* StatsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,21 @@ final class StatsViewModel {
     var favoriteOperationCount: Int = 0
     var totalTimePlayedMinutes: Int = 0
 
+    enum AccuracyTrend { case improving, declining, stable }
+
+    var accuracyTrend: AccuracyTrend {
+        guard recentAccuracies.count >= 3 else { return .stable }
+        let recent = Array(recentAccuracies.suffix(3))
+        let older = Array(recentAccuracies.prefix(recentAccuracies.count - 3).suffix(3))
+        guard !older.isEmpty else { return .stable }
+        let recentAvg = recent.reduce(0, +) / Double(recent.count)
+        let olderAvg = older.reduce(0, +) / Double(older.count)
+        let diff = recentAvg - olderAvg
+        if diff > 5 { return .improving }
+        if diff < -5 { return .declining }
+        return .stable
+    }
+
     var gamesMilestone: String? {
         switch gamesPlayed {
         case 100...: "Century Gamer"

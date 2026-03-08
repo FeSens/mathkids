@@ -12,14 +12,16 @@ struct SettingsView: View {
             List {
                 Section("Audio") {
                     Toggle(isOn: $settings.soundEnabled) {
-                        Label("Sound Effects", systemImage: "speaker.wave.2.fill")
+                        Label("Sound Effects", systemImage: settings.soundEnabled ? "speaker.wave.2.fill" : "speaker.slash.fill")
                     }
                     .accessibilityIdentifier("soundToggle")
+                    .animation(.spring(duration: 0.3), value: settings.soundEnabled)
 
                     Toggle(isOn: $settings.hapticsEnabled) {
-                        Label("Haptic Feedback", systemImage: "hand.tap.fill")
+                        Label("Haptic Feedback", systemImage: settings.hapticsEnabled ? "hand.tap.fill" : "hand.raised.slash.fill")
                     }
                     .accessibilityIdentifier("hapticsToggle")
+                    .animation(.spring(duration: 0.3), value: settings.hapticsEnabled)
                 }
 
                 Section("About") {

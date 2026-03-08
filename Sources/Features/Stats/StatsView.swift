@@ -114,8 +114,20 @@ struct StatsView: View {
                 LifetimeStat(label: "Problems Solved", value: "\(viewModel.totalSolved)", icon: "checkmark.circle.fill", color: .green)
                     .accessibilityIdentifier("lifetimeSolved")
 
-                LifetimeStat(label: "Accuracy", value: "\(Int(viewModel.accuracy))%", icon: "target", color: .blue)
-                    .accessibilityIdentifier("lifetimeAccuracy")
+                VStack(spacing: 4) {
+                    LifetimeStat(label: "Accuracy", value: "\(Int(viewModel.accuracy))%", icon: "target", color: .blue)
+                    if viewModel.accuracyTrend != .stable {
+                        HStack(spacing: 2) {
+                            Image(systemName: viewModel.accuracyTrend == .improving ? "arrow.up.right" : "arrow.down.right")
+                                .font(.system(size: 10, weight: .bold))
+                            Text(viewModel.accuracyTrend == .improving ? "Improving" : "Declining")
+                                .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        }
+                        .foregroundStyle(viewModel.accuracyTrend == .improving ? .green : .red)
+                        .accessibilityIdentifier("accuracyTrendArrow")
+                    }
+                }
+                .accessibilityIdentifier("lifetimeAccuracy")
 
                 LifetimeStat(label: "Best Streak", value: "\(viewModel.bestStreak)", icon: "flame.fill", color: .orange)
                     .accessibilityIdentifier("lifetimeBestStreak")
