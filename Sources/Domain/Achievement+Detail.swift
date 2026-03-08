@@ -43,4 +43,34 @@ extension Achievement {
     var achievementCardOverlayOpacity: Double {
         isRareAchievement ? 0.3 : 0
     }
+
+    var achievementShowInFeed: Bool {
+        true
+    }
+
+    var achievementRequiredOperations: Int {
+        category == .mastery ? 100 : 0
+    }
+
+    var achievementThemeColor: String {
+        switch category {
+        case .mastery: return "indigo"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementCollectionSize: Int {
+        switch category {
+        case .mastery: return 8
+        case .streak: return 6
+        case .score: return 4
+        case .games: return 3
+        }
+    }
+
+    var achievementIsUrgent: Bool {
+        category == .streak
+    }
 }

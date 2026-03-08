@@ -27963,6 +27963,81 @@
         "Create common achievement",
         "Verify opacity is 0"
       ]
+    },
+    {
+      "id": "logic-1689",
+      "title": "achievementShowInFeed",
+      "description": "Return whether to show in activity feed",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify showInFeed is true",
+        "Create common achievement",
+        "Verify showInFeed is true"
+      ]
+    },
+    {
+      "id": "logic-1690",
+      "title": "achievementRequiredOperations",
+      "description": "Return required math operations count",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify count >= 50",
+        "Create games achievement",
+        "Verify count == 0"
+      ]
+    },
+    {
+      "id": "logic-1691",
+      "title": "achievementThemeColor",
+      "description": "Return theme color for UI styling",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify color is indigo",
+        "Create streak achievement",
+        "Verify color is orange"
+      ]
+    },
+    {
+      "id": "logic-1692",
+      "title": "achievementCollectionSize",
+      "description": "Return expected collection size",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify size >= 4",
+        "Create games achievement",
+        "Verify size >= 2"
+      ]
+    },
+    {
+      "id": "logic-1693",
+      "title": "achievementIsUrgent",
+      "description": "Return whether achievement has urgency",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify isUrgent is true",
+        "Create games achievement",
+        "Verify isUrgent is false"
+      ]
     }
   ],
   "_schema": {
