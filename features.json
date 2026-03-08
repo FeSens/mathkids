@@ -24896,6 +24896,83 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1479",
+      "title": "Achievement Gem Value",
+      "description": "Add achievementGemValue returning gem reward amount based on rarity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementGemValue is 5",
+        "Verify common is 1"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1480",
+      "title": "Achievement Is Visible",
+      "description": "Add achievementIsVisible returning true for non-secret or in-progress achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create games achievement",
+        "Verify achievementIsVisible is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1481",
+      "title": "Achievement Reward Type",
+      "description": "Add achievementRewardType returning coins, gems, or mixed based on value",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create high value achievement",
+        "Verify achievementRewardType is mixed"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1482",
+      "title": "Achievement Subtitle Opacity",
+      "description": "Add achievementSubtitleOpacity returning opacity for subtitle text",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create locked achievement",
+        "Verify achievementSubtitleOpacity is 0.5",
+        "Verify unlocked is 0.8"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1483",
+      "title": "Achievement Unlock Requirement Text",
+      "description": "Add achievementUnlockRequirementText returning human-readable requirement",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementUnlockRequirementText contains description"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {

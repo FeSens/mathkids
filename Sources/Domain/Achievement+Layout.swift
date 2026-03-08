@@ -267,4 +267,25 @@ extension Achievement {
     var achievementSoundVolume: Double {
         isRareAchievement ? 1.0 : 0.5
     }
+
+    var achievementGemValue: Int {
+        isRareAchievement ? 5 : 1
+    }
+
+    var achievementIsVisible: Bool {
+        !achievementIsSecret
+    }
+
+    var achievementRewardType: String {
+        if pointValue >= 25 { return "mixed" }
+        return "coins"
+    }
+
+    var achievementSubtitleOpacity: Double {
+        progress != nil ? 0.8 : 0.5
+    }
+
+    var achievementUnlockRequirementText: String {
+        "Requirement: \(description)"
+    }
 }
