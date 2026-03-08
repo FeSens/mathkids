@@ -38347,6 +38347,96 @@
         "Verify threshold <= 2000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2341",
+      "title": "Achievement card galenobismutite style",
+      "description": "Computed property achievementCardGalenobismutiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify galenobismutite style is tin white lamellar",
+        "Create common achievement",
+        "Verify galenobismutite style is dull tin"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2342",
+      "title": "Achievement requires diligence plus",
+      "description": "Computed property achievementRequiresDiligencePlus returns true for mastery or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresDiligencePlus is true",
+        "Create games achievement",
+        "Verify requiresDiligencePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2343",
+      "title": "Achievement card resolution writ seal ultra text",
+      "description": "Computed property achievementCardResolutionWritSealUltraText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Resolution Writ Seal Ultra of the Supreme",
+        "Create games achievement",
+        "Verify text is Resolution Writ Seal Ultra of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2344",
+      "title": "Achievement card cosalite style",
+      "description": "Computed property achievementCardCosaliteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cosalite style is lead grey prismatic",
+        "Create common achievement",
+        "Verify cosalite style is flat grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2345",
+      "title": "Achievement exemplar plus threshold",
+      "description": "Computed property achievementExemplarPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 20000000",
+        "Create games achievement",
+        "Verify threshold <= 3000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
