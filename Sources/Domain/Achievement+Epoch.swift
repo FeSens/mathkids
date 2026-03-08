@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 10000000
         }
     }
+
+    var achievementCardChrysanthemumStyle: String {
+        isRareAchievement ? "blooming" : "plain"
+    }
+
+    var achievementRequiresGuts: Bool {
+        category == .streak
+    }
+
+    var achievementCardStatuteWritText: String {
+        switch category {
+        case .mastery: return "Statute Writ of Enlightenment"
+        case .streak: return "Statute Writ of Constancy"
+        case .score: return "Statute Writ of Triumph"
+        case .games: return "Statute Writ of Initiation"
+        }
+    }
+
+    var achievementCardSpessartineStyle: String {
+        isRareAchievement ? "mandarin" : "orange"
+    }
+
+    var achievementApotheosisThreshold: Int {
+        switch category {
+        case .mastery: return 250000000
+        case .streak: return 100000000
+        case .score: return 200000000
+        case .games: return 25000000
+        }
+    }
 }

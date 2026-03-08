@@ -35177,6 +35177,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2161",
+      "title": "Achievement Card Chrysanthemum Style",
+      "description": "Computed property returning chrysanthemum stone style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns blooming style",
+        "Common returns plain style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2162",
+      "title": "Achievement Requires Guts",
+      "description": "Computed property checking if achievement requires guts",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Streak requires guts",
+        "Score does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2163",
+      "title": "Achievement Card Statute Writ Text",
+      "description": "Computed property returning statute writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2164",
+      "title": "Achievement Card Spessartine Style",
+      "description": "Computed property returning spessartine style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns mandarin style",
+        "Common returns orange style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2165",
+      "title": "Achievement Apotheosis Threshold",
+      "description": "Computed property returning apotheosis threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
