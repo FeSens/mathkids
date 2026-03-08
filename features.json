@@ -32579,6 +32579,104 @@
         "Create games achievement",
         "Verify points are low"
       ]
+    },
+    {
+      "id": "logic-1994",
+      "name": "achievementCardMoonstoneStyle",
+      "description": "Moonstone gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify moonstone is luminous",
+        "Create common achievement",
+        "Verify moonstone is milky"
+      ]
+    },
+    {
+      "id": "logic-1995",
+      "name": "achievementRequiresAccuracy",
+      "description": "Whether achievement requires accuracy (score or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresAccuracy is true",
+        "Create games achievement",
+        "Verify requiresAccuracy is false"
+      ]
+    },
+    {
+      "id": "logic-1996",
+      "name": "achievementCardCreedText",
+      "description": "Creed text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify creed text",
+        "Create games achievement",
+        "Verify creed text"
+      ]
+    },
+    {
+      "id": "logic-1997",
+      "name": "achievementCardAquamarineStyle",
+      "description": "Aquamarine gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify aquamarine is deep",
+        "Create common achievement",
+        "Verify aquamarine is light"
+      ]
+    },
+    {
+      "id": "logic-1998",
+      "name": "achievementPrestigeTier",
+      "description": "Prestige tier number based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify tier is high",
+        "Create games achievement",
+        "Verify tier is low"
+      ]
+    },
+    {
+      "id": "logic-1999",
+      "name": "achievementCardTanzaniteStyle",
+      "description": "Tanzanite gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify tanzanite is vivid",
+        "Create common achievement",
+        "Verify tanzanite is faded"
+      ]
+    },
+    {
+      "id": "logic-2000",
+      "name": "achievementRequiresCommitment",
+      "description": "Whether achievement requires commitment (mastery or streak)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresCommitment is true",
+        "Create games achievement",
+        "Verify requiresCommitment is false"
+      ]
     }
   ],
   "_schema": {

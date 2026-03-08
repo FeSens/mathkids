@@ -150,4 +150,42 @@ extension Achievement {
         case .games: return 10
         }
     }
+
+    var achievementCardMoonstoneStyle: String {
+        isRareAchievement ? "luminous" : "milky"
+    }
+
+    var achievementRequiresAccuracy: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardCreedText: String {
+        switch category {
+        case .mastery: return "The Creed of Knowledge"
+        case .streak: return "The Creed of Discipline"
+        case .score: return "The Creed of Precision"
+        case .games: return "The Creed of Exploration"
+        }
+    }
+
+    var achievementCardAquamarineStyle: String {
+        isRareAchievement ? "deep" : "light"
+    }
+
+    var achievementPrestigeTier: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 7
+        case .score: return 5
+        case .games: return 1
+        }
+    }
+
+    var achievementCardTanzaniteStyle: String {
+        isRareAchievement ? "vivid" : "faded"
+    }
+
+    var achievementRequiresCommitment: Bool {
+        category == .mastery || category == .streak
+    }
 }
