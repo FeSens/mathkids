@@ -42127,6 +42127,86 @@
         "Games threshold <= 45000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2536",
+      "title": "achievementCardEmployiteUltraStyle",
+      "description": "Employite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns silver grey prismatic",
+        "Common achievement returns pale silver matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2537",
+      "title": "achievementRequiresCelestialPlus",
+      "description": "Check if achievement requires celestial plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Streak or score returns true",
+        "Mastery returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2538",
+      "title": "achievementCardOrdinanceWritSealMaxPlusText",
+      "description": "Ordinance writ seal max plus text by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery returns Ordinance Writ Seal Max Plus of the Legendary",
+        "Games returns Ordinance Writ Seal Max Plus of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2539",
+      "title": "achievementCardKobelliteUltraStyle",
+      "description": "Kobellite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns lead grey prismatic",
+        "Common achievement returns ashen lead matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2540",
+      "title": "achievementGotterdammerungTripleThreshold",
+      "description": "Gotterdammerung triple threshold by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery threshold >= 220000000",
+        "Games threshold <= 47000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

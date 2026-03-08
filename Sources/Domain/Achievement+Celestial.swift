@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 21500000
         }
     }
+
+    var achievementCardEmployiteUltraStyle: String {
+        isRareAchievement ? "silver grey prismatic" : "pale silver matte"
+    }
+
+    var achievementRequiresCelestialPlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardOrdinanceWritSealMaxPlusText: String {
+        switch category {
+        case .mastery: return "Ordinance Writ Seal Max Plus of the Legendary"
+        case .streak: return "Ordinance Writ Seal Max Plus of the Eternal"
+        case .score: return "Ordinance Writ Seal Max Plus of the Absolute"
+        case .games: return "Ordinance Writ Seal Max Plus of the Pilgrim"
+        }
+    }
+
+    var achievementCardKobelliteUltraStyle: String {
+        isRareAchievement ? "lead grey prismatic" : "ashen lead matte"
+    }
+
+    var achievementGotterdammerungTripleThreshold: Int {
+        switch category {
+        case .mastery: return 220000000
+        case .streak: return 88000000
+        case .score: return 215000000
+        case .games: return 22000000
+        }
+    }
 }
