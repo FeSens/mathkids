@@ -105,4 +105,27 @@ extension Achievement {
     var achievementRewardGemsLabel: String {
         "\(achievementGemValue) gems"
     }
+
+    var achievementProgressBarHeight: Int {
+        isRareAchievement ? 8 : 4
+    }
+
+    var achievementShortTitle: String {
+        if title.count > 15 {
+            return String(title.prefix(12)) + "..."
+        }
+        return title
+    }
+
+    var achievementIsWeekly: Bool {
+        false
+    }
+
+    var achievementCardSeparatorStyle: String {
+        isRareAchievement ? "thick" : "thin"
+    }
+
+    var achievementRewardSummary: String {
+        "\(achievementCoinValue) coins + \(achievementGemValue) gems"
+    }
 }

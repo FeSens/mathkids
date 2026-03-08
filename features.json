@@ -27389,6 +27389,75 @@
         "Create any achievement",
         "Verify label contains gems"
       ]
+    },
+    {
+      "id": "logic-1649",
+      "title": "achievementProgressBarHeight",
+      "description": "Return progress bar height in points",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify height is 8",
+        "Create common achievement",
+        "Verify height is 4"
+      ]
+    },
+    {
+      "id": "logic-1650",
+      "title": "achievementShortTitle",
+      "description": "Return shortened title for compact views",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify shortTitle is non-empty and shorter than title"
+      ]
+    },
+    {
+      "id": "logic-1651",
+      "title": "achievementIsWeekly",
+      "description": "Return whether achievement resets weekly",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify isWeekly is false"
+      ]
+    },
+    {
+      "id": "logic-1652",
+      "title": "achievementCardSeparatorStyle",
+      "description": "Return separator style for card",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify style is thick",
+        "Create common achievement",
+        "Verify style is thin"
+      ]
+    },
+    {
+      "id": "logic-1653",
+      "title": "achievementRewardSummary",
+      "description": "Return summary of all rewards",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify summary contains coins and gems"
+      ]
     }
   ],
   "_schema": {
