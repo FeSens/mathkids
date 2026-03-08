@@ -59,4 +59,26 @@ extension GameSession {
     var hasAnsweredAny: Bool {
         totalAnswered > 0
     }
+
+    var remainingTimeDisplay: String {
+        "\(timeRemaining)s left"
+    }
+
+    var isPerfectAccuracy: Bool {
+        totalAnswered > 0 && totalCorrect == totalAnswered
+    }
+
+    var scoreEmoji: String {
+        if score >= 100 { return "🏆" }
+        if score >= 50 { return "⭐" }
+        return "📝"
+    }
+
+    var bestStreakText: String {
+        "Best: \(bestStreak)"
+    }
+
+    var totalPointsEarned: Int {
+        score + totalBonusPoints
+    }
 }

@@ -11725,6 +11725,86 @@
         "After answering is true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-659",
+      "name": "GameSession+Display.remainingTimeDisplay",
+      "description": "Returns remaining time with countdown format",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Tick some time",
+        "Verify countdown format"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-660",
+      "name": "GameSession+Display.isPerfectAccuracy",
+      "description": "Returns true when 100% accuracy",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "All correct returns true",
+        "Any wrong returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-661",
+      "name": "GameSession+Display.scoreEmoji",
+      "description": "Returns emoji based on score level",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "High score returns trophy",
+        "Low returns basic"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-662",
+      "name": "GameSession+Display.bestStreakText",
+      "description": "Returns best streak as formatted text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Build streak",
+        "Verify text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-663",
+      "name": "GameSession+Display.totalPointsEarned",
+      "description": "Returns score plus bonus total",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Score with bonus",
+        "Verify total"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
