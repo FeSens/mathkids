@@ -29069,6 +29069,86 @@
         "Verify progressSummaryText contains category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1759",
+      "title": "Achievement Card Action Label",
+      "description": "Returns action label for card button",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardActionLabel by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1760",
+      "title": "Achievement Target Score",
+      "description": "Returns target score for achievement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify targetScore by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1761",
+      "title": "Achievement Card Status Icon",
+      "description": "Returns status icon for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardStatusIcon by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1762",
+      "title": "Achievement Is Cumulative",
+      "description": "Returns whether achievement progress is cumulative",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isCumulative for mastery/games vs streak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1763",
+      "title": "Achievement Unlock Hint",
+      "description": "Returns hint for unlocking achievement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify unlockHint by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

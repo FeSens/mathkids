@@ -185,4 +185,39 @@ extension Achievement {
     var achievementProgressSummaryText: String {
         "\(category.displayName) progress"
     }
+
+    var achievementCardActionLabel: String {
+        switch category {
+        case .mastery: return "View Progress"
+        case .streak: return "Check Streak"
+        case .score: return "View Score"
+        case .games: return "Play Now"
+        }
+    }
+
+    var achievementTargetScore: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 0
+        case .score: return 50
+        case .games: return 0
+        }
+    }
+
+    var achievementCardStatusIcon: String {
+        isRareAchievement ? "star.fill" : "circle"
+    }
+
+    var achievementIsCumulative: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementUnlockHint: String {
+        switch category {
+        case .mastery: return "Practice all operations to master them"
+        case .streak: return "Play every day to build your streak"
+        case .score: return "Try to beat your high score"
+        case .games: return "Keep playing to unlock"
+        }
+    }
 }
