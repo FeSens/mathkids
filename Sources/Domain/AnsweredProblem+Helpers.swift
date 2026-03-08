@@ -86,4 +86,16 @@ extension AnsweredProblem {
     var isSubtractionProblem: Bool {
         problem.operation == .subtract
     }
+
+    var isAdditionProblem: Bool {
+        problem.operation == .add
+    }
+
+    var wasTimedOut: Bool {
+        !isCorrect && timeTaken == nil
+    }
+
+    var isMultiplicationProblem: Bool {
+        problem.operation == .multiply
+    }
 }

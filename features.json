@@ -14767,6 +14767,87 @@
         "Problem 3+4 -> isMultiDigitProblem false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-849",
+      "name": "isAdditionProblem",
+      "description": "AnsweredProblem computed property returning true if the problem operation is addition",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answered problem with add op -> true",
+        "Answered problem with multiply op -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-850",
+      "name": "problemDifficultyStars",
+      "description": "MathProblem computed property returning 1-5 star rating based on estimated difficulty",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Simple problem 2+3 -> low stars",
+        "Complex problem 12*8 -> high stars"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-851",
+      "name": "wasTimedOut",
+      "description": "AnsweredProblem computed property returning true when wrong answer with nil timeTaken",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Wrong answer with nil time -> true",
+        "Wrong answer with time -> false",
+        "Correct answer with nil time -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-852",
+      "name": "operandMax",
+      "description": "MathProblem computed property returning the larger of the two operands",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 8+3 -> operandMax is 8",
+        "Problem 4+4 -> operandMax is 4"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-853",
+      "name": "isMultiplicationProblem",
+      "description": "AnsweredProblem computed property returning true if the problem operation is multiplication",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answered problem with multiply op -> true",
+        "Answered problem with add op -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

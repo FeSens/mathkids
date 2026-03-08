@@ -169,4 +169,12 @@ extension MathProblem {
     var isMultiDigitProblem: Bool {
         operand1 >= 10 || operand2 >= 10
     }
+
+    var problemDifficultyStars: Int {
+        estimatedDifficulty
+    }
+
+    var operandMax: Int {
+        max(operand1, operand2)
+    }
 }
