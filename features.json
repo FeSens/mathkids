@@ -3879,6 +3879,100 @@
       "files": [
         "Sources/Features/Results/ResultsComponents.swift"
       ]
+    },
+    {
+      "id": "ui-194",
+      "title": "Number button bounce style",
+      "description": "Number buttons use a custom bounce style that scales down on press",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Tap a number button",
+        "Button scales down briefly then bounces back",
+        "Animation is responsive and not sluggish"
+      ],
+      "files": [
+        "Sources/Features/Game/GameComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-195",
+      "title": "Mini particle burst on correct answer",
+      "description": "Small particle burst appears near the problem when answering correctly",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Answer correctly",
+        "Mini particle burst animates near problem",
+        "Particles use operation-specific color"
+      ],
+      "files": [
+        "Sources/Features/Game/GameComponents.swift",
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-196",
+      "title": "Score popup fade and rise animation",
+      "description": "Score popups rise upward while fading out after appearing",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Answer correctly",
+        "Score popup appears then rises and fades",
+        "Animation takes about 800ms"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift",
+        "Sources/Features/Game/ScorePopupView.swift"
+      ]
+    },
+    {
+      "id": "ui-197",
+      "title": "Results staggered animation entry",
+      "description": "Results screen sections animate in with staggered delays",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-008"
+      ],
+      "test_steps": [
+        "Complete a game and see results",
+        "Header appears first, then stats, then XP, then buttons",
+        "Each section has increasing delay"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-198",
+      "title": "Shake effect on wrong answers",
+      "description": "Problem display and number pad shake when user submits wrong answer",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Submit wrong answer",
+        "Problem text shakes left-right",
+        "Number pad shakes with same effect",
+        "Shake stops after short duration"
+      ],
+      "files": [
+        "Sources/Features/Game/ShakeEffect.swift",
+        "Sources/Features/Game/GameView.swift"
+      ]
     }
   ],
   "_schema": {
