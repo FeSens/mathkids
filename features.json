@@ -13727,6 +13727,86 @@
         "Verify answerText returns '42'"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-784",
+      "name": "Operation.requiresOrdering",
+      "description": "Boolean true for operations where operand order matters (subtract, divide)",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Check add",
+        "Verify isCommutative is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-785",
+      "name": "Operation.resultVerb",
+      "description": "Verb describing the operation: 'sum', 'difference', 'product', 'quotient'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get resultVerb for add",
+        "Verify returns 'sum'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-786",
+      "name": "Operation.difficultyWeight",
+      "description": "Difficulty weight of operation: add=1, subtract=2, multiply=3, divide=4",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get difficultyWeight for divide",
+        "Verify returns 4"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-787",
+      "name": "Operation.helpText",
+      "description": "Short help text explaining the operation",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Get helpText for add",
+        "Verify contains 'together'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-788",
+      "name": "Operation.isInverse",
+      "description": "Method checking if two operations are inverses of each other",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Check add.isInverse(of: subtract)",
+        "Verify returns true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

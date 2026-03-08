@@ -67,3 +67,44 @@ extension MathProblem {
         "\(correctAnswer)"
     }
 }
+
+extension Operation {
+    var requiresOrdering: Bool {
+        self == .subtract || self == .divide
+    }
+
+    var resultVerb: String {
+        switch self {
+        case .add: return "sum"
+        case .subtract: return "difference"
+        case .multiply: return "product"
+        case .divide: return "quotient"
+        }
+    }
+
+    var difficultyWeight: Int {
+        switch self {
+        case .add: return 1
+        case .subtract: return 2
+        case .multiply: return 3
+        case .divide: return 4
+        }
+    }
+
+    var helpText: String {
+        switch self {
+        case .add: return "Add the numbers together"
+        case .subtract: return "Take the second from the first"
+        case .multiply: return "Multiply the numbers"
+        case .divide: return "Divide the first by the second"
+        }
+    }
+
+    func isInverse(of other: Operation) -> Bool {
+        switch (self, other) {
+        case (.add, .subtract), (.subtract, .add): return true
+        case (.multiply, .divide), (.divide, .multiply): return true
+        default: return false
+        }
+    }
+}
