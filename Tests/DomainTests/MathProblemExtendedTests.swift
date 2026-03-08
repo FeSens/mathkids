@@ -134,4 +134,19 @@ struct MathProblemExtendedTests {
         let problem = MathProblem(operand1: 10, operand2: 5, operation: .subtract)
         #expect(problem.difficultyScore >= 1 && problem.difficultyScore <= 10)
     }
+
+    // MARK: - Keyboard Shortcut Hint (logic-315)
+
+    @Test("Each operation has a non-empty hint")
+    func allHintsNonEmpty() {
+        for op in Operation.allCases {
+            #expect(!op.keyboardHint.isEmpty)
+        }
+    }
+
+    @Test("All hints are unique")
+    func allHintsUnique() {
+        let hints = Operation.allCases.map(\.keyboardHint)
+        #expect(Set(hints).count == 4)
+    }
 }

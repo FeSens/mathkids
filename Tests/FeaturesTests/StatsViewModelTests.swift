@@ -218,4 +218,19 @@ struct StatsViewModelTests {
         vm.accuracy = 40
         #expect(vm.accuracyGrade == "F")
     }
+
+    // MARK: - Strongest Operation (logic-317)
+
+    @Test("Strongest operation nil with no data")
+    func strongestOpNil() {
+        let vm = makeVM()
+        #expect(vm.strongestOperation == nil)
+    }
+
+    @Test("Strongest operation returns highest accuracy")
+    func strongestOpHighest() {
+        let vm = makeVM()
+        vm.operationAccuracies = ["+": 90, "-": 70, "x": 50]
+        #expect(vm.strongestOperation == "+")
+    }
 }

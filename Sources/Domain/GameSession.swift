@@ -188,6 +188,14 @@ struct GameSession: Sendable {
         return timeRemaining * multiplier
     }
 
+    var scoreBreakdownText: String {
+        guard score > 0 else { return "" }
+        if totalBonusPoints > 0 {
+            return "Base: \(baseScore) | Bonus: \(totalBonusPoints)"
+        }
+        return "Base: \(baseScore)"
+    }
+
     var timeUsagePercentage: Int {
         let total = difficulty.timeLimitSeconds
         guard total > 0 else { return 0 }

@@ -5985,6 +5985,72 @@
         "Summary includes operand range"
       ],
       "files": ["Sources/Domain/DifficultyLevel.swift"]
+    },
+    {
+      "id": "logic-314",
+      "title": "GameSession score breakdown text",
+      "description": "GameSession provides a formatted text breakdown of score components",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Includes base score",
+        "Includes bonus if any",
+        "Empty for zero score"
+      ],
+      "files": ["Sources/Domain/GameSession.swift"]
+    },
+    {
+      "id": "logic-315",
+      "title": "Operation keyboard shortcut hint",
+      "description": "Operation provides a keyboard hint character for each operation",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Each operation has a non-empty hint",
+        "All hints are unique"
+      ],
+      "files": ["Sources/Domain/MathProblem.swift"]
+    },
+    {
+      "id": "logic-316",
+      "title": "PlayerStats longest streak per operation",
+      "description": "PlayerStats tracks the best streak for each operation type",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Starts at 0 for all operations",
+        "Updates correctly for specific operation"
+      ],
+      "files": ["Sources/Domain/PlayerStats+Extensions.swift"]
+    },
+    {
+      "id": "logic-317",
+      "title": "StatsViewModel strongest operation label",
+      "description": "StatsViewModel identifies the operation with highest accuracy as the strongest",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["ui-007"],
+      "test_steps": [
+        "Returns nil with no data",
+        "Returns operation with highest accuracy"
+      ],
+      "files": ["Sources/Features/Stats/StatsViewModel.swift"]
+    },
+    {
+      "id": "logic-318",
+      "title": "HomeViewModel daily challenge status text",
+      "description": "HomeViewModel provides a status text for the daily challenge",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["ui-001"],
+      "test_steps": [
+        "Shows available when not completed",
+        "Shows completed when done"
+      ],
+      "files": ["Sources/Features/Home/HomeViewModel.swift"]
     }
   ],
   "_schema": {

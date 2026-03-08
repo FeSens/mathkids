@@ -201,6 +201,34 @@ extension PlayerStats {
         return best.0
     }
 
+    func bestStreakForOperation(_ operation: Operation) -> Int {
+        switch operation {
+        case .add: bestStreakAdd
+        case .subtract: bestStreakSubtract
+        case .multiply: bestStreakMultiply
+        case .divide: bestStreakDivide
+        }
+    }
+
+    func updateBestStreakForOperation(_ streak: Int, for operation: Operation) {
+        switch operation {
+        case .add: bestStreakAdd = max(bestStreakAdd, streak)
+        case .subtract: bestStreakSubtract = max(bestStreakSubtract, streak)
+        case .multiply: bestStreakMultiply = max(bestStreakMultiply, streak)
+        case .divide: bestStreakDivide = max(bestStreakDivide, streak)
+        }
+    }
+
+    var difficultyPercentages: (easy: Int, medium: Int, hard: Int) {
+        let total = easyGamesPlayed + mediumGamesPlayed + hardGamesPlayed
+        guard total > 0 else { return (0, 0, 0) }
+        return (
+            easyGamesPlayed * 100 / total,
+            mediumGamesPlayed * 100 / total,
+            hardGamesPlayed * 100 / total
+        )
+    }
+
     var consistencyScore: Double {
         guard recentAccuracies.count >= 2 else { return 0 }
         let mean = recentAccuracies.reduce(0, +) / Double(recentAccuracies.count)

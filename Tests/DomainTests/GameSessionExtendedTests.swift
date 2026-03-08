@@ -291,4 +291,26 @@ struct GameSessionExtendedTests {
         for _ in 0..<60 { session.tick() }
         #expect(session.timeUsagePercentage == 100)
     }
+
+    // MARK: - Score Breakdown Text (logic-314)
+
+    @Test("Score breakdown includes base score")
+    func scoreBreakdownIncludesBase() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true, bonusPoints: 5)
+        #expect(session.scoreBreakdownText.contains("Base"))
+    }
+
+    @Test("Score breakdown includes bonus if any")
+    func scoreBreakdownIncludesBonus() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true, bonusPoints: 5)
+        #expect(session.scoreBreakdownText.contains("Bonus"))
+    }
+
+    @Test("Score breakdown empty for zero score")
+    func scoreBreakdownEmpty() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.scoreBreakdownText.isEmpty)
+    }
 }

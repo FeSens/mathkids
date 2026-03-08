@@ -55,6 +55,10 @@ final class HomeViewModel {
         return "\(hours)h \(minutes)m"
     }
 
+    var dailyChallengeStatusText: String {
+        dailyChallengeCompleted ? "Completed for today!" : "Ready to play!"
+    }
+
     var quickStatsSummary: String {
         guard totalSolved > 0 else {
             return "Ready to start your math journey!"

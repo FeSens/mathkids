@@ -150,6 +150,28 @@ struct HomeViewModelTests {
         vm.currentLevel = 1
         #expect(vm.quickStatsSummary.lowercased().contains("start"))
     }
+
+    // MARK: - Daily Challenge Status Text (logic-318)
+
+    @Test("Shows available when not completed")
+    @MainActor
+    func dailyChallengeAvailable() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.dailyChallengeCompleted = false
+        #expect(vm.dailyChallengeStatusText.lowercased().contains("available") || vm.dailyChallengeStatusText.lowercased().contains("ready"))
+    }
+
+    @Test("Shows completed when done")
+    @MainActor
+    func dailyChallengeCompleted() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.dailyChallengeCompleted = true
+        #expect(vm.dailyChallengeStatusText.lowercased().contains("completed") || vm.dailyChallengeStatusText.lowercased().contains("done"))
+    }
 }
 
 import SwiftData

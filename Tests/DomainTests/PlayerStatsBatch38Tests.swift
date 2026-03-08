@@ -133,4 +133,45 @@ struct PlayerStatsBatch38Tests {
         #expect(dict[.multiply] == 5)
         #expect(dict[.subtract] == 0)
     }
+
+    // MARK: - Difficulty Percentage Breakdown (logic-307)
+
+    @Test("Returns empty percentages when no games played")
+    func difficultyPercentageEmpty() {
+        let stats = PlayerStats()
+        let breakdown = stats.difficultyPercentages
+        #expect(breakdown.easy == 0)
+        #expect(breakdown.medium == 0)
+        #expect(breakdown.hard == 0)
+    }
+
+    @Test("Returns correct percentages per difficulty")
+    func difficultyPercentageCorrect() {
+        let stats = PlayerStats()
+        stats.easyGamesPlayed = 5
+        stats.mediumGamesPlayed = 3
+        stats.hardGamesPlayed = 2
+        let breakdown = stats.difficultyPercentages
+        #expect(breakdown.easy == 50)
+        #expect(breakdown.medium == 30)
+        #expect(breakdown.hard == 20)
+    }
+
+    // MARK: - Longest Streak Per Operation (logic-316)
+
+    @Test("Streak starts at 0 for all operations")
+    func operationStreakStartsAt0() {
+        let stats = PlayerStats()
+        for op in Operation.allCases {
+            #expect(stats.bestStreakForOperation(op) == 0)
+        }
+    }
+
+    @Test("Updates correctly for specific operation")
+    func operationStreakUpdates() {
+        let stats = PlayerStats()
+        stats.updateBestStreakForOperation(5, for: .add)
+        #expect(stats.bestStreakForOperation(.add) == 5)
+        #expect(stats.bestStreakForOperation(.subtract) == 0)
+    }
 }

@@ -54,6 +54,10 @@ final class PlayerStats {
     var problemsSolvedMedium: Int = 0
     var problemsSolvedHard: Int = 0
     var perfectGameCount: Int = 0
+    var bestStreakAdd: Int = 0
+    var bestStreakSubtract: Int = 0
+    var bestStreakMultiply: Int = 0
+    var bestStreakDivide: Int = 0
 
     init() {}
 

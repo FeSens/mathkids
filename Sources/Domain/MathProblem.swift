@@ -42,6 +42,15 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var keyboardHint: String {
+        switch self {
+        case .add: "A"
+        case .subtract: "S"
+        case .multiply: "M"
+        case .divide: "D"
+        }
+    }
+
     var isCommutative: Bool {
         switch self {
         case .add, .multiply: true
