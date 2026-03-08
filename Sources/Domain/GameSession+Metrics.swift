@@ -243,6 +243,10 @@ extension GameSession {
         return Double(totalWrong) / minutes
     }
 
+    var isFinishedWithPerfectAccuracy: Bool {
+        isFinished && answeredAllCorrectly
+    }
+
     var averagePointsPerCorrect: Double {
         guard totalCorrect > 0 else { return 0 }
         return Double(score) / Double(totalCorrect)

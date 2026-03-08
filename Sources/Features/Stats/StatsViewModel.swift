@@ -92,6 +92,10 @@ final class StatsViewModel {
         "\(Int(accuracy))% (\(accuracyGrade))"
     }
 
+    var bestScoreDescription: String {
+        "Best: \(bestScore) pts"
+    }
+
     var hasSignificantData: Bool {
         gamesPlayed >= 3
     }

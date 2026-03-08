@@ -82,6 +82,10 @@ final class HomeViewModel {
         "\(selectedDifficulty.displayName) - \(selectedDifficulty.operationCount) operations"
     }
 
+    var totalSolvedText: String {
+        "\(totalSolved) problems solved"
+    }
+
     var bestScoreText: String {
         "\(bestScore) pts"
     }

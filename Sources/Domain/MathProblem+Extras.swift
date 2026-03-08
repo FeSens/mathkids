@@ -187,6 +187,10 @@ extension MathProblem {
         operand1 >= 0 && operand1 <= 9 && operand2 >= 0 && operand2 <= 9
     }
 
+    var isEvenResult: Bool {
+        correctAnswer % 2 == 0
+    }
+
     var isSquareNumber: Bool {
         let answer = correctAnswer
         guard answer > 0 else { return false }

@@ -106,6 +106,10 @@ extension ResultsViewModel {
         "Best streak: \(bestStreak)"
     }
 
+    var wrongAnswerLabel: String {
+        "\(session.totalWrong) wrong"
+    }
+
     var correctAnswerLabel: String {
         "\(session.totalCorrect) correct"
     }

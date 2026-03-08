@@ -9560,6 +9560,86 @@
         "Verify 0 correct returns 0"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-524",
+      "title": "HomeViewModel totalSolvedText formatted total",
+      "description": "HomeViewModel should expose totalSolvedText returning \"X problems solved\" text",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes count",
+        "Verify includes solved word"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-525",
+      "title": "StatsViewModel bestScoreDescription formatted text",
+      "description": "StatsViewModel should expose bestScoreDescription returning \"Best: X pts\" text",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes score value",
+        "Verify includes Best"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-526",
+      "title": "ResultsViewModel wrongAnswerLabel formatted wrong count",
+      "description": "ResultsViewModel+Analysis should expose wrongAnswerLabel like \"2 wrong\"",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify includes wrong count",
+        "Verify contains wrong word"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-527",
+      "title": "MathProblem isEvenResult checks if answer is even",
+      "description": "MathProblem should expose isEvenResult returning true when correctAnswer is even",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 2+2=4 returns true",
+        "Verify 2+3=5 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-528",
+      "title": "GameSession isFinishedWithPerfectAccuracy perfect finish check",
+      "description": "GameSession should expose isFinishedWithPerfectAccuracy returning true when finished with 100% accuracy",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify true when finished with all correct",
+        "Verify false when not finished"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
