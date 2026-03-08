@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 8500000
         }
     }
+
+    var achievementCardSamsoniteProStyle: String {
+        isRareAchievement ? "steel black monoclinic" : "dark steel"
+    }
+
+    var achievementRequiresVisionPlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardOrdinanceWritSealUltraPlusText: String {
+        switch category {
+        case .mastery: return "Ordinance Writ Seal Ultra Plus of the Empyrean"
+        case .streak: return "Ordinance Writ Seal Ultra Plus of the Guardian"
+        case .score: return "Ordinance Writ Seal Ultra Plus of the Paramount"
+        case .games: return "Ordinance Writ Seal Ultra Plus of the Initiate"
+        }
+    }
+
+    var achievementCardMatilditeProStyle: String {
+        isRareAchievement ? "iron grey hexagonal" : "dull iron"
+    }
+
+    var achievementFimbulwinterThreshold: Int {
+        switch category {
+        case .mastery: return 90000000
+        case .streak: return 36000000
+        case .score: return 85000000
+        case .games: return 9000000
+        }
+    }
 }

@@ -39627,6 +39627,106 @@
         "Verify threshold <= 12000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2406",
+      "title": "achievementCardSamsoniteProStyle",
+      "description": "Mineral style string for samsonite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify samsonite pro style is steel black monoclinic",
+        "Create common achievement",
+        "Verify samsonite pro style is dark steel"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2407",
+      "title": "achievementRequiresVisionPlus",
+      "description": "Whether achievement requires vision plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requires vision plus is true",
+        "Create mastery achievement",
+        "Verify requires vision plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2408",
+      "title": "achievementCardOrdinanceWritSealUltraPlusText",
+      "description": "Ordinance writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Ordinance Writ Seal Ultra Plus of the Empyrean",
+        "Create games achievement",
+        "Verify text is Ordinance Writ Seal Ultra Plus of the Initiate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2409",
+      "title": "achievementCardMatilditeProStyle",
+      "description": "Mineral style string for matildite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify matildite pro style is iron grey hexagonal",
+        "Create common achievement",
+        "Verify matildite pro style is dull iron"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2410",
+      "title": "achievementFimbulwinterThreshold",
+      "description": "Fimbulwinter threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 90000000",
+        "Create games achievement",
+        "Verify threshold <= 15000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
