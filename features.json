@@ -16136,6 +16136,86 @@
         "Any difficulty -> true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-934",
+      "name": "inverseOperation",
+      "description": "Operation computed property returning the inverse operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> subtract",
+        "Multiply -> divide"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-935",
+      "name": "isBasicArithmetic",
+      "description": "Operation computed property returning true for add/subtract",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> true",
+        "Multiply -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-936",
+      "name": "operationDescription",
+      "description": "Operation computed property returning full description of the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> contains addition info",
+        "Divide -> contains division info"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-937",
+      "name": "isAdvancedOperation",
+      "description": "Operation computed property returning true for multiply/divide",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Multiply -> true",
+        "Add -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-938",
+      "name": "operationOrder",
+      "description": "Operation computed property returning display order index 0-3",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> 0",
+        "Divide -> 3"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

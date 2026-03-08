@@ -3,24 +3,16 @@
 ## Session 14 — 2026-03-08
 
 ### Status
-- Features: 883/883 passing (12 MVP + 9 polish + 862 improvement)
-- Unit tests: ~1630 (all green across ~146 suites)
-- UI tests: 12 (QA screenshots flaky but unit tests solid)
+- Features: 933/933 passing (12 MVP + 9 polish + 912 improvement)
+- Unit tests: ~1730 (all green across ~156 suites)
+- UI tests: 12
 - QA: PASSED
 
-### Session 14 Features (batches 151-160)
-- Batch 151: logic-834 to logic-838 (5 features) — DifficultyLevel+Extras, AnsweredProblem+Helpers
-- Batch 152: logic-839 to logic-843 (5 features) — GameSession+Labels, AnsweredProblem+Helpers, MathProblem+Helpers
-- Batch 153: logic-844 to logic-848 (5 features) — AnsweredProblem+Helpers, GameSession+Labels, MathProblem+Helpers
-- Batch 154: logic-849 to logic-853 (5 features) — AnsweredProblem+Helpers, MathProblem+Helpers
-- Batch 155: logic-854 to logic-858 (5 features) — AnsweredProblem+Helpers, MathProblem+Helpers, DifficultyLevel+Extras
-- Batch 156: logic-859 to logic-863 (5 features) — AnsweredProblem+Helpers, MathProblem+Helpers, DifficultyLevel+Extras
-- Batch 157: logic-864 to logic-868 (5 features) — AnsweredProblem+Helpers, MathProblem+Helpers, DifficultyLevel+Extras
-- Batch 158: logic-869 to logic-873 (5 features) — DifficultyLevel+Extras, AnsweredProblem+Helpers, MathProblem+Helpers
-- Batch 159: logic-874 to logic-878 (5 features) — AnsweredProblem+Helpers, MathProblem+Helpers
-- Batch 160: logic-879 to logic-883 (5 features) — MathProblem+Helpers, AnsweredProblem+Helpers, DifficultyLevel+Extras
-- Total this session: 50 improvement features
-- Files near limit: GameSession+Labels (291), MathProblem+Helpers (228), DifficultyLevel+Extras (223)
+### Session 14 Features (batches 151-170)
+- Batches 151-160: logic-834 to logic-883 (50 features) — mixed extension files
+- Batches 161-170: logic-884 to logic-933 (50 features) — AnsweredProblem+Helpers, MathProblem+Helpers, DifficultyLevel+Extras
+- Total this session: 100 improvement features
+- Files near limit: GameSession+Labels (291), MathProblem+Helpers (274), DifficultyLevel+Extras (279), AnsweredProblem+Helpers (258)
 
 ## Session 13 — 2026-03-08
 
