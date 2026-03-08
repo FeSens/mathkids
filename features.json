@@ -13487,6 +13487,86 @@
         "Verify each has unique message"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-769",
+      "name": "MathProblem.isAddition",
+      "description": "Boolean convenience for checking if problem is addition",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create addition problem",
+        "Verify isAddition is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-770",
+      "name": "MathProblem.isSubtraction",
+      "description": "Boolean convenience for checking if problem is subtraction",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create subtraction problem",
+        "Verify isSubtraction is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-771",
+      "name": "MathProblem.isMultiplication",
+      "description": "Boolean convenience for checking if problem is multiplication",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create multiplication problem",
+        "Verify isMultiplication is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-772",
+      "name": "MathProblem.isDivision",
+      "description": "Boolean convenience for checking if problem is division",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create division problem",
+        "Verify isDivision is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-773",
+      "name": "MathProblem.problemCategoryText",
+      "description": "Text categorizing problem as basic, intermediate, or advanced",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create simple addition problem",
+        "Verify returns 'basic'"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
