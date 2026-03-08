@@ -243,4 +243,30 @@ struct GameSessionExtendedTests {
         for _ in 0..<5 { session.recordAnswer(correct: true, bonusPoints: 5) }
         #expect(session.streakBonusPoints == session.totalBonusPoints)
     }
+
+    // MARK: - Answer Consistency (logic-299)
+
+    @Test("Consistency is 100 for all correct")
+    func consistencyAllCorrect() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<5 { session.recordAnswer(correct: true) }
+        #expect(session.answerConsistency == 100)
+    }
+
+    @Test("Consistency is 0 for no answers")
+    func consistencyNoAnswers() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.answerConsistency == 0)
+    }
+
+    @Test("Mixed answers give intermediate consistency")
+    func consistencyMixed() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: false)
+        let c = session.answerConsistency
+        #expect(c > 0 && c < 100)
+    }
 }

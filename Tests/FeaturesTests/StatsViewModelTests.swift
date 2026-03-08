@@ -195,4 +195,27 @@ struct StatsViewModelTests {
         vm.loadStats()
         #expect(vm.xpProgressText.contains("/"))
     }
+
+    // MARK: - Accuracy Grade Label (logic-302)
+
+    @Test("95+ accuracy returns A+")
+    func gradeAPlus() {
+        let vm = makeVM()
+        vm.accuracy = 96
+        #expect(vm.accuracyGrade == "A+")
+    }
+
+    @Test("80-89 returns B")
+    func gradeB() {
+        let vm = makeVM()
+        vm.accuracy = 85
+        #expect(vm.accuracyGrade == "B")
+    }
+
+    @Test("Below 60 returns F")
+    func gradeF() {
+        let vm = makeVM()
+        vm.accuracy = 40
+        #expect(vm.accuracyGrade == "F")
+    }
 }

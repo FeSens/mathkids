@@ -168,4 +168,25 @@ struct LevelSystemTests {
     func xpPercentageAtMax() {
         #expect(LevelSystem.xpPercentageText(for: 99999) == "100%")
     }
+
+    // MARK: - Level Progress Description (logic-300)
+
+    @Test("Progress description includes XP needed for non-max level")
+    func progressDescriptionNonMax() {
+        let desc = LevelSystem.progressDescription(for: 50)
+        #expect(desc.contains("50"))
+        #expect(desc.contains("Beginner"))
+    }
+
+    @Test("Progress description says max at max level")
+    func progressDescriptionMax() {
+        let desc = LevelSystem.progressDescription(for: 99999)
+        #expect(desc.lowercased().contains("max"))
+    }
+
+    @Test("Progress description includes level name")
+    func progressDescriptionIncludesName() {
+        let desc = LevelSystem.progressDescription(for: 300)
+        #expect(desc.contains("Explorer"))
+    }
 }

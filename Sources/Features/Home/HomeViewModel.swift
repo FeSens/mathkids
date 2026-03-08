@@ -55,6 +55,13 @@ final class HomeViewModel {
         return "\(hours)h \(minutes)m"
     }
 
+    var quickStatsSummary: String {
+        guard totalSolved > 0 else {
+            return "Ready to start your math journey!"
+        }
+        return "Level \(currentLevel) | \(totalSolved) solved"
+    }
+
     var greetingMessage: String {
         let hour = Calendar.current.component(.hour, from: .now)
         if hour < 12 {

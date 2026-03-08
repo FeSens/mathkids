@@ -90,4 +90,14 @@ enum LevelSystem {
         let streakBonus = min(streak, 10) * 2
         return base + streakBonus
     }
+
+    static func progressDescription(for xp: Int) -> String {
+        let currentLevel = level(for: xp)
+        let name = levelName(for: xp)
+        guard currentLevel < thresholds.count else {
+            return "\(name) — Max level reached!"
+        }
+        let needed = xpNeededForNextLevel(currentXP: xp)
+        return "\(name) — \(needed) XP to next level"
+    }
 }

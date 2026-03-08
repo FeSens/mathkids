@@ -149,4 +149,12 @@ struct Achievement: Identifiable {
         guard result.target > 0 else { return 0 }
         return min(result.current * 100 / result.target, 100)
     }
+
+    static func nextClosest(for stats: PlayerStats) -> Achievement? {
+        let locked = all.filter { !$0.isUnlocked(stats: stats) }
+        guard !locked.isEmpty else { return nil }
+        return locked.max { a, b in
+            a.progressPercentage(stats: stats) < b.progressPercentage(stats: stats)
+        }
+    }
 }

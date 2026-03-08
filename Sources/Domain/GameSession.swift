@@ -188,6 +188,13 @@ struct GameSession: Sendable {
         return timeRemaining * multiplier
     }
 
+    var answerConsistency: Double {
+        guard !answerHistory.isEmpty else { return 0 }
+        let correctCount = answerHistory.filter { $0 }.count
+        let ratio = Double(correctCount) / Double(answerHistory.count)
+        return ratio * 100
+    }
+
     mutating func endGame() {
         isFinished = true
     }

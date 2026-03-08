@@ -5774,6 +5774,75 @@
       "files": [
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-299",
+      "title": "GameSession answer streak pattern",
+      "description": "GameSession tracks the longest alternating correct/wrong pattern and provides an answer consistency metric",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Consistency is 100 for all correct",
+        "Consistency is 0 for no answers",
+        "Mixed answers give intermediate consistency"
+      ],
+      "files": ["Sources/Domain/GameSession.swift"]
+    },
+    {
+      "id": "logic-300",
+      "title": "LevelSystem level progress description",
+      "description": "LevelSystem provides a human-readable description of progress toward the next level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns XP needed text for non-max level",
+        "Returns max level text at max",
+        "Includes current level name"
+      ],
+      "files": ["Sources/Domain/LevelSystem.swift"]
+    },
+    {
+      "id": "logic-301",
+      "title": "Achievement next closest achievement",
+      "description": "Achievement provides a static method to find the closest-to-unlocking locked achievement",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns highest progress locked achievement",
+        "Returns nil when all unlocked"
+      ],
+      "files": ["Sources/Domain/Achievement.swift"]
+    },
+    {
+      "id": "logic-302",
+      "title": "StatsViewModel accuracy grade label",
+      "description": "StatsViewModel provides a letter grade based on overall accuracy",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["ui-007"],
+      "test_steps": [
+        "95+ accuracy returns A+",
+        "80-89 returns B",
+        "Below 60 returns F"
+      ],
+      "files": ["Sources/Features/Stats/StatsViewModel.swift"]
+    },
+    {
+      "id": "logic-303",
+      "title": "HomeViewModel quick stats summary",
+      "description": "HomeViewModel provides a quick stats summary string for display on the home screen",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["ui-001"],
+      "test_steps": [
+        "Includes total solved count",
+        "Includes level info",
+        "Returns beginner message when no games played"
+      ],
+      "files": ["Sources/Features/Home/HomeViewModel.swift"]
     }
   ],
   "_schema": {

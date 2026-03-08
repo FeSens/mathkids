@@ -183,4 +183,33 @@ struct AchievementTests {
         let a = Achievement.all.first { $0.id == "ten_games" }!
         #expect(a.progressPercentage(stats: stats) == 0)
     }
+
+    // MARK: - Next Closest Achievement (logic-301)
+
+    @Test("Returns highest progress locked achievement")
+    func nextClosestAchievement() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 8 // 80% toward ten_games
+        let next = Achievement.nextClosest(for: stats)
+        #expect(next != nil)
+        #expect(next?.id == "ten_games")
+    }
+
+    @Test("Returns nil when all unlocked")
+    func nextClosestNilWhenAllUnlocked() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 1000
+        stats.totalSolved = 1000
+        stats.totalCorrect = 1000
+        stats.bestStreak = 100
+        stats.bestScore = 1000
+        stats.dailyStreak = 30
+        stats.mediumGamesPlayed = 100
+        stats.hardGamesPlayed = 100
+        stats.easyMasteryCount = 10
+        stats.mediumMasteryCount = 10
+        stats.hardMasteryCount = 10
+        let next = Achievement.nextClosest(for: stats)
+        #expect(next == nil)
+    }
 }

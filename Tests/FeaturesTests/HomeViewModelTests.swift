@@ -115,6 +115,41 @@ struct HomeViewModelTests {
         #expect(vm.selectedOperations.count == 4)
         #expect(vm.selectedOperations == Set(Operation.allCases))
     }
+
+    // MARK: - Quick Stats Summary (logic-303)
+
+    @Test("Quick stats includes total solved")
+    @MainActor
+    func quickStatsIncludesSolved() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.totalSolved = 42
+        vm.currentLevel = 3
+        #expect(vm.quickStatsSummary.contains("42"))
+    }
+
+    @Test("Quick stats includes level info")
+    @MainActor
+    func quickStatsIncludesLevel() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.totalSolved = 10
+        vm.currentLevel = 3
+        #expect(vm.quickStatsSummary.contains("3"))
+    }
+
+    @Test("Quick stats returns beginner message when no games")
+    @MainActor
+    func quickStatsBeginnerMessage() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.totalSolved = 0
+        vm.currentLevel = 1
+        #expect(vm.quickStatsSummary.lowercased().contains("start"))
+    }
 }
 
 import SwiftData

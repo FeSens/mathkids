@@ -74,6 +74,15 @@ final class StatsViewModel {
         gamesPlayed == 1 ? "1 game" : "\(gamesPlayed) games"
     }
 
+    var accuracyGrade: String {
+        if accuracy >= 95 { return "A+" }
+        if accuracy >= 90 { return "A" }
+        if accuracy >= 80 { return "B" }
+        if accuracy >= 70 { return "C" }
+        if accuracy >= 60 { return "D" }
+        return "F"
+    }
+
     private let statsService: StatsService
 
     init(statsService: StatsService) {
