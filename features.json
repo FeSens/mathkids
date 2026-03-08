@@ -22963,6 +22963,84 @@
       "files": [
         "Sources/Domain/Achievement+Display.swift"
       ]
+    },
+    {
+      "id": "logic-1354",
+      "title": "Achievement Collection Group",
+      "description": "Add achievementCollectionGroup returning group name for organizing achievements in collections",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementCollectionGroup returns skill group"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1355",
+      "title": "Achievement Rarity Stars",
+      "description": "Add achievementRarityStars returning 1-5 based on rarity and point value",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementRarityStars is 5",
+        "Verify common is lower"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1356",
+      "title": "Achievement Card Subtitle",
+      "description": "Add achievementCardSubtitle returning subtitle text with category and rank",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementCardSubtitle contains category and rank"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1357",
+      "title": "Achievement Is Completable",
+      "description": "Add achievementIsCompletable returning true if achievement has progress tracker",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement with progress",
+        "Verify achievementIsCompletable is true",
+        "Verify nil progress is false"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1358",
+      "title": "Achievement Trophy Type",
+      "description": "Add achievementTrophyType returning trophy emoji based on rank",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create platinum achievement",
+        "Verify trophy is diamond",
+        "Verify bronze is medal"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
     }
   ],
   "_schema": {

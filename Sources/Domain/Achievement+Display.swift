@@ -211,4 +211,38 @@ extension Achievement {
         case .mastery: return "True mastery awaits!"
         }
     }
+
+    var achievementCollectionGroup: String {
+        switch category {
+        case .streak, .mastery: return "Skill"
+        case .score: return "Competition"
+        case .games: return "Activity"
+        }
+    }
+
+    var achievementRarityStars: Int {
+        if isRareAchievement { return 5 }
+        switch category {
+        case .mastery: return 3
+        case .streak, .score: return 2
+        case .games: return 1
+        }
+    }
+
+    var achievementCardSubtitle: String {
+        "\(category.displayName) - \(achievementRankLabel)"
+    }
+
+    var achievementIsCompletable: Bool {
+        progress != nil
+    }
+
+    var achievementTrophyType: String {
+        switch achievementRankLabel {
+        case "Platinum": return "💎"
+        case "Gold": return "🥇"
+        case "Silver": return "🥈"
+        default: return "🥉"
+        }
+    }
 }
