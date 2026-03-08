@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 6500000
         }
     }
+
+    var achievementCardVeeniteProStyle: String {
+        isRareAchievement ? "tin grey fibrous" : "pale tin"
+    }
+
+    var achievementRequiresWisdomPlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardDirectiveWritSealUltraPlusText: String {
+        switch category {
+        case .mastery: return "Directive Writ Seal Ultra Plus of the Arcane"
+        case .streak: return "Directive Writ Seal Ultra Plus of the Bulwark"
+        case .score: return "Directive Writ Seal Ultra Plus of the Sublime"
+        case .games: return "Directive Writ Seal Ultra Plus of the Pupil"
+        }
+    }
+
+    var achievementCardFranckeiteProStyle: String {
+        isRareAchievement ? "greyish black tabular" : "dark grey"
+    }
+
+    var achievementBifrostPlusThreshold: Int {
+        switch category {
+        case .mastery: return 70000000
+        case .streak: return 28000000
+        case .score: return 65000000
+        case .games: return 7000000
+        }
+    }
 }

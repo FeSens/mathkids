@@ -39227,6 +39227,106 @@
         "Verify threshold <= 9000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2386",
+      "title": "achievementCardVeeniteProStyle",
+      "description": "Mineral style string for veenite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify veenite pro style is tin grey fibrous",
+        "Create common achievement",
+        "Verify veenite pro style is pale tin"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2387",
+      "title": "achievementRequiresWisdomPlus",
+      "description": "Whether achievement requires wisdom plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requires wisdom plus is true",
+        "Create mastery achievement",
+        "Verify requires wisdom plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2388",
+      "title": "achievementCardDirectiveWritSealUltraPlusText",
+      "description": "Directive writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Directive Writ Seal Ultra Plus of the Arcane",
+        "Create games achievement",
+        "Verify text is Directive Writ Seal Ultra Plus of the Pupil"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2389",
+      "title": "achievementCardFranckeiteProStyle",
+      "description": "Mineral style string for franckeite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify franckeite pro style is greyish black tabular",
+        "Create common achievement",
+        "Verify franckeite pro style is dark grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2390",
+      "title": "achievementBifrostPlusThreshold",
+      "description": "Bifrost plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 70000000",
+        "Create games achievement",
+        "Verify threshold <= 10000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
