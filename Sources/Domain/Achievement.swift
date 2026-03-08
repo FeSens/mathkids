@@ -189,6 +189,10 @@ struct Achievement: Identifiable {
         return unlockedCount(for: stats) * 100 / totalCount
     }
 
+    static func hasUnlockedAll(for stats: PlayerStats) -> Bool {
+        unlockedCount(for: stats) == totalCount
+    }
+
     static var achievementsByCategory: [Category: [Achievement]] {
         Dictionary(grouping: all, by: \.category)
     }

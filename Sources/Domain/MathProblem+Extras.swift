@@ -167,6 +167,10 @@ extension MathProblem {
         return Double(operand1) / Double(operand2)
     }
 
+    var bothOperandsEqual: Bool {
+        operand1 == operand2
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0

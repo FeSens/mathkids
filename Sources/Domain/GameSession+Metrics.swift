@@ -218,6 +218,11 @@ extension GameSession {
         "Score: \(score) | Accuracy: \(Int(accuracy))%"
     }
 
+    var streakPercentage: Int {
+        guard totalAnswered > 0 else { return 0 }
+        return bestStreak * 100 / totalAnswered
+    }
+
     var averageTimePerAnswer: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalTimePlayed) / Double(totalAnswered)

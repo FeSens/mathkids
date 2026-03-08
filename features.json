@@ -8668,6 +8668,86 @@
         "Verify x/0 returns 0.0"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-469",
+      "title": "GameSession streakPercentage streak as percentage of total",
+      "description": "GameSession should expose streakPercentage returning bestStreak as percentage of totalAnswered",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 5 streak of 10 returns 50",
+        "Verify no answers returns 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-470",
+      "title": "Achievement hasUnlockedAll checks all unlocked",
+      "description": "Achievement should expose hasUnlockedAll(for:) returning true when all achievements are unlocked",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify fresh stats returns false",
+        "Verify when unlocked equals total returns true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-471",
+      "title": "DifficultyLevel scoreRange returns min and max possible scores",
+      "description": "DifficultyLevel should expose scoreRange returning (min: 0, max: maxPossibleScore)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify min is 0",
+        "Verify max equals maxPossibleScore"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-472",
+      "title": "LevelSystem formattedLevel returns Lv.X format",
+      "description": "LevelSystem should expose formattedLevel(for:) returning \"Lv.X\" string",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 0 XP returns Lv.1",
+        "Verify 100 XP returns Lv.2"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-473",
+      "title": "MathProblem bothOperandsEqual checks same operands",
+      "description": "MathProblem should expose bothOperandsEqual returning true when operand1 equals operand2",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5+5 returns true",
+        "Verify 3+5 returns false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

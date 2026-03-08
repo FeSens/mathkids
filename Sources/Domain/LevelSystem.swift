@@ -239,6 +239,10 @@ enum LevelSystem {
         return thresholds[level - 1]
     }
 
+    static func formattedLevel(for xp: Int) -> String {
+        "Lv.\(level(for: xp))"
+    }
+
     static func xpPercentOfMax(for xp: Int) -> Int {
         let maxXP = xpToMaxLevel
         guard maxXP > 0 else { return 0 }
