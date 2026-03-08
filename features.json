@@ -31599,6 +31599,76 @@
         "Create games achievement",
         "Verify minSessionLength is low"
       ]
+    },
+    {
+      "id": "logic-1924",
+      "name": "achievementCardCameoStyle",
+      "description": "Cameo decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cameo is carved",
+        "Create common achievement",
+        "Verify cameo is flat"
+      ]
+    },
+    {
+      "id": "logic-1925",
+      "name": "achievementIsStreakDependent",
+      "description": "Whether achievement depends on streak (streak only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify isStreakDependent is true",
+        "Create score achievement",
+        "Verify isStreakDependent is false"
+      ]
+    },
+    {
+      "id": "logic-1926",
+      "name": "achievementCardLegendText",
+      "description": "Legend text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify legend text",
+        "Create games achievement",
+        "Verify legend text"
+      ]
+    },
+    {
+      "id": "logic-1927",
+      "name": "achievementCardEnamelingStyle",
+      "description": "Enameling decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify enameling is cloisonne",
+        "Create common achievement",
+        "Verify enameling is basic"
+      ]
+    },
+    {
+      "id": "logic-1928",
+      "name": "achievementTargetGamesPerWeek",
+      "description": "Target number of games per week based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify target is high",
+        "Create games achievement",
+        "Verify target is low"
+      ]
     }
   ],
   "_schema": {
