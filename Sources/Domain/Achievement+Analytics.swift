@@ -266,4 +266,17 @@ extension Achievement {
         case .games: return "0 count"
         }
     }
+
+    var achievementSkillLevel: String {
+        switch category {
+        case .mastery: return "advanced"
+        case .streak: return "intermediate"
+        case .score: return "intermediate"
+        case .games: return "beginner"
+        }
+    }
+
+    var achievementMaxRetries: Int {
+        -1
+    }
 }

@@ -26306,6 +26306,79 @@
         "Create games achievement",
         "Verify label contains count format"
       ]
+    },
+    {
+      "id": "logic-1574",
+      "title": "achievementSkillLevel",
+      "description": "Return skill level required",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify skillLevel is advanced",
+        "Create games achievement",
+        "Verify skillLevel is beginner"
+      ]
+    },
+    {
+      "id": "logic-1575",
+      "title": "achievementMaxRetries",
+      "description": "Return max retry attempts",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify maxRetries is unlimited (-1)"
+      ]
+    },
+    {
+      "id": "logic-1576",
+      "title": "achievementDisplayPriority",
+      "description": "Return display priority for UI ordering",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify priority >= 80",
+        "Create common achievement",
+        "Verify priority < 40"
+      ]
+    },
+    {
+      "id": "logic-1577",
+      "title": "achievementCurrencyType",
+      "description": "Return the currency type rewarded",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify currencyType is gems",
+        "Create common achievement",
+        "Verify currencyType is coins"
+      ]
+    },
+    {
+      "id": "logic-1578",
+      "title": "achievementTimerFormat",
+      "description": "Return timer format string",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify format contains hours",
+        "Create games achievement",
+        "Verify format contains minutes"
+      ]
     }
   ],
   "_schema": {
