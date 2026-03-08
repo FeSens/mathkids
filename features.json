@@ -27602,6 +27602,79 @@
         "Create streak achievement",
         "Verify label is Streak"
       ]
+    },
+    {
+      "id": "logic-1664",
+      "title": "achievementIsTrackableInWidget",
+      "description": "Return whether achievement is widget-trackable",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isTrackableInWidget is true",
+        "Create games achievement",
+        "Verify isTrackableInWidget is false"
+      ]
+    },
+    {
+      "id": "logic-1665",
+      "title": "achievementToastPosition",
+      "description": "Return toast notification position",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify position is top",
+        "Create common achievement",
+        "Verify position is bottom"
+      ]
+    },
+    {
+      "id": "logic-1666",
+      "title": "achievementPointsLabel",
+      "description": "Return formatted points label",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify label contains point value"
+      ]
+    },
+    {
+      "id": "logic-1667",
+      "title": "achievementShowProgress",
+      "description": "Return whether to show progress indicator",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify showProgress is true",
+        "Create games achievement",
+        "Verify showProgress is false"
+      ]
+    },
+    {
+      "id": "logic-1668",
+      "title": "achievementUnlockSfx",
+      "description": "Return unlock sound effect name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify sound contains rare",
+        "Create common achievement",
+        "Verify sound contains common"
+      ]
     }
   ],
   "_schema": {

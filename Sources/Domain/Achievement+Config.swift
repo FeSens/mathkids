@@ -168,4 +168,24 @@ extension Achievement {
     var achievementCategoryTitle: String {
         category.displayName
     }
+
+    var achievementIsTrackableInWidget: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementToastPosition: String {
+        isRareAchievement ? "top" : "bottom"
+    }
+
+    var achievementPointsLabel: String {
+        "\(pointValue) points"
+    }
+
+    var achievementShowProgress: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementUnlockSfx: String {
+        isRareAchievement ? "sfx_unlock_rare" : "sfx_unlock_common"
+    }
 }
