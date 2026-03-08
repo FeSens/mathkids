@@ -17395,6 +17395,82 @@
         "games is first (0), mastery is last (3)"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1014",
+      "name": "achievementIsGameCount",
+      "description": "Whether achievement tracks game count",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "ten_games is game count, streak_5 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1015",
+      "name": "achievementPointBadge",
+      "description": "Formatted badge showing point value",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "badge contains point number"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1016",
+      "name": "achievementIsAccuracyBased",
+      "description": "Whether achievement requires accuracy",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "accuracy_90 is accuracy based, first_game is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1017",
+      "name": "categoryPluralName",
+      "description": "Plural form of category name",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak plural is Streaks",
+        "game plural is Games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1018",
+      "name": "categoryIsMilestone",
+      "description": "Whether category represents milestone achievements",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "games is milestone, streak is not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

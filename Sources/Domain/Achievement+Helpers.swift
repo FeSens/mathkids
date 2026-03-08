@@ -160,6 +160,18 @@ extension Achievement {
     var achievementNotificationBody: String {
         "\(emoji) \(title): \(description)"
     }
+
+    var achievementIsGameCount: Bool {
+        category == .games
+    }
+
+    var achievementPointBadge: String {
+        "[\(pointValue)]"
+    }
+
+    var achievementIsAccuracyBased: Bool {
+        id.contains("accuracy") || id.contains("mastery")
+    }
 }
 
 extension Achievement.Category {
@@ -227,5 +239,18 @@ extension Achievement.Category {
         case .score: return 2
         case .mastery: return 3
         }
+    }
+
+    var categoryPluralName: String {
+        switch self {
+        case .streak: return "Streaks"
+        case .score: return "Scores"
+        case .games: return "Games"
+        case .mastery: return "Masteries"
+        }
+    }
+
+    var categoryIsMilestone: Bool {
+        self == .games || self == .score
     }
 }
