@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 12500000
         }
     }
+
+    var achievementCardTintinaiteProStyle: String {
+        isRareAchievement ? "steel grey acicular" : "dull steel grey"
+    }
+
+    var achievementRequiresEssencePlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardInjunctionWritSealUltraPlusPlusText: String {
+        switch category {
+        case .mastery: return "Injunction Writ Seal Ultra Plus Plus of the Omniscient"
+        case .streak: return "Injunction Writ Seal Ultra Plus Plus of the Citadel"
+        case .score: return "Injunction Writ Seal Ultra Plus Plus of the Pinnacle"
+        case .games: return "Injunction Writ Seal Ultra Plus Plus of the Novitiate"
+        }
+    }
+
+    var achievementCardBerthieriteProStyle: String {
+        isRareAchievement ? "dark steel fibrous" : "flat steel grey"
+    }
+
+    var achievementAsgardPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 130000000
+        case .streak: return 52000000
+        case .score: return 125000000
+        case .games: return 13000000
+        }
+    }
 }

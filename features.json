@@ -40427,6 +40427,106 @@
         "Verify threshold <= 20000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2446",
+      "title": "achievementCardTintinaiteProStyle",
+      "description": "Mineral style string for tintinaite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify tintinaite pro style is steel grey acicular",
+        "Create common achievement",
+        "Verify tintinaite pro style is dull steel grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2447",
+      "title": "achievementRequiresEssencePlus",
+      "description": "Whether achievement requires essence plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires essence plus is true",
+        "Create games achievement",
+        "Verify requires essence plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2448",
+      "title": "achievementCardInjunctionWritSealUltraPlusPlusText",
+      "description": "Injunction writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Injunction Writ Seal Ultra Plus Plus of the Omniscient",
+        "Create games achievement",
+        "Verify text is Injunction Writ Seal Ultra Plus Plus of the Novitiate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2449",
+      "title": "achievementCardBerthieriteProStyle",
+      "description": "Mineral style string for berthierite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify berthierite pro style is dark steel fibrous",
+        "Create common achievement",
+        "Verify berthierite pro style is flat steel grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2450",
+      "title": "achievementAsgardPlusPlusThreshold",
+      "description": "Asgard plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 130000000",
+        "Create games achievement",
+        "Verify threshold <= 20000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
