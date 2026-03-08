@@ -13647,6 +13647,86 @@
         "Verify hasEvenAnswer is true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-779",
+      "name": "MathProblem.formattedProblem",
+      "description": "Formatted problem string like '3 + 4 = ?'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create addition problem 3+4",
+        "Verify formattedProblem returns '3 + 4 = ?'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-780",
+      "name": "MathProblem.isDoubleDigitAnswer",
+      "description": "Boolean true when answer has two or more digits",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with answer 12",
+        "Verify isDoubleDigitAnswer is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-781",
+      "name": "MathProblem.operationSymbol",
+      "description": "The operation symbol as a string (+, -, x, /)",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create addition problem",
+        "Verify operationSymbol returns '+'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-782",
+      "name": "MathProblem.hasSmallOperands",
+      "description": "Boolean true when both operands are under 10",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with operands 3 and 7",
+        "Verify hasSmallOperands is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-783",
+      "name": "MathProblem.correctAnswerText",
+      "description": "The correct answer as a formatted string",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with answer 42",
+        "Verify answerText returns '42'"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

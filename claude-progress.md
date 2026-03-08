@@ -3,17 +3,18 @@
 ## Session 13 — 2026-03-08
 
 ### Status
-- Features: 743/743 passing (12 MVP + 9 polish + 722 improvement)
-- Unit tests: ~1340 (all green across ~118 suites)
+- Features: 788/788 passing (12 MVP + 9 polish + 767 improvement)
+- Unit tests: ~1400 (all green across ~125 suites)
 - UI tests: 12 (QA screenshots flaky but unit tests solid)
 - QA: PASSED
 
-### Session 13 Features (batches 124-130)
+### Session 13 Features (batches 124-139)
 - Batch 124: logic-699 to logic-703 (5 features) — GameSession+Display.swift
-- Batch 125-130: logic-704 to logic-733 (30 features) — GameSession+Labels.swift
-- Total this session: 35 improvement features
-- Created GameSession+Labels.swift for new label/display properties
-- Added averageScoreThreshold to DifficultyLevel
+- Batch 125-133: logic-704 to logic-748 (45 features) — GameSession+Labels.swift
+- Batch 134-137: logic-749 to logic-768 (20 features) — DifficultyLevel+Extras.swift
+- Batch 138-139: logic-769 to logic-778 (10 features) — MathProblem+Helpers.swift
+- Total this session: 80 improvement features
+- Created GameSession+Labels.swift, DifficultyLevel+Extras.swift, MathProblem+Helpers.swift
 
 ## Session 12 — 2026-03-08
 

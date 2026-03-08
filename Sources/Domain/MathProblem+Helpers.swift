@@ -46,4 +46,24 @@ extension MathProblem {
     var hasEvenAnswer: Bool {
         correctAnswer % 2 == 0
     }
+
+    var formattedProblem: String {
+        "\(operand1) \(operation.rawValue) \(operand2) = ?"
+    }
+
+    var isDoubleDigitAnswer: Bool {
+        abs(correctAnswer) >= 10
+    }
+
+    var operationSymbol: String {
+        operation.rawValue
+    }
+
+    var hasSmallOperands: Bool {
+        operand1 < 10 && operand2 < 10
+    }
+
+    var correctAnswerText: String {
+        "\(correctAnswer)"
+    }
 }
