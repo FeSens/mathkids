@@ -36907,6 +36907,96 @@
         "Verify threshold <= 6000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2261",
+      "title": "Achievement card stannite style",
+      "description": "Computed property achievementCardStanniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify stannite style is steel black",
+        "Create common achievement",
+        "Verify stannite style is olive grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2262",
+      "title": "Achievement requires mettle plus",
+      "description": "Computed property achievementRequiresMettlePlus returns true for score or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresMettlePlus is true",
+        "Create games achievement",
+        "Verify requiresMettlePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2263",
+      "title": "Achievement card accord writ seal plus text",
+      "description": "Computed property achievementCardAccordWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Accord Writ Seal Plus of the Sovereign",
+        "Create games achievement",
+        "Verify text is Accord Writ Seal Plus of the Aspirant"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2264",
+      "title": "Achievement card tetrahedrite style",
+      "description": "Computed property achievementCardTetrahedriteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify tetrahedrite style is steel grey sheen",
+        "Create common achievement",
+        "Verify tetrahedrite style is iron"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2265",
+      "title": "Achievement scepter plus threshold",
+      "description": "Computed property achievementScepterPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 60000",
+        "Create games achievement",
+        "Verify threshold <= 8000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

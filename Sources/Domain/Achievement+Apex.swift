@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 5000
         }
     }
+
+    var achievementCardStanniteStyle: String {
+        isRareAchievement ? "steel black" : "olive grey"
+    }
+
+    var achievementRequiresMettlePlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardAccordWritSealPlusText: String {
+        switch category {
+        case .mastery: return "Accord Writ Seal Plus of the Sovereign"
+        case .streak: return "Accord Writ Seal Plus of the Vanguard"
+        case .score: return "Accord Writ Seal Plus of the Titan"
+        case .games: return "Accord Writ Seal Plus of the Aspirant"
+        }
+    }
+
+    var achievementCardTetrahedriteStyle: String {
+        isRareAchievement ? "steel grey sheen" : "iron"
+    }
+
+    var achievementScepterPlusThreshold: Int {
+        switch category {
+        case .mastery: return 75000
+        case .streak: return 30000
+        case .score: return 60000
+        case .games: return 7500
+        }
+    }
 }
