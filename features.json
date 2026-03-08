@@ -7915,6 +7915,89 @@
         "Verify total of all categories equals total achievements"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-424",
+      "title": "GameSession hasAnswered checks if at least one answer given",
+      "description": "GameSession should expose hasAnswered returning true when totalAnswered > 0",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify false at start",
+        "Verify true after one answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-425",
+      "title": "MathProblem isSubtractionToZero for x-x pattern",
+      "description": "MathProblem should detect subtraction problems where operands are equal (result is 0)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5-5 is subtraction to zero",
+        "Verify 5-3 is not",
+        "Verify 5+5 is not (wrong operation)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-426",
+      "title": "LevelSystem currentLevelName returns name for current XP",
+      "description": "LevelSystem should expose currentLevelName(for:) as a simpler alias for levelName(for:)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 0 XP returns Beginner",
+        "Verify 100 XP returns Learner",
+        "Verify matches levelName"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-427",
+      "title": "StatsViewModel bestStreakText formatted best streak display",
+      "description": "StatsViewModel should expose bestStreakText like \"Best streak: 12\"",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify shows streak number",
+        "Verify shows 0 when no streak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-428",
+      "title": "DifficultyLevel totalGameTime formatted game duration",
+      "description": "DifficultyLevel should expose totalGameTimeText like \"60 seconds\" or \"1 minute\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy shows 60 seconds",
+        "Verify medium shows 45 seconds",
+        "Verify hard shows 30 seconds"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

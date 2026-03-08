@@ -74,6 +74,10 @@ final class StatsViewModel {
         gamesPlayed == 1 ? "1 game" : "\(gamesPlayed) games"
     }
 
+    var bestStreakText: String {
+        "Best streak: \(bestStreak)"
+    }
+
     var totalProblemsSolvedText: String {
         "\(totalSolved) problems solved"
     }

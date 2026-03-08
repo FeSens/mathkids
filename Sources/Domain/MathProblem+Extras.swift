@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var isSubtractionToZero: Bool {
+        operation == .subtract && operand1 == operand2
+    }
+
     var isCommutativeProblem: Bool {
         operation.isCommutative
     }
