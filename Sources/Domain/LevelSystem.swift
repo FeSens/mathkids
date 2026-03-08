@@ -127,6 +127,10 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func isNewLevel(oldXP: Int, newXP: Int) -> Bool {
+        level(for: oldXP) != level(for: newXP)
+    }
+
     static func levelGap(forLevel level: Int) -> Int {
         guard level >= 1, level < thresholds.count else { return 0 }
         return thresholds[level] - thresholds[level - 1]

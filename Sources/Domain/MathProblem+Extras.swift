@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var isZeroResult: Bool {
+        correctAnswer == 0
+    }
+
     var isMakesTen: Bool {
         operation == .add && correctAnswer == 10
     }

@@ -7496,6 +7496,89 @@
         "Verify medium is neither easiest nor hardest"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-399",
+      "title": "GameSession scoreLabel formatted score display",
+      "description": "GameSession should expose scoreLabel returning score as formatted text like \"150 pts\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 5 correct easy returns \"50 pts\"",
+        "Verify 0 score returns \"0 pts\""
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-400",
+      "title": "MathProblem isZeroResult when answer equals zero",
+      "description": "MathProblem should detect when the correct answer is exactly 0",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5-5 has zero result",
+        "Verify 0*7 has zero result",
+        "Verify 5+3 does not have zero result"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-401",
+      "title": "LevelSystem isNewLevel checks if XP just crossed a threshold",
+      "description": "LevelSystem should check isNewLevel(oldXP:newXP:) returning true if crossing a level boundary",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 95 to 105 crosses level 2 boundary",
+        "Verify 50 to 90 does not cross any boundary",
+        "Verify 290 to 310 crosses level 3 boundary"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-402",
+      "title": "ResultsViewModel correctVsWrongText ratio display",
+      "description": "ResultsViewModel should expose correctVsWrongText showing correct and wrong counts like \"8 correct / 2 wrong\"",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify shows correct and wrong counts",
+        "Verify all correct shows 0 wrong"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-403",
+      "title": "Operation precedence returns mathematical precedence",
+      "description": "Operation should expose precedence: add/subtract = 1, multiply/divide = 2",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify add precedence is 1",
+        "Verify multiply precedence is 2",
+        "Verify subtract precedence is 1"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

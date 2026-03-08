@@ -4,6 +4,10 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var scoreLabel: String {
+        "\(score) pts"
+    }
+
     var accuracyLabel: String {
         "\(Int(accuracy))%"
     }

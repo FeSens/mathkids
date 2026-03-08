@@ -85,6 +85,13 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var precedence: Int {
+        switch self {
+        case .add, .subtract: 1
+        case .multiply, .divide: 2
+        }
+    }
+
     var symbolWithSpaces: String {
         " \(rawValue) "
     }
