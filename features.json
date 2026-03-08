@@ -29389,6 +29389,86 @@
         "Verify progressEmoji by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1779",
+      "title": "Achievement Card Shadow Opacity",
+      "description": "Returns shadow opacity for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardShadowOpacity by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1780",
+      "title": "Achievement Required Days",
+      "description": "Returns days required for achievement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify requiredDays by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1781",
+      "title": "Achievement Card Header Style",
+      "description": "Returns header style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardHeaderStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1782",
+      "title": "Achievement Is Passive",
+      "description": "Returns whether achievement is earned passively",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isPassive for games vs mastery"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1783",
+      "title": "Achievement Reward Label Text",
+      "description": "Returns label for reward display",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify rewardLabelText contains points"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

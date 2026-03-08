@@ -35,4 +35,29 @@ extension Achievement {
         case .games: return "🎮"
         }
     }
+
+    var achievementCardShadowOpacity: Double {
+        isRareAchievement ? 0.4 : 0.1
+    }
+
+    var achievementRequiredDays: Int {
+        switch category {
+        case .mastery: return 30
+        case .streak: return 7
+        case .score: return 0
+        case .games: return 0
+        }
+    }
+
+    var achievementCardHeaderStyle: String {
+        isRareAchievement ? "prominent" : "compact"
+    }
+
+    var achievementIsPassive: Bool {
+        category == .games
+    }
+
+    var achievementRewardLabelText: String {
+        "+\(pointValue) pts"
+    }
 }
