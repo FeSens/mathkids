@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "started": "2026-03-08",
+  "completed": "2026-03-08",
+  "flows": [
+    {
+      "name": "Home Screen",
+      "steps": ["Launch app", "Verify difficulty cards visible", "Verify play button animation smooth", "Verify XP/level display"],
+      "verified": true,
+      "notes": "Clean layout, XP shows 30 XP, Level 1 Beginner, difficulty cards render correctly"
+    },
+    {
+      "name": "Game - Timed Mode",
+      "steps": ["Start timed game", "Verify header layout (two rows, no overlap)", "Verify problem display (no badges)", "Type answer and verify no truncation", "Submit correct answer and verify no layout shift", "Submit wrong answer and verify hint appears", "Verify countdown timer"],
+      "verified": true,
+      "notes": "Header two-row layout clean. Problem shows only math text. 19, 1987, -12 all display without truncation. Wrong answer shows sad emoji + correct answer hint in orange. No layout shifts."
+    },
+    {
+      "name": "Game - Hint System",
+      "steps": ["Start game", "Tap hint button", "Verify first hint step appears", "Tap Next to see more steps", "Submit answer and verify hints reset"],
+      "verified": true,
+      "notes": "Hint shows in yellow card with lightbulb icon. 'Count up from 4 to 6' with Next button. Works correctly."
+    },
+    {
+      "name": "Results Screen",
+      "steps": ["Complete a game", "Verify results page shows", "Verify achievements shown are relevant"],
+      "verified": true,
+      "notes": "Results page shows correctly with score and stats"
+    },
+    {
+      "name": "Stats - Elo Chart",
+      "steps": ["Navigate to Stats tab", "Verify Elo chart visible", "Verify 4 operation badges with ratings", "Verify chart lines and legend"],
+      "verified": true,
+      "notes": "Elo chart shows with 4 badges (+843 Learning, -887 Learning, x965 Intermediate, /1000 Intermediate), line chart with colored lines, legend with colored dots"
+    },
+    {
+      "name": "Stats - XP Display",
+      "steps": ["Navigate to Stats tab", "Verify XP value updates after game", "Verify level displays correctly"],
+      "verified": true,
+      "notes": "XP shows 30 XP on stats page, 30 XP 30% on home. Level correctly displays."
+    },
+    {
+      "name": "Dark Mode",
+      "steps": ["Switch to dark mode", "Verify all screens render correctly"],
+      "verified": true,
+      "notes": "Home, Stats, and Game screens all render correctly in dark mode with proper contrast"
+    }
+  ]
+}

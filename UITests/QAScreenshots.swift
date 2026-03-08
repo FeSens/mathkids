@@ -367,6 +367,115 @@ final class QAScreenshots: XCTestCase {
         saveScreenshot("qa-012-step-02-after-answer")
     }
 
+    // MARK: - QA-013: Elo Chart in Stats
+
+    func test_QA013_EloChart() {
+        // Navigate to Stats tab
+        app.tabBars.buttons["Stats"].tap()
+        Thread.sleep(forTimeInterval: 1)
+        saveScreenshot("qa-013-step-01-stats-top")
+
+        // Scroll to Elo chart
+        app.swipeUp()
+        Thread.sleep(forTimeInterval: 0.5)
+
+        let eloChart = app.otherElements["eloChart"]
+        if eloChart.waitForExistence(timeout: 3) {
+            saveScreenshot("qa-013-step-02-elo-chart-visible")
+        } else {
+            // Try scrolling more
+            app.swipeUp()
+            Thread.sleep(forTimeInterval: 0.5)
+            saveScreenshot("qa-013-step-02-elo-chart-scroll")
+        }
+    }
+
+    // MARK: - QA-014: Hint System
+
+    func test_QA014_HintSystem() {
+        app.buttons["playButton"].tap()
+        waitForCountdown()
+
+        let problemLabel = app.staticTexts["problemLabel"]
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
+        saveScreenshot("qa-014-step-01-game-before-hint")
+
+        // Tap hint button
+        let hintButton = app.buttons["hintButton"]
+        if hintButton.waitForExistence(timeout: 3) {
+            hintButton.tap()
+            Thread.sleep(forTimeInterval: 0.5)
+            saveScreenshot("qa-014-step-02-hint-step-1")
+
+            // Check if hint display appeared
+            let hintDisplay = app.otherElements["hintDisplay"]
+            if hintDisplay.exists {
+                saveScreenshot("qa-014-step-03-hint-visible")
+            }
+        }
+
+        // Submit answer to verify hints reset
+        app.buttons["num_5"].tap()
+        app.buttons["submitButton"].tap()
+        Thread.sleep(forTimeInterval: 0.8)
+        saveScreenshot("qa-014-step-04-after-submit-hint-gone")
+    }
+
+    // MARK: - QA-015: Game Header Layout (no overlap)
+
+    func test_QA015_GameHeaderLayout() {
+        app.buttons["playButton"].tap()
+        waitForCountdown()
+
+        let problemLabel = app.staticTexts["problemLabel"]
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
+
+        // Take screenshot focused on header area
+        Thread.sleep(forTimeInterval: 1)
+        saveScreenshot("qa-015-step-01-header-layout")
+
+        // Answer several questions to build streak and see combo
+        for _ in 0..<4 {
+            app.buttons["num_1"].tap()
+            app.buttons["submitButton"].tap()
+            Thread.sleep(forTimeInterval: 0.5)
+        }
+        saveScreenshot("qa-015-step-02-header-with-answers")
+    }
+
+    // MARK: - QA-016: Answer Field (no truncation)
+
+    func test_QA016_AnswerFieldTruncation() {
+        app.buttons["playButton"].tap()
+        waitForCountdown()
+
+        let problemLabel = app.staticTexts["problemLabel"]
+        XCTAssertTrue(problemLabel.waitForExistence(timeout: 8))
+
+        // Type a multi-digit number
+        app.buttons["num_1"].tap()
+        app.buttons["num_9"].tap()
+        Thread.sleep(forTimeInterval: 0.3)
+        saveScreenshot("qa-016-step-01-two-digits")
+
+        // Type more digits
+        app.buttons["num_8"].tap()
+        app.buttons["num_7"].tap()
+        Thread.sleep(forTimeInterval: 0.3)
+        saveScreenshot("qa-016-step-02-four-digits")
+
+        // Delete and try negative
+        app.buttons["num_delete"].tap()
+        app.buttons["num_delete"].tap()
+        app.buttons["num_delete"].tap()
+        app.buttons["num_delete"].tap()
+        app.buttons["num_negative"].tap()
+        app.buttons["num_1"].tap()
+        app.buttons["num_2"].tap()
+        Thread.sleep(forTimeInterval: 0.3)
+        saveScreenshot("qa-016-step-03-negative-number")
+    }
+
     // MARK: - QA-006: Dark mode screenshots
 
     func test_QA006_DarkMode() {
