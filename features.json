@@ -9720,6 +9720,87 @@
         "Verify false when time expired"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-534",
+      "title": "HomeViewModel levelNameText formatted level name",
+      "description": "HomeViewModel should expose levelNameText returning current level name",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes level name",
+        "Verify returns non-empty string"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-535",
+      "title": "StatsViewModel weakestOperationDescription formatted text",
+      "description": "StatsViewModel should expose weakestOperationDescription returning readable text about weakest operation",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes operation symbol when available",
+        "Verify returns fallback when none"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-536",
+      "title": "ResultsViewModel sessionDurationLabel readable duration",
+      "description": "ResultsViewModel+Analysis should expose sessionDurationLabel with formatted duration",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify includes time value",
+        "Verify includes seconds unit"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-537",
+      "title": "MathProblem isMultiplicationByZero checks times zero",
+      "description": "MathProblem should expose isMultiplicationByZero returning true for multiplication where either operand is 0",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5x0 returns true",
+        "Verify 0x5 returns true",
+        "Verify 5x3 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-538",
+      "title": "Achievement completionMessage returns congrats based on progress",
+      "description": "Achievement should expose completionMessage(for:) returning a message about achievement completion progress",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify fresh stats gets encouraging message",
+        "Verify partial progress gets progress message"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

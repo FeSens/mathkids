@@ -106,6 +106,10 @@ extension ResultsViewModel {
         "Best streak: \(bestStreak)"
     }
 
+    var sessionDurationLabel: String {
+        "\(session.totalTimePlayed)s played"
+    }
+
     var difficultyDisplayText: String {
         "\(session.difficulty.emoji) \(session.difficulty.displayName)"
     }

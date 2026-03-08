@@ -209,6 +209,13 @@ struct Achievement: Identifiable {
         return "\(result.current)/\(result.target)"
     }
 
+    static func completionMessage(for stats: PlayerStats) -> String {
+        let pct = unlockPercentage(for: stats)
+        if pct == 0 { return "Start playing to unlock achievements!" }
+        if pct >= 100 { return "All achievements unlocked!" }
+        return "\(pct)% of achievements unlocked"
+    }
+
     static var masteryAchievements: [Achievement] {
         all.filter { $0.category == .mastery }
     }

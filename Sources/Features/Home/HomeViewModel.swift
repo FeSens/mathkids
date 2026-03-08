@@ -82,6 +82,10 @@ final class HomeViewModel {
         "\(selectedDifficulty.displayName) - \(selectedDifficulty.operationCount) operations"
     }
 
+    var levelNameText: String {
+        levelName
+    }
+
     var recommendedDifficultyText: String {
         "\(recommendedDifficulty.emoji) \(recommendedDifficulty.displayName)"
     }

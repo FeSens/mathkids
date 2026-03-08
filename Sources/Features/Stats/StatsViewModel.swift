@@ -92,6 +92,11 @@ final class StatsViewModel {
         "\(Int(accuracy))% (\(accuracyGrade))"
     }
 
+    var weakestOperationDescription: String {
+        guard let symbol = weakestOperationSymbol else { return "No weak spots yet" }
+        return "Weakest: \(symbol)"
+    }
+
     var operationCountText: String {
         let count = operationAccuracies.count
         return "\(count) operation\(count == 1 ? "" : "s") tracked"
