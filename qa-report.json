@@ -20,5 +20,5 @@
     "QA-011: Operation selector chips",
     "QA-012: Character reactions to answers"
   ],
-  "notes": "92/92 features passing. 135 unit tests green. All files under 300 lines."
+  "notes": "95/95 features passing. 135 unit tests green. All source files under 300 lines."
 }
