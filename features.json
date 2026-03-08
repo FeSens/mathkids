@@ -36187,6 +36187,96 @@
         "Verify threshold <= 500"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2221",
+      "title": "Achievement card cobaltite style",
+      "description": "Computed property achievementCardCobaltiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cobaltite style is cobalt blue",
+        "Create common achievement",
+        "Verify cobaltite style is grey blue"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2222",
+      "title": "Achievement requires heart plus",
+      "description": "Computed property achievementRequiresHeartPlus returns true for games or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create games achievement",
+        "Verify requiresHeartPlus is true",
+        "Create mastery achievement",
+        "Verify requiresHeartPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2223",
+      "title": "Achievement card directive writ seal text",
+      "description": "Computed property achievementCardDirectiveWritSealText returns category-based directive writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Directive Writ Seal of the Oracle",
+        "Create games achievement",
+        "Verify text is Directive Writ Seal of the Wanderer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2224",
+      "title": "Achievement card skutterudite style",
+      "description": "Computed property achievementCardSkutteruditeStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify skutterudite style is bright silver",
+        "Create common achievement",
+        "Verify skutterudite style is dull silver"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2225",
+      "title": "Achievement eminence plus threshold",
+      "description": "Computed property achievementEminencePlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 5000",
+        "Create games achievement",
+        "Verify threshold <= 750"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

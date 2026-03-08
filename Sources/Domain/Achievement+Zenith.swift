@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 350
         }
     }
+
+    var achievementCardCobaltiteStyle: String {
+        isRareAchievement ? "cobalt blue" : "grey blue"
+    }
+
+    var achievementRequiresHeartPlus: Bool {
+        category == .games || category == .streak
+    }
+
+    var achievementCardDirectiveWritSealText: String {
+        switch category {
+        case .mastery: return "Directive Writ Seal of the Oracle"
+        case .streak: return "Directive Writ Seal of the Protector"
+        case .score: return "Directive Writ Seal of the Champion"
+        case .games: return "Directive Writ Seal of the Wanderer"
+        }
+    }
+
+    var achievementCardSkutteruditeStyle: String {
+        isRareAchievement ? "bright silver" : "dull silver"
+    }
+
+    var achievementEminencePlusThreshold: Int {
+        switch category {
+        case .mastery: return 5000
+        case .streak: return 2000
+        case .score: return 4000
+        case .games: return 500
+        }
+    }
 }
