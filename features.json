@@ -42669,7 +42669,9 @@
       "description": "Show per-operation Elo rating changes on the results screen with green/red coloring. Display +X or -X next to each operation attempted.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-006"],
+      "depends_on": [
+        "improve-006"
+      ],
       "files": [
         "Sources/Features/Results/ResultsView.swift",
         "Sources/Features/Results/ResultsComponents.swift"
@@ -42723,7 +42725,9 @@
       "description": "Display a visual comparison of current session accuracy vs lifetime average on the results screen with up/down arrows and color coding.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-009"],
+      "depends_on": [
+        "improve-009"
+      ],
       "files": [
         "Sources/Features/Results/ResultsView.swift",
         "Sources/Features/Results/ResultsComponents.swift"
@@ -42741,7 +42745,9 @@
       "description": "Show average response time per operation on the results screen with a visual breakdown. Highlight the slowest operation for improvement.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-008"],
+      "depends_on": [
+        "improve-008"
+      ],
       "files": [
         "Sources/Features/Results/ResultsView.swift",
         "Sources/Features/Results/ResultsComponents.swift"
@@ -42848,7 +42854,10 @@
       "description": "Enhance the difficulty breakdown section to show best score and best accuracy alongside game count for each difficulty.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-015", "improve-016"],
+      "depends_on": [
+        "improve-015",
+        "improve-016"
+      ],
       "files": [
         "Sources/Features/Stats/StatsView.swift"
       ],
@@ -42865,7 +42874,9 @@
       "description": "Show a small trend badge on the home screen indicating if the player's accuracy is improving, declining, or stable.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-019"],
+      "depends_on": [
+        "improve-019"
+      ],
       "files": [
         "Sources/Features/Home/HomeView.swift"
       ],
@@ -42882,7 +42893,9 @@
       "description": "Show how many hints were used during the game on the results screen.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-017"],
+      "depends_on": [
+        "improve-017"
+      ],
       "files": [
         "Sources/Features/Results/ResultsView.swift"
       ],
@@ -43018,7 +43031,11 @@
       "description": "Show a highlights section on the results screen with streak milestones, longest correct run, and accuracy improvement over game halves.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-026", "improve-028", "improve-029"],
+      "depends_on": [
+        "improve-026",
+        "improve-028",
+        "improve-029"
+      ],
       "files": [
         "Sources/Features/Results/ResultsView.swift",
         "Sources/Features/Results/ResultsComponents.swift"
@@ -43036,7 +43053,9 @@
       "description": "Show the fastest correct answer time as a special badge on the results screen.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-025"],
+      "depends_on": [
+        "improve-025"
+      ],
       "files": [
         "Sources/Features/Results/ResultsView.swift"
       ],
@@ -43053,7 +43072,9 @@
       "description": "Show a grid of operation cards with current Elo rating, skill level label, and color-coded mastery indicator in the stats view.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-023"],
+      "depends_on": [
+        "improve-023"
+      ],
       "files": [
         "Sources/Features/Stats/StatsView.swift"
       ],
@@ -43070,7 +43091,9 @@
       "description": "Show XP earned from each difficulty as colored bars in the stats view, making it clear which difficulty contributed most XP.",
       "category": "ui",
       "layer": "features",
-      "depends_on": ["improve-024"],
+      "depends_on": [
+        "improve-024"
+      ],
       "files": [
         "Sources/Features/Stats/StatsView.swift"
       ],
@@ -43266,6 +43289,95 @@
         "Efficiency score between 0 and 100",
         "Perfect accuracy with fast time gives high score",
         "No answers gives 0 efficiency"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-045",
+      "title": "Home screen total time played display",
+      "description": "Show total time played on home screen as a stat card. Data exists in PlayerStats.totalTimePlayedSeconds but is not surfaced on home.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "HomeViewModel exposes formattedTimePlayed string",
+        "Shows hours and minutes for large values",
+        "Shows minutes only for small values",
+        "Shows 0m when no time played"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-046",
+      "title": "Home screen recommended difficulty display",
+      "description": "Surface the recommendedDifficulty computed property on the home view model. Already computed but never shown.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "HomeViewModel exposes recommendedDifficulty based on stats",
+        "Low accuracy recommends easier difficulty",
+        "High accuracy recommends harder difficulty",
+        "No games returns default difficulty"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-047",
+      "title": "Results efficiency score display",
+      "description": "Add efficiency score badge to results view model. efficiencyScore exists in Analytics extension, add formatted display text.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analytics.swift"
+      ],
+      "test_steps": [
+        "efficiencyScoreText returns formatted percentage string",
+        "efficiencyGrade returns letter grade for efficiency",
+        "High efficiency gives A grade",
+        "Zero efficiency gives F grade"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-048",
+      "title": "Comeback detection in results",
+      "description": "Detect when player made a comeback (significant accuracy improvement from first to second half). Use accuracyImprovementOverHalves.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analytics.swift"
+      ],
+      "test_steps": [
+        "isComeback returns true when improvement >= 20 percentage points",
+        "isComeback returns false for small improvement",
+        "comebackText returns encouraging message for comebacks",
+        "No comeback returns nil text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-049",
+      "title": "Per-difficulty game count on home screen",
+      "description": "Show per-difficulty game counts (Easy: X, Medium: Y, Hard: Z) accessible from HomeViewModel for display on home.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "HomeViewModel exposes easyGames, mediumGames, hardGames counts",
+        "difficultyBreakdownText returns formatted string",
+        "Zero games shows correct text"
       ],
       "passes": true
     }

@@ -193,6 +193,7 @@
 		53E9FD5E3778F7476FDAE8E3 /* Batch373Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485773B38B03969B04D95C7E /* Batch373Tests.swift */; };
 		5443B73E4CA6960A8FF176F9 /* Batch180Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66B9357070F769B80DA0A01 /* Batch180Tests.swift */; };
 		54D89E1530E3BEA1C34F0CED /* Batch127Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8DB22431B2D8A37885AA1 /* Batch127Tests.swift */; };
+		555DA59C11B0C21F48DF79FF /* ImproveRound10Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA38F045058F517167261671 /* ImproveRound10Tests.swift */; };
 		55A3BC1FC1C00A03DCA7CD18 /* GameSession+Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AD697BA90B0C419001512 /* GameSession+Metrics.swift */; };
 		560E606A3C44706D6679B147 /* Batch79Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B107CA13F4C71B054E1ACE7 /* Batch79Tests.swift */; };
 		5616AEAF2AA1B3AAE13AA84F /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213185E73136A381D0619E0A /* AchievementsView.swift */; };
@@ -1081,6 +1082,7 @@
 		D92566088B217B3B9EC4BC0F /* Batch447Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch447Tests.swift; sourceTree = "<group>"; };
 		D93668A74FBFCB42135A83CC /* Batch387Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch387Tests.swift; sourceTree = "<group>"; };
 		D97BE7B43799DF81424CE7F1 /* Batch132Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch132Tests.swift; sourceTree = "<group>"; };
+		DA38F045058F517167261671 /* ImproveRound10Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImproveRound10Tests.swift; sourceTree = "<group>"; };
 		DB6E42055E36B957160BB9AC /* Achievement+Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Achievement+Ranking.swift"; sourceTree = "<group>"; };
 		DB913007DA76C72A18578DA8 /* Batch403Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch403Tests.swift; sourceTree = "<group>"; };
 		DBA23DB1BF0573D30FB2F45C /* Batch185Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch185Tests.swift; sourceTree = "<group>"; };
@@ -1317,6 +1319,7 @@
 				1FBE9E60D79097B589E189D1 /* ImproveRound7Tests.swift */,
 				E7A53291ECECD02907C05AB7 /* ImproveRound8Tests.swift */,
 				03577CA8DFE73A7AFF6A7C47 /* ImproveRound9Tests.swift */,
+				DA38F045058F517167261671 /* ImproveRound10Tests.swift */,
 				816F8E368F7B47A0DCC790AD /* ResultsViewModelBatch37Tests.swift */,
 				B94166C5E252ADDC595B34CB /* ResultsViewModelExtendedTests.swift */,
 				83BED5F68362F01B31E28C2E /* ResultsViewModelTests.swift */,
@@ -2411,6 +2414,7 @@
 				14E964C994E4048F5F40533F /* GameViewModelTests.swift in Sources */,
 				4BBB1ADCC4D23153D19B99EF /* HapticServiceTests.swift in Sources */,
 				05A666361876334B704A3459 /* HomeViewModelTests.swift in Sources */,
+				555DA59C11B0C21F48DF79FF /* ImproveRound10Tests.swift in Sources */,
 				143CEE8191567206DD240097 /* ImproveRound2Tests.swift in Sources */,
 				D5C1E6352A6C2E3C18A7A703 /* ImproveRound3Tests.swift in Sources */,
 				E885E5B8EB36C4D48FEEF3E0 /* ImproveRound4Tests.swift in Sources */,

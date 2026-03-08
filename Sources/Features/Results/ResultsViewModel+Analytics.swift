@@ -226,6 +226,34 @@ extension ResultsViewModel {
         return Int((accScore * 0.7 + speedScore * 0.3).rounded())
     }
 
+    /// Formatted efficiency score text
+    var efficiencyScoreText: String {
+        "\(efficiencyScore)%"
+    }
+
+    /// Letter grade for efficiency score
+    var efficiencyGrade: String {
+        let score = efficiencyScore
+        if score >= 95 { return "A+" }
+        if score >= 90 { return "A" }
+        if score >= 80 { return "B" }
+        if score >= 70 { return "C" }
+        if score >= 60 { return "D" }
+        return "F"
+    }
+
+    /// Whether the player made a comeback (20+ point accuracy improvement)
+    var isComeback: Bool {
+        guard let improvement = accuracyImprovementOverHalves else { return false }
+        return improvement >= 20
+    }
+
+    /// Encouraging text for comebacks, nil if no comeback
+    var comebackText: String? {
+        guard isComeback else { return nil }
+        return "Amazing comeback! You turned it around!"
+    }
+
     /// Most improved operation (biggest accuracy gain from early to late in session)
     var mostImprovedOperation: Operation? {
         guard problemHistory.count >= 4 else { return nil }

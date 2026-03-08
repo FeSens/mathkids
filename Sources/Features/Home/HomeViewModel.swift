@@ -23,6 +23,10 @@ final class HomeViewModel {
     var recentAccuracies: [Double] = []
     var nextAchievementName: String? = nil
     var nextAchievementProgress: Double = 0
+    var totalTimePlayedSeconds: Int = 0
+    var easyGames: Int = 0
+    var mediumGames: Int = 0
+    var hardGames: Int = 0
 
     enum AccuracyTrend { case improving, declining, stable }
 
@@ -234,6 +238,19 @@ final class HomeViewModel {
         selectedOperations.sorted(by: { $0.rawValue < $1.rawValue }).map(\.emoji).joined()
     }
 
+    var formattedTimePlayed: String {
+        if totalTimePlayedSeconds >= 3600 {
+            let hours = totalTimePlayedSeconds / 3600
+            let mins = (totalTimePlayedSeconds % 3600) / 60
+            return "\(hours)h \(mins)m"
+        }
+        return "\(totalTimePlayedSeconds / 60)m"
+    }
+
+    var difficultyBreakdownText: String {
+        "Easy: \(easyGames) | Medium: \(mediumGames) | Hard: \(hardGames)"
+    }
+
     var quickStatsSummary: String {
         guard totalSolved > 0 else {
             return "Ready to start your math journey!"
@@ -269,6 +286,11 @@ final class HomeViewModel {
         levelName = stats.levelName
         levelProgress = stats.levelProgress
         totalXP = stats.totalXP
+
+        totalTimePlayedSeconds = stats.totalTimePlayedSeconds
+        easyGames = stats.easyGamesPlayed
+        mediumGames = stats.mediumGamesPlayed
+        hardGames = stats.hardGamesPlayed
 
         // Load weakest Elo operation
         if let weakest = stats.weakestEloOperation {
