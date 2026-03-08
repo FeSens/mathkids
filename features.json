@@ -20510,6 +20510,94 @@
         "Check isMastered is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1214",
+      "name": "answeredProblemSessionTag",
+      "description": "Tag for grouping problems in a session: practice, quiz, review",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct easy problem",
+        "Check tag is practice",
+        "Create hard operation problem",
+        "Check tag is quiz"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1215",
+      "name": "answeredProblemIsNaturalNumber",
+      "description": "Whether the correct answer is a positive integer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create add problem",
+        "Check isNaturalNumber is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1216",
+      "name": "answeredProblemEfficiencyRatio",
+      "description": "Ratio of points earned to max points (0.0 to 1.0)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check ratio is 1.0",
+        "Create wrong answer",
+        "Check ratio is 0.0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1217",
+      "name": "answeredProblemReactionSpeed",
+      "description": "Reaction speed category: lightning, normal, deliberate",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create answer in 0.5s",
+        "Check speed is lightning",
+        "Create answer in 5s",
+        "Check speed is normal"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1218",
+      "name": "answeredProblemProblemComplexity",
+      "description": "Complexity score based on operands and operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create simple add problem",
+        "Check complexity is low",
+        "Create multiply with large operands",
+        "Check complexity is higher"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
