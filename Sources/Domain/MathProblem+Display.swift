@@ -116,4 +116,26 @@ extension MathProblem {
     var problemEstimatedTimeSeconds: Int {
         operation.difficultyWeight * 2
     }
+
+    var problemSolvedText: String {
+        "\(operand1) \(operation.rawValue) \(operand2) = \(correctAnswer)"
+    }
+
+    var problemIsTrivial: Bool {
+        problemMaxOperand <= 1
+    }
+
+    var problemOperandAverage: Double {
+        Double(operand1 + operand2) / 2.0
+    }
+
+    var problemDifficultyLevel: String {
+        if problemMaxOperand <= 5 { return "easy" }
+        if problemMaxOperand <= 7 { return "medium" }
+        return "hard"
+    }
+
+    var problemIsCommutative: Bool {
+        operation.operationIsCommutative
+    }
 }

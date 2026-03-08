@@ -19046,6 +19046,81 @@
         "add problem is faster than divide"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1124",
+      "name": "problemSolvedText",
+      "description": "Text showing solved problem",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains = and correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1125",
+      "name": "problemIsTrivial",
+      "description": "Whether problem has trivially simple answer",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "0+0 is trivial, 7+8 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1126",
+      "name": "problemOperandAverage",
+      "description": "Average of both operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "2,4 average is 3.0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1127",
+      "name": "problemDifficultyLevel",
+      "description": "Difficulty level string based on operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "small operands return easy"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1128",
+      "name": "problemIsCommutative",
+      "description": "Whether the problem operation is commutative",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "add is commutative, subtract is not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
