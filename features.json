@@ -33097,6 +33097,86 @@
         "Create games achievement",
         "Verify threshold is moderate"
       ]
+    },
+    {
+      "id": "logic-2031",
+      "title": "Achievement Card Rhodonite Style",
+      "description": "Computed property returning gem style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns rhodonite style",
+        "Common achievement returns plain style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2032",
+      "title": "Achievement Requires Fortitude",
+      "description": "Computed property checking if achievement requires fortitude",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Streak category requires fortitude",
+        "Score category does not require fortitude"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2033",
+      "title": "Achievement Card Compact Text",
+      "description": "Computed property returning compact text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct compact text",
+        "Games returns correct compact text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2034",
+      "title": "Achievement Card Chrysoprase Style",
+      "description": "Computed property returning chrysoprase style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns vivid style",
+        "Common achievement returns pale style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2035",
+      "title": "Achievement Transcendence Threshold",
+      "description": "Computed property returning transcendence threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

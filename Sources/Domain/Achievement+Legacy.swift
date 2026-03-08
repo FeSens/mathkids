@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 500
         }
     }
+
+    var achievementCardRhodoniteStyle: String {
+        isRareAchievement ? "rosy" : "grey"
+    }
+
+    var achievementRequiresFortitude: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardCompactText: String {
+        switch category {
+        case .mastery: return "Compact of Scholars"
+        case .streak: return "Compact of Guardians"
+        case .score: return "Compact of Warriors"
+        case .games: return "Compact of Adventurers"
+        }
+    }
+
+    var achievementCardChrysopraseStyle: String {
+        isRareAchievement ? "vivid" : "pale"
+    }
+
+    var achievementTranscendenceThreshold: Int {
+        switch category {
+        case .mastery: return 10000
+        case .streak: return 2000
+        case .score: return 5000
+        case .games: return 1000
+        }
+    }
 }
