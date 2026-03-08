@@ -26379,6 +26379,79 @@
         "Create games achievement",
         "Verify format contains minutes"
       ]
+    },
+    {
+      "id": "logic-1579",
+      "title": "achievementEffortLevel",
+      "description": "Return effort level description",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify effort is high",
+        "Create games achievement",
+        "Verify effort is low"
+      ]
+    },
+    {
+      "id": "logic-1580",
+      "title": "achievementIsHidden",
+      "description": "Return whether achievement is hidden until close to unlock",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare mastery achievement",
+        "Verify isHidden is true",
+        "Create games achievement",
+        "Verify isHidden is false"
+      ]
+    },
+    {
+      "id": "logic-1581",
+      "title": "achievementRewardEmoji",
+      "description": "Return emoji for the reward type",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify emoji is gem-related",
+        "Create common achievement",
+        "Verify emoji is coin-related"
+      ]
+    },
+    {
+      "id": "logic-1582",
+      "title": "achievementCompletionRate",
+      "description": "Return default completion rate",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify completionRate is 0.0"
+      ]
+    },
+    {
+      "id": "logic-1583",
+      "title": "achievementNextMilestone",
+      "description": "Return next milestone count",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify nextMilestone >= 10",
+        "Create games achievement",
+        "Verify nextMilestone == 1"
+      ]
     }
   ],
   "_schema": {

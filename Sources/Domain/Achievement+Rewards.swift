@@ -20,4 +20,34 @@ extension Achievement {
         case .games: return "Estimated: minutes"
         }
     }
+
+    var achievementEffortLevel: String {
+        switch category {
+        case .mastery: return "high"
+        case .streak: return "medium"
+        case .score: return "medium"
+        case .games: return "low"
+        }
+    }
+
+    var achievementIsHidden: Bool {
+        isRareAchievement && category == .mastery
+    }
+
+    var achievementRewardEmoji: String {
+        isRareAchievement ? "💎" : "🪙"
+    }
+
+    var achievementCompletionRate: Double {
+        0.0
+    }
+
+    var achievementNextMilestone: Int {
+        switch category {
+        case .mastery: return 25
+        case .streak: return 10
+        case .score: return 5
+        case .games: return 1
+        }
+    }
 }
