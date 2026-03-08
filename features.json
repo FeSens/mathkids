@@ -37537,6 +37537,96 @@
         "Verify threshold <= 60000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2296",
+      "title": "Achievement card polybasite style",
+      "description": "Computed property achievementCardPolybasiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify polybasite style is iron black tabular",
+        "Create common achievement",
+        "Verify polybasite style is dark iron"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2297",
+      "title": "Achievement requires fortitude plus plus",
+      "description": "Computed property achievementRequiresFortitudePlusPLus returns true for streak or mastery categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresFortitudePlusPLus is true",
+        "Create games achievement",
+        "Verify requiresFortitudePlusPLus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2298",
+      "title": "Achievement card ordinance writ seal plus text",
+      "description": "Computed property achievementCardOrdinanceWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Ordinance Writ Seal Plus of the Grandmaster",
+        "Create games achievement",
+        "Verify text is Ordinance Writ Seal Plus of the Pupil"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2299",
+      "title": "Achievement card pearceite style",
+      "description": "Computed property achievementCardPearceiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pearceite style is black metallic hexagonal",
+        "Create common achievement",
+        "Verify pearceite style is matte black"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2300",
+      "title": "Achievement supremacy plus threshold",
+      "description": "Computed property achievementSupremacyPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 600000",
+        "Create games achievement",
+        "Verify threshold <= 80000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

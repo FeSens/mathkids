@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 50000
         }
     }
+
+    var achievementCardPolybasiteStyle: String {
+        isRareAchievement ? "iron black tabular" : "dark iron"
+    }
+
+    var achievementRequiresFortitudePlusPLus: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardOrdinanceWritSealPlusText: String {
+        switch category {
+        case .mastery: return "Ordinance Writ Seal Plus of the Grandmaster"
+        case .streak: return "Ordinance Writ Seal Plus of the Warden"
+        case .score: return "Ordinance Writ Seal Plus of the Exemplar"
+        case .games: return "Ordinance Writ Seal Plus of the Pupil"
+        }
+    }
+
+    var achievementCardPearceiteStyle: String {
+        isRareAchievement ? "black metallic hexagonal" : "matte black"
+    }
+
+    var achievementSupremacyPlusThreshold: Int {
+        switch category {
+        case .mastery: return 750000
+        case .streak: return 300000
+        case .score: return 600000
+        case .games: return 75000
+        }
+    }
 }
