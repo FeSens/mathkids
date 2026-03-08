@@ -87,6 +87,21 @@ struct MathProblem: Equatable, Sendable {
     }
 }
 
+extension MathProblem {
+    var hintText: String {
+        switch operation {
+        case .add:
+            return "Try combining \(operand1) and \(operand2) together"
+        case .subtract:
+            return "Take away \(operand2) from \(operand1)"
+        case .multiply:
+            return "Think of \(operand1) groups of \(operand2)"
+        case .divide:
+            return "Split \(operand1) into \(operand2) equal parts"
+        }
+    }
+}
+
 enum AnswerMagnitude: Sendable {
     case small, medium, large
 }

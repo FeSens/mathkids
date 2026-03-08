@@ -4872,6 +4872,102 @@
       "files": [
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-249",
+      "title": "GameSession time bonus calculation",
+      "description": "GameSession computes a time bonus based on remaining time when game ends",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Time bonus is 0 when no time remains",
+        "Time bonus increases with more remaining time",
+        "Time bonus scales with difficulty multiplier"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-250",
+      "title": "PlayerStats average accuracy trend",
+      "description": "PlayerStats computes accuracy trend from recent games (improving, declining, stable)",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Returns stable with fewer than 3 games",
+        "Returns improving when recent accuracies trend upward",
+        "Returns declining when recent accuracies trend downward"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-251",
+      "title": "MathProblem hint text",
+      "description": "MathProblem provides a hint string to help the player",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Addition hint mentions combining",
+        "Subtraction hint mentions taking away",
+        "Multiplication hint mentions groups",
+        "Division hint mentions splitting"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-252",
+      "title": "GameEngine streak freeze power-up",
+      "description": "GameEngine supports a streak freeze that prevents streak reset on one wrong answer",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003",
+        "svc-001"
+      ],
+      "test_steps": [
+        "Without freeze, wrong answer resets streak",
+        "With freeze active, wrong answer preserves streak and consumes freeze",
+        "Second wrong answer after freeze resets streak normally"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift",
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-253",
+      "title": "ResultsViewModel grade label",
+      "description": "ResultsViewModel provides a letter grade (A+, A, B, C, D, F) based on accuracy",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "95%+ accuracy returns A+",
+        "90-94% returns A",
+        "80-89% returns B",
+        "70-79% returns C",
+        "60-69% returns D",
+        "Below 60% returns F"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

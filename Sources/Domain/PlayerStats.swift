@@ -43,6 +43,10 @@ final class PlayerStats {
     var xpHard: Int = 0
     var longestSessionSeconds: Int = 0
     var bestDailyStreak: Int = 0
+    var addGames: Int = 0
+    var subtractGames: Int = 0
+    var multiplyGames: Int = 0
+    var divideGames: Int = 0
 
     init() {}
 
@@ -151,6 +155,24 @@ final class PlayerStats {
         }
     }
 
+    func gamesWithOperation(_ operation: Operation) -> Int {
+        switch operation {
+        case .add: addGames
+        case .subtract: subtractGames
+        case .multiply: multiplyGames
+        case .divide: divideGames
+        }
+    }
+
+    func incrementGamesWithOperation(_ operation: Operation) {
+        switch operation {
+        case .add: addGames += 1
+        case .subtract: subtractGames += 1
+        case .multiply: multiplyGames += 1
+        case .divide: divideGames += 1
+        }
+    }
+
     func updateLongestSession(_ seconds: Int) {
         longestSessionSeconds = max(longestSessionSeconds, seconds)
     }
@@ -191,6 +213,23 @@ final class PlayerStats {
         case .multiply: multiplyCount += 1
         case .divide: divideCount += 1
         }
+    }
+
+    enum AccuracyTrend: Sendable {
+        case improving, declining, stable
+    }
+
+    var accuracyTrend: AccuracyTrend {
+        guard recentAccuracies.count >= 3 else { return .stable }
+        let half = recentAccuracies.count / 2
+        let firstHalf = Array(recentAccuracies.prefix(half))
+        let secondHalf = Array(recentAccuracies.suffix(half))
+        let firstAvg = firstHalf.reduce(0, +) / Double(firstHalf.count)
+        let secondAvg = secondHalf.reduce(0, +) / Double(secondHalf.count)
+        let diff = secondAvg - firstAvg
+        if diff > 5 { return .improving }
+        if diff < -5 { return .declining }
+        return .stable
     }
 
     var accuracy: Double {

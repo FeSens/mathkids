@@ -122,4 +122,50 @@ struct MathProblemTests {
             #expect(!op.emoji.isEmpty)
         }
     }
+
+    // MARK: - Answer Magnitude (logic-247)
+
+    @Test("Small answer magnitude")
+    func smallAnswerMagnitude() {
+        let problem = MathProblem(operand1: 2, operand2: 3, operation: .add) // = 5
+        #expect(problem.answerMagnitude == .small)
+    }
+
+    @Test("Medium answer magnitude")
+    func mediumAnswerMagnitude() {
+        let problem = MathProblem(operand1: 15, operand2: 20, operation: .add) // = 35
+        #expect(problem.answerMagnitude == .medium)
+    }
+
+    @Test("Large answer magnitude")
+    func largeAnswerMagnitude() {
+        let problem = MathProblem(operand1: 50, operand2: 50, operation: .add) // = 100
+        #expect(problem.answerMagnitude == .large)
+    }
+
+    // MARK: - Hint Text (logic-251)
+
+    @Test("Addition hint mentions combining")
+    func additionHint() {
+        let problem = MathProblem(operand1: 3, operand2: 4, operation: .add)
+        #expect(problem.hintText.lowercased().contains("combin"))
+    }
+
+    @Test("Subtraction hint mentions taking away")
+    func subtractionHint() {
+        let problem = MathProblem(operand1: 7, operand2: 3, operation: .subtract)
+        #expect(problem.hintText.lowercased().contains("take") || problem.hintText.lowercased().contains("tak"))
+    }
+
+    @Test("Multiplication hint mentions groups")
+    func multiplicationHint() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .multiply)
+        #expect(problem.hintText.lowercased().contains("group"))
+    }
+
+    @Test("Division hint mentions splitting")
+    func divisionHint() {
+        let problem = MathProblem(operand1: 12, operand2: 3, operation: .divide)
+        #expect(problem.hintText.lowercased().contains("split"))
+    }
 }

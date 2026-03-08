@@ -199,6 +199,15 @@ final class ResultsViewModel {
         }
     }
 
+    var gradeLabel: String {
+        if accuracy >= 95 { return "A+" }
+        if accuracy >= 90 { return "A" }
+        if accuracy >= 80 { return "B" }
+        if accuracy >= 70 { return "C" }
+        if accuracy >= 60 { return "D" }
+        return "F"
+    }
+
     var recommendationText: String? {
         switch difficultyRecommendation {
         case .tryHarder:

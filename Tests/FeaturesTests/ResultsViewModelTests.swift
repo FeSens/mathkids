@@ -362,6 +362,22 @@ struct ResultsViewModelTests {
         #expect(vm.fastestAnswerTime == "1.5s")
     }
 
+    // MARK: - Score Comparison Text (logic-248)
+
+    @Test("Score comparison for new best")
+    func scoreComparisonNewBest() {
+        let session = makeSession(correct: 10, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 50)
+        #expect(vm.scoreComparisonText.contains("New"))
+    }
+
+    @Test("Score comparison below best")
+    func scoreComparisonBelowBest() {
+        let session = makeSession(correct: 1, total: 5)
+        let vm = ResultsViewModel(session: session, previousBestScore: 500)
+        #expect(!vm.scoreComparisonText.contains("New"))
+    }
+
     @Test("Operation accuracy from problem history")
     func operationAccuracyBreakdown() {
         let session = makeSession(correct: 3, total: 4)
@@ -378,5 +394,49 @@ struct ResultsViewModelTests {
         #expect(addAccuracy != nil)
         #expect(addAccuracy! > 66)
         #expect(addAccuracy! < 67)
+    }
+
+    // MARK: - Grade Label (logic-253)
+
+    @Test("Grade A+ for 95%+ accuracy")
+    func gradeAPlus() {
+        let session = makeSession(correct: 10, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.gradeLabel == "A+")
+    }
+
+    @Test("Grade A for 90-94% accuracy")
+    func gradeA() {
+        let session = makeSession(correct: 9, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.gradeLabel == "A")
+    }
+
+    @Test("Grade B for 80-89% accuracy")
+    func gradeB() {
+        let session = makeSession(correct: 8, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.gradeLabel == "B")
+    }
+
+    @Test("Grade C for 70-79% accuracy")
+    func gradeC() {
+        let session = makeSession(correct: 7, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.gradeLabel == "C")
+    }
+
+    @Test("Grade D for 60-69% accuracy")
+    func gradeD() {
+        let session = makeSession(correct: 6, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.gradeLabel == "D")
+    }
+
+    @Test("Grade F for below 60% accuracy")
+    func gradeF() {
+        let session = makeSession(correct: 3, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.gradeLabel == "F")
     }
 }

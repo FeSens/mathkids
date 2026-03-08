@@ -139,6 +139,11 @@ final class GameEngine {
         }
     }
 
+    func activateStreakFreeze() {
+        hasStreakFreeze = true
+        streakFreezeUsed = false
+    }
+
     func resetAdaptiveRange() {
         adaptiveRange = nil
         consecutiveCorrect = 0

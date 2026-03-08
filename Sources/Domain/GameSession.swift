@@ -83,6 +83,11 @@ struct GameSession: Sendable {
         }
     }
 
+    var scorePerCorrect: Double {
+        guard totalCorrect > 0 else { return 0 }
+        return Double(score) / Double(totalCorrect)
+    }
+
     var totalWrong: Int {
         totalAnswered - totalCorrect
     }
@@ -100,6 +105,16 @@ struct GameSession: Sendable {
         let minutes = Double(totalTimePlayed) / 60.0
         guard minutes > 0 else { return 0 }
         return Double(totalAnswered) / minutes
+    }
+
+    var timeBonus: Int {
+        let multiplier: Int
+        switch difficulty {
+        case .easy: multiplier = 1
+        case .medium: multiplier = 2
+        case .hard: multiplier = 3
+        }
+        return timeRemaining * multiplier
     }
 
     mutating func endGame() {

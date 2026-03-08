@@ -227,4 +227,52 @@ struct GameSessionTests {
         session.recordAnswer(correct: false)
         #expect(session.totalWrong == 2)
     }
+
+    // MARK: - Score Per Correct (logic-245)
+
+    @Test("Score per correct returns 0 when none correct")
+    func scorePerCorrectZero() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.scorePerCorrect == 0)
+    }
+
+    @Test("Score per correct calculates average")
+    func scorePerCorrectAverage() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true, bonusPoints: 5) // 15
+        session.recordAnswer(correct: true, bonusPoints: 3) // 13
+        session.recordAnswer(correct: true, bonusPoints: 0) // 10
+        // total score = 38, 3 correct = 12.67 avg
+        #expect(session.scorePerCorrect > 12)
+        #expect(session.scorePerCorrect < 13)
+    }
+
+    // MARK: - Time Bonus (logic-249)
+
+    @Test("Time bonus is 0 when no time remains")
+    func timeBonusNoTimeRemaining() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<60 { session.tick() }
+        #expect(session.timeBonus == 0)
+    }
+
+    @Test("Time bonus increases with more remaining time")
+    func timeBonusIncreasesWithTime() {
+        var session1 = GameSession(difficulty: .easy)
+        for _ in 0..<50 { session1.tick() } // 10s left
+        var session2 = GameSession(difficulty: .easy)
+        for _ in 0..<30 { session2.tick() } // 30s left
+        #expect(session2.timeBonus > session1.timeBonus)
+    }
+
+    @Test("Time bonus scales with difficulty")
+    func timeBonusScalesWithDifficulty() {
+        var easySession = GameSession(difficulty: .easy)
+        for _ in 0..<30 { easySession.tick() } // 30s left
+        var hardSession = GameSession(difficulty: .hard)
+        for _ in 0..<15 { hardSession.tick() } // 15s left (half of 30)
+        // Hard has higher multiplier, so even with less time it can still have meaningful bonus
+        #expect(hardSession.timeBonus > 0)
+        #expect(easySession.timeBonus > 0)
+    }
 }

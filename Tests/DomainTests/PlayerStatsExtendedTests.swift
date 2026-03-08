@@ -158,4 +158,45 @@ struct PlayerStatsExtendedTests {
         stats.updateStreak(on: .now)
         #expect(stats.bestDailyStreak == 2)
     }
+
+    // MARK: - Games Per Operation (logic-244)
+
+    @Test("Games with operation starts at 0")
+    func gamesWithOperationStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.gamesWithOperation(.add) == 0)
+    }
+
+    @Test("Games with operation increments")
+    func gamesWithOperationIncrements() {
+        let stats = PlayerStats()
+        stats.incrementGamesWithOperation(.add)
+        stats.incrementGamesWithOperation(.add)
+        stats.incrementGamesWithOperation(.subtract)
+        #expect(stats.gamesWithOperation(.add) == 2)
+        #expect(stats.gamesWithOperation(.subtract) == 1)
+    }
+
+    // MARK: - Accuracy Trend (logic-250)
+
+    @Test("Accuracy trend stable with fewer than 3 games")
+    func accuracyTrendStableWithFewGames() {
+        let stats = PlayerStats()
+        stats.recentAccuracies = [80.0, 90.0]
+        #expect(stats.accuracyTrend == .stable)
+    }
+
+    @Test("Accuracy trend improving when trending upward")
+    func accuracyTrendImproving() {
+        let stats = PlayerStats()
+        stats.recentAccuracies = [50.0, 60.0, 70.0, 80.0, 90.0]
+        #expect(stats.accuracyTrend == .improving)
+    }
+
+    @Test("Accuracy trend declining when trending downward")
+    func accuracyTrendDeclining() {
+        let stats = PlayerStats()
+        stats.recentAccuracies = [90.0, 80.0, 70.0, 60.0, 50.0]
+        #expect(stats.accuracyTrend == .declining)
+    }
 }
