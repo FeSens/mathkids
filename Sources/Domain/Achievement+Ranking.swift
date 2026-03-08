@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 0
         }
     }
+
+    var achievementCardEmbossStyle: String {
+        isRareAchievement ? "deep" : "flat"
+    }
+
+    var achievementIsQuantityBased: Bool {
+        category == .games || category == .mastery
+    }
+
+    var achievementCardHeraldryText: String {
+        switch category {
+        case .mastery: return "Order of Masters"
+        case .streak: return "Order of Persistence"
+        case .score: return "Order of Precision"
+        case .games: return "Order of Players"
+        }
+    }
+
+    var achievementCardFoilStyle: String {
+        isRareAchievement ? "holographic" : "matte"
+    }
+
+    var achievementTotalPointsRequired: Int {
+        switch category {
+        case .mastery: return 500
+        case .streak: return 200
+        case .score: return 300
+        case .games: return 50
+        }
+    }
 }

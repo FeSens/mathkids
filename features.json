@@ -31319,6 +31319,76 @@
         "Create games achievement",
         "Verify streakDays is 0"
       ]
+    },
+    {
+      "id": "logic-1904",
+      "name": "achievementCardEmbossStyle",
+      "description": "Emboss decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify emboss is deep",
+        "Create common achievement",
+        "Verify emboss is flat"
+      ]
+    },
+    {
+      "id": "logic-1905",
+      "name": "achievementIsQuantityBased",
+      "description": "Whether achievement is quantity-based (games or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create games achievement",
+        "Verify isQuantityBased is true",
+        "Create score achievement",
+        "Verify isQuantityBased is false"
+      ]
+    },
+    {
+      "id": "logic-1906",
+      "name": "achievementCardHeraldryText",
+      "description": "Heraldry text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify heraldry text",
+        "Create games achievement",
+        "Verify heraldry text"
+      ]
+    },
+    {
+      "id": "logic-1907",
+      "name": "achievementCardFoilStyle",
+      "description": "Foil decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify foil is holographic",
+        "Create common achievement",
+        "Verify foil is matte"
+      ]
+    },
+    {
+      "id": "logic-1908",
+      "name": "achievementTotalPointsRequired",
+      "description": "Total points required to earn achievement based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify totalPoints is high",
+        "Create games achievement",
+        "Verify totalPoints is low"
+      ]
     }
   ],
   "_schema": {
