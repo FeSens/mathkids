@@ -31879,6 +31879,76 @@
         "Create games achievement",
         "Verify operations count is low"
       ]
+    },
+    {
+      "id": "logic-1944",
+      "name": "achievementCardCartoucheStyle",
+      "description": "Cartouche decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cartouche is royal",
+        "Create common achievement",
+        "Verify cartouche is plain"
+      ]
+    },
+    {
+      "id": "logic-1945",
+      "name": "achievementRequiresConsistency",
+      "description": "Whether achievement requires consistency (streak or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresConsistency is true",
+        "Create games achievement",
+        "Verify requiresConsistency is false"
+      ]
+    },
+    {
+      "id": "logic-1946",
+      "name": "achievementCardBalladText",
+      "description": "Ballad text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify ballad text",
+        "Create games achievement",
+        "Verify ballad text"
+      ]
+    },
+    {
+      "id": "logic-1947",
+      "name": "achievementCardTarnishStyle",
+      "description": "Tarnish finish style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify tarnish is antique",
+        "Create common achievement",
+        "Verify tarnish is clean"
+      ]
+    },
+    {
+      "id": "logic-1948",
+      "name": "achievementMinimumDifficulty",
+      "description": "Minimum difficulty level required based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify minDifficulty is high",
+        "Create games achievement",
+        "Verify minDifficulty is low"
+      ]
     }
   ],
   "_schema": {

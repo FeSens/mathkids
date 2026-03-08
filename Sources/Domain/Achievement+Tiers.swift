@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementCardCartoucheStyle: String {
+        isRareAchievement ? "royal" : "plain"
+    }
+
+    var achievementRequiresConsistency: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardBalladText: String {
+        switch category {
+        case .mastery: return "Ballad of the Scholar"
+        case .streak: return "Ballad of the Steadfast"
+        case .score: return "Ballad of the Sharpshooter"
+        case .games: return "Ballad of the Adventurer"
+        }
+    }
+
+    var achievementCardTarnishStyle: String {
+        isRareAchievement ? "antique" : "clean"
+    }
+
+    var achievementMinimumDifficulty: Int {
+        switch category {
+        case .mastery: return 3
+        case .streak: return 1
+        case .score: return 2
+        case .games: return 0
+        }
+    }
 }
