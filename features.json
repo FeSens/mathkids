@@ -15090,6 +15090,86 @@
         "Problem 3+4 -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-869",
+      "name": "difficultyAbbreviation",
+      "description": "DifficultyLevel computed property returning 1-2 char abbreviation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> short abbreviation",
+        "Each difficulty -> unique abbreviation"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-870",
+      "name": "answerDigits",
+      "description": "AnsweredProblem computed property returning number of digits in user answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answer 7 -> 1 digit",
+        "Answer 42 -> 2 digits"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-871",
+      "name": "isBonusEligible",
+      "description": "DifficultyLevel computed property returning true for medium and hard",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> false",
+        "Hard -> true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-872",
+      "name": "isSymmetric",
+      "description": "MathProblem computed property returning true when both operands are equal",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 4+4 -> true",
+        "Problem 3+5 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-873",
+      "name": "correctAnswerIsEven",
+      "description": "AnsweredProblem computed property returning true when the correct answer is even",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 3+5=8 -> true",
+        "Problem 3+4=7 -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

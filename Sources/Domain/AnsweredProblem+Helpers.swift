@@ -128,4 +128,12 @@ extension AnsweredProblem {
         }
         return "The correct answer was \(problem.correctAnswer)"
     }
+
+    var answerDigits: Int {
+        String(abs(userAnswer)).count
+    }
+
+    var correctAnswerIsEven: Bool {
+        problem.correctAnswer % 2 == 0
+    }
 }

@@ -193,4 +193,8 @@ extension MathProblem {
     var isZeroAnswer: Bool {
         correctAnswer == 0
     }
+
+    var isSymmetric: Bool {
+        operand1 == operand2
+    }
 }

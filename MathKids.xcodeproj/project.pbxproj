@@ -75,6 +75,7 @@
 		55A3BC1FC1C00A03DCA7CD18 /* GameSession+Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AD697BA90B0C419001512 /* GameSession+Metrics.swift */; };
 		560E606A3C44706D6679B147 /* Batch79Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B107CA13F4C71B054E1ACE7 /* Batch79Tests.swift */; };
 		5616AEAF2AA1B3AAE13AA84F /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213185E73136A381D0619E0A /* AchievementsView.swift */; };
+		58FE09CE4F115C277B3492D3 /* Batch158Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1F2E7462D8B113BCB9094 /* Batch158Tests.swift */; };
 		59C061116C060251D130353B /* Batch105Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D84E0178FC23F0A88FF094 /* Batch105Tests.swift */; };
 		5AA08FFF5279E2FF0A51604F /* Batch60Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED82078F0664D7EDBDCC02 /* Batch60Tests.swift */; };
 		6534EF659DFAF7A328A200F9 /* Batch73Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24EACD991ABD8DA4C37398D /* Batch73Tests.swift */; };
@@ -249,6 +250,7 @@
 		2AEFC63A3652E3F67483A4E9 /* Batch149Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch149Tests.swift; sourceTree = "<group>"; };
 		2AF668AA5F5F791ED0607860 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		2B9308F1082213AE46201296 /* Batch150Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch150Tests.swift; sourceTree = "<group>"; };
+		2CF1F2E7462D8B113BCB9094 /* Batch158Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch158Tests.swift; sourceTree = "<group>"; };
 		2EA424D61C0034A4A9189400 /* Batch74Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch74Tests.swift; sourceTree = "<group>"; };
 		2FBB5E51B2B9456B0E07EFFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		330956631AB904C41E861FE9 /* Batch125Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch125Tests.swift; sourceTree = "<group>"; };
@@ -620,6 +622,7 @@
 				C789E6949998526A58739CDD /* Batch155Tests.swift */,
 				778028C88F7717A8E0CC5BC0 /* Batch156Tests.swift */,
 				90B9F4132173543A0CD33525 /* Batch157Tests.swift */,
+				2CF1F2E7462D8B113BCB9094 /* Batch158Tests.swift */,
 				DDB33CC34BDF77A892728B95 /* DifficultyLevelTests.swift */,
 				FCDFC79E55F7433CD3884E7B /* GameSessionBatch46Tests.swift */,
 				38A273BF960D1313BEC03F8C /* GameSessionExtendedTests.swift */,
@@ -866,6 +869,7 @@
 				4D1B060AD4BDFE30B4B831DD /* Batch155Tests.swift in Sources */,
 				1DC56EFCFA77BFCB586D20FC /* Batch156Tests.swift in Sources */,
 				789137123FF2E50C6DBFCF1D /* Batch157Tests.swift in Sources */,
+				58FE09CE4F115C277B3492D3 /* Batch158Tests.swift in Sources */,
 				794A135A00BC5FC138AC6D67 /* Batch53Tests.swift in Sources */,
 				C2F716BD4550E9B91BB34212 /* Batch54Tests.swift in Sources */,
 				4BF2A015D7F1BD4A12A5A462 /* Batch55Tests.swift in Sources */,

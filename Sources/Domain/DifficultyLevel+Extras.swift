@@ -200,4 +200,16 @@ extension DifficultyLevel {
         if timeLimitSeconds <= 120 { return "medium" }
         return "long"
     }
+
+    var difficultyAbbreviation: String {
+        switch self {
+        case .easy: return "EZ"
+        case .medium: return "MED"
+        case .hard: return "HRD"
+        }
+    }
+
+    var isBonusEligible: Bool {
+        self != .easy
+    }
 }
