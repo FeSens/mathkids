@@ -103,4 +103,23 @@ struct GameSessionTests {
         session.tick()
         #expect(session.totalTimePlayed == 3)
     }
+
+    // MARK: - Problems Per Minute (logic-206)
+
+    @Test("Problems per minute returns 0 when no time elapsed")
+    func problemsPerMinuteZeroTime() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.problemsPerMinute == 0)
+    }
+
+    @Test("Problems per minute calculates correctly")
+    func problemsPerMinuteCalculation() {
+        var session = GameSession(difficulty: .easy)
+        // Simulate 30 seconds elapsed
+        for _ in 0..<30 { session.tick() }
+        // Answer 10 problems
+        for _ in 0..<10 { session.recordAnswer(correct: true) }
+        // 10 problems in 0.5 minutes = 20 per minute
+        #expect(session.problemsPerMinute == 20.0)
+    }
 }

@@ -4062,6 +4062,100 @@
       "files": [
         "Sources/Features/Results/ResultsView.swift"
       ]
+    },
+    {
+      "id": "logic-204",
+      "title": "Weakest operation detection",
+      "description": "PlayerStats computes the weakest operation based on lowest count, helping guide practice",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Play games with different operations",
+        "PlayerStats.weakestOperation returns the least-used operation",
+        "Returns nil when no operations have been played"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-205",
+      "title": "Personal best score detection per difficulty",
+      "description": "PlayerStats tracks best score per difficulty level and detects new personal bests",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Play a game on easy difficulty",
+        "PlayerStats.bestScoreForDifficulty(.easy) returns the score",
+        "Playing a better game updates the best score",
+        "Lower scores do not overwrite the best"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-206",
+      "title": "Problems per minute calculation",
+      "description": "GameSession computes problems solved per minute based on time played and total answered",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Complete a timed game",
+        "GameSession.problemsPerMinute returns correct rate",
+        "Returns 0 when no time has elapsed"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-207",
+      "title": "Results view model shows new personal best flag",
+      "description": "ResultsViewModel indicates when the player achieved a new personal best score",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "logic-205",
+        "ui-009"
+      ],
+      "test_steps": [
+        "Complete a game with a new high score",
+        "ResultsViewModel.isNewPersonalBest is true",
+        "Complete a game below the best score",
+        "ResultsViewModel.isNewPersonalBest is false"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "logic-208",
+      "title": "Stats view model shows weakest operation and problems per minute",
+      "description": "StatsViewModel exposes weakest operation name and average problems per minute from player stats",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "logic-204",
+        "ui-010"
+      ],
+      "test_steps": [
+        "Load stats with varying operation counts",
+        "StatsViewModel.weakestOperation returns correct operation symbol",
+        "StatsViewModel.averageProblemsPerMinute shows correct rate"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

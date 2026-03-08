@@ -50,6 +50,12 @@ struct GameSession: Sendable {
         }
     }
 
+    var problemsPerMinute: Double {
+        let minutes = Double(totalTimePlayed) / 60.0
+        guard minutes > 0 else { return 0 }
+        return Double(totalAnswered) / minutes
+    }
+
     mutating func endGame() {
         isFinished = true
     }

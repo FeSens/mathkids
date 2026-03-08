@@ -308,4 +308,20 @@ struct ResultsViewModelTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.shareText.contains("Medium"))
     }
+
+    // MARK: - New Personal Best (logic-207)
+
+    @Test("isNewPersonalBest true when score exceeds previous best for difficulty")
+    func newPersonalBestTrue() {
+        let session = makeSession(correct: 5, total: 5)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0, previousBestForDifficulty: 20)
+        #expect(vm.isNewPersonalBest == true)
+    }
+
+    @Test("isNewPersonalBest false when score below previous best for difficulty")
+    func newPersonalBestFalse() {
+        let session = makeSession(correct: 1, total: 5)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0, previousBestForDifficulty: 100)
+        #expect(vm.isNewPersonalBest == false)
+    }
 }

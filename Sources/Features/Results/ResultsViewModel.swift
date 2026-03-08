@@ -7,6 +7,7 @@ final class ResultsViewModel {
     let session: GameSession
     let previousBestScore: Int
     let isNewBestScore: Bool
+    let isNewPersonalBest: Bool
     private(set) var animatedScore: Int = 0
     private(set) var newAchievements: [Achievement] = []
     let xpEarned: Int
@@ -15,11 +16,12 @@ final class ResultsViewModel {
     var didLevelUp: Bool { newLevel > previousLevel }
     let problemHistory: [AnsweredProblem]
 
-    init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil, problemHistory: [AnsweredProblem] = []) {
+    init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil, problemHistory: [AnsweredProblem] = [], previousBestForDifficulty: Int = 0) {
         self.problemHistory = problemHistory
         self.session = session
         self.previousBestScore = previousBestScore
         self.isNewBestScore = session.score > previousBestScore
+        self.isNewPersonalBest = session.score > previousBestForDifficulty
 
         // Calculate XP earned
         var totalXP = 0

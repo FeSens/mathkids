@@ -19,6 +19,8 @@ final class StatsViewModel {
 
     var favoriteOperation: String?
     var favoriteOperationCount: Int = 0
+    var weakestOperationSymbol: String?
+    var averageProblemsPerMinute: Double = 0
     var totalTimePlayedMinutes: Int = 0
     var totalXP: Int = 0
 
@@ -81,6 +83,12 @@ final class StatsViewModel {
         if let fav = stats.favoriteOperation {
             favoriteOperation = fav.symbol
             favoriteOperationCount = fav.count
+        }
+        if let weak = stats.weakestOperation {
+            weakestOperationSymbol = weak.symbol
+        }
+        if totalTimePlayedMinutes > 0 {
+            averageProblemsPerMinute = Double(totalSolved) / Double(totalTimePlayedMinutes)
         }
     }
 }

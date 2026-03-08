@@ -22,6 +22,9 @@ final class PlayerStats {
     var multiplyCount: Int = 0
     var divideCount: Int = 0
     var totalTimePlayedSeconds: Int = 0
+    var bestScoreEasy: Int = 0
+    var bestScoreMedium: Int = 0
+    var bestScoreHard: Int = 0
 
     init() {}
 
@@ -33,6 +36,30 @@ final class PlayerStats {
         let ops: [(String, Int)] = [("+", addCount), ("-", subtractCount), ("x", multiplyCount), ("/", divideCount)]
         guard let best = ops.max(by: { $0.1 < $1.1 }), best.1 > 0 else { return nil }
         return (best.0, best.1)
+    }
+
+    var weakestOperation: (symbol: String, count: Int)? {
+        let ops: [(String, Int)] = [("+", addCount), ("-", subtractCount), ("x", multiplyCount), ("/", divideCount)]
+        let totalOps = ops.reduce(0) { $0 + $1.1 }
+        guard totalOps > 0 else { return nil }
+        guard let worst = ops.min(by: { $0.1 < $1.1 }) else { return nil }
+        return (worst.0, worst.1)
+    }
+
+    func bestScoreForDifficulty(_ difficulty: DifficultyLevel) -> Int {
+        switch difficulty {
+        case .easy: bestScoreEasy
+        case .medium: bestScoreMedium
+        case .hard: bestScoreHard
+        }
+    }
+
+    func updateBestScore(_ score: Int, for difficulty: DifficultyLevel) {
+        switch difficulty {
+        case .easy: bestScoreEasy = max(bestScoreEasy, score)
+        case .medium: bestScoreMedium = max(bestScoreMedium, score)
+        case .hard: bestScoreHard = max(bestScoreHard, score)
+        }
     }
 
     func incrementOperationCount(_ operation: Operation) {
@@ -85,6 +112,7 @@ final class PlayerStats {
         if session.score > bestScore {
             bestScore = session.score
         }
+        updateBestScore(session.score, for: session.difficulty)
 
         switch session.difficulty {
         case .easy: easyGamesPlayed += 1

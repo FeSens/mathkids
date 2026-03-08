@@ -131,4 +131,58 @@ struct PlayerStatsTests {
         #expect(fav?.symbol == "+")
         #expect(fav?.count == 10)
     }
+
+    // MARK: - Weakest Operation (logic-204)
+
+    @Test("Weakest operation returns nil when no operations played")
+    func weakestOperationNil() {
+        let stats = PlayerStats()
+        #expect(stats.weakestOperation == nil)
+    }
+
+    @Test("Weakest operation returns least used")
+    func weakestOperationLeastUsed() {
+        let stats = PlayerStats()
+        stats.addCount = 10
+        stats.subtractCount = 5
+        stats.multiplyCount = 2
+        stats.divideCount = 8
+        let weak = stats.weakestOperation
+        #expect(weak?.symbol == "x")
+        #expect(weak?.count == 2)
+    }
+
+    // MARK: - Best Score Per Difficulty (logic-205)
+
+    @Test("Best score per difficulty starts at 0")
+    func bestScorePerDifficultyStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.bestScoreForDifficulty(.easy) == 0)
+        #expect(stats.bestScoreForDifficulty(.medium) == 0)
+        #expect(stats.bestScoreForDifficulty(.hard) == 0)
+    }
+
+    @Test("Update best score for difficulty sets new best")
+    func updateBestScoreForDifficulty() {
+        let stats = PlayerStats()
+        stats.updateBestScore(100, for: .easy)
+        #expect(stats.bestScoreForDifficulty(.easy) == 100)
+        #expect(stats.bestScoreForDifficulty(.medium) == 0)
+    }
+
+    @Test("Best score does not decrease for difficulty")
+    func bestScoreDoesNotDecrease() {
+        let stats = PlayerStats()
+        stats.updateBestScore(100, for: .easy)
+        stats.updateBestScore(50, for: .easy)
+        #expect(stats.bestScoreForDifficulty(.easy) == 100)
+    }
+
+    @Test("Best score updates when exceeded for difficulty")
+    func bestScoreUpdatesWhenExceeded() {
+        let stats = PlayerStats()
+        stats.updateBestScore(100, for: .hard)
+        stats.updateBestScore(150, for: .hard)
+        #expect(stats.bestScoreForDifficulty(.hard) == 150)
+    }
 }

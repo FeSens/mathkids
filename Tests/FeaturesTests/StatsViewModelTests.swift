@@ -73,4 +73,33 @@ struct StatsViewModelTests {
         vm.totalTimePlayedMinutes = 125
         #expect(vm.formattedTimePlayed == "2h 5m")
     }
+
+    // MARK: - Weakest Operation (logic-208)
+
+    @Test("Weakest operation nil when no stats loaded")
+    func weakestOperationNil() {
+        let vm = makeVM()
+        #expect(vm.weakestOperationSymbol == nil)
+    }
+
+    @Test("Weakest operation loaded from stats")
+    func weakestOperationLoaded() {
+        let vm = makeVM()
+        vm.loadStats()
+        let stats = vm.playerStats!
+        stats.addCount = 10
+        stats.subtractCount = 5
+        stats.multiplyCount = 2
+        stats.divideCount = 8
+        vm.loadStats()
+        #expect(vm.weakestOperationSymbol == "x")
+    }
+
+    // MARK: - Average Problems Per Minute (logic-208)
+
+    @Test("Average problems per minute starts at 0")
+    func avgProblemsPerMinuteStartsAt0() {
+        let vm = makeVM()
+        #expect(vm.averageProblemsPerMinute == 0)
+    }
 }
