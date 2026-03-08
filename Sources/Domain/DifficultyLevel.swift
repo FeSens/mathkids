@@ -126,6 +126,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operationCount) operations | 1-\(operandRange.upperBound) | \(timeLimitSeconds)s"
     }
 
+    var timePerProblemText: String {
+        "\(recommendedSecondsPerProblem)s per problem"
+    }
+
     var isEasiest: Bool { self == .easy }
     var isHardest: Bool { self == .hard }
 

@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var operandDifference: Int {
+        abs(operand1 - operand2)
+    }
+
     var isZeroResult: Bool {
         correctAnswer == 0
     }

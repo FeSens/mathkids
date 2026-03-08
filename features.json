@@ -7579,6 +7579,90 @@
         "Verify subtract precedence is 1"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-404",
+      "title": "GameSession isCloseToFinishing when under 10 seconds remain",
+      "description": "GameSession should expose isCloseToFinishing returning true when timeRemaining <= 10 and game is not finished",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify true when 10 seconds remain",
+        "Verify false when 30 seconds remain",
+        "Verify false when game is finished"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-405",
+      "title": "MathProblem operandDifference absolute difference between operands",
+      "description": "MathProblem should expose operandDifference returning abs(operand1 - operand2)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 8-3 difference is 5",
+        "Verify 3+8 difference is 5",
+        "Verify 5+5 difference is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-406",
+      "title": "Achievement unlockedAchievements returns array of unlocked achievements",
+      "description": "Achievement should have static unlockedAchievements(for:) returning array of achievements the player has earned",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify new player has 0 unlocked",
+        "Verify player with 1 game has first_game unlocked",
+        "Verify returns array not count"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-407",
+      "title": "StatsViewModel totalProblemsSolvedText formatted display",
+      "description": "StatsViewModel should expose totalProblemsSolvedText like \"1,234 problems solved\"",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify shows count with text",
+        "Verify 0 shows 0 problems"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-408",
+      "title": "DifficultyLevel timePerProblemText formatted display",
+      "description": "DifficultyLevel should expose timePerProblemText like \"6s per problem\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy shows 6s",
+        "Verify medium shows 4s",
+        "Verify hard shows 3s"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

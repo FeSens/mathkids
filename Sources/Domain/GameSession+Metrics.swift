@@ -4,6 +4,10 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var isCloseToFinishing: Bool {
+        !isFinished && timeRemaining > 0 && timeRemaining <= 10
+    }
+
     var scoreLabel: String {
         "\(score) pts"
     }

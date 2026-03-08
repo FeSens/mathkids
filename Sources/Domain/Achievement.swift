@@ -172,6 +172,10 @@ struct Achievement: Identifiable {
         return min(Double(result.current) / Double(result.target), 1.0)
     }
 
+    static func unlockedAchievements(for stats: PlayerStats) -> [Achievement] {
+        all.filter { $0.isUnlocked(stats: stats) }
+    }
+
     static func nextClosest(for stats: PlayerStats) -> Achievement? {
         let locked = all.filter { !$0.isUnlocked(stats: stats) }
         guard !locked.isEmpty else { return nil }
