@@ -210,4 +210,34 @@ extension Achievement {
         case .games: return 300000
         }
     }
+
+    var achievementCardChalcostibiteStyle: String {
+        isRareAchievement ? "lead grey prismatic" : "flat lead"
+    }
+
+    var achievementRequiresPersistencePlus: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardMandateWritSealUltraText: String {
+        switch category {
+        case .mastery: return "Mandate Writ Seal Ultra of the Divine"
+        case .streak: return "Mandate Writ Seal Ultra of the Sentinel"
+        case .score: return "Mandate Writ Seal Ultra of the Zenith"
+        case .games: return "Mandate Writ Seal Ultra of the Pilgrim"
+        }
+    }
+
+    var achievementCardCuprobismutiteStyle: String {
+        isRareAchievement ? "silver grey tabular" : "tarnished silver"
+    }
+
+    var achievementInfinityPlusThreshold: Int {
+        switch category {
+        case .mastery: return 5000000
+        case .streak: return 2000000
+        case .score: return 4000000
+        case .games: return 500000
+        }
+    }
 }

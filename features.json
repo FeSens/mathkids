@@ -37987,6 +37987,96 @@
         "Verify threshold <= 350000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2321",
+      "title": "Achievement card chalcostibite style",
+      "description": "Computed property achievementCardChalcostibiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify chalcostibite style is lead grey prismatic",
+        "Create common achievement",
+        "Verify chalcostibite style is flat lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2322",
+      "title": "Achievement requires persistence plus",
+      "description": "Computed property achievementRequiresPersistencePlus returns true for mastery or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresPersistencePlus is true",
+        "Create games achievement",
+        "Verify requiresPersistencePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2323",
+      "title": "Achievement card mandate writ seal ultra text",
+      "description": "Computed property achievementCardMandateWritSealUltraText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Mandate Writ Seal Ultra of the Divine",
+        "Create games achievement",
+        "Verify text is Mandate Writ Seal Ultra of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2324",
+      "title": "Achievement card cuprobismutite style",
+      "description": "Computed property achievementCardCuprobismutiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cuprobismutite style is silver grey tabular",
+        "Create common achievement",
+        "Verify cuprobismutite style is tarnished silver"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2325",
+      "title": "Achievement infinity plus threshold",
+      "description": "Computed property achievementInfinityPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 4000000",
+        "Create games achievement",
+        "Verify threshold <= 500000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
