@@ -202,4 +202,37 @@ extension Achievement {
     var achievementStackingOrder: Int {
         achievementIsPremium ? 10 : 1
     }
+
+    var achievementMinWidth: Int {
+        switch achievementDisplaySize {
+        case "large": return 300
+        case "medium": return 200
+        default: return 100
+        }
+    }
+
+    var achievementMaxWidth: Int {
+        switch achievementDisplaySize {
+        case "large": return 600
+        case "medium": return 400
+        default: return 200
+        }
+    }
+
+    var achievementIconBackgroundColor: String {
+        switch category {
+        case .streak: return "lightOrange"
+        case .score: return "lightBlue"
+        case .games: return "lightGreen"
+        case .mastery: return "lightPurple"
+        }
+    }
+
+    var achievementPulseSpeed: String {
+        isRareAchievement ? "fast" : "slow"
+    }
+
+    var achievementShowCheckmark: Bool {
+        progress != nil
+    }
 }

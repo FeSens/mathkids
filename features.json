@@ -23820,6 +23820,84 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1409",
+      "title": "Achievement Min Width",
+      "description": "Add achievementMinWidth returning minimum card width in points",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementMinWidth is 300",
+        "Verify small is 100"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1410",
+      "title": "Achievement Max Width",
+      "description": "Add achievementMaxWidth returning maximum card width in points",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementMaxWidth is 600",
+        "Verify small is 200"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1411",
+      "title": "Achievement Icon Background Color",
+      "description": "Add achievementIconBackgroundColor returning background for the icon circle",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementIconBackgroundColor is lightOrange"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1412",
+      "title": "Achievement Pulse Speed",
+      "description": "Add achievementPulseSpeed returning pulse animation speed",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementPulseSpeed is fast",
+        "Verify common is slow"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1413",
+      "title": "Achievement Show Checkmark",
+      "description": "Add achievementShowCheckmark returning true when achievement has progress",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement with progress",
+        "Verify achievementShowCheckmark is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {
