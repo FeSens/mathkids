@@ -25,4 +25,29 @@ extension Achievement {
     var achievementTitleWithEmoji: String {
         "\(emoji) \(title)"
     }
+
+    var achievementDifficultyStars: Int {
+        switch category {
+        case .mastery: return 3
+        case .streak: return 2
+        case .score: return 2
+        case .games: return 1
+        }
+    }
+
+    var achievementSummaryLine: String {
+        "\(emoji) \(title) - \(description)"
+    }
+
+    var achievementCompletionEmoji: String {
+        progress != nil ? "✅" : "🔒"
+    }
+
+    var achievementCategoryLabel: String {
+        "\(category.emoji) \(category.displayName)"
+    }
+
+    var achievementIsEndgameContent: Bool {
+        category == .mastery
+    }
 }
