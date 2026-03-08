@@ -86,4 +86,21 @@ struct GameSessionTests {
         session.recordAnswer(correct: true, bonusPoints: 5)
         #expect(session.score == 15) // 10 base + 5 bonus
     }
+
+    // MARK: - Total Time Played (ui-151)
+
+    @Test("Total time played starts at 0")
+    func totalTimePlayedStartsAt0() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.totalTimePlayed == 0)
+    }
+
+    @Test("Total time played increases as timer ticks")
+    func totalTimePlayedIncreasesWithTicks() {
+        var session = GameSession(difficulty: .easy)
+        session.tick()
+        session.tick()
+        session.tick()
+        #expect(session.totalTimePlayed == 3)
+    }
 }

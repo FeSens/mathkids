@@ -2,12 +2,20 @@ import SwiftUI
 
 struct CharacterView: View {
     let mood: GameViewModel.CharacterMood
+    @State private var bounce: CGFloat = 0
 
     var body: some View {
         Text(emoji)
             .font(.system(size: 56))
             .scaleEffect(scale)
+            .offset(y: bounce)
             .animation(.spring(duration: 0.4, bounce: 0.5), value: mood)
+            .onChange(of: mood) { _, newMood in
+                if newMood == .happy || newMood == .excited {
+                    withAnimation(.spring(duration: 0.3, bounce: 0.6)) { bounce = -12 }
+                    withAnimation(.spring(duration: 0.3).delay(0.15)) { bounce = 0 }
+                }
+            }
             .accessibilityIdentifier("characterFace")
     }
 

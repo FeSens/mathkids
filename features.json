@@ -3058,6 +3058,98 @@
       "files": [
         "Sources/Features/Game/GameHeaderView.swift"
       ]
+    },
+    {
+      "id": "ui-149",
+      "title": "Character bounce on correct answer",
+      "description": "Character emoji bounces with a spring animation when mood changes to happy/excited",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-006"
+      ],
+      "test_steps": [
+        "Answer correctly - character bounces up",
+        "Animation uses spring with bounce",
+        "Character settles after animation"
+      ],
+      "files": [
+        "Sources/Features/Game/CharacterView.swift"
+      ]
+    },
+    {
+      "id": "ui-150",
+      "title": "Problem history shows time per problem",
+      "description": "Results screen problem history shows the time taken for each problem",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-146"
+      ],
+      "test_steps": [
+        "Complete a game",
+        "Problem history section shows time taken for each problem",
+        "Time displayed in seconds with one decimal"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-151",
+      "title": "GameSession tracks total time played",
+      "description": "GameSession records total elapsed time for accurate results display",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Start a timed game, time ticks down",
+        "GameSession calculates total time played from difficulty limit minus remaining",
+        "Results screen can display total time"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "ui-152",
+      "title": "Stats view shows favorite operation",
+      "description": "Stats screen displays the user's most frequently solved operation type",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Play several games with mixed operations",
+        "Stats view shows favorite operation with count",
+        "Shows nothing if no games played"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-153",
+      "title": "Results screen shows total time played",
+      "description": "Results view displays total game duration alongside other stats",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-151"
+      ],
+      "test_steps": [
+        "Complete a timed game",
+        "Results screen shows total time played in seconds",
+        "Time appears in the stats grid"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
     }
   ],
   "_schema": {

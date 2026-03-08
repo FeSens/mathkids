@@ -288,4 +288,15 @@ struct ResultsViewModelTests {
         #expect(vm.operationBreakdown.count == 1)
         #expect(vm.operationBreakdown[0].count == 2)
     }
+
+    // MARK: - Total Time Played (ui-153)
+
+    @Test("Total time played shows seconds")
+    func totalTimePlayedShowsSeconds() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<10 { session.tick() }
+        session.recordAnswer(correct: true)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.totalTimePlayed == "10s")
+    }
 }

@@ -87,8 +87,14 @@ final class ResultsViewModel {
         return "Keep practicing to unlock fun stats!"
     }
 
+    var totalTimePlayed: String {
+        let time = session.totalTimePlayed
+        guard time > 0 else { return "0s" }
+        return "\(time)s"
+    }
+
     var averageTimePerProblem: String {
-        let timePlayed = session.difficulty.timeLimitSeconds - session.timeRemaining
+        let timePlayed = session.totalTimePlayed
         guard session.totalAnswered > 0, timePlayed > 0 else { return "N/A" }
         let avg = Double(timePlayed) / Double(session.totalAnswered)
         return String(format: "%.1fs", avg)
