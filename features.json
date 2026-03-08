@@ -14287,6 +14287,86 @@
         "Verify accuracyImpact returns 'boost'"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-819",
+      "name": "DifficultyLevel.warmupProblems",
+      "description": "Number of warmup problems recommended before this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get warmupProblems for easy",
+        "Verify returns 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-820",
+      "name": "DifficultyLevel.hasTimePressure",
+      "description": "Boolean true when time limit creates real pressure",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Check hard difficulty",
+        "Verify hasTimePressure is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-821",
+      "name": "MathProblem.hasLargeOperands",
+      "description": "Boolean true when either operand is 10 or greater",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with operand 12",
+        "Verify hasLargeOperands is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-822",
+      "name": "MathProblem.answerChoiceRange",
+      "description": "Range for generating plausible wrong answer choices",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem",
+        "Verify answerChoiceRange contains the correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-823",
+      "name": "AnsweredProblem.reviewText",
+      "description": "Text for reviewing the problem after game: shows problem, user answer, and correct answer",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create wrong answered problem",
+        "Verify reviewText shows all info"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

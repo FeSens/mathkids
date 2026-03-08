@@ -54,4 +54,11 @@ extension AnsweredProblem {
     var accuracyImpact: String {
         isCorrect ? "boost" : "drop"
     }
+
+    var reviewText: String {
+        if isCorrect {
+            return "\(problem.formattedProblem) → \(userAnswer) ✅"
+        }
+        return "\(problem.formattedProblem) → \(userAnswer) (correct: \(problem.correctAnswer)) ❌"
+    }
 }

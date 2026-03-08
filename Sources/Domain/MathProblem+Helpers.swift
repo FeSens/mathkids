@@ -121,4 +121,13 @@ extension MathProblem {
         return (operand1 % 10) + (operand2 % 10) > 9
     }
 
+    var hasLargeOperands: Bool {
+        operand1 >= 10 || operand2 >= 10
+    }
+
+    var answerChoiceRange: ClosedRange<Int> {
+        let answer = correctAnswer
+        let spread = max(5, abs(answer) / 2 + 1)
+        return (answer - spread)...(answer + spread)
+    }
 }

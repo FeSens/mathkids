@@ -134,4 +134,16 @@ extension DifficultyLevel {
         case .hard: return "star.fill"
         }
     }
+
+    var warmupProblems: Int {
+        switch self {
+        case .easy: return 0
+        case .medium: return 2
+        case .hard: return 3
+        }
+    }
+
+    var hasTimePressure: Bool {
+        recommendedSecondsPerProblem <= 4
+    }
 }
