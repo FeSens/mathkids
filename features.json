@@ -3513,6 +3513,97 @@
       "files": [
         "Sources/Features/Home/HomeComponents.swift"
       ]
+    },
+    {
+      "id": "ui-174",
+      "title": "Operation accessibility names for VoiceOver",
+      "description": "Operations have accessible names (plus, minus, times, divided by) for VoiceOver",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Each Operation has an accessibilityName property",
+        "Addition reads as 'plus', subtraction as 'minus'",
+        "Multiply as 'times', divide as 'divided by'"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "ui-175",
+      "title": "Problem accessibility label reads naturally",
+      "description": "Problem display uses accessibility label that reads '5 plus 3' instead of '5 + 3'",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-174"
+      ],
+      "test_steps": [
+        "Problem label has accessibilityLabel set",
+        "Label reads operand1 operation operand2 in natural language",
+        "VoiceOver pronounces it correctly"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-176",
+      "title": "Adaptive difficulty range tracking",
+      "description": "GameEngine tracks and adjusts operand range based on consecutive performance",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Adaptive range starts nil",
+        "After 5 consecutive correct, range increases",
+        "After 3 consecutive wrong, range decreases",
+        "Reset clears adaptive range"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
+    },
+    {
+      "id": "ui-177",
+      "title": "Score popup color matches answer correctness",
+      "description": "Score popups use green color to indicate points earned",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Answer correctly - green score popup appears",
+        "Popup shows '+X' with correct point value",
+        "Popup fades out with animation"
+      ],
+      "files": [
+        "Sources/Features/Game/ScorePopupView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-178",
+      "title": "Stats reset confirmation dialog",
+      "description": "Settings reset stats button shows confirmation dialog before resetting",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Open settings and tap reset stats",
+        "Confirmation dialog appears",
+        "Cancel dismisses dialog without resetting",
+        "Confirm resets all stats"
+      ],
+      "files": [
+        "Sources/Features/Home/SettingsView.swift"
+      ]
     }
   ],
   "_schema": {
