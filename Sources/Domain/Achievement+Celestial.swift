@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 19500000
         }
     }
+
+    var achievementCardGalenobismutiteUltraStyle: String {
+        isRareAchievement ? "silver grey tabular" : "flat silver matte"
+    }
+
+    var achievementRequiresSovereignPlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardDirectiveWritSealMaxPlusText: String {
+        switch category {
+        case .mastery: return "Directive Writ Seal Max Plus of the Legendary"
+        case .streak: return "Directive Writ Seal Max Plus of the Eternal"
+        case .score: return "Directive Writ Seal Max Plus of the Absolute"
+        case .games: return "Directive Writ Seal Max Plus of the Pilgrim"
+        }
+    }
+
+    var achievementCardCosaliteUltraStyle: String {
+        isRareAchievement ? "lead grey acicular" : "dull grey matte"
+    }
+
+    var achievementMidgardTripleThreshold: Int {
+        switch category {
+        case .mastery: return 200000000
+        case .streak: return 80000000
+        case .score: return 195000000
+        case .games: return 20000000
+        }
+    }
 }

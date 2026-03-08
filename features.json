@@ -41807,6 +41807,86 @@
         "Games threshold <= 37000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2516",
+      "title": "achievementCardGalenobismutiteUltraStyle",
+      "description": "Galenobismutite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns silver grey tabular",
+        "Common achievement returns flat silver matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2517",
+      "title": "achievementRequiresSovereignPlus",
+      "description": "Check if achievement requires sovereign plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Streak or score returns true",
+        "Mastery returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2518",
+      "title": "achievementCardDirectiveWritSealMaxPlusText",
+      "description": "Directive writ seal max plus text by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery returns Directive Writ Seal Max Plus of the Legendary",
+        "Games returns Directive Writ Seal Max Plus of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2519",
+      "title": "achievementCardCosaliteUltraStyle",
+      "description": "Cosalite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns lead grey acicular",
+        "Common achievement returns dull grey matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2520",
+      "title": "achievementMidgardTripleThreshold",
+      "description": "Midgard triple threshold by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery threshold >= 200000000",
+        "Games threshold <= 39000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
