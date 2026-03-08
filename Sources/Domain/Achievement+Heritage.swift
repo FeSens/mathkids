@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 25000
         }
     }
+
+    var achievementCardApatiteStyle: String {
+        isRareAchievement ? "neon" : "faded"
+    }
+
+    var achievementRequiresDevotion: Bool {
+        category == .mastery
+    }
+
+    var achievementCardCharterSealText: String {
+        switch category {
+        case .mastery: return "Charter Seal of the Academy"
+        case .streak: return "Charter Seal of the Order"
+        case .score: return "Charter Seal of the Guild"
+        case .games: return "Charter Seal of the Commons"
+        }
+    }
+
+    var achievementCardZoisiteStyle: String {
+        isRareAchievement ? "vivid green" : "dull"
+    }
+
+    var achievementThroneThreshold: Int {
+        switch category {
+        case .mastery: return 300000
+        case .streak: return 100000
+        case .score: return 250000
+        case .games: return 30000
+        }
+    }
 }

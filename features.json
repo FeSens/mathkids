@@ -33977,6 +33977,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2086",
+      "title": "Achievement Card Apatite Style",
+      "description": "Computed property returning apatite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns neon style",
+        "Common returns faded style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2087",
+      "title": "Achievement Requires Devotion",
+      "description": "Computed property checking if achievement requires devotion via mastery",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery requires devotion",
+        "Score does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2088",
+      "title": "Achievement Card Charter Seal Text",
+      "description": "Computed property returning charter seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2089",
+      "title": "Achievement Card Zoisite Style",
+      "description": "Computed property returning zoisite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns vivid green style",
+        "Common returns dull style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2090",
+      "title": "Achievement Throne Threshold",
+      "description": "Computed property returning throne threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
