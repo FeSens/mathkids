@@ -72,6 +72,10 @@ extension ResultsViewModel {
         "\(Int(accuracy))% (\(gradeLabel))"
     }
 
+    var finalScoreText: String {
+        "\(session.finalScoreWithTimeBonus) pts"
+    }
+
     var correctVsWrongText: String {
         "\(session.totalCorrect) correct / \(session.totalWrong) wrong"
     }

@@ -4,6 +4,12 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var timeRemainingLabel: String {
+        let minutes = timeRemaining / 60
+        let seconds = timeRemaining % 60
+        return "\(minutes):\(String(format: "%02d", seconds))"
+    }
+
     var isCloseToFinishing: Bool {
         !isFinished && timeRemaining > 0 && timeRemaining <= 10
     }

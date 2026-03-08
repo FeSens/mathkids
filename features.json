@@ -7663,6 +7663,90 @@
         "Verify hard shows 3s"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-409",
+      "title": "GameSession timeRemainingLabel formatted countdown",
+      "description": "GameSession should expose timeRemainingLabel returning formatted time like \"0:45\" or \"0:05\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 45 seconds returns \"0:45\"",
+        "Verify 5 seconds returns \"0:05\"",
+        "Verify 0 seconds returns \"0:00\""
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-410",
+      "title": "MathProblem isLargeResult when answer exceeds 100",
+      "description": "MathProblem should detect when the correct answer exceeds 100",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 50+60 is large result",
+        "Verify 5+3 is not large result",
+        "Verify 12x12 (144) is large result"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-411",
+      "title": "LevelSystem levelCompletionPercentage for each level",
+      "description": "LevelSystem should compute levelCompletionPercentage(currentXP:forLevel:) showing how much of a specific level is complete",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 50 XP shows 50% of level 1",
+        "Verify 200 XP shows 50% of level 2",
+        "Verify 0 XP for level 2 shows 0%"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-412",
+      "title": "ResultsViewModel finalScoreText formatted total score",
+      "description": "ResultsViewModel should expose finalScoreText showing the final score with time bonus included",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify includes score value",
+        "Verify shows formatted number"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-413",
+      "title": "Operation descriptionWithExample combines display name with example",
+      "description": "Operation should expose descriptionWithExample returning formatted text like \"Addition (3 + 2 = 5)\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify add returns \"Addition (3 + 2 = 5)\"",
+        "Verify contains display name",
+        "Verify contains example problem"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

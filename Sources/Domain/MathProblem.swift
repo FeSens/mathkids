@@ -85,6 +85,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var descriptionWithExample: String {
+        "\(displayName) (\(exampleProblem))"
+    }
+
     var precedence: Int {
         switch self {
         case .add, .subtract: 1

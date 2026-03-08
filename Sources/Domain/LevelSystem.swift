@@ -127,6 +127,17 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func levelCompletionPercentage(currentXP: Int, forLevel level: Int) -> Int {
+        guard level >= 1, level < thresholds.count else { return 0 }
+        let start = thresholds[level - 1]
+        let end = thresholds[level]
+        let range = end - start
+        guard range > 0 else { return 0 }
+        let progress = currentXP - start
+        guard progress > 0 else { return 0 }
+        return min(progress * 100 / range, 100)
+    }
+
     static func isNewLevel(oldXP: Int, newXP: Int) -> Bool {
         level(for: oldXP) != level(for: newXP)
     }
