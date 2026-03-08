@@ -107,4 +107,29 @@ extension Achievement {
     var achievementCardGradientStart: String {
         achievementIconBackgroundColor
     }
+
+    var achievementCardGradientEnd: String {
+        switch category {
+        case .streak: return "darkOrange"
+        case .score: return "darkBlue"
+        case .games: return "darkGreen"
+        case .mastery: return "darkPurple"
+        }
+    }
+
+    var achievementLabelTruncation: String {
+        achievementDisplaySize == "large" ? "none" : "tail"
+    }
+
+    var achievementIsTappable: Bool {
+        true
+    }
+
+    var achievementContextMenuItems: [String] {
+        ["details", "share"]
+    }
+
+    var achievementDragPriority: String {
+        achievementIsPremium ? "high" : "low"
+    }
 }

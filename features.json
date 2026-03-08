@@ -24357,6 +24357,83 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1444",
+      "title": "Achievement Card Gradient End",
+      "description": "Add achievementCardGradientEnd returning gradient end color",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementCardGradientEnd is darkOrange"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1445",
+      "title": "Achievement Label Truncation",
+      "description": "Add achievementLabelTruncation returning truncation mode string",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementLabelTruncation is none",
+        "Verify small is tail"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1446",
+      "title": "Achievement Is Tappable",
+      "description": "Add achievementIsTappable returning true for achievements with details to show",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create any achievement",
+        "Verify achievementIsTappable is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1447",
+      "title": "Achievement Context Menu Items",
+      "description": "Add achievementContextMenuItems returning array of available context actions",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementContextMenuItems contains share"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1448",
+      "title": "Achievement Drag Priority",
+      "description": "Add achievementDragPriority returning drag reorder priority value",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementDragPriority is high",
+        "Verify common is low"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
