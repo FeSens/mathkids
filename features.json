@@ -22308,6 +22308,90 @@
         "Check verdict is fail"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1314",
+      "name": "achievementTitleWithEmoji",
+      "description": "Achievement title prefixed with its emoji",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create achievement with progress returning 0.5",
+        "Check percentage is 50"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1315",
+      "name": "achievementIsLocked",
+      "description": "Whether the achievement is locked (not yet earned)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create achievement without progress",
+        "Check isLocked is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1316",
+      "name": "achievementCardColor",
+      "description": "Color for achievement card based on category",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Check color is orange",
+        "Create score achievement",
+        "Check color is blue"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1317",
+      "name": "achievementRewardText",
+      "description": "Text describing the reward for earning this achievement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create achievement with 25 points",
+        "Check text contains 25"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1318",
+      "name": "achievementIsEpic",
+      "description": "Whether the achievement is epic (rare + high value)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create rare high-value achievement",
+        "Check isEpic is true",
+        "Create common low-value achievement",
+        "Check isEpic is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
