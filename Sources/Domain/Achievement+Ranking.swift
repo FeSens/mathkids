@@ -240,4 +240,34 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementCardTapestryStyle: String {
+        isRareAchievement ? "woven" : "blank"
+    }
+
+    var achievementIsEffortTracked: Bool {
+        category == .mastery || category == .streak || category == .games
+    }
+
+    var achievementCardOathText: String {
+        switch category {
+        case .mastery: return "Sworn to mastery"
+        case .streak: return "Sworn to consistency"
+        case .score: return "Sworn to accuracy"
+        case .games: return "Sworn to participate"
+        }
+    }
+
+    var achievementCardGildStyle: String {
+        isRareAchievement ? "gold-leaf" : "none"
+    }
+
+    var achievementRewardBonusFactor: Double {
+        switch category {
+        case .mastery: return 2.5
+        case .streak: return 2.0
+        case .score: return 1.5
+        case .games: return 1.0
+        }
+    }
 }

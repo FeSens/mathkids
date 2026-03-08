@@ -31459,6 +31459,76 @@
         "Create games achievement",
         "Verify maxDays is low"
       ]
+    },
+    {
+      "id": "logic-1914",
+      "name": "achievementCardTapestryStyle",
+      "description": "Tapestry background style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify tapestry is woven",
+        "Create common achievement",
+        "Verify tapestry is blank"
+      ]
+    },
+    {
+      "id": "logic-1915",
+      "name": "achievementIsEffortTracked",
+      "description": "Whether achievement tracks effort (mastery, streak, or games)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isEffortTracked is true",
+        "Create score achievement",
+        "Verify isEffortTracked is false"
+      ]
+    },
+    {
+      "id": "logic-1916",
+      "name": "achievementCardOathText",
+      "description": "Oath text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify oath text",
+        "Create games achievement",
+        "Verify oath text"
+      ]
+    },
+    {
+      "id": "logic-1917",
+      "name": "achievementCardGildStyle",
+      "description": "Gilding decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify gild is gold-leaf",
+        "Create common achievement",
+        "Verify gild is none"
+      ]
+    },
+    {
+      "id": "logic-1918",
+      "name": "achievementRewardBonusFactor",
+      "description": "Bonus factor for achievement rewards based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify multiplier is high",
+        "Create games achievement",
+        "Verify multiplier is 1.0"
+      ]
     }
   ],
   "_schema": {
