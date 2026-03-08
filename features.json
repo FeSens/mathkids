@@ -27103,6 +27103,75 @@
         "Create games achievement",
         "Verify isResetable is false"
       ]
+    },
+    {
+      "id": "logic-1629",
+      "title": "achievementCompactDescription",
+      "description": "Return compact one-line description",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify description is non-empty and under 50 chars"
+      ]
+    },
+    {
+      "id": "logic-1630",
+      "title": "achievementNotificationIcon",
+      "description": "Return notification icon name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify icon contains trophy",
+        "Create streak achievement",
+        "Verify icon contains flame"
+      ]
+    },
+    {
+      "id": "logic-1631",
+      "title": "achievementShowConfetti",
+      "description": "Return whether to show confetti on unlock",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify showConfetti is true",
+        "Create common achievement",
+        "Verify showConfetti is false"
+      ]
+    },
+    {
+      "id": "logic-1632",
+      "title": "achievementDetailURL",
+      "description": "Return URL path for achievement detail",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify URL contains achievement id"
+      ]
+    },
+    {
+      "id": "logic-1633",
+      "title": "achievementEarnedLabel",
+      "description": "Return earned/not earned label",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify label is Not Earned"
+      ]
     }
   ],
   "_schema": {
