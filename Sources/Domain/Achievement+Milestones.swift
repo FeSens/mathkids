@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementCardTopazStyle: String {
+        isRareAchievement ? "imperial" : "plain"
+    }
+
+    var achievementRequiresFocus: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardDecreeText: String {
+        switch category {
+        case .mastery: return "Decree of the Grand Master"
+        case .streak: return "Decree of the Faithful"
+        case .score: return "Decree of the Champion"
+        case .games: return "Decree of the Initiate"
+        }
+    }
+
+    var achievementCardGarnetStyle: String {
+        isRareAchievement ? "deep" : "light"
+    }
+
+    var achievementRewardTierLevel: Int {
+        switch category {
+        case .mastery: return 5
+        case .streak: return 4
+        case .score: return 3
+        case .games: return 1
+        }
+    }
 }

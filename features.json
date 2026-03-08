@@ -32369,6 +32369,76 @@
         "Create games achievement",
         "Verify steps is low"
       ]
+    },
+    {
+      "id": "logic-1979",
+      "name": "achievementCardTopazStyle",
+      "description": "Topaz gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify topaz is imperial",
+        "Create common achievement",
+        "Verify topaz is plain"
+      ]
+    },
+    {
+      "id": "logic-1980",
+      "name": "achievementRequiresFocus",
+      "description": "Whether achievement requires focus (score or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresFocus is true",
+        "Create games achievement",
+        "Verify requiresFocus is false"
+      ]
+    },
+    {
+      "id": "logic-1981",
+      "name": "achievementCardDecreeText",
+      "description": "Decree text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify decree text",
+        "Create games achievement",
+        "Verify decree text"
+      ]
+    },
+    {
+      "id": "logic-1982",
+      "name": "achievementCardGarnetStyle",
+      "description": "Garnet gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify garnet is deep",
+        "Create common achievement",
+        "Verify garnet is light"
+      ]
+    },
+    {
+      "id": "logic-1983",
+      "name": "achievementRewardTierLevel",
+      "description": "Reward tier level number based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify tier is high",
+        "Create games achievement",
+        "Verify tier is low"
+      ]
     }
   ],
   "_schema": {
