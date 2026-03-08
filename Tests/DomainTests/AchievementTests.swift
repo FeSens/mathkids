@@ -134,4 +134,28 @@ struct AchievementTests {
         let a = Achievement.all.first { $0.id == "hard_mastery" }
         #expect(a != nil)
     }
+
+    // MARK: - Achievement Count (logic-233)
+
+    @Test("New player has 0 unlocked achievements")
+    func newPlayerZeroUnlocked() {
+        let stats = PlayerStats()
+        #expect(Achievement.unlockedCount(for: stats) == 0)
+    }
+
+    @Test("Unlocked count after unlocking first game")
+    func unlockedCountAfterFirstGame() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 1
+        #expect(Achievement.unlockedCount(for: stats) >= 1)
+    }
+
+    @Test("Total equals unlocked plus locked")
+    func totalEqualsUnlockedPlusLocked() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 5
+        let unlocked = Achievement.unlockedCount(for: stats)
+        let locked = Achievement.lockedCount(for: stats)
+        #expect(unlocked + locked == Achievement.all.count)
+    }
 }

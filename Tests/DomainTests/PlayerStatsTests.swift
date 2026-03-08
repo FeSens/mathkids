@@ -281,8 +281,27 @@ struct PlayerStatsTests {
         stats.updateBestAccuracy(85.0, for: .easy)
         #expect(stats.bestAccuracyForDifficulty(.easy) == 85.0)
         stats.updateBestAccuracy(70.0, for: .easy)
-        #expect(stats.bestAccuracyForDifficulty(.easy) == 85.0) // Doesn't decrease
+        #expect(stats.bestAccuracyForDifficulty(.easy) == 85.0)
         stats.updateBestAccuracy(95.0, for: .easy)
         #expect(stats.bestAccuracyForDifficulty(.easy) == 95.0)
+    }
+
+    // MARK: - XP Per Difficulty (logic-229)
+
+    @Test("XP per difficulty starts at 0")
+    func xpPerDifficultyStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.xpForDifficulty(.easy) == 0)
+    }
+
+    @Test("XP per difficulty tracks correctly")
+    func xpPerDifficultyTracks() {
+        let stats = PlayerStats()
+        stats.addXPForDifficulty(50, for: .easy)
+        stats.addXPForDifficulty(30, for: .easy)
+        stats.addXPForDifficulty(100, for: .hard)
+        #expect(stats.xpForDifficulty(.easy) == 80)
+        #expect(stats.xpForDifficulty(.hard) == 100)
+        #expect(stats.xpForDifficulty(.medium) == 0)
     }
 }

@@ -185,4 +185,20 @@ struct GameSessionTests {
         for _ in 0..<10 { session.recordAnswer(correct: true) }
         #expect(session.streakMilestoneReached == 10)
     }
+
+    // MARK: - Total Bonus Points (logic-230)
+
+    @Test("Total bonus points starts at 0")
+    func totalBonusStartsAt0() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.totalBonusPoints == 0)
+    }
+
+    @Test("Total bonus points accumulates")
+    func totalBonusAccumulates() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true, bonusPoints: 5)
+        session.recordAnswer(correct: true, bonusPoints: 3)
+        #expect(session.totalBonusPoints == 8)
+    }
 }

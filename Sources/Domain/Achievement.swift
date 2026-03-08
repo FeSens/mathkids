@@ -134,4 +134,12 @@ struct Achievement: Identifiable {
     func isUnlocked(stats: PlayerStats) -> Bool {
         requirement(stats)
     }
+
+    static func unlockedCount(for stats: PlayerStats) -> Int {
+        all.filter { $0.isUnlocked(stats: stats) }.count
+    }
+
+    static func lockedCount(for stats: PlayerStats) -> Int {
+        all.count - unlockedCount(for: stats)
+    }
 }

@@ -51,6 +51,10 @@ struct MathProblem: Equatable, Sendable {
         case easy, moderate, hard
     }
 
+    var accessibilityText: String {
+        "\(operand1) \(operation.accessibilityName) \(operand2)"
+    }
+
     var displayTextWithAnswer: String {
         "\(displayText) = \(correctAnswer)"
     }

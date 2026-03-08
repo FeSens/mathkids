@@ -9,6 +9,7 @@ struct GameSession: Sendable {
     private(set) var score: Int = 0
     private(set) var timeRemaining: Int
     private(set) var isFinished: Bool = false
+    private(set) var totalBonusPoints: Int = 0
     private(set) var bestStreakOperation: Operation?
     private var currentStreakOperation: Operation?
     private var currentOperationStreak: Int = 0
@@ -48,6 +49,7 @@ struct GameSession: Sendable {
             if currentStreak > bestStreak {
                 bestStreak = currentStreak
             }
+            totalBonusPoints += bonusPoints
             score += difficulty.pointsPerCorrect + bonusPoints
 
             if let op = operation {

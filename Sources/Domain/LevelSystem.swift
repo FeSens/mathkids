@@ -43,6 +43,10 @@ enum LevelSystem {
         return levelNames[lvl - 1]
     }
 
+    static func isMaxLevel(for xp: Int) -> Bool {
+        level(for: xp) >= thresholds.count
+    }
+
     static func levelTitle(for xp: Int) -> String {
         let lvl = level(for: xp)
         return "Lv. \(lvl) \(levelNames[lvl - 1])"

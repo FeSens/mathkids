@@ -99,4 +99,18 @@ struct MathProblemTests {
         #expect(Operation.multiply.displayName == "Multiplication")
         #expect(Operation.divide.displayName == "Division")
     }
+
+    // MARK: - Accessibility Text (logic-232)
+
+    @Test("Accessibility text for addition")
+    func accessibilityTextAdd() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .add)
+        #expect(problem.accessibilityText == "5 plus 3")
+    }
+
+    @Test("Accessibility text for multiplication")
+    func accessibilityTextMultiply() {
+        let problem = MathProblem(operand1: 8, operand2: 4, operation: .multiply)
+        #expect(problem.accessibilityText == "8 times 4")
+    }
 }

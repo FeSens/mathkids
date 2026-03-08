@@ -38,6 +38,9 @@ final class PlayerStats {
     var bestAccuracyEasy: Double = 0
     var bestAccuracyMedium: Double = 0
     var bestAccuracyHard: Double = 0
+    var xpEasy: Int = 0
+    var xpMedium: Int = 0
+    var xpHard: Int = 0
 
     init() {}
 
@@ -135,6 +138,22 @@ final class PlayerStats {
         case .easy: bestAccuracyEasy
         case .medium: bestAccuracyMedium
         case .hard: bestAccuracyHard
+        }
+    }
+
+    func xpForDifficulty(_ difficulty: DifficultyLevel) -> Int {
+        switch difficulty {
+        case .easy: xpEasy
+        case .medium: xpMedium
+        case .hard: xpHard
+        }
+    }
+
+    func addXPForDifficulty(_ xp: Int, for difficulty: DifficultyLevel) {
+        switch difficulty {
+        case .easy: xpEasy += xp
+        case .medium: xpMedium += xp
+        case .hard: xpHard += xp
         }
     }
 

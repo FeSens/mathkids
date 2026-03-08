@@ -4518,6 +4518,94 @@
       "files": [
         "Sources/Domain/DifficultyLevel.swift"
       ]
+    },
+    {
+      "id": "logic-229",
+      "title": "PlayerStats total XP earned per difficulty",
+      "description": "PlayerStats tracks XP earned separately for each difficulty level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Record XP for different difficulties",
+        "xpForDifficulty returns correct XP per level",
+        "Returns 0 when no games played for that difficulty"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-230",
+      "title": "GameSession total bonus points tracked separately",
+      "description": "GameSession tracks total bonus points earned separately from base score",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Answer correctly with bonus points",
+        "totalBonusPoints reflects accumulated bonuses",
+        "Base score excludes bonuses"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-231",
+      "title": "LevelSystem maximum level check",
+      "description": "LevelSystem has isMaxLevel(for:) that returns true when player reached the highest level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "At 0 XP, isMaxLevel returns false",
+        "At max XP threshold, isMaxLevel returns true"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
+    },
+    {
+      "id": "logic-232",
+      "title": "MathProblem formatted display with accessibility",
+      "description": "MathProblem provides accessibilityText using operation accessibility names",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "For 5 + 3, accessibilityText returns \"5 plus 3\"",
+        "For 8 x 4, accessibilityText returns \"8 times 4\""
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-233",
+      "title": "Achievement count by status",
+      "description": "Achievement provides static methods to count unlocked and locked achievements for a player",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "New player has 0 unlocked and all locked",
+        "After unlocking some, counts are correct",
+        "Total equals unlocked + locked"
+      ],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ]
     }
   ],
   "_schema": {

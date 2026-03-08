@@ -80,4 +80,16 @@ struct LevelSystemTests {
     func levelTitleAt300() {
         #expect(LevelSystem.levelTitle(for: 300) == "Lv. 3 Explorer")
     }
+
+    // MARK: - Max Level Check (logic-231)
+
+    @Test("Not max level at 0 XP")
+    func notMaxAt0() {
+        #expect(LevelSystem.isMaxLevel(for: 0) == false)
+    }
+
+    @Test("Max level at high XP")
+    func maxAtHighXP() {
+        #expect(LevelSystem.isMaxLevel(for: 99999) == true)
+    }
 }
