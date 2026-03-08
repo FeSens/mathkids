@@ -12365,6 +12365,86 @@
         "Verify timed out"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-699",
+      "name": "averageTimePerAnswerText",
+      "description": "Formatted average time per answer display",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Create session, tick 20 times, answer 4 questions",
+        "Verify averageTimePerAnswer returns '5s/answer'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-700",
+      "name": "isAboveAverageScore",
+      "description": "Boolean indicating if score is above difficulty average threshold",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Create session, record many correct answers",
+        "Verify isAboveAverageScore is true for high scores"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-701",
+      "name": "timeRemainingPercent",
+      "description": "Percentage of time remaining as an integer",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Create session, tick 30 times on 60s game",
+        "Verify timeRemainingPercent returns 50"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-702",
+      "name": "streakMultiplierText",
+      "description": "Text showing streak multiplier like 'x2' or 'x3' based on current streak",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Create session, record 5 correct answers",
+        "Verify streakMultiplierText shows appropriate multiplier"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-703",
+      "name": "performanceRating",
+      "description": "Numeric performance rating 1-5 based on accuracy and speed",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Create session with high accuracy",
+        "Verify performanceRating returns 5 for perfect play"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -249,4 +249,34 @@ extension GameSession {
     var hasTimedOut: Bool {
         timeRemaining <= 0
     }
+
+    var averageTimePerAnswerText: String {
+        guard totalAnswered > 0 else { return "0s/answer" }
+        let avg = totalTimePlayed / totalAnswered
+        return "\(avg)s/answer"
+    }
+
+    var isAboveAverageScore: Bool {
+        score >= difficulty.averageScoreThreshold
+    }
+
+    var timeRemainingPercent: Int {
+        guard difficulty.timeLimitSeconds > 0 else { return 0 }
+        return timeRemaining * 100 / difficulty.timeLimitSeconds
+    }
+
+    var streakMultiplierText: String {
+        if currentStreak >= 5 { return "x3" }
+        if currentStreak >= 3 { return "x2" }
+        return "x1"
+    }
+
+    var performanceRating: Int {
+        let acc = accuracy
+        if acc >= 90 { return 5 }
+        if acc >= 75 { return 4 }
+        if acc >= 60 { return 3 }
+        if acc >= 40 { return 2 }
+        return 1
+    }
 }
