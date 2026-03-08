@@ -85,6 +85,13 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var isBasicOperation: Bool {
+        switch self {
+        case .add, .subtract: true
+        case .multiply, .divide: false
+        }
+    }
+
     var descriptionWithExample: String {
         "\(displayName) (\(exampleProblem))"
     }

@@ -7998,6 +7998,91 @@
         "Verify hard shows 30 seconds"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-429",
+      "title": "GameSession isPerfectGame true only when all correct and game finished",
+      "description": "GameSession should expose isPerfectGame combining answeredAllCorrectly and isFinished",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify true when all correct and finished",
+        "Verify false when all correct but not finished",
+        "Verify false when some wrong and finished"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-430",
+      "title": "MathProblem isMultiplicationByOne for trivial multiplications",
+      "description": "MathProblem should detect when multiplication involves 1 as an operand",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 7x1 is multiplication by one",
+        "Verify 1x5 is multiplication by one",
+        "Verify 3x4 is not multiplication by one"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-431",
+      "title": "LevelSystem xpUntilMax returns XP needed to reach max level",
+      "description": "LevelSystem should expose xpUntilMax(currentXP:) as a cleaner interface",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 0 XP needs 4500",
+        "Verify 2000 XP needs 2500",
+        "Verify 5000 XP needs 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-432",
+      "title": "ResultsViewModel difficultyBadgeText for difficulty display",
+      "description": "ResultsViewModel should expose difficultyBadgeText combining emoji and difficulty name",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify contains difficulty name",
+        "Verify contains difficulty emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-433",
+      "title": "Operation isBasicOperation for add/subtract distinction",
+      "description": "Operation should expose isBasicOperation returning true for add and subtract",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify add is basic",
+        "Verify subtract is basic",
+        "Verify multiply is not basic",
+        "Verify divide is not basic"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

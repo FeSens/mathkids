@@ -4,6 +4,10 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var isPerfectGame: Bool {
+        isFinished && answeredAllCorrectly
+    }
+
     var hasAnswered: Bool {
         totalAnswered > 0
     }

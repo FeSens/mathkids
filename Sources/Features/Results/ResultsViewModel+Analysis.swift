@@ -72,6 +72,10 @@ extension ResultsViewModel {
         "\(Int(accuracy))% (\(gradeLabel))"
     }
 
+    var difficultyBadgeText: String {
+        "\(session.difficulty.emoji) \(session.difficulty.displayName)"
+    }
+
     var operationSummaryText: String {
         "\(session.difficulty.displayName) mode"
     }

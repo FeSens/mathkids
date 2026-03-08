@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var isMultiplicationByOne: Bool {
+        operation == .multiply && (operand1 == 1 || operand2 == 1)
+    }
+
     var isSubtractionToZero: Bool {
         operation == .subtract && operand1 == operand2
     }

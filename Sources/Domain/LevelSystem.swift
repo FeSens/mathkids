@@ -127,6 +127,10 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func xpUntilMax(currentXP: Int) -> Int {
+        xpRemainingToMax(currentXP: currentXP)
+    }
+
     static func currentLevelName(for xp: Int) -> String {
         levelName(for: xp)
     }
