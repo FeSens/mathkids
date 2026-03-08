@@ -155,4 +155,34 @@ extension Achievement {
     var achievementCelebrationText: String {
         "\(emoji) Congratulations! You earned \(title)!"
     }
+
+    var achievementCardLabelStyle: String {
+        isRareAchievement ? "highlighted" : "default"
+    }
+
+    var achievementRequiredAccuracyPercent: Int {
+        switch category {
+        case .mastery: return 90
+        case .streak: return 0
+        case .score: return 80
+        case .games: return 0
+        }
+    }
+
+    var achievementCardHighlightColor: String {
+        switch category {
+        case .mastery: return "purple"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementIsSkillBased: Bool {
+        category == .mastery || category == .score
+    }
+
+    var achievementProgressSummaryText: String {
+        "\(category.displayName) progress"
+    }
 }

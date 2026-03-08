@@ -28989,6 +28989,86 @@
         "Verify celebrationText contains emoji"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1754",
+      "title": "Achievement Card Label Style",
+      "description": "Returns label style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardLabelStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1755",
+      "title": "Achievement Required Accuracy Percent",
+      "description": "Returns required accuracy percentage",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify requiredAccuracyPercent by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1756",
+      "title": "Achievement Card Highlight Color",
+      "description": "Returns highlight color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardHighlightColor by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1757",
+      "title": "Achievement Is Skill Based",
+      "description": "Returns whether achievement is skill-based",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isSkillBased for mastery/score vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1758",
+      "title": "Achievement Progress Summary Text",
+      "description": "Returns summary of progress",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify progressSummaryText contains category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
