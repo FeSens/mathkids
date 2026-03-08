@@ -148,4 +148,24 @@ extension DifficultyLevel {
     var difficultyNextLevelName: String? {
         nextDifficulty?.displayName
     }
+
+    var difficultyPreviousLevelName: String? {
+        previousDifficulty?.displayName
+    }
+
+    var difficultyTimePerQuestion: Int {
+        recommendedSecondsPerProblem
+    }
+
+    var difficultyIsLocked: Bool {
+        self != .easy
+    }
+
+    var difficultyXpBonusLabel: String {
+        "\(progressionIndex)x XP"
+    }
+
+    var difficultyOperationCountLabel: String {
+        "\(operationCount) operations"
+    }
 }

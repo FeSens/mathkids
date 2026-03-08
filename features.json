@@ -18446,6 +18446,81 @@
         "easy returns Medium, hard returns none"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1084",
+      "name": "difficultyPreviousLevelName",
+      "description": "Name of previous difficulty level",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "medium returns Easy, easy returns nil"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1085",
+      "name": "difficultyTimePerQuestion",
+      "description": "Recommended seconds per question",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "returns recommendedSecondsPerProblem value"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1086",
+      "name": "difficultyIsLocked",
+      "description": "Whether difficulty needs to be unlocked",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy is not locked, medium and hard are locked"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1087",
+      "name": "difficultyXpBonusLabel",
+      "description": "XP bonus label for the difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "contains x and multiplier"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1088",
+      "name": "difficultyOperationCountLabel",
+      "description": "Label showing number of operations available",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "contains operations text"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
