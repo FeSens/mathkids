@@ -72,6 +72,11 @@ extension ResultsViewModel {
         "\(Int(accuracy))% (\(gradeLabel))"
     }
 
+    var problemCountText: String {
+        let count = session.totalAnswered
+        return "\(count) problems answered"
+    }
+
     var difficultyBadgeText: String {
         "\(session.difficulty.emoji) \(session.difficulty.displayName)"
     }

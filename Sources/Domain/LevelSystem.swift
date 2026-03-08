@@ -127,6 +127,12 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func nextLevelName(for xp: Int) -> String? {
+        let currentLevel = level(for: xp)
+        guard currentLevel < totalLevels else { return nil }
+        return levelNames[currentLevel]
+    }
+
     static func isAtMaxLevel(xp: Int) -> Bool {
         isMaxLevel(for: xp)
     }

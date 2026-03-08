@@ -91,6 +91,11 @@ extension MathProblem {
         return .large
     }
 
+    var isDivisionExact: Bool {
+        guard operation == .divide, operand2 != 0 else { return false }
+        return operand1 % operand2 == 0
+    }
+
     var isAdditionTen: Bool {
         operation == .add && (operand1 == 10 || operand2 == 10)
     }

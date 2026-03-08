@@ -8165,6 +8165,91 @@
         "Verify hard shows 2.0x"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-439",
+      "title": "GameSession averageStreakLength computes average streak between breaks",
+      "description": "GameSession should compute averageStreakLength as totalCorrect divided by number of streak resets plus 1",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 6 correct with 2 breaks gives average of 2",
+        "Verify all correct gives totalCorrect",
+        "Verify 0 answers gives 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-440",
+      "title": "MathProblem isDivisionExact checks for no remainder",
+      "description": "MathProblem should detect division problems with exact (no remainder) answers",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 10/2 is exact division",
+        "Verify 10/3 is not exact (integer division truncates)",
+        "Verify 5+3 is not (wrong operation)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-441",
+      "title": "LevelSystem nextLevelName returns name of next level",
+      "description": "LevelSystem should expose nextLevelName(for:) returning the name of the level the player is working toward",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 0 XP next level is Learner",
+        "Verify 100 XP next level is Explorer",
+        "Verify max level returns nil"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-442",
+      "title": "ResultsViewModel problemCountText formatted problem count",
+      "description": "ResultsViewModel should expose problemCountText like \"15 problems answered\"",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify shows count of problems",
+        "Verify contains \"problem\" text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-443",
+      "title": "Operation isAdvanced for multiply/divide distinction",
+      "description": "Operation should expose isAdvanced returning true for multiply and divide",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify multiply is advanced",
+        "Verify divide is advanced",
+        "Verify add is not advanced",
+        "Verify subtract is not advanced"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

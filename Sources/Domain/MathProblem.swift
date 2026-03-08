@@ -85,6 +85,13 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var isAdvanced: Bool {
+        switch self {
+        case .multiply, .divide: true
+        case .add, .subtract: false
+        }
+    }
+
     var isBasicOperation: Bool {
         switch self {
         case .add, .subtract: true
