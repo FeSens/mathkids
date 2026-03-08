@@ -22124,6 +22124,96 @@
         "Check breakdown shows 0"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1304",
+      "name": "answeredProblemCompletionReward",
+      "description": "Reward string for completing the problem like +10 XP",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check reward contains XP",
+        "Create wrong answer",
+        "Check reward contains 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1305",
+      "name": "answeredProblemIsHighScore",
+      "description": "Whether the total score exceeds 20",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast multiply answer",
+        "Check isHighScore is true",
+        "Create correct slow add answer",
+        "Check isHighScore is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1306",
+      "name": "answeredProblemStreakBonus",
+      "description": "Bonus points that would apply in a streak context",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check bonus > 0",
+        "Create wrong answer",
+        "Check bonus is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1307",
+      "name": "answeredProblemIsMVPAnswer",
+      "description": "Whether this is an MVP-worthy answer (hard + fast + correct)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant multiply answer",
+        "Check isMVP is true",
+        "Create correct slow add answer",
+        "Check isMVP is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1308",
+      "name": "answeredProblemRewardEmoji",
+      "description": "Emoji for the reward tier: \ud83d\udc8e \ud83e\udd47 \ud83e\udd48 \ud83e\udd49 or empty",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant hard answer",
+        "Check emoji is \ud83d\udc8e",
+        "Create wrong answer",
+        "Check emoji is empty"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

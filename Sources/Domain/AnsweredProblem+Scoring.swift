@@ -208,4 +208,32 @@ extension AnsweredProblem {
         let speed = answeredProblemSpeedBonus
         return "Base: \(base), Speed: \(speed), Total: \(base + speed)"
     }
+
+    var answeredProblemCompletionReward: String {
+        let xp = answeredProblemExperiencePoints
+        return "+\(xp) XP"
+    }
+
+    var answeredProblemIsHighScore: Bool {
+        answeredProblemTotalScore > 20
+    }
+
+    var answeredProblemStreakBonus: Int {
+        guard isCorrect else { return 0 }
+        return answeredProblemStreakMultiplier * 2
+    }
+
+    var answeredProblemIsMVPAnswer: Bool {
+        isCorrect && !problem.operation.isPrimaryOperation && (timeTaken ?? Double.infinity) < 1.0
+    }
+
+    var answeredProblemRewardEmoji: String {
+        switch answeredProblemMedalType {
+        case "diamond": return "💎"
+        case "gold": return "🥇"
+        case "silver": return "🥈"
+        case "bronze": return "🥉"
+        default: return ""
+        }
+    }
 }
