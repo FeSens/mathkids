@@ -3604,6 +3604,97 @@
       "files": [
         "Sources/Features/Home/SettingsView.swift"
       ]
+    },
+    {
+      "id": "ui-179",
+      "title": "Fastest answer time tracking per session",
+      "description": "Track and display the fastest answer time in the current game session",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-146"
+      ],
+      "test_steps": [
+        "Play a game answering several problems",
+        "GameEngine tracks fastest answer time",
+        "Results screen can show fastest time"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-180",
+      "title": "Problem generator respects adaptive range",
+      "description": "When adaptive range is set, generated problems use that range instead of default",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-176"
+      ],
+      "test_steps": [
+        "Set adaptive range to a custom range",
+        "Generated problems use the adaptive range for operands",
+        "Division and multiply still use safe ranges"
+      ],
+      "files": [
+        "Sources/Services/ProblemGenerator.swift"
+      ]
+    },
+    {
+      "id": "ui-181",
+      "title": "Results screen fastest answer stat",
+      "description": "Results view shows the fastest answer time as a stat",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-179"
+      ],
+      "test_steps": [
+        "Complete a game",
+        "Results screen shows fastest answer time",
+        "Time formatted in seconds with one decimal"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-182",
+      "title": "Accuracy percentage in game header",
+      "description": "Show current session accuracy percentage in the game header",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Answer some problems in a game",
+        "Header shows current accuracy percentage",
+        "Color changes based on accuracy level"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-183",
+      "title": "Correct/total counter in game header",
+      "description": "Game header shows X/Y correct answers counter",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Answer problems during game",
+        "Header shows correct/total (e.g., 3/5)",
+        "Updates after each answer"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
     }
   ],
   "_schema": {

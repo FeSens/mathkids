@@ -151,7 +151,6 @@ struct GameEngineTests {
     func problemHistoryRecordsTime() async throws {
         let engine = GameEngine(difficulty: .easy)
         engine.startGame()
-        // Wait a bit so timeTaken > 0
         try await Task.sleep(for: .milliseconds(100))
         let answer = engine.currentProblem.correctAnswer
         engine.submitAnswer(answer)
@@ -159,5 +158,24 @@ struct GameEngineTests {
         #expect(entry != nil)
         #expect(entry?.timeTaken != nil)
         #expect(entry!.timeTaken! > 0)
+    }
+
+    // MARK: - Fastest Answer Time (ui-179)
+
+    @Test("Fastest answer time starts nil")
+    @MainActor
+    func fastestTimeStartsNil() {
+        let engine = GameEngine(difficulty: .easy)
+        #expect(engine.fastestAnswerTime == nil)
+    }
+
+    @Test("Fastest answer time recorded on correct answer")
+    @MainActor
+    func fastestTimeRecorded() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        let answer = engine.currentProblem.correctAnswer
+        engine.submitAnswer(answer)
+        #expect(engine.fastestAnswerTime != nil)
     }
 }

@@ -19,6 +19,7 @@ final class GameEngine {
     private(set) var hasStreakFreeze: Bool = false
     private(set) var streakFreezeUsed: Bool = false
     private var problemStartTime: Date = Date()
+    private(set) var fastestAnswerTime: Double?
 
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
@@ -57,6 +58,13 @@ final class GameEngine {
         problemHistory.append(answered)
 
         let correct = currentProblem.isCorrect(answer: answer)
+        if correct {
+            if let fastest = fastestAnswerTime {
+                fastestAnswerTime = min(fastest, elapsed)
+            } else {
+                fastestAnswerTime = elapsed
+            }
+        }
         let speedBonus = session.timeRemaining > session.difficulty.timeLimitSeconds / 2 ? 5 : 0
 
         // Use streak freeze: record as wrong for scoring but preserve streak

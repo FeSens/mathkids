@@ -87,6 +87,8 @@ final class ResultsViewModel {
         return "Keep practicing to unlock fun stats!"
     }
 
+    var fastestAnswerTime: String? = nil
+
     var totalTimePlayed: String {
         let time = session.totalTimePlayed
         guard time > 0 else { return "0s" }
