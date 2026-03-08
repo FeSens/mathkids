@@ -22478,6 +22478,92 @@
         "Check isEndgameContent is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1324",
+      "name": "achievementRarityColor",
+      "description": "Color based on rarity: purple for rare, blue for common",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Check color is purple",
+        "Create common achievement",
+        "Check color is blue"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1325",
+      "name": "achievementIsStreakRelated",
+      "description": "Whether the achievement is streak-related",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Check is true",
+        "Create games achievement",
+        "Check is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1326",
+      "name": "achievementIconSystemName",
+      "description": "SF Symbol name for the achievement category",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Check icon is flame.fill",
+        "Create score achievement",
+        "Check icon is trophy.fill"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1327",
+      "name": "achievementShareText",
+      "description": "Text for sharing the achievement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Check text contains title and emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1328",
+      "name": "achievementNotificationMessage",
+      "description": "Notification message when achievement is earned",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Check message contains achievement unlocked"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
