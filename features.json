@@ -5421,6 +5421,94 @@
       "files": [
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-279",
+      "title": "MathProblem estimated difficulty time",
+      "description": "MathProblem estimates how long the problem should take based on difficulty",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Easy addition takes less estimated time",
+        "Hard multiplication takes more estimated time",
+        "All estimates are positive"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-280",
+      "title": "GameSession total score with time bonus",
+      "description": "GameSession provides a final score that includes time bonus",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003",
+        "logic-249"
+      ],
+      "test_steps": [
+        "Final score with bonus is higher than base score",
+        "Final score equals score plus time bonus"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-281",
+      "title": "PlayerStats average session length",
+      "description": "PlayerStats computes average time per game session",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Returns 0 with no games",
+        "Returns correct average seconds per game"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-282",
+      "title": "LevelSystem XP percentage to next level",
+      "description": "LevelSystem provides XP progress as a percentage string",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "0 XP shows 0%",
+        "50 XP shows 50%",
+        "Max level shows 100%"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
+    },
+    {
+      "id": "logic-283",
+      "title": "HomeViewModel quick play operation set",
+      "description": "HomeViewModel provides a quick play preset that selects all operations",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Quick play selects all 4 operations",
+        "Quick play resets to default state"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
     }
   ],
   "_schema": {

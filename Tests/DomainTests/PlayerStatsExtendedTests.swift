@@ -316,4 +316,20 @@ struct PlayerStatsExtendedTests {
         stats.recordPerfectGameIfQualified(accuracy: 90)
         #expect(stats.perfectGameCount == 0)
     }
+
+    // MARK: - Average Session Length (logic-281)
+
+    @Test("Average session length 0 with no games")
+    func avgSessionLengthZero() {
+        let stats = PlayerStats()
+        #expect(stats.averageSessionSeconds == 0)
+    }
+
+    @Test("Average session length correct")
+    func avgSessionLengthCorrect() {
+        let stats = PlayerStats()
+        stats.totalTimePlayedSeconds = 300
+        stats.gamesPlayed = 5
+        #expect(stats.averageSessionSeconds == 60)
+    }
 }

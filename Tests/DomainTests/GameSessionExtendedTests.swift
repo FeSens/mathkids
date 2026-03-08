@@ -156,4 +156,22 @@ struct GameSessionExtendedTests {
         session.recordAnswer(correct: true)
         #expect(session.isComeback == false)
     }
+
+    // MARK: - Final Score With Time Bonus (logic-280)
+
+    @Test("Final score with bonus equals score plus time bonus")
+    func finalScoreWithBonus() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<10 { session.tick() } // 50s remaining
+        session.recordAnswer(correct: true)
+        #expect(session.finalScoreWithTimeBonus == session.score + session.timeBonus)
+    }
+
+    @Test("Final score with bonus is higher than base score")
+    func finalScoreHigherThanBase() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<10 { session.tick() }
+        session.recordAnswer(correct: true)
+        #expect(session.finalScoreWithTimeBonus > session.score)
+    }
 }

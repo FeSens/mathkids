@@ -121,6 +121,20 @@ extension MathProblem {
 }
 
 extension MathProblem {
+    var estimatedSeconds: Double {
+        let baseDifficulty: Double
+        switch operation {
+        case .add: baseDifficulty = 2.0
+        case .subtract: baseDifficulty = 2.5
+        case .multiply: baseDifficulty = 4.0
+        case .divide: baseDifficulty = 3.5
+        }
+        let operandFactor = Double(max(abs(operand1), abs(operand2))) / 10.0
+        return baseDifficulty + operandFactor
+    }
+}
+
+extension MathProblem {
     var wrongAnswerChoices: [Int] {
         let answer = correctAnswer
         var choices: Set<Int> = []

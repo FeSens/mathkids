@@ -31,6 +31,11 @@ final class HomeViewModel {
         }
     }
 
+    func selectAllOperations() {
+        selectedOperations = Set(Operation.allCases)
+        UserDefaults.standard.set(selectedOperations.map(\.rawValue), forKey: "selectedOperations")
+    }
+
     func toggleOperation(_ op: Operation) {
         if selectedOperations.contains(op) && selectedOperations.count > 1 {
             selectedOperations.remove(op)

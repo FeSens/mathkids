@@ -151,4 +151,21 @@ struct LevelSystemTests {
     func maxLevelHasEmoji() {
         #expect(!LevelSystem.levelEmoji(for: 99999).isEmpty)
     }
+
+    // MARK: - XP Percentage (logic-282)
+
+    @Test("0 XP shows 0%")
+    func xpPercentageAt0() {
+        #expect(LevelSystem.xpPercentageText(for: 0) == "0%")
+    }
+
+    @Test("50 XP shows 50%")
+    func xpPercentageAt50() {
+        #expect(LevelSystem.xpPercentageText(for: 50) == "50%")
+    }
+
+    @Test("Max level shows 100%")
+    func xpPercentageAtMax() {
+        #expect(LevelSystem.xpPercentageText(for: 99999) == "100%")
+    }
 }

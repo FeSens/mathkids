@@ -164,6 +164,11 @@ extension PlayerStats {
         }
     }
 
+    var averageSessionSeconds: Int {
+        guard gamesPlayed > 0 else { return 0 }
+        return totalTimePlayedSeconds / gamesPlayed
+    }
+
     func recordPerfectGameIfQualified(accuracy: Double) {
         guard accuracy >= 100 else { return }
         perfectGameCount += 1

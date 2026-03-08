@@ -101,6 +101,20 @@ struct HomeViewModelTests {
         let vm = HomeViewModel(statsService: statsService)
         #expect(!vm.greetingMessage.isEmpty)
     }
+
+    // MARK: - Quick Play (logic-283)
+
+    @Test("Quick play selects all 4 operations")
+    @MainActor
+    func quickPlaySelectsAll() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.selectedOperations = [.add] // start with just one
+        vm.selectAllOperations()
+        #expect(vm.selectedOperations.count == 4)
+        #expect(vm.selectedOperations == Set(Operation.allCases))
+    }
 }
 
 import SwiftData

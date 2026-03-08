@@ -257,4 +257,19 @@ struct MathProblemTests {
     func divideRank() {
         #expect(Operation.divide.difficultyRank == 4)
     }
+
+    // MARK: - Estimated Difficulty Time (logic-279)
+
+    @Test("Easy addition takes less estimated time")
+    func easyAdditionTime() {
+        let easy = MathProblem(operand1: 2, operand2: 3, operation: .add)
+        let hard = MathProblem(operand1: 15, operand2: 8, operation: .multiply)
+        #expect(easy.estimatedSeconds < hard.estimatedSeconds)
+    }
+
+    @Test("All estimates are positive")
+    func allEstimatesPositive() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .subtract)
+        #expect(problem.estimatedSeconds > 0)
+    }
 }

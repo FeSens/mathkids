@@ -73,6 +73,12 @@ enum LevelSystem {
         return levelEmojis[lvl - 1]
     }
 
+    static func xpPercentageText(for xp: Int) -> String {
+        let progress = progressToNextLevel(for: xp)
+        let pct = Int(progress * 100)
+        return "\(pct)%"
+    }
+
     static let baseXPPerAnswer = 10
 
     static func streakBonusXP(streak: Int) -> Int {
