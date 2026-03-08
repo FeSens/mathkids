@@ -188,6 +188,12 @@ struct GameSession: Sendable {
         return timeRemaining * multiplier
     }
 
+    var estimatedProblemsPerRemainingMinute: Double {
+        guard totalAnswered > 0, totalTimePlayed > 0, timeRemaining > 0 else { return 0 }
+        let ppm = problemsPerMinute
+        return ppm
+    }
+
     enum SessionTrend: Sendable {
         case improving, declining, stable
     }

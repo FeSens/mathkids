@@ -55,6 +55,17 @@ final class HomeViewModel {
         return "\(hours)h \(minutes)m"
     }
 
+    var nextMilestoneText: String {
+        let xpNeeded = LevelSystem.xpNeededForNextLevel(currentXP: totalXP)
+        if totalSolved == 0 {
+            return "Solve your first problem!"
+        }
+        if xpNeeded > 0 && xpNeeded <= 50 {
+            return "\(xpNeeded) XP to level \(currentLevel + 1)!"
+        }
+        return "\(xpNeeded) XP to next level"
+    }
+
     var dailyChallengeStatusText: String {
         dailyChallengeCompleted ? "Completed for today!" : "Ready to play!"
     }

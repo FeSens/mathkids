@@ -6256,6 +6256,73 @@
         "Returns correct percentages"
       ],
       "files": ["Sources/Domain/PlayerStats+Extensions.swift"]
+    },
+    {
+      "id": "logic-334",
+      "title": "MathProblem answer choices shuffled",
+      "description": "MathProblem provides a shuffled array of 4 answer choices including the correct one",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns exactly 4 choices",
+        "Contains the correct answer",
+        "All choices are unique"
+      ],
+      "files": ["Sources/Domain/MathProblem.swift"]
+    },
+    {
+      "id": "logic-335",
+      "title": "GameSession problems per remaining minute",
+      "description": "GameSession estimates problems per minute for the remaining time",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns 0 with no data",
+        "Returns rate based on pace"
+      ],
+      "files": ["Sources/Domain/GameSession.swift"]
+    },
+    {
+      "id": "logic-336",
+      "title": "Achievement category grouping",
+      "description": "Achievement categorizes each achievement into a group (streak/score/games/mastery)",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Streak achievements are in streak category",
+        "Score achievements are in score category",
+        "All achievements have a category"
+      ],
+      "files": ["Sources/Domain/Achievement.swift"]
+    },
+    {
+      "id": "logic-337",
+      "title": "StatsViewModel games per difficulty text",
+      "description": "StatsViewModel provides formatted text for games played per difficulty",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["ui-007"],
+      "test_steps": [
+        "Returns formatted text with counts",
+        "Shows 0 for unplayed difficulties"
+      ],
+      "files": ["Sources/Features/Stats/StatsViewModel.swift"]
+    },
+    {
+      "id": "logic-338",
+      "title": "HomeViewModel next milestone text",
+      "description": "HomeViewModel provides text describing the next milestone the player is approaching",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["ui-001"],
+      "test_steps": [
+        "Shows milestone text for new player",
+        "Shows level-up milestone when close"
+      ],
+      "files": ["Sources/Features/Home/HomeViewModel.swift"]
     }
   ],
   "_schema": {

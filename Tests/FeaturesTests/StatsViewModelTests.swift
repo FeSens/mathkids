@@ -233,4 +233,25 @@ struct StatsViewModelTests {
         vm.operationAccuracies = ["+": 90, "-": 70, "x": 50]
         #expect(vm.strongestOperation == "+")
     }
+
+    // MARK: - Games Per Difficulty Text (logic-337)
+
+    @Test("Returns formatted text with counts")
+    func gamesPerDifficultyText() {
+        let vm = makeVM()
+        vm.easyGames = 5
+        vm.mediumGames = 3
+        vm.hardGames = 2
+        let text = vm.gamesPerDifficultyText
+        #expect(text.contains("5"))
+        #expect(text.contains("3"))
+        #expect(text.contains("2"))
+    }
+
+    @Test("Shows 0 for unplayed difficulties")
+    func gamesPerDifficultyZero() {
+        let vm = makeVM()
+        let text = vm.gamesPerDifficultyText
+        #expect(text.contains("0"))
+    }
 }

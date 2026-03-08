@@ -167,4 +167,21 @@ struct GameSessionBatch46Tests {
         session.recordAnswer(correct: false)
         #expect(session.sessionAccuracyTrend == .declining)
     }
+
+    // MARK: - Problems Per Remaining Minute (logic-335)
+
+    @Test("Returns 0 with no data")
+    func ppmRemainingZero() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.estimatedProblemsPerRemainingMinute == 0)
+    }
+
+    @Test("Returns rate based on pace")
+    func ppmRemainingPositive() {
+        var session = GameSession(difficulty: .easy) // 60s
+        for _ in 0..<10 { session.tick() } // 10s played, 50 remaining
+        for _ in 0..<5 { session.recordAnswer(correct: true) } // 0.5 per second
+        let rate = session.estimatedProblemsPerRemainingMinute
+        #expect(rate > 0)
+    }
 }

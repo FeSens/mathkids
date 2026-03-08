@@ -1,12 +1,21 @@
 import Foundation
 
 struct Achievement: Identifiable {
+    enum Category: Sendable { case streak, score, games, mastery }
+
     let id: String
     let title: String
     let description: String
     let emoji: String
     let requirement: @Sendable (PlayerStats) -> Bool
     let progress: (@Sendable (PlayerStats) -> (current: Int, target: Int))?
+
+    var category: Category {
+        if id.contains("streak") { return .streak }
+        if id.contains("score") || id == "accuracy_90" { return .score }
+        if id.contains("mastery") { return .mastery }
+        return .games
+    }
 
     static let all: [Achievement] = [
         Achievement(

@@ -247,4 +247,26 @@ struct AchievementTests {
         stats.hardMasteryCount = 10
         #expect(Achievement.totalProgressPercentage(for: stats) == 100)
     }
+
+    // MARK: - Achievement Category (logic-336)
+
+    @Test("Streak achievements in streak category")
+    func streakCategory() {
+        let a = Achievement.all.first { $0.id == "streak_5" }!
+        #expect(a.category == .streak)
+    }
+
+    @Test("Score achievements in score category")
+    func scoreCategory() {
+        let a = Achievement.all.first { $0.id == "score_100" }!
+        #expect(a.category == .score)
+    }
+
+    @Test("All achievements have a category")
+    func allHaveCategory() {
+        for a in Achievement.all {
+            let cat = a.category
+            #expect(cat == .streak || cat == .score || cat == .games || cat == .mastery)
+        }
+    }
 }

@@ -209,4 +209,24 @@ struct MathProblemExtendedTests {
         let problem = MathProblem(operand1: 3, operand2: 2, operation: .multiply)
         #expect(problem.requiresCarryOrBorrow == false)
     }
+
+    // MARK: - Answer Choices (logic-334)
+
+    @Test("Returns exactly 4 choices")
+    func answerChoicesFour() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .add)
+        #expect(problem.answerChoices.count == 4)
+    }
+
+    @Test("Contains the correct answer")
+    func answerChoicesContainsCorrect() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .add)
+        #expect(problem.answerChoices.contains(problem.correctAnswer))
+    }
+
+    @Test("All choices are unique")
+    func answerChoicesUnique() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .add)
+        #expect(Set(problem.answerChoices).count == 4)
+    }
 }

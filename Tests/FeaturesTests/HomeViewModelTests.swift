@@ -172,6 +172,33 @@ struct HomeViewModelTests {
         vm.dailyChallengeCompleted = true
         #expect(vm.dailyChallengeStatusText.lowercased().contains("completed") || vm.dailyChallengeStatusText.lowercased().contains("done"))
     }
+
+    // MARK: - Next Milestone Text (logic-338)
+
+    @Test("Shows milestone text for new player")
+    @MainActor
+    func nextMilestoneNewPlayer() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.totalSolved = 0
+        vm.currentLevel = 1
+        vm.totalXP = 0
+        #expect(!vm.nextMilestoneText.isEmpty)
+    }
+
+    @Test("Shows level-up milestone when close")
+    @MainActor
+    func nextMilestoneLevelUp() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.totalSolved = 50
+        vm.currentLevel = 2
+        vm.totalXP = 80
+        let text = vm.nextMilestoneText
+        #expect(!text.isEmpty)
+    }
 }
 
 import SwiftData

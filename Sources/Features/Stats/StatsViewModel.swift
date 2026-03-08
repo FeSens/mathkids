@@ -74,6 +74,10 @@ final class StatsViewModel {
         gamesPlayed == 1 ? "1 game" : "\(gamesPlayed) games"
     }
 
+    var gamesPerDifficultyText: String {
+        "Easy: \(easyGames) | Medium: \(mediumGames) | Hard: \(hardGames)"
+    }
+
     var strongestOperation: String? {
         guard !operationAccuracies.isEmpty else { return nil }
         return operationAccuracies.max(by: { $0.value < $1.value })?.key

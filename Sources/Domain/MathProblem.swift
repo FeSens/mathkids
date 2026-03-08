@@ -215,6 +215,12 @@ enum AnswerMagnitude: Sendable {
 }
 
 extension MathProblem {
+    var answerChoices: [Int] {
+        var choices = wrongAnswerChoices
+        choices.append(correctAnswer)
+        return choices.shuffled()
+    }
+
     var requiresCarryOrBorrow: Bool {
         switch operation {
         case .add:
