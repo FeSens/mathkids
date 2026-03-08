@@ -256,6 +256,10 @@ extension MathProblem {
         }
     }
 
+    var isSimpleProblem: Bool {
+        isSingleDigitOperands && (operation == .add || operation == .subtract)
+    }
+
     var operandTotal: Int {
         abs(operand1) + abs(operand2)
     }

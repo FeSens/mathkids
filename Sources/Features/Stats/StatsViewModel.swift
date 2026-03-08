@@ -154,6 +154,10 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var totalWrongCount: Int {
+        totalSolved - totalCorrect
+    }
+
     var averageAccuracyRounded: Int {
         Int(accuracy.rounded())
     }

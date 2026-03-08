@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var showDailyChallengeReset: Bool {
+        dailyChallengeCompleted
+    }
+
     var hasCompletedDailyChallenge: Bool {
         dailyChallengeCompleted
     }

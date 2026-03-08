@@ -10765,6 +10765,86 @@
         "mastery returns Mastery"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-599",
+      "name": "HomeViewModel.showDailyChallengeReset",
+      "description": "Returns true when challenge is completed and reset time available",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Set dailyChallengeCompleted true",
+        "Verify shows reset"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-600",
+      "name": "StatsViewModel.totalWrongCount",
+      "description": "Returns totalSolved minus totalCorrect",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set totalSolved=50 totalCorrect=35",
+        "Verify returns 15"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-601",
+      "name": "ResultsViewModel.wasFirstGame",
+      "description": "Returns true when previousBestScore is 0",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create with previousBestScore 0",
+        "Verify wasFirstGame is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-602",
+      "name": "GameSession.streakText",
+      "description": "Returns current streak as formatted string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Build streak of 3",
+        "Verify returns 3 streak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-603",
+      "name": "MathProblem+Extras.isSimpleProblem",
+      "description": "Returns true when both operands are single digit and operation is add/subtract",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "3+5 is simple",
+        "12x8 is not simple"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

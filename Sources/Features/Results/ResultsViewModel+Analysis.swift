@@ -106,6 +106,10 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var wasFirstGame: Bool {
+        previousBestScore == 0
+    }
+
     var difficultyPointsPerCorrect: Int {
         session.difficulty.pointsPerCorrect
     }
