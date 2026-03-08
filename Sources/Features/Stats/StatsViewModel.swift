@@ -25,6 +25,14 @@ final class StatsViewModel {
     var totalTimePlayedMinutes: Int = 0
     var totalXP: Int = 0
 
+    // Per-difficulty accuracy and best scores
+    var bestAccuracyEasy: Double = 0
+    var bestAccuracyMedium: Double = 0
+    var bestAccuracyHard: Double = 0
+    var bestScoreEasy: Int = 0
+    var bestScoreMedium: Int = 0
+    var bestScoreHard: Int = 0
+
     // Per-operation best streaks
     var bestStreakAdd: Int = 0
     var bestStreakSubtract: Int = 0
@@ -284,7 +292,9 @@ final class StatsViewModel {
             if acc > 0 { operationAccuracies[op.rawValue] = acc }
         }
 
-        // Per-operation streaks and perfect games
+        // Per-difficulty and per-operation data
+        loadDifficultyAccuracy(from: stats)
+        loadBestScores(from: stats)
         loadBestStreaks(from: stats)
         loadPerfectGameCount(from: stats)
 
@@ -297,6 +307,18 @@ final class StatsViewModel {
         eloHistorySubtract = stats.eloHistorySubtract
         eloHistoryMultiply = stats.eloHistoryMultiply
         eloHistoryDivide = stats.eloHistoryDivide
+    }
+
+    func loadDifficultyAccuracy(from stats: PlayerStats) {
+        bestAccuracyEasy = stats.bestAccuracyEasy
+        bestAccuracyMedium = stats.bestAccuracyMedium
+        bestAccuracyHard = stats.bestAccuracyHard
+    }
+
+    func loadBestScores(from stats: PlayerStats) {
+        bestScoreEasy = stats.bestScoreEasy
+        bestScoreMedium = stats.bestScoreMedium
+        bestScoreHard = stats.bestScoreHard
     }
 
     func loadBestStreaks(from stats: PlayerStats) {

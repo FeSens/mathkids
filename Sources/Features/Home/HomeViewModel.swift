@@ -20,6 +20,22 @@ final class HomeViewModel {
     var weakestEloOperation: Operation? = nil
     var weakestEloRating: Double = 1000
     var weakestEloSkillLevel: String = ""
+    var recentAccuracies: [Double] = []
+
+    enum AccuracyTrend { case improving, declining, stable }
+
+    var accuracyTrend: AccuracyTrend {
+        guard recentAccuracies.count >= 4 else { return .stable }
+        let half = recentAccuracies.count / 2
+        let firstHalf = Array(recentAccuracies.prefix(half))
+        let secondHalf = Array(recentAccuracies.suffix(half))
+        let firstAvg = firstHalf.reduce(0, +) / Double(firstHalf.count)
+        let secondAvg = secondHalf.reduce(0, +) / Double(secondHalf.count)
+        let diff = secondAvg - firstAvg
+        if diff > 5 { return .improving }
+        if diff < -5 { return .declining }
+        return .stable
+    }
 
     private let statsService: StatsService
 
@@ -260,6 +276,9 @@ final class HomeViewModel {
         } else {
             weakestEloOperation = nil
         }
+
+        // Load recent accuracies for trend
+        recentAccuracies = stats.recentAccuracies
 
         // Compute recommended difficulty
         if stats.accuracy >= 90 && stats.gamesPlayed >= 5 {

@@ -34,6 +34,7 @@ final class GameViewModel {
     var showingHint: Bool = false
     var currentHintStep: Int = 0
     var hintSteps: [String] = []
+    private(set) var hintsUsed: Int = 0
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10
@@ -264,6 +265,7 @@ final class GameViewModel {
             hintSteps = MentalMathTips.tips(for: engine.currentProblem)
             currentHintStep = 0
             showingHint = true
+            hintsUsed += 1
         } else if currentHintStep < hintSteps.count - 1 {
             currentHintStep += 1
         }

@@ -42753,6 +42753,96 @@
       ],
       "passes": true
     }
+    },
+    {
+      "id": "improve-015",
+      "title": "Per-difficulty accuracy display in stats",
+      "description": "Show accuracy percentage for each difficulty level (Easy/Medium/Hard) in the stats view. Data exists in PlayerStats but is not surfaced.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "StatsViewModel exposes per-difficulty accuracy values",
+        "Zero games for a difficulty shows no accuracy",
+        "All three difficulties shown when data exists"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-016",
+      "title": "Best score per difficulty in stats",
+      "description": "Display best scores for Easy, Medium, and Hard separately in the stats view alongside game counts.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "StatsViewModel exposes bestScoreEasy, bestScoreMedium, bestScoreHard",
+        "Default values are 0",
+        "Values loaded from PlayerStats"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-017",
+      "title": "Hint usage tracking in game results",
+      "description": "Track how many hints were used during a game and display the count on the results screen.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "GameViewModel tracks hintsUsed count",
+        "Requesting a hint increments the counter",
+        "Hint count is zero initially"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-018",
+      "title": "Problems per minute stat on results screen",
+      "description": "Calculate and display problems solved per minute on the results screen as a prominent metric.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "ResultsViewModel computes problemsPerMinute correctly",
+        "Zero time returns 0",
+        "Value formatted to one decimal place"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-019",
+      "title": "Accuracy trend mini-chart on home screen",
+      "description": "Show a small accuracy trend indicator on the home screen using the last 5 game accuracies to show if the player is improving.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "HomeViewModel exposes recentAccuracies from PlayerStats",
+        "Empty accuracies list handled gracefully",
+        "Trend computed from recent accuracies"
+      ],
+      "passes": true
+    }
   ],
   "_schema": {
     "feature": {
