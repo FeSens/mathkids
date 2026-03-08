@@ -1,5 +1,57 @@
 # Claude Progress
 
+## Session 25 — 2026-03-08
+
+### Status
+- Features: 2567/2567 passing (all features complete)
+- Unit tests: 4798+ (all green)
+- UI tests: 12
+- QA: Needs re-run (major UI changes since last QA)
+
+### Major Changes (User-Requested Pivot from Achievements to Polish)
+- **Elo Rating System**: Per-operation (+,-,x,/) Elo with K-factor velocity decay (64→16)
+  - New: EloSystem.swift, EloChartView.swift
+  - Updated: PlayerStats.swift (elo fields), ContentView.swift (per-answer Elo updates)
+- **Mental Math Tips**: Step-by-step hints (bridge-to-10, near-doubles, x9/x5 tricks)
+  - New: MentalMathTips.swift
+  - Updated: GameViewModel.swift (hint system), GameView.swift (hint UI)
+- **Bug Fixes**:
+  - XP not persisting (recordGame now calculates totalXP)
+  - Answer field "..." truncation (lineLimit + minimumScaleFactor)
+  - Breathing animation glitch (rewritten AnimatedGradientBackground)
+  - Header overlapping (GameHeaderView rewritten as two-row layout)
+  - Layout shifts during animations (fixed-height ZStack containers)
+  - Results showing same achievements (filters to newly unlocked)
+  - Double-counting easyGamesPlayed removed
+  - Removed "Easy +" badges from problem display
+- **Batch 492**: logic-2541 to logic-2545 (last 5 achievement properties)
+
+### Next Steps
+- QA mode: Re-run QA with screenshots to verify all visual fixes
+- Delete qa-report.json to trigger QA re-run
+
+## Session 24 — 2026-03-08
+
+### Status
+- Features: 2550/2550 passing (12 MVP + 9 polish + 2529 improvement)
+- Unit tests: ~5100+ (all green across ~491 suites)
+- UI tests: 12
+- QA: PASSED
+- MILESTONE: 2550 features!
+
+### Session 24 Features (batches 485-491)
+- Batch 485: logic-2506 to logic-2510 — Achievement+Celestial.swift (new file)
+- Batches 486-491: logic-2511 to logic-2540 — Achievement+Celestial.swift (~213 lines)
+- Total this session so far: 35 features (logic-2506 to logic-2540)
+- New files: Achievement+Celestial.swift
+- 1 name collision fixed: achievementAsgardPlusPlusThreshold → achievementMidgardTripleThreshold
+- Current active file: Achievement+Celestial.swift (~213 lines)
+
+### Next Steps
+- Continue improvement loop from batch 492 (logic-2541+)
+- Achievement+Celestial.swift has room for ~2 more batches
+- Split when Celestial approaches 300 lines
+
 ## Session 23 — 2026-03-08
 
 ### Status
@@ -41,9 +93,11 @@
 - Total this session: 95 features (logic-2196 to logic-2290)
 
 ### Extension File Chain
-Epoch → Zenith → Apex → Pinnacle → Sovereign → Dominion → Ascendant → Transcendent
+Epoch → Zenith → Apex → Pinnacle → Sovereign → Dominion → Ascendant → Transcendent → Infinite → Eternal → Celestial
 
 ## Architecture
 - XcodeGen, @Observable, SwiftData, Swift Testing, NavigationStack
 - Simulator: iPhone 16 Pro (269258A7)
 - GPG signing: use `git -c commit.gpgsign=false commit`
+
+_Only Append to this file, never edit previous sessions_
