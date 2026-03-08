@@ -41967,6 +41967,86 @@
         "Games threshold <= 41000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2526",
+      "title": "achievementCardTintinaiteUltraStyle",
+      "description": "Tintinaite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns iron grey prismatic",
+        "Common achievement returns dull iron matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2527",
+      "title": "achievementRequiresAscendantPlus",
+      "description": "Check if achievement requires ascendant plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Streak or score returns true",
+        "Games returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2528",
+      "title": "achievementCardResolutionWritSealMaxPlusText",
+      "description": "Resolution writ seal max plus text by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery returns Resolution Writ Seal Max Plus of the Legendary",
+        "Games returns Resolution Writ Seal Max Plus of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2529",
+      "title": "achievementCardBerthieriteUltraStyle",
+      "description": "Berthierite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns steel black prismatic",
+        "Common achievement returns dark steel matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2530",
+      "title": "achievementYggdrasilTripleThreshold",
+      "description": "Yggdrasil triple threshold by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery threshold >= 210000000",
+        "Games threshold <= 43000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

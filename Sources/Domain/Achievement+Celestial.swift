@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 20500000
         }
     }
+
+    var achievementCardTintinaiteUltraStyle: String {
+        isRareAchievement ? "iron grey prismatic" : "dull iron matte"
+    }
+
+    var achievementRequiresAscendantPlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardResolutionWritSealMaxPlusText: String {
+        switch category {
+        case .mastery: return "Resolution Writ Seal Max Plus of the Legendary"
+        case .streak: return "Resolution Writ Seal Max Plus of the Eternal"
+        case .score: return "Resolution Writ Seal Max Plus of the Absolute"
+        case .games: return "Resolution Writ Seal Max Plus of the Pilgrim"
+        }
+    }
+
+    var achievementCardBerthieriteUltraStyle: String {
+        isRareAchievement ? "steel black prismatic" : "dark steel matte"
+    }
+
+    var achievementYggdrasilTripleThreshold: Int {
+        switch category {
+        case .mastery: return 210000000
+        case .streak: return 84000000
+        case .score: return 205000000
+        case .games: return 21000000
+        }
+    }
 }
