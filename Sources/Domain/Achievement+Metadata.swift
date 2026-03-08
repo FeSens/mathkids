@@ -123,4 +123,33 @@ extension Achievement {
     var achievementBadgeShape: String {
         isRareAchievement ? "hexagon" : "circle"
     }
+
+    var achievementHintText: String {
+        switch category {
+        case .streak: return "Keep your streak going!"
+        case .score: return "Aim for a higher score!"
+        case .games: return "Play more games to unlock!"
+        case .mastery: return "Practice to master this skill!"
+        }
+    }
+
+    var achievementPriorityScore: Int {
+        var score = pointValue
+        if achievementIsPremium { score += 100 }
+        if isRareAchievement { score += 50 }
+        score += achievementChallengeRating * 2
+        return score
+    }
+
+    var achievementIsExpertLevel: Bool {
+        achievementExperienceTier == "expert"
+    }
+
+    var achievementCardMargin: Int {
+        achievementDisplaySize == "large" ? 16 : 4
+    }
+
+    var achievementNotificationCategory: String {
+        "achievements"
+    }
 }

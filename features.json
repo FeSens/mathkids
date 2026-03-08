@@ -25280,6 +25280,82 @@
       "files": [
         "Sources/Domain/Achievement+Metadata.swift"
       ]
+    },
+    {
+      "id": "logic-1504",
+      "title": "Achievement Hint Text",
+      "description": "Add achievementHintText returning hint to help player progress",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementHintText contains streak-related hint"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1505",
+      "title": "Achievement Priority Score",
+      "description": "Add achievementPriorityScore returning combined priority for display ordering",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementPriorityScore is highest"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1506",
+      "title": "Achievement Is Expert Level",
+      "description": "Add achievementIsExpertLevel returning true for expert experience tier",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementIsExpertLevel is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1507",
+      "title": "Achievement Card Margin",
+      "description": "Add achievementCardMargin returning margin size based on display size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementCardMargin is 16",
+        "Verify small is 4"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1508",
+      "title": "Achievement Notification Category",
+      "description": "Add achievementNotificationCategory returning notification group category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementNotificationCategory is achievements"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
     }
   ],
   "_schema": {
