@@ -29869,6 +29869,86 @@
         "Verify cardRewardIcon by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1809",
+      "title": "Achievement Card Shine Effect",
+      "description": "Returns whether card has shine effect",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardShineEffect by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1810",
+      "title": "Achievement Score Threshold",
+      "description": "Returns score threshold to earn",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify scoreThreshold by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1811",
+      "title": "Achievement Card Emoji Rotation",
+      "description": "Returns emoji rotation angle",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardEmojiRotation by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1812",
+      "title": "Achievement Is Consistency Based",
+      "description": "Returns whether requires consistency",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isConsistencyBased for streak vs score"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1813",
+      "title": "Achievement Card Points Label",
+      "description": "Returns formatted points label",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardPointsLabel contains point value"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

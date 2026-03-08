@@ -200,4 +200,29 @@ extension Achievement {
         case .games: return "star"
         }
     }
+
+    var achievementCardShineEffect: Bool {
+        isRareAchievement
+    }
+
+    var achievementScoreThreshold: Int {
+        switch category {
+        case .mastery: return 0
+        case .streak: return 0
+        case .score: return 80
+        case .games: return 0
+        }
+    }
+
+    var achievementCardEmojiRotation: Double {
+        isRareAchievement ? 15 : 0
+    }
+
+    var achievementIsConsistencyBased: Bool {
+        category == .streak
+    }
+
+    var achievementCardPointsLabel: String {
+        "\(pointValue) Points"
+    }
 }
