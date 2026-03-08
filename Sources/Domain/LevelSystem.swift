@@ -127,6 +127,20 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func levelProgressBar(for xp: Int) -> String {
+        let progress: Double
+        if isMaxLevel(for: xp) {
+            progress = 1.0
+        } else {
+            progress = progressToNextLevel(for: xp)
+        }
+        let pct = Int(progress * 100)
+        let filled = Int(progress * 10)
+        let empty = 10 - filled
+        let bar = String(repeating: "█", count: filled) + String(repeating: "░", count: empty)
+        return "[\(bar)] \(pct)%"
+    }
+
     static func isLevelBoundary(xp: Int) -> Bool {
         thresholds.contains(xp)
     }

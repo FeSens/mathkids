@@ -84,6 +84,18 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         case .divide: "divided by"
         }
     }
+
+    static var allPairs: [(Operation, Operation)] {
+        var pairs: [(Operation, Operation)] = []
+        let ops = allCases
+        for i in 0..<ops.count {
+            for j in (i + 1)..<ops.count {
+                pairs.append((ops[i], ops[j]))
+            }
+        }
+        return pairs
+    }
+
     static func pairDescription(_ a: Operation, _ b: Operation) -> String {
         if a == b { return a.displayName }
         return "\(a.displayName) & \(b.displayName)"
@@ -183,118 +195,5 @@ extension MathProblem {
         }
         let operandFactor = Double(max(abs(operand1), abs(operand2))) / 10.0
         return baseDifficulty + operandFactor
-    }
-}
-
-extension MathProblem {
-    var wrongAnswerChoices: [Int] {
-        let answer = correctAnswer
-        var choices: Set<Int> = []
-        // Generate plausible wrong answers near the correct one
-        let offsets = [-2, -1, 1, 2, 3, -3, 5, -5]
-        for offset in offsets {
-            let wrong = answer + offset
-            if wrong != answer && wrong >= 0 {
-                choices.insert(wrong)
-            }
-            if choices.count >= 3 { break }
-        }
-        while choices.count < 3 {
-            choices.insert(answer + choices.count + 10)
-        }
-        return Array(choices.prefix(3))
-    }
-}
-
-extension MathProblem {
-    var answerDigitCount: Int {
-        let answer = abs(correctAnswer)
-        if answer == 0 { return 1 }
-        return String(answer).count
-    }
-}
-
-enum AnswerMagnitude: Sendable {
-    case small, medium, large
-}
-
-extension MathProblem {
-    var isSingleDigitResult: Bool {
-        correctAnswer >= 0 && correctAnswer <= 9
-    }
-
-    var answerChoices: [Int] {
-        var choices = wrongAnswerChoices
-        choices.append(correctAnswer)
-        return choices.shuffled()
-    }
-
-    var requiresCarryOrBorrow: Bool {
-        switch operation {
-        case .add:
-            let onesSum = (operand1 % 10) + (operand2 % 10)
-            return onesSum >= 10
-        case .subtract:
-            let onesDigit1 = operand1 % 10
-            let onesDigit2 = operand2 % 10
-            return onesDigit1 < onesDigit2
-        case .multiply, .divide:
-            return false
-        }
-    }
-
-    enum NumberLinePosition: Sendable {
-        case negative, zero, small, medium, large
-    }
-
-    var numberLinePosition: NumberLinePosition {
-        let answer = correctAnswer
-        if answer < 0 { return .negative }
-        if answer == 0 { return .zero }
-        if answer < 20 { return .small }
-        if answer < 100 { return .medium }
-        return .large
-    }
-
-    var difficultyScore: Int {
-        let opScore = operation.difficultyRank // 1-4
-        let sizeScore = (operand1 + operand2) / 10 // rough operand size
-        let raw = opScore + sizeScore
-        return min(max(raw, 1), 10)
-    }
-
-    var operandSum: Int {
-        operand1 + operand2
-    }
-
-    var operandProduct: Int {
-        operand1 * operand2
-    }
-
-    var isEasyProblem: Bool {
-        abs(operand1) <= 5 && abs(operand2) <= 5
-    }
-
-    var answerMagnitude: AnswerMagnitude {
-        let answer = abs(correctAnswer)
-        if answer < 20 { return .small }
-        if answer < 100 { return .medium }
-        return .large
-    }
-}
-
-extension MathProblem {
-    var stepByStepHint: String {
-        switch operation {
-        case .add:
-            return "Start at \(operand1), count up \(operand2)"
-        case .subtract:
-            return "Start at \(operand1), count down \(operand2)"
-        case .multiply:
-            let terms = Array(repeating: "\(operand2)", count: operand1).joined(separator: " + ")
-            return "\(operand1) × \(operand2) = \(terms)"
-        case .divide:
-            return "How many groups of \(operand2) fit in \(operand1)?"
-        }
     }
 }

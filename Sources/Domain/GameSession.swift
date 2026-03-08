@@ -85,29 +85,7 @@ struct GameSession: Sendable {
         }
     }
 
-    var scorePerCorrect: Double {
-        guard totalCorrect > 0 else { return 0 }
-        return Double(score) / Double(totalCorrect)
-    }
-
-    var totalWrong: Int {
-        totalAnswered - totalCorrect
-    }
-
-    var baseScore: Int {
-        totalCorrect * difficulty.pointsPerCorrect
-    }
-
-    var streakMilestoneReached: Int? {
-        guard currentStreak > 0 && currentStreak % 5 == 0 else { return nil }
-        return currentStreak
-    }
-
-    var problemsPerMinute: Double {
-        let minutes = Double(totalTimePlayed) / 60.0
-        guard minutes > 0 else { return 0 }
-        return Double(totalAnswered) / minutes
-    }
+    // MARK: - Properties requiring answerHistory access
 
     var firstHalfAccuracy: Double {
         guard !answerHistory.isEmpty else { return 0 }
@@ -127,27 +105,9 @@ struct GameSession: Sendable {
         return Double(correct) / Double(secondHalf.count) * 100
     }
 
-    var streakBonusPoints: Int {
-        totalBonusPoints
-    }
-
-    var correctPercentage: Double {
-        guard totalAnswered > 0 else { return 0 }
-        return Double(totalCorrect) / Double(totalAnswered) * 100
-    }
-
-    var wrongPercentage: Double {
-        guard totalAnswered > 0 else { return 0 }
-        return Double(totalWrong) / Double(totalAnswered) * 100
-    }
-
     var improvementRate: Double {
         guard totalAnswered >= 4 else { return 0 }
         return secondHalfAccuracy - firstHalfAccuracy
-    }
-
-    var finalScoreWithTimeBonus: Int {
-        score + timeBonus
     }
 
     var isComeback: Bool {
@@ -155,49 +115,11 @@ struct GameSession: Sendable {
         return secondHalfAccuracy - firstHalfAccuracy >= 20
     }
 
-    var penaltyPoints: Int {
-        totalWrong * difficulty.penaltyPerWrong
-    }
-
-    enum AnswerSpeed: Sendable {
-        case fast, normal, slow
-    }
-
-    var answerSpeedClass: AnswerSpeed? {
-        guard totalAnswered > 0, totalTimePlayed > 0 else { return nil }
-        let avgTime = Double(totalTimePlayed) / Double(totalAnswered)
-        if avgTime < 3 { return .fast }
-        if avgTime <= 6 { return .normal }
-        return .slow
-    }
-
     var efficiencyScore: Double {
         guard totalAnswered > 0, totalTimePlayed > 0 else { return 0 }
         let accuracyFactor = accuracy / 100.0
         let speedFactor = min(Double(totalAnswered) / (Double(totalTimePlayed) / 60.0) / 20.0, 1.0)
         return min((accuracyFactor * 0.7 + speedFactor * 0.3) * 100, 100)
-    }
-
-    var timeBonus: Int {
-        let multiplier: Int
-        switch difficulty {
-        case .easy: multiplier = 1
-        case .medium: multiplier = 2
-        case .hard: multiplier = 3
-        }
-        return timeRemaining * multiplier
-    }
-
-    var projectedFinalScore: Int {
-        guard totalAnswered > 0, totalTimePlayed > 0, timeRemaining > 0 else { return score }
-        let scorePerSecond = Double(score) / Double(totalTimePlayed)
-        return score + Int(scorePerSecond * Double(timeRemaining))
-    }
-
-    var estimatedProblemsPerRemainingMinute: Double {
-        guard totalAnswered > 0, totalTimePlayed > 0, timeRemaining > 0 else { return 0 }
-        let ppm = problemsPerMinute
-        return ppm
     }
 
     enum SessionTrend: Sendable {
@@ -212,30 +134,12 @@ struct GameSession: Sendable {
         return .stable
     }
 
-    var netScore: Int {
-        max(score - penaltyPoints, 0)
-    }
-
     var estimatedQuestionsRemaining: Int? {
         guard !isFinished else { return 0 }
         guard totalAnswered > 0, totalTimePlayed > 0 else { return nil }
         let avgTimePerQuestion = Double(totalTimePlayed) / Double(totalAnswered)
         guard avgTimePerQuestion > 0 else { return nil }
         return Int(Double(timeRemaining) / avgTimePerQuestion)
-    }
-
-    var scoreBreakdownText: String {
-        guard score > 0 else { return "" }
-        if totalBonusPoints > 0 {
-            return "Base: \(baseScore) | Bonus: \(totalBonusPoints)"
-        }
-        return "Base: \(baseScore)"
-    }
-
-    var timeUsagePercentage: Int {
-        let total = difficulty.timeLimitSeconds
-        guard total > 0 else { return 0 }
-        return totalTimePlayed * 100 / total
     }
 
     var answerConsistency: Double {
@@ -245,16 +149,16 @@ struct GameSession: Sendable {
         return ratio * 100
     }
 
-    var streakAtEnd: Int {
-        currentStreak
-    }
-
-    var longestCorrectRun: Int {
-        bestStreak
-    }
-
     var wrongAnswerPositions: [Int] {
         answerHistory.enumerated().compactMap { $0.element ? nil : $0.offset }
+    }
+
+    func lastNAccuracy(n: Int) -> Double {
+        guard !answerHistory.isEmpty else { return 0 }
+        let count = min(n, answerHistory.count)
+        let lastN = Array(answerHistory.suffix(count))
+        let correct = lastN.filter { $0 }.count
+        return Double(correct) / Double(lastN.count) * 100
     }
 
     func accuracyForRange(start: Int, end: Int) -> Double {
@@ -262,22 +166,6 @@ struct GameSession: Sendable {
         let slice = Array(answerHistory[start..<end])
         let correct = slice.filter { $0 }.count
         return Double(correct) / Double(slice.count) * 100
-    }
-
-    var scoreEfficiency: Double {
-        guard totalTimePlayed > 0 else { return 0 }
-        return Double(score) / Double(totalTimePlayed)
-    }
-
-    var correctAnswersPerMinute: Double {
-        let minutes = Double(totalTimePlayed) / 60.0
-        guard minutes > 0 else { return 0 }
-        return Double(totalCorrect) / minutes
-    }
-
-    var averageTimePerAnswer: Double {
-        guard totalAnswered > 0 else { return 0 }
-        return Double(totalTimePlayed) / Double(totalAnswered)
     }
 
     mutating func endGame() {

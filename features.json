@@ -6905,6 +6905,91 @@
         "Verify shows 0 XP when no correct answers"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-364",
+      "title": "GameSession lastNAccuracy computes accuracy for last N answers",
+      "description": "GameSession should expose lastNAccuracy(n:) that returns accuracy percentage for the last N answers only",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session with 10 answers, last 5 are all correct",
+        "Verify lastNAccuracy(n: 5) returns 100",
+        "Verify returns 0 when no answers"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-365",
+      "title": "MathProblem isDoubleFact for addition doubles like 5+5",
+      "description": "MathProblem should expose isDoubleFact returning true when both operands are equal and operation is add",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify 5+5 is a double fact",
+        "Verify 5+3 is not a double fact",
+        "Verify 5x5 is not a double fact (must be addition)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-366",
+      "title": "LevelSystem levelProgress as descriptive text",
+      "description": "LevelSystem should have levelProgressBar(for:) returning a text-based progress bar like [\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591] 40%",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify progress bar contains filled blocks proportional to progress",
+        "Verify progress bar for max level shows full bar",
+        "Verify percentage appears in the output"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-367",
+      "title": "Operation allPairs returns all unique operation pairs",
+      "description": "Operation should have a static allPairs property returning all unique 2-element combinations of operations",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify allPairs has 6 elements (C(4,2))",
+        "Verify each pair contains two different operations",
+        "Verify no duplicate pairs"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-368",
+      "title": "GameSession currentPace indicates if player is ahead or behind",
+      "description": "GameSession should expose currentPace returning .ahead, .behind, or .onPace based on expected vs actual score",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session with high accuracy and verify .ahead",
+        "Create session with low accuracy and verify .behind",
+        "Verify new session returns .onPace"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
