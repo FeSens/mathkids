@@ -106,6 +106,14 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var gameDifficultyName: String {
+        session.difficulty.displayName
+    }
+
+    var bestStreakLabel: String {
+        "Best streak: \(bestStreak)"
+    }
+
     var baseScoreText: String {
         "\(session.score) pts"
     }

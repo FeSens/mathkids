@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var selectedDifficultyDescription: String {
+        selectedDifficulty.challengeDescription
+    }
+
     var dailyChallengeBestTimeText: String {
         "\(dailyChallengeBestTime)s"
     }

@@ -154,6 +154,13 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var bestStreakDescription: String {
+        if bestStreak >= 5 {
+            return "🔥 \(bestStreak) streak"
+        }
+        return "\(bestStreak) streak"
+    }
+
     var streakStatusEmoji: String {
         dailyStreak > 0 ? "🔥" : "❄️"
     }

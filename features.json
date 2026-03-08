@@ -11005,6 +11005,86 @@
         "Multiply returns multiply emoji"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-614",
+      "name": "HomeViewModel.selectedDifficultyDescription",
+      "description": "Returns full description of selected difficulty",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select easy",
+        "Verify returns easy challenge description"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-615",
+      "name": "StatsViewModel.bestStreakDescription",
+      "description": "Returns best streak with fire emoji if significant",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set bestStreak to 10",
+        "Verify includes fire emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-616",
+      "name": "ResultsViewModel.gameDifficultyName",
+      "description": "Returns display name of session difficulty",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Easy session",
+        "Verify returns Easy"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-617",
+      "name": "GameSession.scoreDisplay",
+      "description": "Returns score as formatted display string with label",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Score some points",
+        "Verify display format"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-618",
+      "name": "ResultsViewModel.bestStreakLabel",
+      "description": "Returns best streak from session with label",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session with streak",
+        "Verify streak label"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
