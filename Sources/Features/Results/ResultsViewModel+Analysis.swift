@@ -72,6 +72,10 @@ extension ResultsViewModel {
         "\(Int(accuracy))% (\(gradeLabel))"
     }
 
+    var timeBonusText: String {
+        "+\(session.timeBonus) pts"
+    }
+
     var streakRewardText: String? {
         guard bestStreak >= 5 else { return nil }
         return "Amazing \(bestStreak) streak!"

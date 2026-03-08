@@ -7412,6 +7412,90 @@
         "Verify multiply returns \" x \""
       ],
       "passes": true
+    },
+    {
+      "id": "logic-394",
+      "title": "GameSession accuracyLabel text representation of accuracy",
+      "description": "GameSession should expose accuracyLabel returning accuracy as formatted text like \"85%\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 8/10 correct returns \"80%\"",
+        "Verify 0 answers returns \"0%\"",
+        "Verify 10/10 correct returns \"100%\""
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-395",
+      "title": "MathProblem isMakesTen for addition problems that sum to 10",
+      "description": "MathProblem should detect \"makes ten\" problems where add operation results in exactly 10",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3+7 makes ten",
+        "Verify 3+5 does not make ten",
+        "Verify 3x7 does not make ten (wrong op even if result close)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-396",
+      "title": "LevelSystem levelGap returns XP difference between consecutive levels",
+      "description": "LevelSystem should compute levelGap(forLevel:) returning the XP range for a specific level",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify level 1 gap is 100 (0 to 100)",
+        "Verify level 2 gap is 200 (100 to 300)",
+        "Verify max level returns 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-397",
+      "title": "ResultsViewModel timeBonusText formatted time bonus display",
+      "description": "ResultsViewModel should expose timeBonusText showing the time bonus points earned",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify shows bonus points when time remaining",
+        "Verify shows 0 when no time remaining"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-398",
+      "title": "DifficultyLevel isHardest and isEasiest boolean checks",
+      "description": "DifficultyLevel should expose isHardest and isEasiest computed properties",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy.isEasiest is true",
+        "Verify hard.isHardest is true",
+        "Verify medium is neither easiest nor hardest"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -127,6 +127,11 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func levelGap(forLevel level: Int) -> Int {
+        guard level >= 1, level < thresholds.count else { return 0 }
+        return thresholds[level] - thresholds[level - 1]
+    }
+
     static var allLevelInfo: [(level: Int, name: String, threshold: Int)] {
         (0..<thresholds.count).map { i in
             (level: i + 1, name: levelNames[i], threshold: thresholds[i])

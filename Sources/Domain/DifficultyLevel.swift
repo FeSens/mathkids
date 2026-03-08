@@ -126,6 +126,9 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operationCount) operations | 1-\(operandRange.upperBound) | \(timeLimitSeconds)s"
     }
 
+    var isEasiest: Bool { self == .easy }
+    var isHardest: Bool { self == .hard }
+
     var difficultyIndex: Int {
         switch self {
         case .easy: 0

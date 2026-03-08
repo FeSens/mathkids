@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var isMakesTen: Bool {
+        operation == .add && correctAnswer == 10
+    }
+
     var isTablesFact: Bool {
         operation == .multiply && abs(operand1) <= 12 && abs(operand2) <= 12
     }

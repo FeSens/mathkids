@@ -4,6 +4,10 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var accuracyLabel: String {
+        "\(Int(accuracy))%"
+    }
+
     var pointsPerMinute: Double {
         let minutes = Double(totalTimePlayed) / 60.0
         guard minutes > 0 else { return 0 }
