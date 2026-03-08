@@ -188,6 +188,12 @@ struct GameSession: Sendable {
         return timeRemaining * multiplier
     }
 
+    var timeUsagePercentage: Int {
+        let total = difficulty.timeLimitSeconds
+        guard total > 0 else { return 0 }
+        return totalTimePlayed * 100 / total
+    }
+
     var answerConsistency: Double {
         guard !answerHistory.isEmpty else { return 0 }
         let correctCount = answerHistory.filter { $0 }.count

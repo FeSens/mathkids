@@ -189,4 +189,25 @@ struct LevelSystemTests {
         let desc = LevelSystem.progressDescription(for: 300)
         #expect(desc.contains("Explorer"))
     }
+
+    // MARK: - XP Level Range (logic-311)
+
+    @Test("Level 1 starts at 0")
+    func level1StartsAt0() {
+        let range = LevelSystem.xpRange(forLevel: 1)
+        #expect(range.min == 0)
+    }
+
+    @Test("Level 2 starts at 100 ends at 299")
+    func level2Range() {
+        let range = LevelSystem.xpRange(forLevel: 2)
+        #expect(range.min == 100)
+        #expect(range.max == 299)
+    }
+
+    @Test("Max level has no upper bound")
+    func maxLevelRange() {
+        let range = LevelSystem.xpRange(forLevel: LevelSystem.thresholds.count)
+        #expect(range.max == nil)
+    }
 }

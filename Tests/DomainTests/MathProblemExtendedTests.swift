@@ -92,4 +92,46 @@ struct MathProblemExtendedTests {
         let inverse = problem.inverseProblem // 7-4=3
         #expect(inverse.correctAnswer == problem.operand1)
     }
+
+    // MARK: - Operation isCommutative (logic-305)
+
+    @Test("Add is commutative")
+    func addIsCommutative() {
+        #expect(Operation.add.isCommutative == true)
+    }
+
+    @Test("Multiply is commutative")
+    func multiplyIsCommutative() {
+        #expect(Operation.multiply.isCommutative == true)
+    }
+
+    @Test("Subtract is not commutative")
+    func subtractIsNotCommutative() {
+        #expect(Operation.subtract.isCommutative == false)
+    }
+
+    @Test("Divide is not commutative")
+    func divideIsNotCommutative() {
+        #expect(Operation.divide.isCommutative == false)
+    }
+
+    // MARK: - Difficulty Score (logic-309)
+
+    @Test("Simple addition has low score")
+    func simpleAdditionLowScore() {
+        let problem = MathProblem(operand1: 2, operand2: 3, operation: .add)
+        #expect(problem.difficultyScore <= 3)
+    }
+
+    @Test("Large multiplication has high score")
+    func largeMultiplicationHighScore() {
+        let problem = MathProblem(operand1: 45, operand2: 38, operation: .multiply)
+        #expect(problem.difficultyScore >= 7)
+    }
+
+    @Test("Score is between 1 and 10")
+    func scoreInRange() {
+        let problem = MathProblem(operand1: 10, operand2: 5, operation: .subtract)
+        #expect(problem.difficultyScore >= 1 && problem.difficultyScore <= 10)
+    }
 }

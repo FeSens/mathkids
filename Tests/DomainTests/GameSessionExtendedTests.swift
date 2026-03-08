@@ -269,4 +269,26 @@ struct GameSessionExtendedTests {
         let c = session.answerConsistency
         #expect(c > 0 && c < 100)
     }
+
+    // MARK: - Time Usage Percentage (logic-310)
+
+    @Test("Time usage 0 with no time played")
+    func timeUsageZero() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.timeUsagePercentage == 0)
+    }
+
+    @Test("Time usage correct after ticks")
+    func timeUsageAfterTicks() {
+        var session = GameSession(difficulty: .easy) // 60s total
+        for _ in 0..<30 { session.tick() }
+        #expect(session.timeUsagePercentage == 50)
+    }
+
+    @Test("Time usage 100 when time runs out")
+    func timeUsageFull() {
+        var session = GameSession(difficulty: .easy) // 60s
+        for _ in 0..<60 { session.tick() }
+        #expect(session.timeUsagePercentage == 100)
+    }
 }

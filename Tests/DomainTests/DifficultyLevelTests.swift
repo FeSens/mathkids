@@ -161,4 +161,38 @@ struct DifficultyLevelTests {
     func emojiDescriptionIncludesName() {
         #expect(DifficultyLevel.medium.emojiDescription.contains("Medium"))
     }
+
+    // MARK: - Total Operations Count (logic-306)
+
+    @Test("Easy has 2 operations")
+    func easyOperationCount() {
+        #expect(DifficultyLevel.easy.operationCount == 2)
+    }
+
+    @Test("Medium has 3 operations")
+    func mediumOperationCount() {
+        #expect(DifficultyLevel.medium.operationCount == 3)
+    }
+
+    @Test("Hard has 4 operations")
+    func hardOperationCount() {
+        #expect(DifficultyLevel.hard.operationCount == 4)
+    }
+
+    // MARK: - Summary Text (logic-313)
+
+    @Test("Summary includes time limit")
+    func summaryIncludesTime() {
+        #expect(DifficultyLevel.easy.summaryText.contains("60"))
+    }
+
+    @Test("Summary includes operation count")
+    func summaryIncludesOps() {
+        #expect(DifficultyLevel.easy.summaryText.contains("2"))
+    }
+
+    @Test("Summary includes operand range")
+    func summaryIncludesRange() {
+        #expect(DifficultyLevel.easy.summaryText.contains("10"))
+    }
 }

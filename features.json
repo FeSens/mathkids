@@ -5844,6 +5844,148 @@
       ],
       "files": ["Sources/Features/Home/HomeViewModel.swift"]
     }
+    ,
+    {
+      "id": "logic-304",
+      "title": "GameEngine slowest answer tracking",
+      "description": "GameEngine tracks the slowest answer time alongside the fastest",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["svc-001"],
+      "test_steps": [
+        "Slowest is nil initially",
+        "Slowest updates on first answer",
+        "Slowest keeps the maximum time"
+      ],
+      "files": ["Sources/Services/GameEngine.swift"]
+    },
+    {
+      "id": "logic-305",
+      "title": "Operation isCommutative property",
+      "description": "Operation indicates whether it is commutative (order doesn't matter)",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Add is commutative",
+        "Multiply is commutative",
+        "Subtract is not commutative",
+        "Divide is not commutative"
+      ],
+      "files": ["Sources/Domain/MathProblem.swift"]
+    },
+    {
+      "id": "logic-306",
+      "title": "DifficultyLevel total operations count",
+      "description": "DifficultyLevel reports how many operations are available at that level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Easy has 2 operations",
+        "Medium has 3 operations",
+        "Hard has 4 operations"
+      ],
+      "files": ["Sources/Domain/DifficultyLevel.swift"]
+    },
+    {
+      "id": "logic-307",
+      "title": "PlayerStats total games across difficulties",
+      "description": "PlayerStats provides a breakdown of games played percentage per difficulty",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns empty when no games played",
+        "Returns correct percentages per difficulty"
+      ],
+      "files": ["Sources/Domain/PlayerStats+Extensions.swift"]
+    },
+    {
+      "id": "logic-308",
+      "title": "ResultsViewModel medal type based on accuracy",
+      "description": "ResultsViewModel assigns a medal (gold/silver/bronze/none) based on accuracy",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["ui-009"],
+      "test_steps": [
+        "90+ accuracy earns gold",
+        "70-89 earns silver",
+        "50-69 earns bronze",
+        "Under 50 earns no medal"
+      ],
+      "files": ["Sources/Features/Results/ResultsViewModel.swift"]
+    },
+    {
+      "id": "logic-309",
+      "title": "MathProblem difficulty score numeric",
+      "description": "MathProblem provides a numeric difficulty score (1-10) based on operation and operand size",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Simple addition has low score",
+        "Large multiplication has high score",
+        "Score is between 1 and 10"
+      ],
+      "files": ["Sources/Domain/MathProblem.swift"]
+    },
+    {
+      "id": "logic-310",
+      "title": "GameSession time usage percentage",
+      "description": "GameSession provides the percentage of total time that was used",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns 0 with no time played",
+        "Returns correct percentage after ticks",
+        "Returns 100 when time runs out"
+      ],
+      "files": ["Sources/Domain/GameSession.swift"]
+    },
+    {
+      "id": "logic-311",
+      "title": "LevelSystem XP for level range",
+      "description": "LevelSystem provides the XP range (min-max) for a given level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Level 1 starts at 0",
+        "Level 2 starts at 100 ends at 299",
+        "Max level has no upper bound"
+      ],
+      "files": ["Sources/Domain/LevelSystem.swift"]
+    },
+    {
+      "id": "logic-312",
+      "title": "GameEngine problem difficulty trend",
+      "description": "GameEngine provides a trend of problem difficulty over time based on adaptive range changes",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["svc-001"],
+      "test_steps": [
+        "Starts as stable",
+        "Changes to increasing after many correct",
+        "Changes to decreasing after many wrong"
+      ],
+      "files": ["Sources/Services/GameEngine.swift"]
+    },
+    {
+      "id": "logic-313",
+      "title": "DifficultyLevel summary text",
+      "description": "DifficultyLevel provides a complete summary including time, operations, and range",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Summary includes time limit",
+        "Summary includes operation count",
+        "Summary includes operand range"
+      ],
+      "files": ["Sources/Domain/DifficultyLevel.swift"]
+    }
   ],
   "_schema": {
     "feature": {

@@ -42,6 +42,13 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var isCommutative: Bool {
+        switch self {
+        case .add, .multiply: true
+        case .subtract, .divide: false
+        }
+    }
+
     var inverse: Operation {
         switch self {
         case .add: .subtract
@@ -190,6 +197,13 @@ enum AnswerMagnitude: Sendable {
 }
 
 extension MathProblem {
+    var difficultyScore: Int {
+        let opScore = operation.difficultyRank // 1-4
+        let sizeScore = (operand1 + operand2) / 10 // rough operand size
+        let raw = opScore + sizeScore
+        return min(max(raw, 1), 10)
+    }
+
     var answerMagnitude: AnswerMagnitude {
         let answer = abs(correctAnswer)
         if answer < 20 { return .small }

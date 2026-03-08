@@ -85,6 +85,15 @@ enum LevelSystem {
         min(streak, 10) * 2
     }
 
+    static func xpRange(forLevel level: Int) -> (min: Int, max: Int?) {
+        guard level >= 1, level <= thresholds.count else { return (0, nil) }
+        let minXP = thresholds[level - 1]
+        if level >= thresholds.count {
+            return (minXP, nil)
+        }
+        return (minXP, thresholds[level] - 1)
+    }
+
     static func xpForCorrectAnswer(streak: Int) -> Int {
         let base = 10
         let streakBonus = min(streak, 10) * 2

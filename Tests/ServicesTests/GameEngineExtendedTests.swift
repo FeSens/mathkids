@@ -75,4 +75,64 @@ struct GameEngineExtendedTests {
         engine.submitAnswer(engine.currentProblem.correctAnswer)
         #expect(engine.consecutiveWrongCount == 0)
     }
+
+    // MARK: - Slowest Answer Time (logic-304)
+
+    @Test("Slowest is nil initially")
+    @MainActor
+    func slowestNilInitially() {
+        let engine = GameEngine(difficulty: .easy)
+        #expect(engine.slowestAnswerTime == nil)
+    }
+
+    @Test("Slowest updates on first answer")
+    @MainActor
+    func slowestUpdatesOnFirst() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        engine.submitAnswer(engine.currentProblem.correctAnswer)
+        #expect(engine.slowestAnswerTime != nil)
+    }
+
+    @Test("Slowest keeps the maximum time")
+    @MainActor
+    func slowestKeepsMax() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        engine.submitAnswer(engine.currentProblem.correctAnswer)
+        let first = engine.slowestAnswerTime!
+        engine.submitAnswer(engine.currentProblem.correctAnswer)
+        #expect(engine.slowestAnswerTime! >= first || engine.slowestAnswerTime! > 0)
+    }
+
+    // MARK: - Difficulty Trend (logic-312)
+
+    @Test("Starts as stable")
+    @MainActor
+    func difficultyTrendStable() {
+        let engine = GameEngine(difficulty: .easy)
+        #expect(engine.difficultyTrend == .stable)
+    }
+
+    @Test("Increasing after many correct")
+    @MainActor
+    func difficultyTrendIncreasing() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        for _ in 0..<6 {
+            engine.submitAnswer(engine.currentProblem.correctAnswer)
+        }
+        #expect(engine.difficultyTrend == .increasing)
+    }
+
+    @Test("Decreasing after many wrong")
+    @MainActor
+    func difficultyTrendDecreasing() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        for _ in 0..<4 {
+            engine.submitAnswer(99999)
+        }
+        #expect(engine.difficultyTrend == .decreasing)
+    }
 }

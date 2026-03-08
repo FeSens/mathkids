@@ -20,11 +20,22 @@ final class GameEngine {
     private(set) var streakFreezeUsed: Bool = false
     private var problemStartTime: Date = Date()
     private(set) var fastestAnswerTime: Double?
+    private(set) var slowestAnswerTime: Double?
     private(set) var correctCountByOperation: [Operation: Int] = [:]
     private(set) var operationFrequency: [Operation: Int] = [:]
     private(set) var problemCount: Int = 1
 
     var consecutiveWrongCount: Int { consecutiveWrong }
+
+    enum DifficultyTrend { case stable, increasing, decreasing }
+
+    var difficultyTrend: DifficultyTrend {
+        guard let range = adaptiveRange else { return .stable }
+        let baseUpper = session.difficulty.operandRange.upperBound
+        if range.upperBound > baseUpper { return .increasing }
+        if range.upperBound < baseUpper { return .decreasing }
+        return .stable
+    }
 
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
@@ -70,6 +81,11 @@ final class GameEngine {
         operationFrequency[currentProblem.operation, default: 0] += 1
 
         let correct = currentProblem.isCorrect(answer: answer)
+        if let slowest = slowestAnswerTime {
+            slowestAnswerTime = max(slowest, elapsed)
+        } else {
+            slowestAnswerTime = elapsed
+        }
         if correct {
             if let fastest = fastestAnswerTime {
                 fastestAnswerTime = min(fastest, elapsed)
