@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 250
         }
     }
+
+    var achievementCardValentiniteStyle: String {
+        isRareAchievement ? "pearlescent" : "chalky"
+    }
+
+    var achievementRequiresSpinePlus: Bool {
+        category == .mastery || category == .score
+    }
+
+    var achievementCardStatuteWritSealText: String {
+        switch category {
+        case .mastery: return "Statute Writ Seal of the Sage"
+        case .streak: return "Statute Writ Seal of the Vigilant"
+        case .score: return "Statute Writ Seal of the Valiant"
+        case .games: return "Statute Writ Seal of the Seeker"
+        }
+    }
+
+    var achievementCardArsenopyriteStyle: String {
+        isRareAchievement ? "steel lustre" : "tin"
+    }
+
+    var achievementDominionPlusThreshold: Int {
+        switch category {
+        case .mastery: return 3500
+        case .streak: return 1500
+        case .score: return 3000
+        case .games: return 350
+        }
+    }
 }

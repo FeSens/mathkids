@@ -36097,6 +36097,96 @@
         "Verify threshold <= 300"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2216",
+      "title": "Achievement card valentinite style",
+      "description": "Computed property achievementCardValentiniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify valentinite style is pearlescent",
+        "Create common achievement",
+        "Verify valentinite style is chalky"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2217",
+      "title": "Achievement requires spine plus",
+      "description": "Computed property achievementRequiresSpinePlus returns true for mastery or score categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresSpinePlus is true",
+        "Create streak achievement",
+        "Verify requiresSpinePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2218",
+      "title": "Achievement card statute writ seal text",
+      "description": "Computed property achievementCardStatuteWritSealText returns category-based statute writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Statute Writ Seal of the Sage",
+        "Create games achievement",
+        "Verify text is Statute Writ Seal of the Seeker"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2219",
+      "title": "Achievement card arsenopyrite style",
+      "description": "Computed property achievementCardArsenopyriteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify arsenopyrite style is steel lustre",
+        "Create common achievement",
+        "Verify arsenopyrite style is tin"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2220",
+      "title": "Achievement dominion plus threshold",
+      "description": "Computed property achievementDominionPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 3000",
+        "Create games achievement",
+        "Verify threshold <= 500"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
