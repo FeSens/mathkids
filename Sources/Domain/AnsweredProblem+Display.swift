@@ -213,4 +213,33 @@ extension AnsweredProblem {
     var answeredProblemMaxPoints: Int {
         problem.operation.difficultyWeight * 10
     }
+
+    var answeredProblemTimeCategory: String {
+        guard let time = timeTaken else { return "normal" }
+        if time < 1.0 { return "instant" }
+        if time < 3.0 { return "quick" }
+        if time > 8.0 { return "slow" }
+        return "normal"
+    }
+
+    var answeredProblemScorePercentage: Int {
+        isCorrect ? 100 : 0
+    }
+
+    var answeredProblemDetailedFeedback: String {
+        if isCorrect {
+            return "Correct! \(answeredProblemDisplayText)"
+        }
+        return "Incorrect. The answer is \(problem.correctAnswer), you answered \(userAnswer)."
+    }
+
+    var answeredProblemIsEasyProblem: Bool {
+        problem.operand1 < 5 && problem.operand2 < 5
+    }
+
+    var answeredProblemResponseQuality: String {
+        guard isCorrect else { return "incorrect" }
+        if let time = timeTaken, time < 3.0 { return "perfect" }
+        return "correct"
+    }
 }

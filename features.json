@@ -20244,6 +20244,96 @@
         "Check maxPoints is higher"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1199",
+      "name": "answeredProblemTimeCategory",
+      "description": "Time category: instant, quick, normal, slow",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create answer in 0.5s",
+        "Check category is instant",
+        "Create answer in 10s",
+        "Check category is slow"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1200",
+      "name": "answeredProblemScorePercentage",
+      "description": "Percentage of max points earned (0-100)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check percentage is 100",
+        "Create wrong answer",
+        "Check percentage is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1201",
+      "name": "answeredProblemDetailedFeedback",
+      "description": "Multi-line feedback with result and correction if wrong",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check feedback contains Correct",
+        "Create wrong answer",
+        "Check feedback contains correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1202",
+      "name": "answeredProblemIsEasyProblem",
+      "description": "Whether the problem uses easy operands (both under 5)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create problem with small operands",
+        "Check isEasyProblem is true",
+        "Create problem with large operand",
+        "Check isEasyProblem is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1203",
+      "name": "answeredProblemResponseQuality",
+      "description": "Quality rating combining correctness and speed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check quality is perfect",
+        "Create wrong answer",
+        "Check quality is incorrect"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
