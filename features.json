@@ -38167,6 +38167,96 @@
         "Verify threshold <= 1000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2331",
+      "title": "Achievement card gladite style",
+      "description": "Computed property achievementCardGladiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify gladite style is tin grey acicular",
+        "Create common achievement",
+        "Verify gladite style is pale grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2332",
+      "title": "Achievement requires courage plus",
+      "description": "Computed property achievementRequiresCouragePlus returns true for streak or score categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresCouragePlus is true",
+        "Create games achievement",
+        "Verify requiresCouragePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2333",
+      "title": "Achievement card directive writ seal ultra text",
+      "description": "Computed property achievementCardDirectiveWritSealUltraText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Directive Writ Seal Ultra of the Omniscient",
+        "Create games achievement",
+        "Verify text is Directive Writ Seal Ultra of the Novitiate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2334",
+      "title": "Achievement card hammarite style",
+      "description": "Computed property achievementCardHammariteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify hammarite style is steel grey monoclinic",
+        "Create common achievement",
+        "Verify hammarite style is leaden"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2335",
+      "title": "Achievement omnipotence plus threshold",
+      "description": "Computed property achievementOmnipotencePlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 10000000",
+        "Create games achievement",
+        "Verify threshold <= 1500000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
