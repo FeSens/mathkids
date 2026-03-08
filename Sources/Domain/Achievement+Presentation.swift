@@ -153,4 +153,29 @@ extension Achievement {
         case .mastery: return "crowns"
         }
     }
+
+    var achievementProgressRingColor: String {
+        achievementCardColor
+    }
+
+    var achievementCardElevation: Int {
+        isRareAchievement ? 3 : 1
+    }
+
+    var achievementRibbonColor: String {
+        switch achievementRankLabel {
+        case "Platinum": return "purple"
+        case "Gold": return "gold"
+        case "Silver": return "silver"
+        default: return "brown"
+        }
+    }
+
+    var achievementShowGlowRing: Bool {
+        achievementIsHighlightWorthy
+    }
+
+    var achievementTextColor: String {
+        progress != nil ? "primary" : "gray"
+    }
 }

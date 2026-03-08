@@ -23664,6 +23664,83 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1399",
+      "title": "Achievement Progress Ring Color",
+      "description": "Add achievementProgressRingColor returning ring indicator color",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementProgressRingColor matches category color"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1400",
+      "title": "Achievement Card Elevation",
+      "description": "Add achievementCardElevation returning elevation level based on rarity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementCardElevation is 3",
+        "Verify common is 1"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1401",
+      "title": "Achievement Ribbon Color",
+      "description": "Add achievementRibbonColor returning ribbon accent color based on rank",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create platinum achievement",
+        "Verify achievementRibbonColor is purple"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1402",
+      "title": "Achievement Show Glow Ring",
+      "description": "Add achievementShowGlowRing returning true for highlighted achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create highlight worthy achievement",
+        "Verify achievementShowGlowRing is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1403",
+      "title": "Achievement Text Color",
+      "description": "Add achievementTextColor returning text color based on locked state",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create locked achievement",
+        "Verify achievementTextColor is gray",
+        "Verify unlocked is primary"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {
