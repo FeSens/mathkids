@@ -27172,6 +27172,77 @@
         "Create any achievement",
         "Verify label is Not Earned"
       ]
+    },
+    {
+      "id": "logic-1634",
+      "title": "achievementUnlockDifficulty",
+      "description": "Return unlock difficulty as a float 0-1",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify difficulty >= 0.8",
+        "Create games achievement",
+        "Verify difficulty <= 0.2"
+      ]
+    },
+    {
+      "id": "logic-1635",
+      "title": "achievementListIcon",
+      "description": "Return list view icon name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify icon is crown",
+        "Create games achievement",
+        "Verify icon is play"
+      ]
+    },
+    {
+      "id": "logic-1636",
+      "title": "achievementStreakRequired",
+      "description": "Return whether streak is required",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify streakRequired is true",
+        "Create games achievement",
+        "Verify streakRequired is false"
+      ]
+    },
+    {
+      "id": "logic-1637",
+      "title": "achievementCardOpacity",
+      "description": "Return card opacity for locked state",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify opacity is 0.6"
+      ]
+    },
+    {
+      "id": "logic-1638",
+      "title": "achievementRewardCoinsLabel",
+      "description": "Return formatted coins reward label",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify label contains coins"
+      ]
     }
   ],
   "_schema": {
