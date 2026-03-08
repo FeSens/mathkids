@@ -220,4 +220,8 @@ extension DifficultyLevel {
     var difficultyScoreLabel: String {
         "Max score: \(maxPossibleScore) pts"
     }
+
+    var difficultyQuickInfo: String {
+        "\(displayName) — \(operationCount) ops, \(timeLimitSeconds)s"
+    }
 }

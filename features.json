@@ -15573,6 +15573,87 @@
         "Problem 12*8 -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-899",
+      "name": "isOperandOneSmaller",
+      "description": "MathProblem computed property returning true when operand1 < operand2",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 3+8 -> true",
+        "Problem 8+3 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-900",
+      "name": "difficultyQuickInfo",
+      "description": "DifficultyLevel computed property returning compact info string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> contains difficulty name",
+        "Hard -> contains difficulty name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-901",
+      "name": "isCorrectButSlow",
+      "description": "AnsweredProblem computed property returning true when correct but took > 6 seconds",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct in 8s -> true",
+        "Correct in 3s -> false",
+        "Wrong in 8s -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-902",
+      "name": "answerPercentageOff",
+      "description": "AnsweredProblem computed property returning how far off answer was as percentage",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct answer -> 0%",
+        "Answer off by half -> ~50%"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-903",
+      "name": "operationIsCommutative",
+      "description": "MathProblem computed property returning true for add/multiply (commutative operations)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add problem -> true",
+        "Subtract problem -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

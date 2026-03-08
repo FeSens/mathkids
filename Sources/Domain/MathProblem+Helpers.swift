@@ -253,4 +253,12 @@ extension MathProblem {
     var problemIsEasy: Bool {
         estimatedDifficulty <= 2
     }
+
+    var isOperandOneSmaller: Bool {
+        operand1 < operand2
+    }
+
+    var operationIsCommutative: Bool {
+        operation == .add || operation == .multiply
+    }
 }

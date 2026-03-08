@@ -175,4 +175,14 @@ extension AnsweredProblem {
     var answerWasDoubled: Bool {
         userAnswer == problem.operand1 * 2 || userAnswer == problem.operand2 * 2
     }
+
+    var isCorrectButSlow: Bool {
+        guard isCorrect, let time = timeTaken else { return false }
+        return time > 6.0
+    }
+
+    var answerPercentageOff: Int {
+        guard problem.correctAnswer != 0 else { return answerDifference > 0 ? 100 : 0 }
+        return abs(userAnswer - problem.correctAnswer) * 100 / abs(problem.correctAnswer)
+    }
 }
