@@ -73,6 +73,9 @@ struct StatsView: View {
                 .padding()
             }
             .navigationTitle("Progress")
+            .refreshable {
+                viewModel.loadStats()
+            }
             .onAppear {
                 viewModel.loadStats()
             }

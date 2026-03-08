@@ -2323,6 +2323,97 @@
         "Sources/Features/Stats/StatsViewModel.swift",
         "Sources/Features/Stats/StatsView.swift"
       ]
+    },
+    {
+      "id": "ui-109",
+      "title": "Haptic feedback on timer tick",
+      "description": "Light haptic tap when countdown ticks in last 5 seconds",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-089"
+      ],
+      "test_steps": [
+        "Timer enters last 5 seconds",
+        "Each tick produces a light haptic tap",
+        "No haptics if haptics disabled"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Services/HapticService.swift"
+      ]
+    },
+    {
+      "id": "ui-110",
+      "title": "Score animation on correct answer",
+      "description": "Score label bounces when points are earned",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Answer correctly",
+        "Score label animates with bounce effect",
+        "Animation completes smoothly"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-111",
+      "title": "Difficulty emoji animation on home",
+      "description": "Difficulty card emojis gently bounce when the card is selected",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Select a difficulty card",
+        "Card emoji bounces when selected",
+        "Non-selected cards are static"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-112",
+      "title": "Results screen emoji animation",
+      "description": "The header emoji on results screen has a gentle floating animation",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Complete a game",
+        "Results header emoji gently floats up and down",
+        "Animation loops continuously"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-113",
+      "title": "Stats screen pull-to-refresh",
+      "description": "Pull down on stats screen to refresh stats data",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Navigate to stats tab",
+        "Pull down to refresh",
+        "Stats reload from SwiftData"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift"
+      ]
     }
   ],
   "_schema": {

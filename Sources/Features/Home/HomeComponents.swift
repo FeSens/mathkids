@@ -60,6 +60,8 @@ struct DifficultyButton: View {
             VStack(spacing: 6) {
                 Text(level.emoji)
                     .font(.title2)
+                    .scaleEffect(isSelected ? 1.2 : 1.0)
+                    .animation(.spring(duration: 0.4, bounce: 0.5), value: isSelected)
                 Text(level.displayName)
                     .font(.system(size: 15, weight: .bold, design: .rounded))
 

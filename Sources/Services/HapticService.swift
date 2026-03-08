@@ -39,6 +39,11 @@ struct HapticService {
         }
     }
 
+    static func timerTick() {
+        guard SettingsManager.shared.hapticsEnabled else { return }
+        lightImpact.impactOccurred(intensity: 0.4)
+    }
+
     static func gameOver(accuracy: Double) {
         guard SettingsManager.shared.hapticsEnabled else { return }
         if accuracy >= 80 {

@@ -138,6 +138,7 @@ struct GameView: View {
             urgentFlash = newValue <= 5 && newValue > 0 && !viewModel.isPracticeMode
             if viewModel.shouldPlayTick(timeRemaining: newValue) {
                 SoundService.playCountdownTick()
+                HapticService.timerTick()
             }
         }
     }

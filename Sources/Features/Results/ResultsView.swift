@@ -9,6 +9,7 @@ struct ResultsView: View {
     @State private var showStats: Bool = false
     @State private var showXP: Bool = false
     @State private var showButtons: Bool = false
+    @State private var emojiFloat: Bool = false
     @State private var showConfetti: Bool = false
 
     var body: some View {
@@ -128,6 +129,9 @@ struct ResultsView: View {
         VStack(spacing: 8) {
             Text(headerEmoji)
                 .font(.system(size: 64))
+                .offset(y: emojiFloat ? -8 : 8)
+                .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: emojiFloat)
+                .onAppear { emojiFloat = true }
 
             Text(headerText)
                 .font(.system(size: 28, weight: .bold, design: .rounded))
