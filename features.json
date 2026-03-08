@@ -35827,6 +35827,96 @@
         "Verify threshold <= 100"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2201",
+      "title": "Achievement card vanadinite style",
+      "description": "Computed property achievementCardVanadiniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify vanadinite style is crimson",
+        "Create common achievement",
+        "Verify vanadinite style is rust"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2202",
+      "title": "Achievement requires iron nerve plus",
+      "description": "Computed property achievementRequiresIronNervePlus returns true for streak or mastery categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresIronNervePlus is true",
+        "Create games achievement",
+        "Verify requiresIronNervePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2203",
+      "title": "Achievement card charter writ seal text",
+      "description": "Computed property achievementCardCharterWritSealText returns category-based charter writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Charter Writ Seal of the Architect",
+        "Create games achievement",
+        "Verify text is Charter Writ Seal of the Initiate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2204",
+      "title": "Achievement card proustite style",
+      "description": "Computed property achievementCardProustiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify proustite style is vermilion",
+        "Create common achievement",
+        "Verify proustite style is scarlet"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2205",
+      "title": "Achievement transcendence plus threshold",
+      "description": "Computed property achievementTranscendencePlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 800",
+        "Create games achievement",
+        "Verify threshold <= 150"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
