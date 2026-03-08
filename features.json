@@ -8250,6 +8250,89 @@
         "Verify subtract is not advanced"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-444",
+      "title": "GameSession correctAnswerRate as decimal ratio",
+      "description": "GameSession should expose correctAnswerRate returning correct/total as a 0.0-1.0 decimal",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 0 answered returns 0.0",
+        "Verify 3 correct out of 4 returns 0.75",
+        "Verify all correct returns 1.0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-445",
+      "title": "Achievement lockedAchievements returns locked list",
+      "description": "Achievement should expose lockedAchievements(for:) returning array of achievements not yet unlocked",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify fresh stats returns all achievements as locked",
+        "Verify unlocked achievements are excluded from locked list"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-446",
+      "title": "DifficultyLevel starRating visual stars",
+      "description": "DifficultyLevel should expose starRating returning star emojis matching difficulty (easy=1, medium=2, hard=3)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns one star",
+        "Verify medium returns two stars",
+        "Verify hard returns three stars"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-447",
+      "title": "LevelSystem totalXPAcrossAllLevels sum",
+      "description": "LevelSystem should expose totalXPAcrossAllLevels returning the sum of all level thresholds",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify returns sum of all thresholds",
+        "Verify is greater than 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-448",
+      "title": "MathProblem isNegativeResult checks negative answer",
+      "description": "MathProblem should expose isNegativeResult returning true when correctAnswer is negative",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3-5 returns true (negative result)",
+        "Verify 5-3 returns false (positive result)",
+        "Verify 5+3 returns false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

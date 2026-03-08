@@ -150,6 +150,10 @@ extension MathProblem {
         operation == .add && abs(operand1 - operand2) == 1
     }
 
+    var isNegativeResult: Bool {
+        correctAnswer < 0
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0

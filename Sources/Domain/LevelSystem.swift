@@ -239,6 +239,10 @@ enum LevelSystem {
         return thresholds[level - 1]
     }
 
+    static var totalXPAcrossAllLevels: Int {
+        thresholds.reduce(0, +)
+    }
+
     static func progressDescription(for xp: Int) -> String {
         let currentLevel = level(for: xp)
         let name = levelName(for: xp)

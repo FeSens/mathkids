@@ -174,6 +174,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var starRating: String {
+        String(repeating: "⭐", count: difficultyIndex + 1)
+    }
+
     var briefDescription: String {
         let ops = allowedOperations.map(\.rawValue).joined(separator: " ")
         return "1-\(operandRange.upperBound) \(ops) \(timeLimitSeconds)s"
