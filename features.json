@@ -7159,6 +7159,90 @@
         "Verify true with streak of 10"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-379",
+      "title": "GameSession streakDescription human-readable streak text",
+      "description": "GameSession should expose streakDescription returning text like \"5 in a row!\" or \"No streak\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify streak 5 returns \"5 in a row!\"",
+        "Verify streak 0 returns \"No streak\"",
+        "Verify streak 1 returns \"1 in a row!\""
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-380",
+      "title": "MathProblem maxOperand returns the larger of the two operands",
+      "description": "MathProblem should expose maxOperand returning the maximum absolute value of operand1 and operand2",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify for 3+7 returns 7",
+        "Verify for 10-5 returns 10",
+        "Verify for equal operands returns that value"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-381",
+      "title": "LevelSystem xpToNextMilestone returns XP to next 100 XP milestone",
+      "description": "LevelSystem should compute xpToNextMilestone(currentXP:) returning XP needed to reach the next multiple of 100",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 50 XP needs 50 to reach 100",
+        "Verify 100 XP needs 100 to reach 200",
+        "Verify 0 XP needs 100 to reach 100"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-382",
+      "title": "ResultsViewModel streakRewardText for streak achievements",
+      "description": "ResultsViewModel should expose streakRewardText showing streak achievement text like \"Amazing 10 streak!\" or nil for low streaks",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify shows text for streak >= 5",
+        "Verify returns nil for streak < 5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-383",
+      "title": "DifficultyLevel progressionPath returns all difficulties in order",
+      "description": "DifficultyLevel should have a static progressionPath returning [.easy, .medium, .hard]",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify path has 3 elements",
+        "Verify order is easy, medium, hard",
+        "Verify first is easy and last is hard"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

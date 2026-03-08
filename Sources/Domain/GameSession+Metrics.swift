@@ -4,6 +4,10 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var streakDescription: String {
+        currentStreak > 0 ? "\(currentStreak) in a row!" : "No streak"
+    }
+
     var answeredAllCorrectly: Bool {
         totalAnswered > 0 && totalCorrect == totalAnswered
     }

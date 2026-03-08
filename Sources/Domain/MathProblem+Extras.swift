@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var maxOperand: Int {
+        max(abs(operand1), abs(operand2))
+    }
+
     var isNearDoubleFact: Bool {
         operation == .add && abs(operand1 - operand2) == 1
     }

@@ -127,6 +127,11 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func xpToNextMilestone(currentXP: Int) -> Int {
+        let next = ((currentXP / 100) + 1) * 100
+        return next - currentXP
+    }
+
     static func xpSummary(for xp: Int) -> String {
         let lvl = level(for: xp)
         let name = levelName(for: xp)

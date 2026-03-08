@@ -126,6 +126,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operationCount) operations | 1-\(operandRange.upperBound) | \(timeLimitSeconds)s"
     }
 
+    static var progressionPath: [DifficultyLevel] {
+        [.easy, .medium, .hard]
+    }
+
     var estimatedProblemsPerGame: Int {
         timeLimitSeconds / recommendedSecondsPerProblem
     }

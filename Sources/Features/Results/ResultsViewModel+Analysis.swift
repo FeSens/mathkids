@@ -72,6 +72,11 @@ extension ResultsViewModel {
         "\(Int(accuracy))% (\(gradeLabel))"
     }
 
+    var streakRewardText: String? {
+        guard bestStreak >= 5 else { return nil }
+        return "Amazing \(bestStreak) streak!"
+    }
+
     var recommendationText: String? {
         switch difficultyRecommendation {
         case .tryHarder:
