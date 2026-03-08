@@ -81,4 +81,27 @@ extension GameSession {
     var totalPointsEarned: Int {
         score + totalBonusPoints
     }
+
+    var progressBarValue: Double {
+        guard difficulty.timeLimitSeconds > 0 else { return 0 }
+        return Double(totalTimePlayed) / Double(difficulty.timeLimitSeconds)
+    }
+
+    var answerRateText: String {
+        guard totalTimePlayed > 0 else { return "0/min" }
+        let rate = totalAnswered * 60 / totalTimePlayed
+        return "\(rate)/min"
+    }
+
+    var isStrugglingSession: Bool {
+        totalAnswered > 0 && accuracy < 40
+    }
+
+    var correctPercentText: String {
+        "\(Int(accuracy))%"
+    }
+
+    var isTimeCritical: Bool {
+        timeRemaining > 0 && timeRemaining < 5
+    }
 }

@@ -11805,6 +11805,86 @@
         "Verify total"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-664",
+      "name": "GameSession+Display.progressBarValue",
+      "description": "Returns progress as 0-1 double for UI bar",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Half time elapsed",
+        "Verify returns 0.5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-665",
+      "name": "GameSession+Display.answerRateText",
+      "description": "Returns answers per minute as formatted text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Answer questions over time",
+        "Verify rate text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-666",
+      "name": "GameSession+Display.isStrugglingSession",
+      "description": "Returns true when accuracy < 40",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Low accuracy returns true",
+        "High returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-667",
+      "name": "GameSession+Display.correctPercentText",
+      "description": "Returns correct percentage as text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "3/4 correct returns 75%",
+        "No answers returns 0%"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-668",
+      "name": "GameSession+Display.isTimeCritical",
+      "description": "Returns true when < 5 seconds remain",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Lots of time returns false",
+        "< 5s returns true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
