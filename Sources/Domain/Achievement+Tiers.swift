@@ -215,4 +215,34 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementCardCoatOfArms: String {
+        isRareAchievement ? "noble" : "common"
+    }
+
+    var achievementRequiresVolume: Bool {
+        category == .games || category == .mastery
+    }
+
+    var achievementCardProverbText: String {
+        switch category {
+        case .mastery: return "Practice makes perfect"
+        case .streak: return "Slow and steady wins"
+        case .score: return "Aim for the stars"
+        case .games: return "A journey of a thousand miles"
+        }
+    }
+
+    var achievementCardIvoryStyle: String {
+        isRareAchievement ? "carved" : "smooth"
+    }
+
+    var achievementLifetimeGoal: Int {
+        switch category {
+        case .mastery: return 1000
+        case .streak: return 365
+        case .score: return 500
+        case .games: return 100
+        }
+    }
 }

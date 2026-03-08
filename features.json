@@ -32089,6 +32089,76 @@
         "Create games achievement",
         "Verify minGamesWon is low"
       ]
+    },
+    {
+      "id": "logic-1959",
+      "name": "achievementCardCoatOfArms",
+      "description": "Coat of arms style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify coat is noble",
+        "Create common achievement",
+        "Verify coat is common"
+      ]
+    },
+    {
+      "id": "logic-1960",
+      "name": "achievementRequiresVolume",
+      "description": "Whether achievement requires volume (games or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create games achievement",
+        "Verify requiresVolume is true",
+        "Create score achievement",
+        "Verify requiresVolume is false"
+      ]
+    },
+    {
+      "id": "logic-1961",
+      "name": "achievementCardProverbText",
+      "description": "Proverb text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify proverb text",
+        "Create games achievement",
+        "Verify proverb text"
+      ]
+    },
+    {
+      "id": "logic-1962",
+      "name": "achievementCardIvoryStyle",
+      "description": "Ivory finish style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify ivory is carved",
+        "Create common achievement",
+        "Verify ivory is smooth"
+      ]
+    },
+    {
+      "id": "logic-1963",
+      "name": "achievementLifetimeGoal",
+      "description": "Lifetime goal count based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify goal is high",
+        "Create games achievement",
+        "Verify goal is low"
+      ]
     }
   ],
   "_schema": {
