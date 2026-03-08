@@ -92,6 +92,10 @@ final class StatsViewModel {
         "\(Int(accuracy))% (\(accuracyGrade))"
     }
 
+    var hasSignificantData: Bool {
+        gamesPlayed >= 3
+    }
+
     var improvementTrend: String {
         switch accuracyTrend {
         case .improving: "Getting better!"

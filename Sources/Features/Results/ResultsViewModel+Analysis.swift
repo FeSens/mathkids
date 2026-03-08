@@ -106,6 +106,10 @@ extension ResultsViewModel {
         "Best streak: \(bestStreak)"
     }
 
+    var correctAnswerLabel: String {
+        "\(session.totalCorrect) correct"
+    }
+
     var timeTakenText: String {
         "\(session.totalTimePlayed)s"
     }

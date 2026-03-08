@@ -243,6 +243,11 @@ extension GameSession {
         return Double(totalWrong) / minutes
     }
 
+    var averagePointsPerCorrect: Double {
+        guard totalCorrect > 0 else { return 0 }
+        return Double(score) / Double(totalCorrect)
+    }
+
     var remainingTimePercentage: Int {
         let total = difficulty.timeLimitSeconds
         guard total > 0 else { return 0 }

@@ -187,6 +187,13 @@ extension MathProblem {
         operand1 >= 0 && operand1 <= 9 && operand2 >= 0 && operand2 <= 9
     }
 
+    var isSquareNumber: Bool {
+        let answer = correctAnswer
+        guard answer > 0 else { return false }
+        let root = Int(Double(answer).squareRoot())
+        return root * root == answer
+    }
+
     var isSubtractionFromTen: Bool {
         operation == .subtract && operand1 == 10
     }

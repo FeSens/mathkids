@@ -82,6 +82,10 @@ final class HomeViewModel {
         "\(selectedDifficulty.displayName) - \(selectedDifficulty.operationCount) operations"
     }
 
+    var bestScoreText: String {
+        "\(bestScore) pts"
+    }
+
     var xpSummaryText: String {
         "Level \(currentLevel) | \(totalXP) XP"
     }

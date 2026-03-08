@@ -9479,6 +9479,87 @@
         "Verify half time returns ~50"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-519",
+      "title": "HomeViewModel bestScoreText formatted best score",
+      "description": "HomeViewModel should expose bestScoreText returning formatted best score text",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes score value",
+        "Verify includes pts"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-520",
+      "title": "StatsViewModel hasSignificantData checks meaningful data",
+      "description": "StatsViewModel should expose hasSignificantData returning true when gamesPlayed >= 3",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify false when 0 games",
+        "Verify true when 3+ games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-521",
+      "title": "ResultsViewModel correctAnswerLabel formatted correct count",
+      "description": "ResultsViewModel+Analysis should expose correctAnswerLabel like \"8 correct\"",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify includes correct count",
+        "Verify contains correct word"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-522",
+      "title": "MathProblem isSquareNumber checks if result is perfect square",
+      "description": "MathProblem should expose isSquareNumber returning true when correctAnswer is a perfect square",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 2+2=4 returns true",
+        "Verify 3x3=9 returns true",
+        "Verify 2+3=5 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-523",
+      "title": "GameSession averagePointsPerCorrect points efficiency",
+      "description": "GameSession should expose averagePointsPerCorrect returning average points earned per correct answer",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify returns correct average",
+        "Verify 0 correct returns 0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
