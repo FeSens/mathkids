@@ -75,6 +75,18 @@ struct ResultsView: View {
                             .opacity(showXP ? 1 : 0)
                     }
 
+                    // Elo rating changes
+                    if !viewModel.eloDeltas.isEmpty {
+                        EloDeltaView(deltas: viewModel.eloDeltas)
+                            .opacity(showXP ? 1 : 0)
+                    }
+
+                    // Speed breakdown per operation
+                    if !viewModel.averageTimePerOperation.isEmpty {
+                        SpeedBreakdownView(times: viewModel.averageTimePerOperation, slowest: viewModel.slowestOperationThisGame)
+                            .opacity(showXP ? 1 : 0)
+                    }
+
                     // Practice recommendation
                     if let recommendation = viewModel.practiceRecommendationText {
                         HStack(spacing: 8) {
@@ -99,6 +111,11 @@ struct ResultsView: View {
 
                 if viewModel.previousBestScore > 0 {
                     ScoreComparisonView(scoreImprovement: viewModel.scoreImprovement)
+                        .opacity(showXP ? 1 : 0)
+                }
+
+                if let comparisonText = viewModel.accuracyComparisonText {
+                    AccuracyComparisonView(accuracyVsAverage: viewModel.accuracyVsAverage, comparisonText: comparisonText)
                         .opacity(showXP ? 1 : 0)
                 }
 

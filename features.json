@@ -42662,6 +42662,96 @@
         "Below average shows red down arrow"
       ],
       "passes": true
+    },
+    {
+      "id": "improve-010",
+      "title": "Elo delta display on results screen UI",
+      "description": "Show per-operation Elo rating changes on the results screen with green/red coloring. Display +X or -X next to each operation attempted.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-006"],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsComponents.swift"
+      ],
+      "test_steps": [
+        "EloDeltaView renders operation symbol and delta value",
+        "Positive deltas show green with up arrow",
+        "Negative deltas show red with down arrow"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-011",
+      "title": "Per-operation best streaks in stats view",
+      "description": "Display the best streak achieved for each operation in the stats screen. Data already exists in PlayerStats but is not surfaced.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift",
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "StatsViewModel exposes per-operation best streaks",
+        "Operations with zero streaks show 0",
+        "All four operations are displayed"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-012",
+      "title": "Perfect game counter and celebration",
+      "description": "Track and display total perfect games (100% accuracy) on the stats screen. Show a special celebration on the results screen when achieving a perfect game.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "StatsViewModel shows perfectGameCount from PlayerStats",
+        "ResultsViewModel isPerfectScore returns true for 100% accuracy",
+        "Perfect game count is a non-negative integer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-013",
+      "title": "Accuracy comparison vs player average on results UI",
+      "description": "Display a visual comparison of current session accuracy vs lifetime average on the results screen with up/down arrows and color coding.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-009"],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsComponents.swift"
+      ],
+      "test_steps": [
+        "AccuracyComparisonView renders with positive delta",
+        "AccuracyComparisonView renders with negative delta",
+        "Zero delta shows neutral state"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-014",
+      "title": "Speed stats per operation on results screen",
+      "description": "Show average response time per operation on the results screen with a visual breakdown. Highlight the slowest operation for improvement.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-008"],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsComponents.swift"
+      ],
+      "test_steps": [
+        "SpeedBreakdownView renders time per operation",
+        "Slowest operation is highlighted",
+        "Operations with no time data are excluded"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

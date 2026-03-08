@@ -208,3 +208,95 @@ struct OperationAccuracyBars: View {
         .accessibilityIdentifier("operationAccuracyBars")
     }
 }
+
+struct EloDeltaView: View {
+    let deltas: [Operation: Double]
+
+    static func formatDelta(_ value: Double) -> String {
+        let rounded = Int(value.rounded())
+        return rounded >= 0 ? "+\(rounded)" : "\(rounded)"
+    }
+
+    private var sortedDeltas: [(Operation, Double)] {
+        deltas.sorted { $0.key.rawValue < $1.key.rawValue }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Elo Rating Changes")
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .foregroundStyle(.secondary)
+
+            HStack(spacing: 16) {
+                ForEach(sortedDeltas, id: \.0) { op, delta in
+                    HStack(spacing: 4) {
+                        Text(op.rawValue)
+                            .font(.system(size: 16, weight: .bold, design: .rounded))
+                        Image(systemName: delta >= 0 ? "arrow.up" : "arrow.down")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundStyle(delta >= 0 ? .green : .red)
+                        Text(Self.formatDelta(delta))
+                            .font(.system(size: 14, weight: .semibold, design: .rounded))
+                            .foregroundStyle(delta >= 0 ? .green : .red)
+                    }
+                }
+            }
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemGray6)))
+        .accessibilityIdentifier("eloDeltaView")
+    }
+}
+
+struct AccuracyComparisonView: View {
+    let accuracyVsAverage: Double
+    let comparisonText: String
+
+    var body: some View {
+        HStack(spacing: 6) {
+            Image(systemName: accuracyVsAverage >= 0 ? "arrow.up.circle.fill" : "arrow.down.circle.fill")
+                .foregroundStyle(accuracyVsAverage >= 0 ? .green : .red)
+            Text(comparisonText)
+                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .foregroundStyle(accuracyVsAverage >= 0 ? .green : .red)
+        }
+        .accessibilityIdentifier("accuracyComparison")
+    }
+}
+
+struct SpeedBreakdownView: View {
+    let times: [Operation: Double]
+    let slowest: Operation?
+
+    private var sortedTimes: [(Operation, Double)] {
+        times.sorted { $0.key.rawValue < $1.key.rawValue }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Speed by Operation")
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .foregroundStyle(.secondary)
+
+            ForEach(sortedTimes, id: \.0) { op, time in
+                HStack(spacing: 8) {
+                    Text(op.rawValue)
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .frame(width: 24)
+                    Text(String(format: "%.1fs", time))
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .foregroundStyle(op == slowest ? .red : .primary)
+                    if op == slowest {
+                        Text("slowest")
+                            .font(.system(size: 11, design: .rounded))
+                            .foregroundStyle(.red)
+                    }
+                    Spacer()
+                }
+            }
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemGray6)))
+        .accessibilityIdentifier("speedBreakdown")
+    }
+}

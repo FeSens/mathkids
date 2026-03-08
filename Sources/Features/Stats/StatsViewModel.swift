@@ -25,6 +25,15 @@ final class StatsViewModel {
     var totalTimePlayedMinutes: Int = 0
     var totalXP: Int = 0
 
+    // Per-operation best streaks
+    var bestStreakAdd: Int = 0
+    var bestStreakSubtract: Int = 0
+    var bestStreakMultiply: Int = 0
+    var bestStreakDivide: Int = 0
+
+    // Perfect game counter
+    var perfectGameCount: Int = 0
+
     // Elo ratings
     var eloAdd: Double = 1000
     var eloSubtract: Double = 1000
@@ -275,6 +284,10 @@ final class StatsViewModel {
             if acc > 0 { operationAccuracies[op.rawValue] = acc }
         }
 
+        // Per-operation streaks and perfect games
+        loadBestStreaks(from: stats)
+        loadPerfectGameCount(from: stats)
+
         // Elo ratings
         eloAdd = stats.eloAdd
         eloSubtract = stats.eloSubtract
@@ -284,5 +297,16 @@ final class StatsViewModel {
         eloHistorySubtract = stats.eloHistorySubtract
         eloHistoryMultiply = stats.eloHistoryMultiply
         eloHistoryDivide = stats.eloHistoryDivide
+    }
+
+    func loadBestStreaks(from stats: PlayerStats) {
+        bestStreakAdd = stats.bestStreakAdd
+        bestStreakSubtract = stats.bestStreakSubtract
+        bestStreakMultiply = stats.bestStreakMultiply
+        bestStreakDivide = stats.bestStreakDivide
+    }
+
+    func loadPerfectGameCount(from stats: PlayerStats) {
+        perfectGameCount = stats.perfectGameCount
     }
 }
