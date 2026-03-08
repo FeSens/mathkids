@@ -38,4 +38,15 @@ struct HapticService {
             lightImpact.impactOccurred(intensity: 0.6)
         }
     }
+
+    static func gameOver(accuracy: Double) {
+        guard SettingsManager.shared.hapticsEnabled else { return }
+        if accuracy >= 80 {
+            notification.notificationOccurred(.success)
+        } else if accuracy >= 50 {
+            mediumImpact.impactOccurred(intensity: 0.6)
+        } else {
+            notification.notificationOccurred(.warning)
+        }
+    }
 }

@@ -5,6 +5,12 @@ struct StatCard: View {
     let value: String
     let label: String
     let color: Color
+    @State private var animatedValue: Int = 0
+    @State private var hasAppeared = false
+
+    private var numericValue: Int? {
+        Int(value)
+    }
 
     var body: some View {
         VStack(spacing: 6) {
@@ -12,7 +18,7 @@ struct StatCard: View {
                 .font(.title2)
                 .foregroundStyle(color)
 
-            Text(value)
+            Text(numericValue != nil ? "\(animatedValue)" : value)
                 .font(.system(size: 24, weight: .bold, design: .rounded))
 
             Text(label)
@@ -25,6 +31,22 @@ struct StatCard: View {
             RoundedRectangle(cornerRadius: 16)
                 .fill(color.opacity(0.1))
         )
+        .onAppear {
+            guard !hasAppeared, let target = numericValue, target > 0 else {
+                if let n = numericValue { animatedValue = n }
+                return
+            }
+            hasAppeared = true
+            let steps = min(target, 20)
+            let increment = max(target / steps, 1)
+            Task { @MainActor in
+                for _ in 0..<steps {
+                    try? await Task.sleep(for: .milliseconds(30))
+                    animatedValue = min(animatedValue + increment, target)
+                }
+                animatedValue = target
+            }
+        }
     }
 }
 

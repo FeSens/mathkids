@@ -1513,6 +1513,84 @@
         "Sources/Features/Home/HomeView.swift",
         "Sources/Features/Home/HomeViewModel.swift"
       ]
+    },
+    {
+      "id": "ui-066",
+      "description": "Animated score counter on home screen best score card",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Best score card on home screen animates from 0 to actual value on appear",
+        "Animation uses spring curve for bounce effect",
+        "Total solved card also animates on appear"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-067",
+      "description": "Game over sound and vibration feedback varies by performance",
+      "phase": "improvement",
+      "category": "service",
+      "depends_on": [
+        "core-006",
+        "ui-015"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Game over with high accuracy plays triumphant sound",
+        "Game over with low accuracy plays encouraging sound",
+        "Haptic pattern differs based on performance tier"
+      ],
+      "files": [
+        "Sources/Services/SoundService.swift",
+        "Sources/Services/HapticService.swift"
+      ]
+    },
+    {
+      "id": "ui-068",
+      "description": "Streak freeze power-up that prevents streak from resetting on one wrong answer",
+      "phase": "improvement",
+      "category": "domain",
+      "depends_on": [
+        "core-003",
+        "core-006"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Player earns streak freeze after 10-streak milestone",
+        "When active, first wrong answer does not reset streak",
+        "Streak freeze is consumed after protecting once",
+        "Visual indicator shows when streak freeze is active"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-069",
+      "description": "Double XP indicator during streak multiplier periods",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002",
+        "ui-035"
+      ],
+      "passes": true,
+      "test_steps": [
+        "When combo multiplier is 3x or higher, show double XP badge",
+        "Badge pulses with animation",
+        "XP earned reflects the multiplier bonus"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
     }
   ],
   "_schema": {

@@ -16,6 +16,8 @@ final class GameEngine {
     private var consecutiveCorrect: Int = 0
     private var consecutiveWrong: Int = 0
     private(set) var problemHistory: [AnsweredProblem] = []
+    private(set) var hasStreakFreeze: Bool = false
+    private(set) var streakFreezeUsed: Bool = false
 
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
@@ -54,7 +56,18 @@ final class GameEngine {
 
         let correct = currentProblem.isCorrect(answer: answer)
         let speedBonus = session.timeRemaining > session.difficulty.timeLimitSeconds / 2 ? 5 : 0
-        session.recordAnswer(correct: correct, bonusPoints: correct ? speedBonus : 0)
+
+        // Use streak freeze: record as wrong for scoring but preserve streak
+        if !correct && hasStreakFreeze && !streakFreezeUsed {
+            streakFreezeUsed = true
+            hasStreakFreeze = false
+            // Record answer but restore streak afterwards
+            let savedStreak = session.currentStreak
+            session.recordAnswer(correct: false, bonusPoints: 0)
+            session.restoreStreak(savedStreak)
+        } else {
+            session.recordAnswer(correct: correct, bonusPoints: correct ? speedBonus : 0)
+        }
 
         lastAnswerCorrect = correct
 
@@ -66,6 +79,11 @@ final class GameEngine {
                 streakMilestone = streak
             } else {
                 streakMilestone = nil
+            }
+            // Award streak freeze at 10-streak milestone
+            if streak == 10 && !hasStreakFreeze {
+                hasStreakFreeze = true
+                streakFreezeUsed = false
             }
         } else {
             consecutiveWrong += 1

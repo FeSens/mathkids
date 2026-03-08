@@ -27,6 +27,7 @@ final class GameViewModel {
     var problemNumber: Int = 1
     var isPaused: Bool = false
     var lastProblemHistory: [AnsweredProblem] { engine.problemHistory }
+    var hasStreakFreeze: Bool { engine.hasStreakFreeze }
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10
@@ -215,21 +216,24 @@ final class GameViewModel {
     }
 
     func endPractice() {
-        SoundService.playGameOver()
+        SoundService.playGameOver(accuracy: engine.accuracy)
+        HapticService.gameOver(accuracy: engine.accuracy)
         engine.stopGame()
     }
 
     func endDailyChallenge() {
         elapsedTimer?.invalidate()
         elapsedTimer = nil
-        SoundService.playGameOver()
+        SoundService.playGameOver(accuracy: engine.accuracy)
+        HapticService.gameOver(accuracy: engine.accuracy)
         engine.stopGame()
     }
 
     func stopGame() {
         elapsedTimer?.invalidate()
         elapsedTimer = nil
-        SoundService.playGameOver()
+        SoundService.playGameOver(accuracy: engine.accuracy)
+        HapticService.gameOver(accuracy: engine.accuracy)
         engine.stopGame()
     }
 

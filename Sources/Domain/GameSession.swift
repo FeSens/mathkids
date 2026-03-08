@@ -34,6 +34,10 @@ struct GameSession: Sendable {
         }
     }
 
+    mutating func restoreStreak(_ streak: Int) {
+        currentStreak = streak
+    }
+
     mutating func tick() {
         guard timeRemaining > 0 else { return }
         timeRemaining -= 1

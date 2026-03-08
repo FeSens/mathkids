@@ -31,15 +31,35 @@ struct GameHeaderView: View {
                 Spacer()
 
                 if viewModel.comboMultiplier > 1 {
-                    Text("\(viewModel.comboMultiplier)x")
-                        .font(.system(size: 18, weight: .black, design: .rounded))
-                        .foregroundStyle(.purple)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 2)
-                        .background(Capsule().fill(.purple.opacity(0.15)))
-                        .scaleEffect(1.0 + Double(viewModel.comboMultiplier) * 0.05)
-                        .animation(.spring(duration: 0.3), value: viewModel.comboMultiplier)
-                        .accessibilityIdentifier("comboMultiplier")
+                    HStack(spacing: 4) {
+                        Text("\(viewModel.comboMultiplier)x")
+                            .font(.system(size: 18, weight: .black, design: .rounded))
+                            .foregroundStyle(.purple)
+
+                        if viewModel.comboMultiplier >= 3 {
+                            Text("2x XP")
+                                .font(.system(size: 10, weight: .bold, design: .rounded))
+                                .foregroundStyle(.white)
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 2)
+                                .background(Capsule().fill(.orange))
+                                .accessibilityIdentifier("doubleXPBadge")
+                        }
+                    }
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 2)
+                    .background(Capsule().fill(.purple.opacity(0.15)))
+                    .scaleEffect(1.0 + Double(viewModel.comboMultiplier) * 0.05)
+                    .animation(.spring(duration: 0.3), value: viewModel.comboMultiplier)
+                    .accessibilityIdentifier("comboMultiplier")
+                }
+
+                if viewModel.hasStreakFreeze {
+                    Image(systemName: "shield.fill")
+                        .font(.system(size: 16))
+                        .foregroundStyle(.cyan)
+                        .accessibilityIdentifier("streakFreezeIndicator")
+                        .accessibilityLabel("Streak freeze active")
                 }
 
                 if viewModel.currentStreak > 0 {

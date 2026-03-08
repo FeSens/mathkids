@@ -22,6 +22,17 @@ struct SoundService {
         AudioServicesPlaySystemSound(1114) // descending tone
     }
 
+    static func playGameOver(accuracy: Double) {
+        guard SettingsManager.shared.soundEnabled else { return }
+        if accuracy >= 80 {
+            AudioServicesPlaySystemSound(1026) // triumphant ascending
+        } else if accuracy >= 50 {
+            AudioServicesPlaySystemSound(1025) // encouraging positive
+        } else {
+            AudioServicesPlaySystemSound(1114) // standard descending
+        }
+    }
+
     static func playAchievement() {
         guard SettingsManager.shared.soundEnabled else { return }
         AudioServicesPlaySystemSound(1026) // ascending positive

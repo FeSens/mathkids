@@ -75,4 +75,58 @@ struct GameEngineTests {
         engine.resetAdaptiveRange()
         #expect(engine.adaptiveRange == nil)
     }
+
+    @Test("Streak freeze awarded at 10-streak")
+    @MainActor
+    func streakFreezeAwardedAt10() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        #expect(engine.hasStreakFreeze == false)
+
+        for _ in 0..<10 {
+            let correct = engine.currentProblem.correctAnswer
+            engine.submitAnswer(correct)
+        }
+
+        #expect(engine.hasStreakFreeze == true)
+    }
+
+    @Test("Streak freeze protects streak on wrong answer")
+    @MainActor
+    func streakFreezeProtectsStreak() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+
+        for _ in 0..<10 {
+            let correct = engine.currentProblem.correctAnswer
+            engine.submitAnswer(correct)
+        }
+        #expect(engine.hasStreakFreeze == true)
+        let streakBefore = engine.currentStreak
+
+        engine.submitAnswer(999999)
+        #expect(engine.currentStreak == streakBefore)
+        #expect(engine.hasStreakFreeze == false)
+        #expect(engine.streakFreezeUsed == true)
+    }
+
+    @Test("Streak freeze consumed after one use")
+    @MainActor
+    func streakFreezeConsumedAfterUse() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+
+        for _ in 0..<10 {
+            let correct = engine.currentProblem.correctAnswer
+            engine.submitAnswer(correct)
+        }
+
+        // First wrong - protected
+        engine.submitAnswer(999999)
+        #expect(engine.hasStreakFreeze == false)
+
+        // Second wrong - not protected, streak resets
+        engine.submitAnswer(999999)
+        #expect(engine.currentStreak == 0)
+    }
 }
