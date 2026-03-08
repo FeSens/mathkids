@@ -150,4 +150,34 @@ extension Achievement {
     var achievementTooltipPosition: String {
         isRareAchievement ? "top" : "bottom"
     }
+
+    var achievementRewardTier: String {
+        isRareAchievement ? "platinum" : "standard"
+    }
+
+    var achievementIconColor: String {
+        switch category {
+        case .mastery: return "gold"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "teal"
+        }
+    }
+
+    var achievementIsEventBased: Bool {
+        false
+    }
+
+    var achievementPopupDuration: Double {
+        isRareAchievement ? 5.0 : 2.0
+    }
+
+    var achievementRequiredAccuracy: Int {
+        switch category {
+        case .mastery: return 90
+        case .streak: return 0
+        case .score: return 50
+        case .games: return 0
+        }
+    }
 }

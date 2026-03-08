@@ -26744,6 +26744,79 @@
         "Create common achievement",
         "Verify position is bottom"
       ]
+    },
+    {
+      "id": "logic-1604",
+      "title": "achievementRewardTier",
+      "description": "Return reward tier label",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify tier is platinum",
+        "Create common achievement",
+        "Verify tier is standard"
+      ]
+    },
+    {
+      "id": "logic-1605",
+      "title": "achievementIconColor",
+      "description": "Return icon tint color name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify color is gold",
+        "Create games achievement",
+        "Verify color is teal"
+      ]
+    },
+    {
+      "id": "logic-1606",
+      "title": "achievementIsEventBased",
+      "description": "Return whether achievement is event-based",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify isEventBased is false"
+      ]
+    },
+    {
+      "id": "logic-1607",
+      "title": "achievementPopupDuration",
+      "description": "Return popup display duration",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify duration >= 4.0",
+        "Create common achievement",
+        "Verify duration <= 2.0"
+      ]
+    },
+    {
+      "id": "logic-1608",
+      "title": "achievementRequiredAccuracy",
+      "description": "Return required accuracy percentage",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify accuracy >= 80",
+        "Create games achievement",
+        "Verify accuracy == 0"
+      ]
     }
   ],
   "_schema": {
