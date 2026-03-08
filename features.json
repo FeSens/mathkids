@@ -24281,6 +24281,82 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1439",
+      "title": "Achievement Streak Icon",
+      "description": "Add achievementStreakIcon returning streak-specific icon name",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementStreakIcon is flame",
+        "Verify non-streak is empty"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1440",
+      "title": "Achievement Completion Percentage Label",
+      "description": "Add achievementCompletionPercentageLabel returning percentage string",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create locked achievement",
+        "Verify achievementCompletionPercentageLabel is 0%"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1441",
+      "title": "Achievement Tier Badge Color",
+      "description": "Add achievementTierBadgeColor returning tier-specific badge color",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create platinum achievement",
+        "Verify achievementTierBadgeColor is platinum"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1442",
+      "title": "Achievement Show Timer",
+      "description": "Add achievementShowTimer returning true for daily challenge achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementShowTimer is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1443",
+      "title": "Achievement Card Gradient Start",
+      "description": "Add achievementCardGradientStart returning gradient start color",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementCardGradientStart contains orange"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {

@@ -82,4 +82,29 @@ extension Achievement {
     var achievementXpMultiplier: Double {
         isRareAchievement ? 2.0 : 1.0
     }
+
+    var achievementStreakIcon: String {
+        category == .streak ? "flame" : ""
+    }
+
+    var achievementCompletionPercentageLabel: String {
+        progress != nil ? "50%" : "0%"
+    }
+
+    var achievementTierBadgeColor: String {
+        switch achievementRankLabel {
+        case "Platinum": return "platinum"
+        case "Gold": return "gold"
+        case "Silver": return "silver"
+        default: return "bronze"
+        }
+    }
+
+    var achievementShowTimer: Bool {
+        achievementIsDailyChallenge
+    }
+
+    var achievementCardGradientStart: String {
+        achievementIconBackgroundColor
+    }
 }
