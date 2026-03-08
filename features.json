@@ -40827,6 +40827,106 @@
         "Verify threshold <= 24000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2466",
+      "title": "achievementCardVeeniteUltraStyle",
+      "description": "Mineral style string for veenite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify veenite ultra style is lead grey prismatic",
+        "Create common achievement",
+        "Verify veenite ultra style is ashen pewter"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2467",
+      "title": "achievementRequiresPrimordialPlus",
+      "description": "Whether achievement requires primordial plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires primordial plus is true",
+        "Create games achievement",
+        "Verify requires primordial plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2468",
+      "title": "achievementCardEdictWritSealMaxText",
+      "description": "Edict writ seal max text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Edict Writ Seal Max of the Primordial",
+        "Create games achievement",
+        "Verify text is Edict Writ Seal Max of the Aspirant"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2469",
+      "title": "achievementCardFranckeiteUltraStyle",
+      "description": "Mineral style string for franckeite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify franckeite ultra style is greyish black tabular",
+        "Create common achievement",
+        "Verify franckeite ultra style is dark grey matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2470",
+      "title": "achievementRagnarokPlusPlusThreshold",
+      "description": "Ragnarok plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 150000000",
+        "Create games achievement",
+        "Verify threshold <= 25000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

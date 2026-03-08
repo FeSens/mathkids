@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 14500000
         }
     }
+
+    var achievementCardVeeniteUltraStyle: String {
+        isRareAchievement ? "lead grey prismatic" : "ashen pewter"
+    }
+
+    var achievementRequiresPrimordialPlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardEdictWritSealMaxText: String {
+        switch category {
+        case .mastery: return "Edict Writ Seal Max of the Primordial"
+        case .streak: return "Edict Writ Seal Max of the Warden"
+        case .score: return "Edict Writ Seal Max of the Exalted"
+        case .games: return "Edict Writ Seal Max of the Aspirant"
+        }
+    }
+
+    var achievementCardFranckeiteUltraStyle: String {
+        isRareAchievement ? "greyish black tabular" : "dark grey matte"
+    }
+
+    var achievementRagnarokPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 150000000
+        case .streak: return 60000000
+        case .score: return 145000000
+        case .games: return 15000000
+        }
+    }
 }
