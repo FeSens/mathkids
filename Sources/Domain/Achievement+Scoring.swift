@@ -265,4 +265,29 @@ extension Achievement {
     var achievementCardRewardText: String {
         "Reward: \(pointValue) pts"
     }
+
+    var achievementCardShimmerEffect: Bool {
+        isRareAchievement
+    }
+
+    var achievementIsSkillProgression: Bool {
+        category == .mastery || category == .score
+    }
+
+    var achievementCardMottoText: String {
+        switch category {
+        case .mastery: return "Master the craft"
+        case .streak: return "Stay consistent"
+        case .score: return "Aim for the top"
+        case .games: return "Keep playing"
+        }
+    }
+
+    var achievementCardShadowStyle: String {
+        isRareAchievement ? "elevated" : "subtle"
+    }
+
+    var achievementIsActivityBased: Bool {
+        category == .games || category == .streak
+    }
 }

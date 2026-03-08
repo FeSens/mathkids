@@ -30829,6 +30829,76 @@
         "Verify cardRewardText contains points"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1869",
+      "name": "achievementCardShimmerEffect",
+      "description": "Whether achievement card shows shimmer effect based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify shimmerEffect is true",
+        "Create common achievement",
+        "Verify shimmerEffect is false"
+      ]
+    },
+    {
+      "id": "logic-1870",
+      "name": "achievementIsSkillProgression",
+      "description": "Whether achievement tracks skill progression (mastery or score)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isSkillProgression is true",
+        "Create games achievement",
+        "Verify isSkillProgression is false"
+      ]
+    },
+    {
+      "id": "logic-1871",
+      "name": "achievementCardMottoText",
+      "description": "Motto text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify motto contains mastery text",
+        "Create games achievement",
+        "Verify motto contains games text"
+      ]
+    },
+    {
+      "id": "logic-1872",
+      "name": "achievementCardShadowStyle",
+      "description": "Shadow style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify shadow is elevated",
+        "Create common achievement",
+        "Verify shadow is subtle"
+      ]
+    },
+    {
+      "id": "logic-1873",
+      "name": "achievementIsActivityBased",
+      "description": "Whether achievement is based on activity (games or streak)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create games achievement",
+        "Verify isActivityBased is true",
+        "Create score achievement",
+        "Verify isActivityBased is false"
+      ]
     }
   ],
   "_schema": {
