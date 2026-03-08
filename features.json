@@ -17621,6 +17621,81 @@
         "add contains + symbol"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1029",
+      "name": "operationUnicodeSymbol",
+      "description": "Unicode math symbol for operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns +, divide returns \u00f7"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1030",
+      "name": "operationLatexSymbol",
+      "description": "LaTeX symbol for operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "multiply returns times, divide returns div"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1031",
+      "name": "operationWordProblemPhrase",
+      "description": "Phrase used in word problems",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add contains more than, subtract contains less than"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1032",
+      "name": "operationInverseSymbol",
+      "description": "Symbol of inverse operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add inverse symbol is -, multiply inverse is \u00f7"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1033",
+      "name": "operationPrecedence",
+      "description": "Mathematical precedence level",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add/subtract are 1, multiply/divide are 2"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

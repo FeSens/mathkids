@@ -51,4 +51,47 @@ extension Operation {
         case .divide: return "÷, /, ∕"
         }
     }
+
+    var operationUnicodeSymbol: String {
+        switch self {
+        case .add: return "+"
+        case .subtract: return "−"
+        case .multiply: return "×"
+        case .divide: return "÷"
+        }
+    }
+
+    var operationLatexSymbol: String {
+        switch self {
+        case .add: return "+"
+        case .subtract: return "-"
+        case .multiply: return "\\times"
+        case .divide: return "\\div"
+        }
+    }
+
+    var operationWordProblemPhrase: String {
+        switch self {
+        case .add: return "more than"
+        case .subtract: return "less than"
+        case .multiply: return "times as many"
+        case .divide: return "shared equally among"
+        }
+    }
+
+    var operationInverseSymbol: String {
+        switch self {
+        case .add: return "-"
+        case .subtract: return "+"
+        case .multiply: return "÷"
+        case .divide: return "×"
+        }
+    }
+
+    var operationPrecedence: Int {
+        switch self {
+        case .add, .subtract: return 1
+        case .multiply, .divide: return 2
+        }
+    }
 }
