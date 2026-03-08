@@ -23975,6 +23975,81 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1419",
+      "title": "Achievement Lock Icon Name",
+      "description": "Add achievementLockIconName returning lock SF Symbol based on locked state",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create locked achievement",
+        "Verify achievementLockIconName is lock.fill"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1420",
+      "title": "Achievement Header Color",
+      "description": "Add achievementHeaderColor returning header background color",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementHeaderColor matches category"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1421",
+      "title": "Achievement Content Alignment",
+      "description": "Add achievementContentAlignment returning alignment based on layout mode",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementContentAlignment is leading"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1422",
+      "title": "Achievement Points Label Format",
+      "description": "Add achievementPointsLabelFormat returning formatted points string with suffix",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementPointsLabelFormat contains pts"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1423",
+      "title": "Achievement Swipe Action Available",
+      "description": "Add achievementSwipeActionAvailable returning true when achievement is interactable",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement with progress",
+        "Verify achievementSwipeActionAvailable is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {

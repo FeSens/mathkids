@@ -258,4 +258,24 @@ extension Achievement {
         if isRareAchievement { return "elevated" }
         return "basic"
     }
+
+    var achievementLockIconName: String {
+        progress != nil ? "lock.open.fill" : "lock.fill"
+    }
+
+    var achievementHeaderColor: String {
+        achievementCardColor
+    }
+
+    var achievementContentAlignment: String {
+        achievementLayoutMode == "horizontal" ? "leading" : "center"
+    }
+
+    var achievementPointsLabelFormat: String {
+        "+\(pointValue) pts"
+    }
+
+    var achievementSwipeActionAvailable: Bool {
+        progress != nil
+    }
 }
