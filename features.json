@@ -16376,6 +16376,86 @@
         "All operations have unique keys"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-949",
+      "name": "operationTip",
+      "description": "Operation returning a learning tip for the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> tip string",
+        "Divide -> tip string"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-950",
+      "name": "isSubtractOrDivide",
+      "description": "Operation returning true for subtract or divide",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Subtract -> true",
+        "Add -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-951",
+      "name": "operationLabel",
+      "description": "Operation returning formatted label like [+] Addition",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> contains + and name",
+        "Divide -> contains symbol and name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-952",
+      "name": "operationIndex",
+      "description": "Operation returning zero-based index matching case order",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> 0",
+        "Divide -> 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-953",
+      "name": "isAddOrMultiply",
+      "description": "Operation returning true for add or multiply (commutative ops)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> true",
+        "Subtract -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

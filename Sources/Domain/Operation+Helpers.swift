@@ -103,4 +103,29 @@ extension Operation {
     var operationSortKey: String {
         "\(operationOrder)-\(displayName)"
     }
+
+    var operationTip: String {
+        switch self {
+        case .add: return "Count up from the larger number"
+        case .subtract: return "Count down from the first number"
+        case .multiply: return "Think of it as groups of items"
+        case .divide: return "Think of sharing equally"
+        }
+    }
+
+    var isSubtractOrDivide: Bool {
+        requiresOrdering
+    }
+
+    var operationLabel: String {
+        "[\(rawValue)] \(displayName)"
+    }
+
+    var operationIndex: Int {
+        operationOrder
+    }
+
+    var isAddOrMultiply: Bool {
+        self == .add || self == .multiply
+    }
 }
