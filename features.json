@@ -4968,6 +4968,96 @@
       "files": [
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-254",
+      "title": "DifficultyLevel streak bonus multiplier",
+      "description": "DifficultyLevel provides a streak bonus multiplier for scoring",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-002"
+      ],
+      "test_steps": [
+        "Easy has 1x multiplier",
+        "Medium has 1.5x multiplier",
+        "Hard has 2x multiplier"
+      ],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
+    },
+    {
+      "id": "logic-255",
+      "title": "PlayerStats longest streak per difficulty",
+      "description": "PlayerStats tracks the longest answer streak per difficulty level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Best streak for each difficulty starts at 0",
+        "Update best streak for specific difficulty",
+        "Different difficulties tracked independently"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-256",
+      "title": "GameSession correct answer percentage by half",
+      "description": "GameSession tracks accuracy for first and second half of problems answered",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "First half accuracy calculated from first half of answers",
+        "Second half accuracy calculated from second half",
+        "Returns 0 for empty halves"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-257",
+      "title": "MathProblem number of digits in answer",
+      "description": "MathProblem provides the digit count of the correct answer",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Single digit answer returns 1",
+        "Two digit answer returns 2",
+        "Three digit answer returns 3"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-258",
+      "title": "ResultsViewModel improvement summary text",
+      "description": "ResultsViewModel provides a summary text describing areas of improvement",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Perfect score shows celebration text",
+        "High accuracy shows positive text",
+        "Low accuracy suggests practice areas"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

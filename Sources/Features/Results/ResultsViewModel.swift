@@ -199,6 +199,18 @@ final class ResultsViewModel {
         }
     }
 
+    var improvementSummary: String {
+        if isPerfectScore {
+            return "Perfect score! You nailed every problem!"
+        } else if accuracy >= 80 {
+            return "Great job! You're doing really well!"
+        } else if accuracy >= 60 {
+            return "Good effort! Keep practicing to improve!"
+        } else {
+            return "Keep trying! Practice makes perfect!"
+        }
+    }
+
     var gradeLabel: String {
         if accuracy >= 95 { return "A+" }
         if accuracy >= 90 { return "A" }

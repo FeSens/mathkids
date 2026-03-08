@@ -168,4 +168,24 @@ struct MathProblemTests {
         let problem = MathProblem(operand1: 12, operand2: 3, operation: .divide)
         #expect(problem.hintText.lowercased().contains("split"))
     }
+
+    // MARK: - Answer Digit Count (logic-257)
+
+    @Test("Single digit answer has 1 digit")
+    func singleDigitAnswer() {
+        let problem = MathProblem(operand1: 2, operand2: 3, operation: .add) // = 5
+        #expect(problem.answerDigitCount == 1)
+    }
+
+    @Test("Two digit answer has 2 digits")
+    func twoDigitAnswer() {
+        let problem = MathProblem(operand1: 15, operand2: 20, operation: .add) // = 35
+        #expect(problem.answerDigitCount == 2)
+    }
+
+    @Test("Three digit answer has 3 digits")
+    func threeDigitAnswer() {
+        let problem = MathProblem(operand1: 50, operand2: 50, operation: .add) // = 100
+        #expect(problem.answerDigitCount == 3)
+    }
 }

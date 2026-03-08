@@ -14,6 +14,7 @@ struct GameSession: Sendable {
     private var currentStreakOperation: Operation?
     private var currentOperationStreak: Int = 0
     private var bestOperationStreak: Int = 0
+    private var answerHistory: [Bool] = []
     private var correctPerOperation: [Operation: Int] = [:]
     private var totalPerOperation: [Operation: Int] = [:]
 
@@ -42,6 +43,7 @@ struct GameSession: Sendable {
             totalPerOperation[op, default: 0] += 1
             if correct { correctPerOperation[op, default: 0] += 1 }
         }
+        answerHistory.append(correct)
         totalAnswered += 1
         if correct {
             totalCorrect += 1
@@ -105,6 +107,24 @@ struct GameSession: Sendable {
         let minutes = Double(totalTimePlayed) / 60.0
         guard minutes > 0 else { return 0 }
         return Double(totalAnswered) / minutes
+    }
+
+    var firstHalfAccuracy: Double {
+        guard !answerHistory.isEmpty else { return 0 }
+        let half = answerHistory.count / 2
+        guard half > 0 else { return 0 }
+        let firstHalf = Array(answerHistory.prefix(half))
+        let correct = firstHalf.filter { $0 }.count
+        return Double(correct) / Double(firstHalf.count) * 100
+    }
+
+    var secondHalfAccuracy: Double {
+        guard answerHistory.count >= 2 else { return 0 }
+        let half = answerHistory.count / 2
+        let secondHalf = Array(answerHistory.suffix(answerHistory.count - half))
+        guard !secondHalf.isEmpty else { return 0 }
+        let correct = secondHalf.filter { $0 }.count
+        return Double(correct) / Double(secondHalf.count) * 100
     }
 
     var timeBonus: Int {

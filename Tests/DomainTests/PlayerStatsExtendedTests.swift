@@ -199,4 +199,31 @@ struct PlayerStatsExtendedTests {
         stats.recentAccuracies = [90.0, 80.0, 70.0, 60.0, 50.0]
         #expect(stats.accuracyTrend == .declining)
     }
+
+    // MARK: - Best Streak Per Difficulty (logic-255)
+
+    @Test("Best streak per difficulty starts at 0")
+    func bestStreakPerDifficultyStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.bestStreakForDifficulty(.easy) == 0)
+        #expect(stats.bestStreakForDifficulty(.medium) == 0)
+        #expect(stats.bestStreakForDifficulty(.hard) == 0)
+    }
+
+    @Test("Update best streak for specific difficulty")
+    func updateBestStreakForDifficulty() {
+        let stats = PlayerStats()
+        stats.updateBestStreak(5, for: .easy)
+        #expect(stats.bestStreakForDifficulty(.easy) == 5)
+    }
+
+    @Test("Different difficulties tracked independently")
+    func bestStreakIndependentPerDifficulty() {
+        let stats = PlayerStats()
+        stats.updateBestStreak(10, for: .easy)
+        stats.updateBestStreak(7, for: .hard)
+        #expect(stats.bestStreakForDifficulty(.easy) == 10)
+        #expect(stats.bestStreakForDifficulty(.hard) == 7)
+        #expect(stats.bestStreakForDifficulty(.medium) == 0)
+    }
 }

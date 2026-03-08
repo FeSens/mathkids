@@ -271,8 +271,42 @@ struct GameSessionTests {
         for _ in 0..<30 { easySession.tick() } // 30s left
         var hardSession = GameSession(difficulty: .hard)
         for _ in 0..<15 { hardSession.tick() } // 15s left (half of 30)
-        // Hard has higher multiplier, so even with less time it can still have meaningful bonus
         #expect(hardSession.timeBonus > 0)
         #expect(easySession.timeBonus > 0)
+    }
+
+    // MARK: - Accuracy By Half (logic-256)
+
+    @Test("First half accuracy from first half of answers")
+    func firstHalfAccuracy() {
+        var session = GameSession(difficulty: .easy)
+        // First half: 3 correct, 1 wrong = 75%
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: false)
+        // Second half: all wrong
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        #expect(session.firstHalfAccuracy == 75.0)
+    }
+
+    @Test("Second half accuracy from second half of answers")
+    func secondHalfAccuracy() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: true)
+        session.recordAnswer(correct: true)
+        #expect(session.secondHalfAccuracy == 100.0)
+    }
+
+    @Test("Returns 0 for empty session")
+    func halfAccuracyEmpty() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.firstHalfAccuracy == 0)
+        #expect(session.secondHalfAccuracy == 0)
     }
 }

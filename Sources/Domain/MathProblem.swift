@@ -102,6 +102,14 @@ extension MathProblem {
     }
 }
 
+extension MathProblem {
+    var answerDigitCount: Int {
+        let answer = abs(correctAnswer)
+        if answer == 0 { return 1 }
+        return String(answer).count
+    }
+}
+
 enum AnswerMagnitude: Sendable {
     case small, medium, large
 }

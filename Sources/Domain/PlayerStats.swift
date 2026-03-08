@@ -47,6 +47,9 @@ final class PlayerStats {
     var subtractGames: Int = 0
     var multiplyGames: Int = 0
     var divideGames: Int = 0
+    var bestStreakEasy: Int = 0
+    var bestStreakMedium: Int = 0
+    var bestStreakHard: Int = 0
 
     init() {}
 
@@ -161,6 +164,22 @@ final class PlayerStats {
         case .subtract: subtractGames
         case .multiply: multiplyGames
         case .divide: divideGames
+        }
+    }
+
+    func bestStreakForDifficulty(_ difficulty: DifficultyLevel) -> Int {
+        switch difficulty {
+        case .easy: bestStreakEasy
+        case .medium: bestStreakMedium
+        case .hard: bestStreakHard
+        }
+    }
+
+    func updateBestStreak(_ streak: Int, for difficulty: DifficultyLevel) {
+        switch difficulty {
+        case .easy: bestStreakEasy = max(bestStreakEasy, streak)
+        case .medium: bestStreakMedium = max(bestStreakMedium, streak)
+        case .hard: bestStreakHard = max(bestStreakHard, streak)
         }
     }
 

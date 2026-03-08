@@ -439,4 +439,27 @@ struct ResultsViewModelTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.gradeLabel == "F")
     }
+
+    // MARK: - Improvement Summary (logic-258)
+
+    @Test("Perfect score shows celebration text")
+    func improvementSummaryPerfect() {
+        let session = makeSession(correct: 10, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.improvementSummary.lowercased().contains("perfect"))
+    }
+
+    @Test("High accuracy shows positive text")
+    func improvementSummaryHigh() {
+        let session = makeSession(correct: 8, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(!vm.improvementSummary.isEmpty)
+    }
+
+    @Test("Low accuracy suggests practice")
+    func improvementSummaryLow() {
+        let session = makeSession(correct: 3, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.improvementSummary.lowercased().contains("practice") || vm.improvementSummary.lowercased().contains("keep"))
+    }
 }

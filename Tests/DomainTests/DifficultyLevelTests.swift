@@ -96,4 +96,21 @@ struct DifficultyLevelTests {
         #expect(DifficultyLevel.medium.operandDescription == "1 to 20")
         #expect(DifficultyLevel.hard.operandDescription == "1 to 50")
     }
+
+    // MARK: - Streak Bonus Multiplier (logic-254)
+
+    @Test("Easy has 1x streak bonus multiplier")
+    func easyStreakMultiplier() {
+        #expect(DifficultyLevel.easy.streakBonusMultiplier == 1.0)
+    }
+
+    @Test("Medium has 1.5x streak bonus multiplier")
+    func mediumStreakMultiplier() {
+        #expect(DifficultyLevel.medium.streakBonusMultiplier == 1.5)
+    }
+
+    @Test("Hard has 2x streak bonus multiplier")
+    func hardStreakMultiplier() {
+        #expect(DifficultyLevel.hard.streakBonusMultiplier == 2.0)
+    }
 }
