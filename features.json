@@ -18296,6 +18296,81 @@
         "not empty for all levels"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1074",
+      "name": "difficultyTargetScore",
+      "description": "Target score to aim for at this difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns 50, hard returns 150"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1075",
+      "name": "difficultyIsIntermediate",
+      "description": "Whether this is medium difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "medium is intermediate, easy is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1076",
+      "name": "difficultyDescriptionText",
+      "description": "Full description of the difficulty level",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all levels"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1077",
+      "name": "difficultyThemeColor",
+      "description": "Theme color name string for UI theming",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns green, hard returns red"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1078",
+      "name": "difficultyMinAccuracyForMastery",
+      "description": "Min accuracy percentage for mastery",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns 80, hard returns 90"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

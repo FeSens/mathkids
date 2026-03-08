@@ -84,4 +84,40 @@ extension DifficultyLevel {
         case .hard: return "Amazing! You conquered hard mode!"
         }
     }
+
+    var difficultyTargetScore: Int {
+        switch self {
+        case .easy: return 50
+        case .medium: return 100
+        case .hard: return 150
+        }
+    }
+
+    var difficultyIsIntermediate: Bool {
+        self == .medium
+    }
+
+    var difficultyDescriptionText: String {
+        switch self {
+        case .easy: return "Simple problems with plenty of time"
+        case .medium: return "Moderate challenge with all operations"
+        case .hard: return "Tough problems under time pressure"
+        }
+    }
+
+    var difficultyThemeColor: String {
+        switch self {
+        case .easy: return "green"
+        case .medium: return "orange"
+        case .hard: return "red"
+        }
+    }
+
+    var difficultyMinAccuracyForMastery: Int {
+        switch self {
+        case .easy: return 80
+        case .medium: return 85
+        case .hard: return 90
+        }
+    }
 }
