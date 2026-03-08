@@ -18746,6 +18746,81 @@
         "min of 2,5 is 2"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1104",
+      "name": "problemOperandProduct",
+      "description": "Product of both operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3*4 returns 12"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1105",
+      "name": "problemOperandDifference",
+      "description": "Absolute difference between operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "2,5 returns 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1106",
+      "name": "problemIsEqualOperands",
+      "description": "Whether both operands are equal",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3,3 returns true, 2,3 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1107",
+      "name": "problemReadAloudText",
+      "description": "Text for reading the problem aloud",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "add problem contains plus"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1108",
+      "name": "problemAnswerDigitCount",
+      "description": "Number of digits in the correct answer",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "answer 5 has 1 digit, answer 12 has 2 digits"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

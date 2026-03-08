@@ -33,4 +33,24 @@ extension MathProblem {
     var problemMinOperand: Int {
         min(operand1, operand2)
     }
+
+    var problemOperandProduct: Int {
+        operand1 * operand2
+    }
+
+    var problemOperandDifference: Int {
+        abs(operand1 - operand2)
+    }
+
+    var problemIsEqualOperands: Bool {
+        operand1 == operand2
+    }
+
+    var problemReadAloudText: String {
+        "\(operand1) \(operation.operationSpokenPhrase) \(operand2)"
+    }
+
+    var problemAnswerDigitCount: Int {
+        String(abs(correctAnswer)).count
+    }
 }
