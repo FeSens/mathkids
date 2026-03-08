@@ -13567,6 +13567,86 @@
         "Verify returns 'basic'"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-774",
+      "name": "MathProblem.answerIsPositive",
+      "description": "Boolean true when the correct answer is positive",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with answer 42",
+        "Verify answerDigitCount returns 2"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-775",
+      "name": "MathProblem.operandAverage",
+      "description": "Average of the two operands as Double",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with operands 3 and 5",
+        "Verify operandAverage returns 4.0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-776",
+      "name": "MathProblem.isLargeAnswer",
+      "description": "Boolean true when answer is 50 or greater",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with large answer",
+        "Verify isLargeAnswer is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-777",
+      "name": "MathProblem.operandSumText",
+      "description": "Text showing the sum of operands regardless of operation",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with operands 5 and 3",
+        "Verify operandSumText returns '8'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-778",
+      "name": "MathProblem.hasEvenAnswer",
+      "description": "Boolean true when the correct answer is even",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with even answer",
+        "Verify hasEvenAnswer is true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

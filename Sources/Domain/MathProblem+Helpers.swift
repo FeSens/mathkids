@@ -26,4 +26,24 @@ extension MathProblem {
         if maxOp <= 10 { return "intermediate" }
         return "advanced"
     }
+
+    var answerIsPositive: Bool {
+        correctAnswer > 0
+    }
+
+    var operandAverage: Double {
+        Double(operand1 + operand2) / 2.0
+    }
+
+    var isLargeAnswer: Bool {
+        correctAnswer >= 50
+    }
+
+    var operandSumText: String {
+        "\(operand1 + operand2)"
+    }
+
+    var hasEvenAnswer: Bool {
+        correctAnswer % 2 == 0
+    }
 }
