@@ -35257,6 +35257,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2166",
+      "title": "Achievement Card Cuprite Style",
+      "description": "Computed property returning cuprite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns ruby style",
+        "Common returns copper style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2167",
+      "title": "Achievement Requires Heart",
+      "description": "Computed property checking if achievement requires heart",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Games requires heart",
+        "Mastery does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2168",
+      "title": "Achievement Card Directive Writ Text",
+      "description": "Computed property returning directive writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2169",
+      "title": "Achievement Card Enstatite Style",
+      "description": "Computed property returning enstatite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns bronze style",
+        "Common returns grey style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2170",
+      "title": "Achievement Omnipotence Threshold",
+      "description": "Computed property returning omnipotence threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

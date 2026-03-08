@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 25000000
         }
     }
+
+    var achievementCardCupriteStyle: String {
+        isRareAchievement ? "ruby" : "copper"
+    }
+
+    var achievementRequiresHeart: Bool {
+        category == .games
+    }
+
+    var achievementCardDirectiveWritText: String {
+        switch category {
+        case .mastery: return "Directive Writ of Knowledge"
+        case .streak: return "Directive Writ of Persistence"
+        case .score: return "Directive Writ of Achievement"
+        case .games: return "Directive Writ of Participation"
+        }
+    }
+
+    var achievementCardEnstatiteStyle: String {
+        isRareAchievement ? "bronze" : "grey"
+    }
+
+    var achievementOmnipotenceThreshold: Int {
+        switch category {
+        case .mastery: return 500000000
+        case .streak: return 250000000
+        case .score: return 350000000
+        case .games: return 50000000
+        }
+    }
 }
