@@ -132,6 +132,18 @@ extension Achievement {
     var achievementHasProgress: Bool {
         progress != nil
     }
+
+    var achievementDescriptionLength: Int {
+        description.count
+    }
+
+    var achievementIsHighValue: Bool {
+        pointValue >= 25
+    }
+
+    var achievementIdSuffix: String {
+        String(id.split(separator: "_").last ?? Substring(id))
+    }
 }
 
 extension Achievement.Category {
@@ -182,5 +194,13 @@ extension Achievement.Category {
         case .games: return "green"
         case .mastery: return "indigo"
         }
+    }
+
+    var categoryAccessibilityLabel: String {
+        "\(displayName) category"
+    }
+
+    var categoryIsEndgame: Bool {
+        self == .mastery
     }
 }

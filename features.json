@@ -17243,6 +17243,83 @@
         "streak returns warm color, mastery returns cool"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1004",
+      "name": "achievementDescriptionLength",
+      "description": "Character count of achievement description",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "description length is positive"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1005",
+      "name": "achievementIsHighValue",
+      "description": "Whether achievement is worth 25+ points",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "mastery achievement is high value",
+        "games achievement is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1006",
+      "name": "achievementIdSuffix",
+      "description": "Last part of achievement id after underscore",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "first_game suffix is game",
+        "streak_5 suffix is 5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1007",
+      "name": "categoryAccessibilityLabel",
+      "description": "Accessibility label for achievement category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak label contains Streak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1008",
+      "name": "categoryIsEndgame",
+      "description": "Whether category represents endgame content",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "mastery is endgame, games is not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
