@@ -28038,6 +28038,77 @@
         "Create games achievement",
         "Verify isUrgent is false"
       ]
+    },
+    {
+      "id": "logic-1694",
+      "title": "achievementStreakBonusPoints",
+      "description": "Return bonus points for streak achievements",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify bonus >= 5",
+        "Create games achievement",
+        "Verify bonus == 0"
+      ]
+    },
+    {
+      "id": "logic-1695",
+      "title": "achievementCardGradientColors",
+      "description": "Return gradient color pair",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify contains purple",
+        "Create games achievement",
+        "Verify contains green"
+      ]
+    },
+    {
+      "id": "logic-1696",
+      "title": "achievementMaxDisplayCount",
+      "description": "Return max count to display in lists",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify maxDisplayCount is 99"
+      ]
+    },
+    {
+      "id": "logic-1697",
+      "title": "achievementPrioritySortKey",
+      "description": "Return combined sort key string",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify key contains category index and id"
+      ]
+    },
+    {
+      "id": "logic-1698",
+      "title": "achievementBadgeAnimated",
+      "description": "Return whether badge is animated",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify animated is true",
+        "Create common achievement",
+        "Verify animated is false"
+      ]
     }
   ],
   "_schema": {

@@ -73,4 +73,29 @@ extension Achievement {
     var achievementIsUrgent: Bool {
         category == .streak
     }
+
+    var achievementStreakBonusPoints: Int {
+        category == .streak ? 10 : 0
+    }
+
+    var achievementCardGradientColors: String {
+        switch category {
+        case .mastery: return "purple-indigo"
+        case .streak: return "orange-red"
+        case .score: return "blue-cyan"
+        case .games: return "green-teal"
+        }
+    }
+
+    var achievementMaxDisplayCount: Int {
+        99
+    }
+
+    var achievementPrioritySortKey: String {
+        "\(achievementCategoryWeight)-\(id)"
+    }
+
+    var achievementBadgeAnimated: Bool {
+        isRareAchievement
+    }
 }
