@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementCardOpalStyle: String {
+        isRareAchievement ? "fire" : "common"
+    }
+
+    var achievementRequiresPatience: Bool {
+        category == .streak
+    }
+
+    var achievementCardEdictText: String {
+        switch category {
+        case .mastery: return "By decree of mastery"
+        case .streak: return "By decree of persistence"
+        case .score: return "By decree of excellence"
+        case .games: return "By decree of participation"
+        }
+    }
+
+    var achievementCardAmethystStyle: String {
+        isRareAchievement ? "royal" : "pale"
+    }
+
+    var achievementProgressSteps: Int {
+        switch category {
+        case .mastery: return 20
+        case .streak: return 7
+        case .score: return 5
+        case .games: return 1
+        }
+    }
 }

@@ -32299,6 +32299,76 @@
         "Create games achievement",
         "Verify checkpoints is low"
       ]
+    },
+    {
+      "id": "logic-1974",
+      "name": "achievementCardOpalStyle",
+      "description": "Opal gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify opal is fire",
+        "Create common achievement",
+        "Verify opal is common"
+      ]
+    },
+    {
+      "id": "logic-1975",
+      "name": "achievementRequiresPatience",
+      "description": "Whether achievement requires patience (streak only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresPatience is true",
+        "Create score achievement",
+        "Verify requiresPatience is false"
+      ]
+    },
+    {
+      "id": "logic-1976",
+      "name": "achievementCardEdictText",
+      "description": "Edict text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify edict text",
+        "Create games achievement",
+        "Verify edict text"
+      ]
+    },
+    {
+      "id": "logic-1977",
+      "name": "achievementCardAmethystStyle",
+      "description": "Amethyst gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify amethyst is royal",
+        "Create common achievement",
+        "Verify amethyst is pale"
+      ]
+    },
+    {
+      "id": "logic-1978",
+      "name": "achievementProgressSteps",
+      "description": "Number of progress steps for achievement based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify steps is high",
+        "Create games achievement",
+        "Verify steps is low"
+      ]
     }
   ],
   "_schema": {
