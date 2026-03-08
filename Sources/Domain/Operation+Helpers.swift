@@ -70,4 +70,37 @@ extension Operation {
         case .divide: return "÷"
         }
     }
+
+    var operationKeyword: String {
+        switch self {
+        case .add: return "plus"
+        case .subtract: return "minus"
+        case .multiply: return "times"
+        case .divide: return "divided by"
+        }
+    }
+
+    var isLastInOrder: Bool {
+        self == .divide
+    }
+
+    var operationPairName: String {
+        switch self {
+        case .add, .subtract: return "addition/subtraction"
+        case .multiply, .divide: return "multiplication/division"
+        }
+    }
+
+    var gradeLevel: Int {
+        switch self {
+        case .add: return 1
+        case .subtract: return 1
+        case .multiply: return 3
+        case .divide: return 3
+        }
+    }
+
+    var operationSortKey: String {
+        "\(operationOrder)-\(displayName)"
+    }
 }

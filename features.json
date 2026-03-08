@@ -16296,6 +16296,86 @@
         "Multiply -> \u00d7"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-944",
+      "name": "operationKeyword",
+      "description": "Operation returning keyword associated with the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> plus",
+        "Multiply -> times"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-945",
+      "name": "isLastInOrder",
+      "description": "Operation returning true for division (last taught)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Divide -> true",
+        "Add -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-946",
+      "name": "operationPairName",
+      "description": "Operation returning the name of its operation pair (add/subtract or multiply/divide)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> addition/subtraction",
+        "Multiply -> multiplication/division"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-947",
+      "name": "gradeLevel",
+      "description": "Operation returning recommended grade level for the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> low grade",
+        "Divide -> higher grade"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-948",
+      "name": "operationSortKey",
+      "description": "Operation returning sortable string key",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add sorts before multiply",
+        "All operations have unique keys"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
