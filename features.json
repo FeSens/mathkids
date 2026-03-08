@@ -4606,6 +4606,96 @@
       "files": [
         "Sources/Domain/Achievement.swift"
       ]
+    },
+    {
+      "id": "logic-234",
+      "title": "PlayerStats longest session duration",
+      "description": "PlayerStats tracks the longest single game session duration in seconds",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Starts at 0",
+        "After recording a 30s session, longestSessionSeconds is 30",
+        "Shorter session does not overwrite"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-235",
+      "title": "GameSession base score without bonuses",
+      "description": "GameSession provides baseScore computed from total correct times points per correct",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Answer 3 correct on easy (10 pts each)",
+        "baseScore returns 30",
+        "score includes bonus, baseScore does not"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-236",
+      "title": "Operation emoji property",
+      "description": "Operation enum has an emoji property for visual display in results",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Each operation has a unique emoji",
+        "add returns a plus-related emoji",
+        "All 4 operations have non-empty emojis"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-237",
+      "title": "HomeViewModel recommended difficulty",
+      "description": "HomeViewModel suggests a difficulty based on recent accuracy and games played",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "New player gets easy recommendation",
+        "High accuracy player gets harder recommendation",
+        "Low accuracy player stays at current or goes easier"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
+    },
+    {
+      "id": "logic-238",
+      "title": "GameEngine average response time",
+      "description": "GameEngine computes average response time across all answered problems",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "svc-002"
+      ],
+      "test_steps": [
+        "Returns nil when no problems answered",
+        "After answering, returns average of all timeTaken values",
+        "Includes both correct and incorrect answers"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
     }
   ],
   "_schema": {

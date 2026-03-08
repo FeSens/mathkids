@@ -201,4 +201,17 @@ struct GameSessionTests {
         session.recordAnswer(correct: true, bonusPoints: 3)
         #expect(session.totalBonusPoints == 8)
     }
+
+    // MARK: - Base Score (logic-235)
+
+    @Test("Base score without bonuses")
+    func baseScoreWithoutBonuses() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true, bonusPoints: 5)
+        session.recordAnswer(correct: true, bonusPoints: 3)
+        session.recordAnswer(correct: true, bonusPoints: 0)
+        // 3 correct * 10 pts = 30 base, total score = 30 + 8 = 38
+        #expect(session.baseScore == 30)
+        #expect(session.score == 38)
+    }
 }

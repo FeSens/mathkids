@@ -83,6 +83,10 @@ struct GameSession: Sendable {
         }
     }
 
+    var baseScore: Int {
+        totalCorrect * difficulty.pointsPerCorrect
+    }
+
     var streakMilestoneReached: Int? {
         guard currentStreak > 0 && currentStreak % 5 == 0 else { return nil }
         return currentStreak

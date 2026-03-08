@@ -227,4 +227,23 @@ struct GameEngineTests {
         engine.submitAnswer(99999) // wrong but still counted
         #expect(engine.operationFrequency[op] == 1)
     }
+
+    // MARK: - Average Response Time (logic-238)
+
+    @Test("Average response time nil when no answers")
+    @MainActor
+    func avgResponseTimeNil() {
+        let engine = GameEngine(difficulty: .easy)
+        #expect(engine.averageResponseTime == nil)
+    }
+
+    @Test("Average response time computed from history")
+    @MainActor
+    func avgResponseTimeComputed() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        engine.submitAnswer(99999)
+        #expect(engine.averageResponseTime != nil)
+        #expect(engine.averageResponseTime! >= 0)
+    }
 }

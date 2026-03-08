@@ -304,4 +304,23 @@ struct PlayerStatsTests {
         #expect(stats.xpForDifficulty(.hard) == 100)
         #expect(stats.xpForDifficulty(.medium) == 0)
     }
+
+    // MARK: - Longest Session (logic-234)
+
+    @Test("Longest session starts at 0")
+    func longestSessionStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.longestSessionSeconds == 0)
+    }
+
+    @Test("Longest session updates correctly")
+    func longestSessionUpdates() {
+        let stats = PlayerStats()
+        stats.updateLongestSession(30)
+        #expect(stats.longestSessionSeconds == 30)
+        stats.updateLongestSession(20)
+        #expect(stats.longestSessionSeconds == 30) // doesn't decrease
+        stats.updateLongestSession(45)
+        #expect(stats.longestSessionSeconds == 45)
+    }
 }

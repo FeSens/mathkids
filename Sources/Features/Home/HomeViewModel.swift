@@ -16,6 +16,7 @@ final class HomeViewModel {
     var levelName: String = "Beginner"
     var levelProgress: Double = 0
     var totalXP: Int = 0
+    var recommendedDifficulty: DifficultyLevel = .easy
 
     private let statsService: StatsService
 
@@ -66,6 +67,16 @@ final class HomeViewModel {
         levelName = stats.levelName
         levelProgress = stats.levelProgress
         totalXP = stats.totalXP
+
+        // Compute recommended difficulty
+        if stats.accuracy >= 90 && stats.gamesPlayed >= 5 {
+            if stats.hardGamesPlayed > 0 { recommendedDifficulty = .hard }
+            else { recommendedDifficulty = .medium }
+        } else if stats.accuracy >= 70 && stats.gamesPlayed >= 3 {
+            recommendedDifficulty = .medium
+        } else {
+            recommendedDifficulty = .easy
+        }
 
         let calendar = Calendar.current
         if let lastChallenge = stats.lastDailyChallengeDate {

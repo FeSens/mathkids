@@ -31,6 +31,12 @@ final class GameEngine {
         self.generator = gen
     }
 
+    var averageResponseTime: Double? {
+        let times = problemHistory.compactMap(\.timeTaken)
+        guard !times.isEmpty else { return nil }
+        return times.reduce(0, +) / Double(times.count)
+    }
+
     var isGameOver: Bool { session.isFinished }
     var timeRemaining: Int { session.timeRemaining }
     var score: Int { session.score }

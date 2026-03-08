@@ -79,6 +79,17 @@ struct HomeViewModelTests {
         let validGreetings = ["Good Morning!", "Good Afternoon!", "Good Evening!"]
         #expect(validGreetings.contains(greeting))
     }
+    // MARK: - Recommended Difficulty (logic-237)
+
+    @Test("New player gets easy recommendation")
+    @MainActor
+    func newPlayerEasyRecommendation() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        vm.loadStats()
+        #expect(vm.recommendedDifficulty == .easy)
+    }
 }
 
 import SwiftData

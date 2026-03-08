@@ -6,6 +6,15 @@ enum Operation: String, CaseIterable, Codable, Sendable {
     case multiply = "x"
     case divide = "/"
 
+    var emoji: String {
+        switch self {
+        case .add: "➕"
+        case .subtract: "➖"
+        case .multiply: "✖️"
+        case .divide: "➗"
+        }
+    }
+
     var displayName: String {
         switch self {
         case .add: "Addition"

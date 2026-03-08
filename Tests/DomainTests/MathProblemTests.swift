@@ -113,4 +113,13 @@ struct MathProblemTests {
         let problem = MathProblem(operand1: 8, operand2: 4, operation: .multiply)
         #expect(problem.accessibilityText == "8 times 4")
     }
+
+    // MARK: - Operation Emoji (logic-236)
+
+    @Test("All operations have emojis")
+    func allOperationsHaveEmojis() {
+        for op in Operation.allCases {
+            #expect(!op.emoji.isEmpty)
+        }
+    }
 }

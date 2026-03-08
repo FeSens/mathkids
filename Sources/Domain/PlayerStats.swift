@@ -41,6 +41,7 @@ final class PlayerStats {
     var xpEasy: Int = 0
     var xpMedium: Int = 0
     var xpHard: Int = 0
+    var longestSessionSeconds: Int = 0
 
     init() {}
 
@@ -147,6 +148,10 @@ final class PlayerStats {
         case .medium: xpMedium
         case .hard: xpHard
         }
+    }
+
+    func updateLongestSession(_ seconds: Int) {
+        longestSessionSeconds = max(longestSessionSeconds, seconds)
     }
 
     func addXPForDifficulty(_ xp: Int, for difficulty: DifficultyLevel) {
