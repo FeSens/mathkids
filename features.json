@@ -12605,6 +12605,86 @@
         "Verify timePressureLevel is 'none'"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-714",
+      "name": "scorePercentOfMax",
+      "description": "Score as percentage of max possible score",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session, answer questions",
+        "Verify scorePercentOfMax returns correct percentage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-715",
+      "name": "hasReachedHalfTime",
+      "description": "Boolean true when more than half the time has elapsed",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session, tick past half time",
+        "Verify hasReachedHalfTime is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-716",
+      "name": "efficiencyRating",
+      "description": "Efficiency rating as string: excellent, good, average, poor",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with fast answers and high accuracy",
+        "Verify efficiencyRating returns 'excellent'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-717",
+      "name": "currentMomentumText",
+      "description": "Text describing current momentum based on recent streak",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with streak of 5",
+        "Verify currentMomentumText shows positive momentum"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-718",
+      "name": "sessionCompletionEstimate",
+      "description": "Estimated questions remaining based on time and pace",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session, answer questions with time passing",
+        "Verify sessionCompletionEstimate returns reasonable estimate"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -61,4 +61,36 @@ extension GameSession {
         if pct > 5 { return "high" }
         return "critical"
     }
+
+    var scorePercentOfMax: Int {
+        let maxScore = difficulty.maxPossibleScore
+        guard maxScore > 0 else { return 0 }
+        return score * 100 / maxScore
+    }
+
+    var hasReachedHalfTime: Bool {
+        totalTimePlayed > difficulty.timeLimitSeconds / 2
+    }
+
+    var efficiencyRating: String {
+        guard totalAnswered > 0 else { return "poor" }
+        let acc = accuracy
+        let speed = totalTimePlayed > 0 ? totalAnswered * 60 / totalTimePlayed : 0
+        if acc >= 80 && speed >= 10 { return "excellent" }
+        if acc >= 60 && speed >= 5 { return "good" }
+        if acc >= 40 { return "average" }
+        return "poor"
+    }
+
+    var currentMomentumText: String {
+        if currentStreak >= 5 { return "On fire!" }
+        if currentStreak >= 3 { return "Great momentum" }
+        if currentStreak >= 1 { return "Good start" }
+        return "Building momentum"
+    }
+
+    var sessionCompletionEstimate: Int {
+        guard totalAnswered > 0, totalTimePlayed > 0 else { return 0 }
+        return totalAnswered * timeRemaining / totalTimePlayed
+    }
 }
