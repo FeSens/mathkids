@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 750
         }
     }
+
+    var achievementCardUllmanniteStyle: String {
+        isRareAchievement ? "steel grey lustre" : "charcoal"
+    }
+
+    var achievementRequiresPluckPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardResolutionWritSealText: String {
+        switch category {
+        case .mastery: return "Resolution Writ Seal of the Sovereign"
+        case .streak: return "Resolution Writ Seal of the Faithful"
+        case .score: return "Resolution Writ Seal of the Triumphant"
+        case .games: return "Resolution Writ Seal of the Aspirant"
+        }
+    }
+
+    var achievementCardRammelsbergiteStyle: String {
+        isRareAchievement ? "tin white" : "ash"
+    }
+
+    var achievementZenithPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 10000
+        case .streak: return 4000
+        case .score: return 8000
+        case .games: return 1000
+        }
+    }
 }

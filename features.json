@@ -36367,6 +36367,96 @@
         "Verify threshold <= 1000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2231",
+      "title": "Achievement card ullmannite style",
+      "description": "Computed property achievementCardUllmanniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify ullmannite style is steel grey lustre",
+        "Create common achievement",
+        "Verify ullmannite style is charcoal"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2232",
+      "title": "Achievement requires pluck plus",
+      "description": "Computed property achievementRequiresPluckPlus returns true for mastery or games categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresPluckPlus is true",
+        "Create streak achievement",
+        "Verify requiresPluckPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2233",
+      "title": "Achievement card resolution writ seal text",
+      "description": "Computed property achievementCardResolutionWritSealText returns category-based resolution writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Resolution Writ Seal of the Sovereign",
+        "Create games achievement",
+        "Verify text is Resolution Writ Seal of the Aspirant"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2234",
+      "title": "Achievement card rammelsbergite style",
+      "description": "Computed property achievementCardRammelsbergiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify rammelsbergite style is tin white",
+        "Create common achievement",
+        "Verify rammelsbergite style is ash"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2235",
+      "title": "Achievement zenith plus plus threshold",
+      "description": "Computed property achievementZenithPlusPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 10000",
+        "Create games achievement",
+        "Verify threshold <= 1500"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
