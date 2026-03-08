@@ -240,4 +240,34 @@ extension Achievement {
         case .games: return 3000
         }
     }
+
+    var achievementCardUnakiteStyle: String {
+        isRareAchievement ? "mossy" : "plain"
+    }
+
+    var achievementRequiresGrit: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardDirectiveText: String {
+        switch category {
+        case .mastery: return "Directive of Knowledge"
+        case .streak: return "Directive of Persistence"
+        case .score: return "Directive of Achievement"
+        case .games: return "Directive of Participation"
+        }
+    }
+
+    var achievementCardBloodstoneStyle: String {
+        isRareAchievement ? "spotted" : "dark"
+    }
+
+    var achievementPinnacleThreshold: Int {
+        switch category {
+        case .mastery: return 50000
+        case .streak: return 15000
+        case .score: return 25000
+        case .games: return 5000
+        }
+    }
 }

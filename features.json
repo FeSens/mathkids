@@ -33497,6 +33497,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2056",
+      "title": "Achievement Card Unakite Style",
+      "description": "Computed property returning unakite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns mossy style",
+        "Common achievement returns plain style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2057",
+      "title": "Achievement Requires Grit",
+      "description": "Computed property checking if achievement requires grit",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Streak category requires grit",
+        "Games category does not require grit"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2058",
+      "title": "Achievement Card Directive Text",
+      "description": "Computed property returning directive text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct directive text",
+        "Games returns correct directive text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2059",
+      "title": "Achievement Card Bloodstone Style",
+      "description": "Computed property returning bloodstone style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns spotted style",
+        "Common achievement returns dark style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2060",
+      "title": "Achievement Pinnacle Threshold",
+      "description": "Computed property returning pinnacle threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
