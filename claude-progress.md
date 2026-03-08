@@ -1,5 +1,21 @@
 # Claude Progress
 
+## Session 15 — 2026-03-08
+
+### Status
+- Features: 1043/1043 passing (12 MVP + 9 polish + 1022 improvement)
+- Unit tests: ~1940 (all green across ~190 suites)
+- UI tests: 12
+- QA: PASSED
+
+### Session 15 Features (batches 171-190)
+- Batches 171-179: logic-934 to logic-978 (45 features) — Operation+Helpers, DifficultyLevel+Extras, AnsweredProblem+Helpers, MathProblem+Helpers
+- Batches 180-188: logic-979 to logic-1023 (45 features) — Achievement+Helpers, Operation+Display (new file)
+- Batches 189-190: logic-1024 to logic-1033 (10 features) — Operation+Display
+- Total this session: 110 improvement features
+- New file: Operation+Display.swift (~105 lines)
+- Files near limit: GameSession+Labels (291, FULL), Operation+Helpers (292), DifficultyLevel+Extras (279), MathProblem+Helpers (274), Achievement+Helpers (~270), AnsweredProblem+Helpers (258)
+
 ## Session 14 — 2026-03-08
 
 ### Status
