@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 2500
         }
     }
+
+    var achievementCardWhitneyiteStyle: String {
+        isRareAchievement ? "rose copper" : "tarnished"
+    }
+
+    var achievementRequiresBackbonePlus: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardCovenantWritSealPlusText: String {
+        switch category {
+        case .mastery: return "Covenant Writ Seal Plus of the Hierarch"
+        case .streak: return "Covenant Writ Seal Plus of the Marshal"
+        case .score: return "Covenant Writ Seal Plus of the Paladin"
+        case .games: return "Covenant Writ Seal Plus of the Disciple"
+        }
+    }
+
+    var achievementCardRickarditeStyle: String {
+        isRareAchievement ? "purple bronze" : "dark bronze"
+    }
+
+    var achievementCrownPlusThreshold: Int {
+        switch category {
+        case .mastery: return 35000
+        case .streak: return 14000
+        case .score: return 28000
+        case .games: return 3500
+        }
+    }
 }

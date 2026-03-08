@@ -36727,6 +36727,96 @@
         "Verify threshold <= 4000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2251",
+      "title": "Achievement card whitneyite style",
+      "description": "Computed property achievementCardWhitneyiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify whitneyite style is rose copper",
+        "Create common achievement",
+        "Verify whitneyite style is tarnished"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2252",
+      "title": "Achievement requires backbone plus",
+      "description": "Computed property achievementRequiresBackbonePlus returns true for mastery or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresBackbonePlus is true",
+        "Create games achievement",
+        "Verify requiresBackbonePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2253",
+      "title": "Achievement card covenant writ seal plus text",
+      "description": "Computed property achievementCardCovenantWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Covenant Writ Seal Plus of the Hierarch",
+        "Create games achievement",
+        "Verify text is Covenant Writ Seal Plus of the Disciple"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2254",
+      "title": "Achievement card rickardite style",
+      "description": "Computed property achievementCardRickarditeStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify rickardite style is purple bronze",
+        "Create common achievement",
+        "Verify rickardite style is dark bronze"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2255",
+      "title": "Achievement crown plus threshold",
+      "description": "Computed property achievementCrownPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 30000",
+        "Create games achievement",
+        "Verify threshold <= 5000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
