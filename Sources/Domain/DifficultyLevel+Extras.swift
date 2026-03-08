@@ -232,4 +232,12 @@ extension DifficultyLevel {
     var difficultyXpLabel: String {
         "\(xpPerCorrectAnswer) XP per correct"
     }
+
+    var difficultyOperandLabel: String {
+        "Numbers \(operandRange.lowerBound) to \(operandRange.upperBound)"
+    }
+
+    var difficultyTimerLabel: String {
+        "Timer: \(timeLimitFormatted)"
+    }
 }

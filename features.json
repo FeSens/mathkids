@@ -15735,6 +15735,86 @@
         "Hard -> contains xp value"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-909",
+      "name": "answerWasHalf",
+      "description": "AnsweredProblem computed property returning true when user answered half the correct answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct 10, answer 5 -> true",
+        "Correct 10, answer 7 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-910",
+      "name": "difficultyOperandLabel",
+      "description": "DifficultyLevel computed property returning operand range label",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> contains range info",
+        "Hard -> contains range info"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-911",
+      "name": "problemComplexityScore",
+      "description": "MathProblem computed property returning numeric complexity 1-10",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Simple problem -> low score",
+        "Complex problem -> high score"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-912",
+      "name": "isWrongByLargeMargin",
+      "description": "AnsweredProblem computed property returning true when answer differs by more than 10",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Off by 15 -> true",
+        "Off by 2 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-913",
+      "name": "difficultyTimerLabel",
+      "description": "DifficultyLevel computed property returning timer display string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> timer label string",
+        "Hard -> timer label string"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

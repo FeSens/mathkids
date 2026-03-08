@@ -201,4 +201,12 @@ extension AnsweredProblem {
     var correctAnswerDigitCount: Int {
         String(abs(problem.correctAnswer)).count
     }
+
+    var answerWasHalf: Bool {
+        problem.correctAnswer != 0 && userAnswer == problem.correctAnswer / 2
+    }
+
+    var isWrongByLargeMargin: Bool {
+        answerDifference > 10
+    }
 }

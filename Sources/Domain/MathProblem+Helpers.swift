@@ -261,4 +261,10 @@ extension MathProblem {
     var operationIsCommutative: Bool {
         operation == .add || operation == .multiply
     }
+
+    var problemComplexityScore: Int {
+        let base = estimatedDifficulty
+        let sizeBonus = operandMax >= 10 ? 2 : 0
+        return min(10, base + sizeBonus + operation.difficultyWeight)
+    }
 }
