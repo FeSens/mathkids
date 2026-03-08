@@ -53,6 +53,7 @@
 		13CEE2423102F62FC8DD2BC1 /* Batch200Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE306DC0F5E64BED4BB09D93 /* Batch200Tests.swift */; };
 		13D943743F476A7BEF85AB56 /* Batch87Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76384F4E080F52686054FDE8 /* Batch87Tests.swift */; };
 		13F0B5FE7DC12D92485177B9 /* Batch459Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41432FBFC073E4F8BFFD6F23 /* Batch459Tests.swift */; };
+		14119B6864C1DE67AB43751D /* HomeViewModel+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A0F7801346C04E1C83D94 /* HomeViewModel+Display.swift */; };
 		142A1FC2CDE651829DCDD3E6 /* Batch399Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7934339F7D47EEFFE7825 /* Batch399Tests.swift */; };
 		143CEE8191567206DD240097 /* ImproveRound2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37979D14F4F8E802E7068850 /* ImproveRound2Tests.swift */; };
 		145581934636BDAC38CD12E9 /* Batch220Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2147DD9CF8351E125E156C /* Batch220Tests.swift */; };
@@ -932,6 +933,7 @@
 		90D17D7E41240C48AF9F850B /* Batch56Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch56Tests.swift; sourceTree = "<group>"; };
 		90D51A3421074A1CE59E452F /* Batch430Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch430Tests.swift; sourceTree = "<group>"; };
 		90E92719AFB9724C3491F7B2 /* Batch255Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch255Tests.swift; sourceTree = "<group>"; };
+		912A0F7801346C04E1C83D94 /* HomeViewModel+Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+Display.swift"; sourceTree = "<group>"; };
 		9147896F4D5B538EF8D5A402 /* Batch196Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch196Tests.swift; sourceTree = "<group>"; };
 		91D8D1E0DF891755FF456716 /* ScorePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePopupView.swift; sourceTree = "<group>"; };
 		91E5E22C2A650A1A626B0ACB /* Batch413Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch413Tests.swift; sourceTree = "<group>"; };
@@ -1794,6 +1796,7 @@
 				4A9981DC75BC7CE2E43C6149 /* HomeComponents.swift */,
 				3F99D22DB5C7E150990E3EAD /* HomeView.swift */,
 				047BADB99680064F99C105B1 /* HomeViewModel.swift */,
+				912A0F7801346C04E1C83D94 /* HomeViewModel+Display.swift */,
 				90216EA8563B11F2EC05D478 /* OnboardingView.swift */,
 				3FA9143B2211A44256A840D5 /* SettingsView.swift */,
 			);
@@ -2507,6 +2510,7 @@
 				4D522B903AC628A4FA761EC0 /* HapticService.swift in Sources */,
 				939BA0173A536BA563681CB6 /* HomeComponents.swift in Sources */,
 				38933B53403070AA7462252A /* HomeView.swift in Sources */,
+				14119B6864C1DE67AB43751D /* HomeViewModel+Display.swift in Sources */,
 				487C5AB4A01BDD59CBB3895E /* HomeViewModel.swift in Sources */,
 				8925028C8AAC7CEFB165C56E /* LevelSystem.swift in Sources */,
 				9DD2656282F7E208DEE47D9B /* MathKidsApp.swift in Sources */,
