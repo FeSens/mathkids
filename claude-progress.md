@@ -1,5 +1,28 @@
 # Claude Progress
 
+## Session 21 — 2026-03-08
+
+### Status
+- Features: 2125/2125 passing (12 MVP + 9 polish + 2104 improvement)
+- Unit tests: ~4150+ (all green across ~406 suites)
+- UI tests: 12
+- QA: PASSED
+
+### Session 21 Features (batches 389-406)
+- Batches 389-396: logic-2026 to logic-2065 (40 features) — Achievement+Legacy (filled to ~333 lines)
+- Batches 397-405: logic-2066 to logic-2110 (45 features) — Achievement+Heritage (new file, filled to ~303 lines)
+- Batch 406: logic-2111 to logic-2115 (5 features) — Achievement+Dynasty (new file)
+- Total this session: 90 features
+- New files: Achievement+Heritage.swift, Achievement+Dynasty.swift
+- Files now full: Achievement+Legacy.swift (~333), Achievement+Heritage.swift (~303)
+- Current active file: Achievement+Dynasty.swift (~33 lines)
+- 4 name collisions resolved: achievementRequiresTenacity→achievementRequiresGrit, achievementCardProclamationText→achievementCardDecreeWritText, achievementRequiresDedication→achievementRequiresDevotion
+
+### Next Steps
+- Continue improvement loop from batch 407 (logic-2116+)
+- Achievement+Dynasty.swift has plenty of room (~33 lines)
+- Split when Dynasty approaches 300 lines
+
 ## Session 20 — 2026-03-08
 
 ### Status

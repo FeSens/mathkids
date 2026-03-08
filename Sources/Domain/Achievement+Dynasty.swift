@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 150000
         }
     }
+
+    var achievementCardMusgraviteStyle: String {
+        isRareAchievement ? "brilliant" : "dull"
+    }
+
+    var achievementRequiresTenacityPlus: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardDirectiveSealText: String {
+        switch category {
+        case .mastery: return "Directive Seal of Knowledge"
+        case .streak: return "Directive Seal of Persistence"
+        case .score: return "Directive Seal of Achievement"
+        case .games: return "Directive Seal of Participation"
+        }
+    }
+
+    var achievementCardSerendibiteStyle: String {
+        isRareAchievement ? "midnight" : "grey"
+    }
+
+    var achievementDominanceThreshold: Int {
+        switch category {
+        case .mastery: return 2000000
+        case .streak: return 1000000
+        case .score: return 1500000
+        case .games: return 200000
+        }
+    }
 }

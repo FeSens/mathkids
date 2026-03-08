@@ -34457,6 +34457,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2116",
+      "title": "Achievement Card Musgravite Style",
+      "description": "Computed property returning musgravite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns brilliant style",
+        "Common returns dull style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2117",
+      "title": "Achievement Requires Tenacity Plus",
+      "description": "Computed property checking if achievement requires tenacity plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery requires tenacity plus",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2118",
+      "title": "Achievement Card Directive Seal Text",
+      "description": "Computed property returning directive seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2119",
+      "title": "Achievement Card Serendibite Style",
+      "description": "Computed property returning serendibite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns midnight style",
+        "Common returns grey style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2120",
+      "title": "Achievement Dominance Threshold",
+      "description": "Computed property returning dominance threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
