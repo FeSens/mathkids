@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 100000
         }
     }
+
+    var achievementCardMiargyriteStyle: String {
+        isRareAchievement ? "steel grey striated" : "dark pewter"
+    }
+
+    var achievementRequiresDrivePlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardCovenantWritSealUltraText: String {
+        switch category {
+        case .mastery: return "Covenant Writ Seal Ultra of the Immortal"
+        case .streak: return "Covenant Writ Seal Ultra of the Arbiter"
+        case .score: return "Covenant Writ Seal Ultra of the Paragon"
+        case .games: return "Covenant Writ Seal Ultra of the Initiate"
+        }
+    }
+
+    var achievementCardSamsoniteStyle: String {
+        isRareAchievement ? "steel black monoclinic" : "gunmetal"
+    }
+
+    var achievementImperiumPlusThreshold: Int {
+        switch category {
+        case .mastery: return 1500000
+        case .streak: return 600000
+        case .score: return 1200000
+        case .games: return 150000
+        }
+    }
 }

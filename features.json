@@ -37717,6 +37717,96 @@
         "Verify threshold <= 100000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2306",
+      "title": "Achievement card miargyrite style",
+      "description": "Computed property achievementCardMiargyriteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify miargyrite style is steel grey striated",
+        "Create common achievement",
+        "Verify miargyrite style is dark pewter"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2307",
+      "title": "Achievement requires drive plus",
+      "description": "Computed property achievementRequiresDrivePlus returns true for score or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresDrivePlus is true",
+        "Create games achievement",
+        "Verify requiresDrivePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2308",
+      "title": "Achievement card covenant writ seal ultra text",
+      "description": "Computed property achievementCardCovenantWritSealUltraText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Covenant Writ Seal Ultra of the Immortal",
+        "Create games achievement",
+        "Verify text is Covenant Writ Seal Ultra of the Initiate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2309",
+      "title": "Achievement card samsonite style",
+      "description": "Computed property achievementCardSamsoniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify samsonite style is steel black monoclinic",
+        "Create common achievement",
+        "Verify samsonite style is gunmetal"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2310",
+      "title": "Achievement imperium plus threshold",
+      "description": "Computed property achievementImperiumPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 1200000",
+        "Create games achievement",
+        "Verify threshold <= 150000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
