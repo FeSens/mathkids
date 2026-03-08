@@ -1,5 +1,21 @@
 # Claude Progress
 
+## Session 20 — 2026-03-08
+
+### Status
+- Features: 1923/1923 passing (12 MVP + 9 polish + 1902 improvement)
+- Unit tests: ~3700+ (all green across ~368 suites)
+- UI tests: 12
+- QA: PASSED
+
+### Session 20 Features (batches 357-368)
+- Batches 357-358: logic-1864 to logic-1873 (10 features) — Achievement+Scoring
+- Batches 359-368: logic-1874 to logic-1923 (50 features) — Achievement+Ranking (new file)
+- Total this session: 60 features
+- New files: Achievement+Ranking.swift (~305, FULL)
+- Files near limit: Achievement+Scoring (~293, FULL), Achievement+Ranking (~305, FULL)
+- 1 name collision resolved: achievementBonusMultiplier→achievementRewardBonusFactor
+
 ## Session 19 — 2026-03-08
 
 ### Status
