@@ -5,9 +5,20 @@ struct GameView: View {
     var onGameEnd: (GameSession, [AnsweredProblem]) -> Void
     @State private var timerPulse: Bool = false
     @State private var answerScale: CGFloat = 1.0
+    @State private var urgentFlash: Bool = false
+    @State private var reactionEmoji: String? = nil
+    @State private var emojiOffset: CGFloat = 0
+    @State private var emojiOpacity: Double = 1
 
     var body: some View {
         ZStack {
+            if urgentFlash {
+                Color.red.opacity(0.05)
+                    .ignoresSafeArea()
+                    .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: urgentFlash)
+                    .accessibilityIdentifier("urgentFlash")
+            }
+
             VStack(spacing: 16) {
                 GameHeaderView(viewModel: viewModel, timerPulse: $timerPulse)
 
@@ -64,6 +75,14 @@ struct GameView: View {
                     .accessibilityIdentifier("answerHistory")
                 }
 
+                if let emoji = reactionEmoji {
+                    Text(emoji)
+                        .font(.system(size: 36))
+                        .offset(y: emojiOffset)
+                        .opacity(emojiOpacity)
+                        .accessibilityIdentifier("reactionEmoji")
+                }
+
                 if let message = viewModel.motivationalMessage {
                     Text(message)
                         .font(.system(size: 18, weight: .bold, design: .rounded))
@@ -95,8 +114,25 @@ struct GameView: View {
         }
         .onChange(of: viewModel.isGameOver) { _, isOver in
             if isOver {
+                urgentFlash = false
                 onGameEnd(viewModel.session, viewModel.lastProblemHistory)
             }
+        }
+        .onChange(of: viewModel.problemTransitionId) { _, _ in
+            showReactionEmoji(correct: viewModel.engine.lastAnswerCorrect == true)
+        }
+        .onChange(of: viewModel.timeRemaining) { _, newValue in
+            urgentFlash = newValue <= 5 && newValue > 0 && !viewModel.isPracticeMode
+        }
+    }
+
+    private func showReactionEmoji(correct: Bool) {
+        reactionEmoji = correct ? ["🎉", "✨", "🌟", "💫", "🎯"].randomElement() : "😔"
+        emojiOffset = 0; emojiOpacity = 1
+        withAnimation(.easeOut(duration: 0.8)) { emojiOffset = -60; emojiOpacity = 0 }
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(900))
+            reactionEmoji = nil
         }
     }
 
@@ -138,12 +174,7 @@ struct GameView: View {
     }
 
     private var operationBadgeSymbol: String {
-        switch viewModel.engine.currentProblem.operation {
-        case .add: "+"
-        case .subtract: "-"
-        case .multiply: "x"
-        case .divide: "/"
-        }
+        viewModel.engine.currentProblem.operation.rawValue
     }
 
     private var difficultyTextColor: Color {
@@ -156,26 +187,19 @@ struct GameView: View {
 
     private var operationBadgeColor: Color {
         switch viewModel.engine.currentProblem.operation {
-        case .add: .green
-        case .subtract: .blue
-        case .multiply: .orange
-        case .divide: .purple
+        case .add: .green; case .subtract: .blue; case .multiply: .orange; case .divide: .purple
         }
     }
 
     private var problemDifficultyLabel: String {
         switch viewModel.engine.currentProblem.problemDifficulty {
-        case .easy: "Easy"
-        case .moderate: "Med"
-        case .hard: "Hard"
+        case .easy: "Easy"; case .moderate: "Med"; case .hard: "Hard"
         }
     }
 
     private var problemDifficultyColor: Color {
         switch viewModel.engine.currentProblem.problemDifficulty {
-        case .easy: .green
-        case .moderate: .yellow
-        case .hard: .red
+        case .easy: .green; case .moderate: .yellow; case .hard: .red
         }
     }
 

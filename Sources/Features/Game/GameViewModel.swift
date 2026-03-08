@@ -121,7 +121,7 @@ final class GameViewModel {
             if let milestone = engine.streakMilestone {
                 celebrationIntensity = milestone >= 15 ? .huge : .big
                 characterMood = .excited
-                HapticService.streakMilestone()
+                HapticService.streakPattern(streak: milestone)
             } else {
                 celebrationIntensity = .normal
                 characterMood = engine.currentStreak >= 3 ? .excited : .happy

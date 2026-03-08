@@ -62,6 +62,14 @@ struct GameHeaderView: View {
                     .accessibilityIdentifier("comboMultiplier")
                 }
 
+                if viewModel.engine.totalAnswered > 0 {
+                    Text("\(Int(viewModel.engine.accuracy))%")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(viewModel.engine.accuracy >= 70 ? .green : viewModel.engine.accuracy >= 50 ? .orange : .red)
+                        .accessibilityIdentifier("sessionAccuracy")
+                        .accessibilityLabel("Session accuracy: \(Int(viewModel.engine.accuracy)) percent")
+                }
+
                 if viewModel.hasStreakFreeze {
                     Image(systemName: "shield.fill")
                         .font(.system(size: 16))

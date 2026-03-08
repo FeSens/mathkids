@@ -1758,6 +1758,82 @@
       "files": [
         "Sources/Features/Game/GameHeaderView.swift"
       ]
+    },
+    {
+      "id": "ui-079",
+      "description": "End game warning when timer reaches 5 seconds with flashing background",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Background flashes red when 5 seconds remain",
+        "Flash is subtle and not jarring",
+        "Flash stops when game ends"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-080",
+      "description": "Animated emoji reaction when submitting answer",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002",
+        "ui-010"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Correct answer shows a random positive emoji floating up",
+        "Wrong answer shows a disappointed emoji",
+        "Emoji fades out after floating"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-081",
+      "description": "Quick stats bar on game screen showing session accuracy",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Session accuracy percentage shows in game header",
+        "Updates after each answer",
+        "Color reflects performance (green for good, red for poor)"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-082",
+      "description": "Haptic feedback pattern on streak milestones (5, 10, 15, 20)",
+      "phase": "improvement",
+      "category": "service",
+      "depends_on": [
+        "core-006",
+        "ui-015"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Distinct haptic pattern at streak 5",
+        "Stronger pattern at streak 10",
+        "Escalating intensity at 15 and 20",
+        "Haptics respect settings toggle"
+      ],
+      "files": [
+        "Sources/Services/HapticService.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
     }
   ],
   "_schema": {
