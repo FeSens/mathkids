@@ -39527,6 +39527,106 @@
         "Verify threshold <= 12000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2401",
+      "title": "achievementCardPyrargyriteProStyle",
+      "description": "Mineral style string for pyrargyrite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pyrargyrite pro style is deep red prismatic",
+        "Create common achievement",
+        "Verify pyrargyrite pro style is dull crimson"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2402",
+      "title": "achievementRequiresClarityPlus",
+      "description": "Whether achievement requires clarity plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires clarity plus is true",
+        "Create score achievement",
+        "Verify requires clarity plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2403",
+      "title": "achievementCardCompactWritSealUltraPlusText",
+      "description": "Compact writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Compact Writ Seal Ultra Plus of the Cosmic",
+        "Create games achievement",
+        "Verify text is Compact Writ Seal Ultra Plus of the Wanderer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2404",
+      "title": "achievementCardMiargyriteProStyle",
+      "description": "Mineral style string for miargyrite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify miargyrite pro style is steel grey monoclinic",
+        "Create common achievement",
+        "Verify miargyrite pro style is flat pewter"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2405",
+      "title": "achievementGotterdammerungThreshold",
+      "description": "Gotterdammerung threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 85000000",
+        "Create games achievement",
+        "Verify threshold <= 12000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
