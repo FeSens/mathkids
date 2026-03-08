@@ -181,4 +181,34 @@ extension Achievement {
     var achievementIsCategoryLeader: Bool {
         category == .mastery || category == .score
     }
+
+    var achievementGridColumns: Int {
+        switch achievementDisplaySize {
+        case "large": return 1
+        case "medium": return 2
+        default: return 3
+        }
+    }
+
+    var achievementAccessibilityHint: String {
+        let status = progress != nil ? "in progress" : "locked"
+        return "\(category.displayName) achievement, \(status)"
+    }
+
+    var achievementSectionHeader: String {
+        "\(category.emoji) \(category.displayName) Achievements"
+    }
+
+    var achievementIsPremium: Bool {
+        isRareAchievement && pointValue >= 50
+    }
+
+    var achievementFlavorText: String {
+        switch category {
+        case .streak: return "Keep the fire burning!"
+        case .score: return "Aim for the top score!"
+        case .games: return "Play more to unlock!"
+        case .mastery: return "True mastery awaits!"
+        }
+    }
 }

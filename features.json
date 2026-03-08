@@ -22887,6 +22887,82 @@
       "files": [
         "Sources/Domain/Achievement+Display.swift"
       ]
+    },
+    {
+      "id": "logic-1349",
+      "title": "Achievement Grid Columns",
+      "description": "Add achievementGridColumns returning number of grid columns based on display size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementGridColumns is 1",
+        "Verify small is 3"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1350",
+      "title": "Achievement Accessibility Hint",
+      "description": "Add achievementAccessibilityHint returning descriptive hint for VoiceOver",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementAccessibilityHint contains category and status"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1351",
+      "title": "Achievement Section Header",
+      "description": "Add achievementSectionHeader returning formatted section header text",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementSectionHeader contains category name"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1352",
+      "title": "Achievement Is Premium",
+      "description": "Add achievementIsPremium returning true for rare achievements with high point values",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare high value achievement",
+        "Verify achievementIsPremium is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1353",
+      "title": "Achievement Flavor Text",
+      "description": "Add achievementFlavorText returning thematic flavor text based on category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementFlavorText contains fire theme"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
     }
   ],
   "_schema": {
