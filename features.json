@@ -40927,6 +40927,106 @@
         "Verify threshold <= 25000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2471",
+      "title": "achievementCardCylindriteUltraStyle",
+      "description": "Mineral style string for cylindrite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cylindrite ultra style is tin grey cylindrical",
+        "Create common achievement",
+        "Verify cylindrite ultra style is dull tin matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2472",
+      "title": "achievementRequiresCosmicPlus",
+      "description": "Whether achievement requires cosmic plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires cosmic plus is true",
+        "Create score achievement",
+        "Verify requires cosmic plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2473",
+      "title": "achievementCardCovenantWritSealMaxText",
+      "description": "Covenant writ seal max text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Covenant Writ Seal Max of the Celestial",
+        "Create games achievement",
+        "Verify text is Covenant Writ Seal Max of the Wanderer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2474",
+      "title": "achievementCardStephaniteUltraStyle",
+      "description": "Mineral style string for stephanite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify stephanite ultra style is iron black prismatic",
+        "Create common achievement",
+        "Verify stephanite ultra style is flat iron matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2475",
+      "title": "achievementGotterdammerungPlusPlusThreshold",
+      "description": "Gotterdammerung plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 155000000",
+        "Create games achievement",
+        "Verify threshold <= 25000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

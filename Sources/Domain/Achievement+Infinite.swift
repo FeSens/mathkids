@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 15000000
         }
     }
+
+    var achievementCardCylindriteUltraStyle: String {
+        isRareAchievement ? "tin grey cylindrical" : "dull tin matte"
+    }
+
+    var achievementRequiresCosmicPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardCovenantWritSealMaxText: String {
+        switch category {
+        case .mastery: return "Covenant Writ Seal Max of the Celestial"
+        case .streak: return "Covenant Writ Seal Max of the Bastion"
+        case .score: return "Covenant Writ Seal Max of the Illustrious"
+        case .games: return "Covenant Writ Seal Max of the Wanderer"
+        }
+    }
+
+    var achievementCardStephaniteUltraStyle: String {
+        isRareAchievement ? "iron black prismatic" : "flat iron matte"
+    }
+
+    var achievementGotterdammerungPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 155000000
+        case .streak: return 62000000
+        case .score: return 150000000
+        case .games: return 15500000
+        }
+    }
 }
