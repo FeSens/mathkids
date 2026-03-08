@@ -28509,6 +28509,86 @@
         "Verify cardMaxWidth by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1724",
+      "title": "Achievement Stats Summary",
+      "description": "Returns summary string for achievement stats",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify statsSummary contains category and points"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1725",
+      "title": "Achievement Card Radius",
+      "description": "Returns corner radius for achievement card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardRadius by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1726",
+      "title": "Achievement Is Daily Quest",
+      "description": "Returns whether achievement is a daily challenge",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isDailyChallenge for streak vs mastery"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1727",
+      "title": "Achievement Badge Tag",
+      "description": "Returns label text for badge display",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify badgeLabel contains emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1728",
+      "title": "Achievement Effort Description",
+      "description": "Returns description of effort required",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify effortDescription by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
