@@ -12,6 +12,10 @@ struct GameView: View {
 
     var body: some View {
         ZStack {
+            streakBackgroundColor
+                .ignoresSafeArea()
+                .animation(.easeInOut(duration: 0.5), value: viewModel.currentStreak)
+
             if urgentFlash {
                 Color.red.opacity(0.05)
                     .ignoresSafeArea()
@@ -130,10 +134,7 @@ struct GameView: View {
         reactionEmoji = correct ? ["🎉", "✨", "🌟", "💫", "🎯"].randomElement() : "😔"
         emojiOffset = 0; emojiOpacity = 1
         withAnimation(.easeOut(duration: 0.8)) { emojiOffset = -60; emojiOpacity = 0 }
-        Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(900))
-            reactionEmoji = nil
-        }
+        Task { @MainActor in try? await Task.sleep(for: .milliseconds(900)); reactionEmoji = nil }
     }
 
     private var problemDisplay: some View {
@@ -173,9 +174,12 @@ struct GameView: View {
         }
     }
 
-    private var operationBadgeSymbol: String {
-        viewModel.engine.currentProblem.operation.rawValue
+    private var streakBackgroundColor: Color {
+        let s = viewModel.currentStreak
+        return s >= 10 ? Color.orange.opacity(0.06) : s >= 5 ? Color.yellow.opacity(0.04) : .clear
     }
+
+    private var operationBadgeSymbol: String { viewModel.engine.currentProblem.operation.rawValue }
 
     private var difficultyTextColor: Color {
         switch viewModel.engine.difficulty {

@@ -1834,6 +1834,60 @@
         "Sources/Services/HapticService.swift",
         "Sources/Features/Game/GameViewModel.swift"
       ]
+    },
+    {
+      "id": "ui-083",
+      "description": "Animated background color change based on streak length",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Background tint shifts to warm colors during high streaks",
+        "Returns to neutral when streak breaks",
+        "Transition is smooth and animated"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-084",
+      "description": "Time bonus multiplier display when answering quickly",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Fast answers show time bonus text",
+        "Bonus text fades out after display",
+        "Only appears in timed mode"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-085",
+      "description": "Persistent high score display on home screen with crown icon",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Home screen shows all-time high score with crown icon",
+        "Updates immediately after a new high score game",
+        "Crown is gold colored"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift"
+      ]
     }
   ],
   "_schema": {

@@ -117,7 +117,7 @@ struct HomeView: View {
             .accessibilityIdentifier("totalSolvedCard")
 
             StatCard(
-                icon: "star.fill",
+                icon: "crown.fill",
                 value: "\(viewModel.bestScore)",
                 label: "Best Score",
                 color: .yellow
