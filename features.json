@@ -25203,6 +25203,83 @@
       "files": [
         "Sources/Domain/Achievement+Metadata.swift"
       ]
+    },
+    {
+      "id": "logic-1499",
+      "title": "Achievement Difficulty Emoji",
+      "description": "Add achievementDifficultyEmoji returning emoji representing difficulty",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementDifficultyEmoji is skull"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1500",
+      "title": "Achievement Category Description",
+      "description": "Add achievementCategoryDescription returning description of the category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementCategoryDescription describes streaks"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1501",
+      "title": "Achievement Unlock Effect",
+      "description": "Add achievementUnlockEffect returning visual effect name for unlock animation",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementUnlockEffect is explosion",
+        "Verify common is glow"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1502",
+      "title": "Achievement Total Rewards",
+      "description": "Add achievementTotalRewards returning sum of coins and gem value",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementTotalRewards equals coins + gems * 10"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1503",
+      "title": "Achievement Badge Shape",
+      "description": "Add achievementBadgeShape returning shape name for badge display",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementBadgeShape is hexagon",
+        "Verify common is circle"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
     }
   ],
   "_schema": {

@@ -93,4 +93,34 @@ extension Achievement {
     var achievementIsCore: Bool {
         category == .games || category == .score
     }
+
+    var achievementDifficultyEmoji: String {
+        switch category {
+        case .mastery: return "💀"
+        case .streak: return "😤"
+        case .score: return "🤔"
+        case .games: return "😊"
+        }
+    }
+
+    var achievementCategoryDescription: String {
+        switch category {
+        case .streak: return "Build and maintain streaks"
+        case .score: return "Reach high scores"
+        case .games: return "Play and complete games"
+        case .mastery: return "Master math operations"
+        }
+    }
+
+    var achievementUnlockEffect: String {
+        isRareAchievement ? "explosion" : "glow"
+    }
+
+    var achievementTotalRewards: Int {
+        achievementCoinValue + achievementGemValue * 10
+    }
+
+    var achievementBadgeShape: String {
+        isRareAchievement ? "hexagon" : "circle"
+    }
 }
