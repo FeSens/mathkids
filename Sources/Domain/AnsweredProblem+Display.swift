@@ -116,4 +116,28 @@ extension AnsweredProblem {
         if let time = timeTaken, time > 8.0 { return true }
         return false
     }
+
+    var answeredProblemEncouragementText: String {
+        isCorrect ? "Great job!" : "Try again!"
+    }
+
+    var answeredProblemIsFirstAttempt: Bool {
+        timeTaken == nil
+    }
+
+    var answeredProblemGrade: String {
+        guard isCorrect else { return "F" }
+        guard let time = timeTaken else { return "B" }
+        if time < 3.0 { return "A" }
+        if time < 6.0 { return "B" }
+        return "C"
+    }
+
+    var answeredProblemIsBonus: Bool {
+        isCorrect && !problem.operation.isPrimaryOperation
+    }
+
+    var answeredProblemSummaryIcon: String {
+        isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill"
+    }
 }

@@ -19886,6 +19886,96 @@
         "Check retryRecommended is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1179",
+      "name": "answeredProblemEncouragementText",
+      "description": "Encouragement message based on correctness",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check text contains Great",
+        "Create wrong answer",
+        "Check text contains Try again"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1180",
+      "name": "answeredProblemIsFirstAttempt",
+      "description": "Whether timeTaken is nil indicating first attempt tracking not available",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create answer with no timeTaken",
+        "Check isFirstAttempt is true",
+        "Create answer with timeTaken",
+        "Check isFirstAttempt is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1181",
+      "name": "answeredProblemGrade",
+      "description": "Letter grade based on correctness and speed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check grade is A",
+        "Create wrong answer",
+        "Check grade is F"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1182",
+      "name": "answeredProblemIsBonus",
+      "description": "Whether the problem earns bonus points (correct multiply or divide)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct multiply answer",
+        "Check isBonus is true",
+        "Create correct add answer",
+        "Check isBonus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1183",
+      "name": "answeredProblemSummaryIcon",
+      "description": "SF Symbol name for the answer result",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check icon is checkmark.circle.fill",
+        "Create wrong answer",
+        "Check icon is xmark.circle.fill"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
