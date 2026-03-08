@@ -37627,6 +37627,96 @@
         "Verify threshold <= 80000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2301",
+      "title": "Achievement card pyrargyrite style",
+      "description": "Computed property achievementCardPyrargyriteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pyrargyrite style is deep ruby red",
+        "Create common achievement",
+        "Verify pyrargyrite style is dark red"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2302",
+      "title": "Achievement requires willpower plus",
+      "description": "Computed property achievementRequiresWillpowerPlus returns true for mastery or games categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresWillpowerPlus is true",
+        "Create streak achievement",
+        "Verify requiresWillpowerPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2303",
+      "title": "Achievement card edict writ seal plus plus text",
+      "description": "Computed property achievementCardEdictWritSealPlusPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Edict Writ Seal Ultra of the Ascendant",
+        "Create games achievement",
+        "Verify text is Edict Writ Seal Ultra of the Aspirant"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2304",
+      "title": "Achievement card proustite plus style",
+      "description": "Computed property achievementCardProustitePlusStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify proustite plus style is scarlet adamantine",
+        "Create common achievement",
+        "Verify proustite plus style is dull scarlet"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2305",
+      "title": "Achievement hegemony plus threshold",
+      "description": "Computed property achievementHegemonyPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 800000",
+        "Create games achievement",
+        "Verify threshold <= 100000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

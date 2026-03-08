@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 75000
         }
     }
+
+    var achievementCardPyrargyriteStyle: String {
+        isRareAchievement ? "deep ruby red" : "dark red"
+    }
+
+    var achievementRequiresWillpowerPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardEdictWritSealPlusPlusText: String {
+        switch category {
+        case .mastery: return "Edict Writ Seal Ultra of the Ascendant"
+        case .streak: return "Edict Writ Seal Ultra of the Harbinger"
+        case .score: return "Edict Writ Seal Ultra of the Destroyer"
+        case .games: return "Edict Writ Seal Ultra of the Aspirant"
+        }
+    }
+
+    var achievementCardProustitePlusStyle: String {
+        isRareAchievement ? "scarlet adamantine" : "dull scarlet"
+    }
+
+    var achievementHegemonyPlusThreshold: Int {
+        switch category {
+        case .mastery: return 1000000
+        case .streak: return 400000
+        case .score: return 800000
+        case .games: return 100000
+        }
+    }
 }
