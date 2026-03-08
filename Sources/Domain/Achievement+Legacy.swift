@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 2000
         }
     }
+
+    var achievementCardFluoriteStyle: String {
+        isRareAchievement ? "banded" : "clear"
+    }
+
+    var achievementRequiresCourage: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardWritText: String {
+        switch category {
+        case .mastery: return "Writ of Mastery"
+        case .streak: return "Writ of Endurance"
+        case .score: return "Writ of Excellence"
+        case .games: return "Writ of Admission"
+        }
+    }
+
+    var achievementCardDumortieriteStyle: String {
+        isRareAchievement ? "deep blue" : "pale"
+    }
+
+    var achievementDominionThreshold: Int {
+        switch category {
+        case .mastery: return 25000
+        case .streak: return 7500
+        case .score: return 12500
+        case .games: return 2500
+        }
+    }
 }

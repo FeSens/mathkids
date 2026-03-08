@@ -33337,6 +33337,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2046",
+      "title": "Achievement Card Fluorite Style",
+      "description": "Computed property returning fluorite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns banded style",
+        "Common achievement returns clear style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2047",
+      "title": "Achievement Requires Courage",
+      "description": "Computed property checking if achievement requires courage",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Score category requires courage",
+        "Streak category does not require courage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2048",
+      "title": "Achievement Card Writ Text",
+      "description": "Computed property returning writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct writ text",
+        "Games returns correct writ text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2049",
+      "title": "Achievement Card Dumortierite Style",
+      "description": "Computed property returning dumortierite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns deep blue style",
+        "Common achievement returns pale style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2050",
+      "title": "Achievement Dominion Threshold",
+      "description": "Computed property returning dominion threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
