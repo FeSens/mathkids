@@ -29789,6 +29789,86 @@
         "Verify cardCategoryBadge by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1804",
+      "title": "Achievement Card Status Text",
+      "description": "Returns status text for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardStatusText by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1805",
+      "title": "Achievement Days To Complete",
+      "description": "Returns estimated days to complete",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify daysToComplete by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1806",
+      "title": "Achievement Card Progress Style",
+      "description": "Returns progress display style",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardProgressStyle by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1807",
+      "title": "Achievement Is Speed Based",
+      "description": "Returns whether achievement depends on speed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isSpeedBased for score vs mastery"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1808",
+      "title": "Achievement Card Reward Icon",
+      "description": "Returns reward icon for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardRewardIcon by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

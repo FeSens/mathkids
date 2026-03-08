@@ -165,4 +165,39 @@ extension Achievement {
     var achievementCardCategoryBadge: String {
         "\(category.emoji) \(category.displayName)"
     }
+
+    var achievementCardStatusText: String {
+        isRareAchievement ? "Rare Achievement" : "Achievement"
+    }
+
+    var achievementDaysToComplete: Int {
+        switch category {
+        case .mastery: return 60
+        case .streak: return 14
+        case .score: return 7
+        case .games: return 1
+        }
+    }
+
+    var achievementCardProgressStyle: String {
+        switch category {
+        case .mastery: return "circular"
+        case .streak: return "linear"
+        case .score: return "linear"
+        case .games: return "step"
+        }
+    }
+
+    var achievementIsSpeedBased: Bool {
+        category == .score
+    }
+
+    var achievementCardRewardIcon: String {
+        switch category {
+        case .mastery: return "crown"
+        case .streak: return "flame.fill"
+        case .score: return "trophy"
+        case .games: return "star"
+        }
+    }
 }
