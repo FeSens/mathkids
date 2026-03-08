@@ -16456,6 +16456,85 @@
         "Subtract -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-954",
+      "name": "operationQuizPrompt",
+      "description": "Operation returning quiz prompt text for the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> prompt text",
+        "Multiply -> prompt text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-955",
+      "name": "isReductiveOperation",
+      "description": "Operation returning true for subtract and divide (operations that reduce)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Subtract -> true",
+        "Add -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-956",
+      "name": "operationBadge",
+      "description": "Operation returning single char badge for the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Each operation -> unique single char"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-957",
+      "name": "teachingOrder",
+      "description": "Operation returning suggested teaching order number",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> 1",
+        "Divide -> 4"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-958",
+      "name": "operationAccessibilityLabel",
+      "description": "Operation returning accessibility-friendly label",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> accessible description",
+        "Divide -> accessible description"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

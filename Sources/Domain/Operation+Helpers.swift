@@ -128,4 +128,24 @@ extension Operation {
     var isAddOrMultiply: Bool {
         self == .add || self == .multiply
     }
+
+    var operationQuizPrompt: String {
+        "What is the \(resultVerb)?"
+    }
+
+    var isReductiveOperation: Bool {
+        self == .subtract || self == .divide
+    }
+
+    var operationBadge: String {
+        String(rawValue.prefix(1))
+    }
+
+    var teachingOrder: Int {
+        operationOrder + 1
+    }
+
+    var operationAccessibilityLabel: String {
+        "\(displayName) operation, symbol \(rawValue)"
+    }
 }
