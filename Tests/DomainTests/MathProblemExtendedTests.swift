@@ -229,4 +229,18 @@ struct MathProblemExtendedTests {
         let problem = MathProblem(operand1: 5, operand2: 3, operation: .add)
         #expect(Set(problem.answerChoices).count == 4)
     }
+
+    // MARK: - Single Digit Result (logic-339)
+
+    @Test("2+3=5 is single digit")
+    func singleDigitResult() {
+        let problem = MathProblem(operand1: 2, operand2: 3, operation: .add)
+        #expect(problem.isSingleDigitResult == true)
+    }
+
+    @Test("15+20=35 is not single digit")
+    func notSingleDigitResult() {
+        let problem = MathProblem(operand1: 15, operand2: 20, operation: .add)
+        #expect(problem.isSingleDigitResult == false)
+    }
 }

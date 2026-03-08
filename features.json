@@ -5781,13 +5781,17 @@
       "description": "GameSession tracks the longest alternating correct/wrong pattern and provides an answer consistency metric",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Consistency is 100 for all correct",
         "Consistency is 0 for no answers",
         "Mixed answers give intermediate consistency"
       ],
-      "files": ["Sources/Domain/GameSession.swift"]
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
     },
     {
       "id": "logic-300",
@@ -5795,13 +5799,17 @@
       "description": "LevelSystem provides a human-readable description of progress toward the next level",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns XP needed text for non-max level",
         "Returns max level text at max",
         "Includes current level name"
       ],
-      "files": ["Sources/Domain/LevelSystem.swift"]
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
     },
     {
       "id": "logic-301",
@@ -5809,12 +5817,16 @@
       "description": "Achievement provides a static method to find the closest-to-unlocking locked achievement",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns highest progress locked achievement",
         "Returns nil when all unlocked"
       ],
-      "files": ["Sources/Domain/Achievement.swift"]
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ]
     },
     {
       "id": "logic-302",
@@ -5822,13 +5834,17 @@
       "description": "StatsViewModel provides a letter grade based on overall accuracy",
       "category": "logic",
       "passes": true,
-      "depends_on": ["ui-007"],
+      "depends_on": [
+        "ui-007"
+      ],
       "test_steps": [
         "95+ accuracy returns A+",
         "80-89 returns B",
         "Below 60 returns F"
       ],
-      "files": ["Sources/Features/Stats/StatsViewModel.swift"]
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
     },
     {
       "id": "logic-303",
@@ -5836,28 +5852,35 @@
       "description": "HomeViewModel provides a quick stats summary string for display on the home screen",
       "category": "logic",
       "passes": true,
-      "depends_on": ["ui-001"],
+      "depends_on": [
+        "ui-001"
+      ],
       "test_steps": [
         "Includes total solved count",
         "Includes level info",
         "Returns beginner message when no games played"
       ],
-      "files": ["Sources/Features/Home/HomeViewModel.swift"]
-    }
-    ,
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
+    },
     {
       "id": "logic-304",
       "title": "GameEngine slowest answer tracking",
       "description": "GameEngine tracks the slowest answer time alongside the fastest",
       "category": "logic",
       "passes": true,
-      "depends_on": ["svc-001"],
+      "depends_on": [
+        "svc-001"
+      ],
       "test_steps": [
         "Slowest is nil initially",
         "Slowest updates on first answer",
         "Slowest keeps the maximum time"
       ],
-      "files": ["Sources/Services/GameEngine.swift"]
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
     },
     {
       "id": "logic-305",
@@ -5865,14 +5888,18 @@
       "description": "Operation indicates whether it is commutative (order doesn't matter)",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Add is commutative",
         "Multiply is commutative",
         "Subtract is not commutative",
         "Divide is not commutative"
       ],
-      "files": ["Sources/Domain/MathProblem.swift"]
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
     },
     {
       "id": "logic-306",
@@ -5880,13 +5907,17 @@
       "description": "DifficultyLevel reports how many operations are available at that level",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Easy has 2 operations",
         "Medium has 3 operations",
         "Hard has 4 operations"
       ],
-      "files": ["Sources/Domain/DifficultyLevel.swift"]
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
     },
     {
       "id": "logic-307",
@@ -5894,12 +5925,16 @@
       "description": "PlayerStats provides a breakdown of games played percentage per difficulty",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns empty when no games played",
         "Returns correct percentages per difficulty"
       ],
-      "files": ["Sources/Domain/PlayerStats+Extensions.swift"]
+      "files": [
+        "Sources/Domain/PlayerStats+Extensions.swift"
+      ]
     },
     {
       "id": "logic-308",
@@ -5907,14 +5942,18 @@
       "description": "ResultsViewModel assigns a medal (gold/silver/bronze/none) based on accuracy",
       "category": "logic",
       "passes": true,
-      "depends_on": ["ui-009"],
+      "depends_on": [
+        "ui-009"
+      ],
       "test_steps": [
         "90+ accuracy earns gold",
         "70-89 earns silver",
         "50-69 earns bronze",
         "Under 50 earns no medal"
       ],
-      "files": ["Sources/Features/Results/ResultsViewModel.swift"]
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     },
     {
       "id": "logic-309",
@@ -5922,13 +5961,17 @@
       "description": "MathProblem provides a numeric difficulty score (1-10) based on operation and operand size",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Simple addition has low score",
         "Large multiplication has high score",
         "Score is between 1 and 10"
       ],
-      "files": ["Sources/Domain/MathProblem.swift"]
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
     },
     {
       "id": "logic-310",
@@ -5936,13 +5979,17 @@
       "description": "GameSession provides the percentage of total time that was used",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns 0 with no time played",
         "Returns correct percentage after ticks",
         "Returns 100 when time runs out"
       ],
-      "files": ["Sources/Domain/GameSession.swift"]
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
     },
     {
       "id": "logic-311",
@@ -5950,13 +5997,17 @@
       "description": "LevelSystem provides the XP range (min-max) for a given level",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Level 1 starts at 0",
         "Level 2 starts at 100 ends at 299",
         "Max level has no upper bound"
       ],
-      "files": ["Sources/Domain/LevelSystem.swift"]
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
     },
     {
       "id": "logic-312",
@@ -5964,13 +6015,17 @@
       "description": "GameEngine provides a trend of problem difficulty over time based on adaptive range changes",
       "category": "logic",
       "passes": true,
-      "depends_on": ["svc-001"],
+      "depends_on": [
+        "svc-001"
+      ],
       "test_steps": [
         "Starts as stable",
         "Changes to increasing after many correct",
         "Changes to decreasing after many wrong"
       ],
-      "files": ["Sources/Services/GameEngine.swift"]
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
     },
     {
       "id": "logic-313",
@@ -5978,13 +6033,17 @@
       "description": "DifficultyLevel provides a complete summary including time, operations, and range",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Summary includes time limit",
         "Summary includes operation count",
         "Summary includes operand range"
       ],
-      "files": ["Sources/Domain/DifficultyLevel.swift"]
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
     },
     {
       "id": "logic-314",
@@ -5992,13 +6051,17 @@
       "description": "GameSession provides a formatted text breakdown of score components",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Includes base score",
         "Includes bonus if any",
         "Empty for zero score"
       ],
-      "files": ["Sources/Domain/GameSession.swift"]
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
     },
     {
       "id": "logic-315",
@@ -6006,12 +6069,16 @@
       "description": "Operation provides a keyboard hint character for each operation",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Each operation has a non-empty hint",
         "All hints are unique"
       ],
-      "files": ["Sources/Domain/MathProblem.swift"]
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
     },
     {
       "id": "logic-316",
@@ -6019,12 +6086,16 @@
       "description": "PlayerStats tracks the best streak for each operation type",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Starts at 0 for all operations",
         "Updates correctly for specific operation"
       ],
-      "files": ["Sources/Domain/PlayerStats+Extensions.swift"]
+      "files": [
+        "Sources/Domain/PlayerStats+Extensions.swift"
+      ]
     },
     {
       "id": "logic-317",
@@ -6032,12 +6103,16 @@
       "description": "StatsViewModel identifies the operation with highest accuracy as the strongest",
       "category": "logic",
       "passes": true,
-      "depends_on": ["ui-007"],
+      "depends_on": [
+        "ui-007"
+      ],
       "test_steps": [
         "Returns nil with no data",
         "Returns operation with highest accuracy"
       ],
-      "files": ["Sources/Features/Stats/StatsViewModel.swift"]
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
     },
     {
       "id": "logic-318",
@@ -6045,12 +6120,16 @@
       "description": "HomeViewModel provides a status text for the daily challenge",
       "category": "logic",
       "passes": true,
-      "depends_on": ["ui-001"],
+      "depends_on": [
+        "ui-001"
+      ],
       "test_steps": [
         "Shows available when not completed",
         "Shows completed when done"
       ],
-      "files": ["Sources/Features/Home/HomeViewModel.swift"]
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
     },
     {
       "id": "logic-319",
@@ -6058,13 +6137,17 @@
       "description": "MathProblem indicates where the answer falls on a conceptual number line (negative/zero/small/medium/large)",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Small addition answer is small",
         "Large multiplication is large",
         "Zero answer is zero"
       ],
-      "files": ["Sources/Domain/MathProblem.swift"]
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
     },
     {
       "id": "logic-320",
@@ -6072,13 +6155,17 @@
       "description": "GameSession estimates how many more questions can be answered based on pace",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns nil with no pace data",
         "Returns positive estimate with pace",
         "Returns 0 when finished"
       ],
-      "files": ["Sources/Domain/GameSession.swift"]
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
     },
     {
       "id": "logic-321",
@@ -6086,13 +6173,17 @@
       "description": "Achievement provides overall progress percentage across all achievements",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "0% for new player",
         "Higher for player with progress",
         "100% when all unlocked"
       ],
-      "files": ["Sources/Domain/Achievement.swift"]
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ]
     },
     {
       "id": "logic-322",
@@ -6100,12 +6191,16 @@
       "description": "GameEngine exposes first-half and second-half accuracy from the session",
       "category": "logic",
       "passes": true,
-      "depends_on": ["svc-001"],
+      "depends_on": [
+        "svc-001"
+      ],
       "test_steps": [
         "First half accuracy matches session",
         "Second half accuracy matches session"
       ],
-      "files": ["Sources/Services/GameEngine.swift"]
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
     },
     {
       "id": "logic-323",
@@ -6113,13 +6208,17 @@
       "description": "LevelSystem estimates how many game sessions are needed to reach the next level",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns positive count for non-max",
         "Returns 0 at max level",
         "Higher XP per session means fewer sessions needed"
       ],
-      "files": ["Sources/Domain/LevelSystem.swift"]
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
     },
     {
       "id": "logic-324",
@@ -6127,13 +6226,17 @@
       "description": "GameSession provides a net score that subtracts wrong answer penalties from the total",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Net score equals score when all correct",
         "Net score reduced by penalties",
         "Net score never goes below 0"
       ],
-      "files": ["Sources/Domain/GameSession.swift"]
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
     },
     {
       "id": "logic-325",
@@ -6141,13 +6244,17 @@
       "description": "Operation provides an example problem string for display purposes",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Add shows example like 3 + 2",
         "Each operation has unique example",
         "Examples are non-empty"
       ],
-      "files": ["Sources/Domain/MathProblem.swift"]
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
     },
     {
       "id": "logic-326",
@@ -6155,12 +6262,16 @@
       "description": "PlayerStats tracks how many consecutive games had improving accuracy",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns 0 with no recent games",
         "Returns consecutive improving count"
       ],
-      "files": ["Sources/Domain/PlayerStats+Extensions.swift"]
+      "files": [
+        "Sources/Domain/PlayerStats+Extensions.swift"
+      ]
     },
     {
       "id": "logic-327",
@@ -6168,13 +6279,17 @@
       "description": "ResultsViewModel returns a fun emoji that represents overall game performance",
       "category": "logic",
       "passes": true,
-      "depends_on": ["ui-009"],
+      "depends_on": [
+        "ui-009"
+      ],
       "test_steps": [
         "High accuracy gets celebration emoji",
         "Low accuracy gets encouraging emoji",
         "Perfect score gets special emoji"
       ],
-      "files": ["Sources/Features/Results/ResultsViewModel.swift"]
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     },
     {
       "id": "logic-328",
@@ -6182,12 +6297,16 @@
       "description": "DifficultyLevel provides a motivational challenge description for the player",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Each difficulty has a non-empty description",
         "Descriptions are different for each level"
       ],
-      "files": ["Sources/Domain/DifficultyLevel.swift"]
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
     },
     {
       "id": "logic-329",
@@ -6195,13 +6314,17 @@
       "description": "MathProblem indicates whether the problem requires carrying (addition) or borrowing (subtraction)",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "8+5 requires carry",
         "3+2 does not require carry",
         "Only applies to add/subtract"
       ],
-      "files": ["Sources/Domain/MathProblem.swift"]
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
     },
     {
       "id": "logic-330",
@@ -6209,13 +6332,17 @@
       "description": "GameSession provides a trend indicator (improving/declining/stable) within the current session",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Stable with few answers",
         "Improving when second half is better",
         "Declining when first half was better"
       ],
-      "files": ["Sources/Domain/GameSession.swift"]
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
     },
     {
       "id": "logic-331",
@@ -6223,13 +6350,17 @@
       "description": "LevelSystem classifies levels into tiers (beginner/intermediate/advanced/expert)",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Level 1-3 is beginner tier",
         "Level 4-6 is intermediate",
         "Level 7-10 is advanced/expert"
       ],
-      "files": ["Sources/Domain/LevelSystem.swift"]
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
     },
     {
       "id": "logic-332",
@@ -6237,12 +6368,16 @@
       "description": "GameEngine provides how long the player has been on the current problem",
       "category": "logic",
       "passes": true,
-      "depends_on": ["svc-001"],
+      "depends_on": [
+        "svc-001"
+      ],
       "test_steps": [
         "Starts at approximately 0",
         "Increases over time"
       ],
-      "files": ["Sources/Services/GameEngine.swift"]
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
     },
     {
       "id": "logic-333",
@@ -6250,12 +6385,16 @@
       "description": "PlayerStats provides XP earned per difficulty as a percentage of total XP",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns 0 for all when no XP earned",
         "Returns correct percentages"
       ],
-      "files": ["Sources/Domain/PlayerStats+Extensions.swift"]
+      "files": [
+        "Sources/Domain/PlayerStats+Extensions.swift"
+      ]
     },
     {
       "id": "logic-334",
@@ -6263,13 +6402,17 @@
       "description": "MathProblem provides a shuffled array of 4 answer choices including the correct one",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns exactly 4 choices",
         "Contains the correct answer",
         "All choices are unique"
       ],
-      "files": ["Sources/Domain/MathProblem.swift"]
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
     },
     {
       "id": "logic-335",
@@ -6277,12 +6420,16 @@
       "description": "GameSession estimates problems per minute for the remaining time",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Returns 0 with no data",
         "Returns rate based on pace"
       ],
-      "files": ["Sources/Domain/GameSession.swift"]
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
     },
     {
       "id": "logic-336",
@@ -6290,13 +6437,17 @@
       "description": "Achievement categorizes each achievement into a group (streak/score/games/mastery)",
       "category": "logic",
       "passes": true,
-      "depends_on": ["core-001"],
+      "depends_on": [
+        "core-001"
+      ],
       "test_steps": [
         "Streak achievements are in streak category",
         "Score achievements are in score category",
         "All achievements have a category"
       ],
-      "files": ["Sources/Domain/Achievement.swift"]
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ]
     },
     {
       "id": "logic-337",
@@ -6304,12 +6455,16 @@
       "description": "StatsViewModel provides formatted text for games played per difficulty",
       "category": "logic",
       "passes": true,
-      "depends_on": ["ui-007"],
+      "depends_on": [
+        "ui-007"
+      ],
       "test_steps": [
         "Returns formatted text with counts",
         "Shows 0 for unplayed difficulties"
       ],
-      "files": ["Sources/Features/Stats/StatsViewModel.swift"]
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
     },
     {
       "id": "logic-338",
@@ -6317,12 +6472,102 @@
       "description": "HomeViewModel provides text describing the next milestone the player is approaching",
       "category": "logic",
       "passes": true,
-      "depends_on": ["ui-001"],
+      "depends_on": [
+        "ui-001"
+      ],
       "test_steps": [
         "Shows milestone text for new player",
         "Shows level-up milestone when close"
       ],
-      "files": ["Sources/Features/Home/HomeViewModel.swift"]
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
+    },
+    {
+      "id": "logic-339",
+      "title": "MathProblem is single digit result",
+      "description": "MathProblem indicates whether the answer is a single digit number (0-9)",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "2+3=5 is single digit",
+        "15+20=35 is not single digit"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-340",
+      "title": "GameSession score projection",
+      "description": "GameSession projects the final score based on current pace",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Returns 0 with no data",
+        "Returns projection greater than current score when time remains"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-341",
+      "title": "LevelSystem level color scheme",
+      "description": "LevelSystem provides a color name for each level tier for UI theming",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Beginner tier has a color",
+        "Each tier has different color",
+        "All colors are non-empty"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
+    },
+    {
+      "id": "logic-342",
+      "title": "GameEngine problems answered per operation",
+      "description": "GameEngine exposes the count of problems answered for each operation",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "svc-001"
+      ],
+      "test_steps": [
+        "Starts at 0 for all operations",
+        "Increments after answering"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
+    },
+    {
+      "id": "logic-343",
+      "title": "ResultsViewModel accuracy label with grade",
+      "description": "ResultsViewModel provides a formatted accuracy string with letter grade",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Includes percentage",
+        "Includes letter grade"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ]
     }
   ],
   "_schema": {

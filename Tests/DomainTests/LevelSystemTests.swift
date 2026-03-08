@@ -251,4 +251,24 @@ struct LevelSystemTests {
         #expect(LevelSystem.levelTier(for: 2100) == .advanced)
         #expect(LevelSystem.levelTier(for: 4500) == .expert)
     }
+
+    // MARK: - Level Color Scheme (logic-341)
+
+    @Test("Beginner tier has a color")
+    func beginnerColor() {
+        #expect(!LevelSystem.tierColor(for: 0).isEmpty)
+    }
+
+    @Test("Each tier has different color")
+    func uniqueTierColors() {
+        let colors = [0, 600, 2100, 4500].map { LevelSystem.tierColor(for: $0) }
+        #expect(Set(colors).count == 4)
+    }
+
+    @Test("All colors are non-empty")
+    func allColorsNonEmpty() {
+        for xp in [0, 600, 2100, 4500] {
+            #expect(!LevelSystem.tierColor(for: xp).isEmpty)
+        }
+    }
 }

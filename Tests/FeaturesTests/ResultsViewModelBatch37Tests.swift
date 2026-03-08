@@ -185,4 +185,20 @@ struct ResultsViewModelBatch37Tests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.performanceEmoji == "🏆")
     }
+
+    // MARK: - Accuracy Label With Grade (logic-343)
+
+    @Test("Accuracy label includes percentage")
+    func accuracyLabelIncludesPercent() {
+        let session = makeSession(correct: 9, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.accuracyWithGrade.contains("90"))
+    }
+
+    @Test("Accuracy label includes letter grade")
+    func accuracyLabelIncludesGrade() {
+        let session = makeSession(correct: 9, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.accuracyWithGrade.contains("A"))
+    }
 }

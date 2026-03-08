@@ -68,6 +68,10 @@ extension ResultsViewModel {
         return "F"
     }
 
+    var accuracyWithGrade: String {
+        "\(Int(accuracy))% (\(gradeLabel))"
+    }
+
     var recommendationText: String? {
         switch difficultyRecommendation {
         case .tryHarder:

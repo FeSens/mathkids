@@ -184,4 +184,20 @@ struct GameSessionBatch46Tests {
         let rate = session.estimatedProblemsPerRemainingMinute
         #expect(rate > 0)
     }
+
+    // MARK: - Score Projection (logic-340)
+
+    @Test("Returns 0 with no data")
+    func scoreProjectionZero() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.projectedFinalScore == 0)
+    }
+
+    @Test("Returns projection greater than current when time remains")
+    func scoreProjectionPositive() {
+        var session = GameSession(difficulty: .easy) // 60s
+        for _ in 0..<10 { session.tick() } // 10s played
+        for _ in 0..<5 { session.recordAnswer(correct: true) }
+        #expect(session.projectedFinalScore >= session.score)
+    }
 }

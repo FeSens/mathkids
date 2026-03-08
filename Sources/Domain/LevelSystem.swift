@@ -85,6 +85,15 @@ enum LevelSystem {
         min(streak, 10) * 2
     }
 
+    static func tierColor(for xp: Int) -> String {
+        switch levelTier(for: xp) {
+        case .beginner: "green"
+        case .intermediate: "blue"
+        case .advanced: "purple"
+        case .expert: "gold"
+        }
+    }
+
     enum LevelTier: Sendable {
         case beginner, intermediate, advanced, expert
     }

@@ -170,4 +170,25 @@ struct GameEngineExtendedTests {
         let engine = GameEngine(difficulty: .easy)
         #expect(engine.timeOnCurrentProblem < 1.0)
     }
+
+    // MARK: - Problems Per Operation (logic-342)
+
+    @Test("Starts at 0 for all operations")
+    @MainActor
+    func operationCountStartsAt0() {
+        let engine = GameEngine(difficulty: .easy)
+        for op in Operation.allCases {
+            #expect(engine.operationFrequency[op, default: 0] == 0)
+        }
+    }
+
+    @Test("Increments after answering")
+    @MainActor
+    func operationCountIncrements() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        let op = engine.currentProblem.operation
+        engine.submitAnswer(engine.currentProblem.correctAnswer)
+        #expect(engine.operationFrequency[op, default: 0] >= 1)
+    }
 }

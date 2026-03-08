@@ -215,6 +215,10 @@ enum AnswerMagnitude: Sendable {
 }
 
 extension MathProblem {
+    var isSingleDigitResult: Bool {
+        correctAnswer >= 0 && correctAnswer <= 9
+    }
+
     var answerChoices: [Int] {
         var choices = wrongAnswerChoices
         choices.append(correctAnswer)

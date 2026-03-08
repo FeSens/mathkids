@@ -188,6 +188,12 @@ struct GameSession: Sendable {
         return timeRemaining * multiplier
     }
 
+    var projectedFinalScore: Int {
+        guard totalAnswered > 0, totalTimePlayed > 0, timeRemaining > 0 else { return score }
+        let scorePerSecond = Double(score) / Double(totalTimePlayed)
+        return score + Int(scorePerSecond * Double(timeRemaining))
+    }
+
     var estimatedProblemsPerRemainingMinute: Double {
         guard totalAnswered > 0, totalTimePlayed > 0, timeRemaining > 0 else { return 0 }
         let ppm = problemsPerMinute
