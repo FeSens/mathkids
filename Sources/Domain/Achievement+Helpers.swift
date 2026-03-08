@@ -144,6 +144,22 @@ extension Achievement {
     var achievementIdSuffix: String {
         String(id.split(separator: "_").last ?? Substring(id))
     }
+
+    var achievementRequiresMultipleGames: Bool {
+        category == .games && id != "first_game"
+    }
+
+    var achievementShareMessage: String {
+        "\(emoji) \(title) - \(description)"
+    }
+
+    var achievementNotificationTitle: String {
+        "Achievement Unlocked!"
+    }
+
+    var achievementNotificationBody: String {
+        "\(emoji) \(title): \(description)"
+    }
 }
 
 extension Achievement.Category {
@@ -202,5 +218,14 @@ extension Achievement.Category {
 
     var categoryIsEndgame: Bool {
         self == .mastery
+    }
+
+    var categoryDisplayOrder: Int {
+        switch self {
+        case .games: return 0
+        case .streak: return 1
+        case .score: return 2
+        case .mastery: return 3
+        }
     }
 }

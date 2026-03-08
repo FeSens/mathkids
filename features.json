@@ -17320,6 +17320,81 @@
         "mastery is endgame, games is not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1009",
+      "name": "achievementRequiresMultipleGames",
+      "description": "Whether achievement requires more than 1 game",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "ten_games requires multiple, first_game does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1010",
+      "name": "achievementShareMessage",
+      "description": "Full share message with emoji and description",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "contains title and description"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1011",
+      "name": "achievementNotificationTitle",
+      "description": "Title for achievement notification",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "contains Achievement Unlocked"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1012",
+      "name": "achievementNotificationBody",
+      "description": "Body for achievement notification",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "contains title"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1013",
+      "name": "categoryDisplayOrder",
+      "description": "Display order index for category in UI",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "games is first (0), mastery is last (3)"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
