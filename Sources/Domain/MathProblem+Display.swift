@@ -178,4 +178,24 @@ extension MathProblem {
     var problemNumberBondLabel: String {
         "\(operand1) and \(operand2)"
     }
+
+    var problemIsNearDouble: Bool {
+        operation == .add && abs(operand1 - operand2) == 1
+    }
+
+    var problemSummaryLabel: String {
+        "\(operation.displayName): \(operand1) \(operation.rawValue) \(operand2)"
+    }
+
+    var problemCorrectAnswerIsOdd: Bool {
+        correctAnswer % 2 != 0
+    }
+
+    var problemNeedsRegrouping: Bool {
+        operation == .add && correctAnswer >= 10
+    }
+
+    var problemIsMakingTen: Bool {
+        operation == .add && correctAnswer == 10
+    }
 }

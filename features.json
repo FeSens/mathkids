@@ -19271,6 +19271,81 @@
         "contains operands"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1139",
+      "name": "problemIsNearDouble",
+      "description": "Whether operands differ by 1 for addition",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3+4 is near double, 2+5 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1140",
+      "name": "problemSummaryLabel",
+      "description": "Short summary of the problem",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains operation name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1141",
+      "name": "problemCorrectAnswerIsOdd",
+      "description": "Whether correct answer is odd",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "2+3=5 is odd, 2+4=6 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1142",
+      "name": "problemNeedsRegrouping",
+      "description": "Whether addition needs carrying/regrouping",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "7+5 needs regrouping, 2+3 does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1143",
+      "name": "problemIsMakingTen",
+      "description": "Whether adding to make exactly 10",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3+7 makes ten, 3+5 does not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
