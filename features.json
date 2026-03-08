@@ -42752,7 +42752,6 @@
         "Operations with no time data are excluded"
       ],
       "passes": true
-    }
     },
     {
       "id": "improve-015",
@@ -42842,7 +42841,6 @@
         "Trend computed from recent accuracies"
       ],
       "passes": true
-    }
     },
     {
       "id": "improve-020",
@@ -42928,7 +42926,6 @@
         "Values loaded correctly from PlayerStats"
       ],
       "passes": true
-    }
     },
     {
       "id": "improve-025",
@@ -43014,7 +43011,6 @@
         "All correct returns total count"
       ],
       "passes": true
-    }
     },
     {
       "id": "improve-030",
@@ -43102,7 +43098,6 @@
         "Returns nil when all achievements unlocked"
       ],
       "passes": true
-    }
     },
     {
       "id": "improve-035",
@@ -43188,7 +43183,6 @@
         "Only operations with multiple attempts considered"
       ],
       "passes": true
-    }
     },
     {
       "id": "improve-040",
