@@ -60,6 +60,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var opposite: Operation {
+        inverse
+    }
+
     var shortName: String {
         switch self {
         case .add: "Add"

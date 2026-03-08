@@ -154,6 +154,10 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var totalWrongText: String {
+        "\(totalSolved - totalCorrect) wrong"
+    }
+
     var problemsPerGameText: String {
         guard gamesPlayed > 0 else { return "0 per game" }
         return "\(totalSolved / gamesPlayed) per game"

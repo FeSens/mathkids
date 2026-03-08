@@ -27,6 +27,10 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var hasStarted: Bool {
+        totalAnswered > 0
+    }
+
     var answeredProblemCount: Int {
         totalAnswered
     }

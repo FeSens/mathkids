@@ -10205,6 +10205,86 @@
         "Check divide.shortName is Div"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-564",
+      "name": "HomeViewModel.currentLevelText",
+      "description": "Returns Level X format string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Set currentLevel to 5",
+        "Verify returns Level 5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-565",
+      "name": "StatsViewModel.totalWrongText",
+      "description": "Returns total wrong answers as formatted string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set totalSolved=100 totalCorrect=85",
+        "Verify returns 15 wrong"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-566",
+      "name": "ResultsViewModel.accuracyPercentInt",
+      "description": "Returns accuracy as integer percentage",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session",
+        "Verify returns Int percentage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-567",
+      "name": "GameSession.hasStarted",
+      "description": "Returns true when at least one problem answered",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Fresh session hasStarted is false",
+        "After answering hasStarted is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-568",
+      "name": "Operation.opposite",
+      "description": "Returns the inverse operation (same as inverse but clearer name)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "add.opposite is subtract",
+        "multiply.opposite is divide"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var currentLevelText: String {
+        "Level \(currentLevel)"
+    }
+
     var dailyStreakEmoji: String {
         dailyStreak > 0 ? "🔥" : "❄️"
     }
