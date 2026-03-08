@@ -13167,6 +13167,86 @@
         "Verify challengeRating returns 'very challenging'"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-749",
+      "name": "DifficultyLevel.detailedOverview",
+      "description": "Detailed overview text describing what this difficulty involves",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get challenge description for each difficulty",
+        "Verify each returns non-empty description"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-750",
+      "name": "DifficultyLevel.isRecommendedFor",
+      "description": "Method that returns true if difficulty is recommended based on accuracy",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Check if easy is recommended for 50% accuracy",
+        "Verify returns true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-751",
+      "name": "DifficultyLevel.timeLimitFormatted",
+      "description": "Time limit formatted as mm:ss",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get timeLimitFormatted for easy",
+        "Verify returns '1:00'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-752",
+      "name": "DifficultyLevel.operationList",
+      "description": "Comma-separated list of operations for this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get operationList for easy",
+        "Verify returns list of operation names"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-753",
+      "name": "DifficultyLevel.scoreRangeText",
+      "description": "Text showing typical score range for this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get scoreRangeText for each difficulty",
+        "Verify contains score range"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
