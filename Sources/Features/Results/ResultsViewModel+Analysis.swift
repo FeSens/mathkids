@@ -106,6 +106,14 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var sessionTimeText: String {
+        "\(session.totalTimePlayed)s"
+    }
+
+    var difficultyEmoji: String {
+        session.difficulty.emoji
+    }
+
     var correctCountLabel: String {
         "\(session.totalCorrect) correct"
     }

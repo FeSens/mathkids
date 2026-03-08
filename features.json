@@ -11165,6 +11165,86 @@
         "Verify X in label"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-624",
+      "name": "HomeViewModel.selectedOperationCount",
+      "description": "Returns count of selected operations",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select 3 operations",
+        "Verify returns 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-625",
+      "name": "StatsViewModel.averageProblemsText",
+      "description": "Returns average problems per minute as formatted text",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set averageProblemsPerMinute",
+        "Verify formatted text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-626",
+      "name": "ResultsViewModel.sessionTimeText",
+      "description": "Returns session time in seconds",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session",
+        "Verify time text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-627",
+      "name": "GameSession.isOnStreak",
+      "description": "Returns true when current streak >= 3",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "No streak returns false",
+        "3+ streak returns true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-628",
+      "name": "ResultsViewModel.difficultyEmoji",
+      "description": "Returns emoji for session difficulty",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Easy session returns seedling",
+        "Hard returns fire"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

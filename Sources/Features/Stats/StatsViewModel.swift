@@ -154,6 +154,10 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var averageProblemsText: String {
+        String(format: "%.1f per minute", averageProblemsPerMinute)
+    }
+
     var hasPlayedGames: Bool {
         gamesPlayed > 0
     }

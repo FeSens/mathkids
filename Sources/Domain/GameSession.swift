@@ -27,6 +27,10 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var isOnStreak: Bool {
+        currentStreak >= 3
+    }
+
     var timeRemainingText: String {
         "\(timeRemaining)s remaining"
     }

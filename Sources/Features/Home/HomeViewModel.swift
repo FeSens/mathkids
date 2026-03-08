@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var selectedOperationCount: Int {
+        selectedOperations.count
+    }
+
     var canPlayDailyChallenge: Bool {
         !dailyChallengeCompleted
     }
