@@ -275,4 +275,17 @@ extension GameSession {
     var isPassing: Bool {
         totalAnswered >= 1 && accuracy > 60
     }
+
+    var sessionMoodEmoji: String {
+        guard totalAnswered > 0 else { return "😐" }
+        let acc = accuracy
+        if acc >= 90 { return "🤩" }
+        if acc >= 70 { return "😊" }
+        if acc >= 50 { return "😐" }
+        return "😟"
+    }
+
+    var totalPointsDisplay: String {
+        "\(score) pts"
+    }
 }

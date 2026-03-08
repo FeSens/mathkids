@@ -78,4 +78,12 @@ extension AnsweredProblem {
         guard let time = timeTaken else { return false }
         return time > 10.0
     }
+
+    var wasNilTime: Bool {
+        timeTaken == nil
+    }
+
+    var isSubtractionProblem: Bool {
+        problem.operation == .subtract
+    }
 }

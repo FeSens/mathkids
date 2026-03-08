@@ -14687,6 +14687,86 @@
         "Create session with 3/10 correct -> isPassing false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-844",
+      "name": "wasNilTime",
+      "description": "AnsweredProblem computed property returning true when timeTaken is nil",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create answered problem with no timeTaken -> wasNilTime true",
+        "Create answered problem with timeTaken 5.0 -> wasNilTime false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-845",
+      "name": "sessionMoodEmoji",
+      "description": "GameSession computed property returning emoji based on current accuracy mood",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Session with high accuracy -> happy emoji",
+        "Session with low accuracy -> sad emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-846",
+      "name": "isSubtractionProblem",
+      "description": "AnsweredProblem computed property returning true if the problem operation is subtraction",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answered problem with subtract op -> true",
+        "Answered problem with add op -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-847",
+      "name": "totalPointsDisplay",
+      "description": "GameSession computed property returning formatted total points string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Session with score -> totalPointsDisplay contains score number",
+        "Fresh session -> totalPointsDisplay contains 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-848",
+      "name": "isMultiDigitProblem",
+      "description": "MathProblem computed property returning true when any operand is >= 10",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 12+3 -> isMultiDigitProblem true",
+        "Problem 3+4 -> isMultiDigitProblem false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -165,4 +165,8 @@ extension MathProblem {
     var operandGap: Int {
         abs(operand1 - operand2)
     }
+
+    var isMultiDigitProblem: Bool {
+        operand1 >= 10 || operand2 >= 10
+    }
 }
