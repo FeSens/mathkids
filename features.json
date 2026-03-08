@@ -26961,6 +26961,75 @@
         "Create common achievement",
         "Verify alignment is leading"
       ]
+    },
+    {
+      "id": "logic-1619",
+      "title": "achievementHeaderImage",
+      "description": "Return header image name for detail view",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify image contains mastery",
+        "Create streak achievement",
+        "Verify image contains streak"
+      ]
+    },
+    {
+      "id": "logic-1620",
+      "title": "achievementIsVerified",
+      "description": "Return whether achievement is verified/official",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify isVerified is true"
+      ]
+    },
+    {
+      "id": "logic-1621",
+      "title": "achievementCardPadding",
+      "description": "Return card padding value",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify padding is 16",
+        "Create common achievement",
+        "Verify padding is 8"
+      ]
+    },
+    {
+      "id": "logic-1622",
+      "title": "achievementShareCaption",
+      "description": "Return caption for social sharing",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify caption contains title and emoji"
+      ]
+    },
+    {
+      "id": "logic-1623",
+      "title": "achievementViewCountLabel",
+      "description": "Return view count label",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify label is 0 views"
+      ]
     }
   ],
   "_schema": {

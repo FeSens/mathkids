@@ -230,4 +230,24 @@ extension Achievement {
     var achievementCardTextAlignment: String {
         isRareAchievement ? "center" : "leading"
     }
+
+    var achievementHeaderImage: String {
+        "header_\(category == .mastery ? "mastery" : category == .streak ? "streak" : category == .score ? "score" : "games")"
+    }
+
+    var achievementIsVerified: Bool {
+        true
+    }
+
+    var achievementCardPadding: Int {
+        isRareAchievement ? 16 : 8
+    }
+
+    var achievementShareCaption: String {
+        "\(emoji) \(title) — unlocked in MathKids!"
+    }
+
+    var achievementViewCountLabel: String {
+        "0 views"
+    }
 }
