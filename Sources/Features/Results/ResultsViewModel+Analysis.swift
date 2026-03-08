@@ -106,6 +106,10 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var isNewRecord: Bool {
+        finalScore > previousBestScore && finalScore > 0
+    }
+
     var accuracyPercentInt: Int {
         Int(accuracy)
     }

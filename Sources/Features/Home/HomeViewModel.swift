@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var totalXPText: String {
+        "\(totalXP) XP"
+    }
+
     var currentLevelText: String {
         "Level \(currentLevel)"
     }

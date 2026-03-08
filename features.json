@@ -10285,6 +10285,86 @@
         "multiply.opposite is divide"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-569",
+      "name": "HomeViewModel.totalXPText",
+      "description": "Returns formatted total XP string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Set totalXP to 1500",
+        "Verify returns 1500 XP"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-570",
+      "name": "StatsViewModel.easyGamesText",
+      "description": "Returns easy games count as formatted string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set easyGames to 12",
+        "Verify returns 12 easy games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-571",
+      "name": "ResultsViewModel.isNewRecord",
+      "description": "Returns true if finalScore > previousBestScore",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create with score > previousBest",
+        "Verify isNewRecord is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-572",
+      "name": "GameSession.timeElapsedPercentage",
+      "description": "Returns elapsed time as percentage 0-100",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session, tick some time",
+        "Verify percentage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-573",
+      "name": "DifficultyLevel.isMiddleDifficulty",
+      "description": "Returns true only for medium difficulty",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "medium.isMiddleDifficulty is true",
+        "easy and hard are false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
