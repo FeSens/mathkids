@@ -189,6 +189,37 @@ extension ResultsViewModel {
         return Int((1.0 - variance * 4.0) * 100)
     }
 
+    /// Answer bias: does the player tend to over or under-estimate?
+    enum AnswerBias { case overEstimates, underEstimates, balanced }
+
+    var answerBias: AnswerBias {
+        let wrongAnswers = problemHistory.filter { !$0.isCorrect }
+        guard !wrongAnswers.isEmpty else { return .balanced }
+        var overCount = 0
+        var underCount = 0
+        for entry in wrongAnswers {
+            let correct = entry.problem.correctAnswer
+            if entry.userAnswer > correct { overCount += 1 }
+            else if entry.userAnswer < correct { underCount += 1 }
+        }
+        if overCount > underCount * 2 { return .overEstimates }
+        if underCount > overCount * 2 { return .underEstimates }
+        return .balanced
+    }
+
+    /// Percentage of game timer used (0-100)
+    var timeUsagePercent: Int {
+        let total = session.difficulty.timeLimitSeconds
+        guard total > 0 else { return 0 }
+        let used = total - session.timeRemaining
+        return Int(Double(used) / Double(total) * 100)
+    }
+
+    /// Formatted time usage text
+    var timeUsageText: String {
+        "\(timeUsagePercent)% of time used"
+    }
+
     /// Most improved operation (biggest accuracy gain from early to late in session)
     var mostImprovedOperation: Operation? {
         guard problemHistory.count >= 4 else { return nil }

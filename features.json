@@ -43470,6 +43470,93 @@
         "Empty history gives 0"
       ],
       "passes": true
+    },
+    {
+      "id": "improve-055",
+      "title": "Stats view problems per game metric",
+      "description": "Add average problems solved per game to StatsViewModel. Computed from totalSolved / gamesPlayed.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "averageProblemsPerGame returns correct average",
+        "Zero games returns 0",
+        "averageProblemsPerGameText formats with 1 decimal"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-056",
+      "title": "Stats view total correct percentage text",
+      "description": "Add a formatted text showing correct/total ratio in StatsViewModel (e.g., '45/50 correct').",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "correctRatioText shows correct/total format",
+        "Zero solved shows 0/0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-057",
+      "title": "Results answer pattern analysis",
+      "description": "Analyze whether wrong answers tend to be higher or lower than correct answers. Helps identify if player over/under-estimates.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Insights.swift"
+      ],
+      "test_steps": [
+        "answerBias returns .overEstimates when wrong answers are higher",
+        "answerBias returns .underEstimates when wrong answers are lower",
+        "answerBias returns .balanced when mixed",
+        "No wrong answers returns .balanced"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-058",
+      "title": "Game session time pressure metric",
+      "description": "Track what percentage of the game timer was used. Helps understand pacing.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Insights.swift"
+      ],
+      "test_steps": [
+        "timeUsagePercent returns percentage of timer used",
+        "Full time used returns 100",
+        "No time used returns 0",
+        "timeUsageText returns formatted string"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-059",
+      "title": "Stats strongest and weakest Elo gap",
+      "description": "Show the gap between strongest and weakest Elo ratings in StatsViewModel. Large gaps indicate uneven skill distribution.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "eloGap returns difference between highest and lowest Elo",
+        "All equal ratings returns 0",
+        "eloGapText returns formatted string",
+        "skillBalance returns balanced/unbalanced enum"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
