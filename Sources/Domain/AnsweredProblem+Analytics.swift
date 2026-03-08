@@ -161,4 +161,30 @@ extension AnsweredProblem {
         if let time = timeTaken, time < 3.0 { return "learned" }
         return "learning"
     }
+
+    var answeredProblemQuizWeight: Int {
+        guard isCorrect else { return 3 }
+        if let time = timeTaken, time < 3.0 { return 1 }
+        return 2
+    }
+
+    var answeredProblemIsPerfectResponse: Bool {
+        isCorrect && (timeTaken ?? Double.infinity) < 1.0
+    }
+
+    var answeredProblemParentReport: String {
+        let eq = "\(problem.operand1) \(problem.operation.rawValue) \(problem.operand2)"
+        if isCorrect {
+            return "Correct: \(eq) = \(userAnswer)"
+        }
+        return "Incorrect: \(eq) — answered \(userAnswer), correct answer is \(problem.correctAnswer)"
+    }
+
+    var answeredProblemDifficultyLabel: String {
+        answeredProblemIsHardProblem ? "Hard" : "Easy"
+    }
+
+    var answeredProblemIsBelowExpectation: Bool {
+        !isCorrect || (timeTaken ?? 0) > 10.0
+    }
 }

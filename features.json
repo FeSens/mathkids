@@ -21046,6 +21046,96 @@
         "Check status is new"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1244",
+      "name": "answeredProblemQuizWeight",
+      "description": "Weight for quiz selection (higher for wrong/slow problems)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create wrong answer",
+        "Check weight is 3",
+        "Create correct fast answer",
+        "Check weight is 1"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1245",
+      "name": "answeredProblemIsPerfectResponse",
+      "description": "Whether the response was both correct and instant (<1s)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct 0.5s answer",
+        "Check isPerfectResponse is true",
+        "Create correct 3s answer",
+        "Check isPerfectResponse is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1246",
+      "name": "answeredProblemParentReport",
+      "description": "Parent-friendly summary of the attempt",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check report contains Correct",
+        "Create wrong answer",
+        "Check report contains correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1247",
+      "name": "answeredProblemDifficultyLabel",
+      "description": "Human-readable difficulty label based on operation and operands",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create easy add problem",
+        "Check label is Easy",
+        "Create hard multiply problem",
+        "Check label is Hard"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1248",
+      "name": "answeredProblemIsBelowExpectation",
+      "description": "Whether the answer was wrong or very slow for the operation level",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create wrong answer",
+        "Check isBelowExpectation is true",
+        "Create correct fast answer",
+        "Check isBelowExpectation is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
