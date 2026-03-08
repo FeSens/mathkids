@@ -21944,6 +21944,96 @@
         "Check energy is 0"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1294",
+      "name": "answeredProblemShieldValue",
+      "description": "Shield value for defense-based scoring (1 if correct, 0 if wrong)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check shield is 1",
+        "Create wrong answer",
+        "Check shield is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1295",
+      "name": "answeredProblemComboBreaker",
+      "description": "Whether this wrong answer ends a combo",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create wrong answer",
+        "Check isComboBreaker is true",
+        "Create correct answer",
+        "Check isComboBreaker is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1296",
+      "name": "answeredProblemBossHitDamage",
+      "description": "Damage dealt to boss in boss mode (score * multiplier)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check damage > 0",
+        "Create wrong answer",
+        "Check damage is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1297",
+      "name": "answeredProblemCurrencyDisplay",
+      "description": "Formatted currency display like 10 coins",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct multiply answer",
+        "Check display contains coins",
+        "Create wrong answer",
+        "Check display is 0 coins"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1298",
+      "name": "answeredProblemIsDoublePayout",
+      "description": "Whether this answer earns double payout (hard operation + fast)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast multiply answer",
+        "Check isDoublePayout is true",
+        "Create correct add answer",
+        "Check isDoublePayout is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

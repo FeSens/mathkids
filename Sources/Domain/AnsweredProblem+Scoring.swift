@@ -156,4 +156,25 @@ extension AnsweredProblem {
         if let time = timeTaken, time < 2.0 { return 3 }
         return 1
     }
+
+    var answeredProblemShieldValue: Int {
+        isCorrect ? 1 : 0
+    }
+
+    var answeredProblemComboBreaker: Bool {
+        !isCorrect
+    }
+
+    var answeredProblemBossHitDamage: Int {
+        answeredProblemTotalScore
+    }
+
+    var answeredProblemCurrencyDisplay: String {
+        let coins = isCorrect ? problem.operation.difficultyWeight * 5 : 0
+        return "\(coins) coins"
+    }
+
+    var answeredProblemIsDoublePayout: Bool {
+        isCorrect && !problem.operation.isPrimaryOperation && (timeTaken ?? Double.infinity) < 2.0
+    }
 }
