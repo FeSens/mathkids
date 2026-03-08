@@ -236,6 +236,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         String(repeating: "⭐", count: difficultyIndex + 1)
     }
 
+    var progressionIndex: Int {
+        difficultyIndex + 1
+    }
+
     var isMiddleDifficulty: Bool {
         self == .medium
     }

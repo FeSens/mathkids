@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var difficultyTimeLimitText: String {
+        "\(selectedDifficulty.timeLimitSeconds)s"
+    }
+
     var totalXPText: String {
         "\(totalXP) XP"
     }

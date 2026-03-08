@@ -10365,6 +10365,86 @@
         "easy and hard are false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-574",
+      "name": "HomeViewModel.difficultyTimeLimitText",
+      "description": "Returns time limit for selected difficulty as formatted string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select easy difficulty",
+        "Verify returns 60s"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-575",
+      "name": "StatsViewModel.mediumGamesText",
+      "description": "Returns medium games count as formatted string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set mediumGames to 8",
+        "Verify returns 8 medium games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-576",
+      "name": "ResultsViewModel.accuracyEmoji",
+      "description": "Returns emoji based on accuracy level",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "High accuracy returns star",
+        "Low accuracy returns thinking face"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-577",
+      "name": "GameSession.secondsPerAnswer",
+      "description": "Average seconds per answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Tick time, answer problems",
+        "Verify average time"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-578",
+      "name": "DifficultyLevel.progressionIndex",
+      "description": "Returns 1-based index in progression path",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "easy returns 1",
+        "hard returns 3"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

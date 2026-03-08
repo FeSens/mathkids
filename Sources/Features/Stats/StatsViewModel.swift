@@ -154,6 +154,10 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var mediumGamesText: String {
+        "\(mediumGames) medium games"
+    }
+
     var easyGamesText: String {
         "\(easyGames) easy games"
     }

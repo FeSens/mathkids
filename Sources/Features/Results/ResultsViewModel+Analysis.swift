@@ -106,6 +106,13 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var accuracyEmoji: String {
+        if accuracy >= 90 { return "⭐" }
+        if accuracy >= 70 { return "👍" }
+        if accuracy >= 50 { return "💪" }
+        return "🤔"
+    }
+
     var isNewRecord: Bool {
         finalScore > previousBestScore && finalScore > 0
     }
