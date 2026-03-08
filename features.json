@@ -13407,6 +13407,86 @@
         "Verify reasonable estimates"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-764",
+      "name": "DifficultyLevel.maxOperandDisplay",
+      "description": "Formatted max operand display text",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get maxOperand for each difficulty",
+        "Verify hard has largest operand"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-765",
+      "name": "DifficultyLevel.speedRequirement",
+      "description": "Text describing the speed expectation for this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get speedRequirement for easy",
+        "Verify contains seconds info"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-766",
+      "name": "DifficultyLevel.bonusPointsAvailable",
+      "description": "Total bonus points available in a perfect game",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get bonusPointsAvailable for each difficulty",
+        "Verify positive values"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-767",
+      "name": "DifficultyLevel.isBeginnerFriendly",
+      "description": "Boolean true if this difficulty is suitable for beginners",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Check each difficulty",
+        "Verify only easy is beginner friendly"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-768",
+      "name": "DifficultyLevel.completionMessage",
+      "description": "Message shown when completing a game at this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get completionMessage for each difficulty",
+        "Verify each has unique message"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

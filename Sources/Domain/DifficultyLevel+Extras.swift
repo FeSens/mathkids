@@ -81,4 +81,28 @@ extension DifficultyLevel {
     var averageGameLength: Int {
         estimatedProblemsPerGame
     }
+
+    var maxOperandDisplay: String {
+        "Numbers up to \(operandRange.upperBound)"
+    }
+
+    var speedRequirement: String {
+        "\(recommendedSecondsPerProblem) seconds per problem"
+    }
+
+    var bonusPointsAvailable: Int {
+        maxStreakBonus + estimatedProblemsPerGame * 2
+    }
+
+    var isBeginnerFriendly: Bool {
+        self == .easy
+    }
+
+    var completionMessage: String {
+        switch self {
+        case .easy: return "Great practice session!"
+        case .medium: return "Nice work on medium difficulty!"
+        case .hard: return "Impressive! You tackled hard mode!"
+        }
+    }
 }
