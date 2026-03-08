@@ -206,6 +206,19 @@ enum AnswerMagnitude: Sendable {
 }
 
 extension MathProblem {
+    enum NumberLinePosition: Sendable {
+        case negative, zero, small, medium, large
+    }
+
+    var numberLinePosition: NumberLinePosition {
+        let answer = correctAnswer
+        if answer < 0 { return .negative }
+        if answer == 0 { return .zero }
+        if answer < 20 { return .small }
+        if answer < 100 { return .medium }
+        return .large
+    }
+
     var difficultyScore: Int {
         let opScore = operation.difficultyRank // 1-4
         let sizeScore = (operand1 + operand2) / 10 // rough operand size

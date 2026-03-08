@@ -6051,6 +6051,75 @@
         "Shows completed when done"
       ],
       "files": ["Sources/Features/Home/HomeViewModel.swift"]
+    },
+    {
+      "id": "logic-319",
+      "title": "MathProblem number line position",
+      "description": "MathProblem indicates where the answer falls on a conceptual number line (negative/zero/small/medium/large)",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Small addition answer is small",
+        "Large multiplication is large",
+        "Zero answer is zero"
+      ],
+      "files": ["Sources/Domain/MathProblem.swift"]
+    },
+    {
+      "id": "logic-320",
+      "title": "GameSession questions remaining estimate",
+      "description": "GameSession estimates how many more questions can be answered based on pace",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns nil with no pace data",
+        "Returns positive estimate with pace",
+        "Returns 0 when finished"
+      ],
+      "files": ["Sources/Domain/GameSession.swift"]
+    },
+    {
+      "id": "logic-321",
+      "title": "Achievement total progress percentage",
+      "description": "Achievement provides overall progress percentage across all achievements",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "0% for new player",
+        "Higher for player with progress",
+        "100% when all unlocked"
+      ],
+      "files": ["Sources/Domain/Achievement.swift"]
+    },
+    {
+      "id": "logic-322",
+      "title": "GameEngine accuracy by half",
+      "description": "GameEngine exposes first-half and second-half accuracy from the session",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["svc-001"],
+      "test_steps": [
+        "First half accuracy matches session",
+        "Second half accuracy matches session"
+      ],
+      "files": ["Sources/Services/GameEngine.swift"]
+    },
+    {
+      "id": "logic-323",
+      "title": "LevelSystem estimated sessions to next level",
+      "description": "LevelSystem estimates how many game sessions are needed to reach the next level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": ["core-001"],
+      "test_steps": [
+        "Returns positive count for non-max",
+        "Returns 0 at max level",
+        "Higher XP per session means fewer sessions needed"
+      ],
+      "files": ["Sources/Domain/LevelSystem.swift"]
     }
   ],
   "_schema": {

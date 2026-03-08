@@ -88,4 +88,30 @@ struct GameSessionBatch46Tests {
         let session = GameSession(difficulty: .easy)
         #expect(session.scoreBreakdownText.isEmpty)
     }
+
+    // MARK: - Questions Remaining Estimate (logic-320)
+
+    @Test("Returns nil with no pace data")
+    func questionsRemainingNil() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.estimatedQuestionsRemaining == nil)
+    }
+
+    @Test("Returns positive estimate with pace")
+    func questionsRemainingPositive() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<10 { session.tick() } // 10s played, 50s remaining
+        for _ in 0..<5 { session.recordAnswer(correct: true) } // 2s per answer
+        let estimate = session.estimatedQuestionsRemaining
+        #expect(estimate != nil)
+        #expect(estimate! > 0)
+    }
+
+    @Test("Returns 0 when finished")
+    func questionsRemainingZeroWhenFinished() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<60 { session.tick() } // time runs out
+        session.recordAnswer(correct: true) // just to have pace data
+        #expect(session.estimatedQuestionsRemaining == 0)
+    }
 }

@@ -85,6 +85,12 @@ enum LevelSystem {
         min(streak, 10) * 2
     }
 
+    static func estimatedSessionsToNextLevel(currentXP: Int, avgXPPerSession: Int) -> Int {
+        let needed = xpNeededForNextLevel(currentXP: currentXP)
+        guard needed > 0, avgXPPerSession > 0 else { return 0 }
+        return (needed + avgXPPerSession - 1) / avgXPPerSession // ceil division
+    }
+
     static func xpRange(forLevel level: Int) -> (min: Int, max: Int?) {
         guard level >= 1, level <= thresholds.count else { return (0, nil) }
         let minXP = thresholds[level - 1]

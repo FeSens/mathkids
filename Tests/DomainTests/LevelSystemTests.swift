@@ -210,4 +210,25 @@ struct LevelSystemTests {
         let range = LevelSystem.xpRange(forLevel: LevelSystem.thresholds.count)
         #expect(range.max == nil)
     }
+
+    // MARK: - Estimated Sessions To Next Level (logic-323)
+
+    @Test("Returns positive count for non-max")
+    func estimatedSessionsPositive() {
+        let sessions = LevelSystem.estimatedSessionsToNextLevel(currentXP: 50, avgXPPerSession: 30)
+        #expect(sessions > 0)
+    }
+
+    @Test("Returns 0 at max level")
+    func estimatedSessionsAtMax() {
+        let sessions = LevelSystem.estimatedSessionsToNextLevel(currentXP: 99999, avgXPPerSession: 30)
+        #expect(sessions == 0)
+    }
+
+    @Test("Higher XP per session means fewer sessions needed")
+    func fewerSessionsWithHighXP() {
+        let slow = LevelSystem.estimatedSessionsToNextLevel(currentXP: 50, avgXPPerSession: 10)
+        let fast = LevelSystem.estimatedSessionsToNextLevel(currentXP: 50, avgXPPerSession: 50)
+        #expect(fast < slow)
+    }
 }

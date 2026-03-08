@@ -188,6 +188,14 @@ struct GameSession: Sendable {
         return timeRemaining * multiplier
     }
 
+    var estimatedQuestionsRemaining: Int? {
+        guard !isFinished else { return 0 }
+        guard totalAnswered > 0, totalTimePlayed > 0 else { return nil }
+        let avgTimePerQuestion = Double(totalTimePlayed) / Double(totalAnswered)
+        guard avgTimePerQuestion > 0 else { return nil }
+        return Int(Double(timeRemaining) / avgTimePerQuestion)
+    }
+
     var scoreBreakdownText: String {
         guard score > 0 else { return "" }
         if totalBonusPoints > 0 {

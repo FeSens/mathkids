@@ -212,4 +212,39 @@ struct AchievementTests {
         let next = Achievement.nextClosest(for: stats)
         #expect(next == nil)
     }
+
+    // MARK: - Total Progress Percentage (logic-321)
+
+    @Test("0% for new player")
+    func totalProgressZero() {
+        let stats = PlayerStats()
+        #expect(Achievement.totalProgressPercentage(for: stats) == 0)
+    }
+
+    @Test("Higher for player with progress")
+    func totalProgressHigher() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 5
+        stats.totalSolved = 50
+        stats.bestStreak = 3
+        let pct = Achievement.totalProgressPercentage(for: stats)
+        #expect(pct > 0)
+    }
+
+    @Test("100% when all unlocked")
+    func totalProgress100() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 1000
+        stats.totalSolved = 1000
+        stats.totalCorrect = 1000
+        stats.bestStreak = 100
+        stats.bestScore = 1000
+        stats.dailyStreak = 30
+        stats.mediumGamesPlayed = 100
+        stats.hardGamesPlayed = 100
+        stats.easyMasteryCount = 10
+        stats.mediumMasteryCount = 10
+        stats.hardMasteryCount = 10
+        #expect(Achievement.totalProgressPercentage(for: stats) == 100)
+    }
 }

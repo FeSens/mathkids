@@ -135,4 +135,30 @@ struct GameEngineExtendedTests {
         }
         #expect(engine.difficultyTrend == .decreasing)
     }
+
+    // MARK: - Accuracy By Half (logic-322)
+
+    @Test("First half accuracy matches session")
+    @MainActor
+    func firstHalfAccuracyMatchesSession() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        engine.submitAnswer(engine.currentProblem.correctAnswer)
+        engine.submitAnswer(engine.currentProblem.correctAnswer)
+        engine.submitAnswer(99999)
+        engine.submitAnswer(99999)
+        #expect(engine.firstHalfAccuracy == engine.session.firstHalfAccuracy)
+    }
+
+    @Test("Second half accuracy matches session")
+    @MainActor
+    func secondHalfAccuracyMatchesSession() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        engine.submitAnswer(99999)
+        engine.submitAnswer(99999)
+        engine.submitAnswer(engine.currentProblem.correctAnswer)
+        engine.submitAnswer(engine.currentProblem.correctAnswer)
+        #expect(engine.secondHalfAccuracy == engine.session.secondHalfAccuracy)
+    }
 }

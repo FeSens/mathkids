@@ -149,4 +149,24 @@ struct MathProblemExtendedTests {
         let hints = Operation.allCases.map(\.keyboardHint)
         #expect(Set(hints).count == 4)
     }
+
+    // MARK: - Number Line Position (logic-319)
+
+    @Test("Small addition answer is small")
+    func numberLineSmall() {
+        let problem = MathProblem(operand1: 2, operand2: 3, operation: .add) // = 5
+        #expect(problem.numberLinePosition == .small)
+    }
+
+    @Test("Large multiplication is large")
+    func numberLineLarge() {
+        let problem = MathProblem(operand1: 50, operand2: 50, operation: .multiply) // = 2500
+        #expect(problem.numberLinePosition == .large)
+    }
+
+    @Test("Zero answer is zero")
+    func numberLineZero() {
+        let problem = MathProblem(operand1: 5, operand2: 5, operation: .subtract) // = 0
+        #expect(problem.numberLinePosition == .zero)
+    }
 }

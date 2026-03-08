@@ -150,6 +150,12 @@ struct Achievement: Identifiable {
         return min(result.current * 100 / result.target, 100)
     }
 
+    static func totalProgressPercentage(for stats: PlayerStats) -> Int {
+        guard !all.isEmpty else { return 0 }
+        let totalPct = all.reduce(0) { $0 + $1.progressPercentage(stats: stats) }
+        return totalPct / all.count
+    }
+
     static func nextClosest(for stats: PlayerStats) -> Achievement? {
         let locked = all.filter { !$0.isUnlocked(stats: stats) }
         guard !locked.isEmpty else { return nil }

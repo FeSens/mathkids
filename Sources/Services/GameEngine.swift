@@ -26,6 +26,8 @@ final class GameEngine {
     private(set) var problemCount: Int = 1
 
     var consecutiveWrongCount: Int { consecutiveWrong }
+    var firstHalfAccuracy: Double { session.firstHalfAccuracy }
+    var secondHalfAccuracy: Double { session.secondHalfAccuracy }
 
     enum DifficultyTrend { case stable, increasing, decreasing }
 
