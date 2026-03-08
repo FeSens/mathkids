@@ -34057,6 +34057,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2091",
+      "title": "Achievement Card Moldavite Style",
+      "description": "Computed property returning moldavite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns etched style",
+        "Common returns rough style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2092",
+      "title": "Achievement Requires Initiative",
+      "description": "Computed property checking if achievement requires initiative",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Games category requires initiative",
+        "Score does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2093",
+      "title": "Achievement Card Compact Seal Text",
+      "description": "Computed property returning compact seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2094",
+      "title": "Achievement Card Danburite Style",
+      "description": "Computed property returning danburite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns prismatic style",
+        "Common returns cloudy style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2095",
+      "title": "Achievement Scepter Threshold",
+      "description": "Computed property returning scepter threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

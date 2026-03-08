@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 30000
         }
     }
+
+    var achievementCardMoldaviteStyle: String {
+        isRareAchievement ? "etched" : "rough"
+    }
+
+    var achievementRequiresInitiative: Bool {
+        category == .games
+    }
+
+    var achievementCardCompactSealText: String {
+        switch category {
+        case .mastery: return "Compact Seal of Scholars"
+        case .streak: return "Compact Seal of Guardians"
+        case .score: return "Compact Seal of Warriors"
+        case .games: return "Compact Seal of Adventurers"
+        }
+    }
+
+    var achievementCardDanburiteStyle: String {
+        isRareAchievement ? "prismatic" : "cloudy"
+    }
+
+    var achievementScepterThreshold: Int {
+        switch category {
+        case .mastery: return 400000
+        case .streak: return 150000
+        case .score: return 300000
+        case .games: return 40000
+        }
+    }
 }
