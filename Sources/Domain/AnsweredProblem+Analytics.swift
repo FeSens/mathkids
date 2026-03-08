@@ -104,4 +104,32 @@ extension AnsweredProblem {
     var answeredProblemIsRepeatMistake: Bool {
         !isCorrect && (userAnswer == problem.operand1 || userAnswer == problem.operand2)
     }
+
+    var answeredProblemCoinReward: Int {
+        isCorrect ? problem.operation.difficultyWeight : 0
+    }
+
+    var answeredProblemIsSingleDigitAnswer: Bool {
+        problem.correctAnswer >= 0 && problem.correctAnswer <= 9
+    }
+
+    var answeredProblemLearningPhase: String {
+        guard isCorrect else { return "memorizing" }
+        guard let time = timeTaken else { return "practicing" }
+        if time < 3.0 { return "mastered" }
+        if time < 6.0 { return "practicing" }
+        return "memorizing"
+    }
+
+    var answeredProblemOperandRange: String {
+        (problem.operand1 >= 10 || problem.operand2 >= 10) ? "multi-digit" : "single-digit"
+    }
+
+    var answeredProblemTimeBucket: String {
+        guard let time = timeTaken else { return "unknown" }
+        if time < 2.0 { return "0-2s" }
+        if time < 5.0 { return "2-5s" }
+        if time < 10.0 { return "5-10s" }
+        return "10s+"
+    }
 }

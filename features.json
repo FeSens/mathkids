@@ -20866,6 +20866,96 @@
         "Check isRepeatMistake is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1234",
+      "name": "answeredProblemCoinReward",
+      "description": "Number of coins earned (correct=operation weight, wrong=0)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct multiply answer",
+        "Check coins is 3",
+        "Create wrong answer",
+        "Check coins is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1235",
+      "name": "answeredProblemIsSingleDigitAnswer",
+      "description": "Whether the correct answer is a single digit (0-9)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create 2+3 problem",
+        "Check isSingleDigitAnswer is true",
+        "Create 5+7 problem",
+        "Check isSingleDigitAnswer is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1236",
+      "name": "answeredProblemLearningPhase",
+      "description": "Learning phase: memorizing, practicing, mastered based on speed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct 1s answer",
+        "Check phase is mastered",
+        "Create correct 10s answer",
+        "Check phase is memorizing"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1237",
+      "name": "answeredProblemOperandRange",
+      "description": "Range label: single-digit or multi-digit based on max operand",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create problem with operands under 10",
+        "Check range is single-digit",
+        "Create problem with operand 12",
+        "Check range is multi-digit"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1238",
+      "name": "answeredProblemTimeBucket",
+      "description": "Time bucket for grouping: 0-2s, 2-5s, 5-10s, 10s+",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create answer in 1s",
+        "Check bucket is 0-2s",
+        "Create answer in 7s",
+        "Check bucket is 5-10s"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
