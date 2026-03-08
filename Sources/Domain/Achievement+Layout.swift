@@ -242,4 +242,29 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementCoinValue: Int {
+        isRareAchievement ? 100 : pointValue * 2
+    }
+
+    var achievementIsSeasonal: Bool {
+        false
+    }
+
+    var achievementTrophyEmoji: String {
+        switch achievementRankLabel {
+        case "Platinum": return "👑"
+        case "Gold": return "🏆"
+        case "Silver": return "🥈"
+        default: return "🏅"
+        }
+    }
+
+    var achievementShareURLPath: String {
+        "mathkids://achievements/\(id)"
+    }
+
+    var achievementSoundVolume: Double {
+        isRareAchievement ? 1.0 : 0.5
+    }
 }

@@ -24819,6 +24819,83 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1474",
+      "title": "Achievement Coin Value",
+      "description": "Add achievementCoinValue returning virtual currency reward",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementCoinValue is 100",
+        "Verify common is 20"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1475",
+      "title": "Achievement Is Seasonal",
+      "description": "Add achievementIsSeasonal always returning false for base achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementIsSeasonal is false"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1476",
+      "title": "Achievement Trophy Emoji",
+      "description": "Add achievementTrophyEmoji returning trophy style emoji based on rank",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create platinum achievement",
+        "Verify achievementTrophyEmoji is crown"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1477",
+      "title": "Achievement Share URL Path",
+      "description": "Add achievementShareURLPath returning shareable URL path",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementShareURLPath contains id"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1478",
+      "title": "Achievement Sound Volume",
+      "description": "Add achievementSoundVolume returning volume level based on rarity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementSoundVolume is 1.0",
+        "Verify common is 0.5"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
