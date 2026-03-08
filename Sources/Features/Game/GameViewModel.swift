@@ -249,30 +249,14 @@ final class GameViewModel {
 
     func toggleNegative() {
         HapticService.buttonTap()
-        if answerText.hasPrefix("-") {
-            answerText.removeFirst()
-        } else {
-            answerText = "-" + answerText
-        }
+        answerText = answerText.hasPrefix("-") ? String(answerText.dropFirst()) : "-" + answerText
     }
 
-    func endPractice() {
-        SoundService.playGameOver(accuracy: engine.accuracy)
-        HapticService.gameOver(accuracy: engine.accuracy)
-        engine.stopGame()
-    }
-
-    func endDailyChallenge() {
-        elapsedTimer?.invalidate()
-        elapsedTimer = nil
-        SoundService.playGameOver(accuracy: engine.accuracy)
-        HapticService.gameOver(accuracy: engine.accuracy)
-        engine.stopGame()
-    }
+    func endPractice() { stopGame() }
+    func endDailyChallenge() { stopGame() }
 
     func stopGame() {
-        elapsedTimer?.invalidate()
-        elapsedTimer = nil
+        elapsedTimer?.invalidate(); elapsedTimer = nil
         SoundService.playGameOver(accuracy: engine.accuracy)
         HapticService.gameOver(accuracy: engine.accuracy)
         engine.stopGame()

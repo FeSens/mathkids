@@ -113,4 +113,5 @@ struct GameViewModelExtendedTests {
         vm.endPractice()
         #expect(vm.isGameOver == true)
     }
+
 }

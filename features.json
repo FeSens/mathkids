@@ -3695,6 +3695,99 @@
       "files": [
         "Sources/Features/Game/GameHeaderView.swift"
       ]
+    },
+    {
+      "id": "ui-184",
+      "title": "GO button has animated gradient",
+      "description": "The submit button has an animated gradient that shifts between blue and purple",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Game screen shows GO button",
+        "Button has gradient background that animates",
+        "Button uses BounceButtonStyle"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-185",
+      "title": "Correct answer streak display with fire emojis",
+      "description": "Show escalating fire emojis based on streak length in header",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "At streak 3: 2 fire emojis",
+        "At streak 5: 3 fire emojis",
+        "At streak 10: 4 fire emojis",
+        "Emojis scale with streak"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-186",
+      "title": "Animated gradient background on home screen",
+      "description": "Home screen has animated gradient that shifts based on selected difficulty",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Home screen shows animated gradient",
+        "Gradient colors change with difficulty selection",
+        "Animation is smooth and not distracting"
+      ],
+      "files": [
+        "Sources/Features/Home/AnimatedGradientBackground.swift",
+        "Sources/Features/Home/HomeView.swift"
+      ]
+    },
+    {
+      "id": "ui-187",
+      "title": "Weekly activity indicator in stats",
+      "description": "Stats screen shows a weekly activity row with dots for each day",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Stats screen shows 7-day week row",
+        "Current day highlighted when games played",
+        "Other days shown as gray dots"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift"
+      ]
+    },
+    {
+      "id": "ui-188",
+      "title": "Difficulty button shows operation list and range",
+      "description": "Difficulty buttons show available operations and number range",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Easy button shows + and - operations, range 1-10",
+        "Medium shows +, -, x, range 1-20",
+        "Hard shows all four ops, range 1-50",
+        "Timer limit shown on each button"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeComponents.swift"
+      ]
     }
   ],
   "_schema": {

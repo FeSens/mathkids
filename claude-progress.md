@@ -1,15 +1,15 @@
 # Claude Progress
 
-## Session 5 — 2026-03-07
+## Session 6 — 2026-03-07
 
 ### Status
-- Features: 143/143 passing (12 MVP + 9 polish + 122 improvement)
-- Unit tests: 172 (all green)
+- Features: 183/183 passing (12 MVP + 9 polish + 162 improvement)
+- Unit tests: 193 (all green)
 - UI tests: 12 (all green)
 - QA: PASSED
 
-### Session 5 Features (48 new)
-ui-086 to ui-133: Difficulty border, answer history dots, avg time, timer ticks, combo display, score comparison, skip indicator, difficulty recommendation, pause overlay, XP progress bar, operation icons, streak milestones, problem goal ring, number pad feedback, daily streak, results scroll, operation breakdown, total solved, difficulty animations, game over sounds, settings animations, operation colors, accuracy trend, timer haptics, score bounce, emoji animations, floating emoji, stats refresh, animated gradient, wrong shake, practice count, difficulty tint, crown icon, problem time, confetti colors, greeting, formatted time, achievement glow, home gradient, keyboard handling, transitions, stats animation, achievement haptic, VoiceOver, dynamic type, cursor blink, stats XP, game over delay
+### Session 6 Features (40 new, batches 12-20)
+ui-139 to ui-183: Reduced motion, score popup variety, play button pulse, daily countdown, answer flash, combo multiplier display, full problem history, response time tracking, clear answer, difficulty label, character bounce, time per problem, total time played, favorite operation, results time, max digit feedback, daily timer header, problem count results, negative answers, streak freeze icon, share text difficulty, practice end, onboarding a11y, countdown a11y, settings a11y, correct answer hint, accuracy chart, achievement progress, difficulty dot, timer ring colors, duplicate prevention, division validation, fun facts, level system, math tips, operation a11y, problem labels, adaptive range, score popups, reset dialog, fastest answer time, adaptive range usage, fastest time display, accuracy header, correct counter
 
 ### Architecture
 - XcodeGen, @Observable, SwiftData, Swift Testing, NavigationStack

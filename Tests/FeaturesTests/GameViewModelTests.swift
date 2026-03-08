@@ -166,10 +166,8 @@ struct GameViewModelTests {
         vm.startGame()
 
         for _ in 0..<10 {
-            // Submit answer (wrong is fine, just need to submit)
-            vm.appendDigit(9)
-            vm.appendDigit(9)
-            vm.appendDigit(9)
+            // Use answerText directly to avoid auto-submit
+            vm.answerText = "999"
             vm.submitAnswer()
         }
 
