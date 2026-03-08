@@ -25,4 +25,31 @@ extension AnsweredProblem {
         let operandScore = problem.operand1 + problem.operand2
         return operandScore * problem.operation.difficultyWeight
     }
+
+    var answeredProblemSkillLevel: String {
+        switch problem.operation.difficultyWeight {
+        case 1...2: return "beginner"
+        case 3: return "intermediate"
+        default: return "advanced"
+        }
+    }
+
+    var answeredProblemIsCommutativeProblem: Bool {
+        problem.operation == .add || problem.operation == .multiply
+    }
+
+    var answeredProblemMasteryScore: Int {
+        guard isCorrect else { return 0 }
+        if let time = timeTaken, time < 3.0 { return 100 }
+        if let time = timeTaken, time < 6.0 { return 75 }
+        return 50
+    }
+
+    var answeredProblemAnswerWasHigher: Bool {
+        userAnswer > problem.correctAnswer
+    }
+
+    var answeredProblemAnswerWasLower: Bool {
+        userAnswer < problem.correctAnswer
+    }
 }

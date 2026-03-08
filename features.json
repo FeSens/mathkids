@@ -20598,6 +20598,96 @@
         "Check complexity is higher"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1219",
+      "name": "answeredProblemSkillLevel",
+      "description": "Skill level tag: beginner, intermediate, advanced based on operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create add problem",
+        "Check skillLevel is beginner",
+        "Create divide problem",
+        "Check skillLevel is advanced"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1220",
+      "name": "answeredProblemIsCommutativeProblem",
+      "description": "Whether the problem operation is commutative",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create add problem",
+        "Check isCommutativeProblem is true",
+        "Create subtract problem",
+        "Check isCommutativeProblem is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1221",
+      "name": "answeredProblemMasteryScore",
+      "description": "Combined mastery score from 0-100",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check masteryScore is 100",
+        "Create wrong answer",
+        "Check masteryScore is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1222",
+      "name": "answeredProblemAnswerWasHigher",
+      "description": "Whether user answer was higher than correct answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create answer of 7 for 2+3",
+        "Check answerWasHigher is true",
+        "Create answer of 3 for 2+3",
+        "Check answerWasHigher is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1223",
+      "name": "answeredProblemAnswerWasLower",
+      "description": "Whether user answer was lower than correct answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create answer of 3 for 2+3",
+        "Check answerWasLower is true",
+        "Create answer of 7 for 2+3",
+        "Check answerWasLower is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
