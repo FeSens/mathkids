@@ -16776,6 +16776,85 @@
         "Multiply -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-974",
+      "name": "operationQuestion",
+      "description": "Operation returning question format like What is A plus B",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> question format",
+        "Divide -> question format"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-975",
+      "name": "isLastTaught",
+      "description": "Operation returning true for division (last taught to children)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Divide -> true",
+        "Add -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-976",
+      "name": "usesTimesTable",
+      "description": "Operation returning true for multiply/divide (use times tables)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Multiply -> true",
+        "Add -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-977",
+      "name": "operationCategory",
+      "description": "Operation returning category like arithmetic or algebra",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "All operations -> arithmetic"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-978",
+      "name": "operationTagLine",
+      "description": "Operation returning motivational tagline for the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> tagline",
+        "Divide -> tagline"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

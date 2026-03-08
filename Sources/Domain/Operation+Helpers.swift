@@ -251,4 +251,29 @@ extension Operation {
     var isSingleStepOperation: Bool {
         isPrimaryOperation
     }
+
+    var operationQuestion: String {
+        "What is A \(operationKeyword) B?"
+    }
+
+    var isLastTaught: Bool {
+        isLastInOrder
+    }
+
+    var usesTimesTable: Bool {
+        isAdvancedOperation
+    }
+
+    var operationCategory: String {
+        "arithmetic"
+    }
+
+    var operationTagLine: String {
+        switch self {
+        case .add: return "Build up your numbers!"
+        case .subtract: return "Find the difference!"
+        case .multiply: return "Power up with groups!"
+        case .divide: return "Share it equally!"
+        }
+    }
 }
