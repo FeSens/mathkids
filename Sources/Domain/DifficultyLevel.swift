@@ -190,6 +190,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         operandRangeSize * operationCount
     }
 
+    static var allSorted: [DifficultyLevel] {
+        [.easy, .medium, .hard]
+    }
+
     var requiredAccuracyForPromotion: Int {
         switch self {
         case .easy: 80

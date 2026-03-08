@@ -231,6 +231,12 @@ extension GameSession {
         accuracy > threshold
     }
 
+    var correctPerMinute: Double {
+        let minutes = Double(totalTimePlayed) / 60.0
+        guard minutes > 0 else { return 0 }
+        return Double(totalCorrect) / minutes
+    }
+
     var averageTimePerAnswer: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalTimePlayed) / Double(totalAnswered)

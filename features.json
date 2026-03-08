@@ -8912,6 +8912,88 @@
         "Verify 4+4 returns 4"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-484",
+      "title": "GameSession correctPerMinute rate of correct answers",
+      "description": "GameSession should expose correctPerMinute returning correct answers per minute played",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify returns correct rate",
+        "Verify 0 time returns 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-485",
+      "title": "Achievement gameAchievements returns games category",
+      "description": "Achievement should expose gameAchievements returning achievements in games category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify all returned are games category",
+        "Verify count is correct"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-486",
+      "title": "DifficultyLevel allSorted returns difficulties in order",
+      "description": "DifficultyLevel should expose allSorted static property returning [easy, medium, hard]",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify first is easy",
+        "Verify last is hard",
+        "Verify count is 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-487",
+      "title": "Operation basicOperations returns add and subtract",
+      "description": "Operation should expose basicOperations static property returning [add, subtract]",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify count is 2",
+        "Verify contains add and subtract"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-488",
+      "title": "MathProblem operandAbsDifference absolute difference",
+      "description": "MathProblem should expose operandAbsDifference returning abs(operand1 - operand2)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3 and 5 returns 2",
+        "Verify 5 and 3 returns 2",
+        "Verify same returns 0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

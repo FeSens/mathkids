@@ -179,6 +179,10 @@ extension MathProblem {
         min(operand1, operand2)
     }
 
+    var operandAbsDifference: Int {
+        abs(operand1 - operand2)
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0
