@@ -15896,6 +15896,87 @@
         "Wrong with time -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-919",
+      "name": "answerSign",
+      "description": "AnsweredProblem computed property returning positive/negative/zero for user answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answer 7 -> positive",
+        "Answer -3 -> negative",
+        "Answer 0 -> zero"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-920",
+      "name": "difficultyPenaltyLabel",
+      "description": "DifficultyLevel computed property returning penalty info label",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> contains penalty info",
+        "Hard -> contains penalty info"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-921",
+      "name": "wasAnsweredCorrectly",
+      "description": "AnsweredProblem computed property that is alias for isCorrect for readability",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct answer -> true",
+        "Wrong answer -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-922",
+      "name": "problemOperationSymbol",
+      "description": "AnsweredProblem computed property returning the operation symbol",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add problem -> +",
+        "Multiply problem -> x"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-923",
+      "name": "difficultyAllowsMultiply",
+      "description": "DifficultyLevel computed property returning true if multiplication is in allowed operations",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> check if multiply allowed",
+        "Hard -> true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

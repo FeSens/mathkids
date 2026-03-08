@@ -221,4 +221,18 @@ extension AnsweredProblem {
     var isCorrectWithTime: Bool {
         isCorrect && timeTaken != nil
     }
+
+    var answerSign: String {
+        if userAnswer > 0 { return "positive" }
+        if userAnswer < 0 { return "negative" }
+        return "zero"
+    }
+
+    var wasAnsweredCorrectly: Bool {
+        isCorrect
+    }
+
+    var problemOperationSymbol: String {
+        problem.operation.rawValue
+    }
 }

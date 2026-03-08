@@ -252,4 +252,12 @@ extension DifficultyLevel {
         case .hard: return "Master all operations under time pressure"
         }
     }
+
+    var difficultyPenaltyLabel: String {
+        "Penalty: -\(penaltyPerWrong) per wrong"
+    }
+
+    var difficultyAllowsMultiply: Bool {
+        isMultiplicationIncluded
+    }
 }
