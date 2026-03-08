@@ -21404,6 +21404,96 @@
         "Check pattern is operand-confusion"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1264",
+      "name": "answeredProblemBonusMultiplier",
+      "description": "Multiplier for bonus scoring (2x for fast correct, 1x otherwise)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check multiplier is 2",
+        "Create correct slow answer",
+        "Check multiplier is 1"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1265",
+      "name": "answeredProblemIsStreakBreaker",
+      "description": "Whether this wrong answer breaks a streak",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create wrong answer",
+        "Check isStreakBreaker is true",
+        "Create correct answer",
+        "Check isStreakBreaker is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1266",
+      "name": "answeredProblemRewardTier",
+      "description": "Reward tier: platinum, gold, silver, bronze, none",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant answer",
+        "Check tier is platinum",
+        "Create wrong answer",
+        "Check tier is none"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1267",
+      "name": "answeredProblemComboValue",
+      "description": "Value to add to combo counter (1 if correct, -1 if wrong)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check value is 1",
+        "Create wrong answer",
+        "Check value is -1"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1268",
+      "name": "answeredProblemExperienceCategory",
+      "description": "Experience category: novice, competent, expert based on speed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct 1s answer",
+        "Check category is expert",
+        "Create correct 10s answer",
+        "Check category is novice"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
