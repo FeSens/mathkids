@@ -174,7 +174,12 @@ final class GameViewModel {
     }
 
     func appendDigit(_ digit: Int) {
-        guard answerText.count < 6 else { return }
+        guard answerText.count < 6 else {
+            HapticService.wrongAnswer()
+            showShake = true
+            Task { try? await Task.sleep(for: .milliseconds(300)); showShake = false }
+            return
+        }
         HapticService.buttonTap()
         answerText += "\(digit)"
     }

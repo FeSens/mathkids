@@ -3150,6 +3150,98 @@
         "Sources/Features/Results/ResultsViewModel.swift",
         "Sources/Features/Results/ResultsView.swift"
       ]
+    },
+    {
+      "id": "ui-154",
+      "title": "Max digit limit feedback",
+      "description": "Show visual feedback when user hits the 6-digit limit on the answer field",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Type 6 digits in answer field",
+        "Attempting a 7th digit is rejected",
+        "Answer field shows brief shake or flash to indicate limit"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-155",
+      "title": "Daily challenge mode uses elapsed timer in header",
+      "description": "Daily challenge shows elapsed time counter instead of countdown timer",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-033"
+      ],
+      "test_steps": [
+        "Start daily challenge",
+        "Header shows elapsed time counting up",
+        "Progress shows X/10 problems"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-156",
+      "title": "Problem number shown in results",
+      "description": "Results screen shows total number of problems attempted",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-008"
+      ],
+      "test_steps": [
+        "Complete a game answering several problems",
+        "Results screen shows total problems attempted",
+        "Displayed in stats grid"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-157",
+      "title": "Negative answer support for subtraction",
+      "description": "Toggle negative button allows entering negative answers for subtraction problems",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "See a subtraction problem that has a negative answer",
+        "Press +/- to toggle negative",
+        "Enter digits and submit correct negative answer",
+        "Score increases"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-158",
+      "title": "Streak freeze indicator in game header",
+      "description": "Show streak freeze shield icon when player has earned one",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Get a 10-streak to earn streak freeze",
+        "Shield icon appears in game header",
+        "After using freeze, shield disappears"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
     }
   ],
   "_schema": {

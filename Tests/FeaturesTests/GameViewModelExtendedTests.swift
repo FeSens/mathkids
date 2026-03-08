@@ -61,4 +61,46 @@ struct GameViewModelExtendedTests {
         let hard = GameViewModel(difficulty: .hard)
         #expect(hard.engine.difficulty == .hard)
     }
+
+    // MARK: - Max Digit Limit (ui-154)
+
+    @Test("Cannot exceed 6 digit limit")
+    @MainActor
+    func maxDigitLimit() {
+        let vm = GameViewModel(difficulty: .easy)
+        for _ in 0..<6 { vm.appendDigit(1) }
+        #expect(vm.answerText.count == 6)
+        vm.appendDigit(1)
+        #expect(vm.answerText.count == 6) // Still 6, not 7
+    }
+
+    // MARK: - Negative Answer (ui-157)
+
+    @Test("Toggle negative prepends minus sign")
+    @MainActor
+    func toggleNegativePrepends() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.appendDigit(5)
+        vm.toggleNegative()
+        #expect(vm.answerText == "-5")
+    }
+
+    @Test("Toggle negative twice removes minus sign")
+    @MainActor
+    func toggleNegativeTwice() {
+        let vm = GameViewModel(difficulty: .easy)
+        vm.appendDigit(5)
+        vm.toggleNegative()
+        vm.toggleNegative()
+        #expect(vm.answerText == "5")
+    }
+
+    // MARK: - Streak Freeze (ui-158)
+
+    @Test("Streak freeze not available at start")
+    @MainActor
+    func streakFreezeNotAvailableAtStart() {
+        let vm = GameViewModel(difficulty: .easy)
+        #expect(vm.hasStreakFreeze == false)
+    }
 }
