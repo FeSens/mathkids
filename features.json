@@ -23429,6 +23429,85 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1384",
+      "title": "Achievement Card Width",
+      "description": "Add achievementCardWidth returning preferred card width based on grid columns",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementCardWidth is full",
+        "Verify small is compact"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1385",
+      "title": "Achievement Progress Bar Color",
+      "description": "Add achievementProgressBarColor returning color for progress bar based on category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementProgressBarColor is orange"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1386",
+      "title": "Achievement Spacing Value",
+      "description": "Add achievementSpacingValue returning spacing between elements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementSpacingValue is 12",
+        "Verify small is 4"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1387",
+      "title": "Achievement Title Line Limit",
+      "description": "Add achievementTitleLineLimit returning max lines for title text",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementTitleLineLimit is 2",
+        "Verify small is 1"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1388",
+      "title": "Achievement Description Visible",
+      "description": "Add achievementDescriptionVisible returning whether description should show",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementDescriptionVisible is true",
+        "Verify small is false"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {

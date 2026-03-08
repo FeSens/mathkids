@@ -1,20 +1,34 @@
 # Claude Progress
 
-## Session 16 — 2026-03-08
+## Session 17 — 2026-03-08
 
 ### Status
-- Features: 1283/1283 passing (12 MVP + 9 polish + 1262 improvement)
-- Unit tests: ~2600 (all green across ~238 suites)
+- Features: 1393/1393 passing (12 MVP + 9 polish + 1372 improvement)
+- Unit tests: ~2800 (all green across ~260 suites)
 - UI tests: 12
 - QA: PASSED
 
-### Session 16 Features (batches 218-238)
+### Session 17 Features (batches 251-260)
+- Batches 251-257: logic-1334 to logic-1368 (35 features) — Achievement+Display
+- Batches 258-260: logic-1369 to logic-1383 (15 features) — Achievement+Presentation (new file)
+- Total this session: 50 features (continuing)
+- New files: Achievement+Presentation.swift (~90 lines)
+- Files near limit: Achievement+Display (~288, FULL), AnsweredProblem+Display (~300, FULL), AnsweredProblem+Analytics (~285), AnsweredProblem+Scoring (~290)
+
+## Session 16 — 2026-03-08
+
+### Status
+- Features: 1343/1343 passing (12 MVP + 9 polish + 1322 improvement)
+- Unit tests: ~2700 (all green across ~250 suites)
+- UI tests: 12
+- QA: PASSED
+
+### Session 16 Features (batches 218-250)
 - Batches 218-226: logic-1169 to logic-1213 (45 features) — AnsweredProblem+Display
 - Batches 227-236: logic-1214 to logic-1263 (50 features) — AnsweredProblem+Analytics (new file)
-- Batches 237-238: logic-1264 to logic-1273 (10 features) — AnsweredProblem+Scoring (new file)
-- Total this session: 105 improvement features (so far, continuing)
-- New files: AnsweredProblem+Analytics.swift (~285), AnsweredProblem+Scoring.swift (~65)
-- Files near limit: AnsweredProblem+Display (~300, FULL), AnsweredProblem+Analytics (~285, nearly full)
+- Batches 237-246: logic-1264 to logic-1313 (50 features) — AnsweredProblem+Scoring (new file)
+- Batches 247-250: logic-1314 to logic-1333 (20 features) — Achievement+Display (new file)
+- Total session 16: 165 improvement features
 
 ## Session 15 — 2026-03-08
 

@@ -84,4 +84,28 @@ extension Achievement {
     var achievementBadgeLabel: String {
         isRareAchievement ? "RARE" : ""
     }
+
+    var achievementCardWidth: String {
+        achievementGridColumns == 1 ? "full" : "compact"
+    }
+
+    var achievementProgressBarColor: String {
+        achievementCardColor
+    }
+
+    var achievementSpacingValue: Int {
+        switch achievementDisplaySize {
+        case "large": return 12
+        case "medium": return 8
+        default: return 4
+        }
+    }
+
+    var achievementTitleLineLimit: Int {
+        achievementDisplaySize == "large" ? 2 : 1
+    }
+
+    var achievementDescriptionVisible: Bool {
+        achievementDisplaySize != "small"
+    }
 }
