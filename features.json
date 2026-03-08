@@ -10445,6 +10445,86 @@
         "hard returns 3"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-579",
+      "name": "HomeViewModel.operationCountLabel",
+      "description": "Returns X operations selected label",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select 2 operations",
+        "Verify returns 2 operations selected"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-580",
+      "name": "StatsViewModel.hardGamesText",
+      "description": "Returns hard games count as formatted string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set hardGames to 5",
+        "Verify returns 5 hard games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-581",
+      "name": "ResultsViewModel.streakEmoji",
+      "description": "Returns fire emoji if streak >= 3, empty otherwise",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "High streak returns fire",
+        "Low streak returns empty"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-582",
+      "name": "GameSession.isAlmostDone",
+      "description": "Returns true when less than 10 seconds remain",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Fresh session isAlmostDone is false",
+        "With 5s remaining is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-583",
+      "name": "DifficultyLevel.targetAccuracy",
+      "description": "Returns target accuracy percentage for each level",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "easy returns 70",
+        "hard returns 90"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

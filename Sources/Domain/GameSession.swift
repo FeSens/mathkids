@@ -27,6 +27,10 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var isAlmostDone: Bool {
+        timeRemaining > 0 && timeRemaining <= 10
+    }
+
     var secondsPerAnswer: Int {
         guard totalAnswered > 0 else { return 0 }
         return totalTimePlayed / totalAnswered

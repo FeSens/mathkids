@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var operationCountLabel: String {
+        "\(selectedOperations.count) operations selected"
+    }
+
     var difficultyTimeLimitText: String {
         "\(selectedDifficulty.timeLimitSeconds)s"
     }

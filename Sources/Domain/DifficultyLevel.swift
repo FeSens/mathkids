@@ -236,6 +236,14 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         String(repeating: "⭐", count: difficultyIndex + 1)
     }
 
+    var targetAccuracy: Int {
+        switch self {
+        case .easy: 70
+        case .medium: 80
+        case .hard: 90
+        }
+    }
+
     var progressionIndex: Int {
         difficultyIndex + 1
     }

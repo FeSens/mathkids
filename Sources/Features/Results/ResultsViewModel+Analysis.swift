@@ -106,6 +106,10 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var streakEmoji: String {
+        bestStreak >= 3 ? "🔥" : ""
+    }
+
     var accuracyEmoji: String {
         if accuracy >= 90 { return "⭐" }
         if accuracy >= 70 { return "👍" }
