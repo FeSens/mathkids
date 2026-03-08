@@ -23192,6 +23192,83 @@
       "files": [
         "Sources/Domain/Achievement+Display.swift"
       ]
+    },
+    {
+      "id": "logic-1369",
+      "title": "Achievement Glow Color",
+      "description": "Add achievementGlowColor returning glow effect color based on rarity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementGlowColor is gold",
+        "Verify common is none"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1370",
+      "title": "Achievement List Position",
+      "description": "Add achievementListPosition returning preferred list position based on status",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement with progress",
+        "Verify achievementListPosition is top",
+        "Verify locked is bottom"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1371",
+      "title": "Achievement Show Badge",
+      "description": "Add achievementShowBadge returning true when achievement has notable status",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementShowBadge is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1372",
+      "title": "Achievement Detail Lines",
+      "description": "Add achievementDetailLines returning array of detail strings for display",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementDetailLines contains title, category, points"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1373",
+      "title": "Achievement Is Highlight Worthy",
+      "description": "Add achievementIsHighlightWorthy returning true for premium or featured achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementIsHighlightWorthy is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {
