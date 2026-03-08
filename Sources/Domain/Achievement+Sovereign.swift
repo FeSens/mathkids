@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 1000000
         }
     }
+
+    var achievementCardPekoiteStyle: String {
+        isRareAchievement ? "silver grey needle" : "flat silver"
+    }
+
+    var achievementRequiresAmbitionPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardInjunctionWritSealUltraText: String {
+        switch category {
+        case .mastery: return "Injunction Writ Seal Ultra of the Infinite"
+        case .streak: return "Injunction Writ Seal Ultra of the Citadel"
+        case .score: return "Injunction Writ Seal Ultra of the Pinnacle"
+        case .games: return "Injunction Writ Seal Ultra of the Acolyte"
+        }
+    }
+
+    var achievementCardNuffielditeStyle: String {
+        isRareAchievement ? "lead grey tabular" : "dull lead"
+    }
+
+    var achievementParagonPlusThreshold: Int {
+        switch category {
+        case .mastery: return 15000000
+        case .streak: return 6000000
+        case .score: return 15000000
+        case .games: return 1500000
+        }
+    }
 }

@@ -38257,6 +38257,96 @@
         "Verify threshold <= 1500000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2336",
+      "title": "Achievement card pekoite style",
+      "description": "Computed property achievementCardPekoiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pekoite style is silver grey needle",
+        "Create common achievement",
+        "Verify pekoite style is flat silver"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2337",
+      "title": "Achievement requires ambition plus",
+      "description": "Computed property achievementRequiresAmbitionPlus returns true for mastery or games categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresAmbitionPlus is true",
+        "Create score achievement",
+        "Verify requiresAmbitionPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2338",
+      "title": "Achievement card injunction writ seal ultra text",
+      "description": "Computed property achievementCardInjunctionWritSealUltraText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Injunction Writ Seal Ultra of the Infinite",
+        "Create games achievement",
+        "Verify text is Injunction Writ Seal Ultra of the Acolyte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2339",
+      "title": "Achievement card nuffieldite style",
+      "description": "Computed property achievementCardNuffielditeStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify nuffieldite style is lead grey tabular",
+        "Create common achievement",
+        "Verify nuffieldite style is dull lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2340",
+      "title": "Achievement paragon plus threshold",
+      "description": "Computed property achievementParagonPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 15000000",
+        "Create games achievement",
+        "Verify threshold <= 2000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
