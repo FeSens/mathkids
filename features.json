@@ -25866,6 +25866,79 @@
         "Create any achievement",
         "Verify value contains points"
       ]
+    },
+    {
+      "id": "logic-1544",
+      "title": "achievementRewardDescription",
+      "description": "Return human-readable reward description",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify description mentions coins",
+        "Create common achievement",
+        "Verify description mentions coins"
+      ]
+    },
+    {
+      "id": "logic-1545",
+      "title": "achievementIsTimeLimited",
+      "description": "Return whether achievement is time-limited",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify isTimeLimited is false by default"
+      ]
+    },
+    {
+      "id": "logic-1546",
+      "title": "achievementSortIndex",
+      "description": "Return combined sort index",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify sortIndex > 100",
+        "Create games achievement",
+        "Verify sortIndex < 50"
+      ]
+    },
+    {
+      "id": "logic-1547",
+      "title": "achievementBadgeRotation",
+      "description": "Return badge rotation angle",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify rotation is non-zero",
+        "Create common achievement",
+        "Verify rotation is zero"
+      ]
+    },
+    {
+      "id": "logic-1548",
+      "title": "achievementUnlockRequirementCount",
+      "description": "Return approximate count needed to unlock",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify count >= 50",
+        "Create games achievement",
+        "Verify count == 1"
+      ]
     }
   ],
   "_schema": {

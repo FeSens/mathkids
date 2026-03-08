@@ -108,4 +108,29 @@ extension Achievement {
     var achievementAccessibilityValue: String {
         "\(pointValue) points, \(category.displayName) category"
     }
+
+    var achievementRewardDescription: String {
+        "\(achievementCoinValue) coins and \(achievementGemValue) gems"
+    }
+
+    var achievementIsTimeLimited: Bool {
+        false
+    }
+
+    var achievementSortIndex: Int {
+        achievementCategoryWeight * 50 + pointValue
+    }
+
+    var achievementBadgeRotation: Double {
+        isRareAchievement ? 15.0 : 0.0
+    }
+
+    var achievementUnlockRequirementCount: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 20
+        case .score: return 10
+        case .games: return 1
+        }
+    }
 }
