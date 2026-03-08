@@ -27458,6 +27458,75 @@
         "Create any achievement",
         "Verify summary contains coins and gems"
       ]
+    },
+    {
+      "id": "logic-1654",
+      "title": "achievementAnimationType",
+      "description": "Return animation type for unlock",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify animation is bounce",
+        "Create common achievement",
+        "Verify animation is fade"
+      ]
+    },
+    {
+      "id": "logic-1655",
+      "title": "achievementAccessibilityTraits",
+      "description": "Return accessibility traits string",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify traits contains button"
+      ]
+    },
+    {
+      "id": "logic-1656",
+      "title": "achievementFilterable",
+      "description": "Return whether achievement appears in filters",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify filterable is true"
+      ]
+    },
+    {
+      "id": "logic-1657",
+      "title": "achievementBadgeFontSize",
+      "description": "Return font size for badge text",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify size is 14",
+        "Create common achievement",
+        "Verify size is 10"
+      ]
+    },
+    {
+      "id": "logic-1658",
+      "title": "achievementTimeSinceLabel",
+      "description": "Return time since label",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify label is Not yet earned"
+      ]
     }
   ],
   "_schema": {

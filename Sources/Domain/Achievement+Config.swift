@@ -128,4 +128,24 @@ extension Achievement {
     var achievementRewardSummary: String {
         "\(achievementCoinValue) coins + \(achievementGemValue) gems"
     }
+
+    var achievementAnimationType: String {
+        isRareAchievement ? "bounce" : "fade"
+    }
+
+    var achievementAccessibilityTraits: String {
+        "button"
+    }
+
+    var achievementFilterable: Bool {
+        true
+    }
+
+    var achievementBadgeFontSize: Int {
+        isRareAchievement ? 14 : 10
+    }
+
+    var achievementTimeSinceLabel: String {
+        "Not yet earned"
+    }
 }
