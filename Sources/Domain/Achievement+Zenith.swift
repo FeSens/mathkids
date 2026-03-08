@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 150
         }
     }
+
+    var achievementCardCinnabarStyle: String {
+        isRareAchievement ? "vermillion lacquer" : "brick"
+    }
+
+    var achievementRequiresIronWillPlus: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardMandateWritSealText: String {
+        switch category {
+        case .mastery: return "Mandate Writ Seal of the Elder"
+        case .streak: return "Mandate Writ Seal of the Keeper"
+        case .score: return "Mandate Writ Seal of the Hero"
+        case .games: return "Mandate Writ Seal of the Pilgrim"
+        }
+    }
+
+    var achievementCardStibniteStyle: String {
+        isRareAchievement ? "metallic grey" : "lead"
+    }
+
+    var achievementSovereigntyPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 2500
+        case .streak: return 1000
+        case .score: return 2000
+        case .games: return 250
+        }
+    }
 }

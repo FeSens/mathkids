@@ -36007,6 +36007,96 @@
         "Verify threshold <= 200"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2211",
+      "title": "Achievement card cinnabar style",
+      "description": "Computed property achievementCardCinnabarStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cinnabar style is vermillion lacquer",
+        "Create common achievement",
+        "Verify cinnabar style is brick"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2212",
+      "title": "Achievement requires iron will plus",
+      "description": "Computed property achievementRequiresIronWillPlus returns true for mastery or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresIronWillPlus is true",
+        "Create score achievement",
+        "Verify requiresIronWillPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2213",
+      "title": "Achievement card mandate writ seal text",
+      "description": "Computed property achievementCardMandateWritSealText returns category-based mandate writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Mandate Writ Seal of the Elder",
+        "Create games achievement",
+        "Verify text is Mandate Writ Seal of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2214",
+      "title": "Achievement card stibnite style",
+      "description": "Computed property achievementCardStibniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify stibnite style is metallic grey",
+        "Create common achievement",
+        "Verify stibnite style is lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2215",
+      "title": "Achievement sovereignty plus plus threshold",
+      "description": "Computed property achievementSovereigntyPlusPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 2000",
+        "Create games achievement",
+        "Verify threshold <= 300"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
