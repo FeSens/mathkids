@@ -21494,6 +21494,96 @@
         "Check category is novice"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1269",
+      "name": "answeredProblemLevelUpEligible",
+      "description": "Whether answering correctly on a hard operation qualifies for level up",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast multiply answer",
+        "Check is true",
+        "Create correct add answer",
+        "Check is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1270",
+      "name": "answeredProblemSpeedBonus",
+      "description": "Speed bonus points (5 for instant, 3 for quick, 0 otherwise)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct 0.5s answer",
+        "Check bonus is 5",
+        "Create correct 5s answer",
+        "Check bonus is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1271",
+      "name": "answeredProblemAccuracyScore",
+      "description": "Accuracy score from 0-100 based on how close the answer was",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check score is 100",
+        "Create off-by-1 answer",
+        "Check score is 80"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1272",
+      "name": "answeredProblemChallengeTier",
+      "description": "Challenge tier based on operation difficulty: tier1-tier4",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create add problem",
+        "Check tier is tier1",
+        "Create divide problem",
+        "Check tier is tier4"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1273",
+      "name": "answeredProblemPenaltyPoints",
+      "description": "Penalty points for wrong answers (0 if correct, delta * 2 if wrong)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check penalty is 0",
+        "Create wrong answer off by 3",
+        "Check penalty is 6"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

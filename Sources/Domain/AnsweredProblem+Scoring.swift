@@ -31,4 +31,30 @@ extension AnsweredProblem {
         if time < 6.0 { return "competent" }
         return "novice"
     }
+
+    var answeredProblemLevelUpEligible: Bool {
+        isCorrect && !problem.operation.isPrimaryOperation && (timeTaken ?? Double.infinity) < 3.0
+    }
+
+    var answeredProblemSpeedBonus: Int {
+        guard isCorrect, let time = timeTaken else { return 0 }
+        if time < 1.0 { return 5 }
+        if time < 3.0 { return 3 }
+        return 0
+    }
+
+    var answeredProblemAccuracyScore: Int {
+        let delta = abs(userAnswer - problem.correctAnswer)
+        if delta == 0 { return 100 }
+        return max(0, 100 - delta * 20)
+    }
+
+    var answeredProblemChallengeTier: String {
+        "tier\(problem.operation.difficultyWeight)"
+    }
+
+    var answeredProblemPenaltyPoints: Int {
+        guard !isCorrect else { return 0 }
+        return abs(userAnswer - problem.correctAnswer) * 2
+    }
 }
