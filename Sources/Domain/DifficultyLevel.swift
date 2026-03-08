@@ -77,6 +77,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operandRange.lowerBound) to \(operandRange.upperBound)"
     }
 
+    var emojiDescription: String {
+        "\(emoji) \(displayName)"
+    }
+
     var maxPossibleScore: Int {
         let maxProblems = timeLimitSeconds / recommendedSecondsPerProblem
         return maxProblems * pointsPerCorrect

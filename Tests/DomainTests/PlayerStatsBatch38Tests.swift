@@ -120,4 +120,17 @@ struct PlayerStatsBatch38Tests {
         stats.easyMasteryCount = 4 // 4 out of 10 = 40%
         #expect(stats.winRateForDifficulty(.easy) == 40)
     }
+
+    // MARK: - Total Correct Per Operation (logic-295)
+
+    @Test("Correct per operation returns dictionary")
+    func correctPerOperationDict() {
+        let stats = PlayerStats()
+        stats.addCount = 10
+        stats.multiplyCount = 5
+        let dict = stats.correctCountPerOperation
+        #expect(dict[.add] == 10)
+        #expect(dict[.multiply] == 5)
+        #expect(dict[.subtract] == 0)
+    }
 }

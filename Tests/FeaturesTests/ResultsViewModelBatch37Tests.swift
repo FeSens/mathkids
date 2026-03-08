@@ -109,4 +109,27 @@ struct ResultsViewModelBatch37Tests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.scoreAsPercentOfMax == 0)
     }
+
+    // MARK: - Session Summary (logic-298)
+
+    @Test("Summary includes score")
+    func summaryIncludesScore() {
+        let session = makeSession(correct: 5, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.sessionSummary.contains("Score"))
+    }
+
+    @Test("Summary includes accuracy")
+    func summaryIncludesAccuracy() {
+        let session = makeSession(correct: 5, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.sessionSummary.contains("Accuracy"))
+    }
+
+    @Test("Summary includes streak")
+    func summaryIncludesStreak() {
+        let session = makeSession(correct: 5, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.sessionSummary.contains("Streak"))
+    }
 }

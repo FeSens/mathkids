@@ -5685,6 +5685,95 @@
       "files": [
         "Sources/Features/Stats/StatsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-294",
+      "title": "GameSession streak to points conversion",
+      "description": "GameSession computes how many bonus points the best streak earned",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "No streak returns 0 bonus",
+        "Streak of 5 returns correct bonus amount"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-295",
+      "title": "PlayerStats total correct per operation type",
+      "description": "PlayerStats provides a total correct answers summary across all operations",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Returns dictionary with all operation counts",
+        "Correctly sums add and multiply counts"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-296",
+      "title": "MathProblem inverse problem generation",
+      "description": "MathProblem generates its inverse problem using the inverse operation",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001",
+        "logic-264"
+      ],
+      "test_steps": [
+        "Addition inverse creates subtraction problem",
+        "Multiplication inverse creates division problem",
+        "Inverse answer equals original operand"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-297",
+      "title": "DifficultyLevel description with emoji",
+      "description": "DifficultyLevel provides a formatted description with emoji prefix",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-002"
+      ],
+      "test_steps": [
+        "Easy shows seed emoji",
+        "Hard shows fire emoji",
+        "Description includes display name"
+      ],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
+    },
+    {
+      "id": "logic-298",
+      "title": "ResultsViewModel session summary stats",
+      "description": "ResultsViewModel provides a compact summary of key session stats",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Summary includes score",
+        "Summary includes accuracy",
+        "Summary includes streak"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

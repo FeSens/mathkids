@@ -202,6 +202,10 @@ final class ResultsViewModel {
         }
     }
 
+    var sessionSummary: String {
+        "Score: \(finalScore) | Accuracy: \(Int(accuracy))% | Streak: \(bestStreak)"
+    }
+
     var scoreAsPercentOfMax: Double {
         let maxScore = session.difficulty.maxPossibleScore
         guard maxScore > 0 else { return 0 }

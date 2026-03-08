@@ -301,4 +301,27 @@ struct MathProblemTests {
         let colors = Operation.allCases.map(\.colorName)
         #expect(Set(colors).count == 4)
     }
+
+    // MARK: - Inverse Problem (logic-296)
+
+    @Test("Addition inverse creates subtraction")
+    func additionInverseProblem() {
+        let problem = MathProblem(operand1: 3, operand2: 4, operation: .add)
+        let inverse = problem.inverseProblem
+        #expect(inverse.operation == .subtract)
+    }
+
+    @Test("Multiplication inverse creates division")
+    func multiplicationInverseProblem() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .multiply)
+        let inverse = problem.inverseProblem
+        #expect(inverse.operation == .divide)
+    }
+
+    @Test("Inverse answer equals original operand")
+    func inverseAnswerEqualsOperand() {
+        let problem = MathProblem(operand1: 3, operand2: 4, operation: .add) // 3+4=7
+        let inverse = problem.inverseProblem // 7-4=3
+        #expect(inverse.correctAnswer == problem.operand1)
+    }
 }

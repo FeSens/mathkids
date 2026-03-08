@@ -130,6 +130,12 @@ extension MathProblem {
 }
 
 extension MathProblem {
+    var inverseProblem: MathProblem {
+        MathProblem(operand1: correctAnswer, operand2: operand2, operation: operation.inverse)
+    }
+}
+
+extension MathProblem {
     var formattedAnswer: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal

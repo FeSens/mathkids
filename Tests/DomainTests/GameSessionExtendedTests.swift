@@ -228,4 +228,19 @@ struct GameSessionExtendedTests {
         #expect(session.correctPercentage == 0)
         #expect(session.wrongPercentage == 0)
     }
+
+    // MARK: - Streak To Points (logic-294)
+
+    @Test("No streak returns 0 bonus")
+    func streakBonusZero() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.streakBonusPoints == 0)
+    }
+
+    @Test("Streak of 5 returns correct bonus")
+    func streakBonusForFive() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<5 { session.recordAnswer(correct: true, bonusPoints: 5) }
+        #expect(session.streakBonusPoints == session.totalBonusPoints)
+    }
 }

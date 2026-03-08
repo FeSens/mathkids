@@ -127,6 +127,10 @@ struct GameSession: Sendable {
         return Double(correct) / Double(secondHalf.count) * 100
     }
 
+    var streakBonusPoints: Int {
+        totalBonusPoints
+    }
+
     var correctPercentage: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalCorrect) / Double(totalAnswered) * 100

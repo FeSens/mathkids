@@ -164,6 +164,10 @@ extension PlayerStats {
         }
     }
 
+    var correctCountPerOperation: [Operation: Int] {
+        [.add: addCount, .subtract: subtractCount, .multiply: multiplyCount, .divide: divideCount]
+    }
+
     func winRateForDifficulty(_ difficulty: DifficultyLevel) -> Int {
         let games: Int
         let wins: Int

@@ -144,4 +144,21 @@ struct DifficultyLevelTests {
     func hardMaxScoreHighest() {
         #expect(DifficultyLevel.hard.maxPossibleScore >= DifficultyLevel.easy.maxPossibleScore)
     }
+
+    // MARK: - Description With Emoji (logic-297)
+
+    @Test("Easy shows seed emoji")
+    func easyEmojiDescription() {
+        #expect(DifficultyLevel.easy.emojiDescription.contains("🌱"))
+    }
+
+    @Test("Hard shows fire emoji")
+    func hardEmojiDescription() {
+        #expect(DifficultyLevel.hard.emojiDescription.contains("🔥"))
+    }
+
+    @Test("Description includes display name")
+    func emojiDescriptionIncludesName() {
+        #expect(DifficultyLevel.medium.emojiDescription.contains("Medium"))
+    }
 }
