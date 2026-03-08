@@ -23116,6 +23116,82 @@
       "files": [
         "Sources/Domain/Achievement+Display.swift"
       ]
+    },
+    {
+      "id": "logic-1364",
+      "title": "Achievement Compact Label",
+      "description": "Add achievementCompactLabel returning emoji + short title for compact views",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementCompactLabel starts with emoji"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1365",
+      "title": "Achievement Is Trackable",
+      "description": "Add achievementIsTrackable returning true if has progress and is not locked",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement with progress",
+        "Verify achievementIsTrackable is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1366",
+      "title": "Achievement Widget Text",
+      "description": "Add achievementWidgetText returning short text suitable for widget display",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementWidgetText contains emoji and title"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1367",
+      "title": "Achievement Confetti Count",
+      "description": "Add achievementConfettiCount returning number of confetti pieces based on rarity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementConfettiCount is high",
+        "Verify common is low"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1368",
+      "title": "Achievement Is Secret",
+      "description": "Add achievementIsSecret returning true for mastery achievements with no progress",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create locked mastery achievement",
+        "Verify achievementIsSecret is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
     }
   ],
   "_schema": {

@@ -265,4 +265,24 @@ extension Achievement {
     var achievementCardFooter: String {
         "\(pointValue) pts - \(achievementRankLabel)"
     }
+
+    var achievementCompactLabel: String {
+        "\(emoji) \(title)"
+    }
+
+    var achievementIsTrackable: Bool {
+        progress != nil
+    }
+
+    var achievementWidgetText: String {
+        "\(emoji) \(title)"
+    }
+
+    var achievementConfettiCount: Int {
+        isRareAchievement ? 50 : 20
+    }
+
+    var achievementIsSecret: Bool {
+        category == .mastery && progress == nil
+    }
 }
