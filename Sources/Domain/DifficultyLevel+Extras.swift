@@ -268,4 +268,12 @@ extension DifficultyLevel {
     var difficultyPointsLabel: String {
         "\(pointsPerCorrect) pts per correct answer"
     }
+
+    var difficultyIsMax: Bool {
+        self == .hard
+    }
+
+    var difficultyHasTimeLimit: Bool {
+        timeLimitSeconds > 0
+    }
 }

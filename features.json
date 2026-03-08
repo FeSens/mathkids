@@ -16057,6 +16057,85 @@
         "Hard -> contains points info"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-929",
+      "name": "answerAsString",
+      "description": "AnsweredProblem returning user answer as string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answer 7 -> \"7\"",
+        "Answer -3 -> \"-3\""
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-930",
+      "name": "difficultyIsMax",
+      "description": "DifficultyLevel returning true for hard (maximum difficulty)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Hard -> true",
+        "Easy -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-931",
+      "name": "problemIsHard",
+      "description": "MathProblem returning true when estimatedDifficulty >= 4",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Complex problem -> true",
+        "Simple problem -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-932",
+      "name": "answerWasPositive",
+      "description": "AnsweredProblem returning true when user answer > 0",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answer 7 -> true",
+        "Answer -3 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-933",
+      "name": "difficultyHasTimeLimit",
+      "description": "DifficultyLevel returning true (all difficulties have time limits)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Any difficulty -> true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

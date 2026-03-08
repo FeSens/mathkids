@@ -267,4 +267,8 @@ extension MathProblem {
         let sizeBonus = operandMax >= 10 ? 2 : 0
         return min(10, base + sizeBonus + operation.difficultyWeight)
     }
+
+    var problemIsHard: Bool {
+        estimatedDifficulty >= 4
+    }
 }

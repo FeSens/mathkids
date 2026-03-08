@@ -247,4 +247,12 @@ extension AnsweredProblem {
     var problemHasCarrying: Bool {
         problem.requiresCarrying
     }
+
+    var answerAsString: String {
+        "\(userAnswer)"
+    }
+
+    var answerWasPositive: Bool {
+        userAnswer > 0
+    }
 }
