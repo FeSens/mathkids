@@ -20778,6 +20778,94 @@
         "Check event is problem_incorrect"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1229",
+      "name": "answeredProblemDifficultyRank",
+      "description": "Numeric rank 1-4 based on operation difficulty",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create add problem",
+        "Check rank is 1",
+        "Create divide problem",
+        "Check rank is 4"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1230",
+      "name": "answeredProblemIsTimedOut",
+      "description": "Whether the answer took more than 15 seconds",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create answer with 20s",
+        "Check isTimedOut is true",
+        "Create answer with 5s",
+        "Check isTimedOut is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1231",
+      "name": "answeredProblemAnswerLength",
+      "description": "Number of digits in the user answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create answer of 5",
+        "Check length is 1",
+        "Create answer of 12",
+        "Check length is 2"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1232",
+      "name": "answeredProblemProblemKey",
+      "description": "Unique key for the problem like add_2_3",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create 2+3 problem",
+        "Check key is add_2_3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1233",
+      "name": "answeredProblemIsRepeatMistake",
+      "description": "Whether the wrong answer equals one of the operands",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create 2+3 with answer 2",
+        "Check isRepeatMistake is true",
+        "Create 2+3 with answer 7",
+        "Check isRepeatMistake is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

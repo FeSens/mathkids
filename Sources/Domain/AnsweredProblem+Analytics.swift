@@ -76,4 +76,32 @@ extension AnsweredProblem {
     var answeredProblemAnalyticsEvent: String {
         isCorrect ? "problem_correct" : "problem_incorrect"
     }
+
+    var answeredProblemDifficultyRank: Int {
+        problem.operation.difficultyWeight
+    }
+
+    var answeredProblemIsTimedOut: Bool {
+        guard let time = timeTaken else { return false }
+        return time > 15.0
+    }
+
+    var answeredProblemAnswerLength: Int {
+        String(abs(userAnswer)).count
+    }
+
+    var answeredProblemProblemKey: String {
+        let op: String
+        switch problem.operation {
+        case .add: op = "add"
+        case .subtract: op = "sub"
+        case .multiply: op = "mul"
+        case .divide: op = "div"
+        }
+        return "\(op)_\(problem.operand1)_\(problem.operand2)"
+    }
+
+    var answeredProblemIsRepeatMistake: Bool {
+        !isCorrect && (userAnswer == problem.operand1 || userAnswer == problem.operand2)
+    }
 }
