@@ -236,4 +236,35 @@ extension AnsweredProblem {
         default: return ""
         }
     }
+
+    var answeredProblemLootDrop: String {
+        guard isCorrect else { return "none" }
+        if (timeTaken ?? Double.infinity) < 1.0 && !problem.operation.isPrimaryOperation {
+            return "rare"
+        }
+        return "common"
+    }
+
+    var answeredProblemScoreColor: String {
+        guard isCorrect else { return "gray" }
+        if let time = timeTaken, time < 3.0 { return "gold" }
+        return "green"
+    }
+
+    var answeredProblemIsBonusRound: Bool {
+        !problem.operation.isPrimaryOperation
+    }
+
+    var answeredProblemTrophyCount: Int {
+        guard isCorrect else { return 0 }
+        if let time = timeTaken, time < 1.0 { return 2 }
+        return 1
+    }
+
+    var answeredProblemFinalVerdict: String {
+        guard isCorrect else { return "fail" }
+        if let time = timeTaken, time < 1.0 { return "perfect" }
+        if let time = timeTaken, time < 3.0 { return "good" }
+        return "ok"
+    }
 }

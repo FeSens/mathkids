@@ -22214,6 +22214,100 @@
         "Check emoji is empty"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1309",
+      "name": "answeredProblemLootDrop",
+      "description": "Loot drop type: rare, common, or none",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant hard answer",
+        "Check loot is rare",
+        "Create correct answer",
+        "Check loot is common",
+        "Create wrong answer",
+        "Check loot is none"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1310",
+      "name": "answeredProblemScoreColor",
+      "description": "Color name for score display: gold, green, gray",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check color is gold",
+        "Create wrong answer",
+        "Check color is gray"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1311",
+      "name": "answeredProblemIsBonusRound",
+      "description": "Whether this is a bonus round problem (hard operation)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create multiply problem",
+        "Check isBonusRound is true",
+        "Create add problem",
+        "Check isBonusRound is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1312",
+      "name": "answeredProblemTrophyCount",
+      "description": "Number of trophies earned (0-2)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant answer",
+        "Check trophies is 2",
+        "Create correct slow answer",
+        "Check trophies is 1",
+        "Create wrong answer",
+        "Check trophies is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1313",
+      "name": "answeredProblemFinalVerdict",
+      "description": "Final verdict string: perfect, good, ok, fail",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant answer",
+        "Check verdict is perfect",
+        "Create wrong answer",
+        "Check verdict is fail"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
