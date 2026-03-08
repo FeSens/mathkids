@@ -209,4 +209,16 @@ extension AnsweredProblem {
     var isWrongByLargeMargin: Bool {
         answerDifference > 10
     }
+
+    var answeredInTime: Bool {
+        timeTaken != nil
+    }
+
+    var problemOperationWeight: Int {
+        problem.operation.difficultyWeight
+    }
+
+    var isCorrectWithTime: Bool {
+        isCorrect && timeTaken != nil
+    }
 }

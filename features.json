@@ -15815,6 +15815,87 @@
         "Hard -> timer label string"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-914",
+      "name": "answeredInTime",
+      "description": "AnsweredProblem computed property returning true when answered within recommended seconds",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Fast answer -> true",
+        "No time -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-915",
+      "name": "difficultyMaxScore",
+      "description": "DifficultyLevel computed property returning max possible score as formatted string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> contains score",
+        "Hard -> contains score"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-916",
+      "name": "problemOperationWeight",
+      "description": "AnsweredProblem computed property returning the operation difficulty weight",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add problem -> weight 1",
+        "Multiply problem -> weight 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-917",
+      "name": "difficultyRecommendedPractice",
+      "description": "DifficultyLevel computed property returning recommended practice focus area",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> practice recommendation",
+        "Hard -> practice recommendation"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-918",
+      "name": "isCorrectWithTime",
+      "description": "AnsweredProblem computed property returning true when correct and has recorded time",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct with time -> true",
+        "Correct without time -> false",
+        "Wrong with time -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

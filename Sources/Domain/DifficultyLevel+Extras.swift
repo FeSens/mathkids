@@ -240,4 +240,16 @@ extension DifficultyLevel {
     var difficultyTimerLabel: String {
         "Timer: \(timeLimitFormatted)"
     }
+
+    var difficultyMaxScore: String {
+        "\(maxPossibleScore) points possible"
+    }
+
+    var difficultyRecommendedPractice: String {
+        switch self {
+        case .easy: return "Focus on speed with simple problems"
+        case .medium: return "Practice multiplication accuracy"
+        case .hard: return "Master all operations under time pressure"
+        }
+    }
 }
