@@ -30899,6 +30899,76 @@
         "Create score achievement",
         "Verify isActivityBased is false"
       ]
+    },
+    {
+      "id": "logic-1874",
+      "name": "achievementCardWingStyle",
+      "description": "Wing decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify wingStyle is spread",
+        "Create common achievement",
+        "Verify wingStyle is folded"
+      ]
+    },
+    {
+      "id": "logic-1875",
+      "name": "achievementIsCompetitiveBased",
+      "description": "Whether achievement is competitive (score category)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create score achievement",
+        "Verify isCompetitiveBased is true",
+        "Create streak achievement",
+        "Verify isCompetitiveBased is false"
+      ]
+    },
+    {
+      "id": "logic-1876",
+      "name": "achievementCardFlameEffect",
+      "description": "Whether achievement card shows flame effect based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify flameEffect is true",
+        "Create common achievement",
+        "Verify flameEffect is false"
+      ]
+    },
+    {
+      "id": "logic-1877",
+      "name": "achievementDailyTarget",
+      "description": "Daily target count based on achievement category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify dailyTarget is high",
+        "Create games achievement",
+        "Verify dailyTarget is low"
+      ]
+    },
+    {
+      "id": "logic-1878",
+      "name": "achievementCardBannerColor",
+      "description": "Banner color for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify bannerColor is gold",
+        "Create games achievement",
+        "Verify bannerColor is green"
+      ]
     }
   ],
   "_schema": {
