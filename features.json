@@ -26158,6 +26158,81 @@
         "Create common achievement",
         "Verify shadow is gray"
       ]
+    },
+    {
+      "id": "logic-1564",
+      "title": "achievementUnlockOrder",
+      "description": "Return suggested unlock order priority",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create games achievement",
+        "Verify unlockOrder is 1",
+        "Create mastery achievement",
+        "Verify unlockOrder is 4"
+      ]
+    },
+    {
+      "id": "logic-1565",
+      "title": "achievementCardCornerStyle",
+      "description": "Return corner style for achievement card",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cornerStyle is rounded",
+        "Create common achievement",
+        "Verify cornerStyle is square"
+      ]
+    },
+    {
+      "id": "logic-1566",
+      "title": "achievementCompletionSound",
+      "description": "Return sound name for completion",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify sound is fanfare",
+        "Create common achievement",
+        "Verify sound is chime"
+      ]
+    },
+    {
+      "id": "logic-1567",
+      "title": "achievementSkillCategory",
+      "description": "Return skill category string",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify skillCategory is math",
+        "Create streak achievement",
+        "Verify skillCategory is persistence"
+      ]
+    },
+    {
+      "id": "logic-1568",
+      "title": "achievementIsShareable",
+      "description": "Return whether achievement can be shared",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify isShareable is true",
+        "Create common achievement",
+        "Verify isShareable is true"
+      ]
     }
   ],
   "_schema": {

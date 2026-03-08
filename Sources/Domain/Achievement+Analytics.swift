@@ -201,4 +201,34 @@ extension Achievement {
     var achievementCardShadowColor: String {
         isRareAchievement ? "gold" : "gray"
     }
+
+    var achievementUnlockOrder: Int {
+        switch category {
+        case .games: return 1
+        case .score: return 2
+        case .streak: return 3
+        case .mastery: return 4
+        }
+    }
+
+    var achievementCardCornerStyle: String {
+        isRareAchievement ? "rounded" : "square"
+    }
+
+    var achievementCompletionSound: String {
+        isRareAchievement ? "fanfare" : "chime"
+    }
+
+    var achievementSkillCategory: String {
+        switch category {
+        case .mastery: return "math"
+        case .streak: return "persistence"
+        case .score: return "performance"
+        case .games: return "engagement"
+        }
+    }
+
+    var achievementIsShareable: Bool {
+        true
+    }
 }
