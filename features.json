@@ -30029,6 +30029,86 @@
         "Verify cardCompletionIcon by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1819",
+      "title": "Achievement Card Wave Effect",
+      "description": "Returns whether card has wave animation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardWaveEffect by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1820",
+      "title": "Achievement Accuracy Threshold",
+      "description": "Returns accuracy threshold percentage",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify accuracyThreshold by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1821",
+      "title": "Achievement Card Medal Color",
+      "description": "Returns medal color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardMedalColor by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1822",
+      "title": "Achievement Is Volume Based",
+      "description": "Returns whether achievement is volume-based",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isVolumeBased for games vs streak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1823",
+      "title": "Achievement Card Emoji Label",
+      "description": "Returns label for emoji display",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardEmojiLabel contains emoji"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

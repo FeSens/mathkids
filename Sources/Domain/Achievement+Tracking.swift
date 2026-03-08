@@ -250,4 +250,34 @@ extension Achievement {
         case .games: return "checkmark.circle"
         }
     }
+
+    var achievementCardWaveEffect: Bool {
+        isRareAchievement
+    }
+
+    var achievementAccuracyThreshold: Int {
+        switch category {
+        case .mastery: return 95
+        case .streak: return 0
+        case .score: return 85
+        case .games: return 0
+        }
+    }
+
+    var achievementCardMedalColor: String {
+        switch category {
+        case .mastery: return "gold"
+        case .streak: return "silver"
+        case .score: return "bronze"
+        case .games: return "copper"
+        }
+    }
+
+    var achievementIsVolumeBased: Bool {
+        category == .games
+    }
+
+    var achievementCardEmojiLabel: String {
+        "\(emoji) \(category.displayName)"
+    }
 }
