@@ -26525,6 +26525,77 @@
         "Create common achievement",
         "Verify angle is 0"
       ]
+    },
+    {
+      "id": "logic-1589",
+      "title": "achievementStatLabel",
+      "description": "Return stat label for display",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify label contains days",
+        "Create mastery achievement",
+        "Verify label contains operations"
+      ]
+    },
+    {
+      "id": "logic-1590",
+      "title": "achievementCardHeight",
+      "description": "Return card height in points",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify height is 120",
+        "Create common achievement",
+        "Verify height is 80"
+      ]
+    },
+    {
+      "id": "logic-1591",
+      "title": "achievementIsNew",
+      "description": "Return whether achievement is newly added",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify isNew is false by default"
+      ]
+    },
+    {
+      "id": "logic-1592",
+      "title": "achievementProgressColor",
+      "description": "Return progress indicator color name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify color is purple",
+        "Create games achievement",
+        "Verify color is green"
+      ]
+    },
+    {
+      "id": "logic-1593",
+      "title": "achievementInfoText",
+      "description": "Return informational text about the achievement",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify infoText contains point value"
+      ]
     }
   ],
   "_schema": {

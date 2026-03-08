@@ -70,4 +70,34 @@ extension Achievement {
     var achievementGradientAngle: Int {
         isRareAchievement ? 45 : 0
     }
+
+    var achievementStatLabel: String {
+        switch category {
+        case .streak: return "Streak days"
+        case .score: return "Score points"
+        case .games: return "Games played"
+        case .mastery: return "Operations mastered"
+        }
+    }
+
+    var achievementCardHeight: Int {
+        isRareAchievement ? 120 : 80
+    }
+
+    var achievementIsNew: Bool {
+        false
+    }
+
+    var achievementProgressColor: String {
+        switch category {
+        case .mastery: return "purple"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementInfoText: String {
+        "Worth \(pointValue) points — \(category.displayName) achievement"
+    }
 }
