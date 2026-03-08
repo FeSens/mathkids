@@ -150,4 +150,39 @@ extension Achievement {
         case .games: return 0
         }
     }
+
+    var achievementCardReliquaryStyle: String {
+        isRareAchievement ? "gilded" : "wooden"
+    }
+
+    var achievementRequiresPrecision: Bool {
+        category == .score
+    }
+
+    var achievementCardAnthemText: String {
+        switch category {
+        case .mastery: return "Anthem of the Wise"
+        case .streak: return "Anthem of the Faithful"
+        case .score: return "Anthem of the Brave"
+        case .games: return "Anthem of the Curious"
+        }
+    }
+
+    var achievementCardWaxSealColor: String {
+        switch category {
+        case .mastery: return "gold"
+        case .streak: return "red"
+        case .score: return "blue"
+        case .games: return "gray"
+        }
+    }
+
+    var achievementTargetAccuracyPercent: Int {
+        switch category {
+        case .mastery: return 95
+        case .streak: return 0
+        case .score: return 85
+        case .games: return 0
+        }
+    }
 }

@@ -31949,6 +31949,76 @@
         "Create games achievement",
         "Verify minDifficulty is low"
       ]
+    },
+    {
+      "id": "logic-1949",
+      "name": "achievementCardReliquaryStyle",
+      "description": "Reliquary decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify reliquary is gilded",
+        "Create common achievement",
+        "Verify reliquary is wooden"
+      ]
+    },
+    {
+      "id": "logic-1950",
+      "name": "achievementRequiresPrecision",
+      "description": "Whether achievement requires precision (score only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresPrecision is true",
+        "Create games achievement",
+        "Verify requiresPrecision is false"
+      ]
+    },
+    {
+      "id": "logic-1951",
+      "name": "achievementCardAnthemText",
+      "description": "Anthem text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify anthem text",
+        "Create games achievement",
+        "Verify anthem text"
+      ]
+    },
+    {
+      "id": "logic-1952",
+      "name": "achievementCardWaxSealColor",
+      "description": "Wax seal color for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify seal is gold",
+        "Create games achievement",
+        "Verify seal is gray"
+      ]
+    },
+    {
+      "id": "logic-1953",
+      "name": "achievementTargetAccuracyPercent",
+      "description": "Target accuracy percentage based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify target is high",
+        "Create games achievement",
+        "Verify target is low"
+      ]
     }
   ],
   "_schema": {
