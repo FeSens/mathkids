@@ -4784,6 +4784,94 @@
       "files": [
         "Sources/Services/GameEngine.swift"
       ]
+    },
+    {
+      "id": "logic-244",
+      "title": "PlayerStats total games per operation type",
+      "description": "PlayerStats tracks how many games included each operation type",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Increment games with add operation",
+        "gamesWithOperation(.add) returns correct count",
+        "Different operations tracked separately"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-245",
+      "title": "GameSession score per correct answer",
+      "description": "GameSession computes average points scored per correct answer",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Returns 0 when no correct answers",
+        "After 3 correct with bonuses, returns average including bonuses"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-246",
+      "title": "LevelSystem XP to max level",
+      "description": "LevelSystem provides total XP needed to reach max level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "xpToMaxLevel returns the highest threshold value",
+        "At max XP, xpRemainingToMax returns 0"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
+    },
+    {
+      "id": "logic-247",
+      "title": "MathProblem answer magnitude",
+      "description": "MathProblem provides answerMagnitude for categorizing answer size",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Small answers (< 10) return small",
+        "Medium answers (10-99) return medium",
+        "Large answers (100+) return large"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-248",
+      "title": "ResultsViewModel score comparison text",
+      "description": "ResultsViewModel provides text comparing current score to personal best",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "New best shows congratulatory text",
+        "Below best shows how far from best",
+        "Equal to best shows matching text"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

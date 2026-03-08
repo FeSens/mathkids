@@ -87,6 +87,19 @@ struct MathProblem: Equatable, Sendable {
     }
 }
 
+enum AnswerMagnitude: Sendable {
+    case small, medium, large
+}
+
+extension MathProblem {
+    var answerMagnitude: AnswerMagnitude {
+        let answer = abs(correctAnswer)
+        if answer < 20 { return .small }
+        if answer < 100 { return .medium }
+        return .large
+    }
+}
+
 struct AnsweredProblem: Identifiable, Sendable {
     let id = UUID()
     let problem: MathProblem

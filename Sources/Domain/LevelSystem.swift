@@ -58,6 +58,14 @@ enum LevelSystem {
         return thresholds[currentLevel] - currentXP
     }
 
+    static var xpToMaxLevel: Int {
+        thresholds.last ?? 0
+    }
+
+    static func xpRemainingToMax(currentXP: Int) -> Int {
+        max(xpToMaxLevel - currentXP, 0)
+    }
+
     static func xpForCorrectAnswer(streak: Int) -> Int {
         let base = 10
         let streakBonus = min(streak, 10) * 2

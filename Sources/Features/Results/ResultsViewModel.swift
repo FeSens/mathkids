@@ -189,6 +189,16 @@ final class ResultsViewModel {
         return counts.sorted { $0.key.rawValue < $1.key.rawValue }.map { ($0.key, $0.value) }
     }
 
+    var scoreComparisonText: String {
+        if isNewBestScore && previousBestScore > 0 {
+            return "New Best! +\(scoreImprovement) pts"
+        } else if previousBestScore > 0 {
+            return "Best: \(previousBestScore) pts"
+        } else {
+            return "First game!"
+        }
+    }
+
     var recommendationText: String? {
         switch difficultyRecommendation {
         case .tryHarder:
