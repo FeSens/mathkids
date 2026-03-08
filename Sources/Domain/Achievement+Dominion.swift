@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 7500000
         }
     }
+
+    var achievementCardPolybasiteProStyle: String {
+        isRareAchievement ? "steel black tabular" : "dark iron"
+    }
+
+    var achievementRequiresTruthPlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardResolutionWritSealUltraPlusText: String {
+        switch category {
+        case .mastery: return "Resolution Writ Seal Ultra Plus of the Ethereal"
+        case .streak: return "Resolution Writ Seal Ultra Plus of the Eternal"
+        case .score: return "Resolution Writ Seal Ultra Plus of the Absolute"
+        case .games: return "Resolution Writ Seal Ultra Plus of the Pilgrim"
+        }
+    }
+
+    var achievementCardPearceiteProStyle: String {
+        isRareAchievement ? "black metallic trigonal" : "matte iron"
+    }
+
+    var achievementRagnarokPlusThreshold: Int {
+        switch category {
+        case .mastery: return 80000000
+        case .streak: return 32000000
+        case .score: return 75000000
+        case .games: return 8000000
+        }
+    }
 }

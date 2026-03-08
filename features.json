@@ -39427,6 +39427,106 @@
         "Verify threshold <= 10000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2396",
+      "title": "achievementCardPolybasiteProStyle",
+      "description": "Mineral style string for polybasite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify polybasite pro style is steel black tabular",
+        "Create common achievement",
+        "Verify polybasite pro style is dark iron"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2397",
+      "title": "achievementRequiresTruthPlus",
+      "description": "Whether achievement requires truth plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires truth plus is true",
+        "Create games achievement",
+        "Verify requires truth plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2398",
+      "title": "achievementCardResolutionWritSealUltraPlusText",
+      "description": "Resolution writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Resolution Writ Seal Ultra Plus of the Ethereal",
+        "Create games achievement",
+        "Verify text is Resolution Writ Seal Ultra Plus of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2399",
+      "title": "achievementCardPearceiteProStyle",
+      "description": "Mineral style string for pearceite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pearceite pro style is black metallic trigonal",
+        "Create common achievement",
+        "Verify pearceite pro style is matte iron"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2400",
+      "title": "achievementRagnarokPlusThreshold",
+      "description": "Ragnarok plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 80000000",
+        "Create games achievement",
+        "Verify threshold <= 12000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
