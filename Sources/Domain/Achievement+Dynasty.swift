@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 500000
         }
     }
+
+    var achievementCardPadparadschaStyle: String {
+        isRareAchievement ? "sunset" : "peach"
+    }
+
+    var achievementRequiresMettle: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardDecreeWritSealText: String {
+        switch category {
+        case .mastery: return "Decree Writ Seal of the Academy"
+        case .streak: return "Decree Writ Seal of the Order"
+        case .score: return "Decree Writ Seal of the Arena"
+        case .games: return "Decree Writ Seal of the Commons"
+        }
+    }
+
+    var achievementCardDemantoidStyle: String {
+        isRareAchievement ? "fire" : "green"
+    }
+
+    var achievementSupremacyThreshold: Int {
+        switch category {
+        case .mastery: return 7500000
+        case .streak: return 3000000
+        case .score: return 5000000
+        case .games: return 750000
+        }
+    }
 }

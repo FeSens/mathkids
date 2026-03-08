@@ -34697,6 +34697,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2131",
+      "title": "Achievement Card Padparadscha Style",
+      "description": "Computed property returning padparadscha style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns sunset style",
+        "Common returns peach style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2132",
+      "title": "Achievement Requires Mettle",
+      "description": "Computed property checking if achievement requires mettle",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery requires mettle",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2133",
+      "title": "Achievement Card Decree Writ Seal Text",
+      "description": "Computed property returning decree writ seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2134",
+      "title": "Achievement Card Demantoid Style",
+      "description": "Computed property returning demantoid style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns fire style",
+        "Common returns green style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2135",
+      "title": "Achievement Supremacy Threshold",
+      "description": "Computed property returning supremacy threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
