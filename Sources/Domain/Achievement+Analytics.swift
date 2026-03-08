@@ -13,4 +13,24 @@ extension Achievement {
         case .games: return "Progress: count"
         }
     }
+
+    var achievementUnlockAnimation: String {
+        isRareAchievement ? "fireworks" : "fade"
+    }
+
+    var achievementAlertTitle: String {
+        "Achievement Unlocked: \(title)"
+    }
+
+    var achievementXpValue: Int {
+        pointValue * achievementChallengeRating
+    }
+
+    var achievementIsLegendary: Bool {
+        isRareAchievement && category == .mastery
+    }
+
+    var achievementProgressPercentage: Int {
+        0
+    }
 }

@@ -25649,6 +25649,77 @@
         "Create games achievement",
         "Verify progressFormat contains count"
       ]
+    },
+    {
+      "id": "logic-1529",
+      "title": "achievementUnlockAnimation",
+      "description": "Return animation name for unlock effect",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify unlockAnimation is special",
+        "Create common achievement",
+        "Verify unlockAnimation is basic"
+      ]
+    },
+    {
+      "id": "logic-1530",
+      "title": "achievementAlertTitle",
+      "description": "Return notification title text",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify notificationTitle contains achievement title"
+      ]
+    },
+    {
+      "id": "logic-1531",
+      "title": "achievementXpValue",
+      "description": "Return experience points value",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify xpValue is high",
+        "Create games achievement",
+        "Verify xpValue is low"
+      ]
+    },
+    {
+      "id": "logic-1532",
+      "title": "achievementIsLegendary",
+      "description": "Return whether achievement is legendary tier",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare mastery achievement",
+        "Verify isLegendary is true",
+        "Create common achievement",
+        "Verify isLegendary is false"
+      ]
+    },
+    {
+      "id": "logic-1533",
+      "title": "achievementProgressPercentage",
+      "description": "Return estimated progress percentage for display",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify progressPercentage is 0 by default"
+      ]
     }
   ],
   "_schema": {
