@@ -32229,6 +32229,76 @@
         "Create games achievement",
         "Verify interval is low"
       ]
+    },
+    {
+      "id": "logic-1969",
+      "name": "achievementCardParchmentStyle",
+      "description": "Parchment background style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify parchment is aged",
+        "Create common achievement",
+        "Verify parchment is fresh"
+      ]
+    },
+    {
+      "id": "logic-1970",
+      "name": "achievementRequiresEndurance",
+      "description": "Whether achievement requires endurance (streak or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresEndurance is true",
+        "Create score achievement",
+        "Verify requiresEndurance is false"
+      ]
+    },
+    {
+      "id": "logic-1971",
+      "name": "achievementCardDictumText",
+      "description": "Dictum text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify dictum text",
+        "Create games achievement",
+        "Verify dictum text"
+      ]
+    },
+    {
+      "id": "logic-1972",
+      "name": "achievementCardJadeStyle",
+      "description": "Jade finish style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify jade is imperial",
+        "Create common achievement",
+        "Verify jade is rough"
+      ]
+    },
+    {
+      "id": "logic-1973",
+      "name": "achievementCheckpointCount",
+      "description": "Number of checkpoints in achievement progress based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify checkpoints is high",
+        "Create games achievement",
+        "Verify checkpoints is low"
+      ]
     }
   ],
   "_schema": {
