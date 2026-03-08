@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 12000000
         }
     }
+
+    var achievementCardLillianiteProStyle: String {
+        isRareAchievement ? "steel grey orthorhombic" : "dull grey steel"
+    }
+
+    var achievementRequiresSerenityPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardDirectiveWritSealUltraPlusPlusText: String {
+        switch category {
+        case .mastery: return "Directive Writ Seal Ultra Plus Plus of the Almighty"
+        case .streak: return "Directive Writ Seal Ultra Plus Plus of the Vanguard"
+        case .score: return "Directive Writ Seal Ultra Plus Plus of the Apex"
+        case .games: return "Directive Writ Seal Ultra Plus Plus of the Recruit"
+        }
+    }
+
+    var achievementCardHeyrovskyiteProStyle: String {
+        isRareAchievement ? "tin grey monoclinic" : "pale pewter grey"
+    }
+
+    var achievementVanaheimPlusThreshold: Int {
+        switch category {
+        case .mastery: return 125000000
+        case .streak: return 50000000
+        case .score: return 120000000
+        case .games: return 12500000
+        }
+    }
 }

@@ -40327,6 +40327,106 @@
         "Verify threshold <= 20000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2441",
+      "title": "achievementCardLillianiteProStyle",
+      "description": "Mineral style string for lillianite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify lillianite pro style is steel grey orthorhombic",
+        "Create common achievement",
+        "Verify lillianite pro style is dull grey steel"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2442",
+      "title": "achievementRequiresSerenityPlus",
+      "description": "Whether achievement requires serenity plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires serenity plus is true",
+        "Create score achievement",
+        "Verify requires serenity plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2443",
+      "title": "achievementCardDirectiveWritSealUltraPlusPlusText",
+      "description": "Directive writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Directive Writ Seal Ultra Plus Plus of the Almighty",
+        "Create games achievement",
+        "Verify text is Directive Writ Seal Ultra Plus Plus of the Recruit"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2444",
+      "title": "achievementCardHeyrovskyiteProStyle",
+      "description": "Mineral style string for heyrovskyite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify heyrovskyite pro style is tin grey monoclinic",
+        "Create common achievement",
+        "Verify heyrovskyite pro style is pale pewter grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2445",
+      "title": "achievementVanaheimPlusThreshold",
+      "description": "Vanaheim plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 125000000",
+        "Create games achievement",
+        "Verify threshold <= 20000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
