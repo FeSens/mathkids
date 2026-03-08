@@ -21674,6 +21674,96 @@
         "Check rankPoints is 0"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1279",
+      "name": "answeredProblemMilestoneProgress",
+      "description": "Progress toward next milestone as percentage string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check progress contains %",
+        "Create wrong answer",
+        "Check progress is 0%"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1280",
+      "name": "answeredProblemIsGoldStar",
+      "description": "Whether this answer earns a gold star (correct under 2s)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct 1s answer",
+        "Check isGoldStar is true",
+        "Create correct 5s answer",
+        "Check isGoldStar is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1281",
+      "name": "answeredProblemScoreLabel",
+      "description": "Label showing score earned like +10 or +0",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check label starts with +",
+        "Create wrong answer",
+        "Check label is +0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1282",
+      "name": "answeredProblemDifficultyBonus",
+      "description": "Extra points for answering hard operations correctly",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct multiply answer",
+        "Check bonus > 0",
+        "Create correct add answer",
+        "Check bonus is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1283",
+      "name": "answeredProblemProgressPoints",
+      "description": "Points that count toward progress bar (1 per correct, 0 per wrong)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check points is 1",
+        "Create wrong answer",
+        "Check points is 0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

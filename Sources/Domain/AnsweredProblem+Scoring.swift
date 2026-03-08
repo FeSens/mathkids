@@ -84,4 +84,27 @@ extension AnsweredProblem {
         guard isCorrect else { return 0 }
         return problem.operation.difficultyWeight * 3
     }
+
+    var answeredProblemMilestoneProgress: String {
+        guard isCorrect else { return "0%" }
+        return "\(problem.operation.difficultyWeight * 10)%"
+    }
+
+    var answeredProblemIsGoldStar: Bool {
+        isCorrect && (timeTaken ?? Double.infinity) < 2.0
+    }
+
+    var answeredProblemScoreLabel: String {
+        "+\(answeredProblemTotalScore)"
+    }
+
+    var answeredProblemDifficultyBonus: Int {
+        guard isCorrect else { return 0 }
+        let weight = problem.operation.difficultyWeight
+        return weight > 2 ? (weight - 2) * 5 : 0
+    }
+
+    var answeredProblemProgressPoints: Int {
+        isCorrect ? 1 : 0
+    }
 }
