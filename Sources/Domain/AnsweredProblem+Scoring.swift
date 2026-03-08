@@ -57,4 +57,31 @@ extension AnsweredProblem {
         guard !isCorrect else { return 0 }
         return abs(userAnswer - problem.correctAnswer) * 2
     }
+
+    var answeredProblemTotalScore: Int {
+        guard isCorrect else { return 0 }
+        let base = problem.operation.difficultyWeight * 10
+        return base * answeredProblemBonusMultiplier + answeredProblemSpeedBonus
+    }
+
+    var answeredProblemAchievementCandidate: Bool {
+        isCorrect && !problem.operation.isPrimaryOperation && (timeTaken ?? Double.infinity) < 3.0
+    }
+
+    var answeredProblemStreakMultiplier: Int {
+        guard isCorrect else { return 0 }
+        if let time = timeTaken, time < 2.0 { return 3 }
+        if let time = timeTaken, time < 4.0 { return 2 }
+        return 1
+    }
+
+    var answeredProblemGemReward: Int {
+        guard isCorrect, let time = timeTaken, time < 1.0 else { return 0 }
+        return 1
+    }
+
+    var answeredProblemRankPoints: Int {
+        guard isCorrect else { return 0 }
+        return problem.operation.difficultyWeight * 3
+    }
 }

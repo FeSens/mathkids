@@ -1,5 +1,21 @@
 # Claude Progress
 
+## Session 16 — 2026-03-08
+
+### Status
+- Features: 1283/1283 passing (12 MVP + 9 polish + 1262 improvement)
+- Unit tests: ~2600 (all green across ~238 suites)
+- UI tests: 12
+- QA: PASSED
+
+### Session 16 Features (batches 218-238)
+- Batches 218-226: logic-1169 to logic-1213 (45 features) — AnsweredProblem+Display
+- Batches 227-236: logic-1214 to logic-1263 (50 features) — AnsweredProblem+Analytics (new file)
+- Batches 237-238: logic-1264 to logic-1273 (10 features) — AnsweredProblem+Scoring (new file)
+- Total this session: 105 improvement features (so far, continuing)
+- New files: AnsweredProblem+Analytics.swift (~285), AnsweredProblem+Scoring.swift (~65)
+- Files near limit: AnsweredProblem+Display (~300, FULL), AnsweredProblem+Analytics (~285, nearly full)
+
 ## Session 15 — 2026-03-08
 
 ### Status

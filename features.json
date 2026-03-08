@@ -21584,6 +21584,96 @@
         "Check penalty is 6"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1274",
+      "name": "answeredProblemTotalScore",
+      "description": "Total score combining base points, speed bonus, and difficulty multiplier",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast multiply answer",
+        "Check score > 0",
+        "Create wrong answer",
+        "Check score is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1275",
+      "name": "answeredProblemAchievementCandidate",
+      "description": "Whether this answer could trigger an achievement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast hard answer",
+        "Check is true",
+        "Create wrong easy answer",
+        "Check is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1276",
+      "name": "answeredProblemStreakMultiplier",
+      "description": "Multiplier for streak scoring (3x for fast correct, 1x otherwise)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check multiplier is 3",
+        "Create correct slow answer",
+        "Check multiplier is 1"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1277",
+      "name": "answeredProblemGemReward",
+      "description": "Gems earned (rare currency, only for perfect responses)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant answer",
+        "Check gems is 1",
+        "Create correct slow answer",
+        "Check gems is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1278",
+      "name": "answeredProblemRankPoints",
+      "description": "Points for rank progression based on difficulty and correctness",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct multiply answer",
+        "Check rankPoints > 5",
+        "Create wrong answer",
+        "Check rankPoints is 0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
