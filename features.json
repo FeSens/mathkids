@@ -38927,6 +38927,106 @@
         "Verify threshold <= 7000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2371",
+      "title": "achievementCardSarabauitePlusStyle",
+      "description": "Mineral style string for sarabauite plus based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify sarabauite plus style is reddish brown prismatic",
+        "Create common achievement",
+        "Verify sarabauite plus style is dull brown"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2372",
+      "title": "achievementRequiresFaithPlus",
+      "description": "Whether achievement requires faith plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires faith plus is true",
+        "Create streak achievement",
+        "Verify requires faith plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2373",
+      "title": "achievementCardAccordWritSealUltraPlusText",
+      "description": "Accord writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Accord Writ Seal Ultra Plus of the Divine",
+        "Create games achievement",
+        "Verify text is Accord Writ Seal Ultra Plus of the Seeker"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2374",
+      "title": "achievementCardKermesiniteStyle",
+      "description": "Mineral style string for kermesinite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify kermesinite style is cherry red acicular",
+        "Create common achievement",
+        "Verify kermesinite style is dull red"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2375",
+      "title": "achievementOlympusPlusThreshold",
+      "description": "Olympus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 55000000",
+        "Create games achievement",
+        "Verify threshold <= 8000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
