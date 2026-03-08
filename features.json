@@ -17009,6 +17009,85 @@
         "label contains title and category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-989",
+      "name": "achievementEmojiLabel",
+      "description": "Emoji plus category display name",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "contains emoji and category name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-990",
+      "name": "achievementIsStreak",
+      "description": "Whether achievement is in streak category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak_5 is streak",
+        "first_game is not streak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-991",
+      "name": "achievementIsMastery",
+      "description": "Whether achievement is in mastery category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "easy_mastery is mastery",
+        "first_game is not mastery"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-992",
+      "name": "achievementRarityLabel",
+      "description": "Rarity label string",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "rare achievement returns Rare",
+        "common returns Common"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-993",
+      "name": "achievementIdPrefix",
+      "description": "First part of achievement id before underscore",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "first_game prefix is first",
+        "streak_5 prefix is streak"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

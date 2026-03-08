@@ -84,6 +84,26 @@ extension Achievement {
     var achievementAccessibilityLabel: String {
         "\(title), \(category.displayName) achievement"
     }
+
+    var achievementEmojiLabel: String {
+        "\(emoji) \(category.displayName)"
+    }
+
+    var achievementIsStreak: Bool {
+        category == .streak
+    }
+
+    var achievementIsMastery: Bool {
+        category == .mastery
+    }
+
+    var achievementRarityLabel: String {
+        isRareAchievement ? "Rare" : "Common"
+    }
+
+    var achievementIdPrefix: String {
+        String(id.split(separator: "_").first ?? Substring(id))
+    }
 }
 
 extension Achievement.Category {
