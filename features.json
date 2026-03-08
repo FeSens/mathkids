@@ -18596,6 +18596,81 @@
         "contains display name and emoji"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1094",
+      "name": "difficultyQuestionCount",
+      "description": "Estimated number of questions per game",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "returns estimatedProblemsPerGame"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1095",
+      "name": "difficultyRankLabel",
+      "description": "Rank label (Bronze/Silver/Gold)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns Bronze, hard returns Gold"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1096",
+      "name": "difficultyIsCasual",
+      "description": "Whether difficulty is casual play",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy is casual, hard is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1097",
+      "name": "difficultyLevelNumber",
+      "description": "Numeric level 1-3",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy is 1, hard is 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1098",
+      "name": "difficultyWarmUpText",
+      "description": "Warm-up instruction text",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all levels"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -196,4 +196,32 @@ extension DifficultyLevel {
     var difficultySelectionLabel: String {
         "\(difficultyEmoji) \(displayName)"
     }
+
+    var difficultyQuestionCount: Int {
+        estimatedProblemsPerGame
+    }
+
+    var difficultyRankLabel: String {
+        switch self {
+        case .easy: return "Bronze"
+        case .medium: return "Silver"
+        case .hard: return "Gold"
+        }
+    }
+
+    var difficultyIsCasual: Bool {
+        self == .easy
+    }
+
+    var difficultyLevelNumber: Int {
+        progressionIndex
+    }
+
+    var difficultyWarmUpText: String {
+        switch self {
+        case .easy: return "Let's start with the basics!"
+        case .medium: return "Time to step it up!"
+        case .hard: return "Ready for a real challenge?"
+        }
+    }
 }
