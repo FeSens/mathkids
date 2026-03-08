@@ -29469,6 +29469,86 @@
         "Verify rewardLabelText contains points"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1784",
+      "title": "Achievement Card Tag Color",
+      "description": "Returns tag color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardTagColor by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1785",
+      "title": "Achievement Min Games Played",
+      "description": "Returns minimum games to qualify",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify minGamesPlayed by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1786",
+      "title": "Achievement Card Layout Mode",
+      "description": "Returns layout mode for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardLayoutMode by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1787",
+      "title": "Achievement Is Endurance Based",
+      "description": "Returns whether achievement needs endurance",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isEnduranceBased for streak/mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1788",
+      "title": "Achievement Card Subtitle Text",
+      "description": "Returns subtitle text for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardSubtitleText contains category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

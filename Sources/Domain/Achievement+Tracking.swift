@@ -60,4 +60,34 @@ extension Achievement {
     var achievementRewardLabelText: String {
         "+\(pointValue) pts"
     }
+
+    var achievementCardTagColor: String {
+        switch category {
+        case .mastery: return "purple"
+        case .streak: return "red"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementMinGamesPlayed: Int {
+        switch category {
+        case .mastery: return 25
+        case .streak: return 5
+        case .score: return 5
+        case .games: return 1
+        }
+    }
+
+    var achievementCardLayoutMode: String {
+        isRareAchievement ? "expanded" : "compact"
+    }
+
+    var achievementIsEnduranceBased: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardSubtitleText: String {
+        "\(category.displayName) challenge"
+    }
 }
