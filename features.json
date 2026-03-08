@@ -15493,6 +15493,86 @@
         "Problem 3+4=7 -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-894",
+      "name": "operandBothSingleDigit",
+      "description": "MathProblem computed property returning true when both operands are < 10",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 3+4 -> true",
+        "Problem 12+4 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-895",
+      "name": "isDoubleCorrectAnswer",
+      "description": "AnsweredProblem computed property returning true when user answered double the correct answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct is 7, answered 14 -> true",
+        "Correct is 7, answered 8 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-896",
+      "name": "difficultyScoreLabel",
+      "description": "DifficultyLevel computed property returning formatted score range label",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> contains score info",
+        "Hard -> contains score info"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-897",
+      "name": "answerWasDoubled",
+      "description": "AnsweredProblem computed property returning true when user answer is exactly twice one operand",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 3+4, answer 6 (2*3) -> true",
+        "Problem 3+4, answer 5 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-898",
+      "name": "problemIsEasy",
+      "description": "MathProblem computed property returning true when estimatedDifficulty <= 2",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 2+3 -> true",
+        "Problem 12*8 -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -167,4 +167,12 @@ extension AnsweredProblem {
     var answerErrorMargin: Int {
         answerDifference
     }
+
+    var isDoubleCorrectAnswer: Bool {
+        userAnswer == problem.correctAnswer * 2
+    }
+
+    var answerWasDoubled: Bool {
+        userAnswer == problem.operand1 * 2 || userAnswer == problem.operand2 * 2
+    }
 }

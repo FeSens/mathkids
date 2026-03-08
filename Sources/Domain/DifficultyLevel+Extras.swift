@@ -216,4 +216,8 @@ extension DifficultyLevel {
     var difficultyProgressText: String {
         "Level \(progressionIndex + 1) of 3"
     }
+
+    var difficultyScoreLabel: String {
+        "Max score: \(maxPossibleScore) pts"
+    }
 }

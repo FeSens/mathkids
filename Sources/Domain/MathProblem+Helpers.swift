@@ -245,4 +245,12 @@ extension MathProblem {
     var isTripleDigitAnswer: Bool {
         abs(correctAnswer) >= 100
     }
+
+    var operandBothSingleDigit: Bool {
+        operand1 < 10 && operand2 < 10
+    }
+
+    var problemIsEasy: Bool {
+        estimatedDifficulty <= 2
+    }
 }
