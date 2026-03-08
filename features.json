@@ -25050,6 +25050,82 @@
       "files": [
         "Sources/Domain/Achievement+Metadata.swift"
       ]
+    },
+    {
+      "id": "logic-1489",
+      "title": "Achievement Power Level",
+      "description": "Add achievementPowerLevel returning combined score of rarity, category, and points",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementPowerLevel is high"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1490",
+      "title": "Achievement Is Beginner Friendly",
+      "description": "Add achievementIsBeginnerFriendly returning true for low minimum level achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create games achievement",
+        "Verify achievementIsBeginnerFriendly is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1491",
+      "title": "Achievement Composite Key",
+      "description": "Add achievementCompositeKey returning composite sort key for ordered lists",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementSortKey contains category index and id"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1492",
+      "title": "Achievement Experience Tier",
+      "description": "Add achievementExperienceTier returning beginner/intermediate/advanced/expert",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementExperienceTier is expert"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1493",
+      "title": "Achievement Rarity Percentage",
+      "description": "Add achievementRarityPercentage returning estimated completion percentage",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementRarityPercentage is 5",
+        "Verify common is 80"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
     }
   ],
   "_schema": {

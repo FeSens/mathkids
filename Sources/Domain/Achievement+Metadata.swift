@@ -32,4 +32,35 @@ extension Achievement {
         if isRareAchievement { return 2 }
         return 1
     }
+
+    var achievementPowerLevel: Int {
+        pointValue + achievementChallengeRating + (isRareAchievement ? 40 : 0)
+    }
+
+    var achievementIsBeginnerFriendly: Bool {
+        achievementMinimumLevel <= 3
+    }
+
+    var achievementCompositeKey: String {
+        "\(achievementCategoryIndex)-\(id)"
+    }
+
+    var achievementExperienceTier: String {
+        switch category {
+        case .mastery: return "expert"
+        case .streak: return "advanced"
+        case .score: return "intermediate"
+        case .games: return "beginner"
+        }
+    }
+
+    var achievementRarityPercentage: Int {
+        if isRareAchievement { return 5 }
+        switch category {
+        case .mastery: return 15
+        case .streak: return 30
+        case .score: return 50
+        case .games: return 80
+        }
+    }
 }
