@@ -156,6 +156,7 @@ struct ResultsView: View {
     }
 
     private var headerEmoji: String {
+        if viewModel.isPerfectScore { return "👑" }
         if viewModel.accuracy >= 90 { return "🏆" }
         if viewModel.accuracy >= 70 { return "🌟" }
         if viewModel.accuracy >= 50 { return "👍" }

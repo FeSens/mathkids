@@ -48,6 +48,8 @@ final class ResultsViewModel {
     var bestStreak: Int { session.bestStreak }
     var difficulty: DifficultyLevel { session.difficulty }
     var hasNewAchievements: Bool { !newAchievements.isEmpty }
+    var isPerfectScore: Bool { accuracy >= 100 }
+    var isNewBestStreak: Bool { isNewBestScore }
 
     var basePoints: Int {
         session.totalCorrect * session.difficulty.pointsPerCorrect

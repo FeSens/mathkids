@@ -259,6 +259,22 @@ struct ResultsViewModelTests {
         #expect(vm.operationBreakdown.isEmpty)
     }
 
+    // MARK: - Perfect Score (ui-134)
+
+    @Test("Perfect score detected at 100%")
+    func perfectScore() {
+        let session = makeSession(correct: 10, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.isPerfectScore == true)
+    }
+
+    @Test("Not perfect score under 100%")
+    func notPerfectScore() {
+        let session = makeSession(correct: 9, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.isPerfectScore == false)
+    }
+
     @Test("Operation breakdown counts operations")
     func operationBreakdownCounts() {
         let session = makeSession(correct: 2, total: 2)

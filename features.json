@@ -2779,6 +2779,98 @@
       "files": [
         "Sources/Features/Game/GameViewModel.swift"
       ]
+    },
+    {
+      "id": "ui-134",
+      "title": "Perfect score special celebration",
+      "description": "When getting 100% accuracy, show an extra special celebration with golden confetti",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-060"
+      ],
+      "test_steps": [
+        "Get 100% accuracy in a game",
+        "Special golden celebration appears",
+        "Different from regular confetti"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-135",
+      "title": "Streak counter glow at milestones",
+      "description": "Streak counter in header gets a colored glow ring at milestones (5, 10, 15)",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Get 5 streak - orange glow around streak",
+        "Get 10 streak - brighter glow",
+        "Glow pulses smoothly"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-136",
+      "title": "Settings version build number",
+      "description": "Show app build number alongside version in settings",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-012"
+      ],
+      "test_steps": [
+        "Open settings",
+        "Version shows as 1.0 (build X)",
+        "Build number is accurate"
+      ],
+      "files": [
+        "Sources/Features/Home/SettingsView.swift"
+      ]
+    },
+    {
+      "id": "ui-137",
+      "title": "Problem number fade transition",
+      "description": "Problem number counter fades between numbers when advancing",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Submit an answer",
+        "Problem number transitions with fade animation",
+        "Smooth and not jarring"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-138",
+      "title": "Results screen personal best indicator per stat",
+      "description": "Show a star next to any stat that is a personal best in results",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Complete a game with a new best streak",
+        "Star icon appears next to the streak stat",
+        "Only stats that are personal bests get stars"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
     }
   ],
   "_schema": {

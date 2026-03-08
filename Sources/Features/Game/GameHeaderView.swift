@@ -38,6 +38,9 @@ struct GameHeaderView: View {
                         Text("#\(viewModel.problemNumber)")
                             .font(.system(size: 11, weight: .semibold, design: .rounded))
                             .foregroundStyle(.secondary)
+                            .id(viewModel.problemNumber)
+                            .transition(.opacity)
+                            .animation(.easeInOut(duration: 0.2), value: viewModel.problemNumber)
                     }
                 }
                 .accessibilityIdentifier("problemCounter")
@@ -106,6 +109,7 @@ struct GameHeaderView: View {
                             }
                             .accessibilityIdentifier("streakLabel")
                             .accessibilityLabel("Streak: \(viewModel.currentStreak) correct in a row")
+                            .shadow(color: viewModel.currentStreak >= 10 ? .orange.opacity(0.6) : viewModel.currentStreak >= 5 ? .orange.opacity(0.3) : .clear, radius: 8)
 
                         ForEach(0..<streakFlameCount, id: \.self) { i in
                             Text("🔥")
