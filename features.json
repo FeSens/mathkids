@@ -38437,6 +38437,96 @@
         "Verify threshold <= 3000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2346",
+      "title": "Achievement card lillianite style",
+      "description": "Computed property achievementCardLillianiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify lillianite style is steel grey orthorhombic",
+        "Create common achievement",
+        "Verify lillianite style is dull grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2347",
+      "title": "Achievement requires valor plus",
+      "description": "Computed property achievementRequiresValorPlus returns true for score or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresValorPlus is true",
+        "Create games achievement",
+        "Verify requiresValorPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2348",
+      "title": "Achievement card compact writ seal ultra text",
+      "description": "Computed property achievementCardCompactWritSealUltraText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Compact Writ Seal Ultra of the Transcendent",
+        "Create games achievement",
+        "Verify text is Compact Writ Seal Ultra of the Wanderer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2349",
+      "title": "Achievement card heyrovskyite style",
+      "description": "Computed property achievementCardHeyrovskyiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify heyrovskyite style is tin grey monoclinic",
+        "Create common achievement",
+        "Verify heyrovskyite style is pale pewter"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2350",
+      "title": "Achievement quintessence plus threshold",
+      "description": "Computed property achievementQuintessencePlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 30000000",
+        "Create games achievement",
+        "Verify threshold <= 5000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

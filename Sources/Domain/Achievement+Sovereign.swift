@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 2500000
         }
     }
+
+    var achievementCardLillianiteStyle: String {
+        isRareAchievement ? "steel grey orthorhombic" : "dull grey"
+    }
+
+    var achievementRequiresValorPlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardCompactWritSealUltraText: String {
+        switch category {
+        case .mastery: return "Compact Writ Seal Ultra of the Transcendent"
+        case .streak: return "Compact Writ Seal Ultra of the Sentinel"
+        case .score: return "Compact Writ Seal Ultra of the Sovereign"
+        case .games: return "Compact Writ Seal Ultra of the Wanderer"
+        }
+    }
+
+    var achievementCardHeyrovskyiteStyle: String {
+        isRareAchievement ? "tin grey monoclinic" : "pale pewter"
+    }
+
+    var achievementQuintessencePlusThreshold: Int {
+        switch category {
+        case .mastery: return 30000000
+        case .streak: return 12000000
+        case .score: return 25000000
+        case .games: return 3000000
+        }
+    }
 }
