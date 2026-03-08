@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var dailyStreakEmoji: String {
+        dailyStreak > 0 ? "🔥" : "❄️"
+    }
+
     var selectedOperationsEmojis: String {
         selectedOperations.sorted(by: { $0.rawValue < $1.rawValue }).map(\.emoji).joined()
     }

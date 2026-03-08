@@ -27,6 +27,10 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var answeredProblemCount: Int {
+        totalAnswered
+    }
+
     var isHalfwayDone: Bool {
         totalTimePlayed > difficulty.timeLimitSeconds / 2
     }

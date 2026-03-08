@@ -10125,6 +10125,86 @@
         "Check subtract isPairOperation is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-559",
+      "name": "HomeViewModel.dailyStreakEmoji",
+      "description": "Returns fire emoji for streak > 0, snowflake for 0",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Set dailyStreak to 3",
+        "Verify returns fire emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-560",
+      "name": "StatsViewModel.problemsPerGameText",
+      "description": "Average problems per game as formatted string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set totalSolved=50 gamesPlayed=5",
+        "Verify returns 10 per game"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-561",
+      "name": "ResultsViewModel.answeredCountText",
+      "description": "Returns total answered as X problems string",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session",
+        "Verify text format"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-562",
+      "name": "GameSession.answeredProblemCount",
+      "description": "Alias for totalAnswered for readability",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session, answer problems",
+        "Verify answeredProblemCount equals totalAnswered"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-563",
+      "name": "Operation.shortName",
+      "description": "Returns short name: Add, Sub, Mul, Div",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Check add.shortName is Add",
+        "Check divide.shortName is Div"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

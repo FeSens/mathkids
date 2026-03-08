@@ -60,6 +60,15 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var shortName: String {
+        switch self {
+        case .add: "Add"
+        case .subtract: "Sub"
+        case .multiply: "Mul"
+        case .divide: "Div"
+        }
+    }
+
     var isPairOperation: Bool {
         self == .add || self == .multiply
     }

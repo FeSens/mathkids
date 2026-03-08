@@ -106,6 +106,10 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var answeredCountText: String {
+        "\(session.totalAnswered) problems"
+    }
+
     var scoreBreakdownText: String {
         "\(session.score) + \(session.timeBonus) bonus = \(session.finalScoreWithTimeBonus) pts"
     }

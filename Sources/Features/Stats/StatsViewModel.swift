@@ -154,6 +154,11 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var problemsPerGameText: String {
+        guard gamesPlayed > 0 else { return "0 per game" }
+        return "\(totalSolved / gamesPlayed) per game"
+    }
+
     var accuracyGrade: String {
         if accuracy >= 95 { return "A+" }
         if accuracy >= 90 { return "A" }
