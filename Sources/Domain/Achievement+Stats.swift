@@ -55,4 +55,34 @@ extension Achievement {
     var achievementPointsSummary: String {
         "\(pointValue) points"
     }
+
+    var achievementUnlockThreshold: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 20
+        case .score: return 10
+        case .games: return 1
+        }
+    }
+
+    var achievementCardSubtitleStyle: String {
+        isRareAchievement ? "italic" : "regular"
+    }
+
+    var achievementIsPremiumTier: Bool {
+        category == .mastery
+    }
+
+    var achievementBarFillColor: String {
+        switch category {
+        case .mastery: return "indigo"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementCardTitleAlignment: String {
+        isRareAchievement ? "center" : "leading"
+    }
 }

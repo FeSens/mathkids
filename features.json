@@ -28669,6 +28669,86 @@
         "Verify pointsSummary contains point value"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1734",
+      "title": "Achievement Unlock Threshold",
+      "description": "Returns threshold value to unlock achievement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify unlockThreshold by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1735",
+      "title": "Achievement Card Subtitle Style",
+      "description": "Returns subtitle style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardSubtitleStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1736",
+      "title": "Achievement Is Premium Tier",
+      "description": "Returns whether achievement is premium tier",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isPremiumTier for mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1737",
+      "title": "Achievement Bar Fill Color",
+      "description": "Returns color for progress bar",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify progressBarColor by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1738",
+      "title": "Achievement Card Title Alignment",
+      "description": "Returns text alignment for card title",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardTitleAlignment by rarity"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
