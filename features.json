@@ -28909,6 +28909,86 @@
         "Verify goalDescription by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1749",
+      "title": "Achievement Card Icon Position",
+      "description": "Returns icon position on card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardIconPosition by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1750",
+      "title": "Achievement Streak Requirement Text",
+      "description": "Returns streak requirement description",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify streakRequirementText for streak vs others"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1751",
+      "title": "Achievement Card Opacity Level",
+      "description": "Returns opacity level for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardOpacityLevel by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1752",
+      "title": "Achievement Is Newbie Friendly",
+      "description": "Returns whether achievement is for beginners",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isBeginnerFriendly for games vs mastery"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1753",
+      "title": "Achievement Celebration Text",
+      "description": "Returns celebration message",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify celebrationText contains emoji"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

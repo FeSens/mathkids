@@ -135,4 +135,24 @@ extension Achievement {
         case .games: return "Complete games"
         }
     }
+
+    var achievementCardIconPosition: String {
+        isRareAchievement ? "center" : "leading"
+    }
+
+    var achievementStreakRequirementText: String {
+        category == .streak ? "Play every day to maintain your streak" : "No streak required"
+    }
+
+    var achievementCardOpacityLevel: Double {
+        isRareAchievement ? 1.0 : 0.85
+    }
+
+    var achievementIsNewbieFriendly: Bool {
+        category == .games
+    }
+
+    var achievementCelebrationText: String {
+        "\(emoji) Congratulations! You earned \(title)!"
+    }
 }
