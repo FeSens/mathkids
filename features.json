@@ -34857,6 +34857,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2141",
+      "title": "Achievement Card Kornerupine Style",
+      "description": "Computed property returning kornerupine style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns pleochroic style",
+        "Common returns brown style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2142",
+      "title": "Achievement Requires Backbone",
+      "description": "Computed property checking if achievement requires backbone",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Streak requires backbone",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2143",
+      "title": "Achievement Card Covenant Writ Text",
+      "description": "Computed property returning covenant writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2144",
+      "title": "Achievement Card Hackmanite Style",
+      "description": "Computed property returning hackmanite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns tenebrescent style",
+        "Common returns pink style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2145",
+      "title": "Achievement Imperium Threshold",
+      "description": "Computed property returning imperium threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

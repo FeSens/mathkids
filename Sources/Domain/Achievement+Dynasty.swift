@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 1000000
         }
     }
+
+    var achievementCardKornerupineStyle: String {
+        isRareAchievement ? "pleochroic" : "brown"
+    }
+
+    var achievementRequiresBackbone: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardCovenantWritText: String {
+        switch category {
+        case .mastery: return "Covenant Writ of Mastery"
+        case .streak: return "Covenant Writ of Perseverance"
+        case .score: return "Covenant Writ of Valor"
+        case .games: return "Covenant Writ of Fellowship"
+        }
+    }
+
+    var achievementCardHackmaniteStyle: String {
+        isRareAchievement ? "tenebrescent" : "pink"
+    }
+
+    var achievementImperiumThreshold: Int {
+        switch category {
+        case .mastery: return 15000000
+        case .streak: return 7500000
+        case .score: return 10000000
+        case .games: return 1500000
+        }
+    }
 }
