@@ -34537,6 +34537,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2121",
+      "title": "Achievement Card Poudretteite Style",
+      "description": "Computed property returning poudretteite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns pink style",
+        "Common returns clear style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2122",
+      "title": "Achievement Requires Vigor",
+      "description": "Computed property checking if achievement requires vigor",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Score requires vigor",
+        "Streak does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2123",
+      "title": "Achievement Card Injunction Seal Text",
+      "description": "Computed property returning injunction seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2124",
+      "title": "Achievement Card Pezzottaite Style",
+      "description": "Computed property returning pezzottaite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns raspberry style",
+        "Common returns light style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2125",
+      "title": "Achievement Sovereignty Plus Threshold",
+      "description": "Computed property returning sovereignty plus threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

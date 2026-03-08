@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 200000
         }
     }
+
+    var achievementCardPoudretteiteStyle: String {
+        isRareAchievement ? "pink" : "clear"
+    }
+
+    var achievementRequiresVigor: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardInjunctionSealText: String {
+        switch category {
+        case .mastery: return "Injunction Seal of the Wise"
+        case .streak: return "Injunction Seal of the Steadfast"
+        case .score: return "Injunction Seal of the Bold"
+        case .games: return "Injunction Seal of the Willing"
+        }
+    }
+
+    var achievementCardPezzottaiteStyle: String {
+        isRareAchievement ? "raspberry" : "light"
+    }
+
+    var achievementSovereigntyPlusThreshold: Int {
+        switch category {
+        case .mastery: return 3000000
+        case .streak: return 1500000
+        case .score: return 2000000
+        case .games: return 300000
+        }
+    }
 }
