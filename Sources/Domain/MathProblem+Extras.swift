@@ -183,6 +183,10 @@ extension MathProblem {
         abs(operand1 - operand2)
     }
 
+    var isSingleDigitOperands: Bool {
+        operand1 >= 0 && operand1 <= 9 && operand2 >= 0 && operand2 <= 9
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0

@@ -190,6 +190,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         operandRangeSize * operationCount
     }
 
+    var pointsPerMinute: Int {
+        pointsPerCorrect * (60 / recommendedSecondsPerProblem)
+    }
+
     static var allSorted: [DifficultyLevel] {
         [.easy, .medium, .hard]
     }

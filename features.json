@@ -8994,6 +8994,87 @@
         "Verify same returns 0"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-489",
+      "title": "GameSession wrongPerMinute rate of wrong answers",
+      "description": "GameSession should expose wrongPerMinute returning wrong answers per minute played",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify returns correct rate",
+        "Verify 0 time returns 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-490",
+      "title": "Achievement scoreAchievements returns score category",
+      "description": "Achievement should expose scoreAchievements returning achievements in score category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify all returned are score category",
+        "Verify count is correct"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-491",
+      "title": "DifficultyLevel pointsPerMinute estimated points rate",
+      "description": "DifficultyLevel should expose pointsPerMinute estimated from pointsPerCorrect and recommendedSecondsPerProblem",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns 100 (10pts * 60/6)",
+        "Verify medium returns 300 (20pts * 60/4)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-492",
+      "title": "Operation advancedOperations returns multiply and divide",
+      "description": "Operation should expose advancedOperations static property returning [multiply, divide]",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify count is 2",
+        "Verify contains multiply and divide"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-493",
+      "title": "MathProblem isSingleDigitOperands both operands under 10",
+      "description": "MathProblem should expose isSingleDigitOperands returning true when both operands are 0-9",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3+5 returns true",
+        "Verify 12+5 returns false",
+        "Verify 5+15 returns false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

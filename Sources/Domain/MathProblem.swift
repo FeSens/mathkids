@@ -129,6 +129,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         return pairs
     }
 
+    static var advancedOperations: [Operation] {
+        [.multiply, .divide]
+    }
+
     static var basicOperations: [Operation] {
         [.add, .subtract]
     }
