@@ -15413,6 +15413,86 @@
         "Answer 7 -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-889",
+      "name": "operandBothOdd",
+      "description": "MathProblem computed property returning true when both operands are odd",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 3+5 -> true",
+        "Problem 3+4 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-890",
+      "name": "isMultiplyByZero",
+      "description": "MathProblem computed property returning true for multiplication where one operand is zero",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 0*5 -> true",
+        "Problem 3*5 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-891",
+      "name": "timeTakenCategory",
+      "description": "AnsweredProblem computed property returning speed category string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "timeTaken 2s -> fast category",
+        "timeTaken nil -> unknown category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-892",
+      "name": "answerErrorMargin",
+      "description": "AnsweredProblem computed property returning percentage error of answer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct answer -> 0",
+        "Wrong answer -> positive value"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-893",
+      "name": "isTripleDigitAnswer",
+      "description": "MathProblem computed property returning true when correctAnswer has 3+ digits",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 50*3=150 -> true",
+        "Problem 3+4=7 -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

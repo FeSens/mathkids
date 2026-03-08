@@ -156,4 +156,15 @@ extension AnsweredProblem {
     var answerWasZero: Bool {
         userAnswer == 0
     }
+
+    var timeTakenCategory: String {
+        guard let time = timeTaken else { return "unknown" }
+        if time < 3.0 { return "fast" }
+        if time < 6.0 { return "normal" }
+        return "slow"
+    }
+
+    var answerErrorMargin: Int {
+        answerDifference
+    }
 }

@@ -233,4 +233,16 @@ extension MathProblem {
     var isAdditionOfEquals: Bool {
         operation == .add && operand1 == operand2
     }
+
+    var operandBothOdd: Bool {
+        operand1 % 2 != 0 && operand2 % 2 != 0
+    }
+
+    var isMultiplyByZero: Bool {
+        operation == .multiply && (operand1 == 0 || operand2 == 0)
+    }
+
+    var isTripleDigitAnswer: Bool {
+        abs(correctAnswer) >= 100
+    }
 }
