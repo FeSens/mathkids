@@ -25,6 +25,7 @@
 		4513317F1EC163421536BF08 /* StatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ABF0C1B98F1BCF8475FCE /* StatsService.swift */; };
 		45CD98BF35692868AA988D43 /* StatsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C0BAB984FF6AC3A82CC93C /* StatsViewModelTests.swift */; };
 		487C5AB4A01BDD59CBB3895E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047BADB99680064F99C105B1 /* HomeViewModel.swift */; };
+		49FB650FD1D880FB7D58B906 /* MathProblemExtendedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B28873C970217E07A65552 /* MathProblemExtendedTests.swift */; };
 		4BBB1ADCC4D23153D19B99EF /* HapticServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296AF4623C4992D94BAE1BF9 /* HapticServiceTests.swift */; };
 		4C4CAF338FE9C6627C6CB96D /* ProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A131ACE8EAE37C45B0DFDC6 /* ProblemGenerator.swift */; };
 		4D522B903AC628A4FA761EC0 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C0FD17C374BB2F9A8EA5B0 /* HapticService.swift */; };
@@ -104,6 +105,7 @@
 		204ABF0C1B98F1BCF8475FCE /* StatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsService.swift; sourceTree = "<group>"; };
 		213185E73136A381D0619E0A /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		27A82702F56EA7C4EF929777 /* PlayerStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsTests.swift; sourceTree = "<group>"; };
+		27B28873C970217E07A65552 /* MathProblemExtendedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathProblemExtendedTests.swift; sourceTree = "<group>"; };
 		296AF4623C4992D94BAE1BF9 /* HapticServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticServiceTests.swift; sourceTree = "<group>"; };
 		2AF668AA5F5F791ED0607860 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		2FBB5E51B2B9456B0E07EFFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				38A273BF960D1313BEC03F8C /* GameSessionExtendedTests.swift */,
 				3C03229BF2CCCFC4C1BA8294 /* GameSessionTests.swift */,
 				DC8712E4C9A4AD83327A7B15 /* LevelSystemTests.swift */,
+				27B28873C970217E07A65552 /* MathProblemExtendedTests.swift */,
 				7DA1D47D67C3C800029BDCF4 /* MathProblemTests.swift */,
 				C0388800F79F305E944BE7B8 /* PlayerStatsBatch38Tests.swift */,
 				5E4BFC320ADD566B03F79A33 /* PlayerStatsExtendedTests.swift */,
@@ -467,6 +470,7 @@
 				4BBB1ADCC4D23153D19B99EF /* HapticServiceTests.swift in Sources */,
 				05A666361876334B704A3459 /* HomeViewModelTests.swift in Sources */,
 				CAF9CBD71994FFC48E5E9BB6 /* LevelSystemTests.swift in Sources */,
+				49FB650FD1D880FB7D58B906 /* MathProblemExtendedTests.swift in Sources */,
 				DC296F4E52810A59E0B39658 /* MathProblemTests.swift in Sources */,
 				791633FAC9A0FEA560591A9F /* PlayerStatsBatch38Tests.swift in Sources */,
 				A81DFA4A7C797EA1E4759677 /* PlayerStatsExtendedTests.swift in Sources */,
