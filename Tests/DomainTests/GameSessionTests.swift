@@ -162,4 +162,27 @@ struct GameSessionTests {
         #expect(session.accuracyForOperation(.add) < 67)
         #expect(session.accuracyForOperation(.subtract) == 100)
     }
+
+    // MARK: - Streak Milestone Check (logic-225)
+
+    @Test("Streak milestone at 5")
+    func streakMilestoneAt5() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<5 { session.recordAnswer(correct: true) }
+        #expect(session.streakMilestoneReached == 5)
+    }
+
+    @Test("No milestone at 6")
+    func noMilestoneAt6() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<6 { session.recordAnswer(correct: true) }
+        #expect(session.streakMilestoneReached == nil)
+    }
+
+    @Test("Milestone at 10")
+    func milestoneAt10() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<10 { session.recordAnswer(correct: true) }
+        #expect(session.streakMilestoneReached == 10)
+    }
 }

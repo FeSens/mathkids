@@ -4427,6 +4427,97 @@
       "files": [
         "Sources/Features/Stats/StatsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-224",
+      "title": "PlayerStats best accuracy per difficulty",
+      "description": "PlayerStats tracks the best accuracy achieved for each difficulty level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Record games with varying accuracy",
+        "bestAccuracyForDifficulty returns the highest accuracy",
+        "Returns 0 when no games played for that difficulty"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-225",
+      "title": "GameSession streak milestone check",
+      "description": "GameSession provides a streakMilestoneReached flag when streak hits 5, 10, 15, 20",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Get exactly 5 correct in a row",
+        "streakMilestoneReached returns 5",
+        "Get 6 correct, returns nil (not a milestone)",
+        "Get 10 correct, returns 10"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-226",
+      "title": "Operation display name",
+      "description": "Operation enum has a displayName property for human-readable operation names",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "add.displayName returns \"Addition\"",
+        "subtract.displayName returns \"Subtraction\"",
+        "multiply.displayName returns \"Multiplication\"",
+        "divide.displayName returns \"Division\""
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-227",
+      "title": "ResultsViewModel operation accuracy breakdown",
+      "description": "ResultsViewModel provides accuracy percentage for each operation used in the session",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Complete a game with mixed operations",
+        "operationAccuracy returns per-operation accuracy from problem history"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "logic-228",
+      "title": "DifficultyLevel previous difficulty helper",
+      "description": "DifficultyLevel has a previousDifficulty property returning the easier level or nil at easy",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-002"
+      ],
+      "test_steps": [
+        "hard.previousDifficulty returns .medium",
+        "medium.previousDifficulty returns .easy",
+        "easy.previousDifficulty returns nil"
+      ],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
     }
   ],
   "_schema": {

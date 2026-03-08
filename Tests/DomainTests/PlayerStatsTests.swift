@@ -266,4 +266,23 @@ struct PlayerStatsTests {
         stats.addTotal = 10
         #expect(stats.accuracyForOperation(.add) == 80.0)
     }
+
+    // MARK: - Best Accuracy Per Difficulty (logic-224)
+
+    @Test("Best accuracy starts at 0")
+    func bestAccuracyStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.bestAccuracyForDifficulty(.easy) == 0)
+    }
+
+    @Test("Best accuracy updates correctly")
+    func bestAccuracyUpdates() {
+        let stats = PlayerStats()
+        stats.updateBestAccuracy(85.0, for: .easy)
+        #expect(stats.bestAccuracyForDifficulty(.easy) == 85.0)
+        stats.updateBestAccuracy(70.0, for: .easy)
+        #expect(stats.bestAccuracyForDifficulty(.easy) == 85.0) // Doesn't decrease
+        stats.updateBestAccuracy(95.0, for: .easy)
+        #expect(stats.bestAccuracyForDifficulty(.easy) == 95.0)
+    }
 }

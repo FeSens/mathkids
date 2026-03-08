@@ -6,6 +6,15 @@ enum Operation: String, CaseIterable, Codable, Sendable {
     case multiply = "x"
     case divide = "/"
 
+    var displayName: String {
+        switch self {
+        case .add: "Addition"
+        case .subtract: "Subtraction"
+        case .multiply: "Multiplication"
+        case .divide: "Division"
+        }
+    }
+
     var accessibilityName: String {
         switch self {
         case .add: "plus"

@@ -167,6 +167,20 @@ final class ResultsViewModel {
         return "\(xpEarned)/\(nextThreshold) XP"
     }
 
+    var operationAccuracy: [Operation: Double] {
+        var correct: [Operation: Int] = [:]
+        var total: [Operation: Int] = [:]
+        for entry in problemHistory {
+            total[entry.problem.operation, default: 0] += 1
+            if entry.isCorrect { correct[entry.problem.operation, default: 0] += 1 }
+        }
+        var result: [Operation: Double] = [:]
+        for (op, t) in total {
+            result[op] = Double(correct[op] ?? 0) / Double(t) * 100
+        }
+        return result
+    }
+
     var operationBreakdown: [(operation: Operation, count: Int)] {
         var counts: [Operation: Int] = [:]
         for entry in problemHistory {

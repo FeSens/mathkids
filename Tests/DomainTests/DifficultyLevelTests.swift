@@ -70,4 +70,21 @@ struct DifficultyLevelTests {
     func hardNextDifficulty() {
         #expect(DifficultyLevel.hard.nextDifficulty == nil)
     }
+
+    // MARK: - Previous Difficulty (logic-228)
+
+    @Test("Hard previous difficulty is medium")
+    func hardPreviousDifficulty() {
+        #expect(DifficultyLevel.hard.previousDifficulty == .medium)
+    }
+
+    @Test("Medium previous difficulty is easy")
+    func mediumPreviousDifficulty() {
+        #expect(DifficultyLevel.medium.previousDifficulty == .easy)
+    }
+
+    @Test("Easy previous difficulty is nil")
+    func easyPreviousDifficulty() {
+        #expect(DifficultyLevel.easy.previousDifficulty == nil)
+    }
 }

@@ -342,4 +342,24 @@ struct ResultsViewModelTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.problemsPerMinuteText == "20.0")
     }
+
+    // MARK: - Operation Accuracy Breakdown (logic-227)
+
+    @Test("Operation accuracy from problem history")
+    func operationAccuracyBreakdown() {
+        let session = makeSession(correct: 3, total: 4)
+        let p1 = MathProblem(operand1: 2, operand2: 3, operation: .add)
+        let p2 = MathProblem(operand1: 5, operand2: 2, operation: .add)
+        let p3 = MathProblem(operand1: 4, operand2: 1, operation: .add)
+        let history = [
+            AnsweredProblem(problem: p1, userAnswer: 5),  // correct
+            AnsweredProblem(problem: p2, userAnswer: 7),  // correct
+            AnsweredProblem(problem: p3, userAnswer: 99)  // wrong
+        ]
+        let vm = ResultsViewModel(session: session, previousBestScore: 0, problemHistory: history)
+        let addAccuracy = vm.operationAccuracy[.add]
+        #expect(addAccuracy != nil)
+        #expect(addAccuracy! > 66)
+        #expect(addAccuracy! < 67)
+    }
 }

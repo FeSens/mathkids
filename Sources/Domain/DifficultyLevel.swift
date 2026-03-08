@@ -57,6 +57,14 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var previousDifficulty: DifficultyLevel? {
+        switch self {
+        case .easy: nil
+        case .medium: .easy
+        case .hard: .medium
+        }
+    }
+
     var nextDifficulty: DifficultyLevel? {
         switch self {
         case .easy: .medium

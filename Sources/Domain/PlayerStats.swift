@@ -35,6 +35,9 @@ final class PlayerStats {
     var easyMasteryCount: Int = 0
     var mediumMasteryCount: Int = 0
     var hardMasteryCount: Int = 0
+    var bestAccuracyEasy: Double = 0
+    var bestAccuracyMedium: Double = 0
+    var bestAccuracyHard: Double = 0
 
     init() {}
 
@@ -124,6 +127,22 @@ final class PlayerStats {
         case .easy: easyMasteryCount += 1
         case .medium: mediumMasteryCount += 1
         case .hard: hardMasteryCount += 1
+        }
+    }
+
+    func bestAccuracyForDifficulty(_ difficulty: DifficultyLevel) -> Double {
+        switch difficulty {
+        case .easy: bestAccuracyEasy
+        case .medium: bestAccuracyMedium
+        case .hard: bestAccuracyHard
+        }
+    }
+
+    func updateBestAccuracy(_ accuracy: Double, for difficulty: DifficultyLevel) {
+        switch difficulty {
+        case .easy: bestAccuracyEasy = max(bestAccuracyEasy, accuracy)
+        case .medium: bestAccuracyMedium = max(bestAccuracyMedium, accuracy)
+        case .hard: bestAccuracyHard = max(bestAccuracyHard, accuracy)
         }
     }
 

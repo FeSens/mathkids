@@ -89,4 +89,14 @@ struct MathProblemTests {
         let d = problem.problemDifficulty
         #expect(d == .easy || d == .moderate || d == .hard)
     }
+
+    // MARK: - Operation Display Name (logic-226)
+
+    @Test("Operation display names")
+    func operationDisplayNames() {
+        #expect(Operation.add.displayName == "Addition")
+        #expect(Operation.subtract.displayName == "Subtraction")
+        #expect(Operation.multiply.displayName == "Multiplication")
+        #expect(Operation.divide.displayName == "Division")
+    }
 }

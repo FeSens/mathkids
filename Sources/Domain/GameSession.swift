@@ -81,6 +81,11 @@ struct GameSession: Sendable {
         }
     }
 
+    var streakMilestoneReached: Int? {
+        guard currentStreak > 0 && currentStreak % 5 == 0 else { return nil }
+        return currentStreak
+    }
+
     var problemsPerMinute: Double {
         let minutes = Double(totalTimePlayed) / 60.0
         guard minutes > 0 else { return 0 }
