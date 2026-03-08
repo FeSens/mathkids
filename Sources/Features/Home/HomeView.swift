@@ -37,6 +37,20 @@ struct HomeView: View {
 
             statsCards
 
+            if viewModel.accuracyTrend != .stable {
+                HStack(spacing: 6) {
+                    Image(systemName: viewModel.accuracyTrend == .improving ? "arrow.up.right" : "arrow.down.right")
+                        .font(.system(size: 12, weight: .bold))
+                    Text(viewModel.accuracyTrend == .improving ? "Accuracy improving!" : "Accuracy declining")
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                }
+                .foregroundStyle(viewModel.accuracyTrend == .improving ? .green : .red)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Capsule().fill((viewModel.accuracyTrend == .improving ? Color.green : Color.red).opacity(0.1)))
+                .accessibilityIdentifier("accuracyTrendBadge")
+            }
+
             dailyChallengeCard
 
             mathTipCard

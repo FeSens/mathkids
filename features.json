@@ -42843,6 +42843,92 @@
       ],
       "passes": true
     }
+    },
+    {
+      "id": "improve-020",
+      "title": "Difficulty stats cards in stats view",
+      "description": "Enhance the difficulty breakdown section to show best score and best accuracy alongside game count for each difficulty.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-015", "improve-016"],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift"
+      ],
+      "test_steps": [
+        "DifficultyStatCard shows game count, best score, and accuracy",
+        "All three difficulty cards rendered",
+        "Zero values handled gracefully"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-021",
+      "title": "Accuracy trend badge on home screen",
+      "description": "Show a small trend badge on the home screen indicating if the player's accuracy is improving, declining, or stable.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-019"],
+      "files": [
+        "Sources/Features/Home/HomeView.swift"
+      ],
+      "test_steps": [
+        "Improving trend shows green up arrow",
+        "Declining trend shows red down arrow",
+        "Stable or no data shows no badge"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-022",
+      "title": "Hint count display on results screen",
+      "description": "Show how many hints were used during the game on the results screen.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": ["improve-017"],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift"
+      ],
+      "test_steps": [
+        "Hint count shown when hints > 0",
+        "No hint section when hints = 0",
+        "Hint count passed from GameViewModel to ResultsView"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-023",
+      "title": "Operation mastery levels display in stats",
+      "description": "Show the Elo skill level label (Beginner/Learning/Intermediate/Advanced/Expert/Master) for each operation in the stats view.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "StatsViewModel computes skill level for each operation from Elo",
+        "Default rating of 1000 returns Intermediate",
+        "High rating returns Expert or Master"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-024",
+      "title": "XP breakdown by difficulty in stats",
+      "description": "Show XP earned from each difficulty level (Easy/Medium/Hard) in the stats view.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "StatsViewModel exposes xpEasy, xpMedium, xpHard",
+        "Default values are 0",
+        "Values loaded correctly from PlayerStats"
+      ],
+      "passes": true
+    }
   ],
   "_schema": {
     "feature": {

@@ -25,6 +25,11 @@ final class StatsViewModel {
     var totalTimePlayedMinutes: Int = 0
     var totalXP: Int = 0
 
+    // XP breakdown by difficulty
+    var xpEasy: Int = 0
+    var xpMedium: Int = 0
+    var xpHard: Int = 0
+
     // Per-difficulty accuracy and best scores
     var bestAccuracyEasy: Double = 0
     var bestAccuracyMedium: Double = 0
@@ -297,6 +302,7 @@ final class StatsViewModel {
         loadBestScores(from: stats)
         loadBestStreaks(from: stats)
         loadPerfectGameCount(from: stats)
+        loadXPBreakdown(from: stats)
 
         // Elo ratings
         eloAdd = stats.eloAdd
@@ -330,5 +336,21 @@ final class StatsViewModel {
 
     func loadPerfectGameCount(from stats: PlayerStats) {
         perfectGameCount = stats.perfectGameCount
+    }
+
+    func loadXPBreakdown(from stats: PlayerStats) {
+        xpEasy = stats.xpEasy
+        xpMedium = stats.xpMedium
+        xpHard = stats.xpHard
+    }
+
+    /// Skill level labels per operation symbol based on Elo ratings
+    var operationSkillLevels: [String: String] {
+        [
+            "+": EloSystem.skillLevel(forRating: eloAdd),
+            "-": EloSystem.skillLevel(forRating: eloSubtract),
+            "×": EloSystem.skillLevel(forRating: eloMultiply),
+            "÷": EloSystem.skillLevel(forRating: eloDivide),
+        ]
     }
 }

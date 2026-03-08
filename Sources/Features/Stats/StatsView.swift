@@ -200,11 +200,11 @@ struct StatsView: View {
                 .font(.headline)
 
             HStack(spacing: 12) {
-                DifficultyStatCard(label: "Easy", count: viewModel.easyGames, emoji: "🌱", color: .green)
+                DifficultyStatCard(label: "Easy", count: viewModel.easyGames, emoji: "🌱", color: .green, bestScore: viewModel.bestScoreEasy, accuracy: viewModel.bestAccuracyEasy)
                     .accessibilityIdentifier("easyGames")
-                DifficultyStatCard(label: "Medium", count: viewModel.mediumGames, emoji: "⚡", color: .orange)
+                DifficultyStatCard(label: "Medium", count: viewModel.mediumGames, emoji: "⚡", color: .orange, bestScore: viewModel.bestScoreMedium, accuracy: viewModel.bestAccuracyMedium)
                     .accessibilityIdentifier("mediumGames")
-                DifficultyStatCard(label: "Hard", count: viewModel.hardGames, emoji: "🔥", color: .red)
+                DifficultyStatCard(label: "Hard", count: viewModel.hardGames, emoji: "🔥", color: .red, bestScore: viewModel.bestScoreHard, accuracy: viewModel.bestAccuracyHard)
                     .accessibilityIdentifier("hardGames")
             }
         }
@@ -343,9 +343,11 @@ struct DifficultyStatCard: View {
     let count: Int
     let emoji: String
     let color: Color
+    var bestScore: Int = 0
+    var accuracy: Double = 0
 
     var body: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 4) {
             Text(emoji)
                 .font(.title2)
 
@@ -355,9 +357,20 @@ struct DifficultyStatCard: View {
             Text(label)
                 .font(.caption)
                 .foregroundStyle(.secondary)
+
+            if bestScore > 0 {
+                Text("\(bestScore) pts")
+                    .font(.system(size: 10, weight: .semibold, design: .rounded))
+                    .foregroundStyle(color)
+            }
+            if accuracy > 0 {
+                Text("\(Int(accuracy))%")
+                    .font(.system(size: 10, weight: .medium, design: .rounded))
+                    .foregroundStyle(.secondary)
+            }
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 12)
+        .padding(.vertical, 10)
         .background(
             RoundedRectangle(cornerRadius: 14)
                 .fill(color.opacity(0.1))
