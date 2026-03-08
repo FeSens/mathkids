@@ -198,4 +198,30 @@ extension GameSession {
     var isEndOfGame: Bool {
         isFinished || timeRemaining <= 0
     }
+
+    var accuracyColor: String {
+        if accuracy >= 80 { return "green" }
+        if accuracy >= 50 { return "orange" }
+        return "red"
+    }
+
+    var bonusDisplay: String {
+        "+\(totalBonusPoints)"
+    }
+
+    var scoreProgress: Double {
+        let maxScore = difficulty.maxPossibleScore
+        guard maxScore > 0 else { return 0 }
+        return min(Double(score) / Double(maxScore), 1.0)
+    }
+
+    var isHighStreak: Bool {
+        bestStreak >= 5
+    }
+
+    var answeredPercentage: Int {
+        let estimated = difficulty.estimatedProblemsPerGame
+        guard estimated > 0 else { return 0 }
+        return totalAnswered * 100 / estimated
+    }
 }

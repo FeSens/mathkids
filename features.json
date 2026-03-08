@@ -12205,6 +12205,86 @@
         "Finished returns true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-689",
+      "name": "GameSession+Display.accuracyColor",
+      "description": "Returns color name based on accuracy",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "High accuracy returns green",
+        "Low returns red"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-690",
+      "name": "GameSession+Display.bonusDisplay",
+      "description": "Returns bonus points with + prefix",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Earn bonus",
+        "Verify +X format"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-691",
+      "name": "GameSession+Display.scoreProgress",
+      "description": "Returns score as fraction of max possible",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Score some points",
+        "Verify progress value"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-692",
+      "name": "GameSession+Display.isHighStreak",
+      "description": "Returns true when best streak >= 5",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "5 streak returns true",
+        "2 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-693",
+      "name": "GameSession+Display.answeredPercentage",
+      "description": "Returns answered as percentage of estimated total",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Answer some",
+        "Verify percentage"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
