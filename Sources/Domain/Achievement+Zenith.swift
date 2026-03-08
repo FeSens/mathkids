@@ -210,4 +210,34 @@ extension Achievement {
         case .games: return 1000
         }
     }
+
+    var achievementCardBreithauptiteStyle: String {
+        isRareAchievement ? "copper red" : "bronze"
+    }
+
+    var achievementRequiresResolvePlus: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardCompactWritSealText: String {
+        switch category {
+        case .mastery: return "Compact Writ Seal of the Eminence"
+        case .streak: return "Compact Writ Seal of the Stalwart"
+        case .score: return "Compact Writ Seal of the Exalted"
+        case .games: return "Compact Writ Seal of the Novitiate"
+        }
+    }
+
+    var achievementCardNickelineStyle: String {
+        isRareAchievement ? "pale rose" : "faded pink"
+    }
+
+    var achievementApexPlusThreshold: Int {
+        switch category {
+        case .mastery: return 15000
+        case .streak: return 6000
+        case .score: return 12000
+        case .games: return 1500
+        }
+    }
 }

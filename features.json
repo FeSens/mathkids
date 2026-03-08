@@ -36457,6 +36457,96 @@
         "Verify threshold <= 1500"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2236",
+      "title": "Achievement card breithauptite style",
+      "description": "Computed property achievementCardBreithauptiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify breithauptite style is copper red",
+        "Create common achievement",
+        "Verify breithauptite style is bronze"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2237",
+      "title": "Achievement requires resolve plus",
+      "description": "Computed property achievementRequiresResolvePlus returns true for streak or mastery categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresResolvePlus is true",
+        "Create games achievement",
+        "Verify requiresResolvePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2238",
+      "title": "Achievement card compact writ seal text",
+      "description": "Computed property achievementCardCompactWritSealText returns category-based compact writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Compact Writ Seal of the Eminence",
+        "Create games achievement",
+        "Verify text is Compact Writ Seal of the Novitiate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2239",
+      "title": "Achievement card nickeline style",
+      "description": "Computed property achievementCardNickelineStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify nickeline style is pale rose",
+        "Create common achievement",
+        "Verify nickeline style is faded pink"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2240",
+      "title": "Achievement apex plus threshold",
+      "description": "Computed property achievementApexPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 15000",
+        "Create games achievement",
+        "Verify threshold <= 2000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
