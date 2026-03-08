@@ -154,6 +154,10 @@ final class StatsViewModel {
         "\(Int(accuracy))%"
     }
 
+    var correctPercentageText: String {
+        "\(Int(accuracy))% correct"
+    }
+
     var totalWrongCount: Int {
         totalSolved - totalCorrect
     }

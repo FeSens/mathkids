@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var levelProgressPercent: Int {
+        Int(levelProgress * 100)
+    }
+
     var showDailyChallengeReset: Bool {
         dailyChallengeCompleted
     }

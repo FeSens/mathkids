@@ -27,6 +27,10 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var isHighScore: Bool {
+        score >= 100
+    }
+
     var streakText: String {
         "\(currentStreak) streak"
     }

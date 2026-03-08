@@ -256,6 +256,10 @@ extension MathProblem {
         }
     }
 
+    var isChallengingProblem: Bool {
+        !isSingleDigitOperands && (operation == .multiply || operation == .divide)
+    }
+
     var isSimpleProblem: Bool {
         isSingleDigitOperands && (operation == .add || operation == .subtract)
     }

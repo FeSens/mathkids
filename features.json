@@ -10845,6 +10845,86 @@
         "12x8 is not simple"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-604",
+      "name": "HomeViewModel.levelProgressPercent",
+      "description": "Returns level progress as percentage integer",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Set levelProgress to 0.75",
+        "Verify returns 75"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-605",
+      "name": "StatsViewModel.correctPercentageText",
+      "description": "Returns correct percentage as X% correct format",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Set accuracy to 90",
+        "Verify returns 90% correct"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-606",
+      "name": "ResultsViewModel.timeBonusLabel",
+      "description": "Returns time bonus with label or No bonus",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Check bonus label format",
+        "No bonus returns appropriate text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-607",
+      "name": "GameSession.isHighScore",
+      "description": "Returns true when score >= 100",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Score below 100 is false",
+        "Score above 100 is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-608",
+      "name": "MathProblem+Extras.isChallengingProblem",
+      "description": "Returns true for multi-digit operands with multiply/divide",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "12x8 is challenging",
+        "3+2 is not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
