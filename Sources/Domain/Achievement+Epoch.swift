@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 50000000
         }
     }
+
+    var achievementCardCassiteriteStyle: String {
+        isRareAchievement ? "adamantine" : "dark"
+    }
+
+    var achievementRequiresSpine: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardInjunctionWritText: String {
+        switch category {
+        case .mastery: return "Injunction Writ of the Wise"
+        case .streak: return "Injunction Writ of the Steadfast"
+        case .score: return "Injunction Writ of the Bold"
+        case .games: return "Injunction Writ of the Willing"
+        }
+    }
+
+    var achievementCardSillimaniteStyle: String {
+        isRareAchievement ? "fibrous" : "white"
+    }
+
+    var achievementParagonThreshold: Int {
+        switch category {
+        case .mastery: return 750000000
+        case .streak: return 500000000
+        case .score: return 600000000
+        case .games: return 75000000
+        }
+    }
 }

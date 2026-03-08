@@ -35337,6 +35337,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2171",
+      "title": "Achievement Card Cassiterite Style",
+      "description": "Computed property returning cassiterite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns adamantine style",
+        "Common returns dark style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2172",
+      "title": "Achievement Requires Spine",
+      "description": "Computed property checking if achievement requires spine",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery requires spine",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2173",
+      "title": "Achievement Card Injunction Writ Text",
+      "description": "Computed property returning injunction writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2174",
+      "title": "Achievement Card Sillimanite Style",
+      "description": "Computed property returning sillimanite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns fibrous style",
+        "Common returns white style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2175",
+      "title": "Achievement Paragon Threshold",
+      "description": "Computed property returning paragon threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
