@@ -17471,6 +17471,81 @@
         "games is milestone, streak is not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1019",
+      "name": "achievementIsStreakBased",
+      "description": "Whether achievement tracks streaks",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak_5 is streak based, first_game is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1020",
+      "name": "achievementCardTitle",
+      "description": "Title formatted for card display",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "card title contains emoji and title"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1021",
+      "name": "categoryShortLabel",
+      "description": "Short 1-char label for category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak is S, games is G"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1022",
+      "name": "operationResultName",
+      "description": "Name for the result of the operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns sum, multiply returns product"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1023",
+      "name": "operationIsCommutative",
+      "description": "Whether operation order does not matter",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add is commutative, subtract is not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

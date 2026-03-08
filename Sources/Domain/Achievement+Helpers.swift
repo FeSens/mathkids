@@ -172,6 +172,14 @@ extension Achievement {
     var achievementIsAccuracyBased: Bool {
         id.contains("accuracy") || id.contains("mastery")
     }
+
+    var achievementIsStreakBased: Bool {
+        category == .streak
+    }
+
+    var achievementCardTitle: String {
+        "\(emoji) \(title)"
+    }
 }
 
 extension Achievement.Category {
@@ -252,5 +260,9 @@ extension Achievement.Category {
 
     var categoryIsMilestone: Bool {
         self == .games || self == .score
+    }
+
+    var categoryShortLabel: String {
+        String(displayName.prefix(1))
     }
 }
