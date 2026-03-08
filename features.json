@@ -20064,6 +20064,96 @@
         "Check needsHelp is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1189",
+      "name": "answeredProblemXpEarned",
+      "description": "Experience points earned based on difficulty and speed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast multiply answer",
+        "Check xpEarned > 0",
+        "Create wrong answer",
+        "Check xpEarned is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1190",
+      "name": "answeredProblemIsAddition",
+      "description": "Whether the answered problem is an addition problem",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create add problem",
+        "Check isAddition is true",
+        "Create multiply problem",
+        "Check isAddition is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1191",
+      "name": "answeredProblemIsSubtraction",
+      "description": "Whether the answered problem is a subtraction problem",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create subtract problem",
+        "Check isSubtraction is true",
+        "Create add problem",
+        "Check isSubtraction is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1192",
+      "name": "answeredProblemIsMultiplication",
+      "description": "Whether the answered problem is a multiplication problem",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create multiply problem",
+        "Check isMultiplication is true",
+        "Create add problem",
+        "Check isMultiplication is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1193",
+      "name": "answeredProblemIsDivision",
+      "description": "Whether the answered problem is a division problem",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create divide problem",
+        "Check isDivision is true",
+        "Create add problem",
+        "Check isDivision is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

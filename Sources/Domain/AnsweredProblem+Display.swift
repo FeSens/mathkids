@@ -167,4 +167,27 @@ extension AnsweredProblem {
     var answeredProblemNeedsHelp: Bool {
         !isCorrect && answeredProblemAnswerDelta >= 3
     }
+
+    var answeredProblemXpEarned: Int {
+        guard isCorrect else { return 0 }
+        let base = problem.operation.difficultyWeight * 5
+        if let time = timeTaken, time < 3.0 { return base * 2 }
+        return base
+    }
+
+    var answeredProblemIsAddition: Bool {
+        problem.operation == .add
+    }
+
+    var answeredProblemIsSubtraction: Bool {
+        problem.operation == .subtract
+    }
+
+    var answeredProblemIsMultiplication: Bool {
+        problem.operation == .multiply
+    }
+
+    var answeredProblemIsDivision: Bool {
+        problem.operation == .divide
+    }
 }
