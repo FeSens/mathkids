@@ -90,58 +90,12 @@ struct HomeView: View {
     }
 
     private var levelBadge: some View {
-        VStack(spacing: 6) {
-            HStack(spacing: 8) {
-                Text("Lv.\(viewModel.currentLevel)")
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 4)
-                    .background(
-                        Capsule().fill(
-                            LinearGradient(
-                                colors: [.blue, .purple],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                    )
-
-                Text(viewModel.levelName)
-                    .font(.system(size: 16, weight: .semibold, design: .rounded))
-                    .foregroundStyle(.primary)
-            }
-            .accessibilityIdentifier("levelBadge")
-
-            GeometryReader { geo in
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(Color.gray.opacity(0.2))
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(
-                            LinearGradient(
-                                colors: [.blue, .purple],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .frame(width: geo.size.width * viewModel.levelProgress)
-                }
-            }
-            .frame(height: 6)
-            .padding(.horizontal, 40)
-            .accessibilityIdentifier("xpProgressBar")
-
-            HStack {
-                Text("\(viewModel.totalXP) XP")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                Text("\(Int(viewModel.levelProgress * 100))%")
-                    .font(.system(size: 12, weight: .bold, design: .rounded))
-                    .foregroundStyle(.purple)
-            }
-        }
-        .accessibilityIdentifier("levelProgressSection")
+        LevelBadgeView(
+            level: viewModel.currentLevel,
+            name: viewModel.levelName,
+            progress: viewModel.levelProgress,
+            totalXP: viewModel.totalXP
+        )
     }
 
     private var statsCards: some View {
@@ -172,35 +126,8 @@ struct HomeView: View {
         }
     }
 
-    private static let mathTips = [
-        "To add 9, add 10 then subtract 1!",
-        "Doubles are easy: 6+6=12, 7+7=14, 8+8=16",
-        "To multiply by 5, multiply by 10 then divide by 2",
-        "Subtraction is the opposite of addition",
-        "To multiply by 9, multiply by 10 then subtract once",
-        "Break big numbers into friendly parts: 14+8 = 14+6+2",
-        "Even + Even = Even, Odd + Odd = Even",
-        "Any number times 0 is always 0",
-        "Practice makes permanent - keep at it!"
-    ]
-
     private var mathTipCard: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "lightbulb.fill")
-                .font(.title3)
-                .foregroundStyle(.yellow)
-
-            Text(Self.mathTips[abs(viewModel.totalSolved) % Self.mathTips.count])
-                .font(.system(size: 14, weight: .medium, design: .rounded))
-                .foregroundStyle(.secondary)
-        }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 14)
-                .fill(Color.yellow.opacity(0.08))
-        )
-        .accessibilityIdentifier("mathTipCard")
+        MathTipCard(seed: viewModel.totalSolved)
     }
 
     private var difficultyPicker: some View {
