@@ -188,4 +188,34 @@ extension Achievement {
     var achievementRequiresCommitment: Bool {
         category == .mastery || category == .streak
     }
+
+    var achievementCardAlexandriteStyle: String {
+        isRareAchievement ? "color-changing" : "static"
+    }
+
+    var achievementRequiresPerseverance: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardTenetText: String {
+        switch category {
+        case .mastery: return "Tenet of the Sage"
+        case .streak: return "Tenet of the Sentinel"
+        case .score: return "Tenet of the Archer"
+        case .games: return "Tenet of the Wanderer"
+        }
+    }
+
+    var achievementCardSpinelStyle: String {
+        isRareAchievement ? "brilliant" : "dull"
+    }
+
+    var achievementEliteThreshold: Int {
+        switch category {
+        case .mastery: return 90
+        case .streak: return 30
+        case .score: return 80
+        case .games: return 10
+        }
+    }
 }

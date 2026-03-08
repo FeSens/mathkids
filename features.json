@@ -32677,6 +32677,76 @@
         "Create games achievement",
         "Verify requiresCommitment is false"
       ]
+    },
+    {
+      "id": "logic-2001",
+      "name": "achievementCardAlexandriteStyle",
+      "description": "Alexandrite gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify alexandrite is color-changing",
+        "Create common achievement",
+        "Verify alexandrite is static"
+      ]
+    },
+    {
+      "id": "logic-2002",
+      "name": "achievementRequiresPerseverance",
+      "description": "Whether achievement requires perseverance (streak or mastery)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresPerseverance is true",
+        "Create score achievement",
+        "Verify requiresPerseverance is false"
+      ]
+    },
+    {
+      "id": "logic-2003",
+      "name": "achievementCardTenetText",
+      "description": "Tenet text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify tenet text",
+        "Create games achievement",
+        "Verify tenet text"
+      ]
+    },
+    {
+      "id": "logic-2004",
+      "name": "achievementCardSpinelStyle",
+      "description": "Spinel gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify spinel is brilliant",
+        "Create common achievement",
+        "Verify spinel is dull"
+      ]
+    },
+    {
+      "id": "logic-2005",
+      "name": "achievementEliteThreshold",
+      "description": "Elite achievement threshold based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold is high",
+        "Create games achievement",
+        "Verify threshold is low"
+      ]
     }
   ],
   "_schema": {
