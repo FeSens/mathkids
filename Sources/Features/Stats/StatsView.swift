@@ -104,6 +104,17 @@ struct StatsView: View {
             Text("Day Streak")
                 .font(.title3)
                 .foregroundStyle(.secondary)
+
+            if viewModel.totalXP > 0 {
+                HStack(spacing: 4) {
+                    Image(systemName: "sparkles")
+                        .foregroundStyle(.purple)
+                    Text("\(viewModel.totalXP) XP")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundStyle(.purple)
+                }
+                .accessibilityIdentifier("totalXPDisplay")
+            }
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 24)
@@ -221,10 +232,7 @@ struct StatsView: View {
         .accessibilityIdentifier("weeklyActivity")
     }
 
-    private var weekDays: [String] {
-        ["M", "T", "W", "T", "F", "S", "S"]
-    }
-
+    private var weekDays: [String] { ["M", "T", "W", "T", "F", "S", "S"] }
     private var currentDayOfWeek: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "E"

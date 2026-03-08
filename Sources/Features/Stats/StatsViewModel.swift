@@ -20,6 +20,7 @@ final class StatsViewModel {
     var favoriteOperation: String?
     var favoriteOperationCount: Int = 0
     var totalTimePlayedMinutes: Int = 0
+    var totalXP: Int = 0
 
     var formattedTimePlayed: String {
         if totalTimePlayedMinutes >= 60 {
@@ -76,6 +77,7 @@ final class StatsViewModel {
         hardGames = stats.hardGamesPlayed
         recentAccuracies = stats.recentAccuracies
         totalTimePlayedMinutes = stats.totalTimePlayedSeconds / 60
+        totalXP = stats.totalXP
         if let fav = stats.favoriteOperation {
             favoriteOperation = fav.symbol
             favoriteOperationCount = fav.count

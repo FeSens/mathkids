@@ -10,6 +10,7 @@ struct GameView: View {
     @State private var emojiOffset: CGFloat = 0
     @State private var emojiOpacity: Double = 1
     @State private var gradientShift: Bool = false
+    @State private var cursorBlink: Bool = false
 
     var body: some View {
         ZStack {
@@ -133,7 +134,10 @@ struct GameView: View {
         .onChange(of: viewModel.isGameOver) { _, isOver in
             if isOver {
                 urgentFlash = false
-                onGameEnd(viewModel.session, viewModel.lastProblemHistory)
+                Task { @MainActor in
+                    try? await Task.sleep(for: .milliseconds(500))
+                    onGameEnd(viewModel.session, viewModel.lastProblemHistory)
+                }
             }
         }
         .onChange(of: viewModel.problemTransitionId) { _, _ in
@@ -213,7 +217,14 @@ struct GameView: View {
     }
 
     private var answerDisplay: some View {
-        Text(viewModel.answerText.isEmpty ? "?" : viewModel.answerText)
+        Text(viewModel.answerText.isEmpty ? "" : viewModel.answerText)
+            .overlay(alignment: .trailing) {
+                if viewModel.answerText.isEmpty {
+                    Text("|").opacity(cursorBlink ? 1 : 0)
+                        .animation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true), value: cursorBlink)
+                        .onAppear { cursorBlink = true }
+                }
+            }
             .font(.system(size: 48, weight: .bold, design: .rounded))
             .foregroundStyle(viewModel.answerText.isEmpty ? .gray : .primary)
             .scaleEffect(answerScale)
@@ -252,23 +263,12 @@ struct GameView: View {
                 }
             }
             HStack(spacing: 12) {
-                NumberButton(label: "+/-", color: .gray) {
-                    viewModel.toggleNegative()
-                }
-                .accessibilityIdentifier("num_negative")
-                .accessibilityLabel("Toggle negative")
-
-                NumberButton(label: "0") {
-                    viewModel.appendDigit(0)
-                }
-                .accessibilityIdentifier("num_0")
-                .accessibilityLabel("Zero")
-
-                NumberButton(label: "⌫", color: .gray) {
-                    viewModel.deleteDigit()
-                }
-                .accessibilityIdentifier("num_delete")
-                .accessibilityLabel("Delete")
+                NumberButton(label: "+/-", color: .gray) { viewModel.toggleNegative() }
+                    .accessibilityIdentifier("num_negative").accessibilityLabel("Toggle negative")
+                NumberButton(label: "0") { viewModel.appendDigit(0) }
+                    .accessibilityIdentifier("num_0").accessibilityLabel("Zero")
+                NumberButton(label: "⌫", color: .gray) { viewModel.deleteDigit() }
+                    .accessibilityIdentifier("num_delete").accessibilityLabel("Delete")
             }
 
             Button { viewModel.submitAnswer() } label: {
@@ -284,14 +284,9 @@ struct GameView: View {
             .buttonStyle(BounceButtonStyle())
 
             if viewModel.isPracticeMode {
-                Button {
-                    viewModel.skipProblem()
-                } label: {
-                    Text("Skip")
-                        .font(.system(size: 18, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.secondary)
-                }
-                .accessibilityIdentifier("skipButton")
+                Button { viewModel.skipProblem() } label: {
+                    Text("Skip").font(.system(size: 18, weight: .semibold, design: .rounded)).foregroundStyle(.secondary)
+                }.accessibilityIdentifier("skipButton")
             }
         }
     }

@@ -2687,6 +2687,98 @@
         "Sources/Features/Results/AchievementToast.swift",
         "Sources/Services/HapticService.swift"
       ]
+    },
+    {
+      "id": "ui-129",
+      "title": "Accessibility VoiceOver improvements",
+      "description": "Ensure all interactive elements have proper accessibility labels and hints",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-058"
+      ],
+      "test_steps": [
+        "All buttons have accessibility labels",
+        "Score and streak have descriptive labels",
+        "Timer has remaining time label",
+        "Number pad buttons have proper labels"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-130",
+      "title": "Dynamic type support on key screens",
+      "description": "Key text elements respect system dynamic type settings",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Change system text size to largest",
+        "Home screen text scales appropriately",
+        "Results screen text scales appropriately"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-131",
+      "title": "Answer field cursor blink effect",
+      "description": "The answer field shows a blinking cursor when empty",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Start a game",
+        "Empty answer field shows blinking cursor",
+        "Cursor disappears when digits are entered"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-132",
+      "title": "Stats page total XP display",
+      "description": "Show total XP earned on the stats page alongside level",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Stats page shows total XP value",
+        "XP displayed with sparkle icon"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift"
+      ]
+    },
+    {
+      "id": "ui-133",
+      "title": "Game over screen transition delay",
+      "description": "Short delay before transitioning to results to let final animation play",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Game timer reaches 0",
+        "Brief pause before results appear",
+        "Allows final celebration/sound to complete"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
     }
   ],
   "_schema": {
