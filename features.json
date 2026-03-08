@@ -41127,6 +41127,106 @@
         "Verify threshold <= 28000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2481",
+      "title": "achievementCardPyrargyriteUltraStyle",
+      "description": "Mineral style string for pyrargyrite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pyrargyrite ultra style is deep red prismatic",
+        "Create common achievement",
+        "Verify pyrargyrite ultra style is dull crimson matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2482",
+      "title": "achievementRequiresEmpyreanPlus",
+      "description": "Whether achievement requires empyrean plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires empyrean plus is true",
+        "Create score achievement",
+        "Verify requires empyrean plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2483",
+      "title": "achievementCardAccordWritSealMaxText",
+      "description": "Accord writ seal max text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Accord Writ Seal Max of the Arcane",
+        "Create games achievement",
+        "Verify text is Accord Writ Seal Max of the Pupil"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2484",
+      "title": "achievementCardMiargyriteUltraStyle",
+      "description": "Mineral style string for miargyrite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify miargyrite ultra style is steel grey monoclinic",
+        "Create common achievement",
+        "Verify miargyrite ultra style is flat pewter matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2485",
+      "title": "achievementHelheimPlusPlusThreshold",
+      "description": "Helheim plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 165000000",
+        "Create games achievement",
+        "Verify threshold <= 28000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
