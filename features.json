@@ -14127,6 +14127,86 @@
         "Verify contains emoji and title"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-809",
+      "name": "DifficultyLevel.numberOfOperations",
+      "description": "Formatted string showing number of operations like '2 operations'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get numberOfOperations for easy",
+        "Verify returns correct count text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-810",
+      "name": "DifficultyLevel.difficultyPercentage",
+      "description": "Difficulty as percentage 0-100 (easy=33, medium=66, hard=100)",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get difficultyPercentage for hard",
+        "Verify returns 100"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-811",
+      "name": "MathProblem.operandRangeText",
+      "description": "Text describing the range of operands like '1-10'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with operands 3 and 7",
+        "Verify operandRangeText returns '3-7'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-812",
+      "name": "MathProblem.requiresCarrying",
+      "description": "Boolean true for addition where ones digits sum > 9",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem 7 + 8",
+        "Verify requiresCarrying is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-813",
+      "name": "AnsweredProblem.responseTime",
+      "description": "Response time category: fast, normal, slow",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create answered problem with 1s time",
+        "Verify responseTime returns 'fast'"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

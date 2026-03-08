@@ -108,3 +108,16 @@ extension Operation {
         }
     }
 }
+
+extension MathProblem {
+    var operandRangeText: String {
+        let low = min(operand1, operand2)
+        let high = max(operand1, operand2)
+        return "\(low)-\(high)"
+    }
+
+    var requiresCarrying: Bool {
+        guard operation == .add else { return false }
+        return (operand1 % 10) + (operand2 % 10) > 9
+    }
+}

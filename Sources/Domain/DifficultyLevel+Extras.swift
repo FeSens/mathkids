@@ -105,4 +105,17 @@ extension DifficultyLevel {
         case .hard: return "Impressive! You tackled hard mode!"
         }
     }
+
+    var numberOfOperations: String {
+        let count = operationCount
+        return count == 1 ? "1 operation" : "\(count) operations"
+    }
+
+    var difficultyPercentage: Int {
+        switch self {
+        case .easy: return 33
+        case .medium: return 66
+        case .hard: return 100
+        }
+    }
 }
