@@ -3973,6 +3973,95 @@
         "Sources/Features/Game/ShakeEffect.swift",
         "Sources/Features/Game/GameView.swift"
       ]
+    },
+    {
+      "id": "ui-199",
+      "title": "Results accuracy determines header emoji and text",
+      "description": "Results header shows different emoji and text based on accuracy percentage",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-008"
+      ],
+      "test_steps": [
+        "90%+ shows crown or trophy with 'Amazing!'",
+        "70-89% shows star with 'Great Job!'",
+        "50-69% shows thumbs up with 'Nice Try!'",
+        "Below 50% shows muscle with 'Keep Practicing!'"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-200",
+      "title": "XP earned calculation based on correct answers",
+      "description": "XP earned considers number of correct answers and streak bonuses",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-172"
+      ],
+      "test_steps": [
+        "Complete a game with correct answers",
+        "XP earned displayed on results",
+        "Streak bonus increases XP per answer"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "logic-201",
+      "title": "StatsService manages stats creation and persistence",
+      "description": "StatsService creates or retrieves PlayerStats from SwiftData",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "getOrCreateStats returns existing stats",
+        "resetStats clears all stats",
+        "Multiple calls return the same instance"
+      ],
+      "files": [
+        "Sources/Services/StatsService.swift"
+      ]
+    },
+    {
+      "id": "ui-202",
+      "title": "NavigationStack with typed AppRoute",
+      "description": "App uses NavigationStack with typed AppRoute enum for navigation",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "AppRoute has cases for home, game, results, stats",
+        "ContentView uses NavigationStack with path",
+        "Navigation transitions work between screens"
+      ],
+      "files": [
+        "Sources/App/AppRouter.swift",
+        "Sources/App/ContentView.swift"
+      ]
+    },
+    {
+      "id": "ui-203",
+      "title": "Scroll view wrapping for results screen",
+      "description": "Results screen content is in a ScrollView to handle long content",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-008"
+      ],
+      "test_steps": [
+        "Complete a game",
+        "Results screen is scrollable",
+        "All content accessible by scrolling"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift"
+      ]
     }
   ],
   "_schema": {
