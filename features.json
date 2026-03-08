@@ -28589,6 +28589,86 @@
         "Verify effortDescription by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1729",
+      "title": "Achievement Difficulty Rating",
+      "description": "Returns numeric difficulty rating",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify difficultyRating by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1730",
+      "title": "Achievement Gradient Start Color",
+      "description": "Returns gradient start color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardGradientStart by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1731",
+      "title": "Achievement Is Finishable",
+      "description": "Returns whether achievement can be completed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isCompletable is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1732",
+      "title": "Achievement Card Title Font",
+      "description": "Returns font name for card title",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardTitleFont by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1733",
+      "title": "Achievement Points Summary",
+      "description": "Returns points summary text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify pointsSummary contains point value"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

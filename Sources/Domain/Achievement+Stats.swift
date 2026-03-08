@@ -25,4 +25,34 @@ extension Achievement {
         case .games: return "Requires playing games"
         }
     }
+
+    var achievementDifficultyRating: Int {
+        switch category {
+        case .mastery: return 5
+        case .streak: return 3
+        case .score: return 2
+        case .games: return 1
+        }
+    }
+
+    var achievementGradientStartColor: String {
+        switch category {
+        case .mastery: return "purple"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementIsFinishable: Bool {
+        true
+    }
+
+    var achievementCardTitleFont: String {
+        isRareAchievement ? "bold" : "regular"
+    }
+
+    var achievementPointsSummary: String {
+        "\(pointValue) points"
+    }
 }
