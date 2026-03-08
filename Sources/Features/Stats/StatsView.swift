@@ -20,6 +20,24 @@ struct StatsView: View {
                         .opacity(showCards ? 1 : 0)
                         .offset(y: showCards ? 0 : 20)
 
+                    operationStreaksSection
+                        .opacity(showCards ? 1 : 0)
+                        .offset(y: showCards ? 0 : 20)
+
+                    if viewModel.perfectGameCount > 0 {
+                        HStack(spacing: 8) {
+                            Image(systemName: "star.circle.fill")
+                                .foregroundStyle(.yellow)
+                            Text("\(viewModel.perfectGameCount) Perfect Game\(viewModel.perfectGameCount == 1 ? "" : "s")")
+                                .font(.system(size: 16, weight: .bold, design: .rounded))
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 10)
+                        .background(Capsule().fill(Color.yellow.opacity(0.15)))
+                        .accessibilityIdentifier("perfectGameCount")
+                        .opacity(showCards ? 1 : 0)
+                    }
+
                     EloChartView(
                         addHistory: viewModel.eloHistoryAdd,
                         subtractHistory: viewModel.eloHistorySubtract,
@@ -192,6 +210,21 @@ struct StatsView: View {
         }
     }
 
+    private var operationStreaksSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Best Streaks by Operation")
+                .font(.headline)
+
+            HStack(spacing: 12) {
+                OperationStreakCard(symbol: "+", streak: viewModel.bestStreakAdd, color: .green)
+                OperationStreakCard(symbol: "-", streak: viewModel.bestStreakSubtract, color: .blue)
+                OperationStreakCard(symbol: "\u{00d7}", streak: viewModel.bestStreakMultiply, color: .orange)
+                OperationStreakCard(symbol: "\u{00f7}", streak: viewModel.bestStreakDivide, color: .purple)
+            }
+        }
+        .accessibilityIdentifier("operationStreaks")
+    }
+
     private var accuracyTrend: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Accuracy Trend")
@@ -280,6 +313,28 @@ struct LifetimeStat: View {
             RoundedRectangle(cornerRadius: 16)
                 .fill(color.opacity(0.1))
         )
+    }
+}
+
+struct OperationStreakCard: View {
+    let symbol: String
+    let streak: Int
+    let color: Color
+
+    var body: some View {
+        VStack(spacing: 4) {
+            Text(symbol)
+                .font(.system(size: 18, weight: .bold, design: .rounded))
+                .foregroundStyle(color)
+            Text("\(streak)")
+                .font(.system(size: 20, weight: .bold, design: .rounded))
+            Text("streak")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 10)
+        .background(RoundedRectangle(cornerRadius: 12).fill(color.opacity(0.1)))
     }
 }
 

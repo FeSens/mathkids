@@ -1,5 +1,35 @@
 # Claude Progress
 
+## Session 26 — 2026-03-08
+
+### Status
+- Features: 2581/2581 passing (all features complete)
+- Unit tests: 4832 (all green)
+- UI tests: 12
+- QA: Needs re-run after improvement features
+
+### Improvement Features Round 2-3 (improve-006 through improve-014)
+- **improve-006**: Elo delta computation via EloSystem.computeDeltas()
+- **improve-007**: Adaptive operation weighting (weightsFromElo in ProblemGenerator, wired into GameEngine)
+- **improve-008**: Average response time per operation in ResultsViewModel
+- **improve-009**: Session accuracy vs lifetime average comparison
+- **improve-010**: EloDeltaView UI with green/red arrows on results screen
+- **improve-011**: Per-operation best streaks in StatsViewModel
+- **improve-012**: Perfect game counter in StatsViewModel
+- **improve-013**: AccuracyComparisonView UI on results screen
+- **improve-014**: SpeedBreakdownView highlighting slowest operation
+
+### Key Files Changed
+- ResultsViewModel.swift: eloDeltas, averageTimePerOperation, slowestOperationThisGame, accuracyVsAverage
+- ResultsComponents.swift: EloDeltaView, AccuracyComparisonView, SpeedBreakdownView
+- ResultsView.swift: Wired new components into results screen
+- GameEngine.swift: Operation weights from Elo ratings passed to problem generation
+- StatsViewModel.swift: bestStreakAdd/Subtract/Multiply/Divide, perfectGameCount
+
+### Next Steps
+- QA mode re-run or continue improvement features
+- Many stats still not surfaced (per-difficulty accuracy, XP breakdown, weekly goals)
+
 ## Session 25 — 2026-03-08
 
 ### Status
