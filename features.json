@@ -12927,6 +12927,86 @@
         "Verify appropriate emoji returned"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-734",
+      "name": "averagePointsPerQuestion",
+      "description": "Average points earned per question answered",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with answers",
+        "Verify averagePointsPerQuestion returns correct average"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-735",
+      "name": "isUltraStreak",
+      "description": "Boolean true when current streak is 7+",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 7 correct",
+        "Verify isHotStreak is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-736",
+      "name": "timeStatusText",
+      "description": "Text showing time status like 'Plenty of time' or 'Running low'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with various time remaining",
+        "Verify appropriate status text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-737",
+      "name": "scoreGradeText",
+      "description": "Letter grade based on score percentage of max",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with high score",
+        "Verify scoreGradeText returns 'A'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-738",
+      "name": "nextMilestone",
+      "description": "Next score milestone to reach (multiples of 50)",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with score of 30",
+        "Verify nextMilestone returns 50"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

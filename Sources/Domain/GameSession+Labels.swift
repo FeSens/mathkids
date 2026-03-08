@@ -161,6 +161,37 @@ extension GameSession {
         totalAnswered >= 3 && accuracy < 40 && currentStreak == 0
     }
 
+    var averagePointsPerQuestion: Int {
+        guard totalAnswered > 0 else { return 0 }
+        return score / totalAnswered
+    }
+
+    var isUltraStreak: Bool {
+        currentStreak >= 7
+    }
+
+    var timeStatusText: String {
+        let pct = difficulty.timeLimitSeconds > 0
+            ? timeRemaining * 100 / difficulty.timeLimitSeconds
+            : 100
+        if pct > 50 { return "Plenty of time" }
+        if pct > 15 { return "Running low!" }
+        return "Hurry!"
+    }
+
+    var scoreGradeText: String {
+        let pct = scorePercentOfMax
+        if pct >= 90 { return "A" }
+        if pct >= 75 { return "B" }
+        if pct >= 60 { return "C" }
+        if pct >= 40 { return "D" }
+        return "F"
+    }
+
+    var nextMilestone: Int {
+        ((score / 50) + 1) * 50
+    }
+
     var progressEmoji: String {
         let pct = difficulty.timeLimitSeconds > 0
             ? totalTimePlayed * 100 / difficulty.timeLimitSeconds
