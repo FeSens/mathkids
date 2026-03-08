@@ -13887,6 +13887,86 @@
         "Verify summaryText contains checkmark"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-794",
+      "name": "AnsweredProblem.pointsEarned",
+      "description": "Points earned for this answer (positive for correct, negative for wrong)",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create correct answered problem",
+        "Verify pointsEarned is positive"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-795",
+      "name": "AnsweredProblem.userAnswerText",
+      "description": "User's answer as formatted string",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create answered problem with answer 5",
+        "Verify userAnswerText returns '5'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-796",
+      "name": "AnsweredProblem.correctAnswerDisplay",
+      "description": "Display of the correct answer for review",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create answered problem",
+        "Verify correctAnswerDisplay shows correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-797",
+      "name": "AnsweredProblem.mistakeDescription",
+      "description": "Description of the mistake if wrong, empty if correct",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create wrong answered problem",
+        "Verify mistakeDescription describes the error"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-798",
+      "name": "AnsweredProblem.difficultyLabel",
+      "description": "Label showing problem difficulty based on operands",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create answered problem",
+        "Verify difficultyLabel is non-empty"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

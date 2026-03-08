@@ -22,4 +22,25 @@ extension AnsweredProblem {
     var summaryText: String {
         "\(problem.formattedProblem) \(resultEmoji)"
     }
+
+    var pointsEarned: Int {
+        isCorrect ? 10 : -5
+    }
+
+    var userAnswerText: String {
+        "\(userAnswer)"
+    }
+
+    var correctAnswerDisplay: String {
+        "\(problem.correctAnswer)"
+    }
+
+    var mistakeDescription: String {
+        guard !isCorrect else { return "" }
+        return "You answered \(userAnswer), correct answer is \(problem.correctAnswer)"
+    }
+
+    var difficultyLabel: String {
+        problem.problemCategoryText
+    }
 }
