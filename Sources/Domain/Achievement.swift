@@ -189,6 +189,10 @@ struct Achievement: Identifiable {
         return unlockedCount(for: stats) * 100 / totalCount
     }
 
+    static func firstLockedAchievement(for stats: PlayerStats) -> Achievement? {
+        all.first { !$0.isUnlocked(stats: stats) }
+    }
+
     static func hasUnlockedAll(for stats: PlayerStats) -> Bool {
         unlockedCount(for: stats) == totalCount
     }

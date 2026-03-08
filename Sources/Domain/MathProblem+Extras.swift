@@ -171,6 +171,10 @@ extension MathProblem {
         operand1 == operand2
     }
 
+    var largerOperand: Int {
+        max(operand1, operand2)
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0

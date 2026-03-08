@@ -223,6 +223,10 @@ extension GameSession {
         return bestStreak * 100 / totalAnswered
     }
 
+    func pointsNeededForTarget(target: Int) -> Int {
+        max(target - score, 0)
+    }
+
     var averageTimePerAnswer: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalTimePlayed) / Double(totalAnswered)

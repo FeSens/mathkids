@@ -8748,6 +8748,88 @@
         "Verify 3+5 returns false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-474",
+      "title": "GameSession pointsNeededForTarget calculates gap",
+      "description": "GameSession should expose pointsNeededForTarget(target:) returning how many more points needed",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 20 score with target 100 returns 80",
+        "Verify score exceeds target returns 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-475",
+      "title": "Achievement firstLockedAchievement returns first locked",
+      "description": "Achievement should expose firstLockedAchievement(for:) returning the first locked achievement in order",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify fresh stats returns first achievement",
+        "Verify returns nil when all unlocked"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-476",
+      "title": "DifficultyLevel isUnlocked based on games played",
+      "description": "DifficultyLevel should expose isUnlocked(gamesPlayed:) - easy always true, medium needs 3, hard needs 10",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy always unlocked",
+        "Verify medium needs 3 games",
+        "Verify hard needs 10 games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-477",
+      "title": "Operation allDisplayNames returns all operation display names",
+      "description": "Operation should expose allDisplayNames static property returning array of all display names",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify count matches allCases",
+        "Verify contains Addition"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-478",
+      "title": "MathProblem largerOperand returns the bigger operand",
+      "description": "MathProblem should expose largerOperand returning max(operand1, operand2)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3+5 returns 5",
+        "Verify 7+2 returns 7",
+        "Verify 4+4 returns 4"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

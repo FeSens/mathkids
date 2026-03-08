@@ -129,6 +129,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         return pairs
     }
 
+    static var allDisplayNames: [String] {
+        allCases.map(\.displayName)
+    }
+
     func pairKey(with other: Operation) -> String {
         if self == other { return displayName }
         let names = [self.displayName, other.displayName].sorted()
