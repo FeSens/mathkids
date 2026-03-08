@@ -50,4 +50,24 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementRequiredStreak: Int {
+        category == .streak ? 5 : 0
+    }
+
+    var achievementCardBackgroundImage: String {
+        isRareAchievement ? "premium_bg" : "default_bg"
+    }
+
+    var achievementIsMultiplayer: Bool {
+        false
+    }
+
+    var achievementNotificationSound: String {
+        isRareAchievement ? "achievement_rare" : "achievement_common"
+    }
+
+    var achievementGradientAngle: Int {
+        isRareAchievement ? 45 : 0
+    }
 }

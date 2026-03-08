@@ -1,5 +1,23 @@
 # Claude Progress
 
+## Session 18 — 2026-03-08
+
+### Status
+- Features: 1593/1593 passing (12 MVP + 9 polish + 1572 improvement)
+- Unit tests: ~3000+ (all green across ~300 suites)
+- UI tests: 12
+- QA: PASSED
+
+### Session 18 Features (batches 285-300)
+- Batches 285-288: logic-1504 to logic-1523 (20 features) — Achievement+Metadata
+- Batches 289-292: logic-1524 to logic-1543 (20 features) — Achievement+Analytics (new file)
+- Batches 293-298: logic-1544 to logic-1573 (30 features) — Achievement+Analytics
+- Batches 299-300: logic-1574 to logic-1583 (10 features) — Achievement+Rewards (new file)
+- Total this session: 80 features (continuing)
+- New files: Achievement+Analytics.swift (~290), Achievement+Rewards.swift (~60)
+- Files near limit: Achievement+Metadata (~280, nearly full), Achievement+Analytics (~290, nearly full)
+- Name collisions resolved: achievementDifficultyLabel→achievementDifficultyTag, achievementShareText→achievementSocialText, achievementNotificationTitle→achievementAlertTitle, achievementDifficultyStars→achievementChallengeTier, achievementNotificationBody→achievementAlertBody
+
 ## Session 17 — 2026-03-08
 
 ### Status

@@ -26452,6 +26452,79 @@
         "Create games achievement",
         "Verify nextMilestone == 1"
       ]
+    },
+    {
+      "id": "logic-1584",
+      "title": "achievementRequiredStreak",
+      "description": "Return required streak count for this type",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiredStreak >= 5",
+        "Create games achievement",
+        "Verify requiredStreak == 0"
+      ]
+    },
+    {
+      "id": "logic-1585",
+      "title": "achievementCardBackgroundImage",
+      "description": "Return background image name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify image is premium_bg",
+        "Create common achievement",
+        "Verify image is default_bg"
+      ]
+    },
+    {
+      "id": "logic-1586",
+      "title": "achievementIsMultiplayer",
+      "description": "Return whether achievement supports multiplayer",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify isMultiplayer is false"
+      ]
+    },
+    {
+      "id": "logic-1587",
+      "title": "achievementNotificationSound",
+      "description": "Return notification sound file name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify sound is achievement_rare",
+        "Create common achievement",
+        "Verify sound is achievement_common"
+      ]
+    },
+    {
+      "id": "logic-1588",
+      "title": "achievementGradientAngle",
+      "description": "Return gradient angle for card background",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify angle is 45",
+        "Create common achievement",
+        "Verify angle is 0"
+      ]
     }
   ],
   "_schema": {
