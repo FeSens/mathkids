@@ -214,4 +214,29 @@ extension AnsweredProblem {
         if let time = timeTaken, time < 3.0 { return "Great! Try the next challenge" }
         return "Good, keep practicing for speed"
     }
+
+    var answeredProblemAccessibilityAction: String {
+        isCorrect ? "Answer was correct" : "Answer was incorrect, correct answer is \(problem.correctAnswer)"
+    }
+
+    var answeredProblemIsDoubleDigitProblem: Bool {
+        problem.operand1 >= 10 && problem.operand2 >= 10
+    }
+
+    var answeredProblemRetentionScore: Int {
+        guard isCorrect else { return 0 }
+        if let time = timeTaken, time < 3.0 { return 10 }
+        if let time = timeTaken, time < 6.0 { return 7 }
+        return 4
+    }
+
+    var answeredProblemAnimationType: String {
+        guard isCorrect else { return "shake" }
+        if let time = timeTaken, time < 3.0 { return "confetti" }
+        return "none"
+    }
+
+    var answeredProblemSessionContribution: String {
+        isCorrect ? "100%" : "0%"
+    }
 }

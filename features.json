@@ -21226,6 +21226,96 @@
         "Check suggestion contains practice"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1254",
+      "name": "answeredProblemAccessibilityAction",
+      "description": "VoiceOver action description for the result",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check action contains correct",
+        "Create wrong answer",
+        "Check action contains incorrect"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1255",
+      "name": "answeredProblemIsDoubleDigitProblem",
+      "description": "Whether both operands are double digits",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create problem with both operands >= 10",
+        "Check is true",
+        "Create problem with single digit operands",
+        "Check is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1256",
+      "name": "answeredProblemRetentionScore",
+      "description": "Score indicating retention level (0-10)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check score is 10",
+        "Create wrong answer",
+        "Check score is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1257",
+      "name": "answeredProblemAnimationType",
+      "description": "Animation to show: confetti, shake, or none",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check animation is confetti",
+        "Create wrong answer",
+        "Check animation is shake"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1258",
+      "name": "answeredProblemSessionContribution",
+      "description": "How much this answer contributes to session score (percentage string)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check contains 100%",
+        "Create wrong answer",
+        "Check contains 0%"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
