@@ -140,4 +140,33 @@ extension GameSession {
         guard totalAnswered > 0, totalCorrect == totalAnswered else { return "" }
         return "Perfect Game!"
     }
+
+    var difficultyScoreMultiplier: Int {
+        switch difficulty {
+        case .easy: return 1
+        case .medium: return 2
+        case .hard: return 3
+        }
+    }
+
+    var isComebackStory: Bool {
+        accuracy < 70 && currentStreak >= 3
+    }
+
+    var endOfGameSummary: String {
+        "Score: \(score) | Accuracy: \(Int(accuracy))% | Best Streak: \(bestStreak)"
+    }
+
+    var shouldShowHint: Bool {
+        totalAnswered >= 3 && accuracy < 40 && currentStreak == 0
+    }
+
+    var progressEmoji: String {
+        let pct = difficulty.timeLimitSeconds > 0
+            ? totalTimePlayed * 100 / difficulty.timeLimitSeconds
+            : 0
+        if pct >= 80 { return "🏆" }
+        if pct >= 40 { return "🏃" }
+        return "🏁"
+    }
 }

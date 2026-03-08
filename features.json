@@ -12847,6 +12847,86 @@
         "Verify perfectGameText returns celebration text"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-729",
+      "name": "difficultyScoreMultiplier",
+      "description": "Integer score multiplier: easy=1, medium=2, hard=3",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create sessions at each difficulty",
+        "Verify correct multipliers"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-730",
+      "name": "isComebackStory",
+      "description": "Boolean true when accuracy was low but streak is now high",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with initial wrongs then correct streak",
+        "Verify isComeback returns true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-731",
+      "name": "endOfGameSummary",
+      "description": "Multi-line summary text for end of game display",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create finished session",
+        "Verify endOfGameSummary contains score and accuracy"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-732",
+      "name": "shouldShowHint",
+      "description": "Boolean suggesting when to show hints based on consecutive wrong answers",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with streak broken",
+        "Verify shouldShowHint based on accuracy"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-733",
+      "name": "progressEmoji",
+      "description": "Emoji representing progress through the game",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session at various progress points",
+        "Verify appropriate emoji returned"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
