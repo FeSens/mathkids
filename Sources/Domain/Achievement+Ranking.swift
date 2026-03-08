@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return "green"
         }
     }
+
+    var achievementCardPedestalStyle: String {
+        isRareAchievement ? "marble" : "wood"
+    }
+
+    var achievementIsFrequencyBased: Bool {
+        category == .streak || category == .games
+    }
+
+    var achievementCardLaurelStyle: String {
+        isRareAchievement ? "golden" : "none"
+    }
+
+    var achievementMinRoundsPlayed: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 20
+        case .score: return 10
+        case .games: return 1
+        }
+    }
+
+    var achievementCardPlateColor: String {
+        switch category {
+        case .mastery: return "gold"
+        case .streak: return "copper"
+        case .score: return "bronze"
+        case .games: return "silver"
+        }
+    }
 }

@@ -30969,6 +30969,76 @@
         "Create games achievement",
         "Verify bannerColor is green"
       ]
+    },
+    {
+      "id": "logic-1879",
+      "name": "achievementCardPedestalStyle",
+      "description": "Pedestal style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pedestal is marble",
+        "Create common achievement",
+        "Verify pedestal is wood"
+      ]
+    },
+    {
+      "id": "logic-1880",
+      "name": "achievementIsFrequencyBased",
+      "description": "Whether achievement tracks frequency (streak or games)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify isFrequencyBased is true",
+        "Create mastery achievement",
+        "Verify isFrequencyBased is false"
+      ]
+    },
+    {
+      "id": "logic-1881",
+      "name": "achievementCardLaurelStyle",
+      "description": "Laurel wreath style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify laurel is golden",
+        "Create common achievement",
+        "Verify laurel is none"
+      ]
+    },
+    {
+      "id": "logic-1882",
+      "name": "achievementMinRoundsPlayed",
+      "description": "Minimum rounds played requirement based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify minRounds is high",
+        "Create games achievement",
+        "Verify minRounds is low"
+      ]
+    },
+    {
+      "id": "logic-1883",
+      "name": "achievementCardPlateColor",
+      "description": "Name plate color for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify plateColor is gold",
+        "Create games achievement",
+        "Verify plateColor is silver"
+      ]
     }
   ],
   "_schema": {
