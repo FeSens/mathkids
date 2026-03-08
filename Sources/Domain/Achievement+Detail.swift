@@ -183,4 +183,34 @@ extension Achievement {
     var achievementCardBorderWidth: Double {
         isRareAchievement ? 3 : 1
     }
+
+    var achievementEarnedDateFormat: String {
+        "MM/dd/yyyy"
+    }
+
+    var achievementCardFontSize: Double {
+        switch category {
+        case .mastery: return 18
+        case .streak: return 16
+        case .score: return 15
+        case .games: return 14
+        }
+    }
+
+    var achievementTierLabel: String {
+        switch category {
+        case .mastery: return "Platinum"
+        case .streak: return "Gold"
+        case .score: return "Silver"
+        case .games: return "Bronze"
+        }
+    }
+
+    var achievementIsFeaturedItem: Bool {
+        isRareAchievement
+    }
+
+    var achievementCardEmojiSize: Double {
+        isRareAchievement ? 48 : 32
+    }
 }

@@ -28349,6 +28349,86 @@
         "Verify cardBorderWidth by rarity"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1714",
+      "title": "Achievement Earned Date Format",
+      "description": "Returns date format string for earned date",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify earnedDateFormat contains date pattern"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1715",
+      "title": "Achievement Card Font Size",
+      "description": "Returns font size for achievement card title",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardFontSize by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1716",
+      "title": "Achievement Tier Label",
+      "description": "Returns tier label string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify tierLabel by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1717",
+      "title": "Achievement Is Featured Item",
+      "description": "Returns whether achievement should be featured",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isFeatured for rare vs common"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1718",
+      "title": "Achievement Card Emoji Size",
+      "description": "Returns emoji size for achievement card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardEmojiSize by rarity"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
