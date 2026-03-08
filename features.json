@@ -34937,6 +34937,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2146",
+      "title": "Achievement Card Clinohumite Style",
+      "description": "Computed property returning clinohumite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns amber style",
+        "Common returns dull style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2147",
+      "title": "Achievement Requires Nerve",
+      "description": "Computed property checking if achievement requires nerve",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Score requires nerve",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2148",
+      "title": "Achievement Card Charter Writ Text",
+      "description": "Computed property returning charter writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2149",
+      "title": "Achievement Card Scapolite Style",
+      "description": "Computed property returning scapolite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns golden style",
+        "Common returns white style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2150",
+      "title": "Achievement Pantheon Threshold",
+      "description": "Computed property returning pantheon threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

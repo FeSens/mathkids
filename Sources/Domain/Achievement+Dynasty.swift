@@ -210,4 +210,34 @@ extension Achievement {
         case .games: return 1500000
         }
     }
+
+    var achievementCardClinohumiteStyle: String {
+        isRareAchievement ? "amber" : "dull"
+    }
+
+    var achievementRequiresNerve: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardCharterWritText: String {
+        switch category {
+        case .mastery: return "Charter Writ of the Academy"
+        case .streak: return "Charter Writ of the Order"
+        case .score: return "Charter Writ of the Guild"
+        case .games: return "Charter Writ of the Commons"
+        }
+    }
+
+    var achievementCardScapoliteStyle: String {
+        isRareAchievement ? "golden" : "white"
+    }
+
+    var achievementPantheonThreshold: Int {
+        switch category {
+        case .mastery: return 20000000
+        case .streak: return 10000000
+        case .score: return 15000000
+        case .games: return 2000000
+        }
+    }
 }
