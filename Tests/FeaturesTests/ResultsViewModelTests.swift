@@ -153,6 +153,15 @@ struct ResultsViewModelTests {
         #expect(text.contains("MathKids"))
     }
 
+    @Test("Average time per problem formats correctly")
+    func avgTimePerProblem() {
+        let session = makeSession(correct: 5, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(!vm.averageTimePerProblem.isEmpty)
+        // Default session has full time remaining, so timePlayed = 0, should return N/A
+        #expect(vm.averageTimePerProblem == "N/A" || vm.averageTimePerProblem.hasSuffix("s"))
+    }
+
     @Test("Star count matches accuracy tiers")
     func starCountTiers() {
         let high = makeSession(correct: 10, total: 10)

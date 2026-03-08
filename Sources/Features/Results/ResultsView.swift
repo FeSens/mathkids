@@ -211,12 +211,20 @@ struct ResultsView: View {
             .accessibilityIdentifier("accuracyStat")
 
             ResultStat(
-                label: "Best Streak",
+                label: "Streak",
                 value: "\(viewModel.bestStreak)",
                 icon: "flame.fill",
                 color: .orange
             )
             .accessibilityIdentifier("streakStat")
+
+            ResultStat(
+                label: "Avg Time",
+                value: viewModel.averageTimePerProblem,
+                icon: "clock.fill",
+                color: .purple
+            )
+            .accessibilityIdentifier("avgTimeStat")
         }
     }
 

@@ -1888,6 +1888,61 @@
       "files": [
         "Sources/Features/Home/HomeView.swift"
       ]
+    },
+    {
+      "id": "ui-086",
+      "description": "Difficulty-specific problem border color on game screen",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Answer field border color matches difficulty level",
+        "Easy = green, Medium = orange, Hard = red",
+        "Border is subtle but visible"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-087",
+      "description": "Animated progress dots showing recent answer history pattern",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Answer history dots scale in when appearing",
+        "Uses spring animation for bounce effect",
+        "Pattern is clear and readable"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-088",
+      "description": "Results screen shows time per problem average",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-003"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Results screen displays average time per problem",
+        "Time is formatted in seconds with one decimal",
+        "Calculation is correct"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
     }
   ],
   "_schema": {

@@ -225,6 +225,7 @@ struct GameView: View {
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color(.systemGray6))
+                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(difficultyTextColor.opacity(0.3), lineWidth: 1.5))
             )
             .accessibilityIdentifier("answerField")
     }

@@ -83,6 +83,13 @@ final class ResultsViewModel {
         return "Keep practicing to unlock fun stats!"
     }
 
+    var averageTimePerProblem: String {
+        let timePlayed = session.difficulty.timeLimitSeconds - session.timeRemaining
+        guard session.totalAnswered > 0, timePlayed > 0 else { return "N/A" }
+        let avg = Double(timePlayed) / Double(session.totalAnswered)
+        return String(format: "%.1fs", avg)
+    }
+
     var shareText: String {
         let stars = String(repeating: "⭐", count: starCount)
         return "MathKids \(stars)\nScore: \(finalScore) | Accuracy: \(Int(accuracy))% | Streak: \(bestStreak)\nI solved \(totalAnswered) problems!"
