@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 15000
         }
     }
+
+    var achievementCardKyaniteStyle: String {
+        isRareAchievement ? "blade" : "flat"
+    }
+
+    var achievementRequiresWillpower: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardEdictSealText: String {
+        switch category {
+        case .mastery: return "Edict Seal of the Sage"
+        case .streak: return "Edict Seal of the Sentinel"
+        case .score: return "Edict Seal of the Champion"
+        case .games: return "Edict Seal of the Novice"
+        }
+    }
+
+    var achievementCardThuliteStyle: String {
+        isRareAchievement ? "rose" : "faint"
+    }
+
+    var achievementCrestThreshold: Int {
+        switch category {
+        case .mastery: return 200000
+        case .streak: return 50000
+        case .score: return 150000
+        case .games: return 20000
+        }
+    }
 }

@@ -33817,6 +33817,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2076",
+      "title": "Achievement Card Kyanite Style",
+      "description": "Computed property returning kyanite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns blade style",
+        "Common returns flat style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2077",
+      "title": "Achievement Requires Willpower",
+      "description": "Computed property checking if achievement requires willpower",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery requires willpower",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2078",
+      "title": "Achievement Card Edict Seal Text",
+      "description": "Computed property returning edict seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2079",
+      "title": "Achievement Card Thulite Style",
+      "description": "Computed property returning thulite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns rose style",
+        "Common returns faint style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2080",
+      "title": "Achievement Crest Threshold",
+      "description": "Computed property returning crest threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
