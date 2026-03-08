@@ -6990,6 +6990,90 @@
         "Verify new session returns .onPace"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-369",
+      "title": "GameSession perfectStreakBonus extra points for unbroken streaks",
+      "description": "GameSession should compute perfectStreakBonus returning extra bonus points based on best streak (10 pts per 5 in streak)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Session with bestStreak 10 returns 20 bonus",
+        "Session with bestStreak 3 returns 0 bonus",
+        "Session with bestStreak 15 returns 30 bonus"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-370",
+      "title": "MathProblem isIdentityOperation for x+0 or x*1 patterns",
+      "description": "MathProblem should detect identity operations where one operand is the identity element (0 for add/subtract, 1 for multiply/divide)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5+0 is identity operation",
+        "Verify 5*1 is identity operation",
+        "Verify 5+3 is not identity operation"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-371",
+      "title": "LevelSystem milestoneDescription for level achievements",
+      "description": "LevelSystem should provide milestoneDescription(for:) returning achievement text for reaching each level",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify level 1 returns beginner message",
+        "Verify level 10 returns max level message",
+        "Verify message is not empty for any valid level"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-372",
+      "title": "StatsViewModel averageScoreText formatted display",
+      "description": "StatsViewModel should expose averageScoreText showing the average score across all games",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify shows formatted average score",
+        "Verify shows 0 when no games played"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-373",
+      "title": "DifficultyLevel estimatedProblemsPerGame based on time and pace",
+      "description": "DifficultyLevel should compute estimatedProblemsPerGame using time limit and recommended seconds per problem",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns 10 (60s / 6s)",
+        "Verify medium returns 11 (45s / 4s, rounded down)",
+        "Verify hard returns 10 (30s / 3s)"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

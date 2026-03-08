@@ -4,6 +4,10 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var perfectStreakBonus: Int {
+        (bestStreak / 5) * 10
+    }
+
     var scorePerCorrect: Double {
         guard totalCorrect > 0 else { return 0 }
         return Double(score) / Double(totalCorrect)

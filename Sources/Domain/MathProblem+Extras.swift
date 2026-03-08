@@ -91,6 +91,13 @@ extension MathProblem {
         return .large
     }
 
+    var isIdentityOperation: Bool {
+        switch operation {
+        case .add, .subtract: operand2 == 0
+        case .multiply, .divide: operand2 == 1
+        }
+    }
+
     var stepByStepHint: String {
         switch operation {
         case .add:

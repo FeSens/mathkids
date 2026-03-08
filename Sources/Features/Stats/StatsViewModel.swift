@@ -74,6 +74,12 @@ final class StatsViewModel {
         gamesPlayed == 1 ? "1 game" : "\(gamesPlayed) games"
     }
 
+    var averageScoreText: String {
+        guard gamesPlayed > 0 else { return "0 pts" }
+        let avg = bestScore / gamesPlayed
+        return "\(avg) pts"
+    }
+
     var gamesPerDifficultyText: String {
         "Easy: \(easyGames) | Medium: \(mediumGames) | Hard: \(hardGames)"
     }

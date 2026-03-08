@@ -127,6 +127,15 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func milestoneDescription(forLevel level: Int) -> String {
+        guard level >= 1, level <= levelNames.count else { return "" }
+        let name = levelNames[level - 1]
+        if level == levelNames.count {
+            return "You've reached \(name) — the max level!"
+        }
+        return "Welcome to \(name)! Keep going!"
+    }
+
     static func levelProgressBar(for xp: Int) -> String {
         let progress: Double
         if isMaxLevel(for: xp) {
