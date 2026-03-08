@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 1500
         }
     }
+
+    var achievementCardLarimarFrostStyle: String {
+        isRareAchievement ? "crystalline" : "cloudy"
+    }
+
+    var achievementRequiresAmbition: Bool {
+        category == .mastery || category == .score
+    }
+
+    var achievementCardOrdinanceText: String {
+        switch category {
+        case .mastery: return "Ordinance of Wisdom"
+        case .streak: return "Ordinance of Loyalty"
+        case .score: return "Ordinance of Merit"
+        case .games: return "Ordinance of Welcome"
+        }
+    }
+
+    var achievementCardLepidoliteStyle: String {
+        isRareAchievement ? "shimmering" : "flat"
+    }
+
+    var achievementSovereigntyThreshold: Int {
+        switch category {
+        case .mastery: return 20000
+        case .streak: return 5000
+        case .score: return 10000
+        case .games: return 2000
+        }
+    }
 }

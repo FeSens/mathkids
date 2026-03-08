@@ -33257,6 +33257,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2041",
+      "title": "Achievement Card Larimar Frost Style",
+      "description": "Computed property returning larimar frost style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns crystalline style",
+        "Common achievement returns cloudy style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2042",
+      "title": "Achievement Requires Ambition",
+      "description": "Computed property checking if achievement requires ambition",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery category requires ambition",
+        "Games category does not require ambition"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2043",
+      "title": "Achievement Card Ordinance Text",
+      "description": "Computed property returning ordinance text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct ordinance text",
+        "Games returns correct ordinance text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2044",
+      "title": "Achievement Card Lepidolite Style",
+      "description": "Computed property returning lepidolite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns shimmering style",
+        "Common achievement returns flat style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2045",
+      "title": "Achievement Sovereignty Threshold",
+      "description": "Computed property returning sovereignty threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
