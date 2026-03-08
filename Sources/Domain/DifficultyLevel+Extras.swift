@@ -146,4 +146,16 @@ extension DifficultyLevel {
     var hasTimePressure: Bool {
         recommendedSecondsPerProblem <= 4
     }
+
+    var badgeText: String {
+        String(displayName.prefix(1))
+    }
+
+    var averageAccuracy: Int {
+        switch self {
+        case .easy: return 85
+        case .medium: return 70
+        case .hard: return 55
+        }
+    }
 }

@@ -143,4 +143,22 @@ extension MathProblem {
         let spread = max(5, abs(answer) / 2 + 1)
         return (answer - spread)...(answer + spread)
     }
+
+    var isBasicFact: Bool {
+        operand1 <= 12 && operand2 <= 12
+    }
+
+    var estimatedDifficulty: Int {
+        let maxOp = max(operand1, operand2)
+        let opWeight = operation.difficultyWeight
+        if maxOp <= 5 && opWeight <= 2 { return 1 }
+        if maxOp <= 10 && opWeight <= 2 { return 2 }
+        if maxOp <= 10 { return 3 }
+        if opWeight >= 3 { return 4 }
+        return 5
+    }
+
+    var isMultiDigitResult: Bool {
+        abs(correctAnswer) >= 10
+    }
 }

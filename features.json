@@ -14447,6 +14447,86 @@
         "Verify non-empty description"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-829",
+      "name": "DifficultyLevel.badgeText",
+      "description": "Short badge text like 'E', 'M', 'H' for compact display",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get badgeText for easy",
+        "Verify returns 'E'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-830",
+      "name": "DifficultyLevel.averageAccuracy",
+      "description": "Expected average accuracy for this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get averageAccuracy for easy",
+        "Verify returns higher than hard"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-831",
+      "name": "MathProblem.isBasicFact",
+      "description": "Boolean true when problem is a basic math fact (operands <= 12)",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem with small operands",
+        "Verify isBasicFact is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-832",
+      "name": "MathProblem.estimatedDifficulty",
+      "description": "Estimated difficulty 1-5 based on operation and operand size",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create simple add problem",
+        "Verify estimatedDifficulty is low"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-833",
+      "name": "MathProblem.isMultiDigitResult",
+      "description": "Boolean true when result has 2+ digits",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create problem 3+4=7",
+        "Verify isSingleDigitResult is true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
