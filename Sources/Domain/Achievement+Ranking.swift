@@ -210,4 +210,34 @@ extension Achievement {
         case .games: return 50
         }
     }
+
+    var achievementCardVelvetStyle: String {
+        isRareAchievement ? "luxe" : "standard"
+    }
+
+    var achievementIsTimeBound: Bool {
+        category == .streak
+    }
+
+    var achievementCardPledgeText: String {
+        switch category {
+        case .mastery: return "I pledge to master"
+        case .streak: return "I pledge to persist"
+        case .score: return "I pledge to excel"
+        case .games: return "I pledge to play"
+        }
+    }
+
+    var achievementCardInlayStyle: String {
+        isRareAchievement ? "jeweled" : "plain"
+    }
+
+    var achievementMaxDaysToComplete: Int {
+        switch category {
+        case .mastery: return 365
+        case .streak: return 30
+        case .score: return 90
+        case .games: return 1
+        }
+    }
 }

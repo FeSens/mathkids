@@ -31389,6 +31389,76 @@
         "Create games achievement",
         "Verify totalPoints is low"
       ]
+    },
+    {
+      "id": "logic-1909",
+      "name": "achievementCardVelvetStyle",
+      "description": "Velvet texture style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify velvet is luxe",
+        "Create common achievement",
+        "Verify velvet is standard"
+      ]
+    },
+    {
+      "id": "logic-1910",
+      "name": "achievementIsTimeBound",
+      "description": "Whether achievement is time-bound (streak only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify isTimeBound is true",
+        "Create mastery achievement",
+        "Verify isTimeBound is false"
+      ]
+    },
+    {
+      "id": "logic-1911",
+      "name": "achievementCardPledgeText",
+      "description": "Pledge text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify pledge text",
+        "Create games achievement",
+        "Verify pledge text"
+      ]
+    },
+    {
+      "id": "logic-1912",
+      "name": "achievementCardInlayStyle",
+      "description": "Inlay decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify inlay is jeweled",
+        "Create common achievement",
+        "Verify inlay is plain"
+      ]
+    },
+    {
+      "id": "logic-1913",
+      "name": "achievementMaxDaysToComplete",
+      "description": "Maximum days allowed to complete achievement based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify maxDays is high",
+        "Create games achievement",
+        "Verify maxDays is low"
+      ]
     }
   ],
   "_schema": {
