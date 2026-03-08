@@ -153,4 +153,34 @@ extension Achievement {
         case .games: return 4
         }
     }
+
+    var achievementDisplaySubtitle: String {
+        "\(category.displayName) achievement"
+    }
+
+    var achievementCardLineHeight: Double {
+        switch category {
+        case .mastery: return 24
+        case .streak: return 22
+        case .score: return 20
+        case .games: return 18
+        }
+    }
+
+    var achievementIsReearnable: Bool {
+        category == .streak || category == .games
+    }
+
+    var achievementRewardStars: Int {
+        switch category {
+        case .mastery: return 5
+        case .streak: return 3
+        case .score: return 2
+        case .games: return 1
+        }
+    }
+
+    var achievementCardBorderWidth: Double {
+        isRareAchievement ? 3 : 1
+    }
 }

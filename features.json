@@ -28269,6 +28269,86 @@
         "Verify categorySortOrder values"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1709",
+      "title": "Achievement Display Subtitle",
+      "description": "Returns subtitle for achievement display",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify displaySubtitle contains category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1710",
+      "title": "Achievement Card Line Height",
+      "description": "Returns line height for card text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardLineHeight by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1711",
+      "title": "Achievement Is Reearnable",
+      "description": "Returns whether achievement can be earned again",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isRepeatable for streak vs mastery"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1712",
+      "title": "Achievement Reward Stars",
+      "description": "Returns star count for achievement reward",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify rewardStars by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1713",
+      "title": "Achievement Card Border Width",
+      "description": "Returns border width for achievement card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardBorderWidth by rarity"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
