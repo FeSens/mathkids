@@ -18071,6 +18071,81 @@
         "not empty for all operations"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1059",
+      "name": "difficultyEmoji",
+      "description": "Emoji representing difficulty level",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns \ud83d\udfe2, hard returns \ud83d\udd34"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1060",
+      "name": "difficultyStarRating",
+      "description": "Star count rating 1-3",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy is 1, hard is 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1061",
+      "name": "difficultyCardLabel",
+      "description": "Label for difficulty card display",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "contains display name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1062",
+      "name": "difficultyMotivationText",
+      "description": "Motivation message for difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all levels"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1063",
+      "name": "difficultyIsDefault",
+      "description": "Whether this is the default difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy is default, hard is not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
