@@ -17088,6 +17088,85 @@
         "streak_5 prefix is streak"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-994",
+      "name": "achievementIsScore",
+      "description": "Whether achievement is in score category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "score_100 is score",
+        "first_game is not score"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-995",
+      "name": "achievementIsGames",
+      "description": "Whether achievement is in games category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "first_game is games",
+        "streak_5 is not games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-996",
+      "name": "achievementBadgeText",
+      "description": "Short badge text from first letter of category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak achievement badge is S",
+        "games achievement badge is G"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-997",
+      "name": "achievementFullLabel",
+      "description": "Full label with emoji title and point value",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "contains title and pts"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-998",
+      "name": "achievementIsDaily",
+      "description": "Whether achievement is a daily streak type",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "daily_3 is daily",
+        "first_game is not daily"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

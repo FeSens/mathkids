@@ -104,6 +104,26 @@ extension Achievement {
     var achievementIdPrefix: String {
         String(id.split(separator: "_").first ?? Substring(id))
     }
+
+    var achievementIsScore: Bool {
+        category == .score
+    }
+
+    var achievementIsGames: Bool {
+        category == .games
+    }
+
+    var achievementBadgeText: String {
+        String(category.displayName.prefix(1))
+    }
+
+    var achievementFullLabel: String {
+        "\(emoji) \(title) (\(pointValue) pts)"
+    }
+
+    var achievementIsDaily: Bool {
+        id.hasPrefix("daily_")
+    }
 }
 
 extension Achievement.Category {
