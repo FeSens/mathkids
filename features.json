@@ -32509,6 +32509,76 @@
         "Create games achievement",
         "Verify threshold is low"
       ]
+    },
+    {
+      "id": "logic-1989",
+      "name": "achievementCardTurquoiseStyle",
+      "description": "Turquoise gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify turquoise is polished",
+        "Create common achievement",
+        "Verify turquoise is rough"
+      ]
+    },
+    {
+      "id": "logic-1990",
+      "name": "achievementRequiresParticipation",
+      "description": "Whether achievement requires participation (games only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create games achievement",
+        "Verify requiresParticipation is true",
+        "Create mastery achievement",
+        "Verify requiresParticipation is false"
+      ]
+    },
+    {
+      "id": "logic-1991",
+      "name": "achievementCardManifestoText",
+      "description": "Manifesto text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify manifesto text",
+        "Create games achievement",
+        "Verify manifesto text"
+      ]
+    },
+    {
+      "id": "logic-1992",
+      "name": "achievementCardOnxyStyle",
+      "description": "Onyx gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify onyx is obsidian",
+        "Create common achievement",
+        "Verify onyx is slate"
+      ]
+    },
+    {
+      "id": "logic-1993",
+      "name": "achievementGrandMasterPoints",
+      "description": "Grand master points for achievement based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify points are high",
+        "Create games achievement",
+        "Verify points are low"
+      ]
     }
   ],
   "_schema": {

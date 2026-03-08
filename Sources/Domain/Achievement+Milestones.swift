@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 0
         }
     }
+
+    var achievementCardTurquoiseStyle: String {
+        isRareAchievement ? "polished" : "rough"
+    }
+
+    var achievementRequiresParticipation: Bool {
+        category == .games
+    }
+
+    var achievementCardManifestoText: String {
+        switch category {
+        case .mastery: return "The Manifesto of Mastery"
+        case .streak: return "The Manifesto of Resolve"
+        case .score: return "The Manifesto of Glory"
+        case .games: return "The Manifesto of Play"
+        }
+    }
+
+    var achievementCardOnxyStyle: String {
+        isRareAchievement ? "obsidian" : "slate"
+    }
+
+    var achievementGrandMasterPoints: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 50
+        case .score: return 75
+        case .games: return 10
+        }
+    }
 }
