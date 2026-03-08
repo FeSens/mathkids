@@ -213,4 +213,34 @@ extension Achievement {
     var achievementCardEmojiSize: Double {
         isRareAchievement ? 48 : 32
     }
+
+    var achievementDoneEmoji: String {
+        switch category {
+        case .mastery: return "🌟"
+        case .streak: return "🔥"
+        case .score: return "🎯"
+        case .games: return "✅"
+        }
+    }
+
+    var achievementCardInnerPadding: Double {
+        isRareAchievement ? 20 : 12
+    }
+
+    var achievementIsSeasonalType: Bool {
+        false
+    }
+
+    var achievementDetailHeader: String {
+        "\(emoji) \(title)"
+    }
+
+    var achievementCardMaxWidth: Double {
+        switch category {
+        case .mastery: return 360
+        case .streak: return 320
+        case .score: return 280
+        case .games: return 240
+        }
+    }
 }

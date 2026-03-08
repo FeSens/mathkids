@@ -28429,6 +28429,86 @@
         "Verify cardEmojiSize by rarity"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1719",
+      "title": "Achievement Done Emoji",
+      "description": "Returns emoji for completion state",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify completionEmoji by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1720",
+      "title": "Achievement Card Inner Padding",
+      "description": "Returns inner padding for achievement card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardInnerPadding by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1721",
+      "title": "Achievement Is Seasonal Type",
+      "description": "Returns whether achievement is seasonal",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isSeasonal is false for standard achievements"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1722",
+      "title": "Achievement Detail Header",
+      "description": "Returns header text for detail view",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify detailHeader contains emoji and title"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1723",
+      "title": "Achievement Card Max Width",
+      "description": "Returns max width for achievement card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardMaxWidth by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
