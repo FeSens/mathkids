@@ -26233,6 +26233,79 @@
         "Create common achievement",
         "Verify isShareable is true"
       ]
+    },
+    {
+      "id": "logic-1569",
+      "title": "achievementFlavorDescription",
+      "description": "Return a flavorful description based on category",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify contains fire-related text",
+        "Create mastery achievement",
+        "Verify contains mastery-related text"
+      ]
+    },
+    {
+      "id": "logic-1570",
+      "title": "achievementWeeklyTarget",
+      "description": "Return weekly target count",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify target >= 3",
+        "Create games achievement",
+        "Verify target == 1"
+      ]
+    },
+    {
+      "id": "logic-1571",
+      "title": "achievementChallengeDescription",
+      "description": "Return challenge description text",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify challenge contains the title"
+      ]
+    },
+    {
+      "id": "logic-1572",
+      "title": "achievementIsBonus",
+      "description": "Return whether this is a bonus achievement",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify isBonus is true",
+        "Create common achievement",
+        "Verify isBonus is false"
+      ]
+    },
+    {
+      "id": "logic-1573",
+      "title": "achievementProgressLabel",
+      "description": "Return progress label text",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify label contains percentage format",
+        "Create games achievement",
+        "Verify label contains count format"
+      ]
     }
   ],
   "_schema": {

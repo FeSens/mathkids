@@ -231,4 +231,39 @@ extension Achievement {
     var achievementIsShareable: Bool {
         true
     }
+
+    var achievementFlavorDescription: String {
+        switch category {
+        case .streak: return "On fire! Keep the streak burning!"
+        case .score: return "Score champion in the making!"
+        case .games: return "Game explorer extraordinaire!"
+        case .mastery: return "A true master of mathematics!"
+        }
+    }
+
+    var achievementWeeklyTarget: Int {
+        switch category {
+        case .mastery: return 5
+        case .streak: return 3
+        case .score: return 2
+        case .games: return 1
+        }
+    }
+
+    var achievementChallengeDescription: String {
+        "Challenge: Unlock \(title)"
+    }
+
+    var achievementIsBonus: Bool {
+        isRareAchievement
+    }
+
+    var achievementProgressLabel: String {
+        switch category {
+        case .mastery: return "0% complete"
+        case .streak: return "0 days"
+        case .score: return "0 points"
+        case .games: return "0 count"
+        }
+    }
 }
