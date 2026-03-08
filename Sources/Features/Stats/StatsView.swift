@@ -2,16 +2,23 @@ import SwiftUI
 
 struct StatsView: View {
     @State var viewModel: StatsViewModel
+    @State private var showCards: Bool = false
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
                     streakSection
+                        .opacity(showCards ? 1 : 0)
+                        .offset(y: showCards ? 0 : 20)
 
                     lifetimeSection
+                        .opacity(showCards ? 1 : 0)
+                        .offset(y: showCards ? 0 : 20)
 
                     difficultyBreakdown
+                        .opacity(showCards ? 1 : 0)
+                        .offset(y: showCards ? 0 : 20)
 
                     if let stats = viewModel.playerStats {
                         AchievementProgressView(achievements: Achievement.all, stats: stats)
@@ -78,6 +85,7 @@ struct StatsView: View {
             }
             .onAppear {
                 viewModel.loadStats()
+                withAnimation(.easeOut(duration: 0.5)) { showCards = true }
             }
         }
     }

@@ -2596,6 +2596,97 @@
       "files": [
         "Sources/Features/Results/AchievementToast.swift"
       ]
+    },
+    {
+      "id": "ui-124",
+      "title": "Animated background gradient on home screen",
+      "description": "Home screen background gradient slowly shifts based on selected difficulty",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Select easy - green gradient",
+        "Select medium - orange gradient",
+        "Select hard - red gradient",
+        "Gradient transitions smoothly"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift"
+      ]
+    },
+    {
+      "id": "ui-125",
+      "title": "Keyboard dismiss on game start",
+      "description": "Ensure keyboard is dismissed when game screen appears",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "No system keyboard appears during game",
+        "Custom number pad is the only input method"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-126",
+      "title": "Smooth transition between game and results",
+      "description": "Navigation from game to results has a smooth transition animation",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Complete a game",
+        "Transition to results is smooth",
+        "No jarring screen jump"
+      ],
+      "files": [
+        "Sources/App/ContentView.swift"
+      ]
+    },
+    {
+      "id": "ui-127",
+      "title": "Stats page animated entry",
+      "description": "Stats cards animate in with staggered fade when the tab appears",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Navigate to stats tab",
+        "Stats cards fade and slide in with staggered timing",
+        "Animation completes smoothly"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsView.swift"
+      ]
+    },
+    {
+      "id": "ui-128",
+      "title": "Haptic on achievement unlock",
+      "description": "Play a success haptic when an achievement toast appears",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-011"
+      ],
+      "test_steps": [
+        "Earn a new achievement",
+        "Success haptic plays when toast appears",
+        "No haptic if haptics disabled"
+      ],
+      "files": [
+        "Sources/Features/Results/AchievementToast.swift",
+        "Sources/Services/HapticService.swift"
+      ]
     }
   ],
   "_schema": {

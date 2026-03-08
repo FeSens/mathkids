@@ -38,6 +38,8 @@ struct AchievementToast: View {
         .offset(y: isVisible ? 0 : -120)
         .opacity(isVisible ? 1 : 0)
         .onAppear {
+            HapticService.correctAnswer()
+            SoundService.playAchievement()
             withAnimation(.spring(duration: 0.5, bounce: 0.3)) {
                 isVisible = true
             }
