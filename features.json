@@ -28189,6 +28189,86 @@
         "Verify cardFooterText contains category info"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1704",
+      "title": "Achievement Unlock Note",
+      "description": "Returns unlock message for achievement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify unlockMessage contains title"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1705",
+      "title": "Achievement Card Shadow Radius",
+      "description": "Returns shadow radius for achievement card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardShadowRadius by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1706",
+      "title": "Achievement Is Category Top",
+      "description": "Returns whether achievement is top in its category",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isCategoryLeader for mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1707",
+      "title": "Achievement Badge Scale",
+      "description": "Returns scale factor for achievement badge",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify badgeScale by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1708",
+      "title": "Achievement Category Sort Order",
+      "description": "Returns sort order for category",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Detail.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify categorySortOrder values"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

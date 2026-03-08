@@ -128,4 +128,29 @@ extension Achievement {
     var achievementCardFooterText: String {
         "\(category.displayName) — \(pointValue) pts"
     }
+
+    var achievementUnlockNote: String {
+        "You unlocked \(title)!"
+    }
+
+    var achievementCardShadowRadius: Double {
+        isRareAchievement ? 10 : 4
+    }
+
+    var achievementIsCategoryTop: Bool {
+        category == .mastery
+    }
+
+    var achievementBadgeScale: Double {
+        isRareAchievement ? 1.2 : 1.0
+    }
+
+    var achievementCategorySortOrder: Int {
+        switch category {
+        case .mastery: return 1
+        case .streak: return 2
+        case .score: return 3
+        case .games: return 4
+        }
+    }
 }
