@@ -33577,6 +33577,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2061",
+      "title": "Achievement Card Howlite Frost Style",
+      "description": "Computed property returning howlite frost style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns icy style",
+        "Common achievement returns chalky style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2062",
+      "title": "Achievement Requires Resolve",
+      "description": "Computed property checking if achievement requires resolve",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery category requires resolve",
+        "Games category does not require resolve"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2063",
+      "title": "Achievement Card Injunction Text",
+      "description": "Computed property returning injunction text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct injunction text",
+        "Games returns correct injunction text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2064",
+      "title": "Achievement Card Hawk Eye Style",
+      "description": "Computed property returning hawk eye style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns striped style",
+        "Common achievement returns grey style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2065",
+      "title": "Achievement Zenith Threshold",
+      "description": "Computed property returning zenith threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Legacy.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

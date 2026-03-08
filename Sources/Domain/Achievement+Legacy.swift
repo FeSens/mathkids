@@ -270,4 +270,34 @@ extension Achievement {
         case .games: return 5000
         }
     }
+
+    var achievementCardHowliteFrostStyle: String {
+        isRareAchievement ? "icy" : "chalky"
+    }
+
+    var achievementRequiresResolve: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardInjunctionText: String {
+        switch category {
+        case .mastery: return "Injunction of the Wise"
+        case .streak: return "Injunction of the Steadfast"
+        case .score: return "Injunction of the Bold"
+        case .games: return "Injunction of the Willing"
+        }
+    }
+
+    var achievementCardHawkEyeStyle: String {
+        isRareAchievement ? "striped" : "grey"
+    }
+
+    var achievementZenithThreshold: Int {
+        switch category {
+        case .mastery: return 75000
+        case .streak: return 20000
+        case .score: return 50000
+        case .games: return 7500
+        }
+    }
 }
