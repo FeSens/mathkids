@@ -65,4 +65,34 @@ extension Achievement {
         case .games: return "Starter"
         }
     }
+
+    var achievementCardGlowRadius: Double {
+        isRareAchievement ? 12 : 0
+    }
+
+    var achievementSessionTarget: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 1
+        case .score: return 5
+        case .games: return 1
+        }
+    }
+
+    var achievementCardEmblemStyle: String {
+        isRareAchievement ? "decorative" : "plain"
+    }
+
+    var achievementIsDedicationBased: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardLevelTag: String {
+        switch category {
+        case .mastery: return "Level 5"
+        case .streak: return "Level 4"
+        case .score: return "Level 3"
+        case .games: return "Level 1"
+        }
+    }
 }

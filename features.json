@@ -30269,6 +30269,86 @@
         "Verify cardTierBadge by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1834",
+      "title": "Achievement Card Glow Radius",
+      "description": "Returns glow radius for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardGlowRadius by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1835",
+      "title": "Achievement Session Target",
+      "description": "Returns session target count",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify sessionTarget by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1836",
+      "title": "Achievement Card Emblem Style",
+      "description": "Returns emblem style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardEmblemStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1837",
+      "title": "Achievement Is Dedication Based",
+      "description": "Returns whether needs dedication",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isDedicationBased for streak/mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1838",
+      "title": "Achievement Card Level Tag",
+      "description": "Returns level tag for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardLevelTag by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
