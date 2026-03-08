@@ -185,4 +185,12 @@ extension MathProblem {
     var isSimpleOperation: Bool {
         operation.isPrimaryOperation
     }
+
+    var hasOperandZero: Bool {
+        operand1 == 0 || operand2 == 0
+    }
+
+    var isZeroAnswer: Bool {
+        correctAnswer == 0
+    }
 }

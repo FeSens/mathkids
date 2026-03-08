@@ -15010,6 +15010,86 @@
         "Each difficulty -> unique tag"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-864",
+      "name": "answerOffByOne",
+      "description": "AnsweredProblem computed property returning true when answer differs from correct by exactly 1",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answer 8 when correct is 7 -> true",
+        "Answer 5 when correct is 7 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-865",
+      "name": "timeBracket",
+      "description": "DifficultyLevel computed property returning short/medium/long based on time limit",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy has a time bracket string",
+        "Different difficulties can have different brackets"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-866",
+      "name": "hasOperandZero",
+      "description": "MathProblem computed property returning true if either operand is zero",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 0+4 -> true",
+        "Problem 3+4 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-867",
+      "name": "feedbackText",
+      "description": "AnsweredProblem computed property returning encouragement or correction text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct answer -> positive feedback",
+        "Wrong answer -> shows correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-868",
+      "name": "isZeroAnswer",
+      "description": "MathProblem computed property returning true when correctAnswer is 0",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 5-5 -> true",
+        "Problem 3+4 -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

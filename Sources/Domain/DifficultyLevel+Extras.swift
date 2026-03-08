@@ -194,4 +194,10 @@ extension DifficultyLevel {
         case .hard: return "HARD"
         }
     }
+
+    var timeBracket: String {
+        if timeLimitSeconds <= 60 { return "short" }
+        if timeLimitSeconds <= 120 { return "medium" }
+        return "long"
+    }
 }

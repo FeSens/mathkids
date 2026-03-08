@@ -117,4 +117,15 @@ extension AnsweredProblem {
         }
         return "\(problem.formattedProblem) → \(userAnswer) (answer: \(problem.correctAnswer))"
     }
+
+    var answerOffByOne: Bool {
+        answerDifference == 1
+    }
+
+    var feedbackText: String {
+        if isCorrect {
+            return "Well done!"
+        }
+        return "The correct answer was \(problem.correctAnswer)"
+    }
 }
