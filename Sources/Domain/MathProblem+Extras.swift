@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var isTablesFact: Bool {
+        operation == .multiply && abs(operand1) <= 12 && abs(operand2) <= 12
+    }
+
     var minOperand: Int {
         min(abs(operand1), abs(operand2))
     }

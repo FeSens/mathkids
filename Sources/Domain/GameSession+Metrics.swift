@@ -4,6 +4,12 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var pointsPerMinute: Double {
+        let minutes = Double(totalTimePlayed) / 60.0
+        guard minutes > 0 else { return 0 }
+        return Double(score) / minutes
+    }
+
     var percentComplete: Int {
         let total = difficulty.timeLimitSeconds
         guard total > 0 else { return 0 }

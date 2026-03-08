@@ -7327,6 +7327,91 @@
         "Verify hard returns 2"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-389",
+      "title": "GameSession pointsPerMinute rate of scoring",
+      "description": "GameSession should expose pointsPerMinute computing score divided by minutes played",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 60 points in 30 seconds = 120 per minute",
+        "Verify 0 when no time played",
+        "Verify correct calculation with different scores"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-390",
+      "title": "MathProblem isTablesFact checks if problem is from times tables",
+      "description": "MathProblem should detect if a multiplication problem has both operands <= 12 (standard times tables)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 5x7 is a tables fact",
+        "Verify 13x5 is not a tables fact",
+        "Verify 5+7 is not a tables fact (wrong operation)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-391",
+      "title": "LevelSystem allLevelInfo returns array of level details",
+      "description": "LevelSystem should provide allLevelInfo returning array of (level, name, threshold) tuples for all levels",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify count matches totalLevels",
+        "Verify first is level 1 Beginner with threshold 0",
+        "Verify last is level 10 Math Wizard"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-392",
+      "title": "StatsViewModel formattedTimePlayed with hours and minutes",
+      "description": "StatsViewModel should expose formattedTimePlayed showing total time in h:mm or m format",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify 0 minutes shows 0m",
+        "Verify 90 minutes shows 1h 30m",
+        "Verify 45 minutes shows 45m"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-393",
+      "title": "Operation symbolWithSpaces returns spaced symbol for display",
+      "description": "Operation should expose symbolWithSpaces returning the operation symbol with spaces for clear display like \" + \"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify add returns \" + \"",
+        "Verify subtract returns \" - \"",
+        "Verify multiply returns \" x \""
+      ],
+      "passes": true
     }
   ],
   "_schema": {

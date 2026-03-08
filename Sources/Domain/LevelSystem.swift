@@ -127,6 +127,12 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static var allLevelInfo: [(level: Int, name: String, threshold: Int)] {
+        (0..<thresholds.count).map { i in
+            (level: i + 1, name: levelNames[i], threshold: thresholds[i])
+        }
+    }
+
     static func percentToMax(currentXP: Int) -> Int {
         let maxXP = xpToMaxLevel
         guard maxXP > 0 else { return 0 }

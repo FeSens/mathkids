@@ -85,6 +85,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var symbolWithSpaces: String {
+        " \(rawValue) "
+    }
+
     static var sortedByDifficulty: [Operation] {
         allCases.sorted { $0.difficultyRank < $1.difficultyRank }
     }
