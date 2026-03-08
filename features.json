@@ -42047,6 +42047,86 @@
         "Games threshold <= 43000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2531",
+      "title": "achievementCardGuejariteUltraStyle",
+      "description": "Guejarite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns copper grey hexagonal",
+        "Common achievement returns dull copper matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2532",
+      "title": "achievementRequiresInfinitePlus",
+      "description": "Check if achievement requires infinite plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery or games returns true",
+        "Streak returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2533",
+      "title": "achievementCardCompactWritSealMaxPlusText",
+      "description": "Compact writ seal max plus text by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery returns Compact Writ Seal Max Plus of the Legendary",
+        "Games returns Compact Writ Seal Max Plus of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2534",
+      "title": "achievementCardPanaderoiteUltraStyle",
+      "description": "Panaderoite ultra style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Rare achievement returns lead grey tabular",
+        "Common achievement returns flat lead matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2535",
+      "title": "achievementRagnarokTripleThreshold",
+      "description": "Ragnarok triple threshold by category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Mastery threshold >= 215000000",
+        "Games threshold <= 45000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 21000000
         }
     }
+
+    var achievementCardGuejariteUltraStyle: String {
+        isRareAchievement ? "copper grey hexagonal" : "dull copper matte"
+    }
+
+    var achievementRequiresInfinitePlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardCompactWritSealMaxPlusText: String {
+        switch category {
+        case .mastery: return "Compact Writ Seal Max Plus of the Legendary"
+        case .streak: return "Compact Writ Seal Max Plus of the Eternal"
+        case .score: return "Compact Writ Seal Max Plus of the Absolute"
+        case .games: return "Compact Writ Seal Max Plus of the Pilgrim"
+        }
+    }
+
+    var achievementCardPanaderoiteUltraStyle: String {
+        isRareAchievement ? "lead grey tabular" : "flat lead matte"
+    }
+
+    var achievementRagnarokTripleThreshold: Int {
+        switch category {
+        case .mastery: return 215000000
+        case .streak: return 86000000
+        case .score: return 210000000
+        case .games: return 21500000
+        }
+    }
 }
