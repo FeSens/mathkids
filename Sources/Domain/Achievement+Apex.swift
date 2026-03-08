@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 10000
         }
     }
+
+    var achievementCardJamesoniteStyle: String {
+        isRareAchievement ? "dark steel acicular" : "grey lead"
+    }
+
+    var achievementRequiresConvictionPlus: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardStatuteWritSealPlusText: String {
+        switch category {
+        case .mastery: return "Statute Writ Seal Plus of the Patriarch"
+        case .streak: return "Statute Writ Seal Plus of the Admiral"
+        case .score: return "Statute Writ Seal Plus of the Immortal"
+        case .games: return "Statute Writ Seal Plus of the Initiate"
+        }
+    }
+
+    var achievementCardBoulangeriteStyle: String {
+        isRareAchievement ? "bluish lead" : "dark grey"
+    }
+
+    var achievementDynastyPlusThreshold: Int {
+        switch category {
+        case .mastery: return 150000
+        case .streak: return 60000
+        case .score: return 120000
+        case .games: return 15000
+        }
+    }
 }

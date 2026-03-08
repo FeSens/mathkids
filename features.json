@@ -37087,6 +37087,96 @@
         "Verify threshold <= 12000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2271",
+      "title": "Achievement card jamesonite style",
+      "description": "Computed property achievementCardJamesoniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify jamesonite style is dark steel acicular",
+        "Create common achievement",
+        "Verify jamesonite style is grey lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2272",
+      "title": "Achievement requires conviction plus",
+      "description": "Computed property achievementRequiresConvictionPlus returns true for streak or mastery categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresConvictionPlus is true",
+        "Create games achievement",
+        "Verify requiresConvictionPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2273",
+      "title": "Achievement card statute writ seal plus text",
+      "description": "Computed property achievementCardStatuteWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Statute Writ Seal Plus of the Patriarch",
+        "Create games achievement",
+        "Verify text is Statute Writ Seal Plus of the Initiate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2274",
+      "title": "Achievement card boulangerite style",
+      "description": "Computed property achievementCardBoulangeriteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify boulangerite style is bluish lead",
+        "Create common achievement",
+        "Verify boulangerite style is dark grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2275",
+      "title": "Achievement dynasty plus threshold",
+      "description": "Computed property achievementDynastyPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 120000",
+        "Create games achievement",
+        "Verify threshold <= 15000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
