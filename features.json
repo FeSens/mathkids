@@ -40527,6 +40527,106 @@
         "Verify threshold <= 20000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2451",
+      "title": "achievementCardGuejariteProStyle",
+      "description": "Mineral style string for guejarite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify guejarite pro style is grey black tabular",
+        "Create common achievement",
+        "Verify guejarite pro style is matte charcoal"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2452",
+      "title": "achievementRequiresEternityPlus",
+      "description": "Whether achievement requires eternity plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires eternity plus is true",
+        "Create streak achievement",
+        "Verify requires eternity plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2453",
+      "title": "achievementCardResolutionWritSealUltraPlusPlusText",
+      "description": "Resolution writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Resolution Writ Seal Ultra Plus Plus of the Mythic",
+        "Create games achievement",
+        "Verify text is Resolution Writ Seal Ultra Plus Plus of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2454",
+      "title": "achievementCardPanaderoiteProStyle",
+      "description": "Mineral style string for panaderoite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify panaderoite pro style is white prismatic",
+        "Create common achievement",
+        "Verify panaderoite pro style is pale chalk"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2455",
+      "title": "achievementMidgardPlusPlusThreshold",
+      "description": "Midgard plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 135000000",
+        "Create games achievement",
+        "Verify threshold <= 22000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
