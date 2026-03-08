@@ -29149,6 +29149,86 @@
         "Verify unlockHint by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1764",
+      "title": "Achievement Reward Badge Style",
+      "description": "Returns badge style for reward display",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify rewardBadgeStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1765",
+      "title": "Achievement Games Required",
+      "description": "Returns number of games required",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify gamesRequired by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1766",
+      "title": "Achievement Card Emoji Background",
+      "description": "Returns emoji background color",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardEmojiBackground by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1767",
+      "title": "Achievement Is Time Sensitive",
+      "description": "Returns whether achievement is time-sensitive",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isTimeSensitive for streak vs mastery"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1768",
+      "title": "Achievement Card Footer Icon",
+      "description": "Returns icon for card footer",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Stats.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardFooterIcon by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

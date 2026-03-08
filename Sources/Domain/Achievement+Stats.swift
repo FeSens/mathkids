@@ -220,4 +220,39 @@ extension Achievement {
         case .games: return "Keep playing to unlock"
         }
     }
+
+    var achievementRewardBadgeStyle: String {
+        isRareAchievement ? "gold" : "silver"
+    }
+
+    var achievementGamesRequired: Int {
+        switch category {
+        case .mastery: return 50
+        case .streak: return 0
+        case .score: return 10
+        case .games: return 1
+        }
+    }
+
+    var achievementCardEmojiBackground: String {
+        switch category {
+        case .mastery: return "purple"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementIsTimeSensitive: Bool {
+        category == .streak
+    }
+
+    var achievementCardFooterIcon: String {
+        switch category {
+        case .mastery: return "graduationcap"
+        case .streak: return "flame"
+        case .score: return "chart.bar"
+        case .games: return "gamecontroller"
+        }
+    }
 }
