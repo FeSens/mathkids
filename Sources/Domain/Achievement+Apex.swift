@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 7500
         }
     }
+
+    var achievementCardTennantiteStyle: String {
+        isRareAchievement ? "flint black" : "graphite"
+    }
+
+    var achievementRequiresSpiritPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardMandateWritSealPlusText: String {
+        switch category {
+        case .mastery: return "Mandate Writ Seal Plus of the Emperor"
+        case .streak: return "Mandate Writ Seal Plus of the Commander"
+        case .score: return "Mandate Writ Seal Plus of the Colossus"
+        case .games: return "Mandate Writ Seal Plus of the Neophyte"
+        }
+    }
+
+    var achievementCardBournoniteStyle: String {
+        isRareAchievement ? "steel grey prismatic" : "dull lead"
+    }
+
+    var achievementRegaliaPlusThreshold: Int {
+        switch category {
+        case .mastery: return 100000
+        case .streak: return 40000
+        case .score: return 80000
+        case .games: return 10000
+        }
+    }
 }

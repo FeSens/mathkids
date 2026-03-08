@@ -36997,6 +36997,96 @@
         "Verify threshold <= 8000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2266",
+      "title": "Achievement card tennantite style",
+      "description": "Computed property achievementCardTennantiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify tennantite style is flint black",
+        "Create common achievement",
+        "Verify tennantite style is graphite"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2267",
+      "title": "Achievement requires spirit plus",
+      "description": "Computed property achievementRequiresSpiritPlus returns true for mastery or games categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresSpiritPlus is true",
+        "Create score achievement",
+        "Verify requiresSpiritPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2268",
+      "title": "Achievement card mandate writ seal plus text",
+      "description": "Computed property achievementCardMandateWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Mandate Writ Seal Plus of the Emperor",
+        "Create games achievement",
+        "Verify text is Mandate Writ Seal Plus of the Neophyte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2269",
+      "title": "Achievement card bournonite style",
+      "description": "Computed property achievementCardBournoniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify bournonite style is steel grey prismatic",
+        "Create common achievement",
+        "Verify bournonite style is dull lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2270",
+      "title": "Achievement regalia plus threshold",
+      "description": "Computed property achievementRegaliaPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 80000",
+        "Create games achievement",
+        "Verify threshold <= 12000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
