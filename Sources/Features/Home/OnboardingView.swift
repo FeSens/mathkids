@@ -13,6 +13,7 @@ struct OnboardingView: View {
             Text("Welcome to MathKids!")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
                 .multilineTextAlignment(.center)
+                .accessibilityIdentifier("onboardingTitle")
 
             VStack(alignment: .leading, spacing: 16) {
                 OnboardingRow(icon: "brain.head.profile", text: "Practice mental math with fun challenges")

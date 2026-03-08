@@ -102,7 +102,7 @@ final class ResultsViewModel {
 
     var shareText: String {
         let stars = String(repeating: "⭐", count: starCount)
-        return "MathKids \(stars)\nScore: \(finalScore) | Accuracy: \(Int(accuracy))% | Streak: \(bestStreak)\nI solved \(totalAnswered) problems!"
+        return "MathKids \(stars)\nDifficulty: \(session.difficulty.displayName)\nScore: \(finalScore) | Accuracy: \(Int(accuracy))% | Streak: \(bestStreak)\nI solved \(totalAnswered) problems!"
     }
 
     var starCount: Int {

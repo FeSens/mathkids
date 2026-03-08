@@ -103,4 +103,14 @@ struct GameViewModelExtendedTests {
         let vm = GameViewModel(difficulty: .easy)
         #expect(vm.hasStreakFreeze == false)
     }
+
+    // MARK: - Practice End (ui-160)
+
+    @Test("End practice stops the game")
+    @MainActor
+    func endPracticeStopsGame() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        vm.endPractice()
+        #expect(vm.isGameOver == true)
+    }
 }

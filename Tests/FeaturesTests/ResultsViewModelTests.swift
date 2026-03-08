@@ -299,4 +299,13 @@ struct ResultsViewModelTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.totalTimePlayed == "10s")
     }
+
+    // MARK: - Share Text (ui-159)
+
+    @Test("Share text includes difficulty name")
+    func shareTextIncludesDifficulty() {
+        let session = makeSession(correct: 5, total: 10, difficulty: .medium)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.shareText.contains("Medium"))
+    }
 }

@@ -3242,6 +3242,94 @@
       "files": [
         "Sources/Features/Game/GameHeaderView.swift"
       ]
+    },
+    {
+      "id": "ui-159",
+      "title": "Results share text includes difficulty",
+      "description": "Share text on results screen includes the difficulty level played",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-008"
+      ],
+      "test_steps": [
+        "Complete a game on medium difficulty",
+        "Share text includes 'Medium' difficulty label",
+        "Text is well-formatted for sharing"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-160",
+      "title": "Practice mode done button ends game properly",
+      "description": "Practice mode done button triggers game over and shows results",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-020"
+      ],
+      "test_steps": [
+        "Start practice mode",
+        "Answer some problems",
+        "Press Done button",
+        "Game ends and results are shown"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-161",
+      "title": "Onboarding view accessibility",
+      "description": "Onboarding screens have proper accessibility labels and identifiers",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Open app for first time",
+        "Onboarding elements have accessibility identifiers",
+        "VoiceOver can navigate through onboarding"
+      ],
+      "files": [
+        "Sources/Features/Home/OnboardingView.swift"
+      ]
+    },
+    {
+      "id": "ui-162",
+      "title": "Countdown view accessibility",
+      "description": "Game countdown view has accessibility label announcing countdown numbers",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-002"
+      ],
+      "test_steps": [
+        "Start a timed game",
+        "Countdown numbers have accessibility labels",
+        "Countdown view has accessibility identifier"
+      ],
+      "files": [
+        "Sources/Features/Game/CountdownView.swift"
+      ]
+    },
+    {
+      "id": "ui-163",
+      "title": "Settings toggle accessibility labels",
+      "description": "Settings toggles have clear accessibility labels describing their function",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Open settings",
+        "Sound toggle has accessibility identifier",
+        "Haptic toggle has accessibility identifier",
+        "All interactive elements are labeled"
+      ],
+      "files": [
+        "Sources/Features/Home/SettingsView.swift"
+      ]
     }
   ],
   "_schema": {

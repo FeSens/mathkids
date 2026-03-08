@@ -30,6 +30,8 @@ struct CountdownView: View {
                     .foregroundStyle(.white)
                     .scaleEffect(scale)
                     .opacity(opacity)
+                    .accessibilityLabel("Countdown \(currentNumber)")
+                    .accessibilityIdentifier("countdownNumber")
             }
         }
         .onAppear {
