@@ -16696,6 +16696,86 @@
         "Divide -> D"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-969",
+      "name": "operationExample",
+      "description": "Operation returning example problem string",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> example like 2+3=5",
+        "Multiply -> example"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-970",
+      "name": "operationPlural",
+      "description": "Operation returning plural form of operation name",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> additions",
+        "Multiply -> multiplications"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-971",
+      "name": "maximumResult",
+      "description": "Operation returning max possible result with single-digit operands",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> 18",
+        "Multiply -> 81"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-972",
+      "name": "operationMinAge",
+      "description": "Operation returning minimum recommended age to learn",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> 5",
+        "Divide -> 8"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-973",
+      "name": "isSingleStepOperation",
+      "description": "Operation returning true for add/subtract (single mental step)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> true",
+        "Multiply -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

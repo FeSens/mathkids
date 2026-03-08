@@ -211,4 +211,44 @@ extension Operation {
     var operationAbbreviation: String {
         String(displayName.prefix(1))
     }
+
+    var operationExample: String {
+        switch self {
+        case .add: return "2 + 3 = 5"
+        case .subtract: return "7 - 4 = 3"
+        case .multiply: return "3 x 4 = 12"
+        case .divide: return "8 / 2 = 4"
+        }
+    }
+
+    var operationPlural: String {
+        switch self {
+        case .add: return "additions"
+        case .subtract: return "subtractions"
+        case .multiply: return "multiplications"
+        case .divide: return "divisions"
+        }
+    }
+
+    var maximumResult: Int {
+        switch self {
+        case .add: return 18
+        case .subtract: return 9
+        case .multiply: return 81
+        case .divide: return 9
+        }
+    }
+
+    var operationMinAge: Int {
+        switch self {
+        case .add: return 5
+        case .subtract: return 6
+        case .multiply: return 7
+        case .divide: return 8
+        }
+    }
+
+    var isSingleStepOperation: Bool {
+        isPrimaryOperation
+    }
 }
