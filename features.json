@@ -27527,6 +27527,81 @@
         "Create any achievement",
         "Verify label is Not yet earned"
       ]
+    },
+    {
+      "id": "logic-1659",
+      "title": "achievementCardMinHeight",
+      "description": "Return minimum card height",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify minHeight >= 100",
+        "Create common achievement",
+        "Verify minHeight >= 60"
+      ]
+    },
+    {
+      "id": "logic-1660",
+      "title": "achievementNotificationDelay",
+      "description": "Return notification delay seconds",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify delay >= 1.0",
+        "Create common achievement",
+        "Verify delay == 0.5"
+      ]
+    },
+    {
+      "id": "logic-1661",
+      "title": "achievementIsChainable",
+      "description": "Return whether achievement can chain with others",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify isChainable is true",
+        "Create games achievement",
+        "Verify isChainable is false"
+      ]
+    },
+    {
+      "id": "logic-1662",
+      "title": "achievementFontWeight",
+      "description": "Return font weight for title",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify weight is bold",
+        "Create common achievement",
+        "Verify weight is regular"
+      ]
+    },
+    {
+      "id": "logic-1663",
+      "title": "achievementCategoryTitle",
+      "description": "Return category display label",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify label is Mastery",
+        "Create streak achievement",
+        "Verify label is Streak"
+      ]
     }
   ],
   "_schema": {

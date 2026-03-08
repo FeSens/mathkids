@@ -148,4 +148,24 @@ extension Achievement {
     var achievementTimeSinceLabel: String {
         "Not yet earned"
     }
+
+    var achievementCardMinHeight: Int {
+        isRareAchievement ? 120 : 60
+    }
+
+    var achievementNotificationDelay: Double {
+        isRareAchievement ? 1.5 : 0.5
+    }
+
+    var achievementIsChainable: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementFontWeight: String {
+        isRareAchievement ? "bold" : "regular"
+    }
+
+    var achievementCategoryTitle: String {
+        category.displayName
+    }
 }
