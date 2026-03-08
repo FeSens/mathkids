@@ -187,4 +187,31 @@ extension AnsweredProblem {
     var answeredProblemIsBelowExpectation: Bool {
         !isCorrect || (timeTaken ?? 0) > 10.0
     }
+
+    var answeredProblemTeacherNote: String {
+        guard isCorrect else { return "Student needs review on this problem" }
+        if let time = timeTaken, time < 3.0 { return "Student has mastered this fact" }
+        return "Student practiced this fact"
+    }
+
+    var answeredProblemIsCountingProblem: Bool {
+        (problem.operation == .add || problem.operation == .subtract) &&
+        (problem.operand1 == 1 || problem.operand2 == 1)
+    }
+
+    var answeredProblemAbilityIndicator: String {
+        guard isCorrect else { return "weak" }
+        if let time = timeTaken, time < 3.0 { return "strong" }
+        return "average"
+    }
+
+    var answeredProblemHapticType: String {
+        isCorrect ? "success" : "error"
+    }
+
+    var answeredProblemNextStepSuggestion: String {
+        guard isCorrect else { return "Let's practice this one more" }
+        if let time = timeTaken, time < 3.0 { return "Great! Try the next challenge" }
+        return "Good, keep practicing for speed"
+    }
 }

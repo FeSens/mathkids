@@ -21136,6 +21136,96 @@
         "Check isBelowExpectation is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1249",
+      "name": "answeredProblemTeacherNote",
+      "description": "Teacher-facing note about the attempt",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check note contains mastered or practiced",
+        "Create wrong answer",
+        "Check note contains needs review"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1250",
+      "name": "answeredProblemIsCountingProblem",
+      "description": "Whether the problem involves adding or subtracting by 1",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create 5+1 problem",
+        "Check isCountingProblem is true",
+        "Create 5+3 problem",
+        "Check isCountingProblem is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1251",
+      "name": "answeredProblemAbilityIndicator",
+      "description": "Ability indicator: strong, average, weak",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check indicator is strong",
+        "Create wrong answer",
+        "Check indicator is weak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1252",
+      "name": "answeredProblemHapticType",
+      "description": "Haptic feedback type: success, warning, error",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check haptic is success",
+        "Create wrong answer",
+        "Check haptic is error"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1253",
+      "name": "answeredProblemNextStepSuggestion",
+      "description": "Suggestion for what to do next based on performance",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Analytics.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check suggestion contains next",
+        "Create wrong answer",
+        "Check suggestion contains practice"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
