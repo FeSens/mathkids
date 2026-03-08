@@ -200,4 +200,32 @@ extension GameSession {
         if pct >= 40 { return "🏃" }
         return "🏁"
     }
+
+    var streakBonusLabel: String {
+        guard currentStreak >= 3 else { return "No streak bonus" }
+        let bonus = currentStreak * 2
+        return "+\(bonus) streak bonus"
+    }
+
+    var isEndGameRush: Bool {
+        timeRemaining < 10 && totalAnswered > 0 && timeRemaining > 0
+    }
+
+    var remainingTimeFormatted: String {
+        let mins = timeRemaining / 60
+        let secs = timeRemaining % 60
+        return "\(mins):\(String(format: "%02d", secs))"
+    }
+
+    var correctRatePerMinute: String {
+        guard totalTimePlayed > 0 else { return "0/min" }
+        let rate = totalCorrect * 60 / totalTimePlayed
+        return "\(rate)/min"
+    }
+
+    var isPersonalBestPace: Bool {
+        guard totalAnswered > 0, totalTimePlayed > 0 else { return false }
+        let avgTime = totalTimePlayed / totalAnswered
+        return avgTime < difficulty.recommendedSecondsPerProblem
+    }
 }

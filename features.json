@@ -13007,6 +13007,86 @@
         "Verify nextMilestone returns 50"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-739",
+      "name": "streakBonusLabel",
+      "description": "Formatted label showing streak bonus like \"+5 streak bonus\"",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with streak of 5",
+        "Verify streakBonusPoints returns bonus based on streak"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-740",
+      "name": "isEndGameRush",
+      "description": "Boolean true when time is low and player is answering quickly",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with little time and fast answers",
+        "Verify isEndGameRush is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-741",
+      "name": "remainingTimeFormatted",
+      "description": "Time remaining formatted as mm:ss",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 90s remaining",
+        "Verify remainingTimeFormatted returns '1:30'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-742",
+      "name": "correctRatePerMinute",
+      "description": "Correct answers per minute as formatted string",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 6 correct in 60s",
+        "Verify correctAnswerRate returns '6/min'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-743",
+      "name": "isPersonalBestPace",
+      "description": "Boolean indicating if current pace exceeds the difficulty average",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with fast pace",
+        "Verify isPersonalBestPace returns true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
