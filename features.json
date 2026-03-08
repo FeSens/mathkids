@@ -13087,6 +13087,86 @@
         "Verify isPersonalBestPace returns true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-744",
+      "name": "operationBreakdownText",
+      "description": "Text showing how many of each operation type were answered",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with mixed operations",
+        "Verify operationBreakdownText shows counts"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-745",
+      "name": "isPeakPerformance",
+      "description": "Boolean true when all metrics are excellent: accuracy 90%+, streak 5+, fast pace",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with perfect metrics",
+        "Verify isPeakPerformance is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-746",
+      "name": "gamePaceDescription",
+      "description": "Description of game pace: fast, moderate, or slow",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with various paces",
+        "Verify correct pace description"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-747",
+      "name": "totalTimePlayedText",
+      "description": "Formatted total time played like '2m 30s'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 150 seconds played",
+        "Verify totalTimePlayedText returns '2m 30s'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-748",
+      "name": "challengeRating",
+      "description": "How challenging this session is based on difficulty and performance",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create hard session with low accuracy",
+        "Verify challengeRating returns 'very challenging'"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

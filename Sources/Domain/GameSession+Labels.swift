@@ -228,4 +228,39 @@ extension GameSession {
         let avgTime = totalTimePlayed / totalAnswered
         return avgTime < difficulty.recommendedSecondsPerProblem
     }
+
+    var operationBreakdownText: String {
+        guard totalAnswered > 0 else { return "No problems yet" }
+        return "\(totalAnswered) problems"
+    }
+
+    var isPeakPerformance: Bool {
+        accuracy >= 90 && currentStreak >= 5 && isPersonalBestPace
+    }
+
+    var gamePaceDescription: String {
+        guard totalAnswered > 0, totalTimePlayed > 0 else { return "moderate" }
+        let avgTime = totalTimePlayed / totalAnswered
+        if avgTime <= 2 { return "fast" }
+        if avgTime <= 6 { return "moderate" }
+        return "slow"
+    }
+
+    var totalTimePlayedText: String {
+        if totalTimePlayed >= 60 {
+            let mins = totalTimePlayed / 60
+            let secs = totalTimePlayed % 60
+            return secs > 0 ? "\(mins)m \(secs)s" : "\(mins)m"
+        }
+        return "\(totalTimePlayed)s"
+    }
+
+    var challengeRating: String {
+        let diffIdx = difficulty.progressionIndex
+        let acc = accuracy
+        if diffIdx >= 3 && acc < 50 { return "very challenging" }
+        if diffIdx >= 2 && acc < 60 { return "challenging" }
+        if acc >= 80 { return "comfortable" }
+        return "moderate"
+    }
 }
