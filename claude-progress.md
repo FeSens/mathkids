@@ -3,16 +3,18 @@
 ## Session 12 — 2026-03-08
 
 ### Status
-- Features: 598/598 passing (12 MVP + 9 polish + 577 improvement)
-- Unit tests: 1105 (all green across 88 suites)
+- Features: 678/678 passing (12 MVP + 9 polish + 657 improvement)
+- Unit tests: 1223 (all green across 104 suites)
 - UI tests: 12 (QA screenshots flaky but unit tests solid)
 - QA: PASSED
 
-### Session 12 Features (batches 94-110)
+### Session 12 Features (batches 94-117)
 - Batch 94-101: logic-549 to logic-588 (40 features)
 - Batch 102-110: logic-589 to logic-633 (45 features)
-- Total this session: 85 improvement features so far
-- Files near 300-line limit: GameSession+Metrics (286), MathProblem+Extras (278), MathProblem.swift (283), LevelSystem (281), Achievement (274), StatsViewModel (268)
+- Batch 111-117: logic-634 to logic-668 (35 features)
+- Total this session: 120 improvement features
+- Created GameSession+Display.swift for new display properties
+- Files near 300-line limit: GameSession+Metrics (286), MathProblem+Extras (278), MathProblem.swift (283), LevelSystem (281), Achievement (274), StatsViewModel (268), HomeViewModel (265), ResultsVM+Analysis (266), GameSession (261)
 
 ## Session 11 — 2026-03-08
 

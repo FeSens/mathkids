@@ -11885,6 +11885,86 @@
         "< 5s returns true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-669",
+      "name": "GameSession+Display.motivationalMessage",
+      "description": "Returns motivational message based on performance",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Perfect returns amazing",
+        "Low returns keep trying"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-670",
+      "name": "GameSession+Display.correctCountDisplay",
+      "description": "Returns correct count with checkmark emoji",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Answer correctly",
+        "Verify checkmark in display"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-671",
+      "name": "GameSession+Display.wrongCountDisplay",
+      "description": "Returns wrong count with X emoji",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Answer wrong",
+        "Verify X in display"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-672",
+      "name": "GameSession+Display.hasStreak",
+      "description": "Returns true when bestStreak > 0",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "No streak returns false",
+        "With streak returns true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-673",
+      "name": "GameSession+Display.elapsedSeconds",
+      "description": "Returns total time played in seconds",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Tick time",
+        "Verify elapsed seconds"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

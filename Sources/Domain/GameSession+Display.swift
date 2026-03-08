@@ -104,4 +104,27 @@ extension GameSession {
     var isTimeCritical: Bool {
         timeRemaining > 0 && timeRemaining < 5
     }
+
+    var motivationalMessage: String {
+        if accuracy >= 90 { return "Amazing work!" }
+        if accuracy >= 70 { return "Great job!" }
+        if accuracy >= 50 { return "Good effort!" }
+        return "Keep trying!"
+    }
+
+    var correctCountDisplay: String {
+        "✅ \(totalCorrect)"
+    }
+
+    var wrongCountDisplay: String {
+        "❌ \(totalAnswered - totalCorrect)"
+    }
+
+    var hasStreak: Bool {
+        bestStreak > 0
+    }
+
+    var elapsedSeconds: Int {
+        totalTimePlayed
+    }
 }
