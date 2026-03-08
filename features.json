@@ -21854,6 +21854,96 @@
         "Check progress is 0"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1289",
+      "name": "answeredProblemStaminaCost",
+      "description": "Stamina cost of the problem (higher for hard operations)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create add problem",
+        "Check stamina is 1",
+        "Create multiply problem",
+        "Check stamina is 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1290",
+      "name": "answeredProblemChallengeRating",
+      "description": "Challenge rating string: S, A, B, C, D",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant hard answer",
+        "Check rating is S",
+        "Create wrong answer",
+        "Check rating is D"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1291",
+      "name": "answeredProblemUnlockValue",
+      "description": "Value toward unlocking next content (correct=weight, wrong=0)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct divide answer",
+        "Check value is 4",
+        "Create wrong answer",
+        "Check value is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1292",
+      "name": "answeredProblemIsCriticalHit",
+      "description": "Whether this is a critical hit (correct, fast, hard operation)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct instant multiply answer",
+        "Check isCriticalHit is true",
+        "Create correct add answer",
+        "Check isCriticalHit is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1293",
+      "name": "answeredProblemEnergyGain",
+      "description": "Energy gained from answering (3 correct fast, 1 correct, 0 wrong)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check energy is 3",
+        "Create wrong answer",
+        "Check energy is 0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

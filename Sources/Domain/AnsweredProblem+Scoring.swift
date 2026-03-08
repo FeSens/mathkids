@@ -129,4 +129,31 @@ extension AnsweredProblem {
     var answeredProblemQuestProgress: Int {
         isCorrect ? problem.operation.difficultyWeight : 0
     }
+
+    var answeredProblemStaminaCost: Int {
+        problem.operation.difficultyWeight
+    }
+
+    var answeredProblemChallengeRating: String {
+        guard isCorrect else { return "D" }
+        guard let time = timeTaken else { return "C" }
+        if time < 1.0 && !problem.operation.isPrimaryOperation { return "S" }
+        if time < 2.0 { return "A" }
+        if time < 5.0 { return "B" }
+        return "C"
+    }
+
+    var answeredProblemUnlockValue: Int {
+        isCorrect ? problem.operation.difficultyWeight : 0
+    }
+
+    var answeredProblemIsCriticalHit: Bool {
+        isCorrect && !problem.operation.isPrimaryOperation && (timeTaken ?? Double.infinity) < 1.0
+    }
+
+    var answeredProblemEnergyGain: Int {
+        guard isCorrect else { return 0 }
+        if let time = timeTaken, time < 2.0 { return 3 }
+        return 1
+    }
 }
