@@ -39827,6 +39827,106 @@
         "Verify threshold <= 15000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2416",
+      "title": "achievementCardWitticheniteProStyle",
+      "description": "Mineral style string for wittichenite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify wittichenite pro style is steel grey orthorhombic",
+        "Create common achievement",
+        "Verify wittichenite pro style is dull steel"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2417",
+      "title": "achievementRequiresPurposePlus",
+      "description": "Whether achievement requires purpose plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires purpose plus is true",
+        "Create games achievement",
+        "Verify requires purpose plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2418",
+      "title": "achievementCardCovenantWritSealUltraPlusPlusText",
+      "description": "Covenant writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Covenant Writ Seal Ultra Plus Plus of the Supreme",
+        "Create games achievement",
+        "Verify text is Covenant Writ Seal Ultra Plus Plus of the Seeker"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2419",
+      "title": "achievementCardCuprobismutiteProStyle",
+      "description": "Mineral style string for cuprobismutite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cuprobismutite pro style is silver grey tabular",
+        "Create common achievement",
+        "Verify cuprobismutite pro style is flat silver"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2420",
+      "title": "achievementNiflheimPlusThreshold",
+      "description": "Niflheim plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 100000000",
+        "Create games achievement",
+        "Verify threshold <= 15000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

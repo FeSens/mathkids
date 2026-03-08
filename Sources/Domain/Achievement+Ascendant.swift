@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 9500000
         }
     }
+
+    var achievementCardWitticheniteProStyle: String {
+        isRareAchievement ? "steel grey orthorhombic" : "dull steel"
+    }
+
+    var achievementRequiresPurposePlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardCovenantWritSealUltraPlusPlusText: String {
+        switch category {
+        case .mastery: return "Covenant Writ Seal Ultra Plus Plus of the Supreme"
+        case .streak: return "Covenant Writ Seal Ultra Plus Plus of the Bastion"
+        case .score: return "Covenant Writ Seal Ultra Plus Plus of the Illustrious"
+        case .games: return "Covenant Writ Seal Ultra Plus Plus of the Seeker"
+        }
+    }
+
+    var achievementCardCuprobismutiteProStyle: String {
+        isRareAchievement ? "silver grey tabular" : "flat silver"
+    }
+
+    var achievementNiflheimPlusThreshold: Int {
+        switch category {
+        case .mastery: return 100000000
+        case .streak: return 40000000
+        case .score: return 95000000
+        case .games: return 10000000
+        }
+    }
 }
