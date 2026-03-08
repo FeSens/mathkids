@@ -3,18 +3,20 @@
 ## Session 19 — 2026-03-08
 
 ### Status
-- Features: 1783/1783 passing (12 MVP + 9 polish + 1762 improvement)
-- Unit tests: ~3400+ (all green across ~338 suites)
+- Features: 1868/1868 passing (12 MVP + 9 polish + 1847 improvement)
+- Unit tests: ~3600+ (all green across ~355 suites)
 - UI tests: 12
 - QA: PASSED
 
-### Session 19 Features (batches 324-338)
+### Session 19 Features (batches 324-355)
 - Batches 324-328: logic-1699 to logic-1723 (25 features) — Achievement+Detail
 - Batches 329-338: logic-1724 to logic-1773 (50 features) — Achievement+Stats (new file)
-- Total this session: 75 features
-- New files: Achievement+Stats.swift (~290)
-- Files near limit: Achievement+Detail (~246), Achievement+Stats (~290, nearly full)
-- Name collisions resolved: achievementUnlockCountLabel→achievementUnlockCountTag, achievementCardAspectRatio→achievementCardRatio, achievementIsMilestone→achievementIsMilestoneType, achievementNotificationPriority→achievementAlertPriority, achievementUnlockMessage→achievementUnlockNote, achievementIsCategoryLeader→achievementIsCategoryTop, achievementIsRepeatable→achievementIsReearnable, achievementIsFeatured→achievementIsFeaturedItem, achievementCardGradientStart→achievementGradientStartColor, achievementIsCompletable→achievementIsFinishable, achievementIsSeasonal→achievementIsSeasonalType, achievementCompletionEmoji→achievementDoneEmoji, achievementIsDailyChallenge→achievementIsDailyQuest, achievementBadgeLabel→achievementBadgeTag, achievementMinimumLevel→achievementMinPlayerLevel, achievementIsTrackable→achievementIsMonitorable, achievementProgressBarColor→achievementBarFillColor, achievementIsBeginnerFriendly→achievementIsNewbieFriendly, achievementSummaryLine→achievementOneLinerSummary
+- Batches 339-348: logic-1774 to logic-1823 (50 features) — Achievement+Tracking (new file)
+- Batches 349-355: logic-1824 to logic-1858 (35 features) — Achievement+Scoring (new file)
+- Total this session: 160 features
+- New files: Achievement+Stats.swift (~290), Achievement+Tracking.swift (~290), Achievement+Scoring.swift (~220)
+- Files near limit: Achievement+Detail (~246), Achievement+Stats (~290), Achievement+Tracking (~290)
+- 19 name collisions resolved via renaming
 
 ## Session 18 — 2026-03-08
 
