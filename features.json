@@ -23508,6 +23508,85 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1389",
+      "title": "Achievement Animation Duration",
+      "description": "Add achievementAnimationDuration returning animation duration based on celebration type",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create high value achievement",
+        "Verify achievementAnimationDuration is 2.0",
+        "Verify low value is 1.0"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1390",
+      "title": "Achievement Transition Style",
+      "description": "Add achievementTransitionStyle returning transition animation name",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementTransitionStyle is slide",
+        "Verify common is fade"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1391",
+      "title": "Achievement Icon Offset",
+      "description": "Add achievementIconOffset returning vertical offset for icon positioning",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementIconOffset is -8",
+        "Verify small is 0"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1392",
+      "title": "Achievement Has Shimmer Effect",
+      "description": "Add achievementHasShimmerEffect returning true for premium achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementHasShimmerEffect is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1393",
+      "title": "Achievement Layout Mode",
+      "description": "Add achievementLayoutMode returning horizontal or vertical based on display size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementLayoutMode is horizontal",
+        "Verify small is vertical"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {

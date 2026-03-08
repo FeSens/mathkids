@@ -108,4 +108,24 @@ extension Achievement {
     var achievementDescriptionVisible: Bool {
         achievementDisplaySize != "small"
     }
+
+    var achievementAnimationDuration: Double {
+        achievementCelebrationType == "fireworks" ? 2.0 : 1.0
+    }
+
+    var achievementTransitionStyle: String {
+        isRareAchievement ? "slide" : "fade"
+    }
+
+    var achievementIconOffset: Int {
+        achievementDisplaySize == "large" ? -8 : 0
+    }
+
+    var achievementHasShimmerEffect: Bool {
+        achievementIsPremium
+    }
+
+    var achievementLayoutMode: String {
+        achievementDisplaySize == "large" ? "horizontal" : "vertical"
+    }
 }
