@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 15500000
         }
     }
+
+    var achievementCardPolybasiteUltraStyle: String {
+        isRareAchievement ? "steel black tabular" : "dark iron matte"
+    }
+
+    var achievementRequiresAstralPlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardCharterWritSealMaxText: String {
+        switch category {
+        case .mastery: return "Charter Writ Seal Max of the Empyrean"
+        case .streak: return "Charter Writ Seal Max of the Vigilant"
+        case .score: return "Charter Writ Seal Max of the Majestic"
+        case .games: return "Charter Writ Seal Max of the Initiate"
+        }
+    }
+
+    var achievementCardPearceiteUltraStyle: String {
+        isRareAchievement ? "black metallic trigonal" : "matte iron grey"
+    }
+
+    var achievementFimbulwinterPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 160000000
+        case .streak: return 64000000
+        case .score: return 155000000
+        case .games: return 16000000
+        }
+    }
 }

@@ -41027,6 +41027,106 @@
         "Verify threshold <= 25000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2476",
+      "title": "achievementCardPolybasiteUltraStyle",
+      "description": "Mineral style string for polybasite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify polybasite ultra style is steel black tabular",
+        "Create common achievement",
+        "Verify polybasite ultra style is dark iron matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2477",
+      "title": "achievementRequiresAstralPlus",
+      "description": "Whether achievement requires astral plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires astral plus is true",
+        "Create games achievement",
+        "Verify requires astral plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2478",
+      "title": "achievementCardCharterWritSealMaxText",
+      "description": "Charter writ seal max text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Charter Writ Seal Max of the Empyrean",
+        "Create games achievement",
+        "Verify text is Charter Writ Seal Max of the Initiate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2479",
+      "title": "achievementCardPearceiteUltraStyle",
+      "description": "Mineral style string for pearceite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pearceite ultra style is black metallic trigonal",
+        "Create common achievement",
+        "Verify pearceite ultra style is matte iron grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2480",
+      "title": "achievementFimbulwinterPlusPlusThreshold",
+      "description": "Fimbulwinter plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Infinite.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 160000000",
+        "Create games achievement",
+        "Verify threshold <= 28000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
