@@ -198,4 +198,27 @@ extension MathProblem {
     var problemIsMakingTen: Bool {
         operation == .add && correctAnswer == 10
     }
+
+    var problemIsPerfectSquareAnswer: Bool {
+        let answer = correctAnswer
+        guard answer > 0 else { return false }
+        let root = Int(Double(answer).squareRoot())
+        return root * root == answer
+    }
+
+    var problemOperandSumIsEven: Bool {
+        (operand1 + operand2) % 2 == 0
+    }
+
+    var problemFlashcardFront: String {
+        "\(operand1) \(operation.rawValue) \(operand2)"
+    }
+
+    var problemFlashcardBack: String {
+        "\(correctAnswer)"
+    }
+
+    var problemIsMultiplyByTwo: Bool {
+        operation == .multiply && (operand1 == 2 || operand2 == 2)
+    }
 }

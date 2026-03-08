@@ -19346,6 +19346,81 @@
         "3+7 makes ten, 3+5 does not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1144",
+      "name": "problemIsPerfectSquareAnswer",
+      "description": "Whether the answer is a perfect square",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "answer 9 is perfect square, 5 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1145",
+      "name": "problemOperandSumIsEven",
+      "description": "Whether sum of operands is even",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "2+4 sum is even, 2+3 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1146",
+      "name": "problemFlashcardFront",
+      "description": "Front of flashcard",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains operands and operator"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1147",
+      "name": "problemFlashcardBack",
+      "description": "Back of flashcard",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1148",
+      "name": "problemIsMultiplyByTwo",
+      "description": "Whether problem multiplies by 2",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3x2 is multiply by two, 3x4 is not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
