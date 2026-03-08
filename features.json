@@ -31809,6 +31809,76 @@
         "Create games achievement",
         "Verify min questions is low"
       ]
+    },
+    {
+      "id": "logic-1939",
+      "name": "achievementCardFinialStyle",
+      "description": "Finial ornament style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify finial is ornate",
+        "Create common achievement",
+        "Verify finial is simple"
+      ]
+    },
+    {
+      "id": "logic-1940",
+      "name": "achievementIsGamesDependent",
+      "description": "Whether achievement depends on games played (games only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create games achievement",
+        "Verify isGamesDependent is true",
+        "Create mastery achievement",
+        "Verify isGamesDependent is false"
+      ]
+    },
+    {
+      "id": "logic-1941",
+      "name": "achievementCardSagaText",
+      "description": "Saga text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify saga text",
+        "Create games achievement",
+        "Verify saga text"
+      ]
+    },
+    {
+      "id": "logic-1942",
+      "name": "achievementCardBurnishStyle",
+      "description": "Burnish finish style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify burnish is polished",
+        "Create common achievement",
+        "Verify burnish is brushed"
+      ]
+    },
+    {
+      "id": "logic-1943",
+      "name": "achievementRequiredOperationCount",
+      "description": "Required number of operation types practiced based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify operations count is high",
+        "Create games achievement",
+        "Verify operations count is low"
+      ]
     }
   ],
   "_schema": {

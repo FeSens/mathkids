@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 10
         }
     }
+
+    var achievementCardFinialStyle: String {
+        isRareAchievement ? "ornate" : "simple"
+    }
+
+    var achievementIsGamesDependent: Bool {
+        category == .games
+    }
+
+    var achievementCardSagaText: String {
+        switch category {
+        case .mastery: return "The Saga of Mastery"
+        case .streak: return "The Saga of Endurance"
+        case .score: return "The Saga of Triumph"
+        case .games: return "The Saga of Discovery"
+        }
+    }
+
+    var achievementCardBurnishStyle: String {
+        isRareAchievement ? "polished" : "brushed"
+    }
+
+    var achievementRequiredOperationCount: Int {
+        switch category {
+        case .mastery: return 4
+        case .streak: return 1
+        case .score: return 2
+        case .games: return 1
+        }
+    }
 }
