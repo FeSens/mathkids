@@ -34297,6 +34297,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2106",
+      "title": "Achievement Card Painite Style",
+      "description": "Computed property returning painite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns crimson style",
+        "Common returns brown style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2107",
+      "title": "Achievement Requires Endurance Plus",
+      "description": "Computed property checking if achievement requires endurance plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Streak requires endurance plus",
+        "Score does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2108",
+      "title": "Achievement Card Statute Seal Text",
+      "description": "Computed property returning statute seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2109",
+      "title": "Achievement Card Sphalerite Style",
+      "description": "Computed property returning sphalerite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns adamantine style",
+        "Common returns resinous style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2110",
+      "title": "Achievement Empire Threshold",
+      "description": "Computed property returning empire threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

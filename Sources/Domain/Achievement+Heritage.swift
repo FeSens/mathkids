@@ -240,4 +240,34 @@ extension Achievement {
         case .games: return 75000
         }
     }
+
+    var achievementCardPainiteStyle: String {
+        isRareAchievement ? "crimson" : "brown"
+    }
+
+    var achievementRequiresEndurancePlus: Bool {
+        category == .streak
+    }
+
+    var achievementCardStatuteSealText: String {
+        switch category {
+        case .mastery: return "Statute Seal of Enlightenment"
+        case .streak: return "Statute Seal of Constancy"
+        case .score: return "Statute Seal of Triumph"
+        case .games: return "Statute Seal of Initiation"
+        }
+    }
+
+    var achievementCardSphaleriteStyle: String {
+        isRareAchievement ? "adamantine" : "resinous"
+    }
+
+    var achievementEmpireThreshold: Int {
+        switch category {
+        case .mastery: return 1000000
+        case .streak: return 500000
+        case .score: return 750000
+        case .games: return 100000
+        }
+    }
 }
