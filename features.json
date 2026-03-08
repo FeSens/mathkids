@@ -16932,6 +16932,83 @@
         "achievementPointLabel contains pts"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-984",
+      "name": "achievementDifficultyLabel",
+      "description": "Difficulty label for achievement (Easy/Medium/Hard)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "rare achievement returns Hard",
+        "non-rare returns Easy"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-985",
+      "name": "achievementCategoryIcon",
+      "description": "SF Symbol icon for achievement category",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "streak achievement returns flame icon name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-986",
+      "name": "achievementSortKey",
+      "description": "Sort key combining category and title",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "sortKey is not empty and contains category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-987",
+      "name": "achievementIsCommon",
+      "description": "Whether achievement is common (not rare)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "first_game is common",
+        "century is not common"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-988",
+      "name": "achievementAccessibilityLabel",
+      "description": "Accessibility label for achievement",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Helpers.swift"
+      ],
+      "test_steps": [
+        "label contains title and category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

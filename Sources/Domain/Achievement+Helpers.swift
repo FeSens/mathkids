@@ -64,6 +64,26 @@ extension Achievement {
     var achievementPointLabel: String {
         "\(pointValue) pts"
     }
+
+    var achievementDifficultyLabel: String {
+        isRareAchievement ? "Hard" : "Easy"
+    }
+
+    var achievementCategoryIcon: String {
+        category.iconName
+    }
+
+    var achievementSortKey: String {
+        "\(category.displayName)-\(title)"
+    }
+
+    var achievementIsCommon: Bool {
+        !isRareAchievement
+    }
+
+    var achievementAccessibilityLabel: String {
+        "\(title), \(category.displayName) achievement"
+    }
 }
 
 extension Achievement.Category {
