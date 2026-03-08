@@ -40027,6 +40027,106 @@
         "Verify threshold <= 16000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2426",
+      "title": "achievementCardGladiteProStyle",
+      "description": "Mineral style string for gladite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify gladite pro style is tin grey acicular",
+        "Create common achievement",
+        "Verify gladite pro style is pale tin"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2427",
+      "title": "achievementRequiresHarmonyPlus",
+      "description": "Whether achievement requires harmony plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires harmony plus is true",
+        "Create games achievement",
+        "Verify requires harmony plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2428",
+      "title": "achievementCardAccordWritSealUltraPlusPlusText",
+      "description": "Accord writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Accord Writ Seal Ultra Plus Plus of the Transcendent",
+        "Create games achievement",
+        "Verify text is Accord Writ Seal Ultra Plus Plus of the Disciple"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2429",
+      "title": "achievementCardHammariteProStyle",
+      "description": "Mineral style string for hammarite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify hammarite pro style is steel grey monoclinic",
+        "Create common achievement",
+        "Verify hammarite pro style is leaden grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2430",
+      "title": "achievementJotunheimThreshold",
+      "description": "Jotunheim threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 110000000",
+        "Create games achievement",
+        "Verify threshold <= 18000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
