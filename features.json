@@ -27746,6 +27746,81 @@
         "Create games achievement",
         "Verify unit is games"
       ]
+    },
+    {
+      "id": "logic-1674",
+      "title": "achievementValuePerEffort",
+      "description": "Return value/effort ratio",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create games achievement",
+        "Verify ratio is high",
+        "Create mastery achievement",
+        "Verify ratio is low"
+      ]
+    },
+    {
+      "id": "logic-1675",
+      "title": "achievementTagLine",
+      "description": "Return a tag line for the achievement",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify tagline contains streak",
+        "Create mastery achievement",
+        "Verify tagline contains master"
+      ]
+    },
+    {
+      "id": "logic-1676",
+      "title": "achievementCardSpacing",
+      "description": "Return spacing between card elements",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify spacing is 12",
+        "Create common achievement",
+        "Verify spacing is 8"
+      ]
+    },
+    {
+      "id": "logic-1677",
+      "title": "achievementShowTimestamp",
+      "description": "Return whether to show unlock timestamp",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify showTimestamp is true",
+        "Create common achievement",
+        "Verify showTimestamp is false"
+      ]
+    },
+    {
+      "id": "logic-1678",
+      "title": "achievementGridPosition",
+      "description": "Return grid position priority",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify position >= 3",
+        "Create games achievement",
+        "Verify position == 0"
+      ]
     }
   ],
   "_schema": {

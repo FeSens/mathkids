@@ -221,4 +221,34 @@ extension Achievement {
         case .mastery: return "operations"
         }
     }
+
+    var achievementValuePerEffort: Double {
+        Double(pointValue) / Double(achievementEstimatedTimeMinutes)
+    }
+
+    var achievementTagLine: String {
+        switch category {
+        case .streak: return "Build your streak!"
+        case .score: return "Chase the high score!"
+        case .games: return "Play to win!"
+        case .mastery: return "Master the math!"
+        }
+    }
+
+    var achievementCardSpacing: Int {
+        isRareAchievement ? 12 : 8
+    }
+
+    var achievementShowTimestamp: Bool {
+        isRareAchievement
+    }
+
+    var achievementGridPosition: Int {
+        switch category {
+        case .mastery: return 3
+        case .streak: return 2
+        case .score: return 1
+        case .games: return 0
+        }
+    }
 }
