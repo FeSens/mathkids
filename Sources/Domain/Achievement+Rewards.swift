@@ -180,4 +180,29 @@ extension Achievement {
         case .games: return 0
         }
     }
+
+    var achievementDailyLimit: Int {
+        0
+    }
+
+    var achievementShowNotification: Bool {
+        true
+    }
+
+    var achievementSectionTitle: String {
+        "\(category.displayName) Achievements"
+    }
+
+    var achievementCardIcon: String {
+        switch category {
+        case .streak: return "flame.fill"
+        case .score: return "chart.bar.fill"
+        case .games: return "gamecontroller.fill"
+        case .mastery: return "star.fill"
+        }
+    }
+
+    var achievementIsExclusive: Bool {
+        isRareAchievement && category == .mastery
+    }
 }

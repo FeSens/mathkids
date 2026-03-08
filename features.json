@@ -26817,6 +26817,77 @@
         "Create games achievement",
         "Verify accuracy == 0"
       ]
+    },
+    {
+      "id": "logic-1609",
+      "title": "achievementDailyLimit",
+      "description": "Return daily unlock limit",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify dailyLimit is 0 (unlimited)"
+      ]
+    },
+    {
+      "id": "logic-1610",
+      "title": "achievementShowNotification",
+      "description": "Return whether to show notification on unlock",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify showNotification is true"
+      ]
+    },
+    {
+      "id": "logic-1611",
+      "title": "achievementSectionTitle",
+      "description": "Return section title for grouping in lists",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify title contains Mastery",
+        "Create games achievement",
+        "Verify title contains Games"
+      ]
+    },
+    {
+      "id": "logic-1612",
+      "title": "achievementCardIcon",
+      "description": "Return SF Symbol icon name for card",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify icon contains flame",
+        "Create mastery achievement",
+        "Verify icon contains star"
+      ]
+    },
+    {
+      "id": "logic-1613",
+      "title": "achievementIsExclusive",
+      "description": "Return whether achievement is exclusive",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare mastery achievement",
+        "Verify isExclusive is true",
+        "Create common achievement",
+        "Verify isExclusive is false"
+      ]
     }
   ],
   "_schema": {
