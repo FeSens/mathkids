@@ -27,6 +27,14 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var difficultyName: String {
+        difficulty.displayName
+    }
+
+    var isFinishedWithStreak: Bool {
+        isFinished && bestStreak >= 3
+    }
+
     var isOnStreak: Bool {
         currentStreak >= 3
     }

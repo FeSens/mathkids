@@ -106,6 +106,15 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var totalAnsweredLabel: String {
+        "\(session.totalAnswered) answered"
+    }
+
+    var scorePerQuestion: Int {
+        guard session.totalAnswered > 0 else { return 0 }
+        return session.score / session.totalAnswered
+    }
+
     var sessionTimeText: String {
         "\(session.totalTimePlayed)s"
     }

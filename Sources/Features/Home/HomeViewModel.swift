@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var difficultyStarRating: String {
+        selectedDifficulty.starRating
+    }
+
     var selectedOperationCount: Int {
         selectedOperations.count
     }

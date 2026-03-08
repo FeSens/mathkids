@@ -11245,6 +11245,86 @@
         "Hard returns fire"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-629",
+      "name": "HomeViewModel.difficultyStarRating",
+      "description": "Returns star rating for selected difficulty",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select medium",
+        "Verify returns 2 stars"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-630",
+      "name": "ResultsViewModel.totalAnsweredLabel",
+      "description": "Returns total answered with label",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Create session",
+        "Verify label format"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-631",
+      "name": "ResultsViewModel.scorePerQuestion",
+      "description": "Returns average score per answered question",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Score points, answer questions",
+        "Verify average"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-632",
+      "name": "GameSession.difficultyName",
+      "description": "Returns display name of session difficulty",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Easy session returns Easy",
+        "Hard returns Hard"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-633",
+      "name": "GameSession.isFinishedWithStreak",
+      "description": "Returns true when finished and had streak >= 3",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Finish with streak >= 3",
+        "Verify returns true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
