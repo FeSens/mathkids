@@ -39727,6 +39727,106 @@
         "Verify threshold <= 15000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2411",
+      "title": "achievementCardEmplectiteProStyle",
+      "description": "Mineral style string for emplectite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify emplectite pro style is tin grey prismatic",
+        "Create common achievement",
+        "Verify emplectite pro style is pale grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2412",
+      "title": "achievementRequiresIntegrityPlus",
+      "description": "Whether achievement requires integrity plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires integrity plus is true",
+        "Create streak achievement",
+        "Verify requires integrity plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2413",
+      "title": "achievementCardEdictWritSealUltraPlusPlusText",
+      "description": "Edict writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Edict Writ Seal Ultra Plus Plus of the Infinite",
+        "Create games achievement",
+        "Verify text is Edict Writ Seal Ultra Plus Plus of the Neophyte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2414",
+      "title": "achievementCardAikiniteProStyle",
+      "description": "Mineral style string for aikinite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify aikinite pro style is lead grey orthorhombic",
+        "Create common achievement",
+        "Verify aikinite pro style is flat lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2415",
+      "title": "achievementHelheimPlusThreshold",
+      "description": "Helheim plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 95000000",
+        "Create games achievement",
+        "Verify threshold <= 15000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

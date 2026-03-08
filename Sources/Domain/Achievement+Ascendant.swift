@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 9000000
         }
     }
+
+    var achievementCardEmplectiteProStyle: String {
+        isRareAchievement ? "tin grey prismatic" : "pale grey"
+    }
+
+    var achievementRequiresIntegrityPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardEdictWritSealUltraPlusPlusText: String {
+        switch category {
+        case .mastery: return "Edict Writ Seal Ultra Plus Plus of the Infinite"
+        case .streak: return "Edict Writ Seal Ultra Plus Plus of the Warden"
+        case .score: return "Edict Writ Seal Ultra Plus Plus of the Exalted"
+        case .games: return "Edict Writ Seal Ultra Plus Plus of the Neophyte"
+        }
+    }
+
+    var achievementCardAikiniteProStyle: String {
+        isRareAchievement ? "lead grey orthorhombic" : "flat lead"
+    }
+
+    var achievementHelheimPlusThreshold: Int {
+        switch category {
+        case .mastery: return 95000000
+        case .streak: return 38000000
+        case .score: return 90000000
+        case .games: return 9500000
+        }
+    }
 }
