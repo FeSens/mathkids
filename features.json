@@ -34217,6 +34217,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2101",
+      "title": "Achievement Card Nuummite Style",
+      "description": "Computed property returning nuummite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns flash style",
+        "Common returns dark style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2102",
+      "title": "Achievement Requires Conviction",
+      "description": "Computed property checking if achievement requires conviction",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery requires conviction",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2103",
+      "title": "Achievement Card Mandate Seal Text",
+      "description": "Computed property returning mandate seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2104",
+      "title": "Achievement Card Grandidierite Style",
+      "description": "Computed property returning grandidierite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns ocean style",
+        "Common returns pale style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2105",
+      "title": "Achievement Dynasty Threshold",
+      "description": "Computed property returning dynasty threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

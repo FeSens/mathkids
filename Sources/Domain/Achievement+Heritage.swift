@@ -210,4 +210,34 @@ extension Achievement {
         case .games: return 50000
         }
     }
+
+    var achievementCardNuummiteStyle: String {
+        isRareAchievement ? "flash" : "dark"
+    }
+
+    var achievementRequiresConviction: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardMandateSealText: String {
+        switch category {
+        case .mastery: return "Mandate Seal of the Scholar"
+        case .streak: return "Mandate Seal of the Guardian"
+        case .score: return "Mandate Seal of the Victor"
+        case .games: return "Mandate Seal of the Newcomer"
+        }
+    }
+
+    var achievementCardGrandidieriteStyle: String {
+        isRareAchievement ? "ocean" : "pale"
+    }
+
+    var achievementDynastyThreshold: Int {
+        switch category {
+        case .mastery: return 750000
+        case .streak: return 250000
+        case .score: return 500000
+        case .games: return 75000
+        }
+    }
 }
