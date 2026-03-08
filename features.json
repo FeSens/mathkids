@@ -42929,6 +42929,92 @@
       ],
       "passes": true
     }
+    },
+    {
+      "id": "improve-025",
+      "title": "Fastest answer time tracking per operation",
+      "description": "Track and display the fastest correct answer time for each operation in the current game session.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Fastest time per operation computed from problem history",
+        "Only correct answers count for fastest time",
+        "No time data returns empty dictionary"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-026",
+      "title": "Streak milestone summary on results screen",
+      "description": "Show the highest streak milestone achieved during the game on the results screen (e.g., 5-streak, 10-streak).",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Best streak >= 5 shows milestone text",
+        "Best streak < 5 returns nil milestone",
+        "Streak of 10+ shows special text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-027",
+      "title": "Problem difficulty distribution in results",
+      "description": "Categorize problems answered as easy/moderate/hard based on operand sizes and show the distribution on results screen.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Problems categorized by difficulty rating",
+        "Distribution counts returned for each category",
+        "Empty history returns empty distribution"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-028",
+      "title": "Accuracy improvement over game halves",
+      "description": "Compare accuracy in the first half vs second half of the game to show if the player warmed up or fatigued.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "First half and second half accuracy computed from problem history",
+        "Improvement calculated as second half minus first half",
+        "Few problems returns nil for insufficient data"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-029",
+      "title": "Consecutive correct answer analysis",
+      "description": "Find the longest run of consecutive correct answers in the problem history and display it as a game highlight.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Longest consecutive correct run computed from history",
+        "Empty history returns 0",
+        "All correct returns total count"
+      ],
+      "passes": true
+    }
   ],
   "_schema": {
     "feature": {
