@@ -17996,6 +17996,81 @@
         "add returns 20, divide returns 10"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1054",
+      "name": "operationNumberFact",
+      "description": "Fun number fact about the operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all operations"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1055",
+      "name": "operationMasteryThreshold",
+      "description": "Number of correct answers to master",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns 50, divide returns 30"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1056",
+      "name": "operationIsAdditive",
+      "description": "Whether operation is in the additive family",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add is additive, multiply is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1057",
+      "name": "operationIsMultiplicative",
+      "description": "Whether operation is in the multiplicative family",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "multiply is multiplicative, add is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1058",
+      "name": "operationEncouragementText",
+      "description": "Encouragement message for the operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all operations"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

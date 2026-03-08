@@ -232,4 +232,39 @@ extension Operation {
         case .divide: return 10
         }
     }
+
+    var operationNumberFact: String {
+        switch self {
+        case .add: return "Addition was one of the first operations invented"
+        case .subtract: return "Subtraction uses the minus sign since 1489"
+        case .multiply: return "The multiplication sign × was introduced in 1631"
+        case .divide: return "The division sign ÷ is called an obelus"
+        }
+    }
+
+    var operationMasteryThreshold: Int {
+        switch self {
+        case .add: return 50
+        case .subtract: return 40
+        case .multiply: return 35
+        case .divide: return 30
+        }
+    }
+
+    var operationIsAdditive: Bool {
+        self == .add || self == .subtract
+    }
+
+    var operationIsMultiplicative: Bool {
+        self == .multiply || self == .divide
+    }
+
+    var operationEncouragementText: String {
+        switch self {
+        case .add: return "Great job adding!"
+        case .subtract: return "Awesome subtraction!"
+        case .multiply: return "Multiplication master!"
+        case .divide: return "Division champion!"
+        }
+    }
 }
