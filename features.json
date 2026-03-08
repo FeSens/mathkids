@@ -7747,6 +7747,90 @@
         "Verify contains example problem"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-414",
+      "title": "GameSession wrongAnswerCount simple count of wrong answers",
+      "description": "GameSession should expose wrongAnswerCount as a cleaner alias for totalWrong",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 3 wrong out of 10 returns 3",
+        "Verify 0 wrong when all correct",
+        "Verify matches totalWrong"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-415",
+      "title": "MathProblem answerRange returns possible answer range for operation",
+      "description": "MathProblem should expose answerRange returning a tuple (min, max) of plausible answers based on operation and operands",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify range contains the correct answer",
+        "Verify min is less than max",
+        "Verify range is reasonable for operation"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-416",
+      "title": "LevelSystem remainingLevels count of levels left to unlock",
+      "description": "LevelSystem should compute remainingLevels(for:) returning how many levels are left including max",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify level 1 has 9 remaining",
+        "Verify max level has 0 remaining",
+        "Verify level 5 has 5 remaining"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-417",
+      "title": "HomeViewModel hasPlayedBefore checks if any games completed",
+      "description": "HomeViewModel should expose hasPlayedBefore returning true when totalSolved > 0",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify false when totalSolved is 0",
+        "Verify true when totalSolved > 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-418",
+      "title": "DifficultyLevel scoringDescription formatted text about scoring",
+      "description": "DifficultyLevel should expose scoringDescription like \"10 pts per correct, -2 penalty\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy shows correct values",
+        "Verify hard shows higher values",
+        "Verify contains pts text"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

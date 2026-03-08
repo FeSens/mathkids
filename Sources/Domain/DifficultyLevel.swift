@@ -126,6 +126,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operationCount) operations | 1-\(operandRange.upperBound) | \(timeLimitSeconds)s"
     }
 
+    var scoringDescription: String {
+        "\(pointsPerCorrect) pts per correct, -\(penaltyPerWrong) penalty"
+    }
+
     var timePerProblemText: String {
         "\(recommendedSecondsPerProblem)s per problem"
     }

@@ -91,6 +91,12 @@ extension MathProblem {
         return .large
     }
 
+    var answerRange: (min: Int, max: Int) {
+        let answer = correctAnswer
+        let spread = max(abs(answer) / 2, 5)
+        return (answer - spread, answer + spread)
+    }
+
     var isLargeResult: Bool {
         abs(correctAnswer) > 100
     }

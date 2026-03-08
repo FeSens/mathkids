@@ -55,6 +55,10 @@ final class HomeViewModel {
         return "\(hours)h \(minutes)m"
     }
 
+    var hasPlayedBefore: Bool {
+        totalSolved > 0
+    }
+
     var levelProgressDescription: String {
         if LevelSystem.isMaxLevel(for: totalXP) {
             return "Max level reached!"
