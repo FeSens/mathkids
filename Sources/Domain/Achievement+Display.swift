@@ -148,4 +148,37 @@ extension Achievement {
     var achievementUnlockSound: String {
         isRareAchievement ? "fanfare" : "chime"
     }
+
+    var achievementFilterTag: String {
+        switch category {
+        case .streak: return "streak"
+        case .score: return "score"
+        case .games: return "games"
+        case .mastery: return "mastery"
+        }
+    }
+
+    var achievementIsStarter: Bool {
+        pointValue <= 10
+    }
+
+    var achievementBackgroundGradient: String {
+        switch category {
+        case .streak: return "fireGradient"
+        case .score: return "blueGradient"
+        case .games: return "greenGradient"
+        case .mastery: return "royalGradient"
+        }
+    }
+
+    var achievementRankLabel: String {
+        if pointValue >= 50 { return "Platinum" }
+        if pointValue >= 25 { return "Gold" }
+        if pointValue >= 15 { return "Silver" }
+        return "Bronze"
+    }
+
+    var achievementIsCategoryLeader: Bool {
+        category == .mastery || category == .score
+    }
 }

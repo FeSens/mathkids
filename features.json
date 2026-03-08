@@ -22811,6 +22811,82 @@
       "files": [
         "Sources/Domain/Achievement+Display.swift"
       ]
+    },
+    {
+      "id": "logic-1344",
+      "title": "Achievement Filter Tag",
+      "description": "Add achievementFilterTag returning a tag string for filtering UI",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementFilterTag matches category"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1345",
+      "title": "Achievement Is Starter",
+      "description": "Add achievementIsStarter returning true for low point value achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create low value achievement",
+        "Verify achievementIsStarter is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1346",
+      "title": "Achievement Background Gradient",
+      "description": "Add achievementBackgroundGradient returning gradient name based on category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievements of different categories",
+        "Verify correct gradient names"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1347",
+      "title": "Achievement Rank Label",
+      "description": "Add achievementRankLabel returning Bronze/Silver/Gold/Platinum based on point value",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievements with varying point values",
+        "Verify correct rank labels"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1348",
+      "title": "Achievement Is Category Leader",
+      "description": "Add achievementIsCategoryLeader returning true for mastery and score categories",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementIsCategoryLeader is true",
+        "Verify games returns false"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
     }
   ],
   "_schema": {
