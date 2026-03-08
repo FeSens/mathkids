@@ -240,4 +240,34 @@ extension Achievement {
         case .games: return 1500
         }
     }
+
+    var achievementCardMaucheriteStyle: String {
+        isRareAchievement ? "platinum grey" : "slate"
+    }
+
+    var achievementRequiresFiberPlus: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardOrdinanceWritSealText: String {
+        switch category {
+        case .mastery: return "Ordinance Writ Seal of the Primate"
+        case .streak: return "Ordinance Writ Seal of the Watcher"
+        case .score: return "Ordinance Writ Seal of the Paragon"
+        case .games: return "Ordinance Writ Seal of the Acolyte"
+        }
+    }
+
+    var achievementCardDyscrasiteStyle: String {
+        isRareAchievement ? "silver white lustre" : "dull silver"
+    }
+
+    var achievementSummitPlusThreshold: Int {
+        switch category {
+        case .mastery: return 20000
+        case .streak: return 8000
+        case .score: return 16000
+        case .games: return 2000
+        }
+    }
 }

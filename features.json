@@ -36547,6 +36547,96 @@
         "Verify threshold <= 2000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2241",
+      "title": "Achievement card maucherite style",
+      "description": "Computed property achievementCardMaucheriteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify maucherite style is platinum grey",
+        "Create common achievement",
+        "Verify maucherite style is slate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2242",
+      "title": "Achievement requires fiber plus",
+      "description": "Computed property achievementRequiresFiberPlus returns true for score or mastery categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresFiberPlus is true",
+        "Create streak achievement",
+        "Verify requiresFiberPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2243",
+      "title": "Achievement card ordinance writ seal text",
+      "description": "Computed property achievementCardOrdinanceWritSealText returns category-based ordinance writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Ordinance Writ Seal of the Primate",
+        "Create games achievement",
+        "Verify text is Ordinance Writ Seal of the Acolyte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2244",
+      "title": "Achievement card dyscrasite style",
+      "description": "Computed property achievementCardDyscrasiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify dyscrasite style is silver white lustre",
+        "Create common achievement",
+        "Verify dyscrasite style is dull silver"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2245",
+      "title": "Achievement summit plus threshold",
+      "description": "Computed property achievementSummitPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Zenith.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 20000",
+        "Create games achievement",
+        "Verify threshold <= 3000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
