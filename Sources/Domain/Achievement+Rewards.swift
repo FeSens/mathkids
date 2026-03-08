@@ -100,4 +100,29 @@ extension Achievement {
     var achievementInfoText: String {
         "Worth \(pointValue) points — \(category.displayName) achievement"
     }
+
+    var achievementUnlockPercentile: Int {
+        achievementRarityPercentage
+    }
+
+    var achievementFrameColor: String {
+        switch category {
+        case .mastery: return "gold"
+        case .streak: return "silver"
+        case .score: return "silver"
+        case .games: return "bronze"
+        }
+    }
+
+    var achievementIsProgressive: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementStampColor: String {
+        isRareAchievement ? "red" : "blue"
+    }
+
+    var achievementExpirationDays: Int {
+        0
+    }
 }

@@ -26596,6 +26596,79 @@
         "Create any achievement",
         "Verify infoText contains point value"
       ]
+    },
+    {
+      "id": "logic-1594",
+      "title": "achievementUnlockPercentile",
+      "description": "Return estimated unlock percentile",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify percentile <= 10",
+        "Create common achievement",
+        "Verify percentile >= 50"
+      ]
+    },
+    {
+      "id": "logic-1595",
+      "title": "achievementFrameColor",
+      "description": "Return frame color name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify frame is gold",
+        "Create games achievement",
+        "Verify frame is bronze"
+      ]
+    },
+    {
+      "id": "logic-1596",
+      "title": "achievementIsProgressive",
+      "description": "Return whether achievement has progressive stages",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isProgressive is true",
+        "Create games achievement",
+        "Verify isProgressive is false"
+      ]
+    },
+    {
+      "id": "logic-1597",
+      "title": "achievementStampColor",
+      "description": "Return stamp color for achievement card",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify stamp is red",
+        "Create common achievement",
+        "Verify stamp is blue"
+      ]
+    },
+    {
+      "id": "logic-1598",
+      "title": "achievementExpirationDays",
+      "description": "Return days until achievement expires (0 = never)",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify expirationDays is 0"
+      ]
     }
   ],
   "_schema": {
