@@ -27890,6 +27890,79 @@
         "Create games achievement",
         "Verify target == 1"
       ]
+    },
+    {
+      "id": "logic-1684",
+      "title": "achievementSuggestionText",
+      "description": "Return suggestion text for unlocking",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text contains practice",
+        "Create games achievement",
+        "Verify text contains play"
+      ]
+    },
+    {
+      "id": "logic-1685",
+      "title": "achievementCardTitleColor",
+      "description": "Return title color name for card",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify color is white",
+        "Create common achievement",
+        "Verify color is black"
+      ]
+    },
+    {
+      "id": "logic-1686",
+      "title": "achievementIsOffline",
+      "description": "Return whether achievement works offline",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify isOffline is true"
+      ]
+    },
+    {
+      "id": "logic-1687",
+      "title": "achievementLevelRequirement",
+      "description": "Return level requirement",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify level >= 5",
+        "Create games achievement",
+        "Verify level == 1"
+      ]
+    },
+    {
+      "id": "logic-1688",
+      "title": "achievementCardOverlayOpacity",
+      "description": "Return overlay opacity for cards",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify opacity is 0.3",
+        "Create common achievement",
+        "Verify opacity is 0"
+      ]
     }
   ],
   "_schema": {

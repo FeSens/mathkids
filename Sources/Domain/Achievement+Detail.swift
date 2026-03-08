@@ -13,4 +13,34 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementSuggestionText: String {
+        switch category {
+        case .mastery: return "Practice more to unlock!"
+        case .streak: return "Keep coming back daily!"
+        case .score: return "Aim higher each game!"
+        case .games: return "Play more games to unlock!"
+        }
+    }
+
+    var achievementCardTitleColor: String {
+        isRareAchievement ? "white" : "black"
+    }
+
+    var achievementIsOffline: Bool {
+        true
+    }
+
+    var achievementLevelRequirement: Int {
+        switch category {
+        case .mastery: return 8
+        case .streak: return 5
+        case .score: return 3
+        case .games: return 1
+        }
+    }
+
+    var achievementCardOverlayOpacity: Double {
+        isRareAchievement ? 0.3 : 0
+    }
 }
