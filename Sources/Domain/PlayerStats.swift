@@ -59,7 +59,88 @@ final class PlayerStats {
     var bestStreakMultiply: Int = 0
     var bestStreakDivide: Int = 0
 
+    // Elo ratings per operation
+    var eloAdd: Double = 1000
+    var eloSubtract: Double = 1000
+    var eloMultiply: Double = 1000
+    var eloDivide: Double = 1000
+    var eloKFactorAdd: Double = 64
+    var eloKFactorSubtract: Double = 64
+    var eloKFactorMultiply: Double = 64
+    var eloKFactorDivide: Double = 64
+    // Elo history for charting (stores last 50 per operation as comma-separated)
+    var eloHistoryAdd: [Double] = [1000]
+    var eloHistorySubtract: [Double] = [1000]
+    var eloHistoryMultiply: [Double] = [1000]
+    var eloHistoryDivide: [Double] = [1000]
+
     init() {}
+
+    func eloRating(for operation: Operation) -> Double {
+        switch operation {
+        case .add: eloAdd
+        case .subtract: eloSubtract
+        case .multiply: eloMultiply
+        case .divide: eloDivide
+        }
+    }
+
+    func eloKFactor(for operation: Operation) -> Double {
+        switch operation {
+        case .add: eloKFactorAdd
+        case .subtract: eloKFactorSubtract
+        case .multiply: eloKFactorMultiply
+        case .divide: eloKFactorDivide
+        }
+    }
+
+    func updateElo(for operation: Operation, problem: MathProblem, correct: Bool) {
+        let currentRating = eloRating(for: operation)
+        let currentK = eloKFactor(for: operation)
+        let difficulty = EloSystem.problemDifficultyRating(
+            operand1: problem.operand1,
+            operand2: problem.operand2,
+            operation: operation
+        )
+        let result = EloSystem.updateRating(
+            rating: currentRating,
+            problemDifficulty: difficulty,
+            correct: correct,
+            kFactor: currentK
+        )
+
+        switch operation {
+        case .add:
+            eloAdd = result.newRating
+            eloKFactorAdd = result.newKFactor
+            eloHistoryAdd.append(result.newRating)
+            if eloHistoryAdd.count > 50 { eloHistoryAdd.removeFirst() }
+        case .subtract:
+            eloSubtract = result.newRating
+            eloKFactorSubtract = result.newKFactor
+            eloHistorySubtract.append(result.newRating)
+            if eloHistorySubtract.count > 50 { eloHistorySubtract.removeFirst() }
+        case .multiply:
+            eloMultiply = result.newRating
+            eloKFactorMultiply = result.newKFactor
+            eloHistoryMultiply.append(result.newRating)
+            if eloHistoryMultiply.count > 50 { eloHistoryMultiply.removeFirst() }
+        case .divide:
+            eloDivide = result.newRating
+            eloKFactorDivide = result.newKFactor
+            eloHistoryDivide.append(result.newRating)
+            if eloHistoryDivide.count > 50 { eloHistoryDivide.removeFirst() }
+        }
+    }
+
+    func eloHistory(for operation: Operation) -> [Double] {
+        switch operation {
+        case .add: eloHistoryAdd
+        case .subtract: eloHistorySubtract
+        case .multiply: eloHistoryMultiply
+        case .divide: eloHistoryDivide
+        }
+    }
 
     var currentLevel: Int { LevelSystem.level(for: totalXP) }
     var levelName: String { LevelSystem.levelName(for: totalXP) }

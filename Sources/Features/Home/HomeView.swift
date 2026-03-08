@@ -223,6 +223,8 @@ struct HomeView: View {
         }
     }
 
+    @State private var playButtonPhase: CGFloat = 0
+
     private var playButton: some View {
         Button {
             onStartGame(viewModel.selectedDifficulty, viewModel.selectedOperations)
@@ -237,16 +239,20 @@ struct HomeView: View {
                         .fill(
                             LinearGradient(
                                 colors: [.blue, .purple],
-                                startPoint: animateGradient ? .topLeading : .leading,
-                                endPoint: animateGradient ? .bottomTrailing : .trailing
+                                startPoint: UnitPoint(x: playButtonPhase, y: 0),
+                                endPoint: UnitPoint(x: 1.0 - playButtonPhase * 0.5, y: 1)
                             )
                         )
-                        .animation(.easeInOut(duration: 3).repeatForever(autoreverses: true), value: animateGradient)
                 )
                 .shadow(color: .purple.opacity(0.4), radius: 10, y: 5)
         }
         .accessibilityIdentifier("playButton")
         .padding(.horizontal)
+        .onAppear {
+            withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
+                playButtonPhase = 0.5
+            }
+        }
     }
 
     private var practiceButton: some View {

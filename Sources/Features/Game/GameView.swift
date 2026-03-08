@@ -52,62 +52,89 @@ struct GameView: View {
                     }
                 }
 
-                if viewModel.showSkipIndicator {
-                    Text("Skipped — no points")
-                        .font(.system(size: 16, weight: .bold, design: .rounded))
-                        .foregroundStyle(.orange)
-                        .transition(.scale.combined(with: .opacity))
-                        .accessibilityIdentifier("skipIndicator")
+                // Fixed-height feedback area to prevent layout shifts
+                ZStack {
+                    // Answer history dots (always reserve space)
+                    if !viewModel.answerHistory.isEmpty {
+                        HStack(spacing: 6) {
+                            ForEach(Array(viewModel.answerHistory.enumerated()), id: \.offset) { _, correct in
+                                Image(systemName: correct ? "checkmark.circle.fill" : "xmark.circle.fill")
+                                    .font(.system(size: 16))
+                                    .foregroundStyle(correct ? .green : .red)
+                            }
+                        }
+                        .animation(.spring(duration: 0.3), value: viewModel.answerHistory.count)
+                        .accessibilityIdentifier("answerHistory")
+                    }
                 }
+                .frame(height: 20)
 
-                if viewModel.showSpeedBonus {
-                    Text("+5 Speed Bonus!")
-                        .font(.system(size: 16, weight: .bold, design: .rounded))
-                        .foregroundStyle(.cyan)
-                        .transition(.scale.combined(with: .opacity))
-                        .accessibilityIdentifier("speedBonusLabel")
-                }
-
-                if let hint = viewModel.correctAnswerHint {
-                    Text("Answer: \(hint)")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .foregroundStyle(.orange)
-                        .transition(.scale.combined(with: .opacity))
-                        .animation(.spring(duration: 0.3), value: viewModel.correctAnswerHint)
-                        .accessibilityIdentifier("correctAnswerHint")
-                }
-
-                if !viewModel.answerHistory.isEmpty {
-                    HStack(spacing: 6) {
-                        ForEach(Array(viewModel.answerHistory.enumerated()), id: \.offset) { _, correct in
-                            Image(systemName: correct ? "checkmark.circle.fill" : "xmark.circle.fill")
-                                .font(.system(size: 16))
-                                .foregroundStyle(correct ? .green : .red)
+                // Hint display
+                if let hintText = viewModel.currentHintText {
+                    HStack(spacing: 8) {
+                        Image(systemName: "lightbulb.fill")
+                            .foregroundStyle(.yellow)
+                        Text(hintText)
+                            .font(.system(size: 15, weight: .medium, design: .rounded))
+                            .foregroundStyle(.primary)
+                        if viewModel.hasMoreHintSteps {
+                            Button {
+                                viewModel.requestHint()
+                            } label: {
+                                Text("Next")
+                                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                                    .foregroundStyle(.blue)
+                            }
                         }
                     }
-                    .animation(.spring(duration: 0.3), value: viewModel.answerHistory.count)
-                    .accessibilityIdentifier("answerHistory")
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.yellow.opacity(0.1))
+                            .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.yellow.opacity(0.3), lineWidth: 1))
+                    )
+                    .transition(.scale.combined(with: .opacity))
+                    .accessibilityIdentifier("hintDisplay")
                 }
 
-                if let emoji = reactionEmoji {
-                    Text(emoji).font(.system(size: 36)).offset(y: emojiOffset).opacity(emojiOpacity).accessibilityIdentifier("reactionEmoji")
+                // Overlay area for transient messages (no layout shift)
+                ZStack {
+                    if viewModel.showSkipIndicator {
+                        Text("Skipped — no points")
+                            .font(.system(size: 16, weight: .bold, design: .rounded))
+                            .foregroundStyle(.orange)
+                            .transition(.scale.combined(with: .opacity))
+                            .accessibilityIdentifier("skipIndicator")
+                    } else if viewModel.showSpeedBonus {
+                        Text("+5 Speed Bonus!")
+                            .font(.system(size: 16, weight: .bold, design: .rounded))
+                            .foregroundStyle(.cyan)
+                            .transition(.scale.combined(with: .opacity))
+                            .accessibilityIdentifier("speedBonusLabel")
+                    } else if let hint = viewModel.correctAnswerHint {
+                        Text("Answer: \(hint)")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundStyle(.orange)
+                            .transition(.scale.combined(with: .opacity))
+                            .accessibilityIdentifier("correctAnswerHint")
+                    } else if let milestone = viewModel.streakMilestoneMessage {
+                        Text(milestone)
+                            .font(.system(size: 28, weight: .black, design: .rounded))
+                            .foregroundStyle(.orange)
+                            .transition(.scale.combined(with: .opacity))
+                            .accessibilityIdentifier("streakMilestone")
+                    } else if let message = viewModel.motivationalMessage {
+                        Text(message)
+                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                            .foregroundStyle(.green)
+                            .transition(.scale.combined(with: .opacity))
+                            .accessibilityIdentifier("motivationalMessage")
+                    }
                 }
-
-                if let milestone = viewModel.streakMilestoneMessage {
-                    Text(milestone)
-                        .font(.system(size: 28, weight: .black, design: .rounded))
-                        .foregroundStyle(.orange)
-                        .transition(.scale.combined(with: .opacity))
-                        .accessibilityIdentifier("streakMilestone")
-                }
-
-                if let message = viewModel.motivationalMessage {
-                    Text(message)
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .foregroundStyle(.green)
-                        .transition(.scale.combined(with: .opacity))
-                        .accessibilityIdentifier("motivationalMessage")
-                }
+                .frame(height: 32)
+                .animation(.spring(duration: 0.3), value: viewModel.correctAnswerHint)
+                .animation(.spring(duration: 0.3), value: viewModel.motivationalMessage != nil)
 
                 answerDisplay
 
@@ -160,40 +187,21 @@ struct GameView: View {
     }
 
     private var problemDisplay: some View {
-        HStack(spacing: 8) {
-            Text(viewModel.problemText)
-                .font(.system(size: 64, weight: .bold, design: .rounded))
-                .foregroundStyle(difficultyTextColor)
-                .modifier(ShakeEffect(shakes: viewModel.showShake ? 4 : 0))
-                .animation(.default, value: viewModel.showShake)
-                .id(viewModel.problemTransitionId)
-                .transition(.asymmetric(
-                    insertion: .move(edge: .trailing).combined(with: .opacity),
-                    removal: .move(edge: .leading).combined(with: .opacity)
-                ))
-                .animation(.spring(duration: 0.3), value: viewModel.problemTransitionId)
-                .accessibilityIdentifier("problemLabel")
-                .accessibilityLabel("\(viewModel.engine.currentProblem.operand1) \(viewModel.engine.currentProblem.operation.accessibilityName) \(viewModel.engine.currentProblem.operand2)")
-
-            VStack(spacing: 2) {
-                Circle()
-                    .fill(problemDifficultyColor)
-                    .frame(width: 10, height: 10)
-                Text(problemDifficultyLabel)
-                    .font(.system(size: 9, weight: .bold, design: .rounded))
-                    .foregroundStyle(problemDifficultyColor)
-            }
-            .offset(y: -20)
-            .accessibilityIdentifier("difficultyDot")
-
-            Text(operationBadgeSymbol)
-                .font(.system(size: 14, weight: .bold, design: .rounded))
-                .foregroundStyle(.white)
-                .frame(width: 28, height: 28)
-                .background(Circle().fill(operationBadgeColor))
-                .offset(y: -20)
-                .accessibilityIdentifier("operationBadge")
-        }
+        Text(viewModel.problemText)
+            .font(.system(size: 64, weight: .bold, design: .rounded))
+            .lineLimit(1)
+            .minimumScaleFactor(0.5)
+            .foregroundStyle(difficultyTextColor)
+            .modifier(ShakeEffect(shakes: viewModel.showShake ? 4 : 0))
+            .animation(.default, value: viewModel.showShake)
+            .id(viewModel.problemTransitionId)
+            .transition(.asymmetric(
+                insertion: .move(edge: .trailing).combined(with: .opacity),
+                removal: .move(edge: .leading).combined(with: .opacity)
+            ))
+            .animation(.spring(duration: 0.3), value: viewModel.problemTransitionId)
+            .accessibilityIdentifier("problemLabel")
+            .accessibilityLabel("\(viewModel.engine.currentProblem.operand1) \(viewModel.engine.currentProblem.operation.accessibilityName) \(viewModel.engine.currentProblem.operand2)")
     }
 
     private var streakBackgroundColor: Color { let s = viewModel.currentStreak; return s >= 10 ? Color.orange.opacity(0.06) : s >= 5 ? Color.yellow.opacity(0.04) : .clear }
@@ -226,6 +234,8 @@ struct GameView: View {
                 }
             }
             .font(.system(size: 48, weight: .bold, design: .rounded))
+            .lineLimit(1)
+            .minimumScaleFactor(0.5)
             .foregroundStyle(viewModel.answerText.isEmpty ? .gray : .primary)
             .scaleEffect(answerScale)
             .animation(.spring(duration: 0.15, bounce: 0.5), value: viewModel.answerText)
@@ -235,6 +245,7 @@ struct GameView: View {
             }
             .frame(height: 60)
             .frame(maxWidth: .infinity)
+            .padding(.horizontal, 16)
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(viewModel.answerFieldFlash?.opacity(0.15) ?? Color(.systemGray6))
@@ -278,17 +289,31 @@ struct GameView: View {
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity).frame(height: 56)
-                    .background(RoundedRectangle(cornerRadius: 16).fill(LinearGradient(colors: gradientShift ? [.purple, .blue] : [.blue, .purple], startPoint: .leading, endPoint: .trailing)))
-                    .animation(.easeInOut(duration: 2.0).repeatForever(autoreverses: true), value: gradientShift)
-                    .onAppear { gradientShift = true }
+                    .background(
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(LinearGradient(colors: [.blue, .purple], startPoint: .leading, endPoint: .trailing))
+                    )
             }
             .accessibilityIdentifier("submitButton")
             .buttonStyle(BounceButtonStyle())
 
-            if viewModel.isPracticeMode {
-                Button { viewModel.skipProblem() } label: {
-                    Text("Skip").font(.system(size: 18, weight: .semibold, design: .rounded)).foregroundStyle(.secondary)
-                }.accessibilityIdentifier("skipButton")
+            HStack(spacing: 24) {
+                Button {
+                    withAnimation(.spring(duration: 0.3)) {
+                        viewModel.requestHint()
+                    }
+                } label: {
+                    Label("Hint", systemImage: "lightbulb.fill")
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.yellow)
+                }
+                .accessibilityIdentifier("hintButton")
+
+                if viewModel.isPracticeMode {
+                    Button { viewModel.skipProblem() } label: {
+                        Text("Skip").font(.system(size: 16, weight: .semibold, design: .rounded)).foregroundStyle(.secondary)
+                    }.accessibilityIdentifier("skipButton")
+                }
             }
         }
     }

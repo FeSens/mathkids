@@ -57,10 +57,16 @@ struct PlayTab: View {
                         viewModel: GameViewModel(difficulty: difficulty, allowedOperations: operations),
                         onGameEnd: { session, history in
                             let statsService = StatsService(modelContainer: modelContext.container)
-                            let previousBest = statsService.getOrCreateStats().bestScore
+                            let stats = statsService.getOrCreateStats()
+                            let previousBest = stats.bestScore
+                            let previouslyUnlocked = Set(Achievement.all.filter { $0.isUnlocked(stats: stats) }.map(\.id))
+                            // Update Elo per-answer
+                            for answered in history {
+                                stats.updateElo(for: answered.problem.operation, problem: answered.problem, correct: answered.isCorrect)
+                            }
                             statsService.recordGame(session: session)
                             let isNewBest = session.score > previousBest
-                            router.navigateToResults(session: session, isNewBest: isNewBest, problemHistory: history)
+                            router.navigateToResults(session: session, isNewBest: isNewBest, problemHistory: history, previouslyUnlockedIds: previouslyUnlocked)
                         }
                     )
                     .navigationBarBackButtonHidden()
@@ -70,10 +76,15 @@ struct PlayTab: View {
                         viewModel: GameViewModel(difficulty: difficulty, mode: .practice, allowedOperations: operations),
                         onGameEnd: { session, history in
                             let statsService = StatsService(modelContainer: modelContext.container)
-                            let previousBest = statsService.getOrCreateStats().bestScore
+                            let stats = statsService.getOrCreateStats()
+                            let previousBest = stats.bestScore
+                            let previouslyUnlocked = Set(Achievement.all.filter { $0.isUnlocked(stats: stats) }.map(\.id))
+                            for answered in history {
+                                stats.updateElo(for: answered.problem.operation, problem: answered.problem, correct: answered.isCorrect)
+                            }
                             statsService.recordGame(session: session)
                             let isNewBest = session.score > previousBest
-                            router.navigateToResults(session: session, isNewBest: isNewBest, problemHistory: history)
+                            router.navigateToResults(session: session, isNewBest: isNewBest, problemHistory: history, previouslyUnlockedIds: previouslyUnlocked)
                         }
                     )
                     .navigationBarBackButtonHidden()
@@ -85,9 +96,13 @@ struct PlayTab: View {
                             let statsService = StatsService(modelContainer: modelContext.container)
                             let stats = statsService.getOrCreateStats()
                             let previousBest = stats.bestScore
+                            let previouslyUnlocked = Set(Achievement.all.filter { $0.isUnlocked(stats: stats) }.map(\.id))
+                            for answered in history {
+                                stats.updateElo(for: answered.problem.operation, problem: answered.problem, correct: answered.isCorrect)
+                            }
                             statsService.recordGame(session: session)
                             let isNewBest = session.score > previousBest
-                            router.navigateToResults(session: session, isNewBest: isNewBest, problemHistory: history)
+                            router.navigateToResults(session: session, isNewBest: isNewBest, problemHistory: history, previouslyUnlockedIds: previouslyUnlocked)
                         }
                     )
                     .navigationBarBackButtonHidden()
@@ -96,7 +111,7 @@ struct PlayTab: View {
                     let session = makeSession(score: score, correct: correct, total: total, accuracy: accuracy, bestStreak: bestStreak, difficulty: difficulty)
                     let currentStats = StatsService(modelContainer: modelContext.container).getOrCreateStats()
                     ResultsView(
-                        viewModel: ResultsViewModel(session: session, previousBestScore: isNewBest ? 0 : score + 1, stats: currentStats, problemHistory: router.lastProblemHistory),
+                        viewModel: ResultsViewModel(session: session, previousBestScore: isNewBest ? 0 : score + 1, stats: currentStats, problemHistory: router.lastProblemHistory, previouslyUnlockedIds: router.lastPreviouslyUnlockedIds),
                         onPlayAgain: {
                             router.popToRoot()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

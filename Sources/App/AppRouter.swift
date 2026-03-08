@@ -13,6 +13,7 @@ enum AppRoute: Hashable {
 final class AppRouter {
     var path: [AppRoute] = []
     var lastProblemHistory: [AnsweredProblem] = []
+    var lastPreviouslyUnlockedIds: Set<String> = []
 
     func navigateToGame(difficulty: DifficultyLevel, operations: Set<Operation>) {
         path.append(.game(difficulty, operations))
@@ -26,8 +27,9 @@ final class AppRouter {
         path.append(.dailyChallenge)
     }
 
-    func navigateToResults(session: GameSession, isNewBest: Bool, problemHistory: [AnsweredProblem] = []) {
+    func navigateToResults(session: GameSession, isNewBest: Bool, problemHistory: [AnsweredProblem] = [], previouslyUnlockedIds: Set<String> = []) {
         self.lastProblemHistory = problemHistory
+        self.lastPreviouslyUnlockedIds = previouslyUnlockedIds
         path.append(.results(
             score: session.score,
             correct: session.totalCorrect,

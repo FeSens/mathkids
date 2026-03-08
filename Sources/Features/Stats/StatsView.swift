@@ -20,6 +20,19 @@ struct StatsView: View {
                         .opacity(showCards ? 1 : 0)
                         .offset(y: showCards ? 0 : 20)
 
+                    EloChartView(
+                        addHistory: viewModel.eloHistoryAdd,
+                        subtractHistory: viewModel.eloHistorySubtract,
+                        multiplyHistory: viewModel.eloHistoryMultiply,
+                        divideHistory: viewModel.eloHistoryDivide,
+                        addRating: viewModel.eloAdd,
+                        subtractRating: viewModel.eloSubtract,
+                        multiplyRating: viewModel.eloMultiply,
+                        divideRating: viewModel.eloDivide
+                    )
+                    .opacity(showCards ? 1 : 0)
+                    .offset(y: showCards ? 0 : 20)
+
                     if let stats = viewModel.playerStats {
                         AchievementProgressView(achievements: Achievement.all, stats: stats)
                     }

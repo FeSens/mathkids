@@ -7,43 +7,26 @@ struct GameHeaderView: View {
     @State private var streakScale: Double = 1.0
 
     var body: some View {
-        VStack(spacing: 8) {
-            HStack {
+        VStack(spacing: 6) {
+            // Row 1: Score, problem counter, difficulty, spacer, timer/controls
+            HStack(spacing: 8) {
                 Label("\(viewModel.score)", systemImage: "star.fill")
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(.yellow)
                     .scaleEffect(scoreScale)
                     .onChange(of: viewModel.score) { _, _ in
-                        withAnimation(.spring(duration: 0.3, bounce: 0.5)) {
-                            scoreScale = 1.2
-                        }
-                        withAnimation(.spring(duration: 0.3).delay(0.15)) {
-                            scoreScale = 1.0
-                        }
+                        withAnimation(.spring(duration: 0.3, bounce: 0.5)) { scoreScale = 1.2 }
+                        withAnimation(.spring(duration: 0.3).delay(0.15)) { scoreScale = 1.0 }
                     }
                     .accessibilityIdentifier("scoreLabel")
-                    .accessibilityLabel("Score: \(viewModel.score) points")
 
-                ZStack {
-                    Circle()
-                        .stroke(Color.gray.opacity(0.2), lineWidth: 3)
-                        .frame(width: 36, height: 36)
-                    Circle()
-                        .trim(from: 0, to: viewModel.problemGoalProgress)
-                        .stroke(Color.blue, style: StrokeStyle(lineWidth: 3, lineCap: .round))
-                        .frame(width: 36, height: 36)
-                        .rotationEffect(.degrees(-90))
-                        .animation(.easeInOut(duration: 0.3), value: viewModel.problemGoalProgress)
-                    VStack(spacing: 0) {
-                        Text("#\(viewModel.problemNumber)")
-                            .font(.system(size: 11, weight: .semibold, design: .rounded))
-                            .foregroundStyle(.secondary)
-                            .id(viewModel.problemNumber)
-                            .transition(.opacity)
-                            .animation(.easeInOut(duration: 0.2), value: viewModel.problemNumber)
-                    }
-                }
-                .accessibilityIdentifier("problemCounter")
+                Text("#\(viewModel.problemNumber)")
+                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(Capsule().fill(Color(.systemGray5)))
+                    .accessibilityIdentifier("problemCounter")
 
                 Text(viewModel.engine.difficulty.displayName)
                     .font(.system(size: 11, weight: .bold, design: .rounded))
@@ -53,156 +36,129 @@ struct GameHeaderView: View {
                     .background(Capsule().fill(difficultyColor))
                     .accessibilityIdentifier("difficultyLabel")
 
-                if viewModel.engine.totalAnswered > 0 {
-                    Text("\(viewModel.engine.totalCorrect)/\(viewModel.engine.totalAnswered)")
-                        .font(.system(size: 10, weight: .medium, design: .rounded))
-                        .foregroundStyle(.green)
-                }
-
-                Spacer()
-
-                if viewModel.comboMultiplier > 1 {
-                    HStack(spacing: 4) {
-                        Text("\(viewModel.comboMultiplier)x")
-                            .font(.system(size: 18, weight: .black, design: .rounded))
-                            .foregroundStyle(.purple)
-
-                        if viewModel.comboMultiplier >= 3 {
-                            Text("2x XP")
-                                .font(.system(size: 10, weight: .bold, design: .rounded))
-                                .foregroundStyle(.white)
-                                .padding(.horizontal, 6)
-                                .padding(.vertical, 2)
-                                .background(Capsule().fill(.orange))
-                                .accessibilityIdentifier("doubleXPBadge")
-                        }
-                    }
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 2)
-                    .background(Capsule().fill(.purple.opacity(0.15)))
-                    .scaleEffect(1.0 + Double(viewModel.comboMultiplier) * 0.05)
-                    .animation(.spring(duration: 0.3), value: viewModel.comboMultiplier)
-                    .accessibilityIdentifier("comboMultiplier")
-                }
-
-                if viewModel.engine.totalAnswered > 0 {
-                    Text("\(Int(viewModel.engine.accuracy))%")
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .foregroundStyle(viewModel.engine.accuracy >= 70 ? .green : viewModel.engine.accuracy >= 50 ? .orange : .red)
-                        .accessibilityIdentifier("sessionAccuracy")
-                        .accessibilityLabel("Session accuracy: \(Int(viewModel.engine.accuracy)) percent")
-                }
-
-                if viewModel.hasStreakFreeze {
-                    Image(systemName: "shield.fill")
-                        .font(.system(size: 16))
-                        .foregroundStyle(.cyan)
-                        .accessibilityIdentifier("streakFreezeIndicator")
-                        .accessibilityLabel("Streak freeze active")
-                }
-
-                if viewModel.currentStreak > 0 {
-                    HStack(spacing: 2) {
-                        Label("\(viewModel.currentStreak)", systemImage: "flame.fill")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
-                            .foregroundStyle(.orange)
-                            .scaleEffect(streakScale)
-                            .onChange(of: viewModel.currentStreak) { _, _ in
-                                withAnimation(.spring(duration: 0.2, bounce: 0.6)) {
-                                    streakScale = 1.3
-                                }
-                                withAnimation(.spring(duration: 0.2).delay(0.15)) {
-                                    streakScale = 1.0
-                                }
-                            }
-                            .accessibilityIdentifier("streakLabel")
-                            .accessibilityLabel("Streak: \(viewModel.currentStreak) correct in a row")
-                            .shadow(color: viewModel.currentStreak >= 10 ? .orange.opacity(0.6) : viewModel.currentStreak >= 5 ? .orange.opacity(0.3) : .clear, radius: 8)
-
-                        ForEach(0..<streakFlameCount, id: \.self) { i in
-                            Text("🔥")
-                                .font(.system(size: CGFloat(12 + min(viewModel.currentStreak, 10))))
-                                .scaleEffect(1.0 + Double(i) * 0.1)
-                                .animation(.spring(duration: 0.3).delay(Double(i) * 0.05), value: viewModel.currentStreak)
-                        }
-                    }
-                }
-
                 Spacer()
 
                 if viewModel.isPracticeMode {
-                    Text("Solved: \(viewModel.engine.totalAnswered)")
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.blue)
-                        .accessibilityIdentifier("practiceSolvedCount")
-
-                    Button {
-                        viewModel.endPractice()
-                    } label: {
-                        Label("Done", systemImage: "checkmark.circle.fill")
-                            .font(.system(size: 18, weight: .bold, design: .rounded))
-                            .foregroundStyle(.green)
-                    }
-                    .accessibilityIdentifier("doneButton")
+                    practiceControls
                 } else if viewModel.isDailyChallenge {
-                    HStack(spacing: 12) {
-                        Label("\(viewModel.elapsedSeconds)s", systemImage: "stopwatch")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
-                            .foregroundStyle(.blue)
-                            .accessibilityIdentifier("elapsedTimerLabel")
-
-                        Text(viewModel.dailyChallengeProgress)
-                            .font(.system(size: 18, weight: .bold, design: .rounded))
-                            .foregroundStyle(.purple)
-                            .accessibilityIdentifier("dailyProgressLabel")
-                    }
+                    dailyChallengeControls
                 } else {
-                    TimerRingView(
-                        progress: viewModel.timeProgress,
-                        timeRemaining: viewModel.timeRemaining,
-                        isPulsing: timerPulse
-                    )
-                    .frame(width: 48, height: 48)
-                    .onChange(of: viewModel.timeRemaining) { _, newValue in
-                        timerPulse = newValue <= 10
-                    }
-                    .accessibilityIdentifier("timerLabel")
-                    .accessibilityLabel("\(viewModel.timeRemaining) seconds remaining")
-
-                    Button {
-                        viewModel.togglePause()
-                    } label: {
-                        Image(systemName: viewModel.isPaused ? "play.fill" : "pause.fill")
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundStyle(.secondary)
-                    }
-                    .accessibilityIdentifier("pauseButton")
+                    timedControls
                 }
             }
+
+            // Row 2: Accuracy, streak, combo (only when there's data)
+            if viewModel.engine.totalAnswered > 0 {
+                HStack(spacing: 12) {
+                    Text("\(viewModel.engine.totalCorrect)/\(viewModel.engine.totalAnswered)")
+                        .font(.system(size: 12, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.green)
+
+                    Text("\(Int(viewModel.engine.accuracy))%")
+                        .font(.system(size: 12, weight: .bold, design: .rounded))
+                        .foregroundStyle(viewModel.engine.accuracy >= 70 ? .green : viewModel.engine.accuracy >= 50 ? .orange : .red)
+                        .accessibilityIdentifier("sessionAccuracy")
+
+                    Spacer()
+
+                    if viewModel.comboMultiplier > 1 {
+                        Text("\(viewModel.comboMultiplier)x")
+                            .font(.system(size: 14, weight: .black, design: .rounded))
+                            .foregroundStyle(.purple)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 2)
+                            .background(Capsule().fill(.purple.opacity(0.15)))
+                            .accessibilityIdentifier("comboMultiplier")
+                    }
+
+                    if viewModel.hasStreakFreeze {
+                        Image(systemName: "shield.fill")
+                            .font(.system(size: 14))
+                            .foregroundStyle(.cyan)
+                            .accessibilityIdentifier("streakFreezeIndicator")
+                    }
+
+                    if viewModel.currentStreak > 0 {
+                        HStack(spacing: 2) {
+                            Image(systemName: "flame.fill")
+                                .font(.system(size: 14))
+                                .foregroundStyle(.orange)
+                            Text("\(viewModel.currentStreak)")
+                                .font(.system(size: 16, weight: .bold, design: .rounded))
+                                .foregroundStyle(.orange)
+                        }
+                        .scaleEffect(streakScale)
+                        .onChange(of: viewModel.currentStreak) { _, _ in
+                            withAnimation(.spring(duration: 0.2, bounce: 0.6)) { streakScale = 1.2 }
+                            withAnimation(.spring(duration: 0.2).delay(0.15)) { streakScale = 1.0 }
+                        }
+                        .accessibilityIdentifier("streakLabel")
+                    }
+                }
+                .font(.system(size: 12, design: .rounded))
+            }
+        }
+    }
+
+    private var practiceControls: some View {
+        HStack(spacing: 8) {
+            Text("Solved: \(viewModel.engine.totalAnswered)")
+                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .foregroundStyle(.blue)
+                .accessibilityIdentifier("practiceSolvedCount")
+
+            Button {
+                viewModel.endPractice()
+            } label: {
+                Label("Done", systemImage: "checkmark.circle.fill")
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .foregroundStyle(.green)
+            }
+            .accessibilityIdentifier("doneButton")
+        }
+    }
+
+    private var dailyChallengeControls: some View {
+        HStack(spacing: 8) {
+            Label("\(viewModel.elapsedSeconds)s", systemImage: "stopwatch")
+                .font(.system(size: 16, weight: .bold, design: .rounded))
+                .foregroundStyle(.blue)
+                .accessibilityIdentifier("elapsedTimerLabel")
+
+            Text(viewModel.dailyChallengeProgress)
+                .font(.system(size: 16, weight: .bold, design: .rounded))
+                .foregroundStyle(.purple)
+                .accessibilityIdentifier("dailyProgressLabel")
+        }
+    }
+
+    private var timedControls: some View {
+        HStack(spacing: 8) {
+            TimerRingView(
+                progress: viewModel.timeProgress,
+                timeRemaining: viewModel.timeRemaining,
+                isPulsing: timerPulse
+            )
+            .frame(width: 44, height: 44)
+            .onChange(of: viewModel.timeRemaining) { _, newValue in
+                timerPulse = newValue <= 10
+            }
+            .accessibilityIdentifier("timerLabel")
+
+            Button {
+                viewModel.togglePause()
+            } label: {
+                Image(systemName: viewModel.isPaused ? "play.fill" : "pause.fill")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(.secondary)
+            }
+            .accessibilityIdentifier("pauseButton")
         }
     }
 
     private var difficultyColor: Color {
         switch viewModel.engine.difficulty {
         case .easy: .green; case .medium: .orange; case .hard: .red
-        }
-    }
-
-    private var streakFlameCount: Int {
-        let streak = viewModel.currentStreak
-        if streak >= 10 { return 4 }
-        if streak >= 5 { return 3 }
-        if streak >= 3 { return 2 }
-        return 1
-    }
-
-    private var timerColors: [Color] {
-        if viewModel.timeProgress > 0.5 {
-            return [.green, .blue]
-        } else if viewModel.timeProgress > 0.25 {
-            return [.yellow, .orange]
-        } else {
-            return [.orange, .red]
         }
     }
 }

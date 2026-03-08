@@ -17,7 +17,7 @@ final class ResultsViewModel {
     let problemHistory: [AnsweredProblem]
     let playerAverageAccuracy: Double?
 
-    init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil, problemHistory: [AnsweredProblem] = [], previousBestForDifficulty: Int = 0) {
+    init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil, problemHistory: [AnsweredProblem] = [], previousBestForDifficulty: Int = 0, previouslyUnlockedIds: Set<String> = []) {
         self.problemHistory = problemHistory
         self.session = session
         self.previousBestScore = previousBestScore
@@ -35,9 +35,20 @@ final class ResultsViewModel {
             self.playerAverageAccuracy = stats.totalSolved > 0 ? stats.accuracy : nil
             self.previousLevel = LevelSystem.level(for: stats.totalXP - totalXP)
             self.newLevel = stats.currentLevel
-            newAchievements = Achievement.all.filter { $0.isUnlocked(stats: stats) }
-            if newAchievements.count > 3 {
-                newAchievements = Array(newAchievements.prefix(3))
+
+            // Only show NEWLY unlocked achievements (not previously unlocked)
+            let currentlyUnlocked = Achievement.all.filter { $0.isUnlocked(stats: stats) }
+            let newlyUnlocked = currentlyUnlocked.filter { !previouslyUnlockedIds.contains($0.id) }
+
+            if !newlyUnlocked.isEmpty {
+                newAchievements = Array(newlyUnlocked.prefix(3))
+            } else {
+                // If no new achievements, show closest to unlocking
+                let closest = Achievement.all
+                    .filter { !$0.isUnlocked(stats: stats) }
+                    .sorted { $0.progressPercentage(stats: stats) > $1.progressPercentage(stats: stats) }
+                    .prefix(1)
+                newAchievements = Array(closest)
             }
         } else {
             self.playerAverageAccuracy = nil

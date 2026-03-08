@@ -31,6 +31,9 @@ final class GameViewModel {
     var showSkipIndicator: Bool = false
     var lastProblemHistory: [AnsweredProblem] { engine.problemHistory }
     var hasStreakFreeze: Bool { engine.hasStreakFreeze }
+    var showingHint: Bool = false
+    var currentHintStep: Int = 0
+    var hintSteps: [String] = []
     var elapsedSeconds: Int = 0
     private var elapsedTimer: Timer?
     private(set) var dailyChallengeProblemsTotal: Int = 10
@@ -152,6 +155,9 @@ final class GameViewModel {
         answerText = ""
         problemTransitionId = UUID()
         problemNumber += 1
+        showingHint = false
+        currentHintStep = 0
+        hintSteps = []
 
         if mode == .dailyChallenge {
             dailyChallengeProblemsAnswered += 1
@@ -250,6 +256,32 @@ final class GameViewModel {
     func toggleNegative() {
         HapticService.buttonTap()
         answerText = answerText.hasPrefix("-") ? String(answerText.dropFirst()) : "-" + answerText
+    }
+
+    func requestHint() {
+        HapticService.buttonTap()
+        if !showingHint {
+            hintSteps = MentalMathTips.tips(for: engine.currentProblem)
+            currentHintStep = 0
+            showingHint = true
+        } else if currentHintStep < hintSteps.count - 1 {
+            currentHintStep += 1
+        }
+    }
+
+    func dismissHint() {
+        showingHint = false
+        currentHintStep = 0
+        hintSteps = []
+    }
+
+    var currentHintText: String? {
+        guard showingHint, !hintSteps.isEmpty, currentHintStep < hintSteps.count else { return nil }
+        return hintSteps[currentHintStep]
+    }
+
+    var hasMoreHintSteps: Bool {
+        showingHint && currentHintStep < hintSteps.count - 1
     }
 
     func endPractice() { stopGame() }

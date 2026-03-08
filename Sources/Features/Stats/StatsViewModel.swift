@@ -25,6 +25,16 @@ final class StatsViewModel {
     var totalTimePlayedMinutes: Int = 0
     var totalXP: Int = 0
 
+    // Elo ratings
+    var eloAdd: Double = 1000
+    var eloSubtract: Double = 1000
+    var eloMultiply: Double = 1000
+    var eloDivide: Double = 1000
+    var eloHistoryAdd: [Double] = [1000]
+    var eloHistorySubtract: [Double] = [1000]
+    var eloHistoryMultiply: [Double] = [1000]
+    var eloHistoryDivide: [Double] = [1000]
+
     var formattedTimePlayed: String {
         if totalTimePlayedMinutes >= 60 {
             let hours = totalTimePlayedMinutes / 60
@@ -264,5 +274,15 @@ final class StatsViewModel {
             let acc = stats.accuracyForOperation(op)
             if acc > 0 { operationAccuracies[op.rawValue] = acc }
         }
+
+        // Elo ratings
+        eloAdd = stats.eloAdd
+        eloSubtract = stats.eloSubtract
+        eloMultiply = stats.eloMultiply
+        eloDivide = stats.eloDivide
+        eloHistoryAdd = stats.eloHistoryAdd
+        eloHistorySubtract = stats.eloHistorySubtract
+        eloHistoryMultiply = stats.eloHistoryMultiply
+        eloHistoryDivide = stats.eloHistoryDivide
     }
 }

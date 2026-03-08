@@ -149,12 +149,6 @@ extension PlayerStats {
         }
         updateBestScore(session.score, for: session.difficulty)
 
-        switch session.difficulty {
-        case .easy: easyGamesPlayed += 1
-        case .medium: mediumGamesPlayed += 1
-        case .hard: hardGamesPlayed += 1
-        }
-
         let timePlayed = session.difficulty.timeLimitSeconds - session.timeRemaining
         totalTimePlayedSeconds += max(timePlayed, 0)
 
@@ -162,6 +156,50 @@ extension PlayerStats {
         if recentAccuracies.count > 10 {
             recentAccuracies.removeFirst()
         }
+
+        // Calculate and add XP earned this session
+        var sessionXP = 0
+        for i in 0..<session.totalCorrect {
+            sessionXP += LevelSystem.xpForCorrectAnswer(streak: min(i, 10))
+        }
+        totalXP += sessionXP
+
+        // Record mastery if accuracy >= 90%
+        recordMasteryIfQualified(accuracy: session.accuracy, difficulty: session.difficulty)
+
+        // Update best accuracy per difficulty
+        switch session.difficulty {
+        case .easy:
+            if session.accuracy > bestAccuracyEasy { bestAccuracyEasy = session.accuracy }
+            xpEasy += sessionXP
+            problemsSolvedEasy += session.totalAnswered
+        case .medium:
+            if session.accuracy > bestAccuracyMedium { bestAccuracyMedium = session.accuracy }
+            xpMedium += sessionXP
+            problemsSolvedMedium += session.totalAnswered
+        case .hard:
+            if session.accuracy > bestAccuracyHard { bestAccuracyHard = session.accuracy }
+            xpHard += sessionXP
+            problemsSolvedHard += session.totalAnswered
+        }
+
+        // Record score for difficulty average
+        recordScoreForDifficulty(session.score, for: session.difficulty)
+
+        // Track perfect games
+        if session.accuracy >= 100 && session.totalAnswered >= 5 {
+            perfectGameCount += 1
+        }
+
+        // Update best streaks per difficulty
+        switch session.difficulty {
+        case .easy: bestStreakEasy = max(bestStreakEasy, session.bestStreak)
+        case .medium: bestStreakMedium = max(bestStreakMedium, session.bestStreak)
+        case .hard: bestStreakHard = max(bestStreakHard, session.bestStreak)
+        }
+
+        // Update longest session
+        longestSessionSeconds = max(longestSessionSeconds, max(timePlayed, 0))
     }
 
     var correctCountPerOperation: [Operation: Int] {
