@@ -28,4 +28,32 @@ extension DifficultyLevel {
     var difficultyIsDefault: Bool {
         self == .easy
     }
+
+    var difficultyAccessibilityLabel: String {
+        "\(displayName) difficulty"
+    }
+
+    var difficultySpeedLabel: String {
+        switch self {
+        case .easy: return "Relaxed"
+        case .medium: return "Moderate"
+        case .hard: return "Fast"
+        }
+    }
+
+    var difficultyUnlockMessage: String {
+        switch self {
+        case .easy: return "Available from the start!"
+        case .medium: return "Unlocked! Ready for more?"
+        case .hard: return "Unlocked! Show what you know!"
+        }
+    }
+
+    var difficultyIsBeginner: Bool {
+        self == .easy
+    }
+
+    var difficultyBadgeText: String {
+        String(displayName.prefix(1))
+    }
 }

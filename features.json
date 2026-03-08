@@ -18146,6 +18146,81 @@
         "easy is default, hard is not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1064",
+      "name": "difficultyAccessibilityLabel",
+      "description": "Accessibility label for difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "contains display name and difficulty"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1065",
+      "name": "difficultySpeedLabel",
+      "description": "Speed description for difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns Relaxed, hard returns Fast"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1066",
+      "name": "difficultyUnlockMessage",
+      "description": "Message shown when difficulty is unlocked",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all levels"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1067",
+      "name": "difficultyIsBeginner",
+      "description": "Whether difficulty is for beginners",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy is beginner, hard is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1068",
+      "name": "difficultyBadgeText",
+      "description": "Short badge text for difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Display.swift"
+      ],
+      "test_steps": [
+        "easy returns E, hard returns H"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
