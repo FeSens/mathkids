@@ -82,6 +82,10 @@ final class HomeViewModel {
         "\(selectedDifficulty.displayName) - \(selectedDifficulty.operationCount) operations"
     }
 
+    var xpSummaryText: String {
+        "Level \(currentLevel) | \(totalXP) XP"
+    }
+
     var isAllOperationsSelected: Bool {
         selectedOperations.count == Operation.allCases.count
     }

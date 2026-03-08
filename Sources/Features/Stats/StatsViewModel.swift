@@ -92,6 +92,14 @@ final class StatsViewModel {
         "\(Int(accuracy))% (\(accuracyGrade))"
     }
 
+    var improvementTrend: String {
+        switch accuracyTrend {
+        case .improving: "Getting better!"
+        case .declining: "Needs practice"
+        case .stable: "Steady performance"
+        }
+    }
+
     var dailyStreakText: String {
         dailyStreak == 1 ? "1 day streak" : "\(dailyStreak) day streak"
     }

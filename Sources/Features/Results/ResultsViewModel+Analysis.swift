@@ -106,6 +106,10 @@ extension ResultsViewModel {
         "Best streak: \(bestStreak)"
     }
 
+    var timeTakenText: String {
+        "\(session.totalTimePlayed)s"
+    }
+
     var scorePercentageText: String {
         "\(Int(scoreAsPercentOfMax))%"
     }

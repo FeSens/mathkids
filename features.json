@@ -9398,6 +9398,87 @@
         "Verify allCases contains result"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-514",
+      "title": "HomeViewModel xpSummaryText formatted XP info",
+      "description": "HomeViewModel should expose xpSummaryText returning formatted XP summary",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes XP count",
+        "Verify includes level"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-515",
+      "title": "StatsViewModel improvementTrend returns text based on trend",
+      "description": "StatsViewModel should expose improvementTrend returning readable text for accuracy trend",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify stable returns stable text",
+        "Verify improving returns positive text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-516",
+      "title": "ResultsViewModel timeTakenText formatted duration",
+      "description": "ResultsViewModel+Analysis should expose timeTakenText showing total time taken",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify includes seconds",
+        "Verify returns valid text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-517",
+      "title": "MathProblem isSubtractionFromTen checks subtract from 10",
+      "description": "MathProblem should expose isSubtractionFromTen returning true for subtraction where operand1 is 10",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 10-3 returns true",
+        "Verify 5-3 returns false",
+        "Verify 10+3 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-518",
+      "title": "GameSession remainingTimePercentage percentage of time left",
+      "description": "GameSession should expose remainingTimePercentage returning time remaining as a 0-100 percentage",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify full time returns 100",
+        "Verify half time returns ~50"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

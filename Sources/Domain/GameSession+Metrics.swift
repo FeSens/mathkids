@@ -243,6 +243,12 @@ extension GameSession {
         return Double(totalWrong) / minutes
     }
 
+    var remainingTimePercentage: Int {
+        let total = difficulty.timeLimitSeconds
+        guard total > 0 else { return 0 }
+        return timeRemaining * 100 / total
+    }
+
     var elapsedTimeText: String {
         let minutes = totalTimePlayed / 60
         let seconds = totalTimePlayed % 60
