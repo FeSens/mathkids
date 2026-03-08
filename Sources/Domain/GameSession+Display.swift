@@ -153,4 +153,24 @@ extension GameSession {
     var difficultyColor: String {
         difficulty.color
     }
+
+    var gameStatusText: String {
+        isFinished ? "Finished" : "In Progress"
+    }
+
+    var pointsPerCorrectAnswer: String {
+        "\(difficulty.pointsPerCorrect) pts/correct"
+    }
+
+    var isNewGame: Bool {
+        totalAnswered == 0 && timeRemaining == difficulty.timeLimitSeconds
+    }
+
+    var currentScoreLabel: String {
+        "Score: \(score)"
+    }
+
+    var hasPerfectStreak: Bool {
+        totalAnswered > 0 && totalCorrect == totalAnswered
+    }
 }

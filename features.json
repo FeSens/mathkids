@@ -12045,6 +12045,86 @@
         "Hard returns red"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-679",
+      "name": "GameSession+Display.gameStatusText",
+      "description": "Returns In Progress or Finished based on state",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Fresh returns In Progress",
+        "Finished returns Finished"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-680",
+      "name": "GameSession+Display.pointsPerCorrectAnswer",
+      "description": "Returns difficulty points per correct as display text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Easy returns 10 pts/correct",
+        "Hard returns 30"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-681",
+      "name": "GameSession+Display.isNewGame",
+      "description": "Returns true when no answers given and full time remaining",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Fresh is true",
+        "After answer is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-682",
+      "name": "GameSession+Display.currentScoreLabel",
+      "description": "Returns Score: X format",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Score 50",
+        "Verify Score: 50"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-683",
+      "name": "GameSession+Display.hasPerfectStreak",
+      "description": "Returns true when all answers correct so far",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "All correct returns true",
+        "Any wrong returns false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
