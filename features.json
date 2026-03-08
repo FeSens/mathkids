@@ -19121,6 +19121,81 @@
         "add is commutative, subtract is not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1129",
+      "name": "problemIsTableFact",
+      "description": "Whether problem is a standard table fact (both operands 1-9)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3x4 is table fact"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1130",
+      "name": "problemReversedText",
+      "description": "Problem with operands reversed",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "2+3 reversed is 3+2"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1131",
+      "name": "problemIsSquare",
+      "description": "Whether both operands are equal for multiply",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3x3 is square, 2x3 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1132",
+      "name": "problemBadgeLabel",
+      "description": "Short badge label for the problem",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains operation symbol"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1133",
+      "name": "problemPointValue",
+      "description": "Point value based on difficulty",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "harder operations worth more points"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

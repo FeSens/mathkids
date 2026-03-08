@@ -138,4 +138,24 @@ extension MathProblem {
     var problemIsCommutative: Bool {
         operation.operationIsCommutative
     }
+
+    var problemIsTableFact: Bool {
+        operand1 >= 1 && operand1 <= 9 && operand2 >= 1 && operand2 <= 9
+    }
+
+    var problemReversedText: String {
+        "\(operand2) \(operation.rawValue) \(operand1) = ?"
+    }
+
+    var problemIsSquare: Bool {
+        operation == .multiply && operand1 == operand2
+    }
+
+    var problemBadgeLabel: String {
+        "\(operand1)\(operation.rawValue)\(operand2)"
+    }
+
+    var problemPointValue: Int {
+        operation.difficultyWeight * 5
+    }
 }
