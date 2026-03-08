@@ -107,4 +107,28 @@ struct PlayerStatsTests {
         stats.recordGame(session: session)
         #expect(stats.bestStreak == 20)
     }
+
+    // MARK: - Operation Counts (ui-189)
+
+    @Test("Increment operation count works for each type")
+    func incrementOperationCount() {
+        let stats = PlayerStats()
+        stats.incrementOperationCount(.add)
+        stats.incrementOperationCount(.add)
+        stats.incrementOperationCount(.subtract)
+        #expect(stats.addCount == 2)
+        #expect(stats.subtractCount == 1)
+        #expect(stats.multiplyCount == 0)
+    }
+
+    @Test("Favorite operation returns most used")
+    func favoriteOperation() {
+        let stats = PlayerStats()
+        stats.addCount = 10
+        stats.subtractCount = 5
+        stats.multiplyCount = 3
+        let fav = stats.favoriteOperation
+        #expect(fav?.symbol == "+")
+        #expect(fav?.count == 10)
+    }
 }

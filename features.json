@@ -3788,6 +3788,97 @@
       "files": [
         "Sources/Features/Home/HomeComponents.swift"
       ]
+    },
+    {
+      "id": "ui-189",
+      "title": "PlayerStats records operation counts",
+      "description": "PlayerStats increments per-operation counters when games are recorded",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Record a game with mixed operations",
+        "addCount, subtractCount etc. increment correctly",
+        "favoriteOperation returns the most used"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "ui-190",
+      "title": "PlayerStats daily streak logic",
+      "description": "Daily streak increments on consecutive days and resets on gaps",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "First play sets streak to 1",
+        "Playing next day increments to 2",
+        "Playing same day does not change streak",
+        "Gap of 2+ days resets to 1"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "ui-191",
+      "title": "Confetti particle effect on results",
+      "description": "Confetti particle view shown on results screen for high accuracy",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-008"
+      ],
+      "test_steps": [
+        "Score 80%+ accuracy",
+        "Confetti view appears at top of results",
+        "Particles animate downward"
+      ],
+      "files": [
+        "Sources/Features/Results/ConfettiView.swift"
+      ]
+    },
+    {
+      "id": "ui-192",
+      "title": "Celebration view with particle intensity",
+      "description": "In-game celebration shows particles at different intensities based on streak",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Answer correctly - celebration view shows",
+        "Higher streak shows more intense celebration",
+        "Celebration includes difficulty-colored particles"
+      ],
+      "files": [
+        "Sources/Features/Game/CelebrationView.swift"
+      ]
+    },
+    {
+      "id": "ui-193",
+      "title": "Animated star rating on results",
+      "description": "Results screen shows animated star rating that fills in sequentially",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-008"
+      ],
+      "test_steps": [
+        "Complete a game",
+        "Stars fill in one at a time with delay",
+        "Number of stars matches accuracy tier"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsComponents.swift"
+      ]
     }
   ],
   "_schema": {
