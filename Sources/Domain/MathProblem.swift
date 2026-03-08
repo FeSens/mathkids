@@ -129,6 +129,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         return pairs
     }
 
+    static var allEmojis: [String] {
+        allCases.map(\.emoji)
+    }
+
     static var allDisplayNames: [String] {
         allCases.map(\.displayName)
     }

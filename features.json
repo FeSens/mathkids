@@ -8830,6 +8830,88 @@
         "Verify 4+4 returns 4"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-479",
+      "title": "GameSession isAboveAverage accuracy above given threshold",
+      "description": "GameSession should expose isAboveAverage(threshold:) returning true when accuracy exceeds threshold",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 80% accuracy above 70 threshold returns true",
+        "Verify 50% accuracy above 70 threshold returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-480",
+      "title": "Achievement streakAchievements returns streak category",
+      "description": "Achievement should expose streakAchievements returning only achievements in streak category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify all returned are streak category",
+        "Verify count is less than total"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-481",
+      "title": "DifficultyLevel requiredAccuracyForPromotion threshold",
+      "description": "DifficultyLevel should expose requiredAccuracyForPromotion returning accuracy needed to recommend next level",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns 80",
+        "Verify medium returns 85",
+        "Verify hard returns 0 (no promotion)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-482",
+      "title": "Operation allEmojis returns all operation emojis",
+      "description": "Operation should expose allEmojis static property returning array of all emojis",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify count matches allCases",
+        "Verify contains plus emoji"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-483",
+      "title": "MathProblem smallerOperand returns the smaller operand",
+      "description": "MathProblem should expose smallerOperand returning min(operand1, operand2)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3+5 returns 3",
+        "Verify 7+2 returns 2",
+        "Verify 4+4 returns 4"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

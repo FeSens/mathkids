@@ -175,6 +175,10 @@ extension MathProblem {
         max(operand1, operand2)
     }
 
+    var smallerOperand: Int {
+        min(operand1, operand2)
+    }
+
     var isIdentityOperation: Bool {
         switch operation {
         case .add, .subtract: operand2 == 0

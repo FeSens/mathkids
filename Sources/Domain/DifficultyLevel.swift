@@ -190,6 +190,14 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         operandRangeSize * operationCount
     }
 
+    var requiredAccuracyForPromotion: Int {
+        switch self {
+        case .easy: 80
+        case .medium: 85
+        case .hard: 0
+        }
+    }
+
     func isUnlocked(gamesPlayed: Int) -> Bool {
         switch self {
         case .easy: return true

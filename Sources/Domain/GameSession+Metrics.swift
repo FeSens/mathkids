@@ -227,6 +227,10 @@ extension GameSession {
         max(target - score, 0)
     }
 
+    func isAboveAverage(threshold: Double) -> Bool {
+        accuracy > threshold
+    }
+
     var averageTimePerAnswer: Double {
         guard totalAnswered > 0 else { return 0 }
         return Double(totalTimePlayed) / Double(totalAnswered)

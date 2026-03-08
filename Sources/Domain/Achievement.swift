@@ -189,6 +189,10 @@ struct Achievement: Identifiable {
         return unlockedCount(for: stats) * 100 / totalCount
     }
 
+    static var streakAchievements: [Achievement] {
+        all.filter { $0.category == .streak }
+    }
+
     static func firstLockedAchievement(for stats: PlayerStats) -> Achievement? {
         all.first { !$0.isUnlocked(stats: stats) }
     }
