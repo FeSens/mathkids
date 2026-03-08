@@ -245,6 +245,15 @@ struct GameSession: Sendable {
         return ratio * 100
     }
 
+    var streakAtEnd: Int {
+        currentStreak
+    }
+
+    var averageTimePerAnswer: Double {
+        guard totalAnswered > 0 else { return 0 }
+        return Double(totalTimePlayed) / Double(totalAnswered)
+    }
+
     mutating func endGame() {
         isFinished = true
     }

@@ -126,6 +126,14 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         "\(operationCount) operations | 1-\(operandRange.upperBound) | \(timeLimitSeconds)s"
     }
 
+    var difficultyMultiplier: Double {
+        switch self {
+        case .easy: 1.0
+        case .medium: 1.5
+        case .hard: 2.0
+        }
+    }
+
     var briefDescription: String {
         let ops = allowedOperations.map(\.rawValue).joined(separator: " ")
         return "1-\(operandRange.upperBound) \(ops) \(timeLimitSeconds)s"

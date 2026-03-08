@@ -127,6 +127,11 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func xpForLevel(_ level: Int) -> Int? {
+        guard level >= 1, level <= thresholds.count else { return nil }
+        return thresholds[level - 1]
+    }
+
     static func progressDescription(for xp: Int) -> String {
         let currentLevel = level(for: xp)
         let name = levelName(for: xp)

@@ -6568,6 +6568,91 @@
       "files": [
         "Sources/Features/Results/ResultsViewModel+Analysis.swift"
       ]
+    },
+    {
+      "id": "logic-344",
+      "title": "GameSession streakAtEnd computed property",
+      "description": "GameSession should expose a streakAtEnd property that returns the currentStreak when the game is finished, useful for end-of-game displays",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create a session with several correct answers then end the game",
+        "Verify streakAtEnd returns the currentStreak value",
+        "Verify streakAtEnd is 0 when the last answer was wrong"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-345",
+      "title": "MathProblem stepByStepHint for multiplication",
+      "description": "MathProblem should provide a stepByStepHint that breaks multiplication into addition steps (e.g., 4x3 = 3+3+3+3)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Create a multiplication problem 4x3",
+        "Verify stepByStepHint contains repeated addition representation",
+        "Verify add/subtract/divide return appropriate hints"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-346",
+      "title": "LevelSystem xpForLevel returns threshold for given level",
+      "description": "LevelSystem should have a xpForLevel(_:) method that returns the XP threshold needed to reach a specific level",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify xpForLevel(1) returns 0",
+        "Verify xpForLevel(5) returns 1000",
+        "Verify xpForLevel for out of range returns nil"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-347",
+      "title": "GameSession averageTimePerCorrectAnswer",
+      "description": "GameSession should compute averageTimePerCorrectAnswer showing how long correct answers take on average vs all answers",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Create session with mix of correct/wrong answers and time ticked",
+        "Verify averageTimePerAnswer returns total time / total answered",
+        "Verify returns 0 when no answers given"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-348",
+      "title": "DifficultyLevel difficultyMultiplier for scoring",
+      "description": "DifficultyLevel should expose a difficultyMultiplier (easy=1.0, medium=1.5, hard=2.0) that can be used for XP scaling",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns 1.0",
+        "Verify medium returns 1.5",
+        "Verify hard returns 2.0"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

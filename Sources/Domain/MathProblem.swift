@@ -267,6 +267,22 @@ extension MathProblem {
     }
 }
 
+extension MathProblem {
+    var stepByStepHint: String {
+        switch operation {
+        case .add:
+            return "Start at \(operand1), count up \(operand2)"
+        case .subtract:
+            return "Start at \(operand1), count down \(operand2)"
+        case .multiply:
+            let terms = Array(repeating: "\(operand2)", count: operand1).joined(separator: " + ")
+            return "\(operand1) × \(operand2) = \(terms)"
+        case .divide:
+            return "How many groups of \(operand2) fit in \(operand1)?"
+        }
+    }
+}
+
 struct AnsweredProblem: Identifiable, Sendable {
     let id = UUID()
     let problem: MathProblem
