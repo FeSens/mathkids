@@ -33897,6 +33897,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2081",
+      "title": "Achievement Card Spectrolite Style",
+      "description": "Computed property returning spectrolite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns iridescent style",
+        "Common returns dark style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2082",
+      "title": "Achievement Requires Drive",
+      "description": "Computed property checking if achievement requires drive",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Score category requires drive",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2083",
+      "title": "Achievement Card Covenant Seal Text",
+      "description": "Computed property returning covenant seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2084",
+      "title": "Achievement Card Chrysoberyl Style",
+      "description": "Computed property returning chrysoberyl style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns cats eye style",
+        "Common returns yellow style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2085",
+      "title": "Achievement Crown Threshold",
+      "description": "Computed property returning crown threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 20000
         }
     }
+
+    var achievementCardSpectroliteStyle: String {
+        isRareAchievement ? "iridescent" : "dark"
+    }
+
+    var achievementRequiresDrive: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardCovenantSealText: String {
+        switch category {
+        case .mastery: return "Covenant Seal of Wisdom"
+        case .streak: return "Covenant Seal of Loyalty"
+        case .score: return "Covenant Seal of Honor"
+        case .games: return "Covenant Seal of Welcome"
+        }
+    }
+
+    var achievementCardChrysoberylStyle: String {
+        isRareAchievement ? "cats eye" : "yellow"
+    }
+
+    var achievementCrownThreshold: Int {
+        switch category {
+        case .mastery: return 250000
+        case .streak: return 75000
+        case .score: return 200000
+        case .games: return 25000
+        }
+    }
 }
