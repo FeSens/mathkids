@@ -28,4 +28,36 @@ extension DifficultyLevel {
         let high = maxPossibleScore
         return "\(low)-\(high) pts"
     }
+
+    var maxStreakBonus: Int {
+        switch self {
+        case .easy: return 10
+        case .medium: return 20
+        case .hard: return 30
+        }
+    }
+
+    var difficultyStars: Int {
+        progressionIndex
+    }
+
+    var problemComplexity: String {
+        switch self {
+        case .easy: return "simple"
+        case .medium: return "moderate"
+        case .hard: return "complex"
+        }
+    }
+
+    var estimatedSessionMinutes: Int {
+        timeLimitSeconds / 60
+    }
+
+    var recommendedAge: String {
+        switch self {
+        case .easy: return "5-7"
+        case .medium: return "7-9"
+        case .hard: return "9-12"
+        }
+    }
 }

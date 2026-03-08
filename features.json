@@ -13247,6 +13247,86 @@
         "Verify contains score range"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-754",
+      "name": "DifficultyLevel.maxStreakBonus",
+      "description": "Maximum streak bonus possible for this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get maxStreakBonus for each difficulty",
+        "Verify hard has highest bonus"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-755",
+      "name": "DifficultyLevel.difficultyStars",
+      "description": "Number of stars representing difficulty: 1 for easy, 2 for medium, 3 for hard",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get difficultyStars for medium",
+        "Verify returns 2"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-756",
+      "name": "DifficultyLevel.problemComplexity",
+      "description": "String describing problem complexity: simple, moderate, complex",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get problemComplexity for easy",
+        "Verify returns 'simple'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-757",
+      "name": "DifficultyLevel.estimatedSessionMinutes",
+      "description": "Estimated session duration in minutes",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get estimatedSessionMinutes for easy",
+        "Verify returns 1"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-758",
+      "name": "DifficultyLevel.recommendedAge",
+      "description": "Recommended age range string for this difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get recommendedAge for each difficulty",
+        "Verify returns appropriate age range"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
