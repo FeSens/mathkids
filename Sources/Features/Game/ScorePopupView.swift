@@ -5,6 +5,7 @@ struct ScorePopup: Identifiable {
     let text: String
     let color: Color
     var offset: CGFloat = 0
+    var horizontalOffset: CGFloat = CGFloat.random(in: -30...30)
     var opacity: Double = 1.0
 }
 
@@ -15,7 +16,7 @@ struct ScorePopupView: View {
         Text(popup.text)
             .font(.system(size: 28, weight: .bold, design: .rounded))
             .foregroundStyle(popup.color)
-            .offset(y: popup.offset)
+            .offset(x: popup.horizontalOffset, y: popup.offset)
             .opacity(popup.opacity)
     }
 }

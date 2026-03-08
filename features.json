@@ -2871,6 +2871,99 @@
         "Sources/Features/Results/ResultsViewModel.swift",
         "Sources/Features/Results/ResultsView.swift"
       ]
+    },
+    {
+      "id": "ui-139",
+      "title": "Reduced motion support",
+      "description": "Respect system Reduce Motion setting by disabling non-essential animations",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-058"
+      ],
+      "test_steps": [
+        "Enable Reduce Motion in iOS settings",
+        "Confetti, particle bursts, and floating animations are disabled",
+        "Essential transitions still work"
+      ],
+      "files": [
+        "Sources/Features/Results/ConfettiView.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-140",
+      "title": "Score popup position variety",
+      "description": "Score popups appear at slightly random positions for visual variety",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Answer multiple correct answers",
+        "Score popups appear at slightly different positions",
+        "Still readable and not overlapping"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-141",
+      "title": "Home screen play button pulse",
+      "description": "Play button on home screen has a subtle pulse animation to draw attention",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Home screen shows play button",
+        "Button has subtle pulse/glow animation",
+        "Animation is not distracting"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift"
+      ]
+    },
+    {
+      "id": "ui-142",
+      "title": "Daily challenge countdown to reset",
+      "description": "Show time until daily challenge resets on home screen",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-033"
+      ],
+      "test_steps": [
+        "Complete daily challenge",
+        "Home screen shows time until next challenge",
+        "Format shows hours and minutes remaining"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift",
+        "Sources/Features/Home/HomeView.swift"
+      ]
+    },
+    {
+      "id": "ui-143",
+      "title": "Answer field background color on submit",
+      "description": "Answer field briefly flashes green/red when answer is submitted",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Submit correct answer - brief green flash on answer field",
+        "Submit wrong answer - brief red flash",
+        "Flash fades quickly"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
     }
   ],
   "_schema": {
