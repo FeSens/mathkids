@@ -19976,6 +19976,94 @@
         "Check icon is xmark.circle.fill"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1184",
+      "name": "answeredProblemPerformanceLevel",
+      "description": "Performance level string: excellent, good, needs practice",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check level is excellent",
+        "Create wrong answer",
+        "Check level is needs practice"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1185",
+      "name": "answeredProblemCorrectAnswerText",
+      "description": "Text showing the correct answer for reference",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create problem 2+3",
+        "Check text contains 5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1186",
+      "name": "answeredProblemIsSlowAnswer",
+      "description": "Whether the answer took more than 8 seconds",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create answer with 10 seconds",
+        "Check isSlowAnswer is true",
+        "Create answer with 2 seconds",
+        "Check isSlowAnswer is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1187",
+      "name": "answeredProblemStarCount",
+      "description": "Number of stars earned (0-3) based on correctness and speed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check starCount is 3",
+        "Create wrong answer",
+        "Check starCount is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1188",
+      "name": "answeredProblemNeedsHelp",
+      "description": "Whether the student likely needs help (wrong and far off)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create wrong answer off by 5",
+        "Check needsHelp is true",
+        "Create correct answer",
+        "Check needsHelp is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

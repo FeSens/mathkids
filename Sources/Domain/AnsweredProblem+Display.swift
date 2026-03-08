@@ -140,4 +140,31 @@ extension AnsweredProblem {
     var answeredProblemSummaryIcon: String {
         isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill"
     }
+
+    var answeredProblemPerformanceLevel: String {
+        guard isCorrect else { return "needs practice" }
+        if let time = timeTaken, time < 3.0 { return "excellent" }
+        return "good"
+    }
+
+    var answeredProblemCorrectAnswerText: String {
+        "Answer: \(problem.correctAnswer)"
+    }
+
+    var answeredProblemIsSlowAnswer: Bool {
+        guard let time = timeTaken else { return false }
+        return time > 8.0
+    }
+
+    var answeredProblemStarCount: Int {
+        guard isCorrect else { return 0 }
+        guard let time = timeTaken else { return 1 }
+        if time < 3.0 { return 3 }
+        if time < 6.0 { return 2 }
+        return 1
+    }
+
+    var answeredProblemNeedsHelp: Bool {
+        !isCorrect && answeredProblemAnswerDelta >= 3
+    }
 }
