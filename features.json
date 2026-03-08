@@ -36637,6 +36637,96 @@
         "Verify threshold <= 3000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2246",
+      "title": "Achievement card algodonite style",
+      "description": "Computed property achievementCardAlgodoniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify algodonite style is steel blue",
+        "Create common achievement",
+        "Verify algodonite style is iron grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2247",
+      "title": "Achievement requires nerve plus",
+      "description": "Computed property achievementRequiresNervePlus returns true for streak or score categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresNervePlus is true",
+        "Create mastery achievement",
+        "Verify requiresNervePlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2248",
+      "title": "Achievement card edict writ seal plus text",
+      "description": "Computed property achievementCardEdictWritSealPlusText returns category-based edict writ seal plus text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Edict Writ Seal Plus of the Grandmaster",
+        "Create games achievement",
+        "Verify text is Edict Writ Seal Plus of the Candidate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2249",
+      "title": "Achievement card domeykite style",
+      "description": "Computed property achievementCardDomeykiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify domeykite style is tin white sheen",
+        "Create common achievement",
+        "Verify domeykite style is pewter grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2250",
+      "title": "Achievement crest plus threshold",
+      "description": "Computed property achievementCrestPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Apex.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 25000",
+        "Create games achievement",
+        "Verify threshold <= 4000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
