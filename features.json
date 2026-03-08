@@ -35497,6 +35497,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2181",
+      "title": "Achievement Card Axinite Style",
+      "description": "Computed property returning axinite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns clove style",
+        "Common returns brown style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2182",
+      "title": "Achievement Requires Iron Will",
+      "description": "Computed property checking if achievement requires iron will",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery requires iron will",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2183",
+      "title": "Achievement Card Compact Writ Text",
+      "description": "Computed property returning compact writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2184",
+      "title": "Achievement Card Marcasite Style",
+      "description": "Computed property returning marcasite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns metallic style",
+        "Common returns dull style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2185",
+      "title": "Achievement Quintessence Threshold",
+      "description": "Computed property returning quintessence threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

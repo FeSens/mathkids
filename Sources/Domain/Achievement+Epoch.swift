@@ -150,4 +150,34 @@ extension Achievement {
         case .games: return 100000000
         }
     }
+
+    var achievementCardAxiniteStyle: String {
+        isRareAchievement ? "clove" : "brown"
+    }
+
+    var achievementRequiresIronWill: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardCompactWritText: String {
+        switch category {
+        case .mastery: return "Compact Writ of Scholars"
+        case .streak: return "Compact Writ of Guardians"
+        case .score: return "Compact Writ of Warriors"
+        case .games: return "Compact Writ of Adventurers"
+        }
+    }
+
+    var achievementCardMarcasiteStyle: String {
+        isRareAchievement ? "metallic" : "dull"
+    }
+
+    var achievementQuintessenceThreshold: Int {
+        switch category {
+        case .mastery: return 2000000000
+        case .streak: return 1000000000
+        case .score: return 1500000000
+        case .games: return 200000000
+        }
+    }
 }
