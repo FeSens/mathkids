@@ -12685,6 +12685,88 @@
         "Verify sessionCompletionEstimate returns reasonable estimate"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-719",
+      "name": "needsEncouragement",
+      "description": "Boolean true when player is struggling and could use encouragement",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with low accuracy",
+        "Verify needsEncouragement is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-720",
+      "name": "streakProgressText",
+      "description": "Text showing progress toward next streak milestone",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with streak of 2",
+        "Verify streakProgressText shows progress toward 3"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-721",
+      "name": "roundedAccuracy",
+      "description": "Accuracy rounded to nearest 5%",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 7/10 correct",
+        "Verify roundedAccuracy returns 70"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-722",
+      "name": "scoreDifferenceFromAverage",
+      "description": "Difference between current score and difficulty average threshold",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [
+        "logic-700"
+      ],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with some answers",
+        "Verify scoreDifferenceFromAverage returns signed integer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-723",
+      "name": "sessionQualityStars",
+      "description": "1-5 star rating as string based on overall session quality",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with high accuracy",
+        "Verify sessionQualityStars returns '\u2b50\u2b50\u2b50\u2b50\u2b50'"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

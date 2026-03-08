@@ -93,4 +93,29 @@ extension GameSession {
         guard totalAnswered > 0, totalTimePlayed > 0 else { return 0 }
         return totalAnswered * timeRemaining / totalTimePlayed
     }
+
+    var needsEncouragement: Bool {
+        totalAnswered >= 3 && accuracy < 50
+    }
+
+    var streakProgressText: String {
+        if currentStreak >= 3 {
+            return "\(currentStreak) streak!"
+        }
+        return "\(currentStreak)/3 to streak!"
+    }
+
+    var roundedAccuracy: Int {
+        let acc = Int(accuracy)
+        return (acc / 5) * 5
+    }
+
+    var scoreDifferenceFromAverage: Int {
+        score - difficulty.averageScoreThreshold
+    }
+
+    var sessionQualityStars: String {
+        let rating = performanceRating
+        return String(repeating: "⭐", count: rating)
+    }
 }
