@@ -32159,6 +32159,76 @@
         "Create games achievement",
         "Verify goal is low"
       ]
+    },
+    {
+      "id": "logic-1964",
+      "name": "achievementCardEscutcheonStyle",
+      "description": "Escutcheon shield style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify escutcheon is ornate",
+        "Create common achievement",
+        "Verify escutcheon is plain"
+      ]
+    },
+    {
+      "id": "logic-1965",
+      "name": "achievementRequiresSpeed",
+      "description": "Whether achievement requires speed (score only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresSpeed is true",
+        "Create streak achievement",
+        "Verify requiresSpeed is false"
+      ]
+    },
+    {
+      "id": "logic-1966",
+      "name": "achievementCardMaximText",
+      "description": "Maxim text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify maxim text",
+        "Create games achievement",
+        "Verify maxim text"
+      ]
+    },
+    {
+      "id": "logic-1967",
+      "name": "achievementCardEbonyStyle",
+      "description": "Ebony finish style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify ebony is polished",
+        "Create common achievement",
+        "Verify ebony is raw"
+      ]
+    },
+    {
+      "id": "logic-1968",
+      "name": "achievementMilestoneInterval",
+      "description": "Milestone check interval based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify interval is high",
+        "Create games achievement",
+        "Verify interval is low"
+      ]
     }
   ],
   "_schema": {

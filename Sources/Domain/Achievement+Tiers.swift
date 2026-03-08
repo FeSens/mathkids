@@ -245,4 +245,34 @@ extension Achievement {
         case .games: return 100
         }
     }
+
+    var achievementCardEscutcheonStyle: String {
+        isRareAchievement ? "ornate" : "plain"
+    }
+
+    var achievementRequiresSpeed: Bool {
+        category == .score
+    }
+
+    var achievementCardMaximText: String {
+        switch category {
+        case .mastery: return "Knowledge conquers all"
+        case .streak: return "Persistence prevails"
+        case .score: return "Excellence endures"
+        case .games: return "Every step counts"
+        }
+    }
+
+    var achievementCardEbonyStyle: String {
+        isRareAchievement ? "polished" : "raw"
+    }
+
+    var achievementMilestoneInterval: Int {
+        switch category {
+        case .mastery: return 25
+        case .streak: return 5
+        case .score: return 10
+        case .games: return 1
+        }
+    }
 }
