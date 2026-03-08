@@ -2137,6 +2137,99 @@
       "files": [
         "Sources/Features/Game/GameHeaderView.swift"
       ]
+    },
+    {
+      "id": "ui-099",
+      "title": "Animated number pad press feedback",
+      "description": "Number pad buttons show a brief color pulse when pressed",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Tap a number button",
+        "Button briefly pulses with color",
+        "Visual feedback is immediate"
+      ],
+      "files": [
+        "Sources/Features/Game/GameComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-100",
+      "title": "Daily streak counter on home screen",
+      "description": "Show how many consecutive days the player has played",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Home screen shows daily streak count",
+        "Streak displays with calendar icon",
+        "New day increments if played yesterday"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift",
+        "Sources/Features/Home/HomeView.swift",
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-101",
+      "title": "Results screen scroll view",
+      "description": "Wrap results content in ScrollView for small screens and lots of content",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Complete a game",
+        "Results screen is scrollable",
+        "All content accessible even on small screens"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-102",
+      "title": "Problem type distribution in results",
+      "description": "Show a breakdown of how many addition, subtraction, etc. problems were answered",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-057"
+      ],
+      "test_steps": [
+        "Complete a game with problem history",
+        "Results show operation breakdown (e.g., 3 add, 2 subtract)",
+        "Each operation has its colored icon"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Features/Results/ResultsComponents.swift"
+      ]
+    },
+    {
+      "id": "ui-103",
+      "title": "Home screen total problems solved stat",
+      "description": "Show total number of problems ever solved on the home screen stats",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Home screen shows total problems solved",
+        "Count updates after completing a game"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift",
+        "Sources/Features/Home/HomeView.swift"
+      ]
     }
   ],
   "_schema": {

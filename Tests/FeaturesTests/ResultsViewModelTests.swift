@@ -249,4 +249,27 @@ struct ResultsViewModelTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0)
         #expect(vm.xpProgressLabel.contains("/"))
     }
+
+    // MARK: - Operation Breakdown (ui-102)
+
+    @Test("Operation breakdown is empty without problem history")
+    func operationBreakdownEmpty() {
+        let session = makeSession(correct: 5, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.operationBreakdown.isEmpty)
+    }
+
+    @Test("Operation breakdown counts operations")
+    func operationBreakdownCounts() {
+        let session = makeSession(correct: 2, total: 2)
+        let p1 = MathProblem(operand1: 2, operand2: 3, operation: .add)
+        let p2 = MathProblem(operand1: 5, operand2: 2, operation: .add)
+        let history = [
+            AnsweredProblem(problem: p1, userAnswer: 5),
+            AnsweredProblem(problem: p2, userAnswer: 7)
+        ]
+        let vm = ResultsViewModel(session: session, previousBestScore: 0, problemHistory: history)
+        #expect(vm.operationBreakdown.count == 1)
+        #expect(vm.operationBreakdown[0].count == 2)
+    }
 }

@@ -149,6 +149,14 @@ final class ResultsViewModel {
         return "\(xpEarned)/\(nextThreshold) XP"
     }
 
+    var operationBreakdown: [(operation: Operation, count: Int)] {
+        var counts: [Operation: Int] = [:]
+        for entry in problemHistory {
+            counts[entry.problem.operation, default: 0] += 1
+        }
+        return counts.sorted { $0.key.rawValue < $1.key.rawValue }.map { ($0.key, $0.value) }
+    }
+
     var recommendationText: String? {
         switch difficultyRecommendation {
         case .tryHarder:

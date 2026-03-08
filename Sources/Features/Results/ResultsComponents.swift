@@ -91,6 +91,34 @@ struct DifficultyRecommendationView: View {
     }
 }
 
+struct OperationBreakdownView: View {
+    let breakdown: [(operation: Operation, count: Int)]
+
+    var body: some View {
+        HStack(spacing: 12) {
+            ForEach(breakdown, id: \.operation) { item in
+                VStack(spacing: 4) {
+                    Text(item.operation.rawValue)
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .foregroundStyle(colorFor(item.operation))
+                    Text("\(item.count)")
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                }
+            }
+        }
+        .accessibilityIdentifier("operationBreakdown")
+    }
+
+    private func colorFor(_ op: Operation) -> Color {
+        switch op {
+        case .add: .green
+        case .subtract: .blue
+        case .multiply: .orange
+        case .divide: .purple
+        }
+    }
+}
+
 struct StarRatingView: View {
     let accuracy: Double
     let show: Bool

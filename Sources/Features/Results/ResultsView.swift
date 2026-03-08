@@ -17,9 +17,8 @@ struct ResultsView: View {
                 ConfettiView()
             }
 
+            ScrollView {
             VStack(spacing: 24) {
-                Spacer()
-
                 headerSection
                     .opacity(showHeader ? 1 : 0)
                     .offset(y: showHeader ? 0 : 20)
@@ -64,6 +63,10 @@ struct ResultsView: View {
                     .offset(y: showXP ? 0 : 20)
 
                 if !viewModel.problemHistory.isEmpty {
+                    if !viewModel.operationBreakdown.isEmpty {
+                        OperationBreakdownView(breakdown: viewModel.operationBreakdown)
+                            .opacity(showXP ? 1 : 0)
+                    }
                     ProblemHistorySection(problemHistory: viewModel.problemHistory)
                         .opacity(showXP ? 1 : 0)
                 }
@@ -98,9 +101,9 @@ struct ResultsView: View {
                     .opacity(showButtons ? 1 : 0)
                     .offset(y: showButtons ? 0 : 20)
 
-                Spacer()
             }
             .padding()
+            }
 
             VStack(spacing: 8) {
                 ForEach(viewModel.newAchievements) { achievement in
