@@ -61,4 +61,16 @@ extension AnsweredProblem {
         }
         return "\(problem.formattedProblem) → \(userAnswer) (correct: \(problem.correctAnswer)) ❌"
     }
+
+    var operationName: String {
+        problem.operation.displayName
+    }
+
+    var answerDifference: Int {
+        abs(userAnswer - problem.correctAnswer)
+    }
+
+    var wasClose: Bool {
+        !isCorrect && answerDifference <= 2
+    }
 }

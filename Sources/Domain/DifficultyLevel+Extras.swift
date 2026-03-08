@@ -158,4 +158,16 @@ extension DifficultyLevel {
         case .hard: return 55
         }
     }
+
+    var expectedProblemsPerMinute: Int {
+        60 / recommendedSecondsPerProblem
+    }
+
+    var motivationalQuote: String {
+        switch self {
+        case .easy: return "Every math journey starts here!"
+        case .medium: return "You're getting stronger!"
+        case .hard: return "Champions play on hard mode!"
+        }
+    }
 }

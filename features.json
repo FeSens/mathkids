@@ -14527,6 +14527,86 @@
         "Verify isSingleDigitResult is true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-834",
+      "name": "DifficultyLevel.expectedProblemsPerMinute",
+      "description": "Expected number of problems answered per minute",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get expectedProblemsPerMinute for easy",
+        "Verify returns positive value"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-835",
+      "name": "DifficultyLevel.motivationalQuote",
+      "description": "A motivational quote tailored to the difficulty",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Get motivationalQuote for each difficulty",
+        "Verify non-empty"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-836",
+      "name": "AnsweredProblem.operationName",
+      "description": "The display name of the operation in this problem",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create addition answered problem",
+        "Verify operationName returns 'Addition'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-837",
+      "name": "AnsweredProblem.answerDifference",
+      "description": "Difference between user answer and correct answer",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create wrong answered problem",
+        "Verify answerDifference returns the gap"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-838",
+      "name": "AnsweredProblem.wasClose",
+      "description": "Boolean true when answer was within 2 of correct",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Create answered problem with answer off by 1",
+        "Verify wasClose is true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
