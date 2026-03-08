@@ -184,6 +184,11 @@ struct Achievement: Identifiable {
         all.count
     }
 
+    static func unlockPercentage(for stats: PlayerStats) -> Int {
+        guard totalCount > 0 else { return 0 }
+        return unlockedCount(for: stats) * 100 / totalCount
+    }
+
     static func lockedAchievements(for stats: PlayerStats) -> [Achievement] {
         all.filter { !$0.isUnlocked(stats: stats) }
     }

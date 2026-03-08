@@ -239,6 +239,12 @@ enum LevelSystem {
         return thresholds[level - 1]
     }
 
+    static func xpToReachLevel(currentXP: Int, targetLevel: Int) -> Int {
+        guard targetLevel >= 1, targetLevel <= thresholds.count else { return 0 }
+        let targetXP = thresholds[targetLevel - 1]
+        return max(targetXP - currentXP, 0)
+    }
+
     static func levelsBetween(xp1: Int, xp2: Int) -> Int {
         abs(level(for: xp2) - level(for: xp1))
     }

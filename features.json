@@ -8417,6 +8417,90 @@
         "Verify 3-5 returns false (negative)"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-454",
+      "title": "GameSession isLowAccuracy below 50 percent",
+      "description": "GameSession should expose isLowAccuracy returning true when accuracy is below 50%",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 1 correct of 4 returns true",
+        "Verify 3 correct of 4 returns false",
+        "Verify no answers returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-455",
+      "title": "Achievement unlockPercentage for stats",
+      "description": "Achievement should expose unlockPercentage(for:) returning percentage of achievements unlocked",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify fresh stats returns 0",
+        "Verify with some unlocked returns correct percentage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-456",
+      "title": "DifficultyLevel minOperand returns lower bound",
+      "description": "DifficultyLevel should expose minOperand returning operandRange.lowerBound",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy minOperand is 1",
+        "Verify medium minOperand is 1",
+        "Verify hard minOperand is 1"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-457",
+      "title": "LevelSystem xpToReachLevel calculates XP needed",
+      "description": "LevelSystem should expose xpToReachLevel from current XP to a target level",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 0 XP to level 2 returns 100",
+        "Verify 50 XP to level 2 returns 50",
+        "Verify already at target returns 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-458",
+      "title": "Operation pairKey generates unique pair identifier",
+      "description": "Operation should expose pairKey(with:) that generates a consistent sorted string key for a pair of operations",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify add-subtract key is consistent",
+        "Verify order does not matter (commutative)",
+        "Verify same operation produces single-name key"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

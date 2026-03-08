@@ -129,6 +129,12 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         return pairs
     }
 
+    func pairKey(with other: Operation) -> String {
+        if self == other { return displayName }
+        let names = [self.displayName, other.displayName].sorted()
+        return "\(names[0])-\(names[1])"
+    }
+
     static func pairDescription(_ a: Operation, _ b: Operation) -> String {
         if a == b { return a.displayName }
         return "\(a.displayName) & \(b.displayName)"

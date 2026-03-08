@@ -178,6 +178,10 @@ enum DifficultyLevel: String, CaseIterable, Codable, Sendable {
         operandRange.upperBound
     }
 
+    var minOperand: Int {
+        operandRange.lowerBound
+    }
+
     var starRating: String {
         String(repeating: "⭐", count: difficultyIndex + 1)
     }
