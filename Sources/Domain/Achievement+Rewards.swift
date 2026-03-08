@@ -205,4 +205,29 @@ extension Achievement {
     var achievementIsExclusive: Bool {
         isRareAchievement && category == .mastery
     }
+
+    var achievementPinnedPosition: Int {
+        -1
+    }
+
+    var achievementGlowIntensity: Double {
+        isRareAchievement ? 1.0 : 0
+    }
+
+    var achievementCategoryBadge: String {
+        switch category {
+        case .mastery: return "M"
+        case .streak: return "S"
+        case .score: return "P"
+        case .games: return "G"
+        }
+    }
+
+    var achievementFeedbackHaptic: String {
+        isRareAchievement ? "heavy" : "light"
+    }
+
+    var achievementCardTextAlignment: String {
+        isRareAchievement ? "center" : "leading"
+    }
 }

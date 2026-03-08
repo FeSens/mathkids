@@ -26888,6 +26888,79 @@
         "Create common achievement",
         "Verify isExclusive is false"
       ]
+    },
+    {
+      "id": "logic-1614",
+      "title": "achievementPinnedPosition",
+      "description": "Return pinned position index",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify pinnedPosition is -1 (not pinned)"
+      ]
+    },
+    {
+      "id": "logic-1615",
+      "title": "achievementGlowIntensity",
+      "description": "Return glow effect intensity",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify intensity >= 0.8",
+        "Create common achievement",
+        "Verify intensity == 0"
+      ]
+    },
+    {
+      "id": "logic-1616",
+      "title": "achievementCategoryBadge",
+      "description": "Return category badge text",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify badge is M",
+        "Create games achievement",
+        "Verify badge is G"
+      ]
+    },
+    {
+      "id": "logic-1617",
+      "title": "achievementFeedbackHaptic",
+      "description": "Return haptic feedback type",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify haptic is heavy",
+        "Create common achievement",
+        "Verify haptic is light"
+      ]
+    },
+    {
+      "id": "logic-1618",
+      "title": "achievementCardTextAlignment",
+      "description": "Return text alignment for card",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify alignment is center",
+        "Create common achievement",
+        "Verify alignment is leading"
+      ]
     }
   ],
   "_schema": {
