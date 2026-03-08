@@ -31039,6 +31039,76 @@
         "Create games achievement",
         "Verify plateColor is silver"
       ]
+    },
+    {
+      "id": "logic-1884",
+      "name": "achievementCardEtchingStyle",
+      "description": "Etching decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify etching is detailed",
+        "Create common achievement",
+        "Verify etching is simple"
+      ]
+    },
+    {
+      "id": "logic-1885",
+      "name": "achievementIsProgressionBased",
+      "description": "Whether achievement tracks progression (mastery or streak)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isProgressionBased is true",
+        "Create games achievement",
+        "Verify isProgressionBased is false"
+      ]
+    },
+    {
+      "id": "logic-1886",
+      "name": "achievementCardInscriptionText",
+      "description": "Inscription text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify inscription text",
+        "Create games achievement",
+        "Verify inscription text"
+      ]
+    },
+    {
+      "id": "logic-1887",
+      "name": "achievementCardGemColor",
+      "description": "Gem color decoration for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify gem is ruby",
+        "Create games achievement",
+        "Verify gem is emerald"
+      ]
+    },
+    {
+      "id": "logic-1888",
+      "name": "achievementIsAchievementLocked",
+      "description": "Whether achievement requires prior achievements (mastery only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isAchievementLocked is true",
+        "Create games achievement",
+        "Verify isAchievementLocked is false"
+      ]
     }
   ],
   "_schema": {

@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return "silver"
         }
     }
+
+    var achievementCardEtchingStyle: String {
+        isRareAchievement ? "detailed" : "simple"
+    }
+
+    var achievementIsProgressionBased: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardInscriptionText: String {
+        switch category {
+        case .mastery: return "Knowledge is power"
+        case .streak: return "Consistency wins"
+        case .score: return "Precision matters"
+        case .games: return "Every game counts"
+        }
+    }
+
+    var achievementCardGemColor: String {
+        switch category {
+        case .mastery: return "ruby"
+        case .streak: return "amber"
+        case .score: return "sapphire"
+        case .games: return "emerald"
+        }
+    }
+
+    var achievementIsAchievementLocked: Bool {
+        category == .mastery
+    }
 }
