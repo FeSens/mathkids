@@ -187,6 +187,10 @@ extension MathProblem {
         operand1 >= 0 && operand1 <= 9 && operand2 >= 0 && operand2 <= 9
     }
 
+    var isMultiplicationTable: Bool {
+        operation == .multiply && operand1 >= 1 && operand1 <= 12 && operand2 >= 1 && operand2 <= 12
+    }
+
     var isDoubleDigitResult: Bool {
         let answer = abs(correctAnswer)
         return answer >= 10 && answer <= 99

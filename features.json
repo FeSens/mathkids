@@ -9155,6 +9155,87 @@
         "Verify 50+60=110 returns false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-499",
+      "title": "HomeViewModel difficultyDescription formatted difficulty info",
+      "description": "HomeViewModel should expose difficultyDescription returning formatted difficulty details",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes difficulty name",
+        "Verify includes operation count"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-500",
+      "title": "StatsViewModel accuracyDescription formatted text",
+      "description": "StatsViewModel should expose accuracyDescription returning formatted accuracy info with grade",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes accuracy percentage",
+        "Verify includes grade letter"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-501",
+      "title": "ResultsViewModel streakSummaryText formatted streak info",
+      "description": "ResultsViewModel+Analysis should expose streakSummaryText formatted streak information",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify includes streak count",
+        "Verify includes \"streak\" word"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-502",
+      "title": "Achievement progressText formatted progress for achievement",
+      "description": "Achievement should expose progressText(stats:) returning formatted progress like \"3/5\"",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ],
+      "test_steps": [
+        "Verify format is current/target",
+        "Verify unlocked shows completed"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-503",
+      "title": "MathProblem isMultiplicationTable checks tables fact up to 12",
+      "description": "MathProblem should expose isMultiplicationTable returning true for multiplication with both operands <= 12",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3x4 returns true",
+        "Verify 13x4 returns false",
+        "Verify 3+4 returns false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

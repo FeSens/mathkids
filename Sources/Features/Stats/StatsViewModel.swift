@@ -88,6 +88,10 @@ final class StatsViewModel {
         return "\(avg) pts"
     }
 
+    var accuracyDescription: String {
+        "\(Int(accuracy))% (\(accuracyGrade))"
+    }
+
     var gamesPerDifficultyText: String {
         "Easy: \(easyGames) | Medium: \(mediumGames) | Hard: \(hardGames)"
     }

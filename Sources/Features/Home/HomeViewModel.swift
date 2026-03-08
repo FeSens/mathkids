@@ -78,6 +78,10 @@ final class HomeViewModel {
         return "No streak"
     }
 
+    var difficultyDescription: String {
+        "\(selectedDifficulty.displayName) - \(selectedDifficulty.operationCount) operations"
+    }
+
     var nextMilestoneText: String {
         let xpNeeded = LevelSystem.xpNeededForNextLevel(currentXP: totalXP)
         if totalSolved == 0 {

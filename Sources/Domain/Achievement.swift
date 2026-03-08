@@ -201,6 +201,14 @@ struct Achievement: Identifiable {
         all.filter { $0.category == .score }
     }
 
+    func progressText(stats: PlayerStats) -> String {
+        guard let progress else {
+            return isUnlocked(stats: stats) ? "Done ✓" : "0/1"
+        }
+        let result = progress(stats)
+        return "\(result.current)/\(result.target)"
+    }
+
     static var masteryAchievements: [Achievement] {
         all.filter { $0.category == .mastery }
     }

@@ -102,6 +102,10 @@ extension ResultsViewModel {
         return "Amazing \(bestStreak) streak!"
     }
 
+    var streakSummaryText: String {
+        "Best streak: \(bestStreak)"
+    }
+
     var recommendationText: String? {
         switch difficultyRecommendation {
         case .tryHarder:
