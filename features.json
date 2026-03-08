@@ -43103,6 +43103,92 @@
       ],
       "passes": true
     }
+    },
+    {
+      "id": "improve-035",
+      "title": "Streak frequency analysis in results",
+      "description": "Track how many streaks of 3+, 5+, and 10+ the player achieved during a game.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Count of 3+ streaks computed from problem history",
+        "Count of 5+ and 10+ streaks computed",
+        "Empty history returns all zeros"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-036",
+      "title": "Operation ranking by Elo in stats",
+      "description": "Rank operations from strongest to weakest by Elo rating and display as an ordered list in the stats view.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Operations sorted by Elo rating descending",
+        "Highest rated operation is first",
+        "All four operations included"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-037",
+      "title": "Problems solved by difficulty in stats",
+      "description": "Show the number of problems solved at each difficulty level in the stats view.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "StatsViewModel exposes problemsSolvedEasy, Medium, Hard",
+        "Default values are 0",
+        "Values loaded from PlayerStats"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-038",
+      "title": "Answer speed classification in results",
+      "description": "Classify answers as Fast (<2s), Normal (2-5s), or Slow (>5s) and show the distribution on the results screen.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Answers classified as fast, normal, or slow",
+        "Distribution counts match problem history",
+        "No time data returns empty distribution"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-039",
+      "title": "Most improved operation in results",
+      "description": "Identify which operation had the best accuracy improvement from early to late in the game session.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "Most improved operation identified from history",
+        "Returns nil when insufficient data",
+        "Only operations with multiple attempts considered"
+      ],
+      "passes": true
+    }
   ],
   "_schema": {
     "feature": {

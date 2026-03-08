@@ -30,6 +30,11 @@ final class StatsViewModel {
     var xpMedium: Int = 0
     var xpHard: Int = 0
 
+    // Problems solved per difficulty
+    var problemsSolvedEasy: Int = 0
+    var problemsSolvedMedium: Int = 0
+    var problemsSolvedHard: Int = 0
+
     // Per-difficulty accuracy and best scores
     var bestAccuracyEasy: Double = 0
     var bestAccuracyMedium: Double = 0
@@ -303,6 +308,7 @@ final class StatsViewModel {
         loadBestStreaks(from: stats)
         loadPerfectGameCount(from: stats)
         loadXPBreakdown(from: stats)
+        loadProblemsSolved(from: stats)
 
         // Elo ratings
         eloAdd = stats.eloAdd
@@ -347,6 +353,27 @@ final class StatsViewModel {
     /// Total XP computed from all difficulties
     var totalXPFromDifficulties: Int {
         xpEasy + xpMedium + xpHard
+    }
+
+    func loadProblemsSolved(from stats: PlayerStats) {
+        problemsSolvedEasy = stats.problemsSolvedEasy
+        problemsSolvedMedium = stats.problemsSolvedMedium
+        problemsSolvedHard = stats.problemsSolvedHard
+    }
+
+    /// Operations ranked by Elo rating (highest first)
+    struct RankedOperation {
+        let symbol: String
+        let rating: Double
+    }
+
+    var operationRanking: [RankedOperation] {
+        [
+            RankedOperation(symbol: "+", rating: eloAdd),
+            RankedOperation(symbol: "-", rating: eloSubtract),
+            RankedOperation(symbol: "×", rating: eloMultiply),
+            RankedOperation(symbol: "÷", rating: eloDivide),
+        ].sorted { $0.rating > $1.rating }
     }
 
     /// Skill level labels per operation symbol based on Elo ratings

@@ -354,6 +354,76 @@ final class ResultsViewModel {
         return longest
     }
 
+    /// Streak frequency: how many streaks of 3+, 5+, 10+
+    struct StreakFrequency {
+        var threePlus: Int = 0
+        var fivePlus: Int = 0
+        var tenPlus: Int = 0
+    }
+
+    var streakFrequency: StreakFrequency {
+        var freq = StreakFrequency()
+        var current = 0
+        for entry in problemHistory {
+            if entry.isCorrect {
+                current += 1
+            } else {
+                if current >= 10 { freq.tenPlus += 1 }
+                if current >= 5 { freq.fivePlus += 1 }
+                if current >= 3 { freq.threePlus += 1 }
+                current = 0
+            }
+        }
+        // Count final streak
+        if current >= 10 { freq.tenPlus += 1 }
+        if current >= 5 { freq.fivePlus += 1 }
+        if current >= 3 { freq.threePlus += 1 }
+        return freq
+    }
+
+    /// Answer speed classification
+    struct SpeedDistribution {
+        var fast: Int = 0    // < 2s
+        var normal: Int = 0  // 2-5s
+        var slow: Int = 0    // > 5s
+    }
+
+    var answerSpeedDistribution: SpeedDistribution {
+        var dist = SpeedDistribution()
+        for entry in problemHistory {
+            guard let time = entry.timeTaken else { continue }
+            if time < 2.0 { dist.fast += 1 }
+            else if time <= 5.0 { dist.normal += 1 }
+            else { dist.slow += 1 }
+        }
+        return dist
+    }
+
+    /// Most improved operation (biggest accuracy gain from early to late in session)
+    var mostImprovedOperation: Operation? {
+        guard problemHistory.count >= 4 else { return nil }
+        let mid = problemHistory.count / 2
+        let firstHalf = Array(problemHistory.prefix(mid))
+        let secondHalf = Array(problemHistory.suffix(problemHistory.count - mid))
+
+        var bestImprovement: Double = 0
+        var bestOp: Operation? = nil
+
+        for op in Operation.allCases {
+            let earlyProblems = firstHalf.filter { $0.problem.operation == op }
+            let lateProblems = secondHalf.filter { $0.problem.operation == op }
+            guard !earlyProblems.isEmpty && !lateProblems.isEmpty else { continue }
+            let earlyAcc = Double(earlyProblems.filter(\.isCorrect).count) / Double(earlyProblems.count) * 100
+            let lateAcc = Double(lateProblems.filter(\.isCorrect).count) / Double(lateProblems.count) * 100
+            let improvement = lateAcc - earlyAcc
+            if improvement > bestImprovement {
+                bestImprovement = improvement
+                bestOp = op
+            }
+        }
+        return bestOp
+    }
+
     var operationBreakdown: [(operation: Operation, count: Int)] {
         var counts: [Operation: Int] = [:]
         for entry in problemHistory {

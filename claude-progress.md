@@ -3,8 +3,8 @@
 ## Session 26 — 2026-03-08
 
 ### Status
-- Features: 2581/2581 passing (all features complete)
-- Unit tests: 4832 (all green)
+- Features: 2601/2601 passing (all features complete)
+- Unit tests: 4878 (all green)
 - UI tests: 12
 - QA: Needs re-run after improvement features
 
@@ -26,9 +26,30 @@
 - GameEngine.swift: Operation weights from Elo ratings passed to problem generation
 - StatsViewModel.swift: bestStreakAdd/Subtract/Multiply/Divide, perfectGameCount
 
+### Improvement Features Round 4-7 (improve-015 through improve-034)
+- **improve-015-016**: Per-difficulty accuracy and best scores in StatsViewModel
+- **improve-017**: Hint usage tracking (hintsUsed counter in GameViewModel)
+- **improve-018**: Problems per minute stat
+- **improve-019**: Accuracy trend on home screen (recentAccuracies + trend computation)
+- **improve-020**: Enhanced DifficultyStatCard with best score + accuracy
+- **improve-021**: Accuracy trend badge on home screen
+- **improve-022**: Hint count display infrastructure
+- **improve-023**: Operation skill levels from Elo (operationSkillLevels computed property)
+- **improve-024**: XP breakdown by difficulty
+- **improve-025**: Fastest correct answer time per operation
+- **improve-026**: Streak milestone text for 5+ and 10+ streaks
+- **improve-027**: Problem difficulty distribution (Easy/Moderate/Hard)
+- **improve-028**: Accuracy improvement over game halves
+- **improve-029**: Longest consecutive correct run
+- **improve-030**: GameHighlightsView on results screen
+- **improve-031**: Fastest answer badge on results screen
+- **improve-032**: MasteryCard grid in stats view
+- **improve-033**: XP breakdown bars by difficulty
+- **improve-034**: Next achievement progress card on home screen
+
 ### Next Steps
-- QA mode re-run or continue improvement features
-- Many stats still not surfaced (per-difficulty accuracy, XP breakdown, weekly goals)
+- Continue improvement mode or enter QA
+- Potential: weekly goals, problem review mode, streak frequency analysis
 
 ## Session 25 — 2026-03-08
 
