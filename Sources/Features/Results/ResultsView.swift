@@ -272,14 +272,23 @@ struct ResultsView: View {
             }
             .accessibilityIdentifier("playAgainButton")
 
-            Button {
-                onGoHome()
-            } label: {
-                Text("Home")
-                    .font(.system(size: 18, weight: .semibold, design: .rounded))
-                    .foregroundStyle(.primary)
+            HStack(spacing: 16) {
+                Button {
+                    onGoHome()
+                } label: {
+                    Text("Home")
+                        .font(.system(size: 18, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.primary)
+                }
+                .accessibilityIdentifier("homeButton")
+
+                ShareLink(item: viewModel.shareText) {
+                    Label("Share", systemImage: "square.and.arrow.up")
+                        .font(.system(size: 18, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.blue)
+                }
+                .accessibilityIdentifier("shareButton")
             }
-            .accessibilityIdentifier("homeButton")
         }
         .padding(.horizontal)
     }

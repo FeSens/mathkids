@@ -1702,6 +1702,62 @@
       "files": [
         "Sources/Features/Game/GameHeaderView.swift"
       ]
+    },
+    {
+      "id": "ui-076",
+      "description": "Particle burst effect on correct answer with themed particles",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002",
+        "ui-010"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Small particle burst appears near the problem when answered correctly",
+        "Particles use operation-themed colors",
+        "Effect is brief and does not obscure gameplay"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-077",
+      "description": "Share results button that generates a shareable summary text",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-003"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Results screen has a share button",
+        "Share generates text with score, accuracy, and star rating",
+        "Share uses iOS share sheet"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsView.swift",
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-078",
+      "description": "Pulse animation on streak counter when streak increases",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Streak counter pulses when a new correct answer extends the streak",
+        "Pulse uses scale animation with spring bounce",
+        "No pulse when streak is broken"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
     }
   ],
   "_schema": {

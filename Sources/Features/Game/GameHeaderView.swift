@@ -4,6 +4,7 @@ struct GameHeaderView: View {
     @Bindable var viewModel: GameViewModel
     @Binding var timerPulse: Bool
     @State private var scoreScale: Double = 1.0
+    @State private var streakScale: Double = 1.0
 
     var body: some View {
         VStack(spacing: 8) {
@@ -74,6 +75,15 @@ struct GameHeaderView: View {
                         Label("\(viewModel.currentStreak)", systemImage: "flame.fill")
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                             .foregroundStyle(.orange)
+                            .scaleEffect(streakScale)
+                            .onChange(of: viewModel.currentStreak) { _, _ in
+                                withAnimation(.spring(duration: 0.2, bounce: 0.6)) {
+                                    streakScale = 1.3
+                                }
+                                withAnimation(.spring(duration: 0.2).delay(0.15)) {
+                                    streakScale = 1.0
+                                }
+                            }
                             .accessibilityIdentifier("streakLabel")
                             .accessibilityLabel("Streak: \(viewModel.currentStreak) correct in a row")
 

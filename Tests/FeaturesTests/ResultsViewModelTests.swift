@@ -140,4 +140,27 @@ struct ResultsViewModelTests {
         let session = makeSession(correct: 2, total: 10)
         #expect(session.accuracy < 50)
     }
+
+    // MARK: - Share Text (ui-077)
+
+    @Test("Share text contains score and accuracy")
+    func shareTextContents() {
+        let session = makeSession(correct: 8, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        let text = vm.shareText
+        #expect(text.contains("Score:"))
+        #expect(text.contains("Accuracy:"))
+        #expect(text.contains("MathKids"))
+    }
+
+    @Test("Star count matches accuracy tiers")
+    func starCountTiers() {
+        let high = makeSession(correct: 10, total: 10)
+        let vmHigh = ResultsViewModel(session: high, previousBestScore: 0)
+        #expect(vmHigh.starCount == 5)
+
+        let low = makeSession(correct: 3, total: 10)
+        let vmLow = ResultsViewModel(session: low, previousBestScore: 0)
+        #expect(vmLow.starCount == 1)
+    }
 }

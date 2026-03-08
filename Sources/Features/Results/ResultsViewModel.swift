@@ -83,6 +83,19 @@ final class ResultsViewModel {
         return "Keep practicing to unlock fun stats!"
     }
 
+    var shareText: String {
+        let stars = String(repeating: "⭐", count: starCount)
+        return "MathKids \(stars)\nScore: \(finalScore) | Accuracy: \(Int(accuracy))% | Streak: \(bestStreak)\nI solved \(totalAnswered) problems!"
+    }
+
+    var starCount: Int {
+        if accuracy >= 90 { return 5 }
+        if accuracy >= 80 { return 4 }
+        if accuracy >= 70 { return 3 }
+        if accuracy >= 50 { return 2 }
+        return 1
+    }
+
     func animateScore() {
         let target = session.score
         guard target > 0 else {
