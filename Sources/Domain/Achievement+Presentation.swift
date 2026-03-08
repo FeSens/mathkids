@@ -235,4 +235,27 @@ extension Achievement {
     var achievementShowCheckmark: Bool {
         progress != nil
     }
+
+    var achievementDividerColor: String {
+        achievementCardColor
+    }
+
+    var achievementStarRating: Int {
+        if isRareAchievement { return 5 }
+        return achievementDifficultyStars + (pointValue >= 15 ? 1 : 0)
+    }
+
+    var achievementRewardIcon: String {
+        pointValue >= 25 ? "star.fill" : "circle.fill"
+    }
+
+    var achievementShowProgressBar: Bool {
+        progress != nil
+    }
+
+    var achievementCardStyle: String {
+        if achievementIsPremium { return "premium" }
+        if isRareAchievement { return "elevated" }
+        return "basic"
+    }
 }

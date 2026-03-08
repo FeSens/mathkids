@@ -23898,6 +23898,83 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1414",
+      "title": "Achievement Divider Color",
+      "description": "Add achievementDividerColor returning divider line color based on category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementDividerColor is orange"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1415",
+      "title": "Achievement Star Rating",
+      "description": "Add achievementStarRating returning 1-5 star rating based on difficulty and value",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementStarRating is 5",
+        "Verify games is 2"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1416",
+      "title": "Achievement Reward Icon",
+      "description": "Add achievementRewardIcon returning SF Symbol for the reward type",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create high value achievement",
+        "Verify achievementRewardIcon is star.fill"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1417",
+      "title": "Achievement Show Progress Bar",
+      "description": "Add achievementShowProgressBar returning true when has trackable progress",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement with progress",
+        "Verify achievementShowProgressBar is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1418",
+      "title": "Achievement Card Style",
+      "description": "Add achievementCardStyle returning style name combining rarity and size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare large achievement",
+        "Verify achievementCardStyle is premium",
+        "Verify common small is basic"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {
