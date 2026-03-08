@@ -90,4 +90,29 @@ extension Achievement {
     var achievementCardSubtitleText: String {
         "\(category.displayName) challenge"
     }
+
+    var achievementCardEmojiOffset: Double {
+        isRareAchievement ? -4 : 0
+    }
+
+    var achievementStreakMultiplierValue: Double {
+        category == .streak ? 1.5 : 1.0
+    }
+
+    var achievementCardBorderColor: String {
+        switch category {
+        case .mastery: return "indigo"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "gray"
+        }
+    }
+
+    var achievementIsGoalOriented: Bool {
+        category == .mastery || category == .score
+    }
+
+    var achievementCardInfoLabel: String {
+        "\(category.displayName) — \(pointValue) pts"
+    }
 }

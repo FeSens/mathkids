@@ -29549,6 +29549,86 @@
         "Verify cardSubtitleText contains category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1789",
+      "title": "Achievement Card Emoji Offset",
+      "description": "Returns emoji vertical offset",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardEmojiOffset by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1790",
+      "title": "Achievement Streak Multiplier Value",
+      "description": "Returns multiplier for streak achievements",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify streakMultiplierValue for streak vs others"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1791",
+      "title": "Achievement Card Border Color",
+      "description": "Returns border color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardBorderColor by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1792",
+      "title": "Achievement Is Goal Oriented",
+      "description": "Returns whether achievement is goal-oriented",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isGoalOriented for mastery/score vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1793",
+      "title": "Achievement Card Info Label",
+      "description": "Returns info label for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Tracking.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardInfoLabel contains category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
