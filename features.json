@@ -30509,6 +30509,86 @@
         "Verify cardStarCount by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1849",
+      "title": "Achievement Card Ribbon Style",
+      "description": "Returns ribbon style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardRibbonStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1850",
+      "title": "Achievement Estimated Minutes",
+      "description": "Returns estimated minutes to complete",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify estimatedMinutes by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1851",
+      "title": "Achievement Card Badge Shape",
+      "description": "Returns badge shape for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardBadgeShape by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1852",
+      "title": "Achievement Is Engagement Based",
+      "description": "Returns whether needs engagement",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isEngagementBased for streak/games vs score"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1853",
+      "title": "Achievement Card Progress Text",
+      "description": "Returns progress text for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardProgressText contains category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

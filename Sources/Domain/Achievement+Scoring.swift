@@ -160,4 +160,29 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementCardRibbonStyle: String {
+        isRareAchievement ? "banner" : "tag"
+    }
+
+    var achievementEstimatedMinutes: Int {
+        switch category {
+        case .mastery: return 600
+        case .streak: return 150
+        case .score: return 60
+        case .games: return 5
+        }
+    }
+
+    var achievementCardBadgeShape: String {
+        isRareAchievement ? "hexagon" : "circle"
+    }
+
+    var achievementIsEngagementBased: Bool {
+        category == .streak || category == .games
+    }
+
+    var achievementCardProgressText: String {
+        "\(category.displayName) in progress"
+    }
 }
