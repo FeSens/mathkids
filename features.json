@@ -30749,6 +30749,86 @@
         "Verify cardDifficultyLabel by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1864",
+      "title": "Achievement Card Overlay Style",
+      "description": "Returns overlay style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardOverlayStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1865",
+      "title": "Achievement Perfect Score Needed",
+      "description": "Returns whether perfect score is needed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify perfectScoreNeeded for score vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1866",
+      "title": "Achievement Card Crown Style",
+      "description": "Returns crown style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardCrownStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1867",
+      "title": "Achievement Is Learning Based",
+      "description": "Returns whether achievement is learning-based",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isLearningBased for mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1868",
+      "title": "Achievement Card Reward Text",
+      "description": "Returns reward text for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardRewardText contains points"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

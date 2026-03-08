@@ -245,4 +245,24 @@ extension Achievement {
         case .games: return "Easy"
         }
     }
+
+    var achievementCardOverlayStyle: String {
+        isRareAchievement ? "gradient" : "none"
+    }
+
+    var achievementPerfectScoreNeeded: Bool {
+        category == .score
+    }
+
+    var achievementCardCrownStyle: String {
+        isRareAchievement ? "golden" : "hidden"
+    }
+
+    var achievementIsLearningBased: Bool {
+        category == .mastery
+    }
+
+    var achievementCardRewardText: String {
+        "Reward: \(pointValue) pts"
+    }
 }
