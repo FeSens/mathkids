@@ -41627,6 +41627,106 @@
         "Verify threshold <= 32000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2506",
+      "title": "achievementCardGladiteUltraStyle",
+      "description": "Mineral style string for gladite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify gladite ultra style is tin grey acicular",
+        "Create common achievement",
+        "Verify gladite ultra style is pale tin matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2507",
+      "title": "achievementRequiresIllustriousPlus",
+      "description": "Whether achievement requires illustrious plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires illustrious plus is true",
+        "Create games achievement",
+        "Verify requires illustrious plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2508",
+      "title": "achievementCardResolutionWritSealMaxText",
+      "description": "Resolution writ seal max text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Resolution Writ Seal Max of the Legendary",
+        "Create games achievement",
+        "Verify text is Resolution Writ Seal Max of the Pilgrim"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2509",
+      "title": "achievementCardHammariteUltraStyle",
+      "description": "Mineral style string for hammarite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify hammarite ultra style is steel grey monoclinic",
+        "Create common achievement",
+        "Verify hammarite ultra style is leaden grey matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2510",
+      "title": "achievementAlfheimPlusPlusThreshold",
+      "description": "Alfheim plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Celestial.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 190000000",
+        "Create games achievement",
+        "Verify threshold <= 35000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
