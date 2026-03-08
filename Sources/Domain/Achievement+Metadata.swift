@@ -217,4 +217,24 @@ extension Achievement {
     var achievementCooldownSeconds: Int {
         isRareAchievement ? 7200 : 1800
     }
+
+    var achievementCompletionMessage: String {
+        isRareAchievement ? "Congratulations! Rare achievement unlocked!" : "Well done! Achievement unlocked!"
+    }
+
+    var achievementSortWeight: Int {
+        achievementChallengeRating * 10 + pointValue + (isRareAchievement ? 50 : 0)
+    }
+
+    var achievementIconSize: Int {
+        isRareAchievement ? 48 : 24
+    }
+
+    var achievementRetryAllowed: Bool {
+        true
+    }
+
+    var achievementDisplayBadgeCount: Int {
+        isRareAchievement ? 3 : 1
+    }
 }

@@ -25500,6 +25500,81 @@
         "Create common achievement",
         "Verify cooldown is shorter"
       ]
+    },
+    {
+      "id": "logic-1519",
+      "title": "achievementCompletionMessage",
+      "description": "Return a completion message when achievement is unlocked",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify message contains congratulations",
+        "Create common achievement",
+        "Verify message contains well done"
+      ]
+    },
+    {
+      "id": "logic-1520",
+      "title": "achievementSortWeight",
+      "description": "Return a numeric sort weight combining category and rarity",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify sortWeight is high",
+        "Create games achievement",
+        "Verify sortWeight is low"
+      ]
+    },
+    {
+      "id": "logic-1521",
+      "title": "achievementIconSize",
+      "description": "Return icon size based on achievement importance",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify iconSize is 48",
+        "Create common achievement",
+        "Verify iconSize is 24"
+      ]
+    },
+    {
+      "id": "logic-1522",
+      "title": "achievementRetryAllowed",
+      "description": "Return whether achievement can be retried",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify retryAllowed is true",
+        "Create games achievement",
+        "Verify retryAllowed is true"
+      ]
+    },
+    {
+      "id": "logic-1523",
+      "title": "achievementDisplayBadgeCount",
+      "description": "Return badge count for display",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify badgeCount > 1",
+        "Create common achievement",
+        "Verify badgeCount == 1"
+      ]
     }
   ],
   "_schema": {
