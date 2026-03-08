@@ -35657,6 +35657,176 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2191",
+      "title": "Achievement Card Prehnite Frost Style",
+      "description": "Computed property returning prehnite frost style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns glowing frost style",
+        "Common returns matte frost style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2192",
+      "title": "Achievement Requires True Grit",
+      "description": "Computed property checking if achievement requires true grit",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Streak requires true grit",
+        "Score does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2193",
+      "title": "Achievement Card Edict Writ Seal Text",
+      "description": "Computed property returning edict writ seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2194",
+      "title": "Achievement Card Pargasite Style",
+      "description": "Computed property returning pargasite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Rare returns emerald style",
+        "Common returns olive style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2195",
+      "title": "Achievement Zenith Plus Threshold",
+      "description": "Computed property returning zenith plus threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2196",
+      "title": "Achievement card stibiotantalite style",
+      "description": "Computed property achievementCardStibiotantaliteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify stibiotantalite style is prismatic black",
+        "Create common achievement",
+        "Verify stibiotantalite style is steel grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2197",
+      "title": "Achievement requires true grit plus",
+      "description": "Computed property achievementRequiresTrueGritPlus returns true for mastery or score categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresTrueGritPlus is true",
+        "Create games achievement",
+        "Verify requiresTrueGritPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2198",
+      "title": "Achievement card covenant writ seal text",
+      "description": "Computed property achievementCardCovenantWritSealText returns category-based covenant writ seal text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Covenant Writ Seal of the Master",
+        "Create games achievement",
+        "Verify text is Covenant Writ Seal of the Apprentice"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2199",
+      "title": "Achievement card crocoite style",
+      "description": "Computed property achievementCardCrocoiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify crocoite style is saffron",
+        "Create common achievement",
+        "Verify crocoite style is orange"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2200",
+      "title": "Achievement ascension plus threshold",
+      "description": "Computed property achievementAscensionPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Epoch.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 600",
+        "Create games achievement",
+        "Verify threshold <= 100"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

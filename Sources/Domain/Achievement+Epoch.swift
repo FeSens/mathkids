@@ -210,4 +210,64 @@ extension Achievement {
         case .games: return Int.max / 10
         }
     }
+
+    var achievementCardPrehniteFrostStyle: String {
+        isRareAchievement ? "glowing frost" : "matte frost"
+    }
+
+    var achievementRequiresTrueGrit: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardEdictWritSealText: String {
+        switch category {
+        case .mastery: return "Edict Writ Seal of the Sage"
+        case .streak: return "Edict Writ Seal of the Sentinel"
+        case .score: return "Edict Writ Seal of the Champion"
+        case .games: return "Edict Writ Seal of the Novice"
+        }
+    }
+
+    var achievementCardPargasiteStyle: String {
+        isRareAchievement ? "emerald" : "olive"
+    }
+
+    var achievementZenithPlusThreshold: Int {
+        switch category {
+        case .mastery: return 500
+        case .streak: return 200
+        case .score: return 400
+        case .games: return 50
+        }
+    }
+
+    var achievementCardStibiotantaliteStyle: String {
+        isRareAchievement ? "prismatic black" : "steel grey"
+    }
+
+    var achievementRequiresTrueGritPlus: Bool {
+        category == .mastery || category == .score
+    }
+
+    var achievementCardCovenantWritSealText: String {
+        switch category {
+        case .mastery: return "Covenant Writ Seal of the Master"
+        case .streak: return "Covenant Writ Seal of the Warden"
+        case .score: return "Covenant Writ Seal of the Victor"
+        case .games: return "Covenant Writ Seal of the Apprentice"
+        }
+    }
+
+    var achievementCardCrocoiteStyle: String {
+        isRareAchievement ? "saffron" : "orange"
+    }
+
+    var achievementAscensionPlusThreshold: Int {
+        switch category {
+        case .mastery: return 750
+        case .streak: return 300
+        case .score: return 600
+        case .games: return 75
+        }
+    }
 }
