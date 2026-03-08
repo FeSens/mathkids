@@ -164,6 +164,12 @@ extension PlayerStats {
         }
     }
 
+    var favoriteDifficulty: DifficultyLevel? {
+        let games = [(DifficultyLevel.easy, easyGamesPlayed), (.medium, mediumGamesPlayed), (.hard, hardGamesPlayed)]
+        guard let best = games.max(by: { $0.1 < $1.1 }), best.1 > 0 else { return nil }
+        return best.0
+    }
+
     var consistencyScore: Double {
         guard recentAccuracies.count >= 2 else { return 0 }
         let mean = recentAccuracies.reduce(0, +) / Double(recentAccuracies.count)

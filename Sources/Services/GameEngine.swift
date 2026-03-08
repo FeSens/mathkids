@@ -24,6 +24,8 @@ final class GameEngine {
     private(set) var operationFrequency: [Operation: Int] = [:]
     private(set) var problemCount: Int = 1
 
+    var consecutiveWrongCount: Int { consecutiveWrong }
+
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
         self.allowedOperations = allowedOperations

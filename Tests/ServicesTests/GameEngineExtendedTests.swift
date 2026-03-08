@@ -45,4 +45,34 @@ struct GameEngineExtendedTests {
         engine.submitAnswer(99999) // no freeze, resets
         #expect(engine.currentStreak == 0)
     }
+
+    // MARK: - Wrong Answer Streak (logic-272)
+
+    @Test("Wrong streak starts at 0")
+    @MainActor
+    func wrongStreakStartsAt0() {
+        let engine = GameEngine(difficulty: .easy)
+        #expect(engine.consecutiveWrongCount == 0)
+    }
+
+    @Test("Consecutive wrong answers increment streak")
+    @MainActor
+    func wrongStreakIncrements() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        engine.submitAnswer(99999)
+        engine.submitAnswer(99999)
+        #expect(engine.consecutiveWrongCount == 2)
+    }
+
+    @Test("Correct answer resets wrong streak")
+    @MainActor
+    func correctResetsWrongStreak() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        engine.submitAnswer(99999)
+        engine.submitAnswer(99999)
+        engine.submitAnswer(engine.currentProblem.correctAnswer)
+        #expect(engine.consecutiveWrongCount == 0)
+    }
 }

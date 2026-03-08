@@ -210,4 +210,29 @@ struct MathProblemTests {
     func divideInverse() {
         #expect(Operation.divide.inverse == .multiply)
     }
+
+    // MARK: - Wrong Answer Choices (logic-269)
+
+    @Test("Generates exactly 3 wrong choices")
+    func wrongChoicesCount() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .add)
+        let choices = problem.wrongAnswerChoices
+        #expect(choices.count == 3)
+    }
+
+    @Test("All wrong choices differ from correct answer")
+    func wrongChoicesNotCorrect() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .add)
+        let choices = problem.wrongAnswerChoices
+        for choice in choices {
+            #expect(choice != problem.correctAnswer)
+        }
+    }
+
+    @Test("Wrong choices are all different from each other")
+    func wrongChoicesUnique() {
+        let problem = MathProblem(operand1: 5, operand2: 3, operation: .add)
+        let choices = problem.wrongAnswerChoices
+        #expect(Set(choices).count == 3)
+    }
 }

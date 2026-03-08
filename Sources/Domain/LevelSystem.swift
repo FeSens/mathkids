@@ -66,6 +66,13 @@ enum LevelSystem {
         max(xpToMaxLevel - currentXP, 0)
     }
 
+    static let levelEmojis = ["🌱", "📚", "🔍", "🧠", "🔧", "🧮", "⭐", "🏆", "👑", "🧙"]
+
+    static func levelEmoji(for xp: Int) -> String {
+        let lvl = level(for: xp)
+        return levelEmojis[lvl - 1]
+    }
+
     static let baseXPPerAnswer = 10
 
     static func streakBonusXP(streak: Int) -> Int {

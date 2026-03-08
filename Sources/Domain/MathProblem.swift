@@ -112,6 +112,26 @@ extension MathProblem {
 }
 
 extension MathProblem {
+    var wrongAnswerChoices: [Int] {
+        let answer = correctAnswer
+        var choices: Set<Int> = []
+        // Generate plausible wrong answers near the correct one
+        let offsets = [-2, -1, 1, 2, 3, -3, 5, -5]
+        for offset in offsets {
+            let wrong = answer + offset
+            if wrong != answer && wrong >= 0 {
+                choices.insert(wrong)
+            }
+            if choices.count >= 3 { break }
+        }
+        while choices.count < 3 {
+            choices.insert(answer + choices.count + 10)
+        }
+        return Array(choices.prefix(3))
+    }
+}
+
+extension MathProblem {
     var answerDigitCount: Int {
         let answer = abs(correctAnswer)
         if answer == 0 { return 1 }

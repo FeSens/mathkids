@@ -268,4 +268,30 @@ struct PlayerStatsExtendedTests {
         stats.recentAccuracies = [30, 90, 40, 95, 50]
         #expect(stats.consistencyScore < 70)
     }
+
+    // MARK: - Favorite Difficulty (logic-271)
+
+    @Test("Favorite difficulty nil with no games")
+    func favoriteDifficultyNil() {
+        let stats = PlayerStats()
+        #expect(stats.favoriteDifficulty == nil)
+    }
+
+    @Test("Favorite difficulty is easy when most games are easy")
+    func favoriteDifficultyEasy() {
+        let stats = PlayerStats()
+        stats.easyGamesPlayed = 10
+        stats.mediumGamesPlayed = 3
+        stats.hardGamesPlayed = 1
+        #expect(stats.favoriteDifficulty == .easy)
+    }
+
+    @Test("Favorite difficulty is hard when most games are hard")
+    func favoriteDifficultyHard() {
+        let stats = PlayerStats()
+        stats.easyGamesPlayed = 1
+        stats.mediumGamesPlayed = 2
+        stats.hardGamesPlayed = 15
+        #expect(stats.favoriteDifficulty == .hard)
+    }
 }

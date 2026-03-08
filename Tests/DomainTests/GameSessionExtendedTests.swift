@@ -103,4 +103,22 @@ struct GameSessionExtendedTests {
         let session = GameSession(difficulty: .easy)
         #expect(session.answerSpeedClass == nil)
     }
+
+    // MARK: - Wrong Answer Penalty (logic-270)
+
+    @Test("No penalty with all correct")
+    func noPenaltyAllCorrect() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<5 { session.recordAnswer(correct: true) }
+        #expect(session.penaltyPoints == 0)
+    }
+
+    @Test("Penalty equals wrong count times penalty amount")
+    func penaltyCalculation() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        session.recordAnswer(correct: false)
+        #expect(session.penaltyPoints == 3 * session.difficulty.penaltyPerWrong)
+    }
 }

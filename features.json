@@ -5239,6 +5239,96 @@
       "files": [
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-269",
+      "title": "MathProblem wrong answer choices generator",
+      "description": "MathProblem generates plausible wrong answer choices for multiple choice mode",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Generates exactly 3 wrong choices",
+        "All wrong choices are different from correct answer",
+        "Wrong choices are all different from each other"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-270",
+      "title": "GameSession penalty for wrong answers",
+      "description": "GameSession computes total penalty points lost from wrong answers",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "No penalty with all correct",
+        "Penalty equals wrong count times penalty amount",
+        "Penalty does not make score negative"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-271",
+      "title": "PlayerStats favorite difficulty",
+      "description": "PlayerStats determines which difficulty the player plays most",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Returns nil with no games",
+        "Returns easy when most games are easy",
+        "Returns hard when most games are hard"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-272",
+      "title": "GameEngine wrong answer streak detection",
+      "description": "GameEngine tracks consecutive wrong answers for adaptive hints",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "svc-001"
+      ],
+      "test_steps": [
+        "Wrong streak starts at 0",
+        "Consecutive wrong answers increment streak",
+        "Correct answer resets wrong streak"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
+    },
+    {
+      "id": "logic-273",
+      "title": "LevelSystem level emoji",
+      "description": "LevelSystem provides an emoji for each level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Level 1 has an emoji",
+        "Each level has a unique emoji",
+        "Max level has an emoji"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
     }
   ],
   "_schema": {

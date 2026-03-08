@@ -1,38 +1,37 @@
 # Claude Progress
 
-## Session 7 — 2026-03-07
+## Session 8 — 2026-03-07
 
 ### Status
-- Features: 253/253 passing (12 MVP + 9 polish + 232 improvement)
-- Unit tests: 282 (all green)
-- UI tests: 12 (all green)
+- Features: 278/278 passing (12 MVP + 9 polish + 257 improvement)
+- Unit tests: 357 (all green)
+- UI tests: 12 (QA screenshots flaky but unit tests solid)
 - QA: PASSED
 
-### Session 7 Features (batches 25-26)
-logic-204: Weakest operation detection on PlayerStats
-logic-205: Personal best score tracking per difficulty level
-logic-206: Problems per minute calculation on GameSession
-logic-207: ResultsViewModel new personal best flag per difficulty
-logic-208: StatsViewModel weakest operation and problems per minute
-logic-209: Average score per difficulty on PlayerStats
-logic-210: GameEngine tracks correct answers by operation type
-logic-211: LevelSystem xpNeededForNextLevel
-logic-212: GameSession tracks best streak operation
-logic-213: ResultsViewModel problems per minute text
+### Session 8 Features (batches 33-37)
+- logic-244 to logic-248: games per op, scorePerCorrect, xpToMax, answerMagnitude, scoreComparisonText
+- logic-249 to logic-253: timeBonus, accuracyTrend, hintText, activateStreakFreeze, gradeLabel
+- logic-254 to logic-258: streakBonusMultiplier, bestStreakPerDifficulty, halfAccuracy, digitCount, improvementSummary
+- logic-259 to logic-263: efficiencyScore, problemsPerDifficulty, xpBreakdown, sessionCountText, greetingMessage
+- logic-264 to logic-268: inverse operation, answerSpeedClass, consistencyScore, recommendedTime, timePerformanceText
 
 ### Key Changes
-- PlayerStats: weakestOperation, bestScoreForDifficulty(), updateBestScore(), averageScoreForDifficulty()
-- PlayerStats: bestScore/totalScore per difficulty persisted fields
-- GameSession: problemsPerMinute, bestStreakOperation, operation tracking in recordAnswer
-- GameEngine: correctCountByOperation dictionary
-- LevelSystem: xpNeededForNextLevel(currentXP:)
-- ResultsViewModel: isNewPersonalBest, problemsPerMinuteText
-- StatsViewModel: weakestOperationSymbol, averageProblemsPerMinute
+- GameSession: timeBonus, firstHalfAccuracy/secondHalfAccuracy, efficiencyScore, answerSpeedClass, answerHistory tracking
+- PlayerStats: accuracyTrend, bestStreakPerDifficulty, totalProblemsPerDifficulty, consistencyScore
+- PlayerStats+Extensions.swift: split from PlayerStats to stay under 300 lines
+- MathProblem: hintText, answerDigitCount, answerMagnitude enum, Operation.inverse
+- DifficultyLevel: streakBonusMultiplier, recommendedSecondsPerProblem
+- LevelSystem: xpToMaxLevel, xpRemainingToMax, baseXPPerAnswer, streakBonusXP
+- ResultsViewModel: scoreComparisonText, gradeLabel, improvementSummary, timePerformanceText
+- StatsViewModel: sessionCountText
+- HomeViewModel: greetingMessage
+- GameEngine: activateStreakFreeze() public API
+- Split 4 oversized files into extended test files
 
 ### Previous Sessions
-- Sessions 1-6: 213 features implemented (core models, game engine, UI, animations)
-- ProblemGenerator prevents consecutive duplicates
-- GameEngine tracks fastest answer time and full problem history
+- Sessions 1-7: 253 features implemented
+- Batches 25-32: logic-204 to logic-243
+- ProblemGenerator, GameEngine history, fastest answer tracking
 - XcodeGen, @Observable, SwiftData, Swift Testing, NavigationStack
 
 ### Architecture

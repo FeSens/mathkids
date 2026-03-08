@@ -130,4 +130,25 @@ struct LevelSystemTests {
         let bonus = LevelSystem.streakBonusXP(streak: 5)
         #expect(total == base + bonus)
     }
+
+    // MARK: - Level Emoji (logic-273)
+
+    @Test("Level 1 has an emoji")
+    func level1HasEmoji() {
+        #expect(!LevelSystem.levelEmoji(for: 0).isEmpty)
+    }
+
+    @Test("Each level has a unique emoji")
+    func uniqueEmojis() {
+        var emojis: Set<String> = []
+        for xp in LevelSystem.thresholds {
+            emojis.insert(LevelSystem.levelEmoji(for: xp))
+        }
+        #expect(emojis.count == LevelSystem.thresholds.count)
+    }
+
+    @Test("Max level has an emoji")
+    func maxLevelHasEmoji() {
+        #expect(!LevelSystem.levelEmoji(for: 99999).isEmpty)
+    }
 }

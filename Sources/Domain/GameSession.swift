@@ -127,6 +127,10 @@ struct GameSession: Sendable {
         return Double(correct) / Double(secondHalf.count) * 100
     }
 
+    var penaltyPoints: Int {
+        totalWrong * difficulty.penaltyPerWrong
+    }
+
     enum AnswerSpeed: Sendable {
         case fast, normal, slow
     }
