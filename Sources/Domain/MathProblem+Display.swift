@@ -73,4 +73,24 @@ extension MathProblem {
     var problemAccessibilityHint: String {
         "\(operation.displayName) problem: \(problemReadAloudText)"
     }
+
+    var problemIsDoubleDigitAnswer: Bool {
+        abs(correctAnswer) >= 10
+    }
+
+    var problemOperandsAreConsecutive: Bool {
+        abs(operand1 - operand2) == 1
+    }
+
+    var problemIsEasyByOperands: Bool {
+        operand1 <= 5 && operand2 <= 5
+    }
+
+    var problemTotalDigits: Int {
+        String(operand1).count + String(operand2).count
+    }
+
+    var problemCategoryLabel: String {
+        operation.displayName
+    }
 }

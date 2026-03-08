@@ -18896,6 +18896,81 @@
         "contains operation display name"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1114",
+      "name": "problemIsDoubleDigitAnswer",
+      "description": "Whether correct answer is double digit",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "7+8=15 is double digit, 2+3=5 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1115",
+      "name": "problemOperandsAreConsecutive",
+      "description": "Whether operands are consecutive numbers",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3,4 is consecutive, 2,5 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1116",
+      "name": "problemIsEasyByOperands",
+      "description": "Whether problem has small operands (both <= 5)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "2,3 is easy, 7,8 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1117",
+      "name": "problemTotalDigits",
+      "description": "Total digit count across both operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3,4 returns 2"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1118",
+      "name": "problemCategoryLabel",
+      "description": "Category label based on operation type",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "add problem returns addition category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
