@@ -132,4 +132,24 @@ extension Achievement {
     var achievementDragPriority: String {
         achievementIsPremium ? "high" : "low"
     }
+
+    var achievementNavigationDestination: String {
+        "achievementDetail"
+    }
+
+    var achievementA11yLabel: String {
+        "\(title), \(achievementStatusLabel)"
+    }
+
+    var achievementParticleColor: String {
+        achievementCardColor
+    }
+
+    var achievementIsRepeatable: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCollectionName: String {
+        "\(category.displayName) Collection"
+    }
 }

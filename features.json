@@ -24434,6 +24434,82 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1449",
+      "title": "Achievement Navigation Destination",
+      "description": "Add achievementNavigationDestination returning destination screen name",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementNavigationDestination is achievementDetail"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1450",
+      "title": "Achievement A11y Label",
+      "description": "Add achievementA11yLabel returning full VoiceOver label text",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementAccessibilityLabel contains title and status"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1451",
+      "title": "Achievement Particle Color",
+      "description": "Add achievementParticleColor returning particle effect color for celebrations",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementParticleColor is orange"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1452",
+      "title": "Achievement Is Repeatable",
+      "description": "Add achievementIsRepeatable returning true for score-based achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create score achievement",
+        "Verify achievementIsRepeatable is true",
+        "Verify games is false"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1453",
+      "title": "Achievement Collection Name",
+      "description": "Add achievementCollectionName returning collection name for grouping",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementCollectionName contains Streak"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
