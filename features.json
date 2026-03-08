@@ -39027,6 +39027,106 @@
         "Verify threshold <= 8000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2376",
+      "title": "achievementCardLivingstoniteProStyle",
+      "description": "Mineral style string for livingstonite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify livingstonite pro style is blackish grey prismatic",
+        "Create common achievement",
+        "Verify livingstonite pro style is dull charcoal"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2377",
+      "title": "achievementRequiresDutyPlus",
+      "description": "Whether achievement requires duty plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires duty plus is true",
+        "Create games achievement",
+        "Verify requires duty plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2378",
+      "title": "achievementCardMandateWritSealUltraPlusText",
+      "description": "Mandate writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Mandate Writ Seal Ultra Plus of the Immortal",
+        "Create games achievement",
+        "Verify text is Mandate Writ Seal Ultra Plus of the Disciple"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2379",
+      "title": "achievementCardGuettarditeStyle",
+      "description": "Mineral style string for guettardite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify guettardite style is lead grey monoclinic",
+        "Create common achievement",
+        "Verify guettardite style is flat lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2380",
+      "title": "achievementAsgardPlusThreshold",
+      "description": "Asgard plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Dominion.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 60000000",
+        "Create games achievement",
+        "Verify threshold <= 8000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
