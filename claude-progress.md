@@ -3,17 +3,19 @@
 ## Session 17 — 2026-03-08
 
 ### Status
-- Features: 1393/1393 passing (12 MVP + 9 polish + 1372 improvement)
-- Unit tests: ~2800 (all green across ~260 suites)
+- Features: 1493/1493 passing (12 MVP + 9 polish + 1472 improvement)
+- Unit tests: ~2950 (all green across ~280 suites)
 - UI tests: 12
 - QA: PASSED
 
-### Session 17 Features (batches 251-260)
+### Session 17 Features (batches 251-280)
 - Batches 251-257: logic-1334 to logic-1368 (35 features) — Achievement+Display
-- Batches 258-260: logic-1369 to logic-1383 (15 features) — Achievement+Presentation (new file)
-- Total this session: 50 features (continuing)
-- New files: Achievement+Presentation.swift (~90 lines)
-- Files near limit: Achievement+Display (~288, FULL), AnsweredProblem+Display (~300, FULL), AnsweredProblem+Analytics (~285), AnsweredProblem+Scoring (~290)
+- Batches 258-262: logic-1369 to logic-1393 (25 features) — Achievement+Presentation (new file)
+- Batches 263-268: logic-1394 to logic-1423 (30 features) — Achievement+Presentation
+- Batches 269-280: logic-1424 to logic-1483 (60 features) — Achievement+Layout (new file)
+- Total this session: 150 features (continuing)
+- New files: Achievement+Presentation.swift (~285), Achievement+Layout.swift (~295)
+- Files near limit: Achievement+Display (~288, FULL), Achievement+Presentation (~285, nearly full), Achievement+Layout (~295, nearly full)
 
 ## Session 16 — 2026-03-08
 
