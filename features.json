@@ -37897,6 +37897,96 @@
         "Verify threshold <= 250000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2316",
+      "title": "Achievement card aikinite style",
+      "description": "Computed property achievementCardAikiniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify aikinite style is blackish lead acicular",
+        "Create common achievement",
+        "Verify aikinite style is dark grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2317",
+      "title": "Achievement requires devotion plus",
+      "description": "Computed property achievementRequiresDevotionPlus returns true for streak or games categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requiresDevotionPlus is true",
+        "Create mastery achievement",
+        "Verify requiresDevotionPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2318",
+      "title": "Achievement card accord writ seal ultra text",
+      "description": "Computed property achievementCardAccordWritSealUltraText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Accord Writ Seal Ultra of the Celestial",
+        "Create games achievement",
+        "Verify text is Accord Writ Seal Ultra of the Seeker"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2319",
+      "title": "Achievement card wittichenite style",
+      "description": "Computed property achievementCardWitticheniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify wittichenite style is steel grey orthorhombic",
+        "Create common achievement",
+        "Verify wittichenite style is slate grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2320",
+      "title": "Achievement eternity plus threshold",
+      "description": "Computed property achievementEternityPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 2500000",
+        "Create games achievement",
+        "Verify threshold <= 350000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

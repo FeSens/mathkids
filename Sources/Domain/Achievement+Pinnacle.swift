@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 200000
         }
     }
+
+    var achievementCardAikiniteStyle: String {
+        isRareAchievement ? "blackish lead acicular" : "dark grey"
+    }
+
+    var achievementRequiresDevotionPlus: Bool {
+        category == .streak || category == .games
+    }
+
+    var achievementCardAccordWritSealUltraText: String {
+        switch category {
+        case .mastery: return "Accord Writ Seal Ultra of the Celestial"
+        case .streak: return "Accord Writ Seal Ultra of the Bastion"
+        case .score: return "Accord Writ Seal Ultra of the Apex"
+        case .games: return "Accord Writ Seal Ultra of the Seeker"
+        }
+    }
+
+    var achievementCardWitticheniteStyle: String {
+        isRareAchievement ? "steel grey orthorhombic" : "slate grey"
+    }
+
+    var achievementEternityPlusThreshold: Int {
+        switch category {
+        case .mastery: return 3000000
+        case .streak: return 1200000
+        case .score: return 2500000
+        case .games: return 300000
+        }
+    }
 }
