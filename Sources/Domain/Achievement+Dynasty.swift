@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 300000
         }
     }
+
+    var achievementCardRedBerylStyle: String {
+        isRareAchievement ? "scarlet" : "pink"
+    }
+
+    var achievementRequiresSpirit: Bool {
+        category == .games
+    }
+
+    var achievementCardResolutionSealText: String {
+        switch category {
+        case .mastery: return "Resolution Seal of the Learned"
+        case .streak: return "Resolution Seal of the Devoted"
+        case .score: return "Resolution Seal of the Skilled"
+        case .games: return "Resolution Seal of the Eager"
+        }
+    }
+
+    var achievementCardParaibaStyle: String {
+        isRareAchievement ? "electric" : "pale"
+    }
+
+    var achievementAscendancyThreshold: Int {
+        switch category {
+        case .mastery: return 5000000
+        case .streak: return 2000000
+        case .score: return 3000000
+        case .games: return 500000
+        }
+    }
 }

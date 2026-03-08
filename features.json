@@ -34617,6 +34617,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2126",
+      "title": "Achievement Card Red Beryl Style",
+      "description": "Computed property returning red beryl style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns scarlet style",
+        "Common returns pink style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2127",
+      "title": "Achievement Requires Spirit",
+      "description": "Computed property checking if achievement requires spirit",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Games requires spirit",
+        "Mastery does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2128",
+      "title": "Achievement Card Resolution Seal Text",
+      "description": "Computed property returning resolution seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2129",
+      "title": "Achievement Card Paraiba Style",
+      "description": "Computed property returning paraiba style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns electric style",
+        "Common returns pale style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2130",
+      "title": "Achievement Ascendancy Threshold",
+      "description": "Computed property returning ascendancy threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
