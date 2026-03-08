@@ -30669,6 +30669,86 @@
         "Verify cardXpLabel contains XP value"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1859",
+      "title": "Achievement Card Spotlight Effect",
+      "description": "Returns whether card has spotlight",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardSpotlightEffect by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1860",
+      "title": "Achievement Completion Bonus",
+      "description": "Returns bonus points on completion",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify completionBonus by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1861",
+      "title": "Achievement Card Medal Style",
+      "description": "Returns medal display style",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardMedalStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1862",
+      "title": "Achievement Is Retention Based",
+      "description": "Returns whether achievement promotes retention",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isRetentionBased for streak vs score"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1863",
+      "title": "Achievement Card Difficulty Label",
+      "description": "Returns difficulty label for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardDifficultyLabel by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

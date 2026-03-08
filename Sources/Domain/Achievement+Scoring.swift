@@ -215,4 +215,34 @@ extension Achievement {
     var achievementCardXpLabel: String {
         "\(achievementXpValue) XP"
     }
+
+    var achievementCardSpotlightEffect: Bool {
+        isRareAchievement
+    }
+
+    var achievementCompletionBonus: Int {
+        switch category {
+        case .mastery: return 50
+        case .streak: return 25
+        case .score: return 15
+        case .games: return 5
+        }
+    }
+
+    var achievementCardMedalStyle: String {
+        isRareAchievement ? "raised" : "flat"
+    }
+
+    var achievementIsRetentionBased: Bool {
+        category == .streak
+    }
+
+    var achievementCardDifficultyLabel: String {
+        switch category {
+        case .mastery: return "Expert"
+        case .streak: return "Intermediate"
+        case .score: return "Moderate"
+        case .games: return "Easy"
+        }
+    }
 }
