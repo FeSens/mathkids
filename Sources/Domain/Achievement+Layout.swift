@@ -54,4 +54,32 @@ extension Achievement {
         default: return "third"
         }
     }
+
+    var achievementTimeEstimate: Int {
+        switch category {
+        case .mastery: return 60
+        case .streak: return 30
+        case .score: return 20
+        case .games: return 10
+        }
+    }
+
+    var achievementBannerText: String {
+        "\(emoji) \(title) Unlocked!"
+    }
+
+    var achievementIsDailyChallenge: Bool {
+        category == .streak
+    }
+
+    var achievementOutlineColor: String {
+        if progress != nil {
+            return achievementCardColor
+        }
+        return "gray"
+    }
+
+    var achievementXpMultiplier: Double {
+        isRareAchievement ? 2.0 : 1.0
+    }
 }

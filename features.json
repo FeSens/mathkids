@@ -24203,6 +24203,84 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1434",
+      "title": "Achievement Time Estimate",
+      "description": "Add achievementTimeEstimate returning estimated time to complete in minutes",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementTimeEstimate is 60",
+        "Verify games is 10"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1435",
+      "title": "Achievement Banner Text",
+      "description": "Add achievementBannerText returning banner notification text",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementBannerText contains emoji and title"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1436",
+      "title": "Achievement Is Daily Challenge",
+      "description": "Add achievementIsDailyChallenge returning true for streak category achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementIsDailyChallenge is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1437",
+      "title": "Achievement Outline Color",
+      "description": "Add achievementOutlineColor returning outline color based on completion state",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create locked achievement",
+        "Verify achievementOutlineColor is gray",
+        "Verify unlocked matches category"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1438",
+      "title": "Achievement XP Multiplier",
+      "description": "Add achievementXpMultiplier returning bonus multiplier for XP calculation",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementXpMultiplier is 2.0",
+        "Verify common is 1.0"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
