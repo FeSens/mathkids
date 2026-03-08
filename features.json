@@ -17771,6 +17771,81 @@
         "add returns 18, multiply returns 81"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1039",
+      "name": "operationMinSingleDigitResult",
+      "description": "Min result from single digit operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns 0, multiply returns 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1040",
+      "name": "operationAlternateSymbol",
+      "description": "Alternate symbol representation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "multiply returns *, divide returns /"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1041",
+      "name": "operationIsInverse",
+      "description": "Whether this operation is an inverse operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "subtract is inverse, add is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1042",
+      "name": "operationSentence",
+      "description": "Template sentence using the operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "not empty for all operations"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1043",
+      "name": "operationEmoji",
+      "description": "Emoji representing the operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns \u2795, subtract returns \u2796"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

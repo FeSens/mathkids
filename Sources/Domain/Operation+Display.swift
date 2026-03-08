@@ -134,4 +134,44 @@ extension Operation {
         case .divide: return 9
         }
     }
+
+    var operationMinSingleDigitResult: Int {
+        switch self {
+        case .add: return 0
+        case .subtract: return 0
+        case .multiply: return 0
+        case .divide: return 0
+        }
+    }
+
+    var operationAlternateSymbol: String {
+        switch self {
+        case .add: return "+"
+        case .subtract: return "-"
+        case .multiply: return "*"
+        case .divide: return "/"
+        }
+    }
+
+    var operationIsInverse: Bool {
+        self == .subtract || self == .divide
+    }
+
+    var operationSentence: String {
+        switch self {
+        case .add: return "A plus B equals C"
+        case .subtract: return "A minus B equals C"
+        case .multiply: return "A times B equals C"
+        case .divide: return "A divided by B equals C"
+        }
+    }
+
+    var operationEmoji: String {
+        switch self {
+        case .add: return "➕"
+        case .subtract: return "➖"
+        case .multiply: return "✖️"
+        case .divide: return "➗"
+        }
+    }
 }
