@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 16500000
         }
     }
+
+    var achievementCardSamsoniteUltraStyle: String {
+        isRareAchievement ? "steel black monoclinic" : "dark steel matte"
+    }
+
+    var achievementRequiresEternalPlus: Bool {
+        category == .streak || category == .score
+    }
+
+    var achievementCardMandateWritSealMaxText: String {
+        switch category {
+        case .mastery: return "Mandate Writ Seal Max of the Cosmic"
+        case .streak: return "Mandate Writ Seal Max of the Fortress"
+        case .score: return "Mandate Writ Seal Max of the Glorious"
+        case .games: return "Mandate Writ Seal Max of the Novice"
+        }
+    }
+
+    var achievementCardMatilditeUltraStyle: String {
+        isRareAchievement ? "iron grey hexagonal" : "dull iron matte"
+    }
+
+    var achievementNiflheimPlusPlusThreshold: Int {
+        switch category {
+        case .mastery: return 170000000
+        case .streak: return 68000000
+        case .score: return 165000000
+        case .games: return 17000000
+        }
+    }
 }

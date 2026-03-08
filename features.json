@@ -41227,6 +41227,106 @@
         "Verify threshold <= 28000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2486",
+      "title": "achievementCardSamsoniteUltraStyle",
+      "description": "Mineral style string for samsonite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify samsonite ultra style is steel black monoclinic",
+        "Create common achievement",
+        "Verify samsonite ultra style is dark steel matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2487",
+      "title": "achievementRequiresEternalPlus",
+      "description": "Whether achievement requires eternal plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify requires eternal plus is true",
+        "Create games achievement",
+        "Verify requires eternal plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2488",
+      "title": "achievementCardMandateWritSealMaxText",
+      "description": "Mandate writ seal max text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Mandate Writ Seal Max of the Cosmic",
+        "Create games achievement",
+        "Verify text is Mandate Writ Seal Max of the Novice"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2489",
+      "title": "achievementCardMatilditeUltraStyle",
+      "description": "Mineral style string for matildite ultra based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify matildite ultra style is iron grey hexagonal",
+        "Create common achievement",
+        "Verify matildite ultra style is dull iron matte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2490",
+      "title": "achievementNiflheimPlusPlusThreshold",
+      "description": "Niflheim plus plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Eternal.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 170000000",
+        "Create games achievement",
+        "Verify threshold <= 30000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
