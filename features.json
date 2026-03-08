@@ -32439,6 +32439,76 @@
         "Create games achievement",
         "Verify tier is low"
       ]
+    },
+    {
+      "id": "logic-1984",
+      "name": "achievementCardPeridotStyle",
+      "description": "Peridot gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify peridot is vivid",
+        "Create common achievement",
+        "Verify peridot is pale"
+      ]
+    },
+    {
+      "id": "logic-1985",
+      "name": "achievementRequiresMastery",
+      "description": "Whether achievement requires mastery level skill",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresMastery is true",
+        "Create games achievement",
+        "Verify requiresMastery is false"
+      ]
+    },
+    {
+      "id": "logic-1986",
+      "name": "achievementCardProclamationText",
+      "description": "Proclamation text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify proclamation text",
+        "Create games achievement",
+        "Verify proclamation text"
+      ]
+    },
+    {
+      "id": "logic-1987",
+      "name": "achievementCardCitrineStyle",
+      "description": "Citrine gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify citrine is golden",
+        "Create common achievement",
+        "Verify citrine is pale"
+      ]
+    },
+    {
+      "id": "logic-1988",
+      "name": "achievementUnlockThresholdPercent",
+      "description": "Unlock threshold percentage based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold is high",
+        "Create games achievement",
+        "Verify threshold is low"
+      ]
     }
   ],
   "_schema": {

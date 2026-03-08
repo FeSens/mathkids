@@ -90,4 +90,34 @@ extension Achievement {
         case .games: return 1
         }
     }
+
+    var achievementCardPeridotStyle: String {
+        isRareAchievement ? "vivid" : "pale"
+    }
+
+    var achievementRequiresMastery: Bool {
+        category == .mastery
+    }
+
+    var achievementCardProclamationText: String {
+        switch category {
+        case .mastery: return "Proclaimed Master"
+        case .streak: return "Proclaimed Devotee"
+        case .score: return "Proclaimed Marksman"
+        case .games: return "Proclaimed Explorer"
+        }
+    }
+
+    var achievementCardCitrineStyle: String {
+        isRareAchievement ? "golden" : "pale"
+    }
+
+    var achievementUnlockThresholdPercent: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 0
+        case .score: return 90
+        case .games: return 0
+        }
+    }
 }
