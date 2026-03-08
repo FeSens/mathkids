@@ -34137,6 +34137,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2096",
+      "title": "Achievement Card Hiddenite Style",
+      "description": "Computed property returning hiddenite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns luminous style",
+        "Common returns pale style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2097",
+      "title": "Achievement Requires Fortitude Plus",
+      "description": "Computed property checking if achievement requires fortitude plus",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Streak requires fortitude plus",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2098",
+      "title": "Achievement Card Accord Seal Text",
+      "description": "Computed property returning accord seal text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2099",
+      "title": "Achievement Card Benitoite Style",
+      "description": "Computed property returning benitoite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Rare returns sapphire style",
+        "Common returns grey style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2100",
+      "title": "Achievement Regalia Threshold",
+      "description": "Computed property returning regalia threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Heritage.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

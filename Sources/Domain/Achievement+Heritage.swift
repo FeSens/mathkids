@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 40000
         }
     }
+
+    var achievementCardHiddeniteStyle: String {
+        isRareAchievement ? "luminous" : "pale"
+    }
+
+    var achievementRequiresFortitudePlus: Bool {
+        category == .streak || category == .mastery
+    }
+
+    var achievementCardAccordSealText: String {
+        switch category {
+        case .mastery: return "Accord Seal of Wisdom"
+        case .streak: return "Accord Seal of Loyalty"
+        case .score: return "Accord Seal of Honor"
+        case .games: return "Accord Seal of Welcome"
+        }
+    }
+
+    var achievementCardBenitoiteStyle: String {
+        isRareAchievement ? "sapphire" : "grey"
+    }
+
+    var achievementRegaliaThreshold: Int {
+        switch category {
+        case .mastery: return 500000
+        case .streak: return 200000
+        case .score: return 400000
+        case .games: return 50000
+        }
+    }
 }
