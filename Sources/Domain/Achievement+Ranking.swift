@@ -270,4 +270,34 @@ extension Achievement {
         case .games: return 1.0
         }
     }
+
+    var achievementCardMosaicStyle: String {
+        isRareAchievement ? "detailed" : "simple"
+    }
+
+    var achievementIsCumulativeProgress: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardEpigraphText: String {
+        switch category {
+        case .mastery: return "Through knowledge, victory"
+        case .streak: return "Through patience, strength"
+        case .score: return "Through focus, triumph"
+        case .games: return "Through play, growth"
+        }
+    }
+
+    var achievementCardAntiquingStyle: String {
+        isRareAchievement ? "patina" : "clean"
+    }
+
+    var achievementMinSessionLength: Int {
+        switch category {
+        case .mastery: return 15
+        case .streak: return 5
+        case .score: return 10
+        case .games: return 1
+        }
+    }
 }

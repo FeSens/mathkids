@@ -31529,6 +31529,76 @@
         "Create games achievement",
         "Verify multiplier is 1.0"
       ]
+    },
+    {
+      "id": "logic-1919",
+      "name": "achievementCardMosaicStyle",
+      "description": "Mosaic decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify mosaic is detailed",
+        "Create common achievement",
+        "Verify mosaic is simple"
+      ]
+    },
+    {
+      "id": "logic-1920",
+      "name": "achievementIsCumulativeProgress",
+      "description": "Whether achievement uses cumulative progress (mastery or games)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isCumulativeProgress is true",
+        "Create streak achievement",
+        "Verify isCumulativeProgress is false"
+      ]
+    },
+    {
+      "id": "logic-1921",
+      "name": "achievementCardEpigraphText",
+      "description": "Epigraph text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify epigraph text",
+        "Create games achievement",
+        "Verify epigraph text"
+      ]
+    },
+    {
+      "id": "logic-1922",
+      "name": "achievementCardAntiquingStyle",
+      "description": "Antiquing finish style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify antiquing is patina",
+        "Create common achievement",
+        "Verify antiquing is clean"
+      ]
+    },
+    {
+      "id": "logic-1923",
+      "name": "achievementMinSessionLength",
+      "description": "Minimum session length in minutes based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify minSessionLength is high",
+        "Create games achievement",
+        "Verify minSessionLength is low"
+      ]
     }
   ],
   "_schema": {
