@@ -224,4 +224,12 @@ extension DifficultyLevel {
     var difficultyQuickInfo: String {
         "\(displayName) — \(operationCount) ops, \(timeLimitSeconds)s"
     }
+
+    var difficultyTier: Int {
+        progressionIndex
+    }
+
+    var difficultyXpLabel: String {
+        "\(xpPerCorrectAnswer) XP per correct"
+    }
 }

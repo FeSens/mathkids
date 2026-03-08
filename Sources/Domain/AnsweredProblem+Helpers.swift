@@ -185,4 +185,20 @@ extension AnsweredProblem {
         guard problem.correctAnswer != 0 else { return answerDifference > 0 ? 100 : 0 }
         return abs(userAnswer - problem.correctAnswer) * 100 / abs(problem.correctAnswer)
     }
+
+    var answerConfidence: String {
+        if isCorrect && wasQuickAnswer { return "high" }
+        if isCorrect { return "medium" }
+        if wasQuickAnswer { return "low" }
+        return "low"
+    }
+
+    var isSlowWrongAnswer: Bool {
+        guard !isCorrect, let time = timeTaken else { return false }
+        return time > 6.0
+    }
+
+    var correctAnswerDigitCount: Int {
+        String(abs(problem.correctAnswer)).count
+    }
 }
