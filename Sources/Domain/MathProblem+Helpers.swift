@@ -225,4 +225,12 @@ extension MathProblem {
     var isSubtractionFromSelf: Bool {
         operation == .subtract && operand1 == operand2
     }
+
+    var operandBothEven: Bool {
+        operand1 % 2 == 0 && operand2 % 2 == 0
+    }
+
+    var isAdditionOfEquals: Bool {
+        operation == .add && operand1 == operand2
+    }
 }

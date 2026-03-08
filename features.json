@@ -15332,6 +15332,87 @@
         "Problem 5+5 -> false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-884",
+      "name": "isDoubleDigitUserAnswer",
+      "description": "AnsweredProblem computed property returning true when user answer has 2+ digits",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answer 42 -> true",
+        "Answer 7 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-885",
+      "name": "operandBothEven",
+      "description": "MathProblem computed property returning true when both operands are even",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 4+6 -> true",
+        "Problem 3+6 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-886",
+      "name": "isAdditionOfEquals",
+      "description": "MathProblem computed property returning true for addition with equal operands",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 5+5 -> true",
+        "Problem 5-5 -> false",
+        "Problem 3+5 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-887",
+      "name": "problemTypeLabel",
+      "description": "AnsweredProblem computed property returning label combining operation and correctness",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Correct add -> contains operation name",
+        "Wrong multiply -> contains operation name"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-888",
+      "name": "answerWasZero",
+      "description": "AnsweredProblem computed property returning true when user answered 0",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Answer 0 -> true",
+        "Answer 7 -> false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

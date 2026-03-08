@@ -144,4 +144,16 @@ extension AnsweredProblem {
     var isQuickWrongAnswer: Bool {
         !isCorrect && wasQuickAnswer
     }
+
+    var isDoubleDigitUserAnswer: Bool {
+        abs(userAnswer) >= 10
+    }
+
+    var problemTypeLabel: String {
+        "\(problem.operation.displayName) - \(wasCorrectText)"
+    }
+
+    var answerWasZero: Bool {
+        userAnswer == 0
+    }
 }
