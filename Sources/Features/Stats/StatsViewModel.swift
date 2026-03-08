@@ -92,6 +92,10 @@ final class StatsViewModel {
         "\(Int(accuracy))% (\(accuracyGrade))"
     }
 
+    var dailyStreakText: String {
+        dailyStreak == 1 ? "1 day streak" : "\(dailyStreak) day streak"
+    }
+
     var totalCorrectText: String {
         "\(totalCorrect) correct answers"
     }

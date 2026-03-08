@@ -9317,6 +9317,87 @@
         "Verify multiply returns emoji with Multiplication"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-509",
+      "title": "HomeViewModel isAllOperationsSelected checks all selected",
+      "description": "HomeViewModel should expose isAllOperationsSelected returning true when all operations are selected",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify true when all selected",
+        "Verify false when subset selected"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-510",
+      "title": "StatsViewModel dailyStreakText formatted streak",
+      "description": "StatsViewModel should expose dailyStreakText returning formatted daily streak info",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify includes streak count",
+        "Verify shows day/days"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-511",
+      "title": "ResultsViewModel scorePercentageText formatted score pct",
+      "description": "ResultsViewModel+Analysis should expose scorePercentageText showing score as percentage of max",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Verify includes percentage sign",
+        "Verify returns valid text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-512",
+      "title": "MathProblem isAddingToTen checks if sum is 10",
+      "description": "MathProblem should expose isAddingToTen returning true for addition problems that equal 10",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify 3+7 returns true",
+        "Verify 3+5 returns false",
+        "Verify 5x2 returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-513",
+      "title": "Operation randomOperation returns random operation",
+      "description": "Operation should expose randomOperation static property returning a random operation",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ],
+      "test_steps": [
+        "Verify returned value is a valid Operation",
+        "Verify allCases contains result"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

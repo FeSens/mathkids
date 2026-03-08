@@ -129,6 +129,10 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         return pairs
     }
 
+    static var randomOperation: Operation {
+        allCases.randomElement()!
+    }
+
     var displayNameWithEmoji: String {
         "\(emoji) \(displayName)"
     }

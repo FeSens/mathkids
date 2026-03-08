@@ -106,6 +106,10 @@ extension ResultsViewModel {
         "Best streak: \(bestStreak)"
     }
 
+    var scorePercentageText: String {
+        "\(Int(scoreAsPercentOfMax))%"
+    }
+
     var accuracyBarWidth: Double {
         accuracy / 100.0
     }

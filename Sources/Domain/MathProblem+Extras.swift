@@ -187,6 +187,10 @@ extension MathProblem {
         operand1 >= 0 && operand1 <= 9 && operand2 >= 0 && operand2 <= 9
     }
 
+    var isAddingToTen: Bool {
+        operation == .add && correctAnswer == 10
+    }
+
     var isDivisionByOne: Bool {
         operation == .divide && operand2 == 1
     }

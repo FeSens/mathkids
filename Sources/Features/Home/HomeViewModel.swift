@@ -82,6 +82,10 @@ final class HomeViewModel {
         "\(selectedDifficulty.displayName) - \(selectedDifficulty.operationCount) operations"
     }
 
+    var isAllOperationsSelected: Bool {
+        selectedOperations.count == Operation.allCases.count
+    }
+
     var selectedOperationNames: String {
         selectedOperations.map(\.displayName).sorted().joined(separator: ", ")
     }
