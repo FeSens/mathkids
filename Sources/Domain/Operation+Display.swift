@@ -199,4 +199,37 @@ extension Operation {
     var operationFlashcardLabel: String {
         "? \(rawValue) ? = ?"
     }
+
+    var operationQuizInstruction: String {
+        switch self {
+        case .add: return "Find the sum"
+        case .subtract: return "Find the difference"
+        case .multiply: return "Find the product"
+        case .divide: return "Find the quotient"
+        }
+    }
+
+    var operationHasDistributiveProperty: Bool {
+        self == .multiply
+    }
+
+    var operationCountingDirection: String {
+        switch self {
+        case .add, .multiply: return "up"
+        case .subtract, .divide: return "down"
+        }
+    }
+
+    var operationDifficultyStars: Int {
+        difficultyWeight
+    }
+
+    var operationPracticeGoal: Int {
+        switch self {
+        case .add: return 20
+        case .subtract: return 15
+        case .multiply: return 12
+        case .divide: return 10
+        }
+    }
 }

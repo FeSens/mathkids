@@ -17921,6 +17921,81 @@
         "contains operation symbol"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1049",
+      "name": "operationQuizInstruction",
+      "description": "Quiz instruction text for the operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add contains Find the sum"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1050",
+      "name": "operationHasDistributiveProperty",
+      "description": "Whether operation distributes over addition",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "multiply has distributive property, add does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1051",
+      "name": "operationCountingDirection",
+      "description": "Whether operation counts up or down",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns up, subtract returns down"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1052",
+      "name": "operationDifficultyStars",
+      "description": "Star rating for difficulty (1-4)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns 1, divide returns 4"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1053",
+      "name": "operationPracticeGoal",
+      "description": "Recommended daily practice problems",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns 20, divide returns 10"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
