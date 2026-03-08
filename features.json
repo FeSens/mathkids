@@ -30429,6 +30429,86 @@
         "Verify cardUnlockLabel by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1844",
+      "title": "Achievement Card Confetti Color",
+      "description": "Returns confetti color for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardConfettiColor by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1845",
+      "title": "Achievement Average Sessions",
+      "description": "Returns average sessions to complete",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify averageSessions by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1846",
+      "title": "Achievement Card Achievement Type",
+      "description": "Returns achievement type label",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardAchievementType by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1847",
+      "title": "Achievement Is Grind Based",
+      "description": "Returns whether achievement needs grinding",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isGrindBased for mastery/games vs score"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1848",
+      "title": "Achievement Card Star Count",
+      "description": "Returns star count for card display",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardStarCount by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -120,4 +120,44 @@ extension Achievement {
         case .games: return "Play to unlock"
         }
     }
+
+    var achievementCardConfettiColor: String {
+        switch category {
+        case .mastery: return "gold"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementAverageSessions: Int {
+        switch category {
+        case .mastery: return 30
+        case .streak: return 10
+        case .score: return 5
+        case .games: return 1
+        }
+    }
+
+    var achievementCardAchievementType: String {
+        switch category {
+        case .mastery: return "Mastery"
+        case .streak: return "Streak"
+        case .score: return "Score"
+        case .games: return "Participation"
+        }
+    }
+
+    var achievementIsGrindBased: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardStarCount: Int {
+        switch category {
+        case .mastery: return 5
+        case .streak: return 4
+        case .score: return 3
+        case .games: return 1
+        }
+    }
 }
