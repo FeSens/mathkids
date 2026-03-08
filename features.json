@@ -4156,6 +4156,97 @@
       "files": [
         "Sources/Features/Stats/StatsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-209",
+      "title": "Average score per difficulty on PlayerStats",
+      "description": "PlayerStats tracks total score per difficulty so average score can be computed",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Play multiple games on easy difficulty",
+        "PlayerStats.averageScoreForDifficulty(.easy) returns correct average",
+        "Returns 0 when no games played for that difficulty"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-210",
+      "title": "GameEngine tracks total correct per operation",
+      "description": "GameEngine counts correct answers by operation type for post-game analysis",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "svc-002"
+      ],
+      "test_steps": [
+        "Submit correct answers for different operations",
+        "GameEngine.correctCountByOperation returns accurate counts",
+        "Wrong answers are not counted"
+      ],
+      "files": [
+        "Sources/Services/GameEngine.swift"
+      ]
+    },
+    {
+      "id": "logic-211",
+      "title": "LevelSystem XP needed for next level",
+      "description": "LevelSystem provides xpNeededForNextLevel given current XP",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "At 0 XP, next level needs 100 XP",
+        "At 50 XP, next level needs 50 XP",
+        "At max level, returns 0"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
+    },
+    {
+      "id": "logic-212",
+      "title": "GameSession tracks longest correct streak operation",
+      "description": "GameSession records which operation had the longest correct answer streak",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Answer multiple correct in a row for one operation",
+        "Verify bestStreakOperation returns that operation",
+        "Returns nil when no answers given"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-213",
+      "title": "ResultsViewModel shows problems per minute",
+      "description": "ResultsViewModel exposes formatted problems per minute from the session",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "logic-206",
+        "ui-009"
+      ],
+      "test_steps": [
+        "Complete a timed game",
+        "ResultsViewModel.problemsPerMinuteText shows formatted rate",
+        "Shows N/A when no time elapsed"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

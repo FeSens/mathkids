@@ -43,6 +43,12 @@ enum LevelSystem {
         return levelNames[lvl - 1]
     }
 
+    static func xpNeededForNextLevel(currentXP: Int) -> Int {
+        let currentLevel = level(for: currentXP)
+        guard currentLevel < thresholds.count else { return 0 }
+        return thresholds[currentLevel] - currentXP
+    }
+
     static func xpForCorrectAnswer(streak: Int) -> Int {
         let base = 10
         let streakBonus = min(streak, 10) * 2

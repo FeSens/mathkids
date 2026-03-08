@@ -20,6 +20,7 @@ final class GameEngine {
     private(set) var streakFreezeUsed: Bool = false
     private var problemStartTime: Date = Date()
     private(set) var fastestAnswerTime: Double?
+    private(set) var correctCountByOperation: [Operation: Int] = [:]
 
     init(difficulty: DifficultyLevel, allowedOperations: Set<Operation>? = nil) {
         self.session = GameSession(difficulty: difficulty)
@@ -73,15 +74,16 @@ final class GameEngine {
             hasStreakFreeze = false
             // Record answer but restore streak afterwards
             let savedStreak = session.currentStreak
-            session.recordAnswer(correct: false, bonusPoints: 0)
+            session.recordAnswer(correct: false, bonusPoints: 0, operation: currentProblem.operation)
             session.restoreStreak(savedStreak)
         } else {
-            session.recordAnswer(correct: correct, bonusPoints: correct ? speedBonus : 0)
+            session.recordAnswer(correct: correct, bonusPoints: correct ? speedBonus : 0, operation: currentProblem.operation)
         }
 
         lastAnswerCorrect = correct
 
         if correct {
+            correctCountByOperation[currentProblem.operation, default: 0] += 1
             consecutiveCorrect += 1
             consecutiveWrong = 0
             let streak = session.currentStreak

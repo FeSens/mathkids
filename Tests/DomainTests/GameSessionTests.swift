@@ -122,4 +122,24 @@ struct GameSessionTests {
         // 10 problems in 0.5 minutes = 20 per minute
         #expect(session.problemsPerMinute == 20.0)
     }
+
+    // MARK: - Best Streak Operation (logic-212)
+
+    @Test("Best streak operation nil when no answers")
+    func bestStreakOperationNil() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.bestStreakOperation == nil)
+    }
+
+    @Test("Best streak operation tracks correctly")
+    func bestStreakOperationTracks() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true, operation: .add)
+        session.recordAnswer(correct: true, operation: .add)
+        session.recordAnswer(correct: true, operation: .add)
+        session.recordAnswer(correct: false, operation: .add)
+        session.recordAnswer(correct: true, operation: .multiply)
+        session.recordAnswer(correct: true, operation: .multiply)
+        #expect(session.bestStreakOperation == .add)
+    }
 }

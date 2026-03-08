@@ -185,4 +185,29 @@ struct PlayerStatsTests {
         stats.updateBestScore(150, for: .hard)
         #expect(stats.bestScoreForDifficulty(.hard) == 150)
     }
+
+    // MARK: - Average Score Per Difficulty (logic-209)
+
+    @Test("Average score returns 0 when no games played")
+    func averageScoreZeroGames() {
+        let stats = PlayerStats()
+        #expect(stats.averageScoreForDifficulty(.easy) == 0)
+    }
+
+    @Test("Average score calculates correctly")
+    func averageScoreCalculation() {
+        let stats = PlayerStats()
+        stats.recordScoreForDifficulty(100, for: .easy)
+        stats.recordScoreForDifficulty(200, for: .easy)
+        #expect(stats.averageScoreForDifficulty(.easy) == 150)
+    }
+
+    @Test("Average score is per difficulty")
+    func averageScorePerDifficulty() {
+        let stats = PlayerStats()
+        stats.recordScoreForDifficulty(100, for: .easy)
+        stats.recordScoreForDifficulty(300, for: .hard)
+        #expect(stats.averageScoreForDifficulty(.easy) == 100)
+        #expect(stats.averageScoreForDifficulty(.hard) == 300)
+    }
 }

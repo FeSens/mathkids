@@ -9,6 +9,10 @@ struct GameSession: Sendable {
     private(set) var score: Int = 0
     private(set) var timeRemaining: Int
     private(set) var isFinished: Bool = false
+    private(set) var bestStreakOperation: Operation?
+    private var currentStreakOperation: Operation?
+    private var currentOperationStreak: Int = 0
+    private var bestOperationStreak: Int = 0
 
     init(difficulty: DifficultyLevel) {
         self.difficulty = difficulty
@@ -24,7 +28,7 @@ struct GameSession: Sendable {
         return Double(totalCorrect) / Double(totalAnswered) * 100
     }
 
-    mutating func recordAnswer(correct: Bool, bonusPoints: Int = 0) {
+    mutating func recordAnswer(correct: Bool, bonusPoints: Int = 0, operation: Operation? = nil) {
         totalAnswered += 1
         if correct {
             totalCorrect += 1
@@ -33,8 +37,23 @@ struct GameSession: Sendable {
                 bestStreak = currentStreak
             }
             score += difficulty.pointsPerCorrect + bonusPoints
+
+            if let op = operation {
+                if op == currentStreakOperation {
+                    currentOperationStreak += 1
+                } else {
+                    currentStreakOperation = op
+                    currentOperationStreak = 1
+                }
+                if currentOperationStreak > bestOperationStreak {
+                    bestOperationStreak = currentOperationStreak
+                    bestStreakOperation = op
+                }
+            }
         } else {
             currentStreak = 0
+            currentStreakOperation = nil
+            currentOperationStreak = 0
         }
     }
 

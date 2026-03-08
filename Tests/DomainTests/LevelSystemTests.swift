@@ -51,4 +51,21 @@ struct LevelSystemTests {
         let withStreak = LevelSystem.xpForCorrectAnswer(streak: 5)
         #expect(withStreak > base)
     }
+
+    // MARK: - XP Needed For Next Level (logic-211)
+
+    @Test("XP needed at 0 is 100")
+    func xpNeededAt0() {
+        #expect(LevelSystem.xpNeededForNextLevel(currentXP: 0) == 100)
+    }
+
+    @Test("XP needed at 50 is 50")
+    func xpNeededAt50() {
+        #expect(LevelSystem.xpNeededForNextLevel(currentXP: 50) == 50)
+    }
+
+    @Test("XP needed at max level is 0")
+    func xpNeededAtMax() {
+        #expect(LevelSystem.xpNeededForNextLevel(currentXP: 99999) == 0)
+    }
 }

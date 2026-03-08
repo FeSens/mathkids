@@ -25,6 +25,9 @@ final class PlayerStats {
     var bestScoreEasy: Int = 0
     var bestScoreMedium: Int = 0
     var bestScoreHard: Int = 0
+    var totalScoreEasy: Int = 0
+    var totalScoreMedium: Int = 0
+    var totalScoreHard: Int = 0
 
     init() {}
 
@@ -59,6 +62,26 @@ final class PlayerStats {
         case .easy: bestScoreEasy = max(bestScoreEasy, score)
         case .medium: bestScoreMedium = max(bestScoreMedium, score)
         case .hard: bestScoreHard = max(bestScoreHard, score)
+        }
+    }
+
+    func averageScoreForDifficulty(_ difficulty: DifficultyLevel) -> Int {
+        let games: Int
+        let total: Int
+        switch difficulty {
+        case .easy: games = easyGamesPlayed; total = totalScoreEasy
+        case .medium: games = mediumGamesPlayed; total = totalScoreMedium
+        case .hard: games = hardGamesPlayed; total = totalScoreHard
+        }
+        guard games > 0 else { return 0 }
+        return total / games
+    }
+
+    func recordScoreForDifficulty(_ score: Int, for difficulty: DifficultyLevel) {
+        switch difficulty {
+        case .easy: totalScoreEasy += score; easyGamesPlayed += 1
+        case .medium: totalScoreMedium += score; mediumGamesPlayed += 1
+        case .hard: totalScoreHard += score; hardGamesPlayed += 1
         }
     }
 

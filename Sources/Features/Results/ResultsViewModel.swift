@@ -97,6 +97,12 @@ final class ResultsViewModel {
         return "\(time)s"
     }
 
+    var problemsPerMinuteText: String {
+        let ppm = session.problemsPerMinute
+        guard ppm > 0 else { return "N/A" }
+        return String(format: "%.1f", ppm)
+    }
+
     var averageTimePerProblem: String {
         let timePlayed = session.totalTimePlayed
         guard session.totalAnswered > 0, timePlayed > 0 else { return "N/A" }

@@ -3,23 +3,30 @@
 ## Session 7 — 2026-03-07
 
 ### Status
-- Features: 218/218 passing (12 MVP + 9 polish + 197 improvement)
-- Unit tests: 208 (all green)
+- Features: 223/223 passing (12 MVP + 9 polish + 202 improvement)
+- Unit tests: 221 (all green)
 - UI tests: 12 (all green)
 - QA: PASSED
 
-### Session 7 Features (batch 25)
+### Session 7 Features (batches 25-26)
 logic-204: Weakest operation detection on PlayerStats
 logic-205: Personal best score tracking per difficulty level
 logic-206: Problems per minute calculation on GameSession
 logic-207: ResultsViewModel new personal best flag per difficulty
 logic-208: StatsViewModel weakest operation and problems per minute
+logic-209: Average score per difficulty on PlayerStats
+logic-210: GameEngine tracks correct answers by operation type
+logic-211: LevelSystem xpNeededForNextLevel
+logic-212: GameSession tracks best streak operation
+logic-213: ResultsViewModel problems per minute text
 
 ### Key Changes
-- PlayerStats: weakestOperation, bestScoreForDifficulty(), updateBestScore()
-- PlayerStats: bestScoreEasy/Medium/Hard persisted fields
-- GameSession: problemsPerMinute computed property
-- ResultsViewModel: isNewPersonalBest flag with previousBestForDifficulty param
+- PlayerStats: weakestOperation, bestScoreForDifficulty(), updateBestScore(), averageScoreForDifficulty()
+- PlayerStats: bestScore/totalScore per difficulty persisted fields
+- GameSession: problemsPerMinute, bestStreakOperation, operation tracking in recordAnswer
+- GameEngine: correctCountByOperation dictionary
+- LevelSystem: xpNeededForNextLevel(currentXP:)
+- ResultsViewModel: isNewPersonalBest, problemsPerMinuteText
 - StatsViewModel: weakestOperationSymbol, averageProblemsPerMinute
 
 ### Previous Sessions

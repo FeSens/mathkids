@@ -178,4 +178,34 @@ struct GameEngineTests {
         engine.submitAnswer(answer)
         #expect(engine.fastestAnswerTime != nil)
     }
+
+    // MARK: - Correct Count By Operation (logic-210)
+
+    @Test("Correct count by operation starts empty")
+    @MainActor
+    func correctCountByOperationStartsEmpty() {
+        let engine = GameEngine(difficulty: .easy)
+        #expect(engine.correctCountByOperation.isEmpty)
+    }
+
+    @Test("Correct count tracks correct answers per operation")
+    @MainActor
+    func correctCountTracksPerOperation() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        let answer = engine.currentProblem.correctAnswer
+        let op = engine.currentProblem.operation
+        engine.submitAnswer(answer)
+        #expect(engine.correctCountByOperation[op] == 1)
+    }
+
+    @Test("Wrong answers not counted in correctCountByOperation")
+    @MainActor
+    func wrongAnswersNotCounted() {
+        let engine = GameEngine(difficulty: .easy)
+        engine.startGame()
+        engine.submitAnswer(99999) // Wrong answer
+        let total = engine.correctCountByOperation.values.reduce(0, +)
+        #expect(total == 0)
+    }
 }

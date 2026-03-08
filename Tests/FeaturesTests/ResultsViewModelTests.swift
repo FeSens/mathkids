@@ -324,4 +324,22 @@ struct ResultsViewModelTests {
         let vm = ResultsViewModel(session: session, previousBestScore: 0, previousBestForDifficulty: 100)
         #expect(vm.isNewPersonalBest == false)
     }
+
+    // MARK: - Problems Per Minute Text (logic-213)
+
+    @Test("Problems per minute N/A when no time")
+    func problemsPerMinuteNA() {
+        let session = GameSession(difficulty: .easy)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.problemsPerMinuteText == "N/A")
+    }
+
+    @Test("Problems per minute shows formatted rate")
+    func problemsPerMinuteFormatted() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<30 { session.tick() }
+        for _ in 0..<10 { session.recordAnswer(correct: true) }
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.problemsPerMinuteText == "20.0")
+    }
 }
