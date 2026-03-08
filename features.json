@@ -12285,6 +12285,86 @@
         "Verify percentage"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-694",
+      "name": "GameSession+Display.xpEarnedDisplay",
+      "description": "Returns XP earned this session",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Answer correctly",
+        "Verify XP display"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-695",
+      "name": "GameSession+Display.finalResultEmoji",
+      "description": "Returns emoji based on final result quality",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Perfect returns star",
+        "Poor returns thinking face"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-696",
+      "name": "GameSession+Display.sessionDurationText",
+      "description": "Returns total time played as formatted duration",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Play for time",
+        "Verify duration text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-697",
+      "name": "GameSession+Display.wrongAnswerPercent",
+      "description": "Returns wrong answers as percentage",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Mix of answers",
+        "Verify wrong percentage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-698",
+      "name": "GameSession+Display.hasTimedOut",
+      "description": "Returns true when time ran out",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Full time elapses",
+        "Verify timed out"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

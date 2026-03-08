@@ -224,4 +224,29 @@ extension GameSession {
         guard estimated > 0 else { return 0 }
         return totalAnswered * 100 / estimated
     }
+
+    var xpEarnedDisplay: String {
+        let xp = totalCorrect * difficulty.xpPerCorrectAnswer
+        return "+\(xp) XP"
+    }
+
+    var finalResultEmoji: String {
+        if accuracy >= 90 { return "⭐" }
+        if accuracy >= 70 { return "👍" }
+        if accuracy >= 50 { return "💪" }
+        return "🤔"
+    }
+
+    var sessionDurationText: String {
+        "\(totalTimePlayed)s"
+    }
+
+    var wrongAnswerPercent: Int {
+        guard totalAnswered > 0 else { return 0 }
+        return (totalAnswered - totalCorrect) * 100 / totalAnswered
+    }
+
+    var hasTimedOut: Bool {
+        timeRemaining <= 0
+    }
 }
