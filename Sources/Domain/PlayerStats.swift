@@ -50,6 +50,9 @@ final class PlayerStats {
     var bestStreakEasy: Int = 0
     var bestStreakMedium: Int = 0
     var bestStreakHard: Int = 0
+    var problemsSolvedEasy: Int = 0
+    var problemsSolvedMedium: Int = 0
+    var problemsSolvedHard: Int = 0
 
     init() {}
 
@@ -172,6 +175,22 @@ final class PlayerStats {
         case .easy: bestStreakEasy
         case .medium: bestStreakMedium
         case .hard: bestStreakHard
+        }
+    }
+
+    func totalProblemsForDifficulty(_ difficulty: DifficultyLevel) -> Int {
+        switch difficulty {
+        case .easy: problemsSolvedEasy
+        case .medium: problemsSolvedMedium
+        case .hard: problemsSolvedHard
+        }
+    }
+
+    func addProblemsForDifficulty(_ count: Int, for difficulty: DifficultyLevel) {
+        switch difficulty {
+        case .easy: problemsSolvedEasy += count
+        case .medium: problemsSolvedMedium += count
+        case .hard: problemsSolvedHard += count
         }
     }
 

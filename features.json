@@ -5058,6 +5058,95 @@
       "files": [
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-259",
+      "title": "GameSession efficiency score",
+      "description": "GameSession computes an efficiency score combining accuracy and speed",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Returns 0 with no answers",
+        "Higher accuracy and faster speed produce higher efficiency",
+        "Efficiency is between 0 and 100"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-260",
+      "title": "PlayerStats total problems solved per difficulty",
+      "description": "PlayerStats tracks total problems solved per difficulty level",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Starts at 0 for each difficulty",
+        "Increments correctly per difficulty",
+        "Different difficulties tracked independently"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-261",
+      "title": "LevelSystem XP breakdown by source",
+      "description": "LevelSystem calculates XP earned from correct answers vs streak bonuses",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Base XP from 0 streak is 10",
+        "Streak bonus XP calculated separately",
+        "Total XP is base + streak bonus"
+      ],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ]
+    },
+    {
+      "id": "logic-262",
+      "title": "StatsViewModel session count text",
+      "description": "StatsViewModel provides formatted text showing total games played",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Shows '0 games' for no games",
+        "Shows '1 game' for singular",
+        "Shows 'N games' for plural"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
+    },
+    {
+      "id": "logic-263",
+      "title": "HomeViewModel daily greeting message",
+      "description": "HomeViewModel provides a time-based greeting message",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Greeting is not empty",
+        "Greeting changes based on time of day"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ]
     }
   ],
   "_schema": {

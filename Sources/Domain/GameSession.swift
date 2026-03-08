@@ -127,6 +127,13 @@ struct GameSession: Sendable {
         return Double(correct) / Double(secondHalf.count) * 100
     }
 
+    var efficiencyScore: Double {
+        guard totalAnswered > 0, totalTimePlayed > 0 else { return 0 }
+        let accuracyFactor = accuracy / 100.0
+        let speedFactor = min(Double(totalAnswered) / (Double(totalTimePlayed) / 60.0) / 20.0, 1.0)
+        return min((accuracyFactor * 0.7 + speedFactor * 0.3) * 100, 100)
+    }
+
     var timeBonus: Int {
         let multiplier: Int
         switch difficulty {

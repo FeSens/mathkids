@@ -226,4 +226,24 @@ struct PlayerStatsExtendedTests {
         #expect(stats.bestStreakForDifficulty(.hard) == 7)
         #expect(stats.bestStreakForDifficulty(.medium) == 0)
     }
+
+    // MARK: - Total Problems Per Difficulty (logic-260)
+
+    @Test("Total problems per difficulty starts at 0")
+    func totalProblemsPerDifficultyStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.totalProblemsForDifficulty(.easy) == 0)
+        #expect(stats.totalProblemsForDifficulty(.medium) == 0)
+        #expect(stats.totalProblemsForDifficulty(.hard) == 0)
+    }
+
+    @Test("Increment total problems per difficulty")
+    func incrementTotalProblemsPerDifficulty() {
+        let stats = PlayerStats()
+        stats.addProblemsForDifficulty(5, for: .easy)
+        stats.addProblemsForDifficulty(3, for: .hard)
+        #expect(stats.totalProblemsForDifficulty(.easy) == 5)
+        #expect(stats.totalProblemsForDifficulty(.hard) == 3)
+        #expect(stats.totalProblemsForDifficulty(.medium) == 0)
+    }
 }

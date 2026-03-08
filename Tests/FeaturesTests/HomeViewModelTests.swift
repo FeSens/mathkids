@@ -90,6 +90,17 @@ struct HomeViewModelTests {
         vm.loadStats()
         #expect(vm.recommendedDifficulty == .easy)
     }
+
+    // MARK: - Daily Greeting (logic-263)
+
+    @Test("Greeting message is not empty")
+    @MainActor
+    func greetingNotEmpty() {
+        UserDefaults.standard.removeObject(forKey: "selectedOperations")
+        let statsService = StatsService(modelContainer: try! createTestContainer())
+        let vm = HomeViewModel(statsService: statsService)
+        #expect(!vm.greetingMessage.isEmpty)
+    }
 }
 
 import SwiftData

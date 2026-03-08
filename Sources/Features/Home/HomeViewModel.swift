@@ -50,6 +50,17 @@ final class HomeViewModel {
         return "\(hours)h \(minutes)m"
     }
 
+    var greetingMessage: String {
+        let hour = Calendar.current.component(.hour, from: .now)
+        if hour < 12 {
+            return "Rise and shine! Ready for some math?"
+        } else if hour < 17 {
+            return "Great afternoon for math practice!"
+        } else {
+            return "Wind down with some math fun!"
+        }
+    }
+
     var greeting: String {
         let hour = Calendar.current.component(.hour, from: .now)
         if hour < 12 { return "Good Morning!" }

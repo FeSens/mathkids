@@ -92,4 +92,42 @@ struct LevelSystemTests {
     func maxAtHighXP() {
         #expect(LevelSystem.isMaxLevel(for: 99999) == true)
     }
+
+    // MARK: - XP To Max (logic-246)
+
+    @Test("XP to max level returns highest threshold")
+    func xpToMaxLevel() {
+        #expect(LevelSystem.xpToMaxLevel == 4500)
+    }
+
+    @Test("XP remaining to max at 0")
+    func xpRemainingToMaxAt0() {
+        #expect(LevelSystem.xpRemainingToMax(currentXP: 0) == 4500)
+    }
+
+    @Test("XP remaining to max at max")
+    func xpRemainingToMaxAtMax() {
+        #expect(LevelSystem.xpRemainingToMax(currentXP: 99999) == 0)
+    }
+
+    // MARK: - XP Breakdown (logic-261)
+
+    @Test("Base XP from 0 streak is 10")
+    func baseXPIs10() {
+        #expect(LevelSystem.baseXPPerAnswer == 10)
+    }
+
+    @Test("Streak bonus XP calculated separately")
+    func streakBonusXP() {
+        let bonus = LevelSystem.streakBonusXP(streak: 5)
+        #expect(bonus == 10) // 5 * 2
+    }
+
+    @Test("Total XP is base + streak bonus")
+    func totalXPIsBaseAndBonus() {
+        let total = LevelSystem.xpForCorrectAnswer(streak: 5)
+        let base = LevelSystem.baseXPPerAnswer
+        let bonus = LevelSystem.streakBonusXP(streak: 5)
+        #expect(total == base + bonus)
+    }
 }

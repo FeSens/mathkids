@@ -66,6 +66,12 @@ enum LevelSystem {
         max(xpToMaxLevel - currentXP, 0)
     }
 
+    static let baseXPPerAnswer = 10
+
+    static func streakBonusXP(streak: Int) -> Int {
+        min(streak, 10) * 2
+    }
+
     static func xpForCorrectAnswer(streak: Int) -> Int {
         let base = 10
         let streakBonus = min(streak, 10) * 2

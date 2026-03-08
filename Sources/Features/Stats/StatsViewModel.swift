@@ -59,6 +59,10 @@ final class StatsViewModel {
         }
     }
 
+    var sessionCountText: String {
+        gamesPlayed == 1 ? "1 game" : "\(gamesPlayed) games"
+    }
+
     private let statsService: StatsService
 
     init(statsService: StatsService) {

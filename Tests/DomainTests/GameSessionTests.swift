@@ -309,4 +309,37 @@ struct GameSessionTests {
         #expect(session.firstHalfAccuracy == 0)
         #expect(session.secondHalfAccuracy == 0)
     }
+
+    // MARK: - Efficiency Score (logic-259)
+
+    @Test("Efficiency returns 0 with no answers")
+    func efficiencyNoAnswers() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.efficiencyScore == 0)
+    }
+
+    @Test("Efficiency is between 0 and 100")
+    func efficiencyInRange() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<10 { session.tick() }
+        for _ in 0..<5 { session.recordAnswer(correct: true) }
+        session.recordAnswer(correct: false)
+        #expect(session.efficiencyScore >= 0)
+        #expect(session.efficiencyScore <= 100)
+    }
+
+    @Test("Higher accuracy produces higher efficiency")
+    func efficiencyHigherWithAccuracy() {
+        var session1 = GameSession(difficulty: .easy)
+        for _ in 0..<10 { session1.tick() }
+        for _ in 0..<5 { session1.recordAnswer(correct: true) }
+        for _ in 0..<5 { session1.recordAnswer(correct: false) }
+
+        var session2 = GameSession(difficulty: .easy)
+        for _ in 0..<10 { session2.tick() }
+        for _ in 0..<9 { session2.recordAnswer(correct: true) }
+        session2.recordAnswer(correct: false)
+
+        #expect(session2.efficiencyScore > session1.efficiencyScore)
+    }
 }

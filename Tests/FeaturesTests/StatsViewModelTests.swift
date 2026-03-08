@@ -121,4 +121,33 @@ struct StatsViewModelTests {
         vm.loadStats()
         #expect(vm.operationAccuracies["+"] == 80.0)
     }
+
+    // MARK: - Session Count Text (logic-262)
+
+    @Test("Session count text shows 0 games")
+    func sessionCountZero() {
+        let vm = makeVM()
+        vm.loadStats()
+        #expect(vm.sessionCountText == "0 games")
+    }
+
+    @Test("Session count text shows 1 game singular")
+    func sessionCountSingular() {
+        let vm = makeVM()
+        vm.loadStats()
+        let stats = vm.playerStats!
+        stats.gamesPlayed = 1
+        vm.loadStats()
+        #expect(vm.sessionCountText == "1 game")
+    }
+
+    @Test("Session count text shows N games plural")
+    func sessionCountPlural() {
+        let vm = makeVM()
+        vm.loadStats()
+        let stats = vm.playerStats!
+        stats.gamesPlayed = 5
+        vm.loadStats()
+        #expect(vm.sessionCountText == "5 games")
+    }
 }
