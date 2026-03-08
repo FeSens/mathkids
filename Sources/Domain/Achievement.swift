@@ -104,6 +104,30 @@ struct Achievement: Identifiable {
             emoji: "🧠",
             requirement: { $0.totalSolved >= 50 && $0.accuracy >= 90 },
             progress: { (min($0.totalSolved, 50), 50) }
+        ),
+        Achievement(
+            id: "easy_mastery",
+            title: "Easy Master",
+            description: "Get 90%+ accuracy on Easy 5 times",
+            emoji: "🌱",
+            requirement: { $0.easyMasteryCount >= 5 },
+            progress: { (min($0.easyMasteryCount, 5), 5) }
+        ),
+        Achievement(
+            id: "medium_mastery",
+            title: "Medium Master",
+            description: "Get 90%+ accuracy on Medium 5 times",
+            emoji: "⚡",
+            requirement: { $0.mediumMasteryCount >= 5 },
+            progress: { (min($0.mediumMasteryCount, 5), 5) }
+        ),
+        Achievement(
+            id: "hard_mastery",
+            title: "Hard Master",
+            description: "Get 90%+ accuracy on Hard 5 times",
+            emoji: "🔥",
+            requirement: { $0.hardMasteryCount >= 5 },
+            progress: { (min($0.hardMasteryCount, 5), 5) }
         )
     ]
 

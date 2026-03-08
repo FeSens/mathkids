@@ -13,6 +13,8 @@ struct GameSession: Sendable {
     private var currentStreakOperation: Operation?
     private var currentOperationStreak: Int = 0
     private var bestOperationStreak: Int = 0
+    private var correctPerOperation: [Operation: Int] = [:]
+    private var totalPerOperation: [Operation: Int] = [:]
 
     init(difficulty: DifficultyLevel) {
         self.difficulty = difficulty
@@ -28,7 +30,17 @@ struct GameSession: Sendable {
         return Double(totalCorrect) / Double(totalAnswered) * 100
     }
 
+    func accuracyForOperation(_ operation: Operation) -> Double {
+        guard let total = totalPerOperation[operation], total > 0 else { return 0 }
+        let correct = correctPerOperation[operation] ?? 0
+        return Double(correct) / Double(total) * 100
+    }
+
     mutating func recordAnswer(correct: Bool, bonusPoints: Int = 0, operation: Operation? = nil) {
+        if let op = operation {
+            totalPerOperation[op, default: 0] += 1
+            if correct { correctPerOperation[op, default: 0] += 1 }
+        }
         totalAnswered += 1
         if correct {
             totalCorrect += 1

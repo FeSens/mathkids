@@ -28,6 +28,13 @@ final class PlayerStats {
     var totalScoreEasy: Int = 0
     var totalScoreMedium: Int = 0
     var totalScoreHard: Int = 0
+    var addTotal: Int = 0
+    var subtractTotal: Int = 0
+    var multiplyTotal: Int = 0
+    var divideTotal: Int = 0
+    var easyMasteryCount: Int = 0
+    var mediumMasteryCount: Int = 0
+    var hardMasteryCount: Int = 0
 
     init() {}
 
@@ -82,6 +89,41 @@ final class PlayerStats {
         case .easy: totalScoreEasy += score; easyGamesPlayed += 1
         case .medium: totalScoreMedium += score; mediumGamesPlayed += 1
         case .hard: totalScoreHard += score; hardGamesPlayed += 1
+        }
+    }
+
+    func totalProblemsForOperation(_ operation: Operation) -> Int {
+        switch operation {
+        case .add: addTotal
+        case .subtract: subtractTotal
+        case .multiply: multiplyTotal
+        case .divide: divideTotal
+        }
+    }
+
+    func incrementTotalProblems(_ operation: Operation) {
+        switch operation {
+        case .add: addTotal += 1
+        case .subtract: subtractTotal += 1
+        case .multiply: multiplyTotal += 1
+        case .divide: divideTotal += 1
+        }
+    }
+
+    func masteryCountForDifficulty(_ difficulty: DifficultyLevel) -> Int {
+        switch difficulty {
+        case .easy: easyMasteryCount
+        case .medium: mediumMasteryCount
+        case .hard: hardMasteryCount
+        }
+    }
+
+    func recordMasteryIfQualified(accuracy: Double, difficulty: DifficultyLevel) {
+        guard accuracy >= 90 else { return }
+        switch difficulty {
+        case .easy: easyMasteryCount += 1
+        case .medium: mediumMasteryCount += 1
+        case .hard: hardMasteryCount += 1
         }
     }
 

@@ -53,4 +53,21 @@ struct DifficultyLevelTests {
     func hardTimeLimit() {
         #expect(DifficultyLevel.hard.timeLimitSeconds == 30)
     }
+
+    // MARK: - Next Difficulty (logic-218)
+
+    @Test("Easy next difficulty is medium")
+    func easyNextDifficulty() {
+        #expect(DifficultyLevel.easy.nextDifficulty == .medium)
+    }
+
+    @Test("Medium next difficulty is hard")
+    func mediumNextDifficulty() {
+        #expect(DifficultyLevel.medium.nextDifficulty == .hard)
+    }
+
+    @Test("Hard next difficulty is nil")
+    func hardNextDifficulty() {
+        #expect(DifficultyLevel.hard.nextDifficulty == nil)
+    }
 }

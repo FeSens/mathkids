@@ -142,4 +142,24 @@ struct GameSessionTests {
         session.recordAnswer(correct: true, operation: .multiply)
         #expect(session.bestStreakOperation == .add)
     }
+
+    // MARK: - Accuracy Per Operation (logic-215)
+
+    @Test("Accuracy for operation returns 0 when none answered")
+    func accuracyForOperationZero() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.accuracyForOperation(.add) == 0)
+    }
+
+    @Test("Accuracy for operation calculates correctly")
+    func accuracyForOperationCalculation() {
+        var session = GameSession(difficulty: .easy)
+        session.recordAnswer(correct: true, operation: .add)
+        session.recordAnswer(correct: true, operation: .add)
+        session.recordAnswer(correct: false, operation: .add)
+        session.recordAnswer(correct: true, operation: .subtract)
+        #expect(session.accuracyForOperation(.add) > 66)
+        #expect(session.accuracyForOperation(.add) < 67)
+        #expect(session.accuracyForOperation(.subtract) == 100)
+    }
 }

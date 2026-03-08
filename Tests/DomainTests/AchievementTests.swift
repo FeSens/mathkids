@@ -79,9 +79,9 @@ struct AchievementTests {
         #expect(achievement.isUnlocked(stats: stats))
     }
 
-    @Test("There are 12 achievements defined")
+    @Test("There are 15 achievements defined")
     func achievementCount() {
-        #expect(Achievement.all.count == 12)
+        #expect(Achievement.all.count == 15)
     }
 
     @Test("All achievements have progress functions")
@@ -109,5 +109,29 @@ struct AchievementTests {
         let prog = achievement.progress!(stats)
         #expect(prog.current == 10)
         #expect(prog.target == 10)
+    }
+
+    // MARK: - Mastery Achievements (logic-216)
+
+    @Test("Easy mastery achievement exists")
+    func easyMasteryExists() {
+        let a = Achievement.all.first { $0.id == "easy_mastery" }
+        #expect(a != nil)
+    }
+
+    @Test("Easy mastery unlocks at 5 mastery games")
+    func easyMasteryUnlocks() {
+        let stats = PlayerStats()
+        let a = Achievement.all.first { $0.id == "easy_mastery" }!
+        stats.easyMasteryCount = 4
+        #expect(!a.isUnlocked(stats: stats))
+        stats.easyMasteryCount = 5
+        #expect(a.isUnlocked(stats: stats))
+    }
+
+    @Test("Hard mastery achievement exists")
+    func hardMasteryExists() {
+        let a = Achievement.all.first { $0.id == "hard_mastery" }
+        #expect(a != nil)
     }
 }

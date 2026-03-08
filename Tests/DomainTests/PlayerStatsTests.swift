@@ -210,4 +210,44 @@ struct PlayerStatsTests {
         #expect(stats.averageScoreForDifficulty(.easy) == 100)
         #expect(stats.averageScoreForDifficulty(.hard) == 300)
     }
+
+    // MARK: - Total Problems Per Operation (logic-214)
+
+    @Test("Total problems per operation starts at 0")
+    func totalProblemsPerOperationZero() {
+        let stats = PlayerStats()
+        #expect(stats.totalProblemsForOperation(.add) == 0)
+    }
+
+    @Test("Total problems per operation increments")
+    func totalProblemsPerOperationIncrements() {
+        let stats = PlayerStats()
+        stats.incrementTotalProblems(.add)
+        stats.incrementTotalProblems(.add)
+        stats.incrementTotalProblems(.subtract)
+        #expect(stats.totalProblemsForOperation(.add) == 2)
+        #expect(stats.totalProblemsForOperation(.subtract) == 1)
+    }
+
+    // MARK: - Mastery Counts (logic-217)
+
+    @Test("Mastery count starts at 0")
+    func masteryCountStartsAt0() {
+        let stats = PlayerStats()
+        #expect(stats.masteryCountForDifficulty(.easy) == 0)
+    }
+
+    @Test("Mastery increments on 90%+ accuracy")
+    func masteryIncrementsOn90Plus() {
+        let stats = PlayerStats()
+        stats.recordMasteryIfQualified(accuracy: 95, difficulty: .easy)
+        #expect(stats.masteryCountForDifficulty(.easy) == 1)
+    }
+
+    @Test("Mastery does not increment below 90%")
+    func masteryDoesNotIncrementBelow90() {
+        let stats = PlayerStats()
+        stats.recordMasteryIfQualified(accuracy: 85, difficulty: .easy)
+        #expect(stats.masteryCountForDifficulty(.easy) == 0)
+    }
 }

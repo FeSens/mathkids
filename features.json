@@ -4247,6 +4247,96 @@
       "files": [
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-214",
+      "title": "PlayerStats total problems per operation",
+      "description": "PlayerStats exposes total problem count per operation (not just correct, but all attempted)",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Record games with different operations",
+        "PlayerStats.totalProblemsForOperation returns correct count",
+        "Includes both correct and incorrect attempts"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-215",
+      "title": "GameSession accuracy per operation",
+      "description": "GameSession tracks correct and total per operation so accuracy by operation can be computed",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "Answer problems with tracked operations",
+        "accuracyForOperation returns correct percentage",
+        "Returns 0 when no problems of that operation answered"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-216",
+      "title": "Achievement for each difficulty mastery",
+      "description": "Achievement.all includes mastery achievements for getting 90%+ on each difficulty 5 times",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Check Achievement.all contains easy/medium/hard mastery achievements",
+        "Mastery unlocks when 90%+ accuracy achieved 5 times on that difficulty"
+      ],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ]
+    },
+    {
+      "id": "logic-217",
+      "title": "PlayerStats mastery counts per difficulty",
+      "description": "PlayerStats tracks how many times player got 90%+ accuracy on each difficulty",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Record a game with 90%+ accuracy on easy",
+        "easyMasteryCount increments",
+        "Record a game below 90% accuracy",
+        "Count does not increment"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-218",
+      "title": "DifficultyLevel next difficulty helper",
+      "description": "DifficultyLevel has a nextDifficulty property that returns the next harder level or nil at hard",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-002"
+      ],
+      "test_steps": [
+        "easy.nextDifficulty returns .medium",
+        "medium.nextDifficulty returns .hard",
+        "hard.nextDifficulty returns nil"
+      ],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ]
     }
   ],
   "_schema": {
