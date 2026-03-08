@@ -18671,6 +18671,81 @@
         "not empty for all levels"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1099",
+      "name": "problemDisplayText",
+      "description": "Formatted display text for the problem",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains operand1 and operand2 and operator"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1100",
+      "name": "problemAnswerChoices",
+      "description": "Array of 4 answer choices including correct",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains exactly 4 choices including correct answer"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1101",
+      "name": "problemOperandSum",
+      "description": "Sum of both operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "2+3 problem returns 5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1102",
+      "name": "problemMaxOperand",
+      "description": "The larger of the two operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "max of 2,5 is 5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1103",
+      "name": "problemMinOperand",
+      "description": "The smaller of the two operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "min of 2,5 is 2"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
