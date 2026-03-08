@@ -123,4 +123,29 @@ extension Achievement {
     var achievementCelebrationType: String {
         pointValue >= 25 ? "fireworks" : "confetti"
     }
+
+    var achievementDescriptionWithPoints: String {
+        "\(description) - \(pointValue) points"
+    }
+
+    var achievementIsHighValueReward: Bool {
+        pointValue >= 20
+    }
+
+    var achievementDisplaySize: String {
+        if pointValue >= 25 {
+            return "large"
+        } else if pointValue >= 15 {
+            return "medium"
+        }
+        return "small"
+    }
+
+    var achievementTooltipText: String {
+        "\(emoji) \(title): \(description)"
+    }
+
+    var achievementUnlockSound: String {
+        isRareAchievement ? "fanfare" : "chime"
+    }
 }

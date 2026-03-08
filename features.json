@@ -22734,6 +22734,83 @@
       "files": [
         "Sources/Domain/Achievement+Display.swift"
       ]
+    },
+    {
+      "id": "logic-1339",
+      "title": "Achievement Description With Points",
+      "description": "Add achievementDescriptionWithPoints computed property combining description and point value",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementDescriptionWithPoints contains description and points"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1340",
+      "title": "Achievement Is High Value Reward",
+      "description": "Add achievementIsHighValueReward computed property returning true when pointValue >= 20",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create high value achievement",
+        "Verify achievementIsHighValue is true",
+        "Verify low value returns false"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1341",
+      "title": "Achievement Display Size",
+      "description": "Add achievementDisplaySize computed property returning small/medium/large based on point value",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievements with different values",
+        "Verify correct display sizes"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1342",
+      "title": "Achievement Tooltip Text",
+      "description": "Add achievementTooltipText combining emoji, title and description for tooltip display",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementTooltipText contains emoji, title, description"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
+    },
+    {
+      "id": "logic-1343",
+      "title": "Achievement Unlock Sound",
+      "description": "Add achievementUnlockSound returning sound name based on rarity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementUnlockSound is fanfare",
+        "Verify common is chime"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ]
     }
   ],
   "_schema": {
