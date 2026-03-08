@@ -32887,6 +32887,76 @@
         "Create games achievement",
         "Verify threshold is low"
       ]
+    },
+    {
+      "id": "logic-2016",
+      "name": "achievementCardLarimarStyle",
+      "description": "Larimar gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify larimar is volcanic",
+        "Create common achievement",
+        "Verify larimar is oceanic"
+      ]
+    },
+    {
+      "id": "logic-2017",
+      "name": "achievementRequiresGrowth",
+      "description": "Whether achievement requires growth (mastery or score)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresGrowth is true",
+        "Create games achievement",
+        "Verify requiresGrowth is false"
+      ]
+    },
+    {
+      "id": "logic-2018",
+      "name": "achievementCardCovenantText",
+      "description": "Covenant text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify covenant text",
+        "Create games achievement",
+        "Verify covenant text"
+      ]
+    },
+    {
+      "id": "logic-2019",
+      "name": "achievementCardSodaliteStyle",
+      "description": "Sodalite gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify sodalite is royal",
+        "Create common achievement",
+        "Verify sodalite is muted"
+      ]
+    },
+    {
+      "id": "logic-2020",
+      "name": "achievementLegendThreshold",
+      "description": "Legend status threshold based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold is very high",
+        "Create games achievement",
+        "Verify threshold is low"
+      ]
     }
   ],
   "_schema": {
