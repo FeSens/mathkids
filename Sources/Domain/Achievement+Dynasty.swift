@@ -240,4 +240,34 @@ extension Achievement {
         case .games: return 2000000
         }
     }
+
+    var achievementCardSinhaliteStyle: String {
+        isRareAchievement ? "honey" : "tan"
+    }
+
+    var achievementRequiresFiber: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardAccordWritText: String {
+        switch category {
+        case .mastery: return "Accord Writ of Wisdom"
+        case .streak: return "Accord Writ of Loyalty"
+        case .score: return "Accord Writ of Honor"
+        case .games: return "Accord Writ of Welcome"
+        }
+    }
+
+    var achievementCardEuclaseStyle: String {
+        isRareAchievement ? "aqua" : "clear"
+    }
+
+    var achievementEternityThreshold: Int {
+        switch category {
+        case .mastery: return 50000000
+        case .streak: return 25000000
+        case .score: return 30000000
+        case .games: return 5000000
+        }
+    }
 }

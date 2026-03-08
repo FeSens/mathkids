@@ -35017,6 +35017,86 @@
         "Games has low threshold"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2151",
+      "title": "Achievement Card Sinhalite Style",
+      "description": "Computed property returning sinhalite style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns honey style",
+        "Common returns tan style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2152",
+      "title": "Achievement Requires Fiber",
+      "description": "Computed property checking if achievement requires fiber",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery requires fiber",
+        "Games does not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2153",
+      "title": "Achievement Card Accord Writ Text",
+      "description": "Computed property returning accord writ text based on category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery returns correct text",
+        "Games returns correct text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2154",
+      "title": "Achievement Card Euclase Style",
+      "description": "Computed property returning euclase style based on rarity",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Rare returns aqua style",
+        "Common returns clear style"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2155",
+      "title": "Achievement Eternity Threshold",
+      "description": "Computed property returning eternity threshold per category",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Dynasty.swift"
+      ],
+      "test_steps": [
+        "Mastery has high threshold",
+        "Games has low threshold"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
