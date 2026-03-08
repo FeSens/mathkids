@@ -68,6 +68,36 @@ enum EloSystem {
         return minRange...maxRange
     }
 
+    /// Compute Elo rating changes from a set of answered problems
+    static func computeDeltas(from history: [AnsweredProblem], initialRatings: [Operation: Double]) -> [Operation: Double] {
+        var currentRatings = initialRatings
+        var kFactors: [Operation: Double] = [:]
+        for op in Operation.allCases {
+            kFactors[op] = initialKFactor
+        }
+        var deltas: [Operation: Double] = [:]
+
+        for answered in history {
+            let op = answered.problem.operation
+            guard let rating = currentRatings[op], let k = kFactors[op] else { continue }
+            let difficulty = problemDifficultyRating(
+                operand1: answered.problem.operand1,
+                operand2: answered.problem.operand2,
+                operation: op
+            )
+            let result = updateRating(rating: rating, problemDifficulty: difficulty, correct: answered.isCorrect, kFactor: k)
+            let delta = result.newRating - rating
+            deltas[op, default: 0] += delta
+            currentRatings[op] = result.newRating
+            kFactors[op] = result.newKFactor
+        }
+
+        // Only return operations that were actually attempted
+        return deltas.filter { key, _ in
+            history.contains { $0.problem.operation == key }
+        }
+    }
+
     /// Skill level description based on rating
     static func skillLevel(forRating rating: Double) -> String {
         switch rating {

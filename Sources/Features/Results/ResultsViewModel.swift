@@ -245,6 +245,47 @@ final class ResultsViewModel {
         return "Practice \(weakest.rawValue) (\(Int(accuracy))% accuracy)"
     }
 
+    /// Average response time per operation from problem history
+    var averageTimePerOperation: [Operation: Double] {
+        var totals: [Operation: Double] = [:]
+        var counts: [Operation: Int] = [:]
+        for entry in problemHistory {
+            if let time = entry.timeTaken {
+                totals[entry.problem.operation, default: 0] += time
+                counts[entry.problem.operation, default: 0] += 1
+            }
+        }
+        var result: [Operation: Double] = [:]
+        for (op, total) in totals {
+            if let count = counts[op], count > 0 {
+                result[op] = total / Double(count)
+            }
+        }
+        return result
+    }
+
+    /// The operation with the slowest average response time this game
+    var slowestOperationThisGame: Operation? {
+        let times = averageTimePerOperation
+        guard !times.isEmpty else { return nil }
+        return times.max(by: { $0.value < $1.value })?.key
+    }
+
+    /// Accuracy difference vs player's historical average (positive = above average)
+    var accuracyVsAverage: Double {
+        guard let avg = playerAverageAccuracy, avg > 0 else { return 0 }
+        return accuracy - avg
+    }
+
+    /// Elo rating deltas from this game's problem history
+    var eloDeltas: [Operation: Double] {
+        guard !problemHistory.isEmpty else { return [:] }
+        let initialRatings: [Operation: Double] = [
+            .add: 1000, .subtract: 1000, .multiply: 1000, .divide: 1000
+        ]
+        return EloSystem.computeDeltas(from: problemHistory, initialRatings: initialRatings)
+    }
+
     var operationBreakdown: [(operation: Operation, count: Int)] {
         var counts: [Operation: Int] = [:]
         for entry in problemHistory {

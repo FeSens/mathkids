@@ -42592,6 +42592,76 @@
         "No recommendation when all operations have 100% accuracy"
       ],
       "passes": true
+    },
+    {
+      "id": "improve-006",
+      "title": "Post-game Elo delta display on results screen",
+      "description": "Show how each operation Elo rating changed (+/-) after a game on the results screen. Green for increase, red for decrease.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ],
+      "test_steps": [
+        "ResultsViewModel computes Elo deltas from problem history",
+        "Positive deltas shown in green, negative in red",
+        "Operations with no attempts show no delta"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-007",
+      "title": "Adaptive operation weighting toward weaknesses",
+      "description": "When all operations are selected, weight problem generation toward operations with lower Elo ratings. Weaker operations appear more frequently.",
+      "category": "logic",
+      "layer": "services",
+      "depends_on": [],
+      "files": [
+        "Sources/Services/ProblemGenerator.swift"
+      ],
+      "test_steps": [
+        "ProblemGenerator accepts operation weights",
+        "Lower Elo operations get higher selection weight",
+        "Single-operation mode ignores weighting"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-008",
+      "title": "Response time tracking per operation in results",
+      "description": "Calculate and display average response time per operation on the results screen. Helps identify which operations need more practice for speed.",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift"
+      ],
+      "test_steps": [
+        "ResultsViewModel computes average time per operation from problem history",
+        "Operations with no time data are excluded",
+        "Slowest operation is identified"
+      ],
+      "passes": true
+    },
+    {
+      "id": "improve-009",
+      "title": "Session comparison on results screen",
+      "description": "Compare current game accuracy and score to the player average for that difficulty. Show improvement or decline arrows.",
+      "category": "ui",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ],
+      "test_steps": [
+        "ResultsViewModel compares accuracy to player average",
+        "Above average shows green up arrow",
+        "Below average shows red down arrow"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
