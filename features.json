@@ -39927,6 +39927,106 @@
         "Verify threshold <= 15000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2421",
+      "title": "achievementCardBerryiteProStyle",
+      "description": "Mineral style string for berryite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify berryite pro style is steel blue metallic",
+        "Create common achievement",
+        "Verify berryite pro style is matte blue"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2422",
+      "title": "achievementRequiresStrengthPlus",
+      "description": "Whether achievement requires strength plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires strength plus is true",
+        "Create score achievement",
+        "Verify requires strength plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2423",
+      "title": "achievementCardCharterWritSealUltraPlusPlusText",
+      "description": "Charter writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Charter Writ Seal Ultra Plus Plus of the Omnipotent",
+        "Create games achievement",
+        "Verify text is Charter Writ Seal Ultra Plus Plus of the Aspirant"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2424",
+      "title": "achievementCardLindstromiteProStyle",
+      "description": "Mineral style string for lindstromite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify lindstromite pro style is lead grey monoclinic",
+        "Create common achievement",
+        "Verify lindstromite pro style is ashen grey"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2425",
+      "title": "achievementMuspelheimThreshold",
+      "description": "Muspelheim threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Ascendant.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 105000000",
+        "Create games achievement",
+        "Verify threshold <= 16000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

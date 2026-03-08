@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 10000000
         }
     }
+
+    var achievementCardBerryiteProStyle: String {
+        isRareAchievement ? "steel blue metallic" : "matte blue"
+    }
+
+    var achievementRequiresStrengthPlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardCharterWritSealUltraPlusPlusText: String {
+        switch category {
+        case .mastery: return "Charter Writ Seal Ultra Plus Plus of the Omnipotent"
+        case .streak: return "Charter Writ Seal Ultra Plus Plus of the Vigilant"
+        case .score: return "Charter Writ Seal Ultra Plus Plus of the Majestic"
+        case .games: return "Charter Writ Seal Ultra Plus Plus of the Aspirant"
+        }
+    }
+
+    var achievementCardLindstromiteProStyle: String {
+        isRareAchievement ? "lead grey monoclinic" : "ashen grey"
+    }
+
+    var achievementMuspelheimThreshold: Int {
+        switch category {
+        case .mastery: return 105000000
+        case .streak: return 42000000
+        case .score: return 100000000
+        case .games: return 10500000
+        }
+    }
 }
