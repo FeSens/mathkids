@@ -19646,6 +19646,81 @@
         "correct returns Correct, wrong returns Incorrect"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1164",
+      "name": "answeredProblemSpeedRating",
+      "description": "Speed rating (fast/normal/slow)",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "under 2s is fast, over 8s is slow"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1165",
+      "name": "answeredProblemFullResultText",
+      "description": "Full result with problem and correctness",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "contains emoji and problem text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1166",
+      "name": "answeredProblemWasClose",
+      "description": "Whether wrong answer was within 1 of correct",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "off by 1 is close, off by 3 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1167",
+      "name": "answeredProblemOperationName",
+      "description": "Display name of the problem operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "add problem returns Addition"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1168",
+      "name": "answeredProblemIsHardOperation",
+      "description": "Whether the answered problem uses a hard operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "multiply is hard, add is not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

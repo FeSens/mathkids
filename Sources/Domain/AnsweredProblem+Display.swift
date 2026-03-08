@@ -45,4 +45,27 @@ extension AnsweredProblem {
     var answeredProblemResultLabel: String {
         isCorrect ? "Correct" : "Incorrect"
     }
+
+    var answeredProblemSpeedRating: String {
+        guard let time = timeTaken else { return "normal" }
+        if time < 2.0 { return "fast" }
+        if time > 8.0 { return "slow" }
+        return "normal"
+    }
+
+    var answeredProblemFullResultText: String {
+        "\(answeredProblemFeedbackEmoji) \(answeredProblemDisplayText)"
+    }
+
+    var answeredProblemWasClose: Bool {
+        !isCorrect && answeredProblemAnswerDelta <= 1
+    }
+
+    var answeredProblemOperationName: String {
+        problem.operation.displayName
+    }
+
+    var answeredProblemIsHardOperation: Bool {
+        !problem.operation.isPrimaryOperation
+    }
 }
