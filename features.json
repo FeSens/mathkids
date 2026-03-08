@@ -20422,6 +20422,94 @@
         "Check logEntry contains operation and result"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1209",
+      "name": "answeredProblemConfidenceLevel",
+      "description": "Confidence level based on speed: high, medium, low",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check confidence is high",
+        "Create correct slow answer",
+        "Check confidence is low"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1210",
+      "name": "answeredProblemIsWorthReview",
+      "description": "Whether the problem should appear in review (wrong or slow)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create wrong answer",
+        "Check isWorthReview is true",
+        "Create correct fast answer",
+        "Check isWorthReview is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1211",
+      "name": "answeredProblemProgressColor",
+      "description": "Color name for progress indicators: gold, green, orange, red",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check color is gold",
+        "Create wrong answer",
+        "Check color is red"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1212",
+      "name": "answeredProblemOperandCount",
+      "description": "Total number of operands in the problem (always 2)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create any problem",
+        "Check operandCount is 2"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1213",
+      "name": "answeredProblemIsMastered",
+      "description": "Whether the problem is mastered (correct and under 2s)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct 1s answer",
+        "Check isMastered is true",
+        "Create correct 5s answer",
+        "Check isMastered is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

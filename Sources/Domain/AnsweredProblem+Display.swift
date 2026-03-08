@@ -271,4 +271,28 @@ extension AnsweredProblem {
         let result = isCorrect ? "correct" : "incorrect"
         return "[\(op)] \(problem.operand1)\(problem.operation.rawValue)\(problem.operand2)=\(userAnswer) (\(result))"
     }
+
+    var answeredProblemConfidenceLevel: String {
+        guard let time = timeTaken else { return "medium" }
+        if time < 3.0 { return "high" }
+        if time > 8.0 { return "low" }
+        return "medium"
+    }
+
+    var answeredProblemIsWorthReview: Bool {
+        !isCorrect || answeredProblemIsSlowAnswer
+    }
+
+    var answeredProblemProgressColor: String {
+        guard isCorrect else { return "red" }
+        if let time = timeTaken, time < 3.0 { return "gold" }
+        if let time = timeTaken, time < 6.0 { return "green" }
+        return "orange"
+    }
+
+    var answeredProblemOperandCount: Int { 2 }
+
+    var answeredProblemIsMastered: Bool {
+        isCorrect && (timeTaken ?? Double.infinity) < 2.0
+    }
 }
