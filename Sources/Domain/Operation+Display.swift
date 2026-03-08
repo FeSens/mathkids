@@ -94,4 +94,44 @@ extension Operation {
         case .multiply, .divide: return 2
         }
     }
+
+    var operationSpokenPhrase: String {
+        switch self {
+        case .add: return "plus"
+        case .subtract: return "minus"
+        case .multiply: return "times"
+        case .divide: return "divided by"
+        }
+    }
+
+    var operationKeyboardHint: String {
+        switch self {
+        case .add: return "+"
+        case .subtract: return "-"
+        case .multiply: return "*"
+        case .divide: return "/"
+        }
+    }
+
+    var operationPropertyName: String {
+        switch self {
+        case .add: return "addition"
+        case .subtract: return "subtraction"
+        case .multiply: return "multiplication"
+        case .divide: return "division"
+        }
+    }
+
+    var operationHasAssociativeProperty: Bool {
+        self == .add || self == .multiply
+    }
+
+    var operationMaxSingleDigitResult: Int {
+        switch self {
+        case .add: return 18
+        case .subtract: return 9
+        case .multiply: return 81
+        case .divide: return 9
+        }
+    }
 }

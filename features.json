@@ -17696,6 +17696,81 @@
         "add/subtract are 1, multiply/divide are 2"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1034",
+      "name": "operationSpokenPhrase",
+      "description": "How to speak the operation aloud",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns plus, multiply returns times"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1035",
+      "name": "operationKeyboardHint",
+      "description": "Keyboard key hint for the operation",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns +, multiply returns *"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1036",
+      "name": "operationPropertyName",
+      "description": "Formal math property name",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns addition, multiply returns multiplication"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1037",
+      "name": "operationHasAssociativeProperty",
+      "description": "Whether the operation is associative",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add is associative, subtract is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1038",
+      "name": "operationMaxSingleDigitResult",
+      "description": "Max result from single digit operands",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Display.swift"
+      ],
+      "test_steps": [
+        "add returns 18, multiply returns 81"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
