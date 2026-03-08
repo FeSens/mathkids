@@ -152,4 +152,24 @@ extension Achievement {
     var achievementCollectionName: String {
         "\(category.displayName) Collection"
     }
+
+    var achievementSparkleCount: Int {
+        isRareAchievement ? 12 : 4
+    }
+
+    var achievementIsMilestone: Bool {
+        category == .mastery || pointValue >= 25
+    }
+
+    var achievementRewardAnimation: String {
+        isRareAchievement ? "burst" : "pop"
+    }
+
+    var achievementLeaderboardEligible: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardTag: String {
+        achievementIsEpic ? "EPIC" : ""
+    }
 }

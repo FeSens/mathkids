@@ -24510,6 +24510,84 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1454",
+      "title": "Achievement Sparkle Count",
+      "description": "Add achievementSparkleCount returning number of sparkle particles",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementSparkleCount is 12",
+        "Verify common is 4"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1455",
+      "title": "Achievement Is Milestone",
+      "description": "Add achievementIsMilestone returning true for mastery and high-value achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementIsMilestone is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1456",
+      "title": "Achievement Reward Animation",
+      "description": "Add achievementRewardAnimation returning animation name for reward display",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementRewardAnimation is burst",
+        "Verify common is pop"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1457",
+      "title": "Achievement Leaderboard Eligible",
+      "description": "Add achievementLeaderboardEligible returning true for score and mastery categories",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create score achievement",
+        "Verify achievementLeaderboardEligible is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1458",
+      "title": "Achievement Card Tag",
+      "description": "Add achievementCardTag returning a short tag for card corner display",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create epic achievement",
+        "Verify achievementCardTag is EPIC",
+        "Verify common is empty"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
