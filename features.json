@@ -20154,6 +20154,96 @@
         "Check isDivision is false"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1194",
+      "name": "answeredProblemAccuracyEmoji",
+      "description": "Emoji representing answer accuracy: bullseye, close, or far",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct answer",
+        "Check emoji is \ud83c\udfaf",
+        "Create off-by-1 answer",
+        "Check emoji is \ud83d\udd36",
+        "Create far off answer",
+        "Check emoji is \ud83d\udd34"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1195",
+      "name": "answeredProblemCompactResult",
+      "description": "Compact one-line result string for lists",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct add answer",
+        "Check contains checkmark and equation"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1196",
+      "name": "answeredProblemShouldCelebrate",
+      "description": "Whether to show celebration animation (correct and fast)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check shouldCelebrate is true",
+        "Create wrong answer",
+        "Check shouldCelebrate is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1197",
+      "name": "answeredProblemOperationSymbol",
+      "description": "The operation symbol used in the problem",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create add problem",
+        "Check symbol is +",
+        "Create multiply problem",
+        "Check symbol is x"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1198",
+      "name": "answeredProblemMaxPoints",
+      "description": "Maximum possible points for this problem type",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create add problem",
+        "Check maxPoints based on difficulty weight",
+        "Create multiply problem",
+        "Check maxPoints is higher"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

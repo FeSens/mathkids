@@ -190,4 +190,27 @@ extension AnsweredProblem {
     var answeredProblemIsDivision: Bool {
         problem.operation == .divide
     }
+
+    var answeredProblemAccuracyEmoji: String {
+        if isCorrect { return "🎯" }
+        if answeredProblemAnswerDelta <= 1 { return "🔶" }
+        return "🔴"
+    }
+
+    var answeredProblemCompactResult: String {
+        let mark = isCorrect ? "✓" : "✗"
+        return "\(mark) \(problem.operand1)\(problem.operation.rawValue)\(problem.operand2)=\(userAnswer)"
+    }
+
+    var answeredProblemShouldCelebrate: Bool {
+        isCorrect && (timeTaken ?? Double.infinity) < 3.0
+    }
+
+    var answeredProblemOperationSymbol: String {
+        problem.operation.rawValue
+    }
+
+    var answeredProblemMaxPoints: Int {
+        problem.operation.difficultyWeight * 10
+    }
 }
