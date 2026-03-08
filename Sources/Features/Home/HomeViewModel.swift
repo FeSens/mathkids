@@ -55,6 +55,14 @@ final class HomeViewModel {
         return "\(hours)h \(minutes)m"
     }
 
+    var levelProgressDescription: String {
+        if LevelSystem.isMaxLevel(for: totalXP) {
+            return "Max level reached!"
+        }
+        let pct = LevelSystem.xpPercentageText(for: totalXP)
+        return "\(pct) to Level \(currentLevel + 1)"
+    }
+
     var streakStatusText: String {
         if dailyStreak > 0 {
             return "\(dailyStreak) day streak"

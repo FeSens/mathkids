@@ -127,6 +127,12 @@ enum LevelSystem {
         return base + streakBonus
     }
 
+    static func percentToMax(currentXP: Int) -> Int {
+        let maxXP = xpToMaxLevel
+        guard maxXP > 0 else { return 0 }
+        return min(currentXP * 100 / maxXP, 100)
+    }
+
     static func xpToNextMilestone(currentXP: Int) -> Int {
         let next = ((currentXP / 100) + 1) * 100
         return next - currentXP

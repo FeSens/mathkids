@@ -4,6 +4,12 @@ import Foundation
 // Properties that access private fields (answerHistory, correctPerOperation, etc.)
 // remain in GameSession.swift.
 extension GameSession {
+    var percentComplete: Int {
+        let total = difficulty.timeLimitSeconds
+        guard total > 0 else { return 0 }
+        return totalTimePlayed * 100 / total
+    }
+
     var streakDescription: String {
         currentStreak > 0 ? "\(currentStreak) in a row!" : "No streak"
     }

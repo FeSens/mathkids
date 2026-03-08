@@ -91,6 +91,10 @@ extension MathProblem {
         return .large
     }
 
+    var minOperand: Int {
+        min(abs(operand1), abs(operand2))
+    }
+
     var maxOperand: Int {
         max(abs(operand1), abs(operand2))
     }

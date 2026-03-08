@@ -7243,6 +7243,90 @@
         "Verify first is easy and last is hard"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-384",
+      "title": "GameSession percentComplete of time used",
+      "description": "GameSession should expose percentComplete returning percentage of game time used (0-100)",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Metrics.swift"
+      ],
+      "test_steps": [
+        "Verify 50% when half time used",
+        "Verify 0% at start",
+        "Verify 100% when time is up"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-385",
+      "title": "MathProblem minOperand returns the smaller of the two operands",
+      "description": "MathProblem should expose minOperand returning the minimum absolute value of operand1 and operand2",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Extras.swift"
+      ],
+      "test_steps": [
+        "Verify for 3+7 returns 3",
+        "Verify for 10-5 returns 5",
+        "Verify for equal operands returns that value"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-386",
+      "title": "LevelSystem percentToMax shows overall progress percentage",
+      "description": "LevelSystem should compute percentToMax(currentXP:) returning percentage progress toward max level",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/LevelSystem.swift"
+      ],
+      "test_steps": [
+        "Verify 0 XP returns 0%",
+        "Verify max XP returns 100%",
+        "Verify 2250 XP returns 50%"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-387",
+      "title": "HomeViewModel levelProgressDescription for home screen",
+      "description": "HomeViewModel should expose levelProgressDescription showing current level progress like \"40% to Level 3\"",
+      "category": "logic",
+      "layer": "features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Verify shows percentage and next level",
+        "Verify shows max level text when at max"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-388",
+      "title": "DifficultyLevel difficultyIndex returns 0-based position",
+      "description": "DifficultyLevel should expose difficultyIndex returning 0 for easy, 1 for medium, 2 for hard",
+      "category": "logic",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel.swift"
+      ],
+      "test_steps": [
+        "Verify easy returns 0",
+        "Verify medium returns 1",
+        "Verify hard returns 2"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
