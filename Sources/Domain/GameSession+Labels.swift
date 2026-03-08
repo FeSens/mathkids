@@ -29,4 +29,36 @@ extension GameSession {
         }
         return "\(total) pts"
     }
+
+    var sessionAccuracyLabel: String {
+        "Accuracy: \(Int(accuracy))%"
+    }
+
+    var difficultyStarsText: String {
+        switch difficulty {
+        case .easy: return "⭐"
+        case .medium: return "⭐⭐"
+        case .hard: return "⭐⭐⭐"
+        }
+    }
+
+    var isOnFire: Bool {
+        currentStreak >= 5 && accuracy >= 80
+    }
+
+    var gameProgressLabel: String {
+        let estimated = difficulty.estimatedProblemsPerGame
+        return "Q\(totalAnswered) of ~\(estimated)"
+    }
+
+    var timePressureLevel: String {
+        let pct = difficulty.timeLimitSeconds > 0
+            ? timeRemaining * 100 / difficulty.timeLimitSeconds
+            : 100
+        if pct > 50 { return "none" }
+        if pct > 25 { return "low" }
+        if pct > 10 { return "medium" }
+        if pct > 5 { return "high" }
+        return "critical"
+    }
 }

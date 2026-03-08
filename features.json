@@ -12525,6 +12525,86 @@
         "Verify pointsSummaryText shows breakdown"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-709",
+      "name": "sessionAccuracyLabel",
+      "description": "Formatted label showing accuracy like \"Accuracy: 85%\"",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with all correct",
+        "Verify accuracyTrend returns 'steady'"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-710",
+      "name": "difficultyStarsText",
+      "description": "Star rating text for difficulty like '\u2b50\u2b50' for medium",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create easy session",
+        "Verify difficultyStarsText returns single star"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-711",
+      "name": "isOnFire",
+      "description": "Boolean true when streak is 5+ and accuracy is 80%+",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with 5 correct in a row",
+        "Verify isOnFire is true"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-712",
+      "name": "gameProgressLabel",
+      "description": "Label showing game progress like 'Q5 of ~10'",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session, answer 5 questions",
+        "Verify gameProgressLabel shows Q5"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-713",
+      "name": "timePressureLevel",
+      "description": "String indicating time pressure: none, low, medium, high, critical",
+      "category": "improvement",
+      "layer": "domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Labels.swift"
+      ],
+      "test_steps": [
+        "Create session with full time",
+        "Verify timePressureLevel is 'none'"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
