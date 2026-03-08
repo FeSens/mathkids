@@ -50,6 +50,14 @@ struct GameView: View {
                     }
                 }
 
+                if viewModel.showSkipIndicator {
+                    Text("Skipped — no points")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundStyle(.orange)
+                        .transition(.scale.combined(with: .opacity))
+                        .accessibilityIdentifier("skipIndicator")
+                }
+
                 if viewModel.showSpeedBonus {
                     Text("+5 Speed Bonus!")
                         .font(.system(size: 16, weight: .bold, design: .rounded))
@@ -127,6 +135,9 @@ struct GameView: View {
         }
         .onChange(of: viewModel.timeRemaining) { _, newValue in
             urgentFlash = newValue <= 5 && newValue > 0 && !viewModel.isPracticeMode
+            if viewModel.shouldPlayTick(timeRemaining: newValue) {
+                SoundService.playCountdownTick()
+            }
         }
     }
 
@@ -215,10 +226,7 @@ struct GameView: View {
             .animation(.spring(duration: 0.15, bounce: 0.5), value: viewModel.answerText)
             .onChange(of: viewModel.answerText) { _, _ in
                 answerScale = 1.08
-                Task { @MainActor in
-                    try? await Task.sleep(for: .milliseconds(100))
-                    answerScale = 1.0
-                }
+                Task { @MainActor in try? await Task.sleep(for: .milliseconds(100)); answerScale = 1.0 }
             }
             .frame(height: 60)
             .frame(maxWidth: .infinity)
@@ -263,24 +271,12 @@ struct GameView: View {
                 .accessibilityLabel("Delete")
             }
 
-            Button {
-                viewModel.submitAnswer()
-            } label: {
+            Button { viewModel.submitAnswer() } label: {
                 Text("GO!")
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .background(
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(
-                                LinearGradient(
-                                    colors: [.blue, .purple],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                    )
+                    .frame(maxWidth: .infinity).frame(height: 56)
+                    .background(RoundedRectangle(cornerRadius: 16).fill(LinearGradient(colors: [.blue, .purple], startPoint: .leading, endPoint: .trailing)))
             }
             .accessibilityIdentifier("submitButton")
             .buttonStyle(BounceButtonStyle())

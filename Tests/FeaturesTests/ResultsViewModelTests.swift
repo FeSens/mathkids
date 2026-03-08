@@ -172,4 +172,64 @@ struct ResultsViewModelTests {
         let vmLow = ResultsViewModel(session: low, previousBestScore: 0)
         #expect(vmLow.starCount == 1)
     }
+
+    // MARK: - Score Comparison (ui-091)
+
+    @Test("Score improvement shown when beating previous best")
+    func scoreImprovement() {
+        let session = makeSession(correct: 8, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 10)
+        #expect(vm.scoreImprovement > 0)
+    }
+
+    @Test("Score decline shown when below previous best")
+    func scoreDecline() {
+        let session = makeSession(correct: 2, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 1000)
+        #expect(vm.scoreImprovement < 0)
+    }
+
+    @Test("Score improvement is zero for first game")
+    func scoreImprovementFirstGame() {
+        let session = makeSession(correct: 5, total: 10)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.scoreImprovement >= 0)
+    }
+
+    // MARK: - Difficulty Recommendation (ui-093)
+
+    @Test("Suggests harder difficulty for 90%+ on easy")
+    func suggestsHarderOnEasy() {
+        let session = makeSession(correct: 10, total: 10, difficulty: .easy)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.difficultyRecommendation == .tryHarder)
+    }
+
+    @Test("Suggests easier difficulty for below 50% on hard")
+    func suggestsEasierOnHard() {
+        let session = makeSession(correct: 3, total: 10, difficulty: .hard)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.difficultyRecommendation == .tryEasier)
+    }
+
+    @Test("No recommendation for mid-range accuracy")
+    func noRecommendationMidRange() {
+        let session = makeSession(correct: 7, total: 10, difficulty: .medium)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.difficultyRecommendation == .stayHere)
+    }
+
+    @Test("No harder suggestion when already on hard")
+    func noHarderOnHard() {
+        let session = makeSession(correct: 10, total: 10, difficulty: .hard)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.difficultyRecommendation == .stayHere)
+    }
+
+    @Test("No easier suggestion when already on easy")
+    func noEasierOnEasy() {
+        let session = makeSession(correct: 3, total: 10, difficulty: .easy)
+        let vm = ResultsViewModel(session: session, previousBestScore: 0)
+        #expect(vm.difficultyRecommendation == .stayHere)
+    }
 }

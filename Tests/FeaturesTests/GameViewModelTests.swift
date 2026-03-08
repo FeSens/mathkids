@@ -385,4 +385,64 @@ struct GameViewModelTests {
         vm.togglePause()
         #expect(vm.isPaused == false)
     }
+
+    // MARK: - Countdown Tick Sounds (ui-089)
+
+    @Test("Should play tick in last 5 seconds of timed mode")
+    @MainActor
+    func shouldPlayTickInLast5Seconds() {
+        let vm = GameViewModel(difficulty: .easy, mode: .timed)
+        #expect(vm.shouldPlayTick(timeRemaining: 5) == true)
+        #expect(vm.shouldPlayTick(timeRemaining: 3) == true)
+        #expect(vm.shouldPlayTick(timeRemaining: 1) == true)
+    }
+
+    @Test("Should not play tick above 5 seconds")
+    @MainActor
+    func shouldNotPlayTickAbove5() {
+        let vm = GameViewModel(difficulty: .easy, mode: .timed)
+        #expect(vm.shouldPlayTick(timeRemaining: 6) == false)
+        #expect(vm.shouldPlayTick(timeRemaining: 30) == false)
+    }
+
+    @Test("Should not play tick at 0 seconds")
+    @MainActor
+    func shouldNotPlayTickAt0() {
+        let vm = GameViewModel(difficulty: .easy, mode: .timed)
+        #expect(vm.shouldPlayTick(timeRemaining: 0) == false)
+    }
+
+    @Test("Should not play tick in practice mode")
+    @MainActor
+    func shouldNotPlayTickInPractice() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        #expect(vm.shouldPlayTick(timeRemaining: 3) == false)
+    }
+
+    // MARK: - Skip Penalty (ui-092)
+
+    @Test("Skip count starts at 0")
+    @MainActor
+    func skipCountStartsAt0() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        #expect(vm.skippedCount == 0)
+    }
+
+    @Test("Skip increments skip count")
+    @MainActor
+    func skipIncrementsCount() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        vm.skipProblem()
+        #expect(vm.skippedCount == 1)
+        vm.skipProblem()
+        #expect(vm.skippedCount == 2)
+    }
+
+    @Test("Show skip indicator after skip")
+    @MainActor
+    func showSkipIndicator() {
+        let vm = GameViewModel(difficulty: .easy, mode: .practice)
+        vm.skipProblem()
+        #expect(vm.showSkipIndicator == true)
+    }
 }

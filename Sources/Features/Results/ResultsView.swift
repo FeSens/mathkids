@@ -64,32 +64,21 @@ struct ResultsView: View {
                     .offset(y: showXP ? 0 : 20)
 
                 if !viewModel.problemHistory.isEmpty {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Recent Problems")
-                            .font(.system(size: 14, weight: .bold, design: .rounded))
-                            .foregroundStyle(.secondary)
+                    ProblemHistorySection(problemHistory: viewModel.problemHistory)
+                        .opacity(showXP ? 1 : 0)
+                }
 
-                        ForEach(viewModel.problemHistory) { entry in
-                            HStack {
-                                Text(entry.problem.displayText)
-                                    .font(.system(size: 14, design: .rounded))
-                                Spacer()
-                                Text("= \(entry.userAnswer)")
-                                    .font(.system(size: 14, weight: .bold, design: .rounded))
-                                    .foregroundStyle(entry.isCorrect ? .green : .red)
-                                Image(systemName: entry.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
-                                    .font(.system(size: 12))
-                                    .foregroundStyle(entry.isCorrect ? .green : .red)
-                            }
-                        }
-                    }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(Color(.systemGray6))
+                if viewModel.previousBestScore > 0 {
+                    ScoreComparisonView(scoreImprovement: viewModel.scoreImprovement)
+                        .opacity(showXP ? 1 : 0)
+                }
+
+                if let recommendation = viewModel.recommendationText {
+                    DifficultyRecommendationView(
+                        recommendation: recommendation,
+                        isHarder: viewModel.difficultyRecommendation == .tryHarder
                     )
                     .opacity(showXP ? 1 : 0)
-                    .accessibilityIdentifier("problemHistory")
                 }
 
                 Text(viewModel.encouragementMessage)

@@ -28,6 +28,69 @@ struct ResultStat: View {
     }
 }
 
+struct ProblemHistorySection: View {
+    let problemHistory: [AnsweredProblem]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Recent Problems")
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .foregroundStyle(.secondary)
+
+            ForEach(problemHistory) { entry in
+                HStack {
+                    Text(entry.problem.displayText)
+                        .font(.system(size: 14, design: .rounded))
+                    Spacer()
+                    Text("= \(entry.userAnswer)")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(entry.isCorrect ? .green : .red)
+                    Image(systemName: entry.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
+                        .font(.system(size: 12))
+                        .foregroundStyle(entry.isCorrect ? .green : .red)
+                }
+            }
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemGray6)))
+        .accessibilityIdentifier("problemHistory")
+    }
+}
+
+struct ScoreComparisonView: View {
+    let scoreImprovement: Int
+
+    var body: some View {
+        HStack(spacing: 4) {
+            Image(systemName: scoreImprovement >= 0 ? "arrow.up.circle.fill" : "arrow.down.circle.fill")
+                .foregroundStyle(scoreImprovement >= 0 ? .green : .red)
+            Text("\(abs(scoreImprovement)) vs best")
+                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .foregroundStyle(scoreImprovement >= 0 ? .green : .red)
+        }
+        .accessibilityIdentifier("scoreComparison")
+    }
+}
+
+struct DifficultyRecommendationView: View {
+    let recommendation: String
+    let isHarder: Bool
+
+    var body: some View {
+        HStack(spacing: 6) {
+            Image(systemName: isHarder ? "arrow.up.right" : "arrow.down.right")
+                .foregroundStyle(.blue)
+            Text(recommendation)
+                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .foregroundStyle(.blue)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(RoundedRectangle(cornerRadius: 10).fill(.blue.opacity(0.1)))
+        .accessibilityIdentifier("difficultyRecommendation")
+    }
+}
+
 struct StarRatingView: View {
     let accuracy: Double
     let show: Bool

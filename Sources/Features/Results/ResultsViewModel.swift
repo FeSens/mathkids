@@ -5,6 +5,7 @@ import Observation
 @MainActor
 final class ResultsViewModel {
     let session: GameSession
+    let previousBestScore: Int
     let isNewBestScore: Bool
     private(set) var animatedScore: Int = 0
     private(set) var newAchievements: [Achievement] = []
@@ -17,6 +18,7 @@ final class ResultsViewModel {
     init(session: GameSession, previousBestScore: Int, stats: PlayerStats? = nil, problemHistory: [AnsweredProblem] = []) {
         self.problemHistory = problemHistory
         self.session = session
+        self.previousBestScore = previousBestScore
         self.isNewBestScore = session.score > previousBestScore
 
         // Calculate XP earned
@@ -101,6 +103,39 @@ final class ResultsViewModel {
         if accuracy >= 70 { return 3 }
         if accuracy >= 50 { return 2 }
         return 1
+    }
+
+    var scoreImprovement: Int {
+        session.score - previousBestScore
+    }
+
+    enum DifficultyRecommendation {
+        case tryHarder
+        case tryEasier
+        case stayHere
+    }
+
+    var difficultyRecommendation: DifficultyRecommendation {
+        if accuracy >= 90 && session.difficulty != .hard {
+            return .tryHarder
+        }
+        if accuracy < 50 && session.difficulty != .easy {
+            return .tryEasier
+        }
+        return .stayHere
+    }
+
+    var recommendationText: String? {
+        switch difficultyRecommendation {
+        case .tryHarder:
+            let next = session.difficulty == .easy ? "Medium" : "Hard"
+            return "You're crushing it! Try \(next) mode"
+        case .tryEasier:
+            let prev = session.difficulty == .hard ? "Medium" : "Easy"
+            return "Try \(prev) mode to build confidence"
+        case .stayHere:
+            return nil
+        }
     }
 
     func animateScore() {

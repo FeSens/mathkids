@@ -1943,6 +1943,104 @@
         "Sources/Features/Results/ResultsViewModel.swift",
         "Sources/Features/Results/ResultsView.swift"
       ]
+    },
+    {
+      "id": "ui-089",
+      "title": "Countdown timer sound ticks",
+      "description": "Play tick sounds in the last 5 seconds of timed mode to build urgency",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Start a timed game",
+        "When timer reaches 5 seconds, tick sounds play each second",
+        "No ticks in practice mode"
+      ],
+      "files": [
+        "Sources/Services/SoundService.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-090",
+      "title": "Combo multiplier display",
+      "description": "Show a combo multiplier badge (2x, 3x, etc.) that increases with consecutive correct answers",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-004"
+      ],
+      "test_steps": [
+        "Answer 2 problems correctly in a row",
+        "A 2x combo badge appears",
+        "Getting 5 in a row shows 5x",
+        "Wrong answer resets combo display"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift",
+        "Sources/Features/Game/GameViewModel.swift"
+      ]
+    },
+    {
+      "id": "ui-091",
+      "title": "Results comparison with previous session",
+      "description": "Show improvement arrows comparing current results to previous session stats",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "Complete a game session",
+        "Results screen shows up/down arrows comparing to previous best",
+        "Green up arrow for improvement, red down for decline"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
+    },
+    {
+      "id": "ui-092",
+      "title": "Problem skip penalty indicator",
+      "description": "In practice mode, show a visual indicator when a problem is skipped with no points",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-025"
+      ],
+      "test_steps": [
+        "Start practice mode",
+        "Skip a problem",
+        "A skip indicator appears briefly",
+        "Skipped problems count is tracked"
+      ],
+      "files": [
+        "Sources/Features/Game/GameViewModel.swift",
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-093",
+      "title": "Difficulty recommendation after game",
+      "description": "After completing a game, suggest moving up or staying at current difficulty based on performance",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-009"
+      ],
+      "test_steps": [
+        "90%+ accuracy on easy suggests trying medium",
+        "90%+ on medium suggests hard",
+        "Below 50% on hard suggests medium",
+        "Recommendation shown on results screen"
+      ],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel.swift",
+        "Sources/Features/Results/ResultsView.swift"
+      ]
     }
   ],
   "_schema": {

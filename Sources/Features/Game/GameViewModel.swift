@@ -26,6 +26,8 @@ final class GameViewModel {
     var showSpeedBonus: Bool = false
     var problemNumber: Int = 1
     var isPaused: Bool = false
+    var skippedCount: Int = 0
+    var showSkipIndicator: Bool = false
     var lastProblemHistory: [AnsweredProblem] { engine.problemHistory }
     var hasStreakFreeze: Bool { engine.hasStreakFreeze }
     var elapsedSeconds: Int = 0
@@ -196,7 +198,18 @@ final class GameViewModel {
         answerText = ""
         problemTransitionId = UUID()
         problemNumber += 1
+        skippedCount += 1
+        showSkipIndicator = true
         engine.skipToNextProblem()
+        Task {
+            try? await Task.sleep(for: .milliseconds(1000))
+            showSkipIndicator = false
+        }
+    }
+
+    func shouldPlayTick(timeRemaining: Int) -> Bool {
+        guard mode == .timed else { return false }
+        return timeRemaining > 0 && timeRemaining <= 5
     }
 
     func clearAnswer() {
