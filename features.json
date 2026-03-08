@@ -24050,6 +24050,83 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1424",
+      "title": "Achievement Rotation Angle",
+      "description": "Add achievementRotationAngle returning subtle rotation for card display",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementRotationAngle is 2",
+        "Verify common is 0"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1425",
+      "title": "Achievement Status Label",
+      "description": "Add achievementStatusLabel returning human-readable status text",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create locked achievement",
+        "Verify achievementStatusLabel is Locked"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1426",
+      "title": "Achievement Category Color Hex",
+      "description": "Add achievementCategoryColorHex returning hex color string for category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementCategoryColorHex is FF8C00"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1427",
+      "title": "Achievement Preview Summary",
+      "description": "Add achievementPreviewSummary returning short preview text for lists",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementPreviewSummary contains title and points"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1428",
+      "title": "Achievement Is Pinnable",
+      "description": "Add achievementIsPinnable returning true for non-secret achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create games achievement",
+        "Verify achievementIsPinnable is true",
+        "Verify secret mastery is false"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
