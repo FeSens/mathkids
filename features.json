@@ -40227,6 +40227,106 @@
         "Verify threshold <= 18000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2436",
+      "title": "achievementCardGalenobismutiteProStyle",
+      "description": "Mineral style string for galenobismutite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify galenobismutite pro style is tin white lamellar",
+        "Create common achievement",
+        "Verify galenobismutite pro style is dull tin white"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2437",
+      "title": "achievementRequiresUnityPlus",
+      "description": "Whether achievement requires unity plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requires unity plus is true",
+        "Create mastery achievement",
+        "Verify requires unity plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2438",
+      "title": "achievementCardStatuteWritSealUltraPlusPlusText",
+      "description": "Statute writ seal ultra plus plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Statute Writ Seal Ultra Plus Plus of the Primeval",
+        "Create games achievement",
+        "Verify text is Statute Writ Seal Ultra Plus Plus of the Pupil"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2439",
+      "title": "achievementCardCosaliteProStyle",
+      "description": "Mineral style string for cosalite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cosalite pro style is lead grey prismatic",
+        "Create common achievement",
+        "Verify cosalite pro style is flat grey lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2440",
+      "title": "achievementAlfheimPlusThreshold",
+      "description": "Alfheim plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Transcendent.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 120000000",
+        "Create games achievement",
+        "Verify threshold <= 20000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

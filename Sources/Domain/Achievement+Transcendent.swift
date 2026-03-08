@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 11500000
         }
     }
+
+    var achievementCardGalenobismutiteProStyle: String {
+        isRareAchievement ? "tin white lamellar" : "dull tin white"
+    }
+
+    var achievementRequiresUnityPlus: Bool {
+        category == .score || category == .streak
+    }
+
+    var achievementCardStatuteWritSealUltraPlusPlusText: String {
+        switch category {
+        case .mastery: return "Statute Writ Seal Ultra Plus Plus of the Primeval"
+        case .streak: return "Statute Writ Seal Ultra Plus Plus of the Rampart"
+        case .score: return "Statute Writ Seal Ultra Plus Plus of the Preeminent"
+        case .games: return "Statute Writ Seal Ultra Plus Plus of the Pupil"
+        }
+    }
+
+    var achievementCardCosaliteProStyle: String {
+        isRareAchievement ? "lead grey prismatic" : "flat grey lead"
+    }
+
+    var achievementAlfheimPlusThreshold: Int {
+        switch category {
+        case .mastery: return 120000000
+        case .streak: return 48000000
+        case .score: return 115000000
+        case .games: return 12000000
+        }
+    }
 }
