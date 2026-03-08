@@ -22564,6 +22564,96 @@
         "Check message contains achievement unlocked"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1329",
+      "name": "achievementBorderColor",
+      "description": "Border color based on rarity: gold for rare, silver for common",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Check color is gold",
+        "Create common achievement",
+        "Check color is silver"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1330",
+      "name": "achievementIsGameRelated",
+      "description": "Whether the achievement is games-category related",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create games achievement",
+        "Check is true",
+        "Create streak achievement",
+        "Check is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1331",
+      "name": "achievementIsScoreRelated",
+      "description": "Whether the achievement is score-category related",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Check is true",
+        "Create games achievement",
+        "Check is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1332",
+      "name": "achievementIsMasteryRelated",
+      "description": "Whether the achievement is mastery-category related",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Check is true",
+        "Create games achievement",
+        "Check is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1333",
+      "name": "achievementAnimationName",
+      "description": "Animation name to play: sparkle for rare, bounce for common",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Display.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Check animation is sparkle",
+        "Create common achievement",
+        "Check animation is bounce"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

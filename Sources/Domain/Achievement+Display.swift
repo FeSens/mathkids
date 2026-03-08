@@ -75,4 +75,24 @@ extension Achievement {
     var achievementNotificationMessage: String {
         "Achievement Unlocked: \(emoji) \(title)!"
     }
+
+    var achievementBorderColor: String {
+        isRareAchievement ? "gold" : "silver"
+    }
+
+    var achievementIsGameRelated: Bool {
+        category == .games
+    }
+
+    var achievementIsScoreRelated: Bool {
+        category == .score
+    }
+
+    var achievementIsMasteryRelated: Bool {
+        category == .mastery
+    }
+
+    var achievementAnimationName: String {
+        isRareAchievement ? "sparkle" : "bounce"
+    }
 }
