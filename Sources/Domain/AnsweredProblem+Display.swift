@@ -92,4 +92,28 @@ extension AnsweredProblem {
         if let time = timeTaken, time < 3.0 { return "⭐" }
         return "✓"
     }
+
+    var answeredProblemDifficultyTag: String {
+        problem.operation.difficultyWeight >= 3 ? "hard" : "easy"
+    }
+
+    var answeredProblemTimeBonusEligible: Bool {
+        guard isCorrect, let time = timeTaken else { return false }
+        return time < 2.0
+    }
+
+    var answeredProblemMissedByLabel: String {
+        guard !isCorrect else { return "" }
+        return "Missed by \(answeredProblemAnswerDelta)"
+    }
+
+    var answeredProblemIsMultiDigitProblem: Bool {
+        problem.operand1 >= 10 || problem.operand2 >= 10
+    }
+
+    var answeredProblemRetryRecommended: Bool {
+        if !isCorrect { return true }
+        if let time = timeTaken, time > 8.0 { return true }
+        return false
+    }
 }

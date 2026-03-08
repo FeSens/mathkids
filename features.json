@@ -19796,6 +19796,96 @@
         "correct+fast gets star, wrong gets X"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1174",
+      "name": "answeredProblemDifficultyTag",
+      "description": "Tag string based on operation difficulty weight",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct add problem",
+        "Check difficultyTag is \"easy\"",
+        "Create multiply problem",
+        "Check difficultyTag is \"hard\""
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1175",
+      "name": "answeredProblemTimeBonusEligible",
+      "description": "Whether the answer qualifies for a time bonus (correct and under 2 seconds)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check timeBonusEligible is true",
+        "Create correct slow answer",
+        "Check timeBonusEligible is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1176",
+      "name": "answeredProblemMissedByLabel",
+      "description": "Label showing how far off the wrong answer was",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create wrong answer off by 2",
+        "Check label contains \"2\"",
+        "Create correct answer",
+        "Check label is empty"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1177",
+      "name": "answeredProblemIsMultiDigitProblem",
+      "description": "Whether the problem involves multi-digit operands",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create problem with operand 12",
+        "Check isMultiDigitProblem is true",
+        "Create problem with operands under 10",
+        "Check isMultiDigitProblem is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1178",
+      "name": "answeredProblemRetryRecommended",
+      "description": "Whether the user should retry this problem (wrong or slow)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create wrong answer",
+        "Check retryRecommended is true",
+        "Create correct fast answer",
+        "Check retryRecommended is false"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
