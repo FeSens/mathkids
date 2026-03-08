@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 200
         }
     }
+
+    var achievementCardSunstoneStyle: String {
+        isRareAchievement ? "blazing" : "warm"
+    }
+
+    var achievementRequiresDetermination: Bool {
+        category == .mastery || category == .streak
+    }
+
+    var achievementCardAccordText: String {
+        switch category {
+        case .mastery: return "Accord of Wisdom"
+        case .streak: return "Accord of Loyalty"
+        case .score: return "Accord of Honor"
+        case .games: return "Accord of Welcome"
+        }
+    }
+
+    var achievementCardPrehniteStyle: String {
+        isRareAchievement ? "glowing" : "matte"
+    }
+
+    var achievementAscensionThreshold: Int {
+        switch category {
+        case .mastery: return 5000
+        case .streak: return 1000
+        case .score: return 2500
+        case .games: return 500
+        }
+    }
 }

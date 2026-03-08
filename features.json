@@ -33027,6 +33027,76 @@
         "Create games achievement",
         "Verify threshold is low"
       ]
+    },
+    {
+      "id": "logic-2026",
+      "name": "achievementCardSunstoneStyle",
+      "description": "Sunstone gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify sunstone is blazing",
+        "Create common achievement",
+        "Verify sunstone is warm"
+      ]
+    },
+    {
+      "id": "logic-2027",
+      "name": "achievementRequiresDetermination",
+      "description": "Whether achievement requires determination (mastery or streak)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresDetermination is true",
+        "Create score achievement",
+        "Verify requiresDetermination is false"
+      ]
+    },
+    {
+      "id": "logic-2028",
+      "name": "achievementCardAccordText",
+      "description": "Accord text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify accord text",
+        "Create games achievement",
+        "Verify accord text"
+      ]
+    },
+    {
+      "id": "logic-2029",
+      "name": "achievementCardPrehniteStyle",
+      "description": "Prehnite gemstone style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify prehnite is glowing",
+        "Create common achievement",
+        "Verify prehnite is matte"
+      ]
+    },
+    {
+      "id": "logic-2030",
+      "name": "achievementAscensionThreshold",
+      "description": "Ascension status threshold based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold is extreme",
+        "Create games achievement",
+        "Verify threshold is moderate"
+      ]
     }
   ],
   "_schema": {
