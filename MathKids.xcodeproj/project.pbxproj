@@ -20,6 +20,7 @@
 		0971EE8A7650F627609282F6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89B390E65161140B443E6C1 /* Achievement.swift */; };
 		0B693A9078EFC41DB1E3A60D /* Batch77Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A41348D57A7649824631A14 /* Batch77Tests.swift */; };
 		0BA3CC86A422D1A9C838D010 /* Batch137Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EB3D8B5AACC26C3F9E503D /* Batch137Tests.swift */; };
+		0CD6D6E8E10BFB0694F04BBA /* Batch176Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B15BCCB3EF1E1609A45752 /* Batch176Tests.swift */; };
 		0D0547C3E4DDAB7DEF855498 /* Batch85Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB36DB96DFD0C1BF260BE54 /* Batch85Tests.swift */; };
 		0EF2BBBCEB442F4DB628293C /* Batch88Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C49B1F191603890DB9D80 /* Batch88Tests.swift */; };
 		136948E525D1BA8CD5E81856 /* Batch154Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F51208D66311344B130682 /* Batch154Tests.swift */; };
@@ -301,6 +302,7 @@
 		4CE2D20CBD04BF187F15E15C /* GameEngineExtendedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineExtendedTests.swift; sourceTree = "<group>"; };
 		4E347616EBC6E0C14778115F /* SoundServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundServiceTests.swift; sourceTree = "<group>"; };
 		50097A2FBC2C4F9B2987B830 /* AnsweredProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredProblem.swift; sourceTree = "<group>"; };
+		50B15BCCB3EF1E1609A45752 /* Batch176Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch176Tests.swift; sourceTree = "<group>"; };
 		52688FE26BD21975EA514F7B /* Batch142Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch142Tests.swift; sourceTree = "<group>"; };
 		52768FFB43736EE3469DE1A2 /* AnsweredProblem+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnsweredProblem+Helpers.swift"; sourceTree = "<group>"; };
 		538ECABF617E3C95269D9877 /* Batch114Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch114Tests.swift; sourceTree = "<group>"; };
@@ -677,6 +679,7 @@
 				992F3C0A0AF9082BA568B304 /* Batch173Tests.swift */,
 				DFA2ACC50BBDF424198EEC9F /* Batch174Tests.swift */,
 				F3B16E32514D2DC2980F8AFC /* Batch175Tests.swift */,
+				50B15BCCB3EF1E1609A45752 /* Batch176Tests.swift */,
 				DDB33CC34BDF77A892728B95 /* DifficultyLevelTests.swift */,
 				FCDFC79E55F7433CD3884E7B /* GameSessionBatch46Tests.swift */,
 				38A273BF960D1313BEC03F8C /* GameSessionExtendedTests.swift */,
@@ -941,6 +944,7 @@
 				075D2B1097122A005B2F6579 /* Batch173Tests.swift in Sources */,
 				97EF9180573483D93BAD5A28 /* Batch174Tests.swift in Sources */,
 				28D4E5F166557EA967C06051 /* Batch175Tests.swift in Sources */,
+				0CD6D6E8E10BFB0694F04BBA /* Batch176Tests.swift in Sources */,
 				794A135A00BC5FC138AC6D67 /* Batch53Tests.swift in Sources */,
 				C2F716BD4550E9B91BB34212 /* Batch54Tests.swift in Sources */,
 				4BF2A015D7F1BD4A12A5A462 /* Batch55Tests.swift in Sources */,

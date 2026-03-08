@@ -148,4 +148,39 @@ extension Operation {
     var operationAccessibilityLabel: String {
         "\(displayName) operation, symbol \(rawValue)"
     }
+
+    var canProduceNegative: Bool {
+        self == .subtract
+    }
+
+    var operationColor: String {
+        switch self {
+        case .add: return "blue"
+        case .subtract: return "green"
+        case .multiply: return "purple"
+        case .divide: return "orange"
+        }
+    }
+
+    var isMultiplyOrDivide: Bool {
+        isAdvancedOperation
+    }
+
+    var operationDifficultyLabel: String {
+        switch self {
+        case .add: return "Beginner"
+        case .subtract: return "Beginner"
+        case .multiply: return "Intermediate"
+        case .divide: return "Advanced"
+        }
+    }
+
+    var relatedFact: String {
+        switch self {
+        case .add: return "Addition is the foundation of all math"
+        case .subtract: return "Subtraction is the inverse of addition"
+        case .multiply: return "Multiplication is a shortcut for repeated addition"
+        case .divide: return "Division is the inverse of multiplication"
+        }
+    }
 }

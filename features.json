@@ -16535,6 +16535,86 @@
         "Divide -> accessible description"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-959",
+      "name": "canProduceNegative",
+      "description": "Operation returning true if the operation can produce negative results",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Subtract -> true",
+        "Add -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-960",
+      "name": "operationColor",
+      "description": "Operation returning color name string for the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> blue",
+        "Multiply -> purple"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-961",
+      "name": "isMultiplyOrDivide",
+      "description": "Operation returning true for multiply or divide",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Multiply -> true",
+        "Add -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-962",
+      "name": "operationDifficultyLabel",
+      "description": "Operation returning difficulty label like Easy/Medium/Hard",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> easy label",
+        "Divide -> hard label"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-963",
+      "name": "relatedFact",
+      "description": "Operation returning a fun math fact about the operation",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Operation+Helpers.swift"
+      ],
+      "test_steps": [
+        "Add -> fact string",
+        "Divide -> fact string"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
