@@ -60,4 +60,34 @@ extension Achievement {
         case .games: return 5
         }
     }
+
+    var achievementCardRepoussStyle: String {
+        isRareAchievement ? "raised" : "flat"
+    }
+
+    var achievementIsMasteryDependent: Bool {
+        category == .mastery
+    }
+
+    var achievementCardEpitaphText: String {
+        switch category {
+        case .mastery: return "Here lies mediocrity"
+        case .streak: return "Never missed a day"
+        case .score: return "Precision perfected"
+        case .games: return "The journey begins"
+        }
+    }
+
+    var achievementCardPatinaStyle: String {
+        isRareAchievement ? "verdigris" : "none"
+    }
+
+    var achievementMinQuestionsAnswered: Int {
+        switch category {
+        case .mastery: return 1000
+        case .streak: return 100
+        case .score: return 200
+        case .games: return 10
+        }
+    }
 }

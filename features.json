@@ -31739,6 +31739,76 @@
         "Create games achievement",
         "Verify count is low"
       ]
+    },
+    {
+      "id": "logic-1934",
+      "name": "achievementCardRepoussStyle",
+      "description": "Repousse decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify repousse is raised",
+        "Create common achievement",
+        "Verify repousse is flat"
+      ]
+    },
+    {
+      "id": "logic-1935",
+      "name": "achievementIsMasteryDependent",
+      "description": "Whether achievement depends on mastery (mastery only)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isMasteryDependent is true",
+        "Create games achievement",
+        "Verify isMasteryDependent is false"
+      ]
+    },
+    {
+      "id": "logic-1936",
+      "name": "achievementCardEpitaphText",
+      "description": "Epitaph text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify epitaph text",
+        "Create games achievement",
+        "Verify epitaph text"
+      ]
+    },
+    {
+      "id": "logic-1937",
+      "name": "achievementCardPatinaStyle",
+      "description": "Patina finish style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify patina is verdigris",
+        "Create common achievement",
+        "Verify patina is none"
+      ]
+    },
+    {
+      "id": "logic-1938",
+      "name": "achievementMinQuestionsAnswered",
+      "description": "Minimum questions answered based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify min questions is high",
+        "Create games achievement",
+        "Verify min questions is low"
+      ]
     }
   ],
   "_schema": {
