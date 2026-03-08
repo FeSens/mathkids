@@ -37357,6 +37357,96 @@
         "Verify threshold <= 35000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2286",
+      "title": "Achievement card cylindrite style",
+      "description": "Computed property achievementCardCylindriteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cylindrite style is dark lead cylindrical",
+        "Create common achievement",
+        "Verify cylindrite style is matte lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2287",
+      "title": "Achievement requires endurance plus plus",
+      "description": "Computed property achievementRequiresEndurancePlusPlus returns true for mastery or streak categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requiresEndurancePlusPlus is true",
+        "Create score achievement",
+        "Verify requiresEndurancePlusPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2288",
+      "title": "Achievement card resolution writ seal plus text",
+      "description": "Computed property achievementCardResolutionWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Resolution Writ Seal Plus of the Progenitor",
+        "Create games achievement",
+        "Verify text is Resolution Writ Seal Plus of the Acolyte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2289",
+      "title": "Achievement card franckeite style",
+      "description": "Computed property achievementCardFranckeiteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify franckeite style is greyish black foliated",
+        "Create common achievement",
+        "Verify franckeite style is dark iron"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2290",
+      "title": "Achievement dominance plus threshold",
+      "description": "Computed property achievementDominancePlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 350000",
+        "Create games achievement",
+        "Verify threshold <= 50000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
