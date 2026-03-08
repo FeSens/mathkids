@@ -25126,6 +25126,83 @@
       "files": [
         "Sources/Domain/Achievement+Metadata.swift"
       ]
+    },
+    {
+      "id": "logic-1494",
+      "title": "Achievement Token Reward",
+      "description": "Add achievementTokenReward returning token amount based on difficulty",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementTokenReward is 10",
+        "Verify games is 2"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1495",
+      "title": "Achievement Theme Name",
+      "description": "Add achievementThemeName returning UI theme name for achievement card",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementThemeName is fire"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1496",
+      "title": "Achievement Social Share Hashtag",
+      "description": "Add achievementSocialShareHashtag returning hashtag for social sharing",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementSocialShareHashtag starts with #"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1497",
+      "title": "Achievement Unlock Count Label",
+      "description": "Add achievementUnlockCountLabel returning formatted count display",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementUnlockCountLabel contains 1x"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
+    },
+    {
+      "id": "logic-1498",
+      "title": "Achievement Is Core",
+      "description": "Add achievementIsCore returning true for games and score categories",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create games achievement",
+        "Verify achievementIsCore is true",
+        "Verify mastery is false"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Metadata.swift"
+      ]
     }
   ],
   "_schema": {

@@ -63,4 +63,34 @@ extension Achievement {
         case .games: return 80
         }
     }
+
+    var achievementTokenReward: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 6
+        case .score: return 4
+        case .games: return 2
+        }
+    }
+
+    var achievementThemeName: String {
+        switch category {
+        case .streak: return "fire"
+        case .score: return "trophy"
+        case .games: return "play"
+        case .mastery: return "royal"
+        }
+    }
+
+    var achievementSocialShareHashtag: String {
+        "#MathKids\(category.displayName)"
+    }
+
+    var achievementUnlockCountLabel: String {
+        "1x"
+    }
+
+    var achievementIsCore: Bool {
+        category == .games || category == .score
+    }
 }
