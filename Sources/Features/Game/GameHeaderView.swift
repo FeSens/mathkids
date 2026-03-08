@@ -119,6 +119,11 @@ struct GameHeaderView: View {
                 Spacer()
 
                 if viewModel.isPracticeMode {
+                    Text("Solved: \(viewModel.engine.totalAnswered)")
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.blue)
+                        .accessibilityIdentifier("practiceSolvedCount")
+
                     Button {
                         viewModel.endPractice()
                     } label: {

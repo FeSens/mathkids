@@ -2414,6 +2414,96 @@
       "files": [
         "Sources/Features/Stats/StatsView.swift"
       ]
+    },
+    {
+      "id": "ui-114",
+      "title": "Animated gradient on play button",
+      "description": "The Play/GO button gradient slowly shifts colors",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Start a game",
+        "GO button has animated gradient that shifts",
+        "Animation is subtle and continuous"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-115",
+      "title": "Wrong answer shake on number pad",
+      "description": "When submitting a wrong answer, the number pad shakes briefly",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Submit a wrong answer",
+        "Number pad shakes with the problem text",
+        "Shake stops after animation completes"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-116",
+      "title": "Problem solved counter in practice mode header",
+      "description": "Show how many problems solved so far in practice mode header",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-025"
+      ],
+      "test_steps": [
+        "Start practice mode",
+        "Header shows solved count",
+        "Count increments on each submission"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
+    },
+    {
+      "id": "ui-117",
+      "title": "Color theme by difficulty",
+      "description": "Game screen background subtly tints based on difficulty (green for easy, orange for medium, red for hard)",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-003"
+      ],
+      "test_steps": [
+        "Start easy game - slight green tint",
+        "Start medium game - slight orange tint",
+        "Start hard game - slight red tint"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-118",
+      "title": "Best score crown on home screen stats card",
+      "description": "Show a crown icon next to the best score on the home screen",
+      "category": "ui",
+      "passes": true,
+      "depends_on": [
+        "ui-001"
+      ],
+      "test_steps": [
+        "Home screen shows best score stat",
+        "Crown icon appears next to the best score value",
+        "Crown is gold colored"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift"
+      ]
     }
   ],
   "_schema": {

@@ -9,10 +9,14 @@ struct GameView: View {
     @State private var reactionEmoji: String? = nil
     @State private var emojiOffset: CGFloat = 0
     @State private var emojiOpacity: Double = 1
+    @State private var gradientShift: Bool = false
 
     var body: some View {
         ZStack {
-            streakBackgroundColor
+            ZStack {
+                difficultyTintColor
+                streakBackgroundColor
+            }
                 .ignoresSafeArea()
                 .animation(.easeInOut(duration: 0.5), value: viewModel.currentStreak)
 
@@ -109,7 +113,8 @@ struct GameView: View {
                 Spacer()
 
                 numberPad
-
+                    .modifier(ShakeEffect(shakes: viewModel.showShake ? 2 : 0))
+                    .animation(.default, value: viewModel.showShake)
             }
             .padding()
             .opacity(viewModel.showCountdown ? 0.3 : 1.0)
@@ -187,37 +192,24 @@ struct GameView: View {
         }
     }
 
-    private var streakBackgroundColor: Color {
-        let s = viewModel.currentStreak
-        return s >= 10 ? Color.orange.opacity(0.06) : s >= 5 ? Color.yellow.opacity(0.04) : .clear
-    }
-
+    private var streakBackgroundColor: Color { let s = viewModel.currentStreak; return s >= 10 ? Color.orange.opacity(0.06) : s >= 5 ? Color.yellow.opacity(0.04) : .clear }
     private var operationBadgeSymbol: String { viewModel.engine.currentProblem.operation.rawValue }
 
     private var difficultyTextColor: Color {
         switch viewModel.engine.difficulty {
-        case .easy: Color(red: 0.15, green: 0.4, blue: 0.15)
-        case .medium: Color(red: 0.5, green: 0.3, blue: 0.05)
-        case .hard: Color(red: 0.5, green: 0.1, blue: 0.1)
+        case .easy: Color(red: 0.15, green: 0.4, blue: 0.15); case .medium: Color(red: 0.5, green: 0.3, blue: 0.05); case .hard: Color(red: 0.5, green: 0.1, blue: 0.1)
         }
     }
-
     private var operationBadgeColor: Color {
         switch viewModel.engine.currentProblem.operation {
         case .add: .green; case .subtract: .blue; case .multiply: .orange; case .divide: .purple
         }
     }
-
     private var problemDifficultyLabel: String {
-        switch viewModel.engine.currentProblem.problemDifficulty {
-        case .easy: "Easy"; case .moderate: "Med"; case .hard: "Hard"
-        }
+        switch viewModel.engine.currentProblem.problemDifficulty { case .easy: "Easy"; case .moderate: "Med"; case .hard: "Hard" }
     }
-
     private var problemDifficultyColor: Color {
-        switch viewModel.engine.currentProblem.problemDifficulty {
-        case .easy: .green; case .moderate: .yellow; case .hard: .red
-        }
+        switch viewModel.engine.currentProblem.problemDifficulty { case .easy: .green; case .moderate: .yellow; case .hard: .red }
     }
 
     private var answerDisplay: some View {
@@ -238,6 +230,12 @@ struct GameView: View {
                     .overlay(RoundedRectangle(cornerRadius: 16).stroke(difficultyTextColor.opacity(0.3), lineWidth: 1.5))
             )
             .accessibilityIdentifier("answerField")
+    }
+
+    private var difficultyTintColor: Color {
+        switch viewModel.engine.difficulty {
+        case .easy: .green.opacity(0.03); case .medium: .orange.opacity(0.03); case .hard: .red.opacity(0.03)
+        }
     }
 
     private var numberPad: some View {
@@ -278,7 +276,9 @@ struct GameView: View {
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity).frame(height: 56)
-                    .background(RoundedRectangle(cornerRadius: 16).fill(LinearGradient(colors: [.blue, .purple], startPoint: .leading, endPoint: .trailing)))
+                    .background(RoundedRectangle(cornerRadius: 16).fill(LinearGradient(colors: gradientShift ? [.purple, .blue] : [.blue, .purple], startPoint: .leading, endPoint: .trailing)))
+                    .animation(.easeInOut(duration: 2.0).repeatForever(autoreverses: true), value: gradientShift)
+                    .onAppear { gradientShift = true }
             }
             .accessibilityIdentifier("submitButton")
             .buttonStyle(BounceButtonStyle())
