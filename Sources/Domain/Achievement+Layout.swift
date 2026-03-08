@@ -212,4 +212,34 @@ extension Achievement {
     var achievementLogTag: String {
         "[\(category.displayName.lowercased())] \(id)"
     }
+
+    var achievementAnalyticsEventName: String {
+        "achievement_unlocked_\(id)"
+    }
+
+    var achievementWeight: Int {
+        if achievementIsPremium { return 100 }
+        if isRareAchievement { return 50 }
+        return pointValue
+    }
+
+    var achievementProgressIndicatorType: String {
+        switch category {
+        case .streak, .mastery: return "ring"
+        case .score, .games: return "bar"
+        }
+    }
+
+    var achievementShowRibbon: Bool {
+        pointValue >= 25
+    }
+
+    var achievementMinimumLevel: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 5
+        case .score: return 3
+        case .games: return 1
+        }
+    }
 }

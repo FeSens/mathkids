@@ -24742,6 +24742,83 @@
       "files": [
         "Sources/Domain/Achievement+Layout.swift"
       ]
+    },
+    {
+      "id": "logic-1469",
+      "title": "Achievement Analytics Event Name",
+      "description": "Add achievementAnalyticsEventName returning analytics tracking event name",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create achievement",
+        "Verify achievementAnalyticsEventName contains achievement_unlocked"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1470",
+      "title": "Achievement Weight",
+      "description": "Add achievementWeight returning relative importance weight for sorting",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create premium achievement",
+        "Verify achievementWeight is high",
+        "Verify common is low"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1471",
+      "title": "Achievement Progress Indicator Type",
+      "description": "Add achievementProgressIndicatorType returning ring or bar based on category",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create streak achievement",
+        "Verify achievementProgressIndicatorType is ring"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1472",
+      "title": "Achievement Show Ribbon",
+      "description": "Add achievementShowRibbon returning true for high rank achievements",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create gold achievement",
+        "Verify achievementShowRibbon is true"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
+    },
+    {
+      "id": "logic-1473",
+      "title": "Achievement Minimum Level",
+      "description": "Add achievementMinimumLevel returning minimum player level to see achievement",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify achievementMinimumLevel is 10",
+        "Verify games is 1"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Layout.swift"
+      ]
     }
   ],
   "_schema": {
