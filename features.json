@@ -19421,6 +19421,81 @@
         "3x2 is multiply by two, 3x4 is not"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1149",
+      "name": "problemIsDivideByOne",
+      "description": "Whether problem divides by 1",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "6/1 is divide by one, 6/2 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1150",
+      "name": "problemAnswerIsZero",
+      "description": "Whether correct answer is zero",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3-3=0 is zero, 2+3=5 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1151",
+      "name": "problemIsAddToSelf",
+      "description": "Whether adding a number to itself",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "5+5 is add to self, 3+4 is not"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1152",
+      "name": "problemAnswerIsMultipleOfFive",
+      "description": "Whether answer is multiple of 5",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "5x3=15 is multiple, 2+3=5 is multiple"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1153",
+      "name": "problemIsMultiplyByFive",
+      "description": "Whether multiplying by 5",
+      "category": "improvement",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/MathProblem+Display.swift"
+      ],
+      "test_steps": [
+        "3x5 is multiply by five, 3x4 is not"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

@@ -221,4 +221,24 @@ extension MathProblem {
     var problemIsMultiplyByTwo: Bool {
         operation == .multiply && (operand1 == 2 || operand2 == 2)
     }
+
+    var problemIsDivideByOne: Bool {
+        operation == .divide && operand2 == 1
+    }
+
+    var problemAnswerIsZero: Bool {
+        correctAnswer == 0
+    }
+
+    var problemIsAddToSelf: Bool {
+        operation == .add && operand1 == operand2
+    }
+
+    var problemAnswerIsMultipleOfFive: Bool {
+        correctAnswer != 0 && correctAnswer % 5 == 0
+    }
+
+    var problemIsMultiplyByFive: Bool {
+        operation == .multiply && (operand1 == 5 || operand2 == 5)
+    }
 }
