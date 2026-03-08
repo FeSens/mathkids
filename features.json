@@ -23269,6 +23269,86 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1374",
+      "title": "Achievement Opacity Value",
+      "description": "Add achievementOpacityValue returning opacity for locked/unlocked state",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create locked achievement",
+        "Verify achievementOpacityValue is 0.5",
+        "Verify unlocked is 1.0"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1375",
+      "title": "Achievement Scale Effect",
+      "description": "Add achievementScaleEffect returning scale multiplier based on display size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementScaleEffect is 1.2",
+        "Verify small is 0.8"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1376",
+      "title": "Achievement Corner Radius",
+      "description": "Add achievementCornerRadius returning corner radius based on display size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementCornerRadius is 16",
+        "Verify small is 8"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1377",
+      "title": "Achievement Font Size",
+      "description": "Add achievementFontSize returning title font size based on display size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementFontSize is 20",
+        "Verify small is 14"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1378",
+      "title": "Achievement Shadow Radius",
+      "description": "Add achievementShadowRadius returning shadow size based on rarity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementShadowRadius is 8",
+        "Verify common is 2"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {
