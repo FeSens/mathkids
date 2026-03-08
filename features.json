@@ -30349,6 +30349,86 @@
         "Verify cardLevelTag by category"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1839",
+      "title": "Achievement Card Spark Effect",
+      "description": "Returns whether card has spark effect",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardSparkEffect by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1840",
+      "title": "Achievement Minimum Streak Days",
+      "description": "Returns minimum streak days needed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify minimumStreakDays by category"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1841",
+      "title": "Achievement Card Seal Style",
+      "description": "Returns seal style for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardSealStyle by rarity"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1842",
+      "title": "Achievement Is Knowledge Based",
+      "description": "Returns whether achievement requires knowledge",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify isKnowledgeBased for mastery vs games"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1843",
+      "title": "Achievement Card Unlock Label",
+      "description": "Returns unlock label for card",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Scoring.swift"
+      ],
+      "test_steps": [
+        "Create achievement",
+        "Verify cardUnlockLabel by category"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

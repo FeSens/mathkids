@@ -95,4 +95,29 @@ extension Achievement {
         case .games: return "Level 1"
         }
     }
+
+    var achievementCardSparkEffect: Bool {
+        isRareAchievement
+    }
+
+    var achievementMinimumStreakDays: Int {
+        category == .streak ? 5 : 0
+    }
+
+    var achievementCardSealStyle: String {
+        isRareAchievement ? "wax" : "none"
+    }
+
+    var achievementIsKnowledgeBased: Bool {
+        category == .mastery
+    }
+
+    var achievementCardUnlockLabel: String {
+        switch category {
+        case .mastery: return "Master to unlock"
+        case .streak: return "Streak to unlock"
+        case .score: return "Score to unlock"
+        case .games: return "Play to unlock"
+        }
+    }
 }
