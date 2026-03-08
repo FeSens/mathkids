@@ -260,4 +260,12 @@ extension DifficultyLevel {
     var difficultyAllowsMultiply: Bool {
         isMultiplicationIncluded
     }
+
+    var difficultyAllowsDivide: Bool {
+        isDivisionIncluded
+    }
+
+    var difficultyPointsLabel: String {
+        "\(pointsPerCorrect) pts per correct answer"
+    }
 }

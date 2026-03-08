@@ -15977,6 +15977,86 @@
         "Hard -> true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-924",
+      "name": "answerMatchesOperand",
+      "description": "AnsweredProblem returning true when user answer equals one of the operands",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 3+4, answer 3 -> true",
+        "Problem 3+4, answer 7 -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-925",
+      "name": "difficultyAllowsDivide",
+      "description": "DifficultyLevel returning true if division is in allowed operations",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Hard -> check division",
+        "Easy -> check division"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-926",
+      "name": "isWrongAnswer",
+      "description": "AnsweredProblem returning true when answer is incorrect",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Wrong answer -> true",
+        "Correct answer -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-927",
+      "name": "problemHasCarrying",
+      "description": "AnsweredProblem returning true when problem requires carrying in addition",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Helpers.swift"
+      ],
+      "test_steps": [
+        "Problem 8+5 (carrying) -> true",
+        "Problem 3+4 (no carry) -> false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-928",
+      "name": "difficultyPointsLabel",
+      "description": "DifficultyLevel returning points per correct answer label",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/DifficultyLevel+Extras.swift"
+      ],
+      "test_steps": [
+        "Easy -> contains points info",
+        "Hard -> contains points info"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

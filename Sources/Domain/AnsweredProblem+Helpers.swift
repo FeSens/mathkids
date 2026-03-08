@@ -235,4 +235,16 @@ extension AnsweredProblem {
     var problemOperationSymbol: String {
         problem.operation.rawValue
     }
+
+    var answerMatchesOperand: Bool {
+        userAnswer == problem.operand1 || userAnswer == problem.operand2
+    }
+
+    var isWrongAnswer: Bool {
+        !isCorrect
+    }
+
+    var problemHasCarrying: Bool {
+        problem.requiresCarrying
+    }
 }
