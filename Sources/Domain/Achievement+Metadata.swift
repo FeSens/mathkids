@@ -187,4 +187,34 @@ extension Achievement {
         case .mastery: return "Master every operation!"
         }
     }
+
+    var achievementDifficultyTag: String {
+        switch category {
+        case .mastery: return "Hard"
+        case .streak: return "Medium"
+        case .score: return "Medium"
+        case .games: return "Easy"
+        }
+    }
+
+    var achievementIsCollectible: Bool {
+        isRareAchievement
+    }
+
+    var achievementMaxProgress: Int {
+        switch category {
+        case .mastery: return 100
+        case .streak: return 50
+        case .score: return 25
+        case .games: return 5
+        }
+    }
+
+    var achievementFormattedPointValue: String {
+        "\(pointValue) pts"
+    }
+
+    var achievementCooldownSeconds: Int {
+        isRareAchievement ? 7200 : 1800
+    }
 }

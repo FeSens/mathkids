@@ -25427,6 +25427,79 @@
         "Create mastery achievement",
         "Verify encouragementText contains mastery-related text"
       ]
+    },
+    {
+      "id": "logic-1514",
+      "title": "achievementDifficultyTag",
+      "description": "Return a human-readable difficulty label",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify difficultyLabel is Hard",
+        "Create games achievement",
+        "Verify difficultyLabel is Easy"
+      ]
+    },
+    {
+      "id": "logic-1515",
+      "title": "achievementIsCollectible",
+      "description": "Return whether the achievement is collectible",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify isCollectible is true",
+        "Create common achievement",
+        "Verify isCollectible is false"
+      ]
+    },
+    {
+      "id": "logic-1516",
+      "title": "achievementMaxProgress",
+      "description": "Return the max progress value for this achievement type",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify maxProgress is high",
+        "Create games achievement",
+        "Verify maxProgress is low"
+      ]
+    },
+    {
+      "id": "logic-1517",
+      "title": "achievementFormattedPointValue",
+      "description": "Return formatted point value string",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify formattedPointValue contains pts"
+      ]
+    },
+    {
+      "id": "logic-1518",
+      "title": "achievementCooldownSeconds",
+      "description": "Return cooldown time in seconds before re-notification",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify cooldown is longer",
+        "Create common achievement",
+        "Verify cooldown is shorter"
+      ]
     }
   ],
   "_schema": {
