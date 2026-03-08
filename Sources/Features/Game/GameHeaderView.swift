@@ -23,10 +23,17 @@ struct GameHeaderView: View {
                     .accessibilityIdentifier("scoreLabel")
                     .accessibilityLabel("Score: \(viewModel.score) points")
 
-                Text("#\(viewModel.problemNumber)")
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
-                    .foregroundStyle(.secondary)
-                    .accessibilityIdentifier("problemCounter")
+                VStack(spacing: 1) {
+                    Text("#\(viewModel.problemNumber)")
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    if viewModel.engine.totalAnswered > 0 {
+                        Text("\(viewModel.engine.totalCorrect)/\(viewModel.engine.totalAnswered)")
+                            .font(.system(size: 10, weight: .medium, design: .rounded))
+                            .foregroundStyle(.green)
+                    }
+                }
+                .accessibilityIdentifier("problemCounter")
 
                 Spacer()
 

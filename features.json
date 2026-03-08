@@ -1648,6 +1648,60 @@
       "files": [
         "Sources/Features/Game/GameView.swift"
       ]
+    },
+    {
+      "id": "ui-073",
+      "description": "Problem difficulty indicator showing easy/moderate/hard label near problem",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Problem display shows difficulty label (Easy/Medium/Hard)",
+        "Label color matches difficulty dot color",
+        "MathProblem.problemDifficulty computed property works correctly"
+      ],
+      "files": [
+        "Sources/Features/Game/GameView.swift"
+      ]
+    },
+    {
+      "id": "ui-074",
+      "description": "Animated gradient border on play button that shifts colors",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-001"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Play button has animated gradient border effect",
+        "Gradient shifts smoothly between colors",
+        "Effect is subtle and not distracting"
+      ],
+      "files": [
+        "Sources/Features/Home/HomeView.swift"
+      ]
+    },
+    {
+      "id": "ui-075",
+      "description": "Total problems answered counter visible during game",
+      "phase": "improvement",
+      "category": "ui",
+      "depends_on": [
+        "ui-002"
+      ],
+      "passes": true,
+      "test_steps": [
+        "Game header shows total answered count",
+        "Count increments after each answer submission",
+        "Shows as correct/total format"
+      ],
+      "files": [
+        "Sources/Features/Game/GameHeaderView.swift"
+      ]
     }
   ],
   "_schema": {

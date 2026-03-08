@@ -111,11 +111,16 @@ struct GameView: View {
                 .accessibilityIdentifier("problemLabel")
                 .accessibilityLabel("\(viewModel.engine.currentProblem.operand1) \(viewModel.engine.currentProblem.operation.accessibilityName) \(viewModel.engine.currentProblem.operand2)")
 
-            Circle()
-                .fill(problemDifficultyColor)
-                .frame(width: 10, height: 10)
-                .offset(y: -20)
-                .accessibilityIdentifier("difficultyDot")
+            VStack(spacing: 2) {
+                Circle()
+                    .fill(problemDifficultyColor)
+                    .frame(width: 10, height: 10)
+                Text(problemDifficultyLabel)
+                    .font(.system(size: 9, weight: .bold, design: .rounded))
+                    .foregroundStyle(problemDifficultyColor)
+            }
+            .offset(y: -20)
+            .accessibilityIdentifier("difficultyDot")
 
             Text(operationBadgeSymbol)
                 .font(.system(size: 14, weight: .bold, design: .rounded))
@@ -150,6 +155,14 @@ struct GameView: View {
         case .subtract: .blue
         case .multiply: .orange
         case .divide: .purple
+        }
+    }
+
+    private var problemDifficultyLabel: String {
+        switch viewModel.engine.currentProblem.problemDifficulty {
+        case .easy: "Easy"
+        case .moderate: "Med"
+        case .hard: "Hard"
         }
     }
 

@@ -303,10 +303,11 @@ struct HomeView: View {
                         .fill(
                             LinearGradient(
                                 colors: [.blue, .purple],
-                                startPoint: .leading,
-                                endPoint: .trailing
+                                startPoint: animateGradient ? .topLeading : .leading,
+                                endPoint: animateGradient ? .bottomTrailing : .trailing
                             )
                         )
+                        .animation(.easeInOut(duration: 3).repeatForever(autoreverses: true), value: animateGradient)
                 )
                 .shadow(color: .purple.opacity(0.4), radius: 10, y: 5)
         }
