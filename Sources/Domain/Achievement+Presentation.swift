@@ -52,4 +52,36 @@ extension Achievement {
     var achievementShadowRadius: Int {
         isRareAchievement ? 8 : 2
     }
+
+    var achievementPaddingValue: Int {
+        switch achievementDisplaySize {
+        case "large": return 16
+        case "medium": return 12
+        default: return 8
+        }
+    }
+
+    var achievementBorderWidth: Int {
+        isRareAchievement ? 3 : 1
+    }
+
+    var achievementEmojiSize: Int {
+        switch achievementDisplaySize {
+        case "large": return 40
+        case "medium": return 32
+        default: return 24
+        }
+    }
+
+    var achievementRowHeight: Int {
+        switch achievementDisplaySize {
+        case "large": return 80
+        case "medium": return 60
+        default: return 44
+        }
+    }
+
+    var achievementBadgeLabel: String {
+        isRareAchievement ? "RARE" : ""
+    }
 }

@@ -23349,6 +23349,86 @@
       "files": [
         "Sources/Domain/Achievement+Presentation.swift"
       ]
+    },
+    {
+      "id": "logic-1379",
+      "title": "Achievement Padding Value",
+      "description": "Add achievementPaddingValue returning padding based on display size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementPaddingValue is 16",
+        "Verify small is 8"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1380",
+      "title": "Achievement Border Width",
+      "description": "Add achievementBorderWidth returning border width based on rarity",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementBorderWidth is 3",
+        "Verify common is 1"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1381",
+      "title": "Achievement Emoji Size",
+      "description": "Add achievementEmojiSize returning emoji font size based on display size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementEmojiSize is 40",
+        "Verify small is 24"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1382",
+      "title": "Achievement Row Height",
+      "description": "Add achievementRowHeight returning preferred row height based on display size",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create large achievement",
+        "Verify achievementRowHeight is 80",
+        "Verify small is 44"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
+    },
+    {
+      "id": "logic-1383",
+      "title": "Achievement Badge Label",
+      "description": "Add achievementBadgeLabel returning short badge text like RARE",
+      "category": "logic",
+      "passes": true,
+      "test_steps": [
+        "Create rare achievement",
+        "Verify achievementBadgeText is RARE",
+        "Verify common has no badge"
+      ],
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Presentation.swift"
+      ]
     }
   ],
   "_schema": {
