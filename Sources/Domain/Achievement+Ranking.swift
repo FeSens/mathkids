@@ -120,4 +120,34 @@ extension Achievement {
         case .games: return 0
         }
     }
+
+    var achievementCardCrestStyle: String {
+        isRareAchievement ? "royal" : "basic"
+    }
+
+    var achievementIsMilestoneDriven: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardEngravedText: String {
+        switch category {
+        case .mastery: return "Excellence achieved"
+        case .streak: return "Dedication proven"
+        case .score: return "Precision demonstrated"
+        case .games: return "Journey begun"
+        }
+    }
+
+    var achievementCardPatternStyle: String {
+        isRareAchievement ? "damask" : "solid"
+    }
+
+    var achievementMinAccuracyRate: Int {
+        switch category {
+        case .mastery: return 90
+        case .streak: return 0
+        case .score: return 80
+        case .games: return 0
+        }
+    }
 }

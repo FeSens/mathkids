@@ -31179,6 +31179,76 @@
         "Create games achievement",
         "Verify requiredPerfectGames is low"
       ]
+    },
+    {
+      "id": "logic-1894",
+      "name": "achievementCardCrestStyle",
+      "description": "Crest decoration style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify crest is royal",
+        "Create common achievement",
+        "Verify crest is basic"
+      ]
+    },
+    {
+      "id": "logic-1895",
+      "name": "achievementIsMilestoneDriven",
+      "description": "Whether achievement is milestone-driven (mastery or games)",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify isMilestoneDriven is true",
+        "Create streak achievement",
+        "Verify isMilestoneDriven is false"
+      ]
+    },
+    {
+      "id": "logic-1896",
+      "name": "achievementCardEngravedText",
+      "description": "Engraved text for achievement card based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify engraved text",
+        "Create games achievement",
+        "Verify engraved text"
+      ]
+    },
+    {
+      "id": "logic-1897",
+      "name": "achievementCardPatternStyle",
+      "description": "Background pattern style for achievement card based on rarity",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify pattern is damask",
+        "Create common achievement",
+        "Verify pattern is solid"
+      ]
+    },
+    {
+      "id": "logic-1898",
+      "name": "achievementMinAccuracyRate",
+      "description": "Minimum accuracy rate percentage based on category",
+      "category": "improvement",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify minAccuracyRate is high",
+        "Create games achievement",
+        "Verify minAccuracyRate is 0"
+      ]
     }
   ],
   "_schema": {
