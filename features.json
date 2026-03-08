@@ -27030,6 +27030,79 @@
         "Create any achievement",
         "Verify label is 0 views"
       ]
+    },
+    {
+      "id": "logic-1624",
+      "title": "achievementUnlockAge",
+      "description": "Return minimum age recommendation",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify age >= 8",
+        "Create games achievement",
+        "Verify age >= 4"
+      ]
+    },
+    {
+      "id": "logic-1625",
+      "title": "achievementTrophySize",
+      "description": "Return trophy display size",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify size is large",
+        "Create common achievement",
+        "Verify size is small"
+      ]
+    },
+    {
+      "id": "logic-1626",
+      "title": "achievementFavoritable",
+      "description": "Return whether achievement can be favorited",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create any achievement",
+        "Verify favoritable is true"
+      ]
+    },
+    {
+      "id": "logic-1627",
+      "title": "achievementBannerColor",
+      "description": "Return banner color name",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify color is purple",
+        "Create streak achievement",
+        "Verify color is orange"
+      ]
+    },
+    {
+      "id": "logic-1628",
+      "title": "achievementIsResetable",
+      "description": "Return whether achievement progress can be reset",
+      "category": "logic",
+      "priority": "low",
+      "passes": true,
+      "depends_on": [],
+      "test_steps": [
+        "Create streak achievement",
+        "Verify isResetable is true",
+        "Create games achievement",
+        "Verify isResetable is false"
+      ]
     }
   ],
   "_schema": {

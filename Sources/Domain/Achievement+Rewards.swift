@@ -250,4 +250,34 @@ extension Achievement {
     var achievementViewCountLabel: String {
         "0 views"
     }
+
+    var achievementUnlockAge: Int {
+        switch category {
+        case .mastery: return 10
+        case .streak: return 8
+        case .score: return 6
+        case .games: return 4
+        }
+    }
+
+    var achievementTrophySize: String {
+        isRareAchievement ? "large" : "small"
+    }
+
+    var achievementFavoritable: Bool {
+        true
+    }
+
+    var achievementBannerColor: String {
+        switch category {
+        case .mastery: return "purple"
+        case .streak: return "orange"
+        case .score: return "blue"
+        case .games: return "green"
+        }
+    }
+
+    var achievementIsResetable: Bool {
+        category == .streak
+    }
 }
