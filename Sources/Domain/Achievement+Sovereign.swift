@@ -180,4 +180,34 @@ extension Achievement {
         case .games: return 4000000
         }
     }
+
+    var achievementCardGuejariteStyle: String {
+        isRareAchievement ? "grey black tabular" : "matte black"
+    }
+
+    var achievementRequiresPridePlus: Bool {
+        category == .mastery || category == .games
+    }
+
+    var achievementCardCovenantWritSealUltraPlusText: String {
+        switch category {
+        case .mastery: return "Covenant Writ Seal Ultra Plus of the Legendary"
+        case .streak: return "Covenant Writ Seal Ultra Plus of the Bastion"
+        case .score: return "Covenant Writ Seal Ultra Plus of the Illustrious"
+        case .games: return "Covenant Writ Seal Ultra Plus of the Neophyte"
+        }
+    }
+
+    var achievementCardChalcostibiteProStyle: String {
+        isRareAchievement ? "lead grey orthorhombic" : "dull lead"
+    }
+
+    var achievementElysiumPlusThreshold: Int {
+        switch category {
+        case .mastery: return 45000000
+        case .streak: return 18000000
+        case .score: return 40000000
+        case .games: return 4500000
+        }
+    }
 }

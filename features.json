@@ -38727,6 +38727,106 @@
         "Verify threshold <= 5000000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2361",
+      "title": "achievementCardGuejariteStyle",
+      "description": "Mineral style string for guejarite based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify guejarite style is grey black tabular",
+        "Create common achievement",
+        "Verify guejarite style is matte black"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2362",
+      "title": "achievementRequiresPridePlus",
+      "description": "Whether achievement requires pride plus trait based on category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify requires pride plus is true",
+        "Create score achievement",
+        "Verify requires pride plus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2363",
+      "title": "achievementCardCovenantWritSealUltraPlusText",
+      "description": "Covenant writ seal ultra plus text based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Covenant Writ Seal Ultra Plus of the Legendary",
+        "Create games achievement",
+        "Verify text is Covenant Writ Seal Ultra Plus of the Neophyte"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2364",
+      "title": "achievementCardChalcostibiteProStyle",
+      "description": "Mineral style string for chalcostibite pro based on rarity",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify chalcostibite pro style is lead grey orthorhombic",
+        "Create common achievement",
+        "Verify chalcostibite pro style is dull lead"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2365",
+      "title": "achievementElysiumPlusThreshold",
+      "description": "Elysium plus threshold values based on achievement category",
+      "category": "domain",
+      "layer": "Domain",
+      "depends_on": [
+        "logic-0001"
+      ],
+      "files": [
+        "Sources/Domain/Achievement+Sovereign.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 45000000",
+        "Create games achievement",
+        "Verify threshold <= 6000000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
