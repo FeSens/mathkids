@@ -37447,6 +37447,96 @@
         "Verify threshold <= 50000"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-2291",
+      "title": "Achievement card livingstonite style",
+      "description": "Computed property achievementCardLivingstoniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify livingstonite style is blackish grey prismatic",
+        "Create common achievement",
+        "Verify livingstonite style is ashen"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2292",
+      "title": "Achievement requires tenacity plus plus",
+      "description": "Computed property achievementRequiresTenacityPlusPlus returns true for score or mastery categories",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create score achievement",
+        "Verify requiresTenacityPlusPlus is true",
+        "Create games achievement",
+        "Verify requiresTenacityPlusPlus is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2293",
+      "title": "Achievement card compact writ seal plus text",
+      "description": "Computed property achievementCardCompactWritSealPlusText returns category-based text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify text is Compact Writ Seal Plus of the Patriarch",
+        "Create games achievement",
+        "Verify text is Compact Writ Seal Plus of the Novice"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2294",
+      "title": "Achievement card stephanite style",
+      "description": "Computed property achievementCardStephaniteStyle returns visual style based on rarity",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create rare achievement",
+        "Verify stephanite style is iron black orthorhombic",
+        "Create common achievement",
+        "Verify stephanite style is dark slate"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-2295",
+      "title": "Achievement ascendancy plus threshold",
+      "description": "Computed property achievementAscendancyPlusThreshold returns category-based threshold value",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/Achievement+Pinnacle.swift"
+      ],
+      "test_steps": [
+        "Create mastery achievement",
+        "Verify threshold >= 450000",
+        "Create games achievement",
+        "Verify threshold <= 60000"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

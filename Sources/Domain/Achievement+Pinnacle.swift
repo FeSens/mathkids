@@ -30,4 +30,34 @@ extension Achievement {
         case .games: return 40000
         }
     }
+
+    var achievementCardLivingstoniteStyle: String {
+        isRareAchievement ? "blackish grey prismatic" : "ashen"
+    }
+
+    var achievementRequiresTenacityPlusPlus: Bool {
+        category == .score || category == .mastery
+    }
+
+    var achievementCardCompactWritSealPlusText: String {
+        switch category {
+        case .mastery: return "Compact Writ Seal Plus of the Patriarch"
+        case .streak: return "Compact Writ Seal Plus of the Sentinel"
+        case .score: return "Compact Writ Seal Plus of the Titan"
+        case .games: return "Compact Writ Seal Plus of the Novice"
+        }
+    }
+
+    var achievementCardStephaniteStyle: String {
+        isRareAchievement ? "iron black orthorhombic" : "dark slate"
+    }
+
+    var achievementAscendancyPlusThreshold: Int {
+        switch category {
+        case .mastery: return 500000
+        case .streak: return 200000
+        case .score: return 450000
+        case .games: return 50000
+        }
+    }
 }
