@@ -106,6 +106,14 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var improvementNeeded: Int {
+        max(0, previousBestScore - finalScore)
+    }
+
+    var wasLowAccuracy: Bool {
+        accuracy < 50
+    }
+
     var gameSummaryText: String {
         "\(finalScore) pts | \(Int(accuracy))%"
     }

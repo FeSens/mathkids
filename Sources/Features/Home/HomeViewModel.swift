@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var difficultyBadge: String {
+        "\(selectedDifficulty.emoji) \(selectedDifficulty.displayName)"
+    }
+
     var hasDailyStreak: Bool {
         dailyStreak > 0
     }

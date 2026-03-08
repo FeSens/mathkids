@@ -11485,6 +11485,86 @@
         "Verify ratio format"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-644",
+      "name": "HomeViewModel.difficultyBadge",
+      "description": "Returns difficulty emoji and name combined",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select easy",
+        "Verify returns seedling Easy"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-645",
+      "name": "ResultsViewModel.improvementNeeded",
+      "description": "Returns points needed to reach previous best",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "Score below previous best",
+        "Verify points needed"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-646",
+      "name": "ResultsViewModel.wasLowAccuracy",
+      "description": "Returns true when accuracy < 50",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "0% accuracy returns true",
+        "100% returns false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-647",
+      "name": "GameSession+Display.scoreWithBonusText",
+      "description": "Returns score with bonus as display text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Score points with bonus",
+        "Verify formatted text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-648",
+      "name": "GameSession+Display.performanceSummary",
+      "description": "Returns one-line performance summary",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession+Display.swift"
+      ],
+      "test_steps": [
+        "Play game",
+        "Verify summary text"
+      ],
+      "passes": true
     }
   ],
   "_schema": {
