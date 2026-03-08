@@ -127,6 +127,16 @@ struct GameSession: Sendable {
         return Double(correct) / Double(secondHalf.count) * 100
     }
 
+    var correctPercentage: Double {
+        guard totalAnswered > 0 else { return 0 }
+        return Double(totalCorrect) / Double(totalAnswered) * 100
+    }
+
+    var wrongPercentage: Double {
+        guard totalAnswered > 0 else { return 0 }
+        return Double(totalWrong) / Double(totalAnswered) * 100
+    }
+
     var improvementRate: Double {
         guard totalAnswered >= 4 else { return 0 }
         return secondHalfAccuracy - firstHalfAccuracy

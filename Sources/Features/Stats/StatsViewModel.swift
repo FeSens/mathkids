@@ -59,6 +59,17 @@ final class StatsViewModel {
         }
     }
 
+    var levelDisplayText: String {
+        "Level \(LevelSystem.level(for: totalXP))"
+    }
+
+    var xpProgressText: String {
+        let currentLevel = LevelSystem.level(for: totalXP)
+        guard currentLevel < LevelSystem.thresholds.count else { return "MAX" }
+        let nextThreshold = LevelSystem.thresholds[currentLevel]
+        return "\(totalXP)/\(nextThreshold) XP"
+    }
+
     var sessionCountText: String {
         gamesPlayed == 1 ? "1 game" : "\(gamesPlayed) games"
     }

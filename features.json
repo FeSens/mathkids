@@ -5598,6 +5598,93 @@
       "files": [
         "Sources/Features/Results/ResultsViewModel.swift"
       ]
+    },
+    {
+      "id": "logic-289",
+      "title": "Achievement progress percentage",
+      "description": "Achievement provides progress percentage toward unlocking",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-005"
+      ],
+      "test_steps": [
+        "Unlocked achievement returns 100%",
+        "Partially completed achievement returns percentage",
+        "Achievement with no progress returns 0%"
+      ],
+      "files": [
+        "Sources/Domain/Achievement.swift"
+      ]
+    },
+    {
+      "id": "logic-290",
+      "title": "GameSession answer distribution",
+      "description": "GameSession provides distribution of correct/wrong answers as percentages",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-003"
+      ],
+      "test_steps": [
+        "All correct returns 100% correct, 0% wrong",
+        "Half and half returns 50/50",
+        "No answers returns 0/0"
+      ],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ]
+    },
+    {
+      "id": "logic-291",
+      "title": "PlayerStats win rate by difficulty",
+      "description": "PlayerStats computes win rate (games with 80%+ accuracy) per difficulty",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-004"
+      ],
+      "test_steps": [
+        "Returns 0 with no games",
+        "Returns correct percentage after recording wins"
+      ],
+      "files": [
+        "Sources/Domain/PlayerStats.swift"
+      ]
+    },
+    {
+      "id": "logic-292",
+      "title": "Operation color association",
+      "description": "Operation provides a color name for UI theming",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "core-001"
+      ],
+      "test_steps": [
+        "Each operation has a non-empty color",
+        "All operations have different colors"
+      ],
+      "files": [
+        "Sources/Domain/MathProblem.swift"
+      ]
+    },
+    {
+      "id": "logic-293",
+      "title": "StatsViewModel level progress display",
+      "description": "StatsViewModel provides formatted level and progress for display",
+      "category": "logic",
+      "passes": true,
+      "depends_on": [
+        "ui-010"
+      ],
+      "test_steps": [
+        "Level display shows level number",
+        "Progress text shows XP fraction"
+      ],
+      "files": [
+        "Sources/Features/Stats/StatsViewModel.swift"
+      ]
     }
   ],
   "_schema": {

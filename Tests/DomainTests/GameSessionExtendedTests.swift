@@ -202,4 +202,30 @@ struct GameSessionExtendedTests {
         let session = GameSession(difficulty: .easy)
         #expect(session.improvementRate == 0)
     }
+
+    // MARK: - Answer Distribution (logic-290)
+
+    @Test("All correct returns 100% correct")
+    func allCorrectDistribution() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<5 { session.recordAnswer(correct: true) }
+        #expect(session.correctPercentage == 100)
+        #expect(session.wrongPercentage == 0)
+    }
+
+    @Test("Half and half returns 50/50")
+    func halfDistribution() {
+        var session = GameSession(difficulty: .easy)
+        for _ in 0..<5 { session.recordAnswer(correct: true) }
+        for _ in 0..<5 { session.recordAnswer(correct: false) }
+        #expect(session.correctPercentage == 50)
+        #expect(session.wrongPercentage == 50)
+    }
+
+    @Test("No answers returns 0/0")
+    func noAnswersDistribution() {
+        let session = GameSession(difficulty: .easy)
+        #expect(session.correctPercentage == 0)
+        #expect(session.wrongPercentage == 0)
+    }
 }

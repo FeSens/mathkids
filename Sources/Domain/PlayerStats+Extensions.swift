@@ -164,6 +164,18 @@ extension PlayerStats {
         }
     }
 
+    func winRateForDifficulty(_ difficulty: DifficultyLevel) -> Int {
+        let games: Int
+        let wins: Int
+        switch difficulty {
+        case .easy: games = easyGamesPlayed; wins = easyMasteryCount
+        case .medium: games = mediumGamesPlayed; wins = mediumMasteryCount
+        case .hard: games = hardGamesPlayed; wins = hardMasteryCount
+        }
+        guard games > 0 else { return 0 }
+        return wins * 100 / games
+    }
+
     var averageXPPerSession: Int {
         guard gamesPlayed > 0 else { return 0 }
         return totalXP / gamesPlayed

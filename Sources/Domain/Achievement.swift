@@ -142,4 +142,11 @@ struct Achievement: Identifiable {
     static func lockedCount(for stats: PlayerStats) -> Int {
         all.count - unlockedCount(for: stats)
     }
+
+    func progressPercentage(stats: PlayerStats) -> Int {
+        guard let progress else { return isUnlocked(stats: stats) ? 100 : 0 }
+        let result = progress(stats)
+        guard result.target > 0 else { return 0 }
+        return min(result.current * 100 / result.target, 100)
+    }
 }

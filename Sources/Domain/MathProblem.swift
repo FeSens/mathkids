@@ -24,6 +24,15 @@ enum Operation: String, CaseIterable, Codable, Sendable {
         }
     }
 
+    var colorName: String {
+        switch self {
+        case .add: "blue"
+        case .subtract: "orange"
+        case .multiply: "purple"
+        case .divide: "green"
+        }
+    }
+
     var difficultyRank: Int {
         switch self {
         case .add: 1

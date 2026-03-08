@@ -104,4 +104,20 @@ struct PlayerStatsBatch38Tests {
         stats.gamesPlayed = 10
         #expect(stats.averageXPPerSession == 50)
     }
+
+    // MARK: - Win Rate (logic-291)
+
+    @Test("Win rate 0 with no games")
+    func winRateZero() {
+        let stats = PlayerStats()
+        #expect(stats.winRateForDifficulty(.easy) == 0)
+    }
+
+    @Test("Win rate correct after recording wins")
+    func winRateCorrect() {
+        let stats = PlayerStats()
+        stats.easyGamesPlayed = 10
+        stats.easyMasteryCount = 4 // 4 out of 10 = 40%
+        #expect(stats.winRateForDifficulty(.easy) == 40)
+    }
 }

@@ -179,4 +179,20 @@ struct StatsViewModelTests {
         vm.loadStats()
         #expect(vm.formattedTimePlayed == "1h 5m")
     }
+
+    // MARK: - Level Progress Display (logic-293)
+
+    @Test("Level display shows level number")
+    func levelDisplay() {
+        let vm = makeVM()
+        vm.loadStats()
+        #expect(vm.levelDisplayText.contains("1"))
+    }
+
+    @Test("Progress text shows XP fraction")
+    func progressText() {
+        let vm = makeVM()
+        vm.loadStats()
+        #expect(vm.xpProgressText.contains("/"))
+    }
 }

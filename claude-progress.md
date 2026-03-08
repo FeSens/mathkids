@@ -3,36 +3,33 @@
 ## Session 8 — 2026-03-07
 
 ### Status
-- Features: 278/278 passing (12 MVP + 9 polish + 257 improvement)
-- Unit tests: 357 (all green)
+- Features: 298/298 passing (12 MVP + 9 polish + 277 improvement)
+- Unit tests: 408 (all green across 22 suites)
 - UI tests: 12 (QA screenshots flaky but unit tests solid)
 - QA: PASSED
 
-### Session 8 Features (batches 33-37)
-- logic-244 to logic-248: games per op, scorePerCorrect, xpToMax, answerMagnitude, scoreComparisonText
-- logic-249 to logic-253: timeBonus, accuracyTrend, hintText, activateStreakFreeze, gradeLabel
-- logic-254 to logic-258: streakBonusMultiplier, bestStreakPerDifficulty, halfAccuracy, digitCount, improvementSummary
-- logic-259 to logic-263: efficiencyScore, problemsPerDifficulty, xpBreakdown, sessionCountText, greetingMessage
-- logic-264 to logic-268: inverse operation, answerSpeedClass, consistencyScore, recommendedTime, timePerformanceText
+### Session 8 Features (batches 33-41)
+- Batches 33-37: logic-244 to logic-268 (25 features)
+- Batches 38-41: logic-269 to logic-288 (20 features)
+- Total this session: 45 improvement features
 
-### Key Changes
-- GameSession: timeBonus, firstHalfAccuracy/secondHalfAccuracy, efficiencyScore, answerSpeedClass, answerHistory tracking
-- PlayerStats: accuracyTrend, bestStreakPerDifficulty, totalProblemsPerDifficulty, consistencyScore
-- PlayerStats+Extensions.swift: split from PlayerStats to stay under 300 lines
-- MathProblem: hintText, answerDigitCount, answerMagnitude enum, Operation.inverse
-- DifficultyLevel: streakBonusMultiplier, recommendedSecondsPerProblem
-- LevelSystem: xpToMaxLevel, xpRemainingToMax, baseXPPerAnswer, streakBonusXP
-- ResultsViewModel: scoreComparisonText, gradeLabel, improvementSummary, timePerformanceText
+### Key Additions This Session
+- GameSession: timeBonus, halfAccuracy, efficiencyScore, answerSpeedClass, isComeback, improvementRate, finalScoreWithTimeBonus, penaltyPoints
+- PlayerStats: accuracyTrend, bestStreakPerDifficulty, totalProblemsPerDifficulty, consistencyScore, favoriteDifficulty, perfectGameCount, averageSessionSeconds, averageXPPerSession
+- MathProblem: hintText, answerDigitCount, answerMagnitude, wrongAnswerChoices, estimatedSeconds, formattedAnswer, Operation.inverse/difficultyRank
+- DifficultyLevel: streakBonusMultiplier, recommendedSecondsPerProblem, penaltyPerWrong, maxPossibleScore
+- LevelSystem: xpToMaxLevel, xpRemainingToMax, baseXPPerAnswer, streakBonusXP, levelEmoji, xpPercentageText
+- ResultsViewModel: scoreComparisonText, gradeLabel, improvementSummary, timePerformanceText, accuracyComparisonText, scoreAsPercentOfMax
 - StatsViewModel: sessionCountText
-- HomeViewModel: greetingMessage
-- GameEngine: activateStreakFreeze() public API
-- Split 4 oversized files into extended test files
+- HomeViewModel: greetingMessage, selectAllOperations
+- GameEngine: activateStreakFreeze, consecutiveWrongCount
 
-### Previous Sessions
-- Sessions 1-7: 253 features implemented
-- Batches 25-32: logic-204 to logic-243
-- ProblemGenerator, GameEngine history, fastest answer tracking
-- XcodeGen, @Observable, SwiftData, Swift Testing, NavigationStack
+### File Splits This Session
+- PlayerStats → PlayerStats+Extensions.swift
+- ResultsViewModelTests → ResultsViewModelExtendedTests + ResultsViewModelBatch37Tests
+- GameSessionTests → GameSessionExtendedTests
+- GameEngineTests → GameEngineExtendedTests
+- PlayerStatsExtendedTests → PlayerStatsBatch38Tests
 
 ### Architecture
 - XcodeGen, @Observable, SwiftData, Swift Testing, NavigationStack

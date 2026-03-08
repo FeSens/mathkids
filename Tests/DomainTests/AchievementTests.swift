@@ -158,4 +158,29 @@ struct AchievementTests {
         let locked = Achievement.lockedCount(for: stats)
         #expect(unlocked + locked == Achievement.all.count)
     }
+
+    // MARK: - Achievement Progress Percentage (logic-289)
+
+    @Test("Unlocked achievement returns 100%")
+    func unlockedProgressIs100() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 1
+        let a = Achievement.all.first { $0.id == "first_game" }!
+        #expect(a.progressPercentage(stats: stats) == 100)
+    }
+
+    @Test("Partially completed returns percentage")
+    func partialProgress() {
+        let stats = PlayerStats()
+        stats.gamesPlayed = 5
+        let a = Achievement.all.first { $0.id == "ten_games" }!
+        #expect(a.progressPercentage(stats: stats) == 50)
+    }
+
+    @Test("No progress returns 0%")
+    func noProgress() {
+        let stats = PlayerStats()
+        let a = Achievement.all.first { $0.id == "ten_games" }!
+        #expect(a.progressPercentage(stats: stats) == 0)
+    }
 }

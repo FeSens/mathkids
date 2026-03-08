@@ -286,4 +286,19 @@ struct MathProblemTests {
         let problem = MathProblem(operand1: 50, operand2: 50, operation: .multiply)
         #expect(problem.formattedAnswer == "2,500")
     }
+
+    // MARK: - Operation Color (logic-292)
+
+    @Test("Each operation has a non-empty color")
+    func operationColors() {
+        for op in Operation.allCases {
+            #expect(!op.colorName.isEmpty)
+        }
+    }
+
+    @Test("All operations have different colors")
+    func uniqueOperationColors() {
+        let colors = Operation.allCases.map(\.colorName)
+        #expect(Set(colors).count == 4)
+    }
 }
