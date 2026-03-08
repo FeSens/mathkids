@@ -251,4 +251,16 @@ extension Achievement {
         case .games: return 0
         }
     }
+
+    var achievementPreviewText: String {
+        "\(emoji) \(title)"
+    }
+
+    var achievementRarityTintColor: String {
+        isRareAchievement ? "gold" : "gray"
+    }
+
+    var achievementIsAchievable: Bool {
+        true
+    }
 }
