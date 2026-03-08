@@ -20334,6 +20334,94 @@
         "Check quality is incorrect"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-1204",
+      "name": "answeredProblemAttemptSummary",
+      "description": "Summary string like Correct in 2.0s or Incorrect",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct answer with time",
+        "Check summary contains time",
+        "Create wrong answer",
+        "Check summary is Incorrect"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1205",
+      "name": "answeredProblemIsPerfectScore",
+      "description": "Whether the answer achieved perfect score (correct and fast)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast answer",
+        "Check isPerfectScore is true",
+        "Create correct slow answer",
+        "Check isPerfectScore is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1206",
+      "name": "answeredProblemWeightedScore",
+      "description": "Score weighted by difficulty and speed",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create correct fast multiply answer",
+        "Check weighted score is high",
+        "Create wrong answer",
+        "Check weighted score is 0"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1207",
+      "name": "answeredProblemHintWouldHelp",
+      "description": "Whether showing a hint would help (wrong but close)",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create wrong answer off by 1",
+        "Check hintWouldHelp is true",
+        "Create correct answer",
+        "Check hintWouldHelp is false"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-1208",
+      "name": "answeredProblemLogEntry",
+      "description": "Log-style string for analytics tracking",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/AnsweredProblem+Display.swift"
+      ],
+      "test_steps": [
+        "Create answered problem",
+        "Check logEntry contains operation and result"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

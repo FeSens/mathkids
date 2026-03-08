@@ -242,4 +242,33 @@ extension AnsweredProblem {
         if let time = timeTaken, time < 3.0 { return "perfect" }
         return "correct"
     }
+
+    var answeredProblemAttemptSummary: String {
+        guard isCorrect else { return "Incorrect" }
+        if let time = timeTaken {
+            return "Correct in \(String(format: "%.1f", time))s"
+        }
+        return "Correct"
+    }
+
+    var answeredProblemIsPerfectScore: Bool {
+        isCorrect && (timeTaken ?? Double.infinity) < 3.0
+    }
+
+    var answeredProblemWeightedScore: Int {
+        guard isCorrect else { return 0 }
+        let base = problem.operation.difficultyWeight * 10
+        if let time = timeTaken, time < 3.0 { return base * 2 }
+        return base
+    }
+
+    var answeredProblemHintWouldHelp: Bool {
+        !isCorrect && answeredProblemAnswerDelta <= 2
+    }
+
+    var answeredProblemLogEntry: String {
+        let op = problem.operation.displayName.lowercased()
+        let result = isCorrect ? "correct" : "incorrect"
+        return "[\(op)] \(problem.operand1)\(problem.operation.rawValue)\(problem.operand2)=\(userAnswer) (\(result))"
+    }
 }
