@@ -8,11 +8,11 @@
 - UI tests: 12 (QA screenshots flaky but unit tests solid)
 - QA: PASSED
 
-### Session 12 Features (batches 94-101)
-- Batch 94-97: logic-549 to logic-568 (20 features)
-- Batch 98-101: logic-569 to logic-588 (20 features)
-- Total this session: 40 improvement features so far
-- Files near 300-line limit: GameSession+Metrics (286), MathProblem.swift (283), LevelSystem (281)
+### Session 12 Features (batches 94-110)
+- Batch 94-101: logic-549 to logic-588 (40 features)
+- Batch 102-110: logic-589 to logic-633 (45 features)
+- Total this session: 85 improvement features so far
+- Files near 300-line limit: GameSession+Metrics (286), MathProblem+Extras (278), MathProblem.swift (283), LevelSystem (281), Achievement (274), StatsViewModel (268)
 
 ## Session 11 — 2026-03-08
 

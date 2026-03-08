@@ -106,6 +106,19 @@ extension ResultsViewModel {
         session.timeBonus > 0
     }
 
+    var accuracyStatusText: String {
+        if accuracy >= 90 { return "Excellent" }
+        if accuracy >= 70 { return "Good" }
+        if accuracy >= 50 { return "Fair" }
+        return "Needs work"
+    }
+
+    var scoreComparisonEmoji: String {
+        if isNewRecord { return "🏆" }
+        if finalScore >= previousBestScore { return "✅" }
+        return "⬇️"
+    }
+
     var totalAnsweredLabel: String {
         "\(session.totalAnswered) answered"
     }

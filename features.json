@@ -11325,6 +11325,86 @@
         "Verify returns true"
       ],
       "passes": true
+    },
+    {
+      "id": "logic-634",
+      "name": "HomeViewModel.maxOperandText",
+      "description": "Returns max operand for selected difficulty",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Home/HomeViewModel.swift"
+      ],
+      "test_steps": [
+        "Select easy",
+        "Verify returns up to 10"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-635",
+      "name": "ResultsViewModel.accuracyStatusText",
+      "description": "Returns accuracy with descriptive status",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "High accuracy returns Excellent",
+        "Low returns Needs work"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-636",
+      "name": "ResultsViewModel.scoreComparisonEmoji",
+      "description": "Returns emoji based on score vs previous best",
+      "category": "logic",
+      "layer": "Features",
+      "depends_on": [],
+      "files": [
+        "Sources/Features/Results/ResultsViewModel+Analysis.swift"
+      ],
+      "test_steps": [
+        "New best returns trophy",
+        "Below best returns down arrow"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-637",
+      "name": "GameSession.currentStreakText",
+      "description": "Returns current streak as text",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "Build 5 streak",
+        "Verify text"
+      ],
+      "passes": true
+    },
+    {
+      "id": "logic-638",
+      "name": "GameSession.hasBonus",
+      "description": "Returns true when totalBonusPoints > 0",
+      "category": "logic",
+      "layer": "Domain",
+      "depends_on": [],
+      "files": [
+        "Sources/Domain/GameSession.swift"
+      ],
+      "test_steps": [
+        "No bonus is false",
+        "With bonus is true"
+      ],
+      "passes": true
     }
   ],
   "_schema": {

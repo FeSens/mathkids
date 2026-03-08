@@ -137,6 +137,10 @@ final class HomeViewModel {
         selectedDifficulty.emoji
     }
 
+    var maxOperandText: String {
+        "Up to \(selectedDifficulty.maxOperand)"
+    }
+
     var difficultyStarRating: String {
         selectedDifficulty.starRating
     }

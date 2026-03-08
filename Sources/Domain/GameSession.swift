@@ -27,6 +27,14 @@ struct GameSession: Sendable {
         difficulty.timeLimitSeconds - timeRemaining
     }
 
+    var currentStreakText: String {
+        "\(currentStreak)"
+    }
+
+    var hasBonus: Bool {
+        totalBonusPoints > 0
+    }
+
     var difficultyName: String {
         difficulty.displayName
     }
